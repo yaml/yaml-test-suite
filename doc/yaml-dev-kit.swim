@@ -1,0 +1,22 @@
+YAML Dev Kit
+============
+
+Resources for YAML Framework Developers
+
+= Overview
+
+This is a set of resources that developers can refer to when developing
+software for YAML. It is intended to be used along with "the YAML
+specification"[http://www.yaml.org/spec/spec.html].
+
+The kit includes:
+
+- Comprehensive Test Suite
+
+  This is a data driven suite that is intended to cover every known situation
+  of YAML processing.
+
+- Implementation Guides
+
+  A set of documents that cover all the known topics a YAML developer might
+  need to deal with.

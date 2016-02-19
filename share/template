@@ -1,0 +1,19 @@
+=== 
+from: 
+tags: 
+
++++ in-yaml
+
++++ in-json
+
++++ test-event
++STR
++DOC
++MAP &1
+=VAL :
++SEQ
+=ALI 1
+-SEQ
+-MAP
+-DOC
+-STR

@@ -1,0 +1,32 @@
+=== Blank lines
+from: IRC discussion with leont
+tags: comment,scalar
+
++++ in-yaml
+foo: 1
+
+bar: 2
+    
+text: |
+  a
+    
+  b
+
+  c
+ 
+  d
+
++++ in-json
+{"foo":1,"bar":2,"text":"a\n  \nb\n\nc\n\nd\n"}
+
++++ test-event
++STR
++DOC
++MAP &1
+=VAL :
++SEQ
+=ALI 1
+-SEQ
+-MAP
+-DOC
+-STR

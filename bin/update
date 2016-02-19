@@ -1,0 +1,78 @@
+#!/usr/bin/env perl
+
+use strict;
+# XXX Relace IO::All with core:
+use IO::All;
+use Carp 'croak';
+# use XXX;
+
+sub main {
+  io->dir('data')->rmtree;
+
+  for my $spec (io->dir('test')->all_files) {
+    next if $spec->name =~ /\.swp$/;
+    my $self = bless { spec => $spec};
+    $self->{cog_id} = $spec->filename;
+    $self->{cog_id} =~ s/\.tml$//;
+    my $text = $self->{text} = \ $spec->all;
+    $self->parse_meta($text);
+    while (length $$text) {
+      $self->process_file
+    }
+  }
+}
+
+my $re_comment = qr/#.*/;
+my $re_blank = qr/\s*/;
+my $re_name = qr/===\s+(.*)/;
+my $re_meta = qr/(\w+):\ +(.*?)/;
+my $re_file = qr/\+\+\+\ +(\w.*)/;
+sub parse_meta {
+  my ($self) = @_;
+  my $text = $self->{text};
+  my $meta = {};
+  $$text =~ s/\A$re_name\n// or $self->parse_error;
+  $meta->{name} = $1;
+  while ($$text !~ /\A$re_file\n/) {
+    if ($$text =~ s/\A$re_meta\n//) {
+      $meta->{$1} = $2;
+    }
+    elsif ($$text =~ s/\A(?:$re_comment|$re_blank)\n//) {
+      next;
+    }
+    else {
+      $self->parse_error;
+    }
+  }
+  return;
+}
+
+sub process_file {
+  my ($self) = @_;
+  my $text = $self->{text};
+  $$text =~ s/\A$re_file\n//
+    or $self->parse_error;
+  my $file = $1;
+  my @file = split /\ +/, $file;
+  $$text =~ s/\A(.*?)(?=^$re_file|\z)//sm
+    or $self->parse_error;
+  my $output = $1;
+  $output =~ s/\s*\z/\n/;
+  $output =~ \//gm;
+  for my $file (@file) {
+    $file =~ s/-/./g;
+    io->file("data/$self->{cog_id}/$file")->assert->print($output);
+  }
+  my $name = $self->{meta}{name};
+  $name =~ s/[^-\w]+/-/;
+#   io->symlink("name/$name")
+}
+
+sub parse_error {
+  my ($self) = @_;
+  my $text = $self->{text};
+  (my $context = $$text) =~ s/\n.*//s;
+  croak "Can't parse at '$context'";
+}
+
+main @ARGV;

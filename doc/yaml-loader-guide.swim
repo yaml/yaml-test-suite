@@ -1,0 +1,139 @@
+= YAML Loader Implementation Guide
+
+In YAML, /*loading*/ is the act of taking a YAML data source and turning it
+into a programming language specific, native data structure. While this may
+seem like a simple concept, there are actually many abstractions (states,
+transforms, properties, etc) to be aware of when implementing a YAML loader
+framework. This guide will explain everything involved.
+
+== The YAML Load / Dump Stack
+
+In YAML, /*dumping*/ is the reverse act of loading. Going from a native state
+to an output format. Like TCP/IP, YAML processing (loading and dumping) is a
+stack of complimentary operations. The stack consists of 6 distinct data
+states, with 5 distinct load transforms and 5 distinct dump transforms. A
+/transform/ takes information from one state to the next.
+
+Here is a drawing of the YAML stack. Each state is in angle brackets. The load
+transforms are on the left and the dump transforms are on the right.
+
+  Load                Dump
+  ====                ====
+
+          <Native Object>
+          /           \
+  Constructor         Deconstructor
+          \           /
+          <Normal Graph>
+          /            \
+  Deserializer        Serializer
+          \            /
+          <Event Series>
+          /           \
+  Parser              Emitter
+          \           /
+          <Token Stream>
+          /           \
+  Lexer               Painter
+          \           /
+          <Char Stream>
+          /           \
+  Reader              Writer
+          \           /
+          <Data Store>
+
+A load operation starts from the bottom and works its way up the stack.
+
+It is important to note that useful YAML processing can be done with a subset
+of the stack. Most notably, a streaming YAML application would only use load
+transforms up to the parser. Above that an application or function would
+receive the event series and do useful things. If the app was acting as a
+filter or a map function, it could then pass on the (possibly altered) events
+to the emitter transform of the dump stack.
+
+This guide is primarily concerned with the load stack, but since the dump stack
+is symetric, it will refer to it when it seems important.
+
+As information moves up and down the stack, from state to state, certain parts
+of the information gets /lost/ (ie comments, mapping key order, quoting style)
+and in turn this information gets /found/ on the other side of the stack.
+Loading transforms (mostly) /lose/ this meta information, while dumping
+transforms have to /find/ it somehow.
+
+The following sections will describe the load stack from the bottom up. Each
+state will be described, explaining the critical parts and assertions that a
+developer should be aware for it. Each transform will describe the critical
+actions and also the lost (and sometimes found) information of that state.
+
+== Foreward
+
+Before diving in, there are a few things to note.
+
+The first thing is regarding the "YAML
+specification"[http://www.yaml.org/spec/1.2/spec.html]. The spec does a very
+good job at some things, and a poor job at others. For instance, the spec talks
+about the stack above, but does not go into detail about what exactly happens
+where. This has led to much confusion and inconsistency between
+implementations.
+
+Regarding this 6 state stack, A YAML processing framework can be (and very
+often is) implemented with some or all of the states collapsed. This is up to
+you and how much YAML processing power you want to expose to your users.
+Regardless of how you do it, it is highly recommended that you understand all
+of the abstractions in this guide. At a minimum, it will help you reason about
+your edge cases.
+
+An interesting side note is that since JSON is a syntactic and semantic subset
+of YAML, a matching subset of the stack and all the conjecture below applies
+equally to it.
+
+== The YAML Data Store State
+
+The lowest level that a YAML framework gets new YAML unicode text from, we will
+label a "data store". In reality this could (ie usually is):
+
+* A filesystem text file
+* An internet socket
+* An programming language "String" variable
+
+ie it is anywhere that you can read in data. The data may be of a fixed length
+or it may be non-terminating.
+
+This is the state where data is stored or represented in a unicode encoding
+format. While the spec says the formats should be utf-8 utf-16 or utf-32 it
+really doesn't matter as long as the reader transform knows how to turn this
+data into the next state (the character stream). For instance, the data source
+may be a string variable in your programming language that stores unicode in
+its own internal format.
+
+== The YAML Reader Transform
+
+The job of a YAML reader is to take a data source and turn it into a regular
+stream (sequence) of unicode code points (characters).
+
+YAML is effectively a linear format. That is, it takes cues from line endings
+(and indentation and such). While there are many ways for you to implement your
+framework, it might be wise to take advantage (that is optimize for) data in
+lines. You'll still need to handle all edge cases (anything can be written on a
+single line), but your best processing should encourage linear YAML.
+
+The place to start is in the reader. If your intended usage is for sources that
+fit entirely in memory, the simplest reader can just read (and transform to
+unicode chars) the entire source.
+
+If you support streaming on non-terminating sources, you might want to read a
+line at a time. This should give your lexer enough information; and let you
+process efficiently in "normal" scenarios.
+
+Reading is actually a contract between what your lexer needs to keep going and
+how much memory you have. There are always edge cases that can make this
+difficult. You'll have to think about what you want to optimize for, and when
+to give up (error).
+
+== The YAML Character Stream State
+
+This is the state of things that the majority of the YAML spec (its grammar and
+productions), um, specify. Data in this state can be thought of as a sequential
+stream of integers that represent unicode code points.
+
+The lexer can reason over this stream and create tokens.

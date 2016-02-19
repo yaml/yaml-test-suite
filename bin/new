@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while true; do
+  id="$(cat /dev/urandom | LC_CTYPE=C tr -cd A-HJ-NP-Z2-9 | fold -w4 | grep [A-Z] | grep [0-9] | head -n1)"
+  file="test/$id.tml"
+  [[ -e "$file" ]] || break
+done
+
+cp share/template "$file"
+
+vim $file
+
+echo "Created $file"
