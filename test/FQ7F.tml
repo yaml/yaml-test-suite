@@ -24,9 +24,9 @@ WS-NEWLN 14 1 1 15
 +STR
 +DOC
 +SEQ
-=VAL:Mark McGwire
-=VAL:Sammy Sosa
-=VAL:Ken Griffey
+=VAL :Mark McGwire
+=VAL :Sammy Sosa
+=VAL :Ken Griffey
 -SEQ
 -DOC
 -STR

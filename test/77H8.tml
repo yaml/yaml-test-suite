@@ -1,6 +1,6 @@
 === Example 3.23. Various Explicit Tags
 from: http://www.yaml.org/spec/spec.html#id2561828
-tags: tags
+tags: spec,tags
 
 +++ in-yaml
 ---
