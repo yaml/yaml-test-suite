@@ -1,0 +1,32 @@
+=== Example 3.23. Various Explicit Tags
+from: http://www.yaml.org/spec/spec.html#id2561828
+tags: tags
+
++++ in-yaml
+---
+not-date: !!str 2002-04-28
+
+picture: !!binary |
+ R0lGODlhDAAMAIQAAP//9/X
+ 17unp5WZmZgAAAOfn515eXv
+ Pz7Y6OjuDg4J+fn5OTk6enp
+ 56enmleECcgggoBADs=
+
+application specific tag: !something |
+ The semantics of the tag
+ above may be different for
+ different documents.
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :not-date
+=VAL <tag:yaml.org:2002:str> :2002-04-28
+=VAL :picture
+=VAL <tag:yaml.org:2002:binary> :R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=
+=VAL :application specific tag
+=VAL <!something> :The semantics of the tag\nabove may be\ndifferent for different documents.
+-MAP
+-DOC
+-STR
