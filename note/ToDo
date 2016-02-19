@@ -1,0 +1,19 @@
+== Tests
+
+- generate tml files into data orphaned branch
+  - add to Makefile
+- Generate new tests from existing frameworks:
+  - https://bitbucket.org/xi/pyyaml/src/ddf211a41bb231c365fece5599b7e484e6dc33fc/tests/data/?at=default
+  - https://github.com/Perl-Toolchain-Gang/YAML-Tiny/tree/devel/t
+  - etc. add more.
+
+== Docs
+- Generate docs into gh-pages
+- Write yaml-glossary
+
+== Spec
+
+- Figure out how to publish easily
+- Determine if href/id changes will cause harm
+- Review diff
+- Apply Andrey's fixes
