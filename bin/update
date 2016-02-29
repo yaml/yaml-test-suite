@@ -59,6 +59,16 @@ sub process_file {
   my $output = $1;
   $output =~ s/\s*\z/\n/;
   $output =~ \//gm;
+  if ($file eq 'test-event') {
+      chomp $output;
+      $output = <<"..."
++STR
++DOC
+$output
+-DOC
+-STR
+...
+  }
   for my $file (@file) {
     $file =~ s/-/./g;
     io->file("data/$self->{cog_id}/$file")->assert->print($output);

@@ -27,8 +27,6 @@ national:
 - Atlanta Braves
 
 +++ test-event
-+STR
-+DOC
 +MAP
 =VAL :american
 +SEQ
@@ -43,6 +41,3 @@ national:
 =VAL :Atlanta Braves
 -SEQ
 -MAP
--DOC
--STR
-
