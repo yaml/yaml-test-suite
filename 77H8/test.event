@@ -1,7 +1,5 @@
 +STR
 +DOC
-+STR
-+DOC
 +MAP
 =VAL :not-date
 =VAL <tag:yaml.org:2002:str> :2002-04-28
@@ -10,7 +8,5 @@
 =VAL :application specific tag
 =VAL <!something> :The semantics of the tag\nabove may be\ndifferent for different documents.
 -MAP
--DOC
--STR
 -DOC
 -STR
