@@ -77,10 +77,12 @@ $output
   $name =~ s/[^-\w]+/-/g;
   $name =~ s/^-(.*?)-?$/$1/;
   $self->_link("data/name/$name", "../$id");
+  $self->_link("test/name/$name.tml", "../$id.tml");
 
   if (my $tags = $self->{meta}{tags}) {
     for my $tag (split /\s*,\s*/, $tags) {
       $self->_link("data/tags/$tag/$id", "../../$id");
+      $self->_link("test/tags/$tag/$id.tml", "../../$id.tml");
     }
   }
 }
