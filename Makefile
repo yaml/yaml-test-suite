@@ -17,6 +17,7 @@ data/%: test/%.tml
 	    sleep 1; \
 	    touch test/*.tml; \
 	}
+	@rm -fr $@
 	perl bin/generate-data $<
 	@touch $@
 
@@ -28,7 +29,7 @@ ReadMe.pod: doc/yaml-dev-kit.swim
 	swim --to=pod --complete < $< > $@
 
 data-status:
-	@(cd data; git status --short)
+	@(cd data; git add -A .; git status --short)
 
 data-diff:
 	@(cd data; git add -A .; git diff --cached)

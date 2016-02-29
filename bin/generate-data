@@ -10,7 +10,7 @@ sub main {
   my ($tml_file) = @ARGV;
   my $spec = io->file($tml_file);
   next if $spec->name =~ /\.swp$/;
-  my $self = bless { spec => $spec};
+  my $self = bless { spec => $spec };
   $self->{cog_id} = $spec->filename;
   $self->{cog_id} =~ s/\.tml$//;
   my $text = $self->{text} = \ $spec->all;
@@ -22,15 +22,15 @@ sub main {
 
 my $re_comment = qr/#.*/;
 my $re_blank = qr/\s*/;
-my $re_name = qr/===\s+(.*)/;
+my $re_label = qr/===\s+(.*)/;
 my $re_meta = qr/(\w+):\ +(.*?)/;
 my $re_file = qr/\+\+\+\ +(\w.*)/;
 sub parse_meta {
   my ($self) = @_;
   my $text = $self->{text};
-  my $meta = {};
-  $$text =~ s/\A$re_name\n// or $self->parse_error;
-  $meta->{name} = $1;
+  my $meta = $self->{meta} = {};
+  $$text =~ s/\A$re_label\n// or $self->parse_error;
+  $meta->{label} = $1;
   while ($$text !~ /\A$re_file\n/) {
     if ($$text =~ s/\A$re_meta\n//) {
       $meta->{$1} = $2;
@@ -47,19 +47,23 @@ sub parse_meta {
 
 sub process_file {
   my ($self) = @_;
+
+  my $id = $self->{cog_id};
   my $text = $self->{text};
+
   $$text =~ s/\A$re_file\n//
     or $self->parse_error;
   my $file = $1;
-  my @file = split /\ +/, $file;
+  $file =~ s/-/./g;
+
   $$text =~ s/\A(.*?)(?=^$re_file|\z)//sm
     or $self->parse_error;
   my $output = $1;
   $output =~ s/\s*\z/\n/;
   $output =~ \//gm;
-  if ($file eq 'test-event') {
-      chomp $output;
-      $output = <<"..."
+  if ($file eq 'test.event') {
+    chomp $output;
+    $output = <<"..."
 +STR
 +DOC
 $output
@@ -67,13 +71,23 @@ $output
 -STR
 ...
   }
-  for my $file (@file) {
-    $file =~ s/-/./g;
-    io->file("data/$self->{cog_id}/$file")->assert->print($output);
+
+  my $label = $self->{meta}{label};
+  io("data/$id/===")->assert->symlink("$label");
+
+  io->file("data/$id/$file")->assert->print($output);
+
+  my $name = lc $label;
+  $name =~ s/[^-\w]+/-/g;
+  $name =~ s/^-(.*?)-?$/$1/;
+  io("data/name/$name")->assert->symlink("../$id");
+
+  if (my $tags = $self->{meta}{tags}) {
+    for my $tag (split /\s*,\s*/, $tags) {
+      io("data/tags/$tag/$id")->assert->symlink("../../$id");
+    }
   }
-  my $name = $self->{meta}{name};
-  $name =~ s/[^-\w]+/-/;
-#   io->symlink("name/$name")
+
 }
 
 sub parse_error {
