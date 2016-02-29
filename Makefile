@@ -1,11 +1,19 @@
+.PHONY: data doc
+ALL_TML := $(shell echo test/*.tml)
+ALL_DATA := $(ALL_TML:test/%.tml=data/%)
+
 default: help
 
 help:
-	@echo 'update - Update all test files from spec files'
+	@echo 'data - Generate data/ files from test/ files'
+	@echo 'doc - Generate the docs'
 	@echo 'help   - Show help'
 
-update:
-	perl bin/update
+data: $(ALL_DATA)
+
+data/%: test/%.tml
+	perl bin/generate-data $<
+	@touch $@
 
 update: doc
 

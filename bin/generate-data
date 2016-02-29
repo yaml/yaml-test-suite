@@ -7,18 +7,16 @@ use Carp 'croak';
 # use XXX;
 
 sub main {
-  io->dir('data')->rmtree;
-
-  for my $spec (io->dir('test')->all_files) {
-    next if $spec->name =~ /\.swp$/;
-    my $self = bless { spec => $spec};
-    $self->{cog_id} = $spec->filename;
-    $self->{cog_id} =~ s/\.tml$//;
-    my $text = $self->{text} = \ $spec->all;
-    $self->parse_meta($text);
-    while (length $$text) {
-      $self->process_file
-    }
+  my ($tml_file) = @ARGV;
+  my $spec = io->file($tml_file);
+  next if $spec->name =~ /\.swp$/;
+  my $self = bless { spec => $spec};
+  $self->{cog_id} = $spec->filename;
+  $self->{cog_id} =~ s/\.tml$//;
+  my $text = $self->{text} = \ $spec->all;
+  $self->parse_meta($text);
+  while (length $$text) {
+    $self->process_file;
   }
 }
 
