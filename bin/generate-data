@@ -1,19 +1,15 @@
 #!/usr/bin/env perl
 
 use strict;
-# XXX Relace IO::All with core:
-use IO::All;
 use Carp 'croak';
-# use XXX;
+use File::Path 'mkpath';
 
 sub main {
-  my ($tml_file) = @ARGV;
-  my $spec = io->file($tml_file);
-  next if $spec->name =~ /\.swp$/;
-  my $self = bless { spec => $spec };
-  $self->{cog_id} = $spec->filename;
-  $self->{cog_id} =~ s/\.tml$//;
-  my $text = $self->{text} = \ $spec->all;
+  my ($tml) = @ARGV;
+  my $self = bless { tml => $tml };
+  $self->{cog_id} = $tml;
+  $self->{cog_id} =~ s/.*\/(.*)\.tml$/$1/;
+  my $text = $self->{text} = $self->_read($tml);
   $self->parse_meta($text);
   while (length $$text) {
     $self->process_file;
@@ -73,21 +69,20 @@ $output
   }
 
   my $label = $self->{meta}{label};
-  io("data/$id/===")->assert->symlink("$label");
+  $self->_link("data/$id/===", "$label");
 
-  io->file("data/$id/$file")->assert->print($output);
+  $self->_write("data/$id/$file", $output);
 
   my $name = lc $label;
   $name =~ s/[^-\w]+/-/g;
   $name =~ s/^-(.*?)-?$/$1/;
-  io("data/name/$name")->assert->symlink("../$id");
+  $self->_link("data/name/$name", "../$id");
 
   if (my $tags = $self->{meta}{tags}) {
     for my $tag (split /\s*,\s*/, $tags) {
-      io("data/tags/$tag/$id")->assert->symlink("../../$id");
+      $self->_link("data/tags/$tag/$id", "../../$id");
     }
   }
-
 }
 
 sub parse_error {
@@ -95,6 +90,30 @@ sub parse_error {
   my $text = $self->{text};
   (my $context = $$text) =~ s/\n.*//s;
   croak "Can't parse at '$context'";
+}
+
+sub _read {
+  my ($self, $file) = @_;
+  local $/;
+  open my $in, '<', $file or die;
+  \ <>;
+}
+
+sub _write {
+  my ($self, $file, $text) = @_;
+  if ($file =~ m!(.*)/!) {
+    mkpath "$1";
+  }
+  open my $out, '>', $file or die;
+  print $out $text;
+}
+
+sub _link {
+  my ($self, $link, $target) = @_;
+  if ($link =~ m!(.*)/!) {
+    mkpath "$1";
+  }
+  symlink $target, $link;
 }
 
 main @ARGV;
