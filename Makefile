@@ -34,7 +34,7 @@ data-diff:
 	@(cd data; git add -A .; git diff --cached)
 
 data-push:
-	@[ -z "$(cd data; git status --short)" ] || { \
+	@[ -z "$$(cd data; git status --short)" ] || { \
 	    cd data; \
 	    git add -A .; \
 	    git commit -m 'Regenerated data files'; \
