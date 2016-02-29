@@ -29,15 +29,15 @@ ReadMe.pod: doc/yaml-dev-kit.swim
 	swim --to=pod --complete < $< > $@
 
 data-status:
-	@(cd data; git add -A .; git status --short)
+	@(cd data; git add -Af .; git status --short)
 
 data-diff:
-	@(cd data; git add -A .; git diff --cached)
+	@(cd data; git add -Af .; git diff --cached)
 
 data-push:
 	@[ -z "$$(cd data; git status --short)" ] || { \
 	    cd data; \
-	    git add -A .; \
+	    git add -Af .; \
 	    git commit -m 'Regenerated data files'; \
 	    git push origin data; \
 	}

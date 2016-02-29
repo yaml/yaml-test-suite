@@ -1,0 +1,14 @@
+=== Single Entry Block Sequence
+from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/sequence.tml
+tags: block,sequence
+
++++ in-yaml
+- foo
+
++++ in-json
+["foo"]
+
++++ test-event
++SEQ
+=VAL :foo
+-SEQ

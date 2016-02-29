@@ -1,0 +1,16 @@
+=== Flow Sequence
+from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/sequence.tml
+tags: flow,sequence
+
++++ in-yaml
+[foo, bar, 42]
+
++++ in-json
+["foo","bar",42]
+
++++ test-event
++SEQ
+=VAL :foo
+=VAL :bar
+=VAL :42
+-SEQ

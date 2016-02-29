@@ -1,0 +1,19 @@
+=== Simple Mapping Indent
+from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
+tags: simple,mapping,indent
+
++++ in-yaml
+foo:
+  bar: baz
+
++++ in-json
+{"foo":{"bar":"baz"}}
+
++++ test-event
++MAP
+=VAL :foo
++MAP
+=VAL :bar
+=VAL :baz
+-MAP
+-MAP
