@@ -7,9 +7,7 @@ tags:
 +++ in-json
 
 +++ test-event
-+MAP &1
++MAP
 =VAL :
-+SEQ
-=ALI 1
--SEQ
+=VAL :
 -MAP
