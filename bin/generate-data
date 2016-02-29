@@ -55,17 +55,16 @@ sub process_file {
   $$text =~ s/\A(.*?)(?=^$re_file|\z)//sm
     or $self->parse_error;
   my $output = $1;
-  $output =~ s/\s*\z/\n/;
-  $output =~ \//gm;
+  $output =~ s/(\r?\n)\s*\z//;
+  if (length $output) {
+    $output .= $1;
+  }
+  $output =~ s/^\\//gm;
   if ($file eq 'test.event') {
-    chomp $output;
-    $output = <<"..."
-+STR
-+DOC
-$output
--DOC
--STR
-...
+    if (length $output) {
+      $output = "+DOC\n$output-DOC\n";
+    }
+    $output = "+STR\n$output-STR\n";
   }
 
   my $label = $self->{meta}{label};
