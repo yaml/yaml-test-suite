@@ -1,0 +1,21 @@
+=== Block Mapping with Missing Values
+from: NimYAML tests
+tags: mapping,block
+
++++ in-yaml
+? a
+? b
+c:
+
++++ in-json
+{"a": "", "b": "", "c": ""}
+
++++ test-event
++MAP
+=VAL :a
+=VAL :
+=VAL :b
+=VAL :
+=VAL :c
+=VAL :
+-MAP

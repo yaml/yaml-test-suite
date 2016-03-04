@@ -1,0 +1,22 @@
+=== Block Mapping with Multiline Scalars 
+from: NimYAML tests
+tags: mapping,scalar,block
+
++++ in-yaml
+? a
+  true
+: null
+  d
+? e
+  42
+
++++ in-json
+{"a true": "null d", "e 42": ""}
+
++++ test-event
++MAP
+=VAL :a true
+=VAL :null d
+=VAL :e 42
+=VAL :
+-MAP
