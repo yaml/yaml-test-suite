@@ -10,7 +10,7 @@ framework. This guide will explain everything involved.
 
 In YAML, /*dumping*/ is the reverse act of loading. Going from a native state
 to an output format. Like TCP/IP, YAML processing (loading and dumping) is a
-stack of complimentary operations. The stack consists of 6 distinct data
+stack of complementary operations. The stack consists of 6 distinct data
 states, with 5 distinct load transforms and 5 distinct dump transforms. A
 /transform/ takes information from one state to the next.
 
@@ -65,7 +65,7 @@ state will be described, explaining the critical parts and assertions that a
 developer should be aware for it. Each transform will describe the critical
 actions and also the lost (and sometimes found) information of that state.
 
-== Foreward
+== Foreword
 
 Before diving in, there are a few things to note.
 

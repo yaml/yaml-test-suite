@@ -54,7 +54,7 @@ data-push:
 	    cd data; \
 	    git add -Af .; \
 	    git commit -m 'Regenerated data files'; \
-	    git push origin data; \
+	    git push --force origin data; \
 	}
 
 guide-status:
@@ -68,7 +68,7 @@ guide-push:
 	    cd guide; \
 	    git add -Af .; \
 	    git commit -m 'Regenerated guide files'; \
-	    git push origin guide; \
+	    git push --force origin guide; \
 	}
 
 clean:
