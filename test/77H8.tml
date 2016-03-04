@@ -24,5 +24,5 @@ application specific tag: !something |
 =VAL :picture
 =VAL <tag:yaml.org,2002:binary> :R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n
 =VAL :application specific tag
-=VAL <!something> :The semantics of the tag\nabove may be\ndifferent for different documents.\n
+=VAL <!something> :The semantics of the tag\nabove may be different for\ndifferent documents.\n
 -MAP
