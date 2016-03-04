@@ -1,0 +1,17 @@
+=== Folded Block Scalar
+from: NimYAML tests
+tags: scalar
+
++++ in-yaml
+>
+ ab
+ cd
+ 
+ ef
+
+
+ gh
+
+
++++ test-event
+=VAL "ab cd\nef\n\ngh\n

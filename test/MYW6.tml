@@ -1,0 +1,13 @@
+=== Block Scalar Strip
+from: NimYAML tests
+tags: scalar
+
++++ in-yaml
+|-
+ ab
+ 
+ 
+...
+
++++ test-event
+=VAL "ab

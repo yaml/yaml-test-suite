@@ -1,0 +1,14 @@
+=== Multiline Scalar at Top Level
+from: NimYAML tests
+tags: scalar
+
++++ in-yaml
+a
+b  
+  c
+d
+
+e
+
++++ test-event
+=VAL :a b c d\ne

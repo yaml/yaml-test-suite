@@ -1,0 +1,22 @@
+=== Literal Block Scalar
+from: NimYAML tests
+tags: scalar
+
++++ in-yaml
+a: |
+ ab
+ 
+ cd
+ ef
+ 
+
+...
+
++++ in-json
+{"a": "ab\n\ncd\nef\n"}
+
++++ test-event
++MAP
+=VAL :a
+=VAL "ab\n\ncd\nef\n
+-MAP

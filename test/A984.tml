@@ -1,0 +1,21 @@
+=== Multiline Scalar in Mapping
+from: NimYAML tests
+tags: scalar
+
++++ in-yaml
+a: b
+ c
+d:
+ e
+  f
+
++++ in-json
+{"a": "b c", "d": "e f"}
+
++++ test-event
++MAP
+=VAL :a
+=VAL :b c
+=VAL :d
+=VAL :e f
+-MAP
