@@ -69,7 +69,8 @@ sub process_file {
   }
 
   my $label = $self->{meta}{label};
-  $self->_link("data/$id/===", "$label");
+  $self->_write("data/$id/===", "$label\n");
+  $self->_link("data/meta/$id.label", "$label");
 
   $self->_write("data/$id/$file", $output);
 
