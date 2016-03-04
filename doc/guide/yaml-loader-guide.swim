@@ -26,7 +26,7 @@ transforms are on the left and the dump transforms are on the right.
           \           /
           <Normal Graph>
           /            \
-  Deserializer        Serializer
+  Composer            Serializer
           \            /
           <Event Series>
           /           \
