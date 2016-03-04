@@ -27,6 +27,7 @@ sub parse_meta {
   my $meta = $self->{meta} = {};
   $$text =~ s/\A$re_label\n// or $self->parse_error;
   $meta->{label} = $1;
+  $meta->{label} =~ s/^\s*(.*?)\s*$/$1/;
   while ($$text !~ /\A$re_file\n/) {
     if ($$text =~ s/\A$re_meta\n//) {
       $meta->{$1} = $2;
