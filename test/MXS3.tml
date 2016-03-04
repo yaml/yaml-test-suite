@@ -1,0 +1,17 @@
+=== Flow Mapping in Block Sequence
+from: NimYAML tests
+tags: mapping,sequence,block,flow
+
++++ in-yaml
+- {a: b}
+
++++ in-json
+[{"a": "b"}]
+
++++ test-event
++SEQ
++MAP
+=VAL :a
+=VAL :b
+-MAP
+-SEQ

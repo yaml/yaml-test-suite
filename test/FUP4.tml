@@ -1,0 +1,18 @@
+=== Flow Sequence in Flow Sequence
+from: NimYAML tests
+tags: sequence,flow
+
++++ in-yaml
+[a, [b, c]]
+
++++ in-json
+["a", ["b", "c"]]
+
++++ test-event
++SEQ
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ

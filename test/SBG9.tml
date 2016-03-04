@@ -1,0 +1,20 @@
+=== Flow Sequence in Flow Mapping
+from: NimYAML tests
+tags: sequence,mapping,flow
+
++++ in-yaml
+{a: [b, c], [d, e]: f}
+
++++ test-event
++MAP
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
++SEQ
+=VAL :d
+=VAL :e
+-SEQ
+=VAL :f
+-MAP
