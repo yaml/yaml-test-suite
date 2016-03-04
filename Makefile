@@ -2,7 +2,7 @@
 ALL_TML := $(shell echo test/*.tml)
 ALL_DATA := $(ALL_TML:test/%.tml=data/%)
 ALL_SWIM := $(shell echo doc/guide/*.swim)
-ALL_GUIDE := $(ALL_SWIM:doc/guide/%.swim=guide/%.pod)
+ALL_GUIDE := $(ALL_SWIM:doc/guide/%.swim=guide/%.pod) guide/ReadMe.pod
 
 default: help
 
@@ -14,6 +14,9 @@ help:
 	@echo 'help   - Show help'
 
 doc: ReadMe.pod
+
+ReadMe.pod: doc/yaml-dev-kit.swim
+	swim --to=pod --meta=guide/Meta --complete --wrap < $< > $@
 
 data: $(ALL_DATA)
 
@@ -29,7 +32,7 @@ data/%: test/%.tml
 
 guide: $(ALL_GUIDE)
 
-guide/%.pod: doc/guide/*.swim
+guide/%.pod: doc/guide/%.swim
 	@[ -d guide ] || { \
 	    git clone $$(git config remote.origin.url) -b guide guide; \
 	    sleep 1; \
@@ -37,8 +40,8 @@ guide/%.pod: doc/guide/*.swim
 	}
 	swim --to=pod --meta=guide/Meta --complete --wrap < $< > $@
 
-ReadMe.pod: doc/yaml-dev-kit.swim
-	swim --to=pod --complete --wrap < $< > $@
+guide/ReadMe.pod: doc/guide/index.swim
+	swim --to=pod --meta=guide/Meta --complete --wrap < $< > $@
 
 data-status:
 	@(cd data; git add -Af .; git status --short)
@@ -54,5 +57,19 @@ data-push:
 	    git push origin data; \
 	}
 
+guide-status:
+	@(cd guide; git add -Af .; git status --short)
+
+guide-diff:
+	@(cd guide; git add -Af .; git diff --cached)
+
+guide-push:
+	@[ -z "$$(cd guide; git status --short)" ] || { \
+	    cd guide; \
+	    git add -Af .; \
+	    git commit -m 'Regenerated guide files'; \
+	    git push origin guide; \
+	}
+
 clean:
-	rm -fr data
+	rm -fr data guide
