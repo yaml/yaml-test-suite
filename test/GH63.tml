@@ -1,0 +1,19 @@
+=== Mixed Block Map (explicit to implicit)
+from: NimYAML tests
+tags: mapping,block
+
++++ in-yaml
+? a
+: 13
+1.5: d
+
++++ in-json
+{"a": 13, "1.5": "d"}
+
++++ test-event
++MAP
+=VAL :a
+=VAL :13
+=VAL :1.5
+=VAL :d
+-MAP

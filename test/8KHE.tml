@@ -1,0 +1,24 @@
+=== Explicit Block Mapping Entries
+from: http://www.yaml.org/spec/1.2/spec.html#id2798425
+tags: spec,mapping,comment,block
+
++++ in-yaml
+? explicit key # Empty value
+? |
+  block key
+: - one # Explicit compact
+  - two # block value
+
++++ in-json
+{ "explicit key": "", "block key": ["one", "two"]}
+
++++ test-event
++MAP
+=VAL :explicit key
+=VAL :
+=VAL :block key\n
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
+-MAP
