@@ -1,0 +1,20 @@
+=== Block Sequence in Block Sequence
+from: NimYAML tests
+tags: sequence,block
+
++++ in-yaml
+- - s1_i1
+  - s1_i2
+- s2
+
++++ in-json
+[ ["s1_i1", "s1_i2"], "s2"]
+
++++ test-event
++SEQ
++SEQ
+=VAL :s1_i1
+=VAL :s1_i2
+-SEQ
+=VAL :s2
+-SEQ

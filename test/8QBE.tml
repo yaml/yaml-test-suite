@@ -1,0 +1,20 @@
+=== Block Sequence in Block Mapping
+from: NimYAML tests
+tags: mapping,sequence,block
+
++++ in-yaml
+key:
+ - item1
+ - item2
+
++++ in-json
+{"key": ["item2", "item2"]}
+
++++ test-event
++MAP
+=VAL :key
++SEQ
+=VAL :item1
+=VAL :item2
+-SEQ
+-MAP
