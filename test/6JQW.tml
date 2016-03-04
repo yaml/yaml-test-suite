@@ -9,7 +9,7 @@ tags: spec,scalar,literal,comment
   // ||  ||__
 
 +++ in-json
-"\\//||\\/||\n // ||  ||__\n"
+"\\//||\\/||\n// ||  ||__\n"
 
 +++ test-event
-=VAL "\\//||\\/||\n // ||  ||__\n
+=VAL "\\//||\\/||\n// ||  ||__\n
