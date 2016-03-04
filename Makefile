@@ -26,7 +26,7 @@ update: doc
 doc: ReadMe.pod
 
 ReadMe.pod: doc/yaml-dev-kit.swim
-	swim --to=pod --complete < $< > $@
+	swim --to=pod --complete --wrap < $< > $@
 
 data-status:
 	@(cd data; git add -Af .; git status --short)

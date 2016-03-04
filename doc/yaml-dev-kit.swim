@@ -11,12 +11,61 @@ specification"[http://www.yaml.org/spec/spec.html].
 
 The kit includes:
 
+- Implementation Guides
+
+  A set of documents that cover all the known topics a YAML developer might
+  need to deal with.
+
 - Comprehensive Test Suite
 
   This is a data driven suite that is intended to cover every known situation
   of YAML processing.
 
-- Implementation Guides
+- Interactive YAML Testing Tool
 
-  A set of documents that cover all the known topics a YAML developer might
-  need to deal with.
+  A commandline tool that you can use to test out all the known YAML
+  implementations.
+
+= Implementation Guides
+
+So far there is:
+
+* "YAML Loader Guide"[/yaml-loader-guide]
+
+= Comprehensive Test Suite
+
+This test suite is composed of (what will eventually be) 100s of test
+directories that each represent a specific situation for a YAML processor. Each
+test directory contains a number of related files, that test suites can be made
+to use in interesting ways. For example:
+
+* Metadata about the test
+  * Name (short phrase)
+  * Tags
+  * Description
+* Input YAML
+* Canonical Output YAML
+* Matching JSON
+* Token stream notation
+* Event stream notation
+* Error data
+* etc
+
+Not every test dir will have the same elements. Since the tests are just data,
+it is up to the framework using the tests to decide which tests to use and how
+to use them.
+
+The tests are currently written in TestML under the `test` directory on the
+`master` branch. The test data is split into the separate files structure, and
+kept on the `data` branch. This makes tests easier to groom.
+
+= Interactive YAML Testing Tool
+
+Work has begun to create a Docker container image that has all known YAML
+implementations and tools pre-installed and that exposes a CLI to interact with
+it in interesting ways:
+
+  alias yt='docker run -it ingy/yt'
+  cat file.yaml | yt --ruby --json     # Load YAML with Ruby and dump as JSON
+  cat file.yaml | yt --python --event  # Show PyYAML event stream
+  yt --shell --perl --yamlxs           # Start a YAML Shell using Perl's YAML::XS
