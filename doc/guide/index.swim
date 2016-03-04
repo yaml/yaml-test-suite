@@ -1,0 +1,19 @@
+YAML Developers Guide
+=====================
+
+Documentation to guide YAML tool developers
+
+= Overview
+
+YAML seems simple, but is actually surprisingly deep, complex and nuanced.
+There is a lot of information to take in if you want to develop a great YAML
+framework.
+
+This guide is intended to contain all the information that a YAML developer
+needs to create a great framework.
+
+= Index
+
+This project is just beginning. So far there is:
+
+* YAML Loader Guide[/yaml-loader-guide]
