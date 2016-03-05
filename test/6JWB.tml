@@ -10,6 +10,7 @@ foo: !!seq
 
 +++ test-event
 +MAP
+=VAL :foo
 +SEQ <tag:yaml.org,2002:seq>
 =VAL <tag:yaml.org,2002:str> :a
 +MAP <tag:yaml.org,2002:map>
