@@ -1,0 +1,18 @@
+=== Tags for Flow Objects
+from: NimYAML tests
+tags: tags,flow
+
++++ in-yaml
+!!map {
+  k: !!seq
+  [ a, !!str b]
+}
+
++++ test-event
++MAP <tag:yaml.org,2002:map>
+=VAL :k
++SEQ <tag:yaml.org,2002:seq>
+=VAL :a
+=VAL <tag:yaml.org,2002:str> :b
+-SEQ
+-MAP

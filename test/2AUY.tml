@@ -1,0 +1,17 @@
+=== Tags in Block Sequence
+from: NimYAML tests
+tags: tags,sequence
+
++++ in-yaml
+ - !!str a
+ - b
+ - !!int 42
+ - d
+
++++ test-event
++SEQ
+=VAL <tag:yaml.org,2002:str> :a
+=VAL :b
+=VAL <tag:yaml.org,2002:int> :42
+=VAL :d
+-SEQ

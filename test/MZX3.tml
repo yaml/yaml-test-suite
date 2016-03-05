@@ -1,0 +1,24 @@
+=== Non-Specific Tags on Scalars
+from: NimYAML tests
+tags: scalar,tags
+
++++ in-yaml
+- plain
+- "double quoted"
+- 'single quoted'
+- >
+  block
+- plain again
+
++++ in-json
+["plain", "double quoted", "single quoted",
+ "block\n", "plain again"]
+
++++ test-event
++SEQ
+=VAL :plain
+=VAL "double quoted
+=VAL "single quoted
+=VAL "block\n
+=VAL :plain again
+-SEQ

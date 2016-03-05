@@ -1,0 +1,12 @@
+=== Explicit Non-Specific Tag
+from: NimYAML tests
+tags: tags
+
++++ in-yaml
+! a
+
++++ in-json
+{"a"}
+
++++ test-event
+=VAL "a
