@@ -1,0 +1,10 @@
++STR
++DOC
++SEQ
+=VAL <tag:yaml.org,2002:str> &a :a
+=VAL <tag:yaml.org,2002:int> :2
+=VAL <tag:yaml.org,2002:int> &c :4
+=VAL &d :d
+-SEQ
+-DOC
+-STR
