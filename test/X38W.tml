@@ -1,0 +1,21 @@
+=== Aliases in Flow Objects
+from: NimYAML tests
+tags: flow,aliases
+
++++ in-yaml
+{ &a [a, &b b]: *b, *a : [c, *b, d]}
+
++++ test-event
++MAP
++SEQ &a
+=VAL :a
+=VAL &b :b
+-SEQ
+=ALI &b
+=ALI &a
++SEQ
+=VAL :c
+=ALI &b
+=VAL :d
+-SEQ
+-MAP

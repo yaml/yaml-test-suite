@@ -1,0 +1,15 @@
+=== Anchors in Mapping
+from: NimYAML tests
+tags: anchors
+
++++ in-yaml
+&a a: b
+c: &d d
+
++++ test-event
++MAP
+=VAL &a :a
+=VAL :b
+=VAL :c
+=VAL &d :d
+-MAP

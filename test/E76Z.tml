@@ -1,0 +1,15 @@
+=== Aliases in Implicit Block Mapping
+from: NimYAML tests
+tags: mapping,aliases
+
++++ in-yaml
+&a a: &b b
+*a : *b
+
++++ test-event
++MAP
+=VAL &a :a
+=VAL &b :b
+=ALI &a
+=ALI &b
+-MAP

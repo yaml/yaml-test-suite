@@ -1,0 +1,16 @@
+=== Aliases in Block Sequence
+from: NimYAML tests
+tags: sequence,aliases
+
++++ in-yaml
+- &a a
+- &b b
+- *a
+- *b
+
++++ test-event
++SEQ
+=VAL &a :a
+=VAL &b :b
+=ALI &a
+=ALI &b
