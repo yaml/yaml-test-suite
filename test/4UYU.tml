@@ -6,4 +6,4 @@ tags: scalar
 "foo: bar\": baz"
 
 +++ test-event
-=VAL "foo: bar\\": baz
+=VAL "foo: bar": baz
