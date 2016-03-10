@@ -1,0 +1,44 @@
+=== Spec Example 2.4. Sequence of Mappings
+from: http://www.yaml.org/spec/1.2/spec.html#id2760193
+tags: block,sequence,mapping,spec
+
++++ in-yaml
+-
+  name: Mark McGwire
+  hr:   65
+  avg:  0.278
+-
+  name: Sammy Sosa
+  hr:   63
+  avg:  0.288
+
++++ in-json
+[
+  { "name": "Mark McGwire",
+    "hr"  : 65,
+    "avg" : 0.278 },
+  { "name": "Sammy Sosa",
+    "hr"  : 63,
+    "avg" : 0.288
+  }
+]
+
++++ test-event
++SEQ
++MAP
+=VAL :name
+=VAL :Mark McGwire
+=VAL :hr
+=VAL :65
+=VAL :avg
+=VAL 0.278
+-MAP
++MAP
+=VAL :name
+=VAL :Sammy Sosa
+=VAL :hr
+=VAL :63
+=VAL :avg
+=VAL :0.288
+-MAP
+-SEQ

@@ -1,0 +1,34 @@
+=== Spec Example 2.6. Mapping of Mappings
+from: http://www.yaml.org/spec/1.2/spec.html#id2760372
+tags: spec,mapping
+
++++ in-yaml
+Mark McGwire: {hr: 65, avg: 0.278}
+Sammy Sosa: {
+    hr: 63,
+    avg: 0.288
+  }
+
++++ in-json
+{ 
+  "Mark McGwire": { "hr": 65, "avg": 0.278 },
+  "Sammy Sosa":   { "hr": 63, "avg": 0.288 }
+}
+
++++ test-event
++MAP
+=VAL :Mark McGwire
++MAP
+=VAL :hr
+=VAL :65
+=VAL :avg
+=VAL :0.278
+-MAP
+=VAL :Sammy Sosa
++MAP
+=VAL :hr
+=VAL :63
+=VAL :avg
+=VAL :0.288
+-MAP
+-MAP

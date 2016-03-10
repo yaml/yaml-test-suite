@@ -1,0 +1,29 @@
+=== Spec Example 2.16. Indentation determines scope
+from: http://www.yaml.org/spec/1.2/spec.html#id2761083
+tags: spec,block,scalar
+
++++ in-yaml
+name: Mark McGwire
+accomplishment: >
+  Mark set a major league
+  home run record in 1998.
+stats: |
+  65 Home Runs
+  0.278 Batting Average
+
++++ in-json
+{
+  "name": "Mark McGwire",
+  "accomplishment": "Mark set a major league home run record in 1998.\n",
+  "stats": "65 Home Runs\n0.278 Batting Average\n"
+}
+
++++ test-event
++MAP
+=VAL :name
+=VAL :Mark McGwire
+=VAL :accomplishment
+=VAL "Mark set a major league home run record in 1998.\n
+=VAL :stats
+=VAL "65 Home Runs\n0.278 Batting Average\n
+-MAP
