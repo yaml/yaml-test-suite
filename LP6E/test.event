@@ -7,12 +7,12 @@
 =VAL :c
 -SEQ
 +MAP
-=VAL :a
+=VAL "a
 =VAL :b
 =VAL :c
-=VAL :d
+=VAL "d
 =VAL :e
-=VAL :f
+=VAL "f
 -MAP
 +SEQ
 -SEQ
