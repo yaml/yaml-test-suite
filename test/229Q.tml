@@ -31,7 +31,7 @@ tags: block,sequence,mapping,spec
 =VAL :hr
 =VAL :65
 =VAL :avg
-=VAL 0.278
+=VAL :0.278
 -MAP
 +MAP
 =VAL :name

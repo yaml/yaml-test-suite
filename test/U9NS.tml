@@ -15,7 +15,6 @@ action: grand slam
 ...
 
 +++ test-event
-+DOC
 +MAP
 =VAL :time
 =VAL :20:03:20
@@ -34,4 +33,3 @@ action: grand slam
 =VAL :action
 =VAL :grand slam
 -MAP
--DOC

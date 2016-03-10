@@ -15,7 +15,6 @@ tags: spec,document
 - St Louis Cardinals
 
 +++ test-event
-+DOC
 +SEQ
 =VAL :Mark McGwire
 =VAL :Sammy Sosa
@@ -27,4 +26,3 @@ tags: spec,document
 =VAL :Chicago Cubs
 =VAL :St Louis Cardinals
 -SEQ
--DOC
