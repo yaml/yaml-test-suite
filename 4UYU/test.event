@@ -1,5 +1,5 @@
 +STR
 +DOC
-=VAL "foo: bar\\": baz
+=VAL "foo: bar": baz
 -DOC
 -STR
