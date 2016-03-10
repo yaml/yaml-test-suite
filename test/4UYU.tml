@@ -1,0 +1,9 @@
+=== Colon in Double Quoted String
+from: NimYAML tests
+tags: scalar
+
++++ in-yaml
+"foo: bar\": baz"
+
++++ test-event
+=VAL :foo: bar\\": baz

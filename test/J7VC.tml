@@ -1,0 +1,20 @@
+=== Empty Lines Between Mapping Elements
+from: NimYAML tests
+tags: whitespace,mapping,block
+
++++ in-yaml
+1: 2
+
+
+3: 4
+
++++ in-json
+{ "1": 2, "3": 4 }
+
++++ test-event
++MAP
+=VAL :1
+=VAL :2
+=VAL :3
+=VAL :4
+-MAP

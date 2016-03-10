@@ -1,0 +1,25 @@
+=== Tags on Empty Scalars
+from: NimYAML tests
+tags: tags,scalar
+
++++ in-yaml
+- !!str
+-
+  !!null : a
+  b: !!str
+- !!str : !!null
+
++++ test-event
++SEQ
+=VAL <tag:yaml.org,2002:str> :
++MAP
+=VAL <tag:yaml.org,2002:null> :
+=VAL :a
+=VAL :b
+=VAL <tag:yaml.org,2002:str> :
+-MAP
++MAP
+=VAL <tag:yaml.org,2002:str> :
+=VAL <tag:yaml.org,2002:null> :
+-MAP
+-SEQ

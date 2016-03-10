@@ -1,0 +1,18 @@
+=== Empty Lines at End of Document
+from: NimYAML tests
+tags: whitespace
+
++++ in-yaml
+:
+
+
+\
+
++++ in-json
+{ "": "" }
+
++++ test-event
++MAP
+=VAL :
+=VAL :
+-MAP
