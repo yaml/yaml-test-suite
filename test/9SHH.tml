@@ -1,0 +1,21 @@
+=== Spec Example 5.8. Quoted Scalar Indicators
+from: http://www.yaml.org/spec/1.2/spec.html#id2773890
+tags: scalar
+
++++ in-yaml
+single: 'text'
+double: "text"
+
++++ in-json
+{
+  "single": "text",
+  "double": "text"
+}
+
++++ test-event
++MAP
+=VAL :single
+=VAL "text
+=VAL :double
+=VAL "text
+-MAP

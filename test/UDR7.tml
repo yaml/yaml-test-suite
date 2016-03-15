@@ -1,0 +1,32 @@
+=== Spec Example 5.4. Flow Collection Indicators
+from: http://www.yaml.org/spec/1.2/spec.html#id2772813
+tags: flow,sequence,mapping
+
++++ in-yaml
+sequence: [ one, two, ]
+mapping: { sky: blue, sea: green }
+
++++ in-json
+{
+  "sequence" ["one", "two"],
+  "mapping": {
+    "sky": "blue",
+    "sea": "green"
+  }
+}
+
++++ test-event
++MAP
+=VAL :sequence
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
+=VAL :mapping
++MAP
+=VAL :sky
+=VAL :blue
+=VAL :sea
+=VAL :green
+-MAP
+-MAP

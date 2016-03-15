@@ -1,0 +1,10 @@
+=== Spec Example 5.5. Comment Indicator
+from: http://www.yaml.org/spec/1.2/spec.html#id2773032
+tags: comment,document
+
++++ in-yaml
+# Comment only.
+
++++ test-event
++STR
+-STR
