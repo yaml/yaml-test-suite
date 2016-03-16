@@ -8,4 +8,4 @@ tags: spec,document,tags
 !e!foo "bar"
 
 +++ test-event
-=VAL <tag:example.com,2000:app/foo "bar
+=VAL <tag:example.com,2000:app/foo> "bar

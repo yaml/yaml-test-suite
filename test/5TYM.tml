@@ -14,7 +14,7 @@ tags: spec,document,tags
 +++ test-event
 +STR
 +DOC
-=VAL <!my-light> :flourescent
+=VAL <!my-light> :fluorescent
 -DOC
 +DOC
 =VAL <!my-light> :green
