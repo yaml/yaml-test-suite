@@ -1,0 +1,13 @@
+=== Spec Example 6.10. Comment Lines
+from: http://www.yaml.org/spec/1.2/spec.html#id2780544
+tags: spec,comment
+
++++ in-yaml
+  # Comment
+   
+
+\
+
++++ test-event
++STR
+-STR

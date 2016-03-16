@@ -1,0 +1,22 @@
+=== Spec Example 6.21. Local Tag Prefix
+from: http://www.yaml.org/spec/1.2/spec.html#id2783499
+tags: spec,document,tags
+
++++ in-yaml
+%TAG !m! !my-
+--- # Bulb here
+!m!light fluorescent
+...
+%TAG !m! !my-
+--- # Color here
+!m!light green
+
++++ test-event
++STR
++DOC
+=VAL <!my-light> :flourescent
+-DOC
++DOC
+=VAL <!my-light> :green
+-DOC
+-STR

@@ -1,0 +1,11 @@
+=== Spec Example 6.13. Reserved Directives
+from: http://www.yaml.org/spec/1.2/spec.html#id2781445
+tags: spec,document
+
++++ in-yaml
+%FOO  bar baz # Should be ignored
+              # with a warning.
+--- "foo"
+
++++ test-event
+=VAL "foo

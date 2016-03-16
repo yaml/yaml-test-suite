@@ -1,0 +1,15 @@
+=== Spec Example 6.6. Line Folding
+from: http://www.yaml.org/spec/1.2/spec.html#id2779289
+tags: spec,whitespace,scalar
+
++++ in-yaml
+>-
+  trimmed
+  
+ 
+
+  as
+  space
+
++++ test-event
+=VAL "trimmed\n\n\nas space

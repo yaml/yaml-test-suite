@@ -1,0 +1,26 @@
+=== Spec Example 6.3. Separation Spaces
+from: http://www.yaml.org/spec/1.2/spec.html#id2778394
+tags: spec,block,whitespace
+
++++ in-yaml
+- foo:	 bar
+- - baz
+  -	baz
+
++++ in-json
+[
+  {"foo": "bar"},
+  ["baz", "baz"]
+]
+
++++ test-event
++SEQ
++MAP
+=VAL :foo
+=VAL :bar
+-MAP
++SEQ
+=VAL :baz
+=VAL :baz
+-SEQ
+-SEQ

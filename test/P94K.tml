@@ -1,0 +1,19 @@
+=== Spec Example 6.11. Multi-Line Comments
+from: http://www.yaml.org/spec/1.2/spec.html#id2780696
+tags: spec,comment
+
++++ in-yaml
+key:    # Comment
+        # lines
+  value
+
+\
+
++++ in-json
+{ "key": "value" }
+
++++ test-event
++MAP
+=VAL :key
+=VAL :value
+-MAP

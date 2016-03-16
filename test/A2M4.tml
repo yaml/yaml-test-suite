@@ -1,0 +1,29 @@
+=== Spec Example 6.2. Indentation Indicators
+from: http://www.yaml.org/spec/1.2/spec.html#id2778101
+tags: spec,block,indent
+
++++ in-yaml
+? a
+: -	b
+  -  -	c
+     - d
+
++++ in-json
+{
+  "a": [
+    "b",
+    ["c", "d"]
+  ]
+}
+
++++ test-event
++MAP
+=VAL :a
++SEQ
+=VAL :b
++SEQ
+=VAL :c
+=VAL :d
+-SEQ
+-SEQ
+-MAP
