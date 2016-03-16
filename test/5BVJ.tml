@@ -1,6 +1,6 @@
 === Spec Example 5.7. Block Scalar Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2773653
-tags: block,scalar
+tags: spec,block,scalar
 
 +++ in-yaml
 literal: |

@@ -1,0 +1,25 @@
+=== Spec Example 5.12. Tabs and Spaces
+from: http://www.yaml.org/spec/1.2/spec.html#id2775350
+tags: spec,whitespace
+
++++ in-yaml
+# Tabs and spaces
+quoted: "Quoted 	"
+block:	|
+  void main() {
+  	printf("Hello, world!\n");
+  }
+
++++ in-json
+{
+  "quoted": "Quoted \t",
+  "block": "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
+}
+
++++ test-event
++MAP
+=VAL :quoted
+=VAL "Quoted \t
+=VAL :block
+=VAL "void main() {\n\tprintf("Hello, world!\\n");\n}\n
+-MAP
