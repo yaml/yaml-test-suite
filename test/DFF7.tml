@@ -19,7 +19,9 @@ implicit: entry,
 +++ test-event
 +MAP
 =VAL :explicit
+=VAL :entry
 =VAL :implicit
+=VAL :entry
 =VAL :
 =VAL :
 -MAP
