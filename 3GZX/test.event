@@ -7,7 +7,7 @@
 =ALI &anchor
 =VAL :Override anchor
 =VAL &anchor :Bar
-=VAL :Reuse anchor:
+=VAL :Reuse anchor
 =ALI &anchor
 -MAP
 -DOC
