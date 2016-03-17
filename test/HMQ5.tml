@@ -1,0 +1,16 @@
+=== Spec Example 6.23. Node Properties
+from: http://www.yaml.org/spec/1.2/spec.html#id2783940
+tags: spec,tags,anchors
+
++++ in-yaml
+!!str &a1 "foo":
+  !!str bar
+&a2 baz : *a1
+
++++ test-event
++MAP
+=VAL <tag:yaml.org,2002:str> &a1 "foo
+=VAL <tag:yaml.org,2002:str> :bar
+=VAL &a2 :baz
+=ALI &a1
+-MAP
