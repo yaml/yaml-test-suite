@@ -1,0 +1,47 @@
+=== Spec Example 7.10. Plain Characters
+from: http://www.yaml.org/spec/1.2/spec.html#id2789510
+tags: spec,block,flow,sequence,scalar
+
++++ in-yaml
+# Outside flow collection:
+- ::vector
+- ": - ()"
+- Up, up, and away!
+- -123
+- http://example.com/foo#bar
+# Inside flow collection:
+- [ ::vector,
+  ": - ()",
+  "Up, up and away!",
+  -123,
+  http://example.com/foo#bar ]
+
++++ in-json
+[
+  "::vector",
+  ": - ()",
+  "Up, up, and away!",
+  "-123",
+  "http://example.com/foo#bar",
+  [
+    "::vector",
+    "Up, up and away!",
+    "-123",
+    "http://example.com/foo#bar"
+  ]
+]
+
++++ test-event
++SEQ
+=VAL :::vector
+=VAL ": - ()
+=VAL :Up, up and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
++SEQ
+=VAL "::vector
+=VAL ": - ()
+=VAL "Up, up and away!
+=VAL :http://example.com/foo#bar
+-SEQ
+-SEQ
