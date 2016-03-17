@@ -1,0 +1,33 @@
+=== Spec Example 7.21. Single Pair Implicit Entries
+from: http://www.yaml.org/spec/1.2/spec.html#id2792785
+tags: spec,flow,mapping
+
++++ in-yaml
+- [ YAML : separate ]
+- [ : empty key entry ]
+- [ {JSON: like}:adjacent ]
+
++++ test-event
++SEQ
++SEQ
++MAP
+=VAL :YAML
+=VAL :separate
+-MAP
+-SEQ
++SEQ
++MAP
+=VAL :
+=VAL :empty key entry
+-MAP
+-SEQ
++SEQ
++MAP
++MAP
+=VAL :JSON
+=VAL :like
+-MAP
+=VAL :adjacent
+-MAP
+-SEQ
+-SEQ

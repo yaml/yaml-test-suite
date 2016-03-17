@@ -1,0 +1,20 @@
+=== Spec Example 7.20. Single Pair Explicit Entry
+from: http://www.yaml.org/spec/1.2/spec.html#id2792424
+tags: spec,flow,mapping
+
++++ in-yaml
+[
+? foo
+ bar : baz
+]
+
++++ in-json
+[ { "foo bar": "baz"} ]
+
++++ test-event
++SEQ
++MAP
+=VAL :foo bar
+=VAL :baz
+-MAP
+-SEQ
