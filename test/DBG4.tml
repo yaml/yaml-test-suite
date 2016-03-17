@@ -35,7 +35,7 @@ tags: spec,block,flow,sequence,scalar
 +SEQ
 =VAL :::vector
 =VAL ": - ()
-=VAL :Up, up and away!
+=VAL :Up, up, and away!
 =VAL :-123
 =VAL :http://example.com/foo#bar
 +SEQ
