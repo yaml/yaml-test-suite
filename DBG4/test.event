@@ -7,7 +7,7 @@
 =VAL :-123
 =VAL :http://example.com/foo#bar
 +SEQ
-=VAL "::vector
+=VAL :::vector
 =VAL ": - ()
 =VAL "Up, up and away!
 =VAL :http://example.com/foo#bar
