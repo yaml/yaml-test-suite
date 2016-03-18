@@ -6,7 +6,7 @@
 =VAL :clip
 =VAL "# text\n
 =VAL :keep
-=VAL "# text\n
+=VAL "# text\n\n
 -MAP
 -DOC
 -STR
