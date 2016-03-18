@@ -27,7 +27,7 @@ keep: |+
 {
   "strip": "# text",
   "clip": "# text\n",
-  "keep": "# text\n"
+  "keep": "# text\n\n"
 }
 
 +++ test-event
@@ -37,5 +37,5 @@ keep: |+
 =VAL :clip
 =VAL "# text\n
 =VAL :keep
-=VAL "# text\n
+=VAL "# text\n\n
 -MAP
