@@ -1,0 +1,13 @@
+=== Spec Example 8.7. Literal Scalar
+from: http://www.yaml.org/spec/1.2/spec.html#id2795789
+tags: spec,block,scalar
+
++++ in-yaml
+|
+ literal
+ 	text
+
+\
+
++++ test-event
+=VAL "literal\n\ttext\n

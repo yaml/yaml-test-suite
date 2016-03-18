@@ -1,0 +1,17 @@
+=== Spec Example 8.8. Literal Content
+from: http://www.yaml.org/spec/1.2/spec.html#id2796118
+tags: spec,block,scalar,comment
+
++++ in-yaml
+|
+ 
+  
+  literal
+   
+  
+  text
+
+ # Comment
+
++++ test-event
+=VAL "\n\nliteral\n \n\ntext\n

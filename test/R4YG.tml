@@ -1,0 +1,32 @@
+=== Spec Example 8.2. Block Indentation Indicator
+from: http://www.yaml.org/spec/1.2/spec.html#id2794311
+tags: spec,block,scalar
+
++++ in-yaml
+- |
+ detected
+- >
+ 
+  
+  # detected
+- |1
+  explicit
+- >
+ 	
+ detected
+
++++ in-json
+[
+  "detected\n",
+  "\n\n# detected\n",
+  " explicit\n",
+  "\t detected\n"
+]
+
++++ test-event
++SEQ
+=VAL "detected\n
+=VAL "\n\n# detected\n
+=VAL " explicit\n
+=VAL "\t detected\n
+-SEQ

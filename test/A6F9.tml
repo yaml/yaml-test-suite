@@ -1,0 +1,28 @@
+=== Spec Example 8.4. Chomping Final Line Break
+from: http://www.yaml.org/spec/1.2/spec.html#id2795034
+tags: spec,block,scalar
+
++++ in-yaml
+strip: |-
+  text
+clip: |
+  text
+keep: |+
+  text
+
++++ in-json
+{
+  "strip": "text",
+  "clip": "text\n",
+  "keep": "text\n"
+}
+
++++ test-event
++MAP
+=VAL :strip
+=VAL "text
+=VAL :clip
+=VAL "text\n
+=VAL :keep
+=VAL "text\n
+-MAP

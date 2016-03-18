@@ -1,0 +1,33 @@
+=== Spec Example 8.15. Block Sequence Entry Types
+from: http://www.yaml.org/spec/1.2/spec.html#id2797944
+tags: spec,block,sequence
+
++++ in-yaml
+- # Empty
+- |
+ block node
+- - one # Compact
+  - two # sequence
+- one: two # Compact mapping
+
++++ in-json
+[
+  "",
+  "block node\n",
+  [ "one", "two" ],
+  { "one": "two" }
+]
+
++++ test-event
++SEQ
+=VAL :
+=VAL "block node\n
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
++MAP
+=VAL :one
+=VAL :two
+-MAP
+-SEQ

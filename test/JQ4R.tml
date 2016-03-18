@@ -1,0 +1,28 @@
+=== Spec Example 8.14. Block Sequence
+from: http://www.yaml.org/spec/1.2/spec.html#id2797596
+tags: spec,block,sequence
+
++++ in-yaml
+block sequence:
+  - one
+  - two : three
+
++++ in-json
+{
+  "block sequence": [
+    "one",
+    { "two": "three" }
+  ]
+}
+
++++ test-event
++MAP
+=VAL :block sequence
++SEQ
+=VAL :one
++MAP
+=VAL :two
+=VAL :three
+-MAP
+-SEQ
+-MAP

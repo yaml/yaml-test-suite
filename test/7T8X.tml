@@ -1,0 +1,24 @@
+=== Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines
+from: http://www.yaml.org/spec/1.2/spec.html#id2796543
+tags: spec,block,scalar,comment
+
++++ in-yaml
+>
+
+ folded
+ line
+
+ next
+ line
+   * bullet
+
+   * list
+   * lines
+
+ last
+ line
+
+# Comment
+
++++ test-event
+=VAL "\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n
