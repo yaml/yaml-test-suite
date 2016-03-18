@@ -1,0 +1,6 @@
+[
+  "",
+  "block node\n",
+  [ "one", "two" ],
+  { "one": "two" }
+]
