@@ -1,6 +1,6 @@
 literal: |2
   value
-folded:↓
+folded:
    !foo
   >1
  value
