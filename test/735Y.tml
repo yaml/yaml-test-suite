@@ -1,0 +1,28 @@
+=== Spec Example 8.20. Block Node Types
+from: http://www.yaml.org/spec/1.2/spec.html#id2799426
+tags: spec,block
+
++++ in-yaml
+-
+  "flow in block"
+- >
+ Block scalar
+- !!map # Block collection
+  foo : bar
+
++++ in-json
+[
+  "flow in block",
+  "Block scalar\n",
+  { "foo": "bar" }
+]
+
++++ test-event
++SEQ
+=VAL "flow in block
+=VAL "Block scalar\n"
++MAP <tag:yaml.org,2002:map>
+=VAL :foo
+=VAL :bar
+-MAP
+-SEQ

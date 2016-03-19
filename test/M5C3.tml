@@ -1,0 +1,25 @@
+=== Spec Example 8.21. Block Scalar Nodes
+from: http://www.yaml.org/spec/1.2/spec.html#id2799693
+tags: spec,block
+
++++ in-yaml
+literal: |2
+  value
+folded:↓
+   !foo
+  >1
+ value
+
++++ in-json
+{
+  "literal": "value\n",
+  "folded": "value\n"
+}
+
++++ test-event
++MAP
+=VAL :literal
+=VAL "value\n
+=VAL :folded
+=VAL <!foo> "value\n
+-MAP

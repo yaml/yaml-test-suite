@@ -1,0 +1,22 @@
+=== Spec Example 9.3. Bare Documents
+from: http://www.yaml.org/spec/1.2/spec.html#id2801226
+tags: spec,document
+
++++ in-yaml
+Bare
+document
+...
+# No document
+...
+|
+%!PS-Adobe-2.0 # Not the first line
+
++++ test-event
++STR
++DOC
+=VAL :Bare document
+-DOC
++DOC
+=VAL "%!PS-Adobe-2.0
+-DOC
+-STR

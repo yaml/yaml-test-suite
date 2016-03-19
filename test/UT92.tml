@@ -1,0 +1,24 @@
+=== Spec Example 9.4. Explicit Documents
+from: http://www.yaml.org/spec/1.2/spec.html#id2801448
+tags: spec,document
+
++++ in-yaml
+---
+{ matches
+% : 20 }
+...
+---
+# Empty
+...
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :matches %
+=VAL :20
+-MAP
+-DOC
++DOC
+-DOC
+-STR

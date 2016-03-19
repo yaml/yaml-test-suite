@@ -1,0 +1,27 @@
+=== Spec Example 9.6. Stream
+from: http://www.yaml.org/spec/1.2/spec.html#id2801896
+tags: spec,document
+
++++ in-yaml
+Document
+---
+# Empty
+...
+%YAML 1.2
+---
+matches %: 20
+
++++ test-event
++STR
++DOC
+=VAL :Document
+-DOC
++DOC
+-DOC
++DOC
++MAP
+=VAL :matches %
+=VAL :20
+-MAP
+-DOC
+-STR
