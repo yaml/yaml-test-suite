@@ -1,0 +1,20 @@
+=== Fake markers in flow style
+from: NimYAML tests
+tags: flow,edge
+
++++ in-yaml
+[
+--- ,
+...
+]
+
++++ in-json
+[ "---", "..." ]
+
++++ test-event
++STR
++SEQ
+=VAL :---
+=VAL :...
+-SEQ
+-STR
