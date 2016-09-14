@@ -8,7 +8,6 @@ strip: >-
 clip: >
 
 keep: |+
-
 \
 
 +++ in-json
