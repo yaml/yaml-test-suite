@@ -4,7 +4,7 @@
 =VAL "detected\n
 =VAL "\n\n# detected\n
 =VAL " explicit\n
-=VAL "\t detected\n
+=VAL "\t\ndetected\n
 -SEQ
 -DOC
 -STR
