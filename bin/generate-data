@@ -97,7 +97,8 @@ sub parse_error {
 sub _read {
   my ($self, $file) = @_;
   local $/;
-  open my $in, '<', $file or die;
+  open my $in, '<', $file
+    or die "Can't open '$file' for input";
   \ <>;
 }
 
@@ -106,7 +107,8 @@ sub _write {
   if ($file =~ m!(.*)/!) {
     mkpath "$1";
   }
-  open my $out, '>', $file or die;
+  open my $out, '>', $file
+    or die "Can't open '$file' for output";
   print $out $text;
 }
 
