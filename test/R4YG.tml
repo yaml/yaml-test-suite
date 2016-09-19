@@ -1,6 +1,6 @@
 === Spec Example 8.2. Block Indentation Indicator
 from: http://www.yaml.org/spec/1.2/spec.html#id2794311
-tags: spec,block,scalar
+tags: spec,block,scalar,libyaml
 
 +++ in-yaml
 - |
@@ -28,5 +28,5 @@ tags: spec,block,scalar
 =VAL "detected\n
 =VAL "\n\n# detected\n
 =VAL " explicit\n
-=VAL "\t detected\n
+=VAL "\t\ndetected\n
 -SEQ
