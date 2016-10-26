@@ -13,6 +13,8 @@ help:
 	@echo 'guide - Generate guide/ files from doc/guide/ files'
 	@echo 'help   - Show help'
 
+all: doc data guide
+
 doc: ReadMe.pod
 
 ReadMe.pod: doc/yaml-dev-kit.swim
@@ -73,3 +75,9 @@ guide-push:
 
 clean:
 	rm -fr data guide
+
+docker-build:
+	docker build -t yaml/yaml-test-suite .
+
+docker-shell: docker-build
+	docker run -it yaml/yaml-test-suite bash
