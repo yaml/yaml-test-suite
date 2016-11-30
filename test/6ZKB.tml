@@ -17,6 +17,7 @@ matches %: 20
 =VAL :Document
 -DOC
 +DOC
+=VAL :
 -DOC
 +DOC
 +MAP
