@@ -12,8 +12,6 @@ Document
 matches %: 20
 
 +++ test-event
-+STR
-+DOC
 =VAL :Document
 -DOC
 +DOC
@@ -24,5 +22,3 @@ matches %: 20
 =VAL :matches %
 =VAL :20
 -MAP
--DOC
--STR
