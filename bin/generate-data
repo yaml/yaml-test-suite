@@ -88,6 +88,11 @@ sub process_file {
       $self->_link("test/tags/$tag/$id.tml", "../../$id.tml");
     }
   }
+
+  if (my $skip = $self->{meta}{skip}) {
+    my $output = join '', map "$_\n", split /\s*,\s*/, $skip;
+    $self->_write("data/$id/skip", $output);
+  }
 }
 
 sub parse_error {
