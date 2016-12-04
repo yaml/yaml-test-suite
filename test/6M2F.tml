@@ -1,6 +1,7 @@
 === Aliases in Explicit Block Mapping
 from: NimYAML tests
 tags: mapping,aliases
+skip: libyaml-parser
 
 +++ in-yaml
 ? &a a

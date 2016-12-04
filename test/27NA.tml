@@ -1,6 +1,7 @@
 === Spec Example 5.9. Directive Indicator
 from: http://www.yaml.org/spec/1.2/spec.html#id2774058
 tags: spec,document
+skip: libyaml-parser
 
 +++ in-yaml
 %YAML 1.2

@@ -1,6 +1,7 @@
 === Block Mapping with Missing Keys
 from: NimYAML tests
 tags: mapping,block
+skip: libyaml-parser
 
 +++ in-yaml
 : a

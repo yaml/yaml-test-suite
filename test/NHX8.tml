@@ -1,6 +1,7 @@
 === Empty Lines at End of Document
 from: NimYAML tests
 tags: whitespace
+skip: libyaml-parser
 
 +++ in-yaml
 :

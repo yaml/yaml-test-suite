@@ -1,6 +1,7 @@
 === Spec Example 9.6. Stream
 from: http://www.yaml.org/spec/1.2/spec.html#id2801896
 tags: spec,document
+skip: libyaml-parser
 
 +++ in-yaml
 Document

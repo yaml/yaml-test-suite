@@ -1,6 +1,7 @@
 === Spec Example 7.17. Flow Mapping Separate Values
 from: http://www.yaml.org/spec/1.2/spec.html#id2791704
 tags: spec,flow,mapping
+skip: libyaml-parser
 
 +++ in-yaml
 {

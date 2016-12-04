@@ -1,6 +1,7 @@
 === Fake markers in flow style
 from: NimYAML tests
 tags: flow,edge
+skip: libyaml-parser
 
 +++ in-yaml
 [
