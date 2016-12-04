@@ -3,7 +3,7 @@
 +SEQ
 =VAL "12
 =VAL :12
-=VAL "12
+=VAL <!> :12
 -SEQ
 -DOC
 -STR

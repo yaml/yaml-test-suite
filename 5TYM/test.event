@@ -1,8 +1,8 @@
 +STR
-+DOC
++DOC ---
 =VAL <!my-light> :fluorescent
--DOC
-+DOC
+-DOC ...
++DOC ---
 =VAL <!my-light> :green
 -DOC
 -STR

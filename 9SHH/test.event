@@ -2,7 +2,7 @@
 +DOC
 +MAP
 =VAL :single
-=VAL "text
+=VAL 'text
 =VAL :double
 =VAL "text
 -MAP

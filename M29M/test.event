@@ -2,7 +2,7 @@
 +DOC
 +MAP
 =VAL :a
-=VAL "ab\n\ncd\nef\n
+=VAL |ab\n\ncd\nef\n
 -MAP
--DOC
+-DOC ...
 -STR

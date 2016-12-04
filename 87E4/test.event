@@ -1,10 +1,10 @@
 +STR
 +DOC
 +MAP
-=VAL "implicit block key
+=VAL 'implicit block key
 +SEQ
 +MAP
-=VAL "implicit flow key
+=VAL 'implicit flow key
 =VAL :value
 -MAP
 -SEQ

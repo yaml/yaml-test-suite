@@ -2,11 +2,11 @@
 +DOC
 +MAP
 =VAL :strip
-=VAL "text
+=VAL |text
 =VAL :clip
-=VAL "text\n
+=VAL |text\n
 =VAL :keep
-=VAL "text\n
+=VAL |text\n
 -MAP
 -DOC
 -STR

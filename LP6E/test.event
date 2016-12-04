@@ -10,7 +10,7 @@
 =VAL "a
 =VAL :b
 =VAL :c
-=VAL "d
+=VAL 'd
 =VAL :e
 =VAL "f
 -MAP

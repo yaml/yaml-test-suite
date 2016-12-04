@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +MAP <tag:clarkevans.com,2002:invoice>
 =VAL :invoice
 =VAL :34843
@@ -14,7 +14,7 @@
 =VAL :address
 +MAP
 =VAL :lines
-=VAL "458 Walkman Dr.\nSuite #292\n
+=VAL |458 Walkman Dr.\nSuite #292\n
 =VAL :city
 =VAL :Royal Oak
 =VAL :state
@@ -24,7 +24,7 @@
 -MAP
 -MAP
 =VAL :ship-to
-=ALI &id001
+=ALI *id001
 =VAL :product
 +SEQ
 +MAP

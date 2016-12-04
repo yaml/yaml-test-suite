@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +MAP
 =VAL :time
 =VAL :20:03:20
@@ -8,8 +8,8 @@
 =VAL :action
 =VAL :strike (miss)
 -MAP
--DOC
-+DOC
+-DOC ...
++DOC ---
 +MAP
 =VAL :time
 =VAL :20:03:47
@@ -18,5 +18,5 @@
 =VAL :action
 =VAL :grand slam
 -MAP
--DOC
+-DOC ...
 -STR

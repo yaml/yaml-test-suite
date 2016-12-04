@@ -4,7 +4,7 @@
 =VAL &a: :key
 =VAL &a :value
 =VAL :foo
-=ALI &a:
+=ALI *a:
 -MAP
 -DOC
 -STR

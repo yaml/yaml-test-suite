@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +MAP
 =VAL :hr
 +SEQ
@@ -8,7 +8,7 @@
 -SEQ
 =VAL :rbi
 +SEQ
-=ALI &SS
+=ALI *SS
 =VAL :Ken Griffey
 -SEQ
 -MAP

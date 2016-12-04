@@ -1,12 +1,12 @@
 +STR
-+DOC
++DOC ---
 +SEQ
 =VAL :Mark McGwire
 =VAL :Sammy Sosa
 =VAL :Ken Griffey
 -SEQ
 -DOC
-+DOC
++DOC ---
 +SEQ
 =VAL :Chicago Cubs
 =VAL :St Louis Cardinals

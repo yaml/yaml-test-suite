@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +SEQ
 =VAL <!local> :foo
 =VAL <tag:yaml.org,2002:str> :bar

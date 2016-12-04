@@ -2,7 +2,7 @@
 +DOC
 +SEQ
 =VAL "double quoted
-=VAL "single quoted
+=VAL 'single quoted
 =VAL :plain text
 +SEQ
 =VAL :nested

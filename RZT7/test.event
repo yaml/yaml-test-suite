@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +MAP
 =VAL :Time
 =VAL :2001-11-23 15:01:42 -5
@@ -9,7 +9,7 @@
 =VAL :This is an error message for the log file
 -MAP
 -DOC
-+DOC
++DOC ---
 +MAP
 =VAL :Time
 =VAL :2001-11-23 15:02:31 -5
@@ -19,7 +19,7 @@
 =VAL :A slightly different error message.
 -MAP
 -DOC
-+DOC
++DOC ---
 +MAP
 =VAL :Date
 =VAL :2001-11-23 15:03:17 -5
@@ -35,7 +35,7 @@
 =VAL :line
 =VAL :23
 =VAL :code
-=VAL "x = MoreObject("345\\n")\n
+=VAL |x = MoreObject("345\\n")\n
 -MAP
 +MAP
 =VAL :file
@@ -43,7 +43,7 @@
 =VAL :line
 =VAL :58
 =VAL :code
-=VAL "foo = bar
+=VAL |foo = bar
 -MAP
 -SEQ
 -MAP

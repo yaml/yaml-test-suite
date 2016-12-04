@@ -1,9 +1,9 @@
 +STR
 +DOC
 +SEQ
-=VAL <tag:yaml.org,2002:str> &a :a
+=VAL &a <tag:yaml.org,2002:str> :a
 =VAL <tag:yaml.org,2002:int> :2
-=VAL <tag:yaml.org,2002:int> &c :4
+=VAL &c <tag:yaml.org,2002:int> :4
 =VAL &d :d
 -SEQ
 -DOC

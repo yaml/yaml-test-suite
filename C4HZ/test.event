@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +SEQ <tag:clarkevans.com,2002:shape>
 +MAP <tag:clarkevans.com,2002:circle>
 =VAL :center
@@ -14,7 +14,7 @@
 -MAP
 +MAP <tag:clarkevans.com,2002:line>
 =VAL :start
-=ALI &ORIGIN
+=ALI *ORIGIN
 =VAL :finish
 +MAP
 =VAL :x
@@ -25,7 +25,7 @@
 -MAP
 +MAP <tag:clarkevans.com,2002:label>
 =VAL :start
-=ALI &ORIGIN
+=ALI *ORIGIN
 =VAL :color
 =VAL :0xFFEEBB
 =VAL :text

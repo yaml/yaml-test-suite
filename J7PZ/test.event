@@ -1,5 +1,5 @@
 +STR
-+DOC
++DOC ---
 +SEQ <tag:yaml.org,2002:omap>
 +MAP
 =VAL :Mark McGwire
