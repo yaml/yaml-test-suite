@@ -7,7 +7,6 @@ tags: spec,scalar,flow
   "implicit flow key" : value,
  ]
 
-
 +++ in-json
 {
   "implicit block key": [
