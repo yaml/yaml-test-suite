@@ -1,2 +1,3 @@
-data/
-guide/
+/data/
+/guide/
+/libyaml-parser/

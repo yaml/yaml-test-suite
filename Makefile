@@ -74,7 +74,7 @@ guide-push:
 	}
 
 clean:
-	rm -fr data guide
+	rm -fr data guide libyaml-parser
 
 docker-build:
 	docker build -t yaml/yaml-test-suite .
@@ -82,14 +82,11 @@ docker-build:
 docker-shell: docker-build
 	docker run -it yaml/yaml-test-suite bash
 
-# test: data libyaml-parser/libyaml-parser
-# 	bin/test-libyaml-parser.sh
-# 
-# data:
-# 	git clone $$(git config --get remote.origin.url) data --branch=data
-# 
-# libyaml-parser/libyaml-parser: libyaml-parser
-# 	(cd $<; make build)
-# 
-# libyaml-parser:
-# 	git clone https://github.com/ingydotnet/$@ $@
+test: data libyaml-parser/libyaml-parser
+	bin/test-libyaml-parser.sh
+
+libyaml-parser/libyaml-parser: libyaml-parser
+	(cd $<; make build)
+
+libyaml-parser:
+	git clone https://github.com/ingydotnet/$@ $@

@@ -19,7 +19,7 @@ for dir in "${dirs[@]}"; do
     fi
   fi
   echo ">>> $dir"
-  ./libyaml-parser/libyaml-parser "$dir/in.yaml" > test.out || {
+  ./libyaml-parser/libyaml-parser "$dir/in.yaml" > /tmp/test.out || {
     (
       set -x
       cat "$dir/in.yaml"
@@ -28,7 +28,7 @@ for dir in "${dirs[@]}"; do
     exit 1
   }
   ok=true
-  output="$(${DIFF:-diff} -u $dir/test.event test.out)" || ok=false
+  output="$(${DIFF:-diff} -u $dir/test.event /tmp/test.out)" || ok=false
   if ! $ok; then
     echo "$output"
     exit 1
