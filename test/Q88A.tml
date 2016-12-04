@@ -27,6 +27,6 @@ tags: spec,flow,sequence,mapping
 =VAL :b
 -MAP
 =VAL "a
-=VAL "b
+=VAL 'b
 =VAL :c
 -SEQ

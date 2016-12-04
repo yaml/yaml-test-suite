@@ -13,6 +13,6 @@ tags: spec,document,tags
 
 +++ test-event
 =VAL <!foo> "bar
--DOC
-+DOC
+-DOC ...
++DOC ---
 =VAL <tag:example.com,2000:app/foo> "bar

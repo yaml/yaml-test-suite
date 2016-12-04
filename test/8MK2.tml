@@ -9,4 +9,4 @@ tags: tags
 {"a"}
 
 +++ test-event
-=VAL "a
+=VAL <!> :a

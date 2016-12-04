@@ -10,4 +10,4 @@ tags: spec,block,scalar
 \
 
 +++ test-event
-=VAL "literal\n\ttext\n
+=VAL |literal\n\ttext\n

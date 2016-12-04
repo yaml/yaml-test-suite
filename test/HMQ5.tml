@@ -9,8 +9,8 @@ tags: spec,tags,anchors
 
 +++ test-event
 +MAP
-=VAL <tag:yaml.org,2002:str> &a1 "foo
+=VAL &a1 <tag:yaml.org,2002:str> "foo
 =VAL <tag:yaml.org,2002:str> :bar
 =VAL &a2 :baz
-=ALI &a1
+=ALI *a1
 -MAP

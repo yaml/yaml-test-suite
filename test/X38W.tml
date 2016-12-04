@@ -11,11 +11,11 @@ tags: flow,aliases
 =VAL :a
 =VAL &b :b
 -SEQ
-=ALI &b
-=ALI &a
+=ALI *b
+=ALI *a
 +SEQ
 =VAL :c
-=ALI &b
+=ALI *b
 =VAL :d
 -SEQ
 -MAP

@@ -21,7 +21,7 @@ tags: spec,block,mapping
 +MAP
 =VAL :explicit key
 =VAL :
-=VAL "block key\n
+=VAL |block key\n
 +SEQ
 =VAL :one
 =VAL :two

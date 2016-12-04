@@ -12,4 +12,6 @@ tags: spec,scalar,literal,comment
 "\\//||\\/||\n// ||  ||__\n"
 
 +++ test-event
-=VAL "\\//||\\/||\n// ||  ||__\n
++DOC ---
+=VAL |\\//||\\/||\n// ||  ||__\n
+-DOC

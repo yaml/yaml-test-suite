@@ -9,4 +9,6 @@ tags: spec,block,scalar
   by a knee injury.
 
 +++ test-event
-=VAL "Mark McGwire's year was crippled by a knee injury.\n
++DOC ---
+=VAL >Mark McGwire's year was crippled by a knee injury.\n
+-DOC

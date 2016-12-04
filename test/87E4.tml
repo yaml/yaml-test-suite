@@ -16,10 +16,10 @@ tags: spec,flow,sequence,mapping
 
 +++ test-event
 +MAP
-=VAL "implicit block key
+=VAL 'implicit block key
 +SEQ
 +MAP
-=VAL "implicit flow key
+=VAL 'implicit flow key
 =VAL :value
 -MAP
 -SEQ

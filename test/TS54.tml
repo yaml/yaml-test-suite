@@ -13,4 +13,4 @@ tags: scalar
  gh
 
 +++ test-event
-=VAL "ab cd\nef\n\ngh\n
+=VAL >ab cd\nef\n\ngh\n

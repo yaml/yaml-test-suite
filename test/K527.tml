@@ -12,4 +12,4 @@ tags: spec,whitespace,scalar
   space
 
 +++ test-event
-=VAL "trimmed\n\n\nas space
+=VAL >trimmed\n\n\nas space

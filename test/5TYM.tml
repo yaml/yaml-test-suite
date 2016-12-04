@@ -12,7 +12,9 @@ tags: spec,document,tags
 !m!light green
 
 +++ test-event
++DOC ---
 =VAL <!my-light> :fluorescent
--DOC
-+DOC
+-DOC ...
++DOC ---
 =VAL <!my-light> :green
+-DOC

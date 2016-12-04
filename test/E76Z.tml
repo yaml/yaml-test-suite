@@ -10,6 +10,6 @@ tags: mapping,aliases
 +MAP
 =VAL &a :a
 =VAL &b :b
-=ALI &a
-=ALI &b
+=ALI *a
+=ALI *b
 -MAP

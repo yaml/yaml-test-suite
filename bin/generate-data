@@ -63,7 +63,10 @@ sub process_file {
   $output =~ s/^\\//gm;
   if ($file eq 'test.event') {
     if ($output !~ /\A\+STR\n/) {
-      $output = "+STR\n+DOC\n$output-DOC\n-STR\n";
+      if ($output !~ /\A\+DOC/) {
+        $output = "+DOC\n$output-DOC\n";
+      }
+      $output = "+STR\n$output-STR\n";
     }
   }
 

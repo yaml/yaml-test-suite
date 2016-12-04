@@ -12,6 +12,7 @@ tags: spec,mapping
 ? Ken Griff
 
 +++ test-event
++DOC ---
 +MAP <tag:yaml.org,2002:set>
 =VAL :Mark McGwire
 =VAL :
@@ -20,3 +21,4 @@ tags: spec,mapping
 =VAL :Ken Griff
 =VAL :
 -MAP
+-DOC

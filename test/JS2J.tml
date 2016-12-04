@@ -11,5 +11,5 @@ Second occurrence: *anchor
 =VAL :First occurrence
 =VAL &anchor :Value
 =VAL :Second occurrence
-=ALI &anchor
+=ALI *anchor
 -MAP

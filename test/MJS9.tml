@@ -11,4 +11,4 @@ tags: spec,scalar,whitespace
   baz
 
 +++ test-event
-=VAL "foo \n\n\t bar\n\nbaz\n
+=VAL >foo \n\n\t bar\n\nbaz\n

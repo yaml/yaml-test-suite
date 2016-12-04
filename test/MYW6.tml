@@ -10,4 +10,6 @@ tags: scalar
 ...
 
 +++ test-event
-=VAL "ab
++DOC
+=VAL |ab
+-DOC ...

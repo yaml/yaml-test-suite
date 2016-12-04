@@ -25,5 +25,5 @@ block: |
 =VAL :quoted
 =VAL "text lines
 =VAL :block
-=VAL "text\n \tlines\n
+=VAL |text\n \tlines\n
 -MAP

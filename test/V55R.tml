@@ -12,6 +12,6 @@ tags: sequence,aliases
 +SEQ
 =VAL &a :a
 =VAL &b :b
-=ALI &a
-=ALI &b
+=ALI *a
+=ALI *b
 -SEQ

@@ -21,4 +21,4 @@ tags: spec,block,scalar,comment
 # Comment
 
 +++ test-event
-=VAL "\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n
+=VAL >\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n

@@ -12,5 +12,5 @@ tags: mapping,aliases
 =VAL &a :a
 =VAL &b :b
 =VAL :
-=ALI &a
+=ALI *a
 -MAP

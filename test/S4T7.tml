@@ -10,7 +10,9 @@ aaa: bbb
 {"aaa":"bbb"}
 
 +++ test-event
++DOC
 +MAP
 =VAL :aaa
 =VAL :bbb
 -MAP
+-DOC ...

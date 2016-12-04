@@ -12,8 +12,8 @@ tags: spec,flow,tags,anchors
 +++ test-event
 +SEQ
 =VAL <tag:yaml.org,2002:str> "a
-=VAL "b
+=VAL 'b
 =VAL &anchor "c
-=ALI &anchor
+=ALI *anchor
 =VAL <tag:yaml.org,2002:str> :
 -SEQ

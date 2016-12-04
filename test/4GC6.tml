@@ -6,4 +6,4 @@ tags: spec,scalar
 'here''s to "quotes"'
 
 +++ test-event
-=VAL "here's to "quotes"
+=VAL 'here's to "quotes"

@@ -21,7 +21,7 @@ tags: spec,block,sequence
 +++ test-event
 +SEQ
 =VAL :
-=VAL "block node\n
+=VAL |block node\n
 +SEQ
 =VAL :one
 =VAL :two

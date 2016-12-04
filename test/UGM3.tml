@@ -34,6 +34,7 @@ comments:
     Billsmer @ 338-4338.
 
 +++ test-event
++DOC ---
 +MAP <tag:clarkevans.com,2002:invoice>
 =VAL :invoice
 =VAL :34843
@@ -48,7 +49,7 @@ comments:
 =VAL :address
 +MAP
 =VAL :lines
-=VAL "458 Walkman Dr.\nSuite #292\n
+=VAL |458 Walkman Dr.\nSuite #292\n
 =VAL :city
 =VAL :Royal Oak
 =VAL :state
@@ -58,7 +59,7 @@ comments:
 -MAP
 -MAP
 =VAL :ship-to
-=ALI &id001
+=ALI *id001
 =VAL :product
 +SEQ
 +MAP
@@ -89,3 +90,4 @@ comments:
 =VAL :comments
 =VAL :Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
 -MAP
+-DOC

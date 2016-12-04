@@ -13,9 +13,9 @@ Reuse anchor: *anchor
 =VAL :First occurrence
 =VAL &anchor :Foo
 =VAL :Second occurrence
-=ALI &anchor
+=ALI *anchor
 =VAL :Override anchor
 =VAL &anchor :Bar
 =VAL :Reuse anchor
-=ALI &anchor
+=ALI *anchor
 -MAP

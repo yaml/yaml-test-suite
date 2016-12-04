@@ -19,6 +19,7 @@ tags: spec,mapping
 ]
 
 +++ test-event
++DOC ---
 +SEQ <tag:yaml.org,2002:omap>
 +MAP
 =VAL :Mark McGwire
@@ -33,3 +34,4 @@ tags: spec,mapping
 =VAL :58
 -MAP
 -SEQ
+-DOC

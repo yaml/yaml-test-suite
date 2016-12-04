@@ -9,4 +9,4 @@ tags: spec,scalar
 	3rd non-empty '
 
 +++ test-event
-=VAL " 1st non-empty\n2nd non-empty 3rd non-empty 
+=VAL ' 1st non-empty\n2nd non-empty 3rd non-empty 

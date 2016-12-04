@@ -13,6 +13,7 @@ rbi:
   - Ken Griffey
 
 +++ test-event
++DOC ---
 +MAP
 =VAL :hr
 +SEQ
@@ -21,7 +22,8 @@ rbi:
 -SEQ
 =VAL :rbi
 +SEQ
-=ALI &SS
+=ALI *SS
 =VAL :Ken Griffey
 -SEQ
 -MAP
+-DOC

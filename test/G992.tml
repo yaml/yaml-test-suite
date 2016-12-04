@@ -10,4 +10,4 @@ tags: spec,block,scalar
 \
 
 +++ test-event
-=VAL "folded text\n
+=VAL >folded text\n

@@ -31,7 +31,7 @@ Not indented:
 =VAL :Not indented
 +MAP
 =VAL :By one space
-=VAL "By four\n  spaces\n
+=VAL |By four\n  spaces\n
 =VAL :Flow style
 +SEQ
 =VAL :By two

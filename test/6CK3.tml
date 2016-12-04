@@ -10,8 +10,10 @@ tags: spec,tags
 - !e!tag%21 baz
 
 +++ test-event
++DOC ---
 +SEQ
 =VAL <!local> :foo
 =VAL <tag:yaml.org,2002:str> :bar
 =VAL <tag:example.com,2000:app/tag!> :baz
 -SEQ
+-DOC

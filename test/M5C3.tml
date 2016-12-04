@@ -19,7 +19,7 @@ folded:
 +++ test-event
 +MAP
 =VAL :literal
-=VAL "value\n
+=VAL |value\n
 =VAL :folded
-=VAL <!foo> "value\n
+=VAL <!foo> >value\n
 -MAP

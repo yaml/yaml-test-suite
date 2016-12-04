@@ -29,6 +29,7 @@ tags: spec,mapping,sequence,block
 ]
 
 +++ test-event
++DOC ---
 +SEQ
 +MAP
 =VAL :item
@@ -49,3 +50,4 @@ tags: spec,mapping,sequence,block
 =VAL :1
 -MAP
 -SEQ
+-DOC

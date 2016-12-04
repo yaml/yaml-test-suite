@@ -14,4 +14,4 @@ tags: spec,block,scalar,comment
  # Comment
 
 +++ test-event
-=VAL "\n\nliteral\n \n\ntext\n
+=VAL |\n\nliteral\n \n\ntext\n

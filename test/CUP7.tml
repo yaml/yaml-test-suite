@@ -9,7 +9,7 @@ alias: *anchor
 +++ test-event
 +MAP
 =VAL :anchored
-=VAL <!local> &anchor :value
+=VAL &anchor <!local> :value
 =VAL :alias
-=ALI &anchor
+=ALI *anchor
 -MAP
