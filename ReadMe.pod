@@ -8,46 +8,9 @@ See http://github.com/ingydotnet/swim-pm#readme
 
 =head1 Name
 
-YAML Dev Kit - Resources for YAML Framework Developers
+YAML Test Suite - Comprehensive Test Suite for YAML
 
 =head1 Overview
-
-This is a set of resources that developers can refer to when developing
-software for YAML. It is intended to be used along with L<the YAML
-specification|http://www.yaml.org/spec/spec.html>.
-
-The kit includes:
-
-=over
-
-=item Implementation Guides
-
-A set of documents that cover all the known topics a YAML developer might need
-to deal with.
-
-=item Comprehensive Test Suite
-
-This is a data driven suite that is intended to cover every known situation of
-YAML processing.
-
-=item Interactive YAML Testing Tool
-
-A commandline tool that you can use to test out all the known YAML
-implementations.
-
-=back
-
-=head1 Implementation Guides
-
-So far there is:
-
-=over
-
-=item * L<YAML Loader Guide|https://github.com/ingydotnet/yaml-dev-kit/blob/guide/yaml-loader-guide.pod#readme>
-
-=back
-
-=head1 Comprehensive Test Suite
 
 This test suite is composed of (what will eventually be) 100s of test
 directories that each represent a specific situation for a YAML processor.
@@ -91,16 +54,5 @@ to use them.
 The tests are currently written in TestML under the C<test> directory on the
 C<master> branch. The test data is split into the separate files structure,
 and kept on the C<data> branch. This makes tests easier to groom.
-
-=head1 Interactive YAML Testing Tool
-
-Work has begun to create a Docker container image that has all known YAML
-implementations and tools pre-installed and that exposes a CLI to interact
-with it in interesting ways:
-
-    alias yt='docker run -it ingy/yt'
-    cat file.yaml | yt --ruby --json     # Load YAML with Ruby and dump as JSON
-    cat file.yaml | yt --python --event  # Show PyYAML event stream
-    yt --shell --perl --yamlxs           # Start a YAML Shell using Perl's YAML::XS
 
 =cut

@@ -1,0 +1,31 @@
+YAML Test Suite
+===============
+
+Comprehensive Test Suite for YAML
+
+= Overview
+
+This test suite is composed of (what will eventually be) 100s of test
+directories that each represent a specific situation for a YAML processor. Each
+test directory contains a number of related files, that test suites can be made
+to use in interesting ways. For example:
+
+* Metadata about the test
+  * Name (short phrase)
+  * Tags
+  * Description
+* Input YAML
+* Canonical Output YAML
+* Matching JSON
+* Token stream notation
+* Event stream notation
+* Error data
+* etc
+
+Not every test dir will have the same elements. Since the tests are just data,
+it is up to the framework using the tests to decide which tests to use and how
+to use them.
+
+The tests are currently written in TestML under the `test` directory on the
+`master` branch. The test data is split into the separate files structure, and
+kept on the `data` branch. This makes tests easier to groom.
