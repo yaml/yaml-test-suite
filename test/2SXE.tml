@@ -1,7 +1,6 @@
 === Anchors With Colon in Name
 from: Mailing List Discussion
 tags: edge,anchors
-skip: libyaml-parser
 
 +++ in-yaml
 &a: key: &a value

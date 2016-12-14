@@ -1,7 +1,6 @@
 === Spec Example 7.10. Plain Characters
 from: http://www.yaml.org/spec/1.2/spec.html#id2789510
 tags: spec,block,flow,sequence,scalar
-skip: libyaml-parser
 
 +++ in-yaml
 # Outside flow collection:

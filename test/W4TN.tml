@@ -1,7 +1,6 @@
 === Spec Example 9.5. Directives Documents
 from: http://www.yaml.org/spec/1.2/spec.html#id2801606
 tags: spec,document
-skip: libyaml-parser
 
 +++ in-yaml
 %YAML 1.2
