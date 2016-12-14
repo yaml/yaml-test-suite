@@ -11,6 +11,12 @@ tags: spec,mapping
 ? Sammy Sosa
 ? Ken Griff
 
++++ out-yaml
+--- !!set
+Mark McGwire:
+Sammy Sosa:
+Ken Griff:
+
 +++ test-event
 +DOC ---
 +MAP <tag:yaml.org,2002:set>

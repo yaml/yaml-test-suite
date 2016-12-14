@@ -11,6 +11,11 @@ block: |
   text
    	lines
 
++++ out-yaml
+plain: text lines
+quoted: "text lines"
+block: "text\n \tlines\n"
+
 +++ in-json
 {
   "plain": "text lines",

@@ -8,6 +8,12 @@ tags: tags,sequence
  - !!int 42
  - d
 
++++ out-yaml
+- a
+- b
+- 42
+- d
+
 +++ test-event
 +SEQ
 =VAL <tag:yaml.org,2002:str> :a

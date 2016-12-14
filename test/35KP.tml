@@ -12,6 +12,13 @@ tags: tags
 d
 e
 
++++ out-yaml
+--- !!map
+a: b
+--- !!seq
+- c
+--- !!str d e
+
 +++ test-event
 +DOC ---
 +MAP <tag:yaml.org,2002:map>

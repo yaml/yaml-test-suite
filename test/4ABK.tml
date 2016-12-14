@@ -10,6 +10,9 @@ omitted value:,
 : omitted key,
 }
 
++++ out-yaml
+x
+
 +++ in-json
 {
   "unquoted": "separate",
