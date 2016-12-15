@@ -3,7 +3,7 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2773032
 tags: spec,comment,document
 
 +++ in-yaml
-# Comment only.
+\# Comment only.
 
 +++ test-event
 +STR

@@ -5,7 +5,7 @@ tags: spec,document
 +++ in-yaml
 Document
 ---
-# Empty
+\# Empty
 ...
 %YAML 1.2
 ---

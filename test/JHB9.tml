@@ -3,13 +3,13 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2760493
 tags: spec,document
 
 +++ in-yaml
-# Ranking of 1998 home runs
+\# Ranking of 1998 home runs
 ---
 - Mark McGwire
 - Sammy Sosa
 - Ken Griffey
 
-# Team ranking
+\# Team ranking
 ---
 - Chicago Cubs
 - St Louis Cardinals

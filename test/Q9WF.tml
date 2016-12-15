@@ -4,7 +4,7 @@ tags: spec,comment,whitespace
 
 +++ in-yaml
 { first: Sammy, last: Sosa }:
-# Statistics:
+\# Statistics:
   hr:  # Home runs
      65
   avg: # Average

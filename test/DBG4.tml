@@ -3,13 +3,13 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2789510
 tags: spec,block,flow,sequence,scalar
 
 +++ in-yaml
-# Outside flow collection:
+\# Outside flow collection:
 - ::vector
 - ": - ()"
 - Up, up, and away!
 - -123
 - http://example.com/foo#bar
-# Inside flow collection:
+\# Inside flow collection:
 - [ ::vector,
   ": - ()",
   "Up, up and away!",

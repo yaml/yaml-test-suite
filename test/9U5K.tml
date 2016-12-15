@@ -4,7 +4,7 @@ tags: spec,mapping,sequence,block
 
 +++ in-yaml
 ---
-# Products purchased
+\# Products purchased
 - item    : Super Hoop
   quantity: 1
 - item    : Basketball

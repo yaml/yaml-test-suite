@@ -11,6 +11,7 @@ sub main {
   $self->{cog_id} =~ s/.*\/(.*)\.tml$/$1/;
   my $text = $self->{text} = $self->_read($tml);
   $self->parse_meta($text);
+  $$text =~ s/^#.*\n//gm;
   while (length $$text) {
     $self->process_file;
   }

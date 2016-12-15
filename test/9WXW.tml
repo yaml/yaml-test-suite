@@ -3,10 +3,10 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2782728
 tags: spec,document,tags
 
 +++ in-yaml
-# Private
+\# Private
 !foo "bar"
 ...
-# Global
+\# Global
 %TAG ! tag:example.com,2000:app/
 ---
 !foo "bar"

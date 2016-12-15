@@ -3,7 +3,7 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2775350
 tags: spec,whitespace
 
 +++ in-yaml
-# Tabs and spaces
+\# Tabs and spaces
 quoted: "Quoted 	"
 block:	|
   void main() {

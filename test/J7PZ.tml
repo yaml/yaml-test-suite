@@ -3,9 +3,9 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2761780
 tags: spec,mapping
 
 +++ in-yaml
-# Ordered maps are represented as
-# A sequence of mappings, with
-# each mapping having one key
+\# Ordered maps are represented as
+\# A sequence of mappings, with
+\# each mapping having one key
 --- !!omap
 - Mark McGwire: 65
 - Sammy Sosa: 63
