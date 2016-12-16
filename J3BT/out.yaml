@@ -1,0 +1,2 @@
+quoted: "Quoted \t"
+block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"

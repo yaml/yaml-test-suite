@@ -1,11 +1,11 @@
 +STR
-+DOC
++DOC ---
 +MAP
 =VAL :matches %
 =VAL :20
 -MAP
--DOC
-+DOC
+-DOC ...
++DOC ---
 =VAL :
--DOC
+-DOC ...
 -STR
