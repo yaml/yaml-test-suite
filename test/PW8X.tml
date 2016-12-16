@@ -14,6 +14,15 @@ tags: scalar,anchors
   ? &e
   : &a
 
++++ out-yaml
+- &a
+- a
+- &a : a
+  b: &b
+  &c : &a
+- &d :
+  &e : &a
+
 +++ test-event
 +SEQ
 =VAL &a :

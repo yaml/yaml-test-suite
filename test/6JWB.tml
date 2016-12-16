@@ -8,6 +8,12 @@ foo: !!seq
   - !!map
     key: !!str value
 
++++ out-yaml
+foo: !!seq
+- !!str a
+- !!map
+  key: !!str value
+
 +++ test-event
 +MAP
 =VAL :foo

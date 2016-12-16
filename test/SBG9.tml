@@ -5,6 +5,14 @@ tags: sequence,mapping,flow
 +++ in-yaml
 {a: [b, c], [d, e]: f}
 
++++ out-yaml
+a:
+- b
+- c
+? - d
+  - e
+: f
+
 +++ test-event
 +MAP
 =VAL :a

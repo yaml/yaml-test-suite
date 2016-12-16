@@ -8,6 +8,10 @@ tags: whitespace,mapping,block
 
 3: 4
 
++++ out-yaml
+1: 2
+3: 4
+
 +++ in-json
 { "1": 2, "3": 4 }
 

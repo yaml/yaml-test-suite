@@ -16,6 +16,18 @@ tags: spec,block,flow,sequence,scalar
   -123,
   http://example.com/foo#bar ]
 
++++ out-yaml
+- ::vector
+- ": - ()"
+- Up, up, and away!
+- -123
+- http://example.com/foo#bar
+- - ::vector
+  - ": - ()"
+  - "Up, up and away!"
+  - -123
+  - http://example.com/foo#bar
+
 +++ in-json
 [
   "::vector",

@@ -7,6 +7,11 @@ block sequence:
   - one
   - two : three
 
++++ out-yaml
+block sequence:
+- one
+- two: three
+
 +++ in-json
 {
   "block sequence": [

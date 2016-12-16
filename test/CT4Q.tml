@@ -8,6 +8,9 @@ tags: spec,flow,mapping
  bar : baz
 ]
 
++++ out-yaml
+- foo bar: baz
+
 +++ in-json
 [ { "foo bar": "baz"} ]
 

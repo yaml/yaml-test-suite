@@ -11,5 +11,8 @@ tags: spec,whitespace,scalar
   baz
 "
 
++++ out-yaml
+" foo\nbar\nbaz "
+
 +++ test-event
 =VAL " foo\nbar\nbaz 

@@ -12,8 +12,17 @@ tags: spec,document
 \# Empty
 ...
 
++++ out-yaml
+--- |
+  %!PS-Adobe-2.0
+...
+---
+...
+
 +++ test-event
-=VAL "%!PS-Adobe-2.0\n
--DOC
-+DOC
++DOC ---
+=VAL |%!PS-Adobe-2.0\n
+-DOC ...
++DOC ---
 =VAL :
+-DOC ...

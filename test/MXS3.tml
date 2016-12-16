@@ -5,6 +5,9 @@ tags: mapping,sequence,block,flow
 +++ in-yaml
 - {a: b}
 
++++ out-yaml
+- a: b
+
 +++ in-json
 [{"a": "b"}]
 

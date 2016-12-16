@@ -7,6 +7,10 @@ tags: spec,document,tags
 ---
 - !e!foo "bar"
 
++++ out-yaml
+---
+- !<tag:example.com,2000:app/foo> "bar"
+
 +++ test-event
 +DOC ---
 +SEQ

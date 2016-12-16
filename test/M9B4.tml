@@ -9,5 +9,9 @@ tags: spec,block,scalar
 
 \
 
++++ out-yaml
+# XXX Should be literal?
+"literal\n\ttext\n"
+
 +++ test-event
 =VAL |literal\n\ttext\n

@@ -5,6 +5,10 @@ tags: flow,mapping
 +++ in-yaml
 {foo: you, bar: far}
 
++++ out-yaml
+foo: you
+bar: far
+
 +++ in-json
 {"foo":"you","bar":"far"}
 

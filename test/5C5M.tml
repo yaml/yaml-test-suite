@@ -6,6 +6,12 @@ tags: spec,flow,mapping
 - { one : two , three: four , }
 - {five: six,seven : eight}
 
++++ out-yaml
+- one: two
+  three: four
+- five: six
+  seven: eight
+
 +++ in-json
 [
   { "one": "two", "three": "four" },

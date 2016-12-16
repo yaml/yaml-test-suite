@@ -8,5 +8,10 @@ tags: spec,document
 ---
 "foo"
 
++++ out-yaml
+--- "foo"
+
 +++ test-event
++DOC ---
 =VAL "foo
+-DOC

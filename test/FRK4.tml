@@ -3,12 +3,14 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2786868
 tags: spec,flow,scalar
 
 +++ in-yaml
+# XXX Why is ? supported in flow?
 {
   ? foo :,
   : bar,
 }
 
 +++ in-json
+# XXX Why are nulls spaces here?
 { "foo": "", "": "bar" }
 
 +++ test-event

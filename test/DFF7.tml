@@ -9,6 +9,11 @@ implicit: entry,
 ?
 }
 
++++ out-yaml
+explicit: entry
+implicit: entry
+:
+
 +++ in-json
 {
   "explicit": "entry",

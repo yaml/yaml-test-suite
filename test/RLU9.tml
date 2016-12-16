@@ -8,6 +8,12 @@ foo:
 bar:
   - 44
 
++++ out-yaml
+foo:
+- 42
+bar:
+- 44
+
 +++ in-json
 {"foo":[42],"bar":[44]}
 

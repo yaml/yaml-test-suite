@@ -12,6 +12,14 @@ a: |
 
 ...
 
++++ out-yaml
+a: |
+  ab
+
+  cd
+  ef
+...
+
 +++ in-json
 {"a": "ab\n\ncd\nef\n"}
 

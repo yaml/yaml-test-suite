@@ -8,6 +8,11 @@ tags: spec,tags
 - 12
 - ! 12
 
++++ out-yaml
+- "12"
+- 12
+- ! 12
+
 +++ test-event
 +SEQ
 =VAL "12

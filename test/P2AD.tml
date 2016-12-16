@@ -13,6 +13,17 @@ tags: spec,block,comment,scalar
 - >1- # Both indicators↓
   strip
 
++++ out-yaml
+- |
+  literal
+- >2
+   folded
+- |+
+  keep
+
+- >2-
+   strip
+
 +++ in-json
 [
   "literal\n",

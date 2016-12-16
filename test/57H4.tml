@@ -10,6 +10,14 @@ sequence: !!seq
 mapping: !!map
  foo: bar
 
++++ out-yaml
+sequence: !!seq
+- entry
+- !!seq
+  - nested
+mapping: !!map
+  foo: bar
+
 +++ test-event
 +MAP
 =VAL :sequence

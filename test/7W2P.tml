@@ -7,6 +7,11 @@ tags: mapping,block
 ? b
 c:
 
++++ out-yaml
+a:
+b:
+c:
+
 +++ in-json
 {"a": "", "b": "", "c": ""}
 

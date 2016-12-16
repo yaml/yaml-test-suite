@@ -12,5 +12,14 @@ tags: scalar
 
  gh
 
++++ out-yaml
+>
+  ab cd
+
+  ef
+
+
+  gh
+
 +++ test-event
 =VAL >ab cd\nef\n\ngh\n

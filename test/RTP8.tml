@@ -6,7 +6,14 @@ tags: spec,document
 %YAML 1.2
 ---
 Document
+# XXX Why is a comment allowed on ...?
 ... # Suffix
 
++++ out-yaml
+--- Document
+...
+
 +++ test-event
++DOC ---
 =VAL :Document
+-DOC ...

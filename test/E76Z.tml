@@ -6,6 +6,10 @@ tags: mapping,aliases
 &a a: &b b
 *a : *b
 
++++ out-yaml
+&a a: &b b
+*a: *b
+
 +++ test-event
 +MAP
 =VAL &a :a

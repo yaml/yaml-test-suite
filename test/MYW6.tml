@@ -9,6 +9,11 @@ tags: scalar
  
 ...
 
++++ out-yaml
+|-
+  ab
+...
+
 +++ test-event
 +DOC
 =VAL |ab

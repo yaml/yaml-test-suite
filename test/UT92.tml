@@ -11,11 +11,20 @@ tags: spec,document
 \# Empty
 ...
 
++++ in-yaml
+---
+matches %: 20
+...
+---
+...
+
 +++ test-event
++DOC ---
 +MAP
 =VAL :matches %
 =VAL :20
 -MAP
--DOC
-+DOC
+-DOC ...
++DOC ---
 =VAL :
+-DOC ...

@@ -9,6 +9,11 @@ tags: spec,flow,mapping
 "empty":
 }
 
++++ out-yaml
+"adjacent": value
+"readable": value
+"empty":
+
 +++ in-json
 {
   "adjacent": "value",

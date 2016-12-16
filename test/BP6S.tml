@@ -6,6 +6,10 @@ tags: tags,anchors
 anchored: !local &anchor value
 alias: *anchor
 
++++ out-yaml
+anchored: &anchor !local value
+alias: *anchor
+
 +++ test-event
 +MAP
 =VAL :anchored

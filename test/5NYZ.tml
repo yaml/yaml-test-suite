@@ -6,6 +6,9 @@ tags: spec,comment
 key:    # Comment
   value
 
++++ out-yaml
+key: value
+
 +++ in-json
 { "key": "value" }
 

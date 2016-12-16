@@ -8,6 +8,10 @@ tags: spec,flow,scalar
   !!str : bar,
 }
 
++++ out-yaml
+foo: !!str
+!!str: bar
+
 +++ test-event
 +MAP
 =VAL :foo

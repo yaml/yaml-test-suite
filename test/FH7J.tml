@@ -9,6 +9,12 @@ tags: tags,scalar
   b: !!str
 - !!str : !!null
 
++++ out-yaml
+- !!str
+- !!null: a
+  b: !!str
+- !!str: !!null
+
 +++ test-event
 +SEQ
 =VAL <tag:yaml.org,2002:str> :

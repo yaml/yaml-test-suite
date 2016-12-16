@@ -9,6 +9,9 @@ key:    # Comment
 
 \
 
++++ out-yaml
+key: value
+
 +++ in-json
 { "key": "value" }
 

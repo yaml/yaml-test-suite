@@ -9,5 +9,9 @@ tags: spec,block,scalar
 
 \
 
++++ out-yaml
+>
+  folded text
+
 +++ test-event
 =VAL >folded text\n

@@ -1,9 +1,11 @@
 === Spec Example 5.5. Comment Indicator
 from: http://www.yaml.org/spec/1.2/spec.html#id2773032
-tags: spec,comment,document
+tags: spec,comment,document,empty,scalar
 
 +++ in-yaml
 \# Comment only.
+
++++ out-yaml
 
 +++ test-event
 +STR

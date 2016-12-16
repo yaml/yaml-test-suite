@@ -8,6 +8,10 @@ tags: flow,edge
 ...
 ]
 
++++ out-yaml
+- '---'
+- '...'
+
 +++ in-json
 [ "---", "..." ]
 

@@ -12,6 +12,13 @@ plain
 single: pair,
 ]
 
++++ out-yaml
+- "double quoted"
+- 'single quoted'
+- plain text
+- - nested
+- single: pair
+
 +++ in-json
 [
   "double quoted", "single quoted",

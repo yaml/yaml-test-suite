@@ -7,6 +7,9 @@ tags: spec,document,tags
 ---
 !yaml!str "foo"
 
++++ out-yaml
+--- !!str "foo"
+
 +++ test-event
 +DOC ---
 =VAL <tag:yaml.org,2002:str> "foo

@@ -10,5 +10,9 @@ tags: spec,scalar,whitespace
 
   baz
 
++++ out-yaml
+# XXX Should be folded?
+"foo \n\n\t bar\n\nbaz\n"
+
 +++ test-event
 =VAL >foo \n\n\t bar\n\nbaz\n

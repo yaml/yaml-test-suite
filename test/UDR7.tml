@@ -6,6 +6,14 @@ tags: spec,flow,sequence,mapping
 sequence: [ one, two, ]
 mapping: { sky: blue, sea: green }
 
++++ out-yaml
+sequence:
+- one
+- two
+mapping:
+  sky: blue
+  sea: green
+
 +++ in-json
 {
   "sequence" ["one", "two"],

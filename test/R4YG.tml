@@ -15,6 +15,18 @@ tags: spec,block,scalar,libyaml
  	
  detected
 
++++ out-yaml
+- |
+  detected
+- >2
+
+
+  # detected
+- |2
+   explicit
+# XXX > becomes "?
+- "\t\ndetected\n"
+
 +++ in-json
 [
   "detected\n",
@@ -25,8 +37,8 @@ tags: spec,block,scalar,libyaml
 
 +++ test-event
 +SEQ
-=VAL "detected\n
-=VAL "\n\n# detected\n
-=VAL " explicit\n
-=VAL "\t\ndetected\n
+=VAL |detected\n
+=VAL >\n\n# detected\n
+=VAL | explicit\n
+=VAL >\t\ndetected\n
 -SEQ

@@ -1,12 +1,14 @@
 === Spec Example 6.10. Comment Lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2780544
-tags: spec,comment
+tags: spec,comment,empty,scalar
 
 +++ in-yaml
   # Comment
    
 
 \
+
++++ out-yaml
 
 +++ test-event
 +STR

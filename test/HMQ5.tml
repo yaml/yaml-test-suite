@@ -7,6 +7,10 @@ tags: spec,tags,anchors
   !!str bar
 &a2 baz : *a1
 
++++ out-yaml
+&a1 !!str "foo": !!str bar
+&a2 baz: *a1
+
 +++ test-event
 +MAP
 =VAL &a1 <tag:yaml.org,2002:str> "foo

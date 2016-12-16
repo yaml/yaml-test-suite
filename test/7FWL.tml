@@ -6,6 +6,9 @@ tags: spec,tags
 !<tag:yaml.org,2002:str> foo :
   !<!bar> baz
 
++++ out-yaml
+!!str foo: !bar baz
+
 +++ test-event
 +MAP
 =VAL <tag:yaml.org,2002:str> :foo

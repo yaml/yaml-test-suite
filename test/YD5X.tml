@@ -7,6 +7,17 @@ tags: spec,sequence
 - [Mark McGwire, 65, 0.278]
 - [Sammy Sosa  , 63, 0.288]
 
++++ out-yaml
+- - name
+  - hr
+  - avg
+- - Mark McGwire
+  - 65
+  - 0.278
+- - Sammy Sosa
+  - 63
+  - 0.288
+
 +++ in-json
 [ ["name",         "hr", "avg" ],
   ["Mark McGwire", 65,   0.278 ],

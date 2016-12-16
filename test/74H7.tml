@@ -9,6 +9,13 @@ e: !!str f
 g: h
 !!int 23: !!bool false
 
++++ out-yaml
+!!str a: b
+c: !!int 42
+e: !!str f
+g: h
+!!int 23: !!bool false
+
 +++ test-event
 +MAP
 =VAL <tag:yaml.org,2002:str> :a

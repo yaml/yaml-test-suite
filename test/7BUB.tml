@@ -12,6 +12,15 @@ rbi:
   - *SS # Subsequent occurrence
   - Ken Griffey
 
++++ out-yaml
+---
+hr:
+- Mark McGwire
+- &SS Sammy Sosa
+rbi:
+- *SS
+- Ken Griffey
+
 +++ test-event
 +DOC ---
 +MAP

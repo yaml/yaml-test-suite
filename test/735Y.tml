@@ -10,6 +10,13 @@ tags: spec,block
 - !!map # Block collection
   foo : bar
 
++++ out-yaml
+- "flow in block"
+- >
+  Block scalar
+- !!map
+  foo: bar
+
 +++ in-json
 [
   "flow in block",

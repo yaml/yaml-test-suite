@@ -10,6 +10,10 @@ tags: mapping,scalar,block
 ? e
   42
 
++++ out-yaml
+a true: null d
+e 42:
+
 +++ in-json
 {"a true": "null d", "e 42": ""}
 

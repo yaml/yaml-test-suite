@@ -8,6 +8,10 @@ tags: tags,mapping
 ? c
 : !!str d
 
++++ out-yaml
+!!str a: !!int 47
+c: !!str d
+
 +++ test-event
 +MAP
 =VAL <tag:yaml.org,2002:str> :a

@@ -6,6 +6,10 @@ tags: spec,block,mapping
 block mapping:
  key: value
 
++++ out-yaml
+block mapping:
+  key: value
+
 +++ in-json
 {
   "block mapping": {

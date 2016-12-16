@@ -10,6 +10,14 @@ clip: >
 keep: |+
 \
 
++++ out-yaml
+# XXX empty string should emit as ''
+strip: ""
+clip: ""
+# XXX why is libyaml emitting 2 (or literal at all)
+keep: |2+
+\
+
 +++ in-json
 {
   "strip": "",

@@ -5,6 +5,11 @@ tags: flow,sequence
 +++ in-yaml
 [foo, bar, 42]
 
++++ out-yaml
+- foo
+- bar
+- 42
+
 +++ in-json
 ["foo","bar",42]
 

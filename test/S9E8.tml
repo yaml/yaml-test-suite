@@ -20,6 +20,23 @@ mapping:
   }
 }
 
++++ out-yaml
+sequence:
+- one
+- two
+mapping:
+  sky: blue
+  sea: green
+
++++ in-json
+{
+  "sequence": ["one", "two"],
+  "mapping": {
+    "sky": "blue",
+    "sea": "green"
+  }
+}
+
 +++ test-event
 +MAP
 =VAL :sequence

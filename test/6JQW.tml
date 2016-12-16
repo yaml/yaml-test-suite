@@ -8,6 +8,11 @@ tags: spec,scalar,literal,comment
   \//||\/||
   // ||  ||__
 
++++ out-yaml
+--- |
+  \//||\/||
+  // ||  ||__
+
 +++ in-json
 "\\//||\\/||\n// ||  ||__\n"
 

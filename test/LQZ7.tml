@@ -7,6 +7,10 @@ tags: spec,scalar,flow
   "implicit flow key" : value,
  ]
 
++++ out-yaml
+"implicit block key":
+- "implicit flow key": value
+
 +++ in-json
 {
   "implicit block key": [

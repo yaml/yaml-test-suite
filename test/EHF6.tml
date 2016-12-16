@@ -8,6 +8,12 @@ tags: tags,flow
   [ a, !!str b]
 }
 
++++ out-yaml
+!!map
+k: !!seq
+- a
+- !!str b
+
 +++ test-event
 +MAP <tag:yaml.org,2002:map>
 =VAL :k

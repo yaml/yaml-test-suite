@@ -10,6 +10,12 @@ tags: spec,comment,whitespace
   avg: # Average
    0.278
 
++++ out-yaml
+? first: Sammy
+  last: Sosa
+: hr: 65
+  avg: 0.278
+
 +++ test-event
 +MAP
 +MAP

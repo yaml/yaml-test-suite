@@ -10,6 +10,14 @@ tags: spec,block,sequence
   - two # sequence
 - one: two # Compact mapping
 
++++ out-yaml
+-
+- |
+  block node
+- - one
+  - two
+- one: two
+
 +++ in-json
 [
   "",

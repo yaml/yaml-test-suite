@@ -20,5 +20,18 @@ tags: spec,block,scalar,comment
 
 \# Comment
 
++++ out-yaml
+>2
+
+  folded line
+
+  next line
+    * bullet
+
+    * list
+    * lines
+
+  last line
+
 +++ test-event
 =VAL >\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n

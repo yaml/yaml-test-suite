@@ -11,5 +11,13 @@ tags: spec,whitespace,scalar
   as
   space
 
++++ out-yaml
+>-
+  trimmed
+
+
+
+  as space
+
 +++ test-event
 =VAL >trimmed\n\n\nas space

@@ -8,6 +8,10 @@ tags: spec,block,scalar
   year was crippled
   by a knee injury.
 
++++ out-yaml
+--- >
+  Mark McGwire's year was crippled by a knee injury.
+
 +++ test-event
 +DOC ---
 =VAL >Mark McGwire's year was crippled by a knee injury.\n

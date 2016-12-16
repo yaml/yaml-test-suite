@@ -10,6 +10,15 @@ block:	|
   	printf("Hello, world!\n");
   }
 
++++ out-yaml
+quoted: "Quoted \t"
+# XXX This should be literal
+block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
+# block:	|
+#   void main() {
+#   	printf("Hello, world!\n");
+#   }
+
 +++ in-json
 {
   "quoted": "Quoted \t",

@@ -9,6 +9,14 @@ tags: spec,flow,sequence,mapping
 - 'b'
 - c
 
++++ out-yaml
+- - a
+  - b
+- a: b
+- "a"
+- 'b'
+- c
+
 +++ in-json
 [
   [ "a", "b" ],

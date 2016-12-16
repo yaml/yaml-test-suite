@@ -5,6 +5,16 @@ tags: flow,aliases
 +++ in-yaml
 { &a [a, &b b]: *b, *a : [c, *b, d]}
 
++++ out-yaml
+? &a
+- a
+- &b b
+: *b
+*a:
+- c
+- *b
+- d
+
 +++ test-event
 +MAP
 +SEQ &a

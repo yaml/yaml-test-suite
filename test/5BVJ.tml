@@ -10,6 +10,13 @@ folded: >
   some
   text
 
++++ out-yaml
+literal: |
+  some
+  text
+folded: >
+  some text
+
 +++ in-json
 {
   "literal": "some\ntext\n",

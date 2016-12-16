@@ -11,6 +11,11 @@ tags: spec,document,tags
 ---
 !foo "bar"
 
++++ out-yaml
+!foo "bar"
+...
+--- !<tag:example.com,2000:app/foo> "bar"
+
 +++ test-event
 =VAL <!foo> "bar
 -DOC ...

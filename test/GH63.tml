@@ -7,6 +7,10 @@ tags: mapping,block
 : 13
 1.5: d
 
++++ out-yaml
+a: 13
+1.5: d
+
 +++ in-json
 {"a": 13, "1.5": "d"}
 

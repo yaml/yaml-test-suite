@@ -23,6 +23,15 @@ keep: |+
  # Trail
   # comments.
 
++++ out-yaml
+strip: |-
+  # text
+clip: |
+  # text
+keep: |+
+  # text
+\
+
 +++ in-json
 {
   "strip": "# text",

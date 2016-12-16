@@ -9,6 +9,13 @@ tags: spec,block,mapping
 : - one # Explicit compact
   - two # block value
 
++++ out-yaml
+explicit key:
+? |
+  block key
+: - one
+  - two
+
 +++ in-json
 {
   "explicit key": "",
