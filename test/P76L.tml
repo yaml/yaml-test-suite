@@ -9,7 +9,6 @@ tags: spec,document,tags
 
 +++ out-yaml
 --- !<tag:example.com,2000:app/int> 1 - 3
-...
 
 +++ test-event
 +DOC ---
