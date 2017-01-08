@@ -3,11 +3,11 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2783499
 tags: spec,document,tags
 
 +++ in-yaml
-%TAG !m! !my-
+\%TAG !m! !my-
 --- # Bulb here
 !m!light fluorescent
 ...
-%TAG !m! !my-
+\%TAG !m! !my-
 --- # Color here
 !m!light green
 
