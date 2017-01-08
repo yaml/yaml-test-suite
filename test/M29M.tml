@@ -5,10 +5,10 @@ tags: scalar
 +++ in-yaml
 a: |
  ab
- 
+\ 
  cd
  ef
- 
+\ 
 
 ...
 

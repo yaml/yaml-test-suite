@@ -4,11 +4,11 @@ tags: spec,block,scalar,comment
 
 +++ in-yaml
 |
- 
-  
+\ 
+\  
   literal
-   
-  
+\   
+\  
   text
 
  # Comment
