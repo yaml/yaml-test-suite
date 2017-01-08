@@ -61,6 +61,8 @@ sub process_file {
   if (length $output) {
     $output .= $1;
   }
+  $output =~ s/^# .*//gm;
+  $output =~ s/^[\ \t]*$//gm;
   $output =~ s/^\\//gm;
   if ($file eq 'test.event') {
     if ($output !~ /\A\+STR\n/) {
