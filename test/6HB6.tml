@@ -5,7 +5,7 @@ tags: spec,indent
 +++ in-yaml
   # Leading comment line spaces are
    # neither content nor indentation.
-    
+\    
 Not indented:
  By one space: |
     By four
