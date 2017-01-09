@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+
+use Data::Dumper;
+use YAML::XS;
+
+$Data::Dumper::Sortkeys = 1;
+$Data::Dumper::Indent=2;
+$Data::Dumper::Terse=1;
+
+print Dumper YAML::XS::Load do { local $/; <> };

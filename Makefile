@@ -44,10 +44,16 @@ data-push:
 	}
 
 clean:
-	rm -fr data libyaml-parser
+	rm -fr tinker docker/yaml-pegex-pm
 
-docker-build:
-	docker build -t yaml/yaml-test-suite .
+tinker:
+	./bin/tinker
+
+docker-build: docker/yaml-pegex-pm
+	docker build -t yaml/yaml-test-suite docker
 
 docker-shell: docker-build
-	docker run -it yaml/yaml-test-suite bash
+	docker run -it -v $$PWD:/yaml-test-suite yaml/yaml-test-suite bash
+
+docker/yaml-pegex-pm:
+	cp -r ../${@:docker/%=%} $@

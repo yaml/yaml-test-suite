@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+
+use lib '/build/yaml-pegex-pm/lib';
+# use lib '../yaml-pegex-pm/lib';
+
+use Pegex;
+use YAML::Pegex;
+use Pegex::Parser;
+use YAML::Pegex::Grammar;
+use YAML::Pegex::Receiver::Test;
+
+my $yaml = do { local $/; <STDIN> };
+
+my $parser = Pegex::Parser->new(
+    grammar => 'YAML::Pegex::Grammar'->new,
+    receiver => 'YAML::Pegex::Receiver::Test'->new,
+    maxparse => 1000,
+);
+
+print $parser->parse($yaml);
