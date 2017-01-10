@@ -8,7 +8,7 @@ help:
 	@echo 'all - doc data'
 	@echo 'doc - Generate the docs'
 	@echo 'data - Generate data/ files from test/ files'
-	@echo 'help   - Show help'
+	@echo 'help - Show help'
 
 all: doc data
 
@@ -44,17 +44,9 @@ data-push:
 	}
 
 clean:
-	rm -fr docker/yaml-pegex-pm
+	rm -fr data
 	git clean -dxf
 
-docker-build: docker/yaml-pegex-pm
-	docker build -t yamlio/yaml-test-suite docker
-
-docker-shell: docker-build
-	docker run -it -v $$PWD:/yaml-test-suite yamlio/yaml-test-suite bash
-
-docker-push:
-	docker push yamlio/yaml-test-suite
-
-docker/yaml-pegex-pm:
-	cp -r ../${@:docker/%=%} $@
+.PHONY: test
+test:
+	@echo "We don't run tests here."
