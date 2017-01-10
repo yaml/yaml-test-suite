@@ -1,3 +1,0 @@
-#!/bin/bash
-
-docker run --rm -it -v $PWD:/yaml-test-suite yaml/yaml-test-suite tinker.sh "$@"

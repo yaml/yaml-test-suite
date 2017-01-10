@@ -44,16 +44,17 @@ data-push:
 	}
 
 clean:
-	rm -fr tinker docker/yaml-pegex-pm
-
-tinker:
-	./bin/tinker
+	rm -fr docker/yaml-pegex-pm
+	git clean -dxf
 
 docker-build: docker/yaml-pegex-pm
 	docker build -t yaml/yaml-test-suite docker
 
 docker-shell: docker-build
 	docker run -it -v $$PWD:/yaml-test-suite yaml/yaml-test-suite bash
+
+docker-push:
+	docker push yaml/yaml-test-suite
 
 docker/yaml-pegex-pm:
 	cp -r ../${@:docker/%=%} $@

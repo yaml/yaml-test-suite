@@ -1,3 +1,5 @@
 set autoread exrc
-map \] :w<Bar>!sleep .3<CR>
-map \q :qa!<CR>
+map ` :w<BAR>!sleep .3<CR><CR>
+map Q :qa!<CR>
+map S :w SAVE<CR>
+map C ggVGdi
