@@ -1,6 +1,11 @@
 #!/bin/bash
 
-docker run --rm -it \
-  -v $PWD:/yaml-test-suite \
-  yaml/yaml-test-suite \
-  yaml-test-editor.sh "$@"
+root="$(cd $(dirname $0)/..; pwd)"
+
+(
+  cd $root
+  docker run --rm -it \
+    -v $PWD:/yaml-test-suite \
+    yamlio/yaml-test-suite \
+    yaml-test-editor.sh "$@"
+)

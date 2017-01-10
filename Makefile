@@ -48,13 +48,13 @@ clean:
 	git clean -dxf
 
 docker-build: docker/yaml-pegex-pm
-	docker build -t yaml/yaml-test-suite docker
+	docker build -t yamlio/yaml-test-suite docker
 
 docker-shell: docker-build
-	docker run -it -v $$PWD:/yaml-test-suite yaml/yaml-test-suite bash
+	docker run -it -v $$PWD:/yaml-test-suite yamlio/yaml-test-suite bash
 
 docker-push:
-	docker push yaml/yaml-test-suite
+	docker push yamlio/yaml-test-suite
 
 docker/yaml-pegex-pm:
 	cp -r ../${@:docker/%=%} $@
