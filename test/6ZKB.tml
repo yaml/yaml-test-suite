@@ -7,17 +7,17 @@ Document
 ---
 \# Empty
 ...
-%YAML 1.2
+\%YAML 1.2
 ---
 matches %: 20
 
 +++ test-event
 =VAL :Document
 -DOC
-+DOC
++DOC ---
 =VAL :
--DOC
-+DOC
+-DOC ...
++DOC ---
 +MAP
 =VAL :matches %
 =VAL :20
