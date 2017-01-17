@@ -16,7 +16,7 @@ mapping:
 
 +++ in-json
 {
-  "sequence" ["one", "two"],
+  "sequence": ["one", "two"],
   "mapping": {
     "sky": "blue",
     "sea": "green"

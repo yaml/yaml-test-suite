@@ -9,7 +9,7 @@ tags: mapping,edge
 +++ in-json
 [
   {"bla\"keks": "foo"},
-  {"bla]keks]: "foo"}
+  {"bla]keks": "foo"}
 ]
 
 +++ test-event

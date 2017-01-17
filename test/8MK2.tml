@@ -6,7 +6,7 @@ tags: tags
 ! a
 
 +++ in-json
-{"a"}
+"a"
 
 +++ test-event
 =VAL <!> :a
