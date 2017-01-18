@@ -2,10 +2,10 @@
 +DOC
 =VAL :Document
 -DOC
-+DOC
++DOC ---
 =VAL :
--DOC
-+DOC
+-DOC ...
++DOC ---
 +MAP
 =VAL :matches %
 =VAL :20
