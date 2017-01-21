@@ -1,0 +1,120 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+use Data::Dumper;
+use FindBin '$Bin';
+use YAML::XS qw/ DumpFile /;
+use Getopt::Long;
+use File::Basename qw/ basename /;
+use IO::All;
+use File::Path qw/ rmtree /;
+
+GetOptions(
+    "path=s" => \my $path,
+);
+
+usage() if @ARGV < 1;
+
+my ($framework) = @ARGV;
+
+my $data = "$Bin/../data";
+
+my %tests;
+
+my $start = time;
+my $end;
+
+my @frameworks = qw/
+    js-yaml-json
+
+    libyaml-event
+
+    perl-yaml-pegex-event
+    perl-yaml-pm-pl
+    perl-yaml-syck-pl
+    perl-yaml-tiny-pl
+    perl-yaml-xs-pl
+
+    perl6-p6
+    pyyaml-event
+    ruby-json
+
+/;
+my %frameworks;
+@frameworks{ @frameworks } = (1) x @frameworks;
+
+my $out = "$data/out";
+if ($frameworks{ $framework }) {
+    mkdir $out;
+    if ($path) {
+        my @dirs = grep { m{/[A-Z0-9]{4}$} } map { "$_" } io->dir($data)->all;
+        for my $dir (sort @dirs) {
+            my $id = basename $dir;
+            my $in_yaml = "$dir/in.yaml";
+            my $cmd = "$path < $in_yaml > $out/$id.error 2>&1";
+            say "Running $id";
+            system $cmd;
+            unless ($?) {
+                rename "$out/$id.error", "$out/$id.ok" or die $!;
+            }
+        }
+    }
+    else {
+        my $cmd = q{docker run -i}
+            . q{ -v $PWD/data:/yaml-test-suite-data}
+            . q{ -v $PWD/bin:/matrix}
+            . qq{ yamlio/yaml-editor /matrix/run-framework-tests-docker.sh /filters/$framework};
+        say "Running $cmd";
+        system $cmd;
+    }
+    $end = time;
+}
+else {
+}
+
+my @files = map { "$_" } grep { m{/\w+\.(error|ok)$} } io->dir("$data/out")->all;
+for my $file (sort @files) {
+    my @got = io->file($file)->chomp->slurp;
+    $file = basename $file;
+    my ($id, $status) = split m/\./, $file;
+    my @test_events = io->file("$data/$id/test.event")->chomp->slurp;
+    my ($title) = io->file("$data/$id/===")->chomp->slurp;
+    say "Comparing results for $id";
+    if ($status eq 'error') {
+        $tests{ $id }->{error} = 1;
+        my $msg = (join "\n", @got) . "\n";
+        $msg =~ s/\bat \S+ line .*//s;
+        $tests{ $id }->{msg} = $msg;
+    }
+    else {
+        my @events = @got;
+        if ("@events" eq "@test_events") {
+            $tests{ $id }->{ok} = 1;
+        }
+        else {
+            $tests{ $id }->{diff} = 1;
+#                $tests{ $id }->{exp_events} = \@test_events;
+            $tests{ $id }->{got_events} = \@got;
+        }
+        $tests{ $id }->{title} = $title;
+    }
+}
+rmtree $out;
+
+say "Saving tests into $Bin/../matrix/$framework.yaml";
+DumpFile("$Bin/../matrix/$framework.yaml", {
+    tests => \%tests,
+    date => time,
+    time => $end - $start,
+});
+
+sub usage {
+    say <<"EOM";
+Usage:
+    $0 <framework> [--path /path/to/framework]
+
+If no path is given, it will run the tests in docker.
+EOM
+    exit 1;
+}
