@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test [%= .id %]</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+
+<h1>yaml-test-suite Framework Matrix - Test [%= .id %]</h1>
+
+<div class="framework"><h3>YAML</h3><pre>[%= .yaml %]</pre></div>
+<div class="framework"><h3>Expected Events</h3><pre>[%= .events %]</pre></div>
+<div class="framework"><h3>Expected JSON</h3><pre>[%= .test.frameworks.perl-xs.expjson %]</pre></div>
+<hr style="clear: both;">
+[%each .test.frameworks %]
+<div class="framework">
+<h3>[%= __key__ %]</h3>
+[%set_var result value=__value__ %]
+[%if $result.ok %]ok
+[%elsif $result.error %]Error: <pre>[%= $result.msg %]</pre>
+[%elsif $result.diff %]diff
+<pre>[%= $result.got_events escape=dump %]</pre>
+[%elsif $result.datadiff %]datadiff
+<pre>[%= $result.gotjson %]</pre>
+[%else %]
+<pre>[%= $result escape=dump|html %]</pre>
+[%/if %]
+</div>
+
+[%/each .test.frameworks %]
+</body>
+</html>
+

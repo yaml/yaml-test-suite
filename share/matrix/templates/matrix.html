@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+
+<h1>yaml-test-suite Framework Matrix</h1>
+<table class="matrix">
+<tr><th>Frameworks<br>Tests</th>
+[%each .frameworks %]
+<th>[%= __key__ %]</th>
+[%/each %]
+</tr>
+<tr>
+<td></td>
+[%each .frameworks %]
+[%set_var data value="__value__" %]
+<td>
+[%if data.ok %]ok: [%= data.ok %]<br>[%/if %]
+[%if data.dataok %]dataok: [%= data.dataok %]<br>[%/if %]
+[%if data.diff %]diff: [%= data.diff %]<br>[%/if %]
+[%if data.datadiff %]datadiff: [%= data.datadiff %]<br>[%/if %]
+[%if data.na %]n/a: [%= data.na %]<br>[%/if %]
+[%if data.error %]error: [%= data.error %]<br>[%/if %]
+</td>
+[%/each %]
+</tr>
+</tr>
+[%loop .tests %]
+<tr>
+<td id="[%= id %]"><tt><a href="#[%= id %]">#</tt></a>
+<a href="details-[%= id %].html"><tt>[%= id %]</tt> -
+[%= title %]</a></td>
+[%loop frameworks %]
+<td class=
+[%if ok %]ok[%elsif error %]error[%elsif dataok %]dataok[%elsif diff %]diff[%elsif datadiff %]datadiff[%elsif na %]na[%/if %]
+>
+</td>
+[%/loop frameworks %]
+</tr>
+[%/loop .tests %]
+</table>
+</body>
+</html>
+
