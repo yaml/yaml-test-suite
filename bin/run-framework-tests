@@ -71,6 +71,7 @@ if ($frameworks{ $framework }) {
     $end = time;
 }
 else {
+    die "Framework $framework not supported";
 }
 
 my @files = map { "$_" } grep { m{/\w+\.(error|ok)$} } io->dir("$data/out")->all;
@@ -97,8 +98,8 @@ for my $file (sort @files) {
 #                $tests{ $id }->{exp_events} = \@test_events;
             $tests{ $id }->{got_events} = \@got;
         }
-        $tests{ $id }->{title} = $title;
     }
+    $tests{ $id }->{title} = $title;
 }
 rmtree $out;
 

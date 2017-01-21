@@ -20,8 +20,6 @@ my %htc_args = (
 
 gather_data();
 
-my @k = keys %tests;
-warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@k], ['k']);
 create_html();
 
 sub gather_data {
@@ -88,7 +86,7 @@ sub create_html {
     }
 
     my $htc = HTML::Template::Compiled->new(
-        filename => "matrix.html",
+        filename => "index.html",
         path => "$Bin/../share/matrix/templates",
         %htc_args,
     );
@@ -98,7 +96,7 @@ sub create_html {
         tests => \@tests,
     );
 
-    open my $fh, ">", "matrix/html/matrix.html" or die $!;
+    open my $fh, ">", "matrix/html/index.html" or die $!;
     print $fh $htc->output;
     close $fh;
 
