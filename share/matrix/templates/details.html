@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
 </head>
 <body>
+<a href="matrix.html">Back to matrix</a><hr>
 
 <h1>yaml-test-suite Framework Matrix - Test [%= .id %]</h1>
 
@@ -20,7 +21,8 @@
 [%if $result.ok %]ok
 [%elsif $result.error %]Error: <pre>[%= $result.msg %]</pre>
 [%elsif $result.diff %]diff
-<pre>[%= $result.got_events escape=dump %]</pre>
+<pre>[%loop $result.got_events %]
+[%= _ %][%/loop $result.got_events %]</pre>
 [%elsif $result.datadiff %]datadiff
 <pre>[%= $result.gotjson %]</pre>
 [%else %]

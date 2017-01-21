@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>yaml-test-suite Framework Matrix</h1>
+<h1>yaml-test-suite Framework Matrix (<a href="https://github.com/yaml/yaml-test-suite">Github</a>)</h1>
 <table class="matrix">
 <tr><th>Frameworks<br>Tests</th>
 [%each .frameworks %]
@@ -28,7 +28,12 @@
 [%/each %]
 </tr>
 </tr>
-[%loop .tests %]
+[%loop .tests break="20" %]
+[%if __break__ %]<tr class="headline"><td></td>
+[%each .frameworks %]
+<td>[%= __key__ %]</td>
+[%/each %]
+</tr>[%/if %]
 <tr>
 <td id="[%= id %]"><tt><a href="#[%= id %]">#</tt></a>
 <a href="details-[%= id %].html"><tt>[%= id %]</tt> -

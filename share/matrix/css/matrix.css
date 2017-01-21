@@ -48,6 +48,13 @@ table.matrix tr td.dataok {
 table.matrix tr td:target {
     background-color: yellow;
 }
+table.matrix tr.headline td {
+    background-color: #bbb;
+}
+
+pre {
+    border: 1px solid #ccc;
+}
 
 div.code {
     float: left;
@@ -64,7 +71,7 @@ div.framework {
     border-radius: 3px;
     float: left;
     margin: 5px;
-    padding: 3px;
+    padding: 5px;
     min-width: 10%;
     min-height: 10em;
     max-width: 400px;

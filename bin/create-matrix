@@ -12,6 +12,11 @@ use HTML::Template::Compiled;
 my %tests;
 my %frameworks;
 my @frameworks;
+my %htc_args = (
+    tagstyle => [qw/ -classic -comment -jsp +tt /],
+    default_escape => 'HTML',
+    loop_context_vars => 1,
+);
 
 gather_data();
 
@@ -85,9 +90,7 @@ sub create_html {
     my $htc = HTML::Template::Compiled->new(
         filename => "matrix.html",
         path => "$Bin/../share/matrix/templates",
-        tagstyle => [qw/ +tt /],
-        default_escape => 'HTML',
-        loop_context_vars => 1,
+        %htc_args,
     );
     $htc->param(
         framework_names => \@frameworks,
@@ -109,9 +112,7 @@ sub create_details {
     my $htc = HTML::Template::Compiled->new(
         filename => "details.html",
         path => "$Bin/../share/matrix/templates",
-        tagstyle => [qw/ +tt /],
-        default_escape => 'HTML',
-        loop_context_vars => 1,
+        %htc_args,
     );
     $htc->param(
         id => $id,
