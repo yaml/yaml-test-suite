@@ -13,19 +13,8 @@ use File::Path qw/ rmtree /;
 GetOptions(
     "path=s" => \my $path,
     "help|h" => \my $help,
+    "list|l" => \my $list,
 );
-
-usage() if @ARGV < 1;
-usage() if $help;
-
-my ($framework) = @ARGV;
-
-my $data = "$Bin/../data";
-
-my %tests;
-
-my $start = time;
-my $end;
 
 my @frameworks = qw/
     js-yaml-json
@@ -58,6 +47,26 @@ my @frameworks = qw/
     ruby-json
 
 /;
+
+if ($list) {
+    say for @frameworks;
+    exit;
+}
+
+usage() if $help;
+usage() if @ARGV < 1;
+
+my ($framework) = @ARGV;
+
+my $data = "$Bin/../data";
+
+my %tests;
+
+my $start = time;
+my $end;
+
+
+
 my %frameworks;
 @frameworks{ @frameworks } = (1) x @frameworks;
 
