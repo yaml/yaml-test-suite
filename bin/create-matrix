@@ -16,6 +16,7 @@ my %htc_args = (
     tagstyle => [qw/ -classic -comment -jsp +tt /],
     default_escape => 'HTML',
     loop_context_vars => 1,
+    post_chomp => 2,
 );
 
 my $datadir = "$Bin/../data";
@@ -131,6 +132,7 @@ sub create_html {
     my @framework_headers;
     for my $fw (@framework_names) {
         push @framework_headers, {
+            fullname => $fw->{fullname},
             %{ $frameworks{ $fw->{fullname} } || {} },
         };
     }

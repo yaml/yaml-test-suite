@@ -10,13 +10,14 @@
 
 <table class="matrix">
 <thead>
-<tr><th>Frameworks<br>Tests</th>
+<tr><th colspan="2">Frameworks<br>Tests</th>
 [%loop .framework_names %]
-<th>[%= lang %]<br>[%= name %]<br>[%= type %]</th>
+<th class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</th>
 [%/loop %]
 </tr>
 
 <tr class="overview">
+<td></td>
 <td>
 <span class="ok">&nbsp;</span>ok <span class="json_ok">&nbsp;</span>json_ok<br>
 <span class="diff">&nbsp;</span>diff <span class="json_diff">&nbsp;</span>json_diff<br>
@@ -24,7 +25,7 @@
 <span class="error">&nbsp;</span>error<br>
 </td>
 [%loop .framework_headers %]
-<td>
+<td class="[%= fullname %]">
 [%if ok %]<span class="ok">&nbsp;</span>[%= ok %][%/if %]
 [%if json_ok %]<span class="json_ok">&nbsp;</span>[%= json_ok %][%/if %]
 <br>
@@ -43,17 +44,16 @@
 <tbody>
 </tr>
 [%loop .tests break="20" %]
-[%if __break__ %]<tr class="headline"><td></td>
+[%if __break__ %]<tr class="headline"><td colspan="2"></td>
 [%loop .framework_names %]
-<td>[%= lang %]<br>[%= name %]<br>[%= type %]</td>
+<td class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</td>
 [%/loop %]
 </tr>[%/if %]
 <tr>
-<td id="[%= id %]" class="testname"><tt><a href="#[%= id %]">#</tt></a>
-<a href="details-[%= id %].html"><tt>[%= id %]</tt> -
-[%= title %]</a></td>
+<td class="testname"><tt><a href="#[%= id %]">#[%= id %]</tt></a></td>
+<td id="[%= id %]" class="testname"><a href="details-[%= id %].html">[%= title %]</a></td>
 [%loop frameworks %]
-<td class="result
+<td class="result [%= id %]
 [%if ok %]ok[%elsif error %]error[%elsif json_ok %]json_ok[%elsif diff
 %]diff[%elsif json_diff %]json_diff[%elsif na %]na[%/if %]
 ">

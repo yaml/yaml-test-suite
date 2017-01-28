@@ -27,7 +27,7 @@ table.matrix tr th {
     vertical-align: top;
 }
 table.matrix tbody tr:hover > td.testname {
-    background-color: #ccc;
+    background-color: #ddd;
 }
 table.matrix tbody tr > td.testname {
 }
@@ -66,8 +66,8 @@ table.matrix tr td.na, span.na {
     color: #ddd;
 }
 table.matrix tr td.error, span.error {
-    background-color: #ff4444;
-    color: #ff4444;
+    background-color: #ff5858;
+    color: #ff5858;
 }
 
 table.matrix tr td:target {

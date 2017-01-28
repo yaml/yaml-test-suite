@@ -27,7 +27,7 @@
 [%elsif $result.na %]<span class="na">&nbsp;</span>n/a
 <pre>[%= $result.got_data %]</pre>
 [%elsif $result.diff %]<span class="diff">&nbsp;</span>diff
-<pre>[%loop $result.got_events %]
+<pre>[%loop $result.got_events POST_CHOMP=0 %]
 [%= _ %][%/loop $result.got_events %]</pre>
 [%elsif $result.datadiff %]datadiff
 <pre>[%= $result.gotjson %]</pre>
