@@ -41,9 +41,148 @@
 </pre>
  </div>
 
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &quot;a&quot;,
+  &quot;b&quot;,
+  &quot;a&quot;,
+  &quot;b&quot;
+]
+</pre>
+ </div>
+
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
  <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="diff">&nbsp;</span>diff
+<pre>
+yamlStartDoc()
+yamlStartSeq(tag=?)
+yamlScalar(tag=?, anchor=0, content=&quot;a&quot;)
+yamlScalar(tag=?, anchor=1, content=&quot;b&quot;)
+yamlAlias(aliasTarget=0)
+yamlAlias(aliasTarget=1)
+yamlEndSeq()
+yamlEndDoc()</pre>
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Can&#39;t locate Mojo/JSON.pm in @INC (you may need to install the Mojo::JSON module) (@INC contains: /lib/perl5/5.22.1/x86_64-linux-gnu-thread-multi /lib/perl5/5.22.1 /lib/perl5/x86_64-linux-gnu-thread-multi /lib/perl5 /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &#39;a&#39;,
+  &#39;b&#39;,
+  &#39;a&#39;,
+  &#39;b&#39;
+]
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Can&#39;t locate Mojo/JSON.pm in @INC (you may need to install the Mojo::JSON module) (@INC contains: /lib/perl5/5.22.1/x86_64-linux-gnu-thread-multi /lib/perl5/5.22.1 /lib/perl5/x86_64-linux-gnu-thread-multi /lib/perl5 /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) </pre>
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &#39;a&#39;,
+  &#39;b&#39;,
+  &#39;a&#39;,
+  &#39;b&#39;
+]
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Can&#39;t locate Mojo/JSON.pm in @INC (you may need to install the Mojo::JSON module) (@INC contains: /lib/perl5/5.22.1/x86_64-linux-gnu-thread-multi /lib/perl5/5.22.1 /lib/perl5/x86_64-linux-gnu-thread-multi /lib/perl5 /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a a&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Can&#39;t locate Mojo/JSON.pm in @INC (you may need to install the Mojo::JSON module) (@INC contains: /lib/perl5/5.22.1/x86_64-linux-gnu-thread-multi /lib/perl5/5.22.1 /lib/perl5/x86_64-linux-gnu-thread-multi /lib/perl5 /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &#39;a&#39;,
+  &#39;b&#39;,
+  ${\$VAR1-&gt;[0]},
+  ${\$VAR1-&gt;[1]}
+]
+</pre>
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[ &quot;&amp;a a&quot;, &quot;&amp;b b&quot;, &quot;&amp;a a&quot;, &quot;&amp;b b&quot; ]
+</pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="diff">&nbsp;</span>diff
+<pre>
+[
+  &quot;\&amp;a a&quot;.Str,
+  &quot;\&amp;b b&quot;.Str,
+  &quot;\&amp;a a&quot;.Str,
+  &quot;\&amp;b b&quot;.Str,
+]</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="diff">&nbsp;</span>diff
+<pre>
+StreamStartEvent()
+DocumentStartEvent()
+SequenceStartEvent(anchor=None, tag=None, implicit=True)
+ScalarEvent(anchor=u&#39;a&#39;, tag=None, implicit=(True, False), value=u&#39;a&#39;)
+ScalarEvent(anchor=u&#39;b&#39;, tag=None, implicit=(True, False), value=u&#39;b&#39;)
+AliasEvent(anchor=u&#39;a&#39;)
+AliasEvent(anchor=u&#39;b&#39;)
+SequenceEndEvent()
+DocumentEndEvent()
+StreamEndEvent()</pre>
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[&quot;a&quot;,&quot;b&quot;,&quot;a&quot;,&quot;b&quot;]
+</pre>
  </div>
 
  </body>
