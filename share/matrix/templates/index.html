@@ -17,18 +17,23 @@
 </tr>
 
 <tr class="overview">
-<td></td>
+<td>
+<span class="ok">&nbsp;</span>ok <span class="json_ok">&nbsp;</span>json_ok<br>
+<span class="diff">&nbsp;</span>diff <span class="json_diff">&nbsp;</span>json_diff<br>
+<span class="na">&nbsp;</span>n/a<br>
+<span class="error">&nbsp;</span>error<br>
+</td>
 [%loop .framework_headers %]
 <td>
-[%if ok %]<span class="ok">&nbsp;</span>ok: [%= ok %][%/if %]
-[%if json_ok %]<span class="json_ok">&nbsp;</span>ok: [%= json_ok %][%/if %]
+[%if ok %]<span class="ok">&nbsp;</span>[%= ok %][%/if %]
+[%if json_ok %]<span class="json_ok">&nbsp;</span>[%= json_ok %][%/if %]
 <br>
-[%if diff %]<span class="diff">&nbsp;</span>diff: [%= diff %][%/if %]
-[%if json_diff %]<span class="json_diff">&nbsp;</span>diff: [%= json_diff %][%/if %]
+[%if diff %]<span class="diff">&nbsp;</span>[%= diff %][%/if %]
+[%if json_diff %]<span class="json_diff">&nbsp;</span>[%= json_diff %][%/if %]
 <br>
-[%if na %]<span class="na">&nbsp;</span>n/a: [%= na %][%/if %]
+[%if na %]<span class="na">&nbsp;</span>[%= na %][%/if %]
 <br>
-[%if error %]<span class="error">&nbsp;</span>err: [%= error %][%/if %]
+[%if error %]<span class="error">&nbsp;</span>[%= error %][%/if %]
 <br>
 </td>
 [%/loop %]

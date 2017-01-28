@@ -37,11 +37,20 @@ my @frameworks = qw/
     nimyaml-event
 
     perl5-pegex-event
+
     perl5-pm-pl
+    perl5-pm-json
+
     perl5-pp-event
+
     perl5-syck-pl
+    perl5-syck-json
+
     perl5-tiny-pl
+    perl5-tiny-json
+
     perl5-xs-pl
+    perl5-xs-json
 
     perl6-json
     perl6-p6
@@ -60,7 +69,7 @@ if ($frameworks{ $framework }) {
         for my $dir (sort @dirs) {
             my $id = basename $dir;
             my $in_yaml = "$dir/in.yaml";
-            my $cmd = "$path < $in_yaml > $out/$id.error 2>&1";
+            my $cmd = "timeout 3 $path < $in_yaml > $out/$id.error 2>&1";
             say "Running $id";
             system $cmd;
             unless ($?) {

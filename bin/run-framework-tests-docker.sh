@@ -17,7 +17,7 @@ for id in [A-Z0-9]*
 #for id in 229Q
 do
     echo $id
-    $framework < $id/in.yaml > out/$id.error 2>&1
+    timeout 3 $framework < $id/in.yaml > out/$id.error 2>&1
     if [[ $? -eq 0 ]]; then
         mv out/$id.error out/$id.ok
     fi
