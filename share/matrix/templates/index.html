@@ -21,14 +21,14 @@
 [%loop .framework_headers %]
 <td>
 [%if ok %]<span class="ok">&nbsp;</span>ok: [%= ok %][%/if %]
-[%if json_ok %]<span class="json_ok">&nbsp;</span>json_ok: [%= json_ok %][%/if %]
+[%if json_ok %]<span class="json_ok">&nbsp;</span>ok: [%= json_ok %][%/if %]
 <br>
 [%if diff %]<span class="diff">&nbsp;</span>diff: [%= diff %][%/if %]
-[%if json_diff %]<span class="json_diff">&nbsp;</span>json_diff: [%= json_diff %][%/if %]
+[%if json_diff %]<span class="json_diff">&nbsp;</span>diff: [%= json_diff %][%/if %]
 <br>
 [%if na %]<span class="na">&nbsp;</span>n/a: [%= na %][%/if %]
 <br>
-[%if error %]<span class="error">&nbsp;</span>error: [%= error %][%/if %]
+[%if error %]<span class="error">&nbsp;</span>err: [%= error %][%/if %]
 <br>
 </td>
 [%/loop %]

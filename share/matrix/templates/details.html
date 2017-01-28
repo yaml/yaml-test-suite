@@ -23,7 +23,7 @@
 [%elsif $result.json_ok %]<span class="json_ok">&nbsp;</span>json_ok
 [%elsif $result.json_diff %]<span class="json_diff">&nbsp;</span>json_diff
 <pre>[%= $result.got_json %]</pre>
-[%elsif $result.error %]<span class="error">&nbsp;</span>Error: <pre>[%= $result.msg %]</pre>
+[%elsif $result.error %]<span class="error">&nbsp;</span>error <pre>[%= $result.msg %]</pre>
 [%elsif $result.na %]<span class="na">&nbsp;</span>n/a
 <pre>[%= $result.got_data %]</pre>
 [%elsif $result.diff %]<span class="diff">&nbsp;</span>diff

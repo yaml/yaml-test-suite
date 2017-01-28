@@ -1,6 +1,7 @@
 body {
     background-color: linen;
     font-family: Verdana, Arial;
+    font-size: 95%;
 }
 
 h1, h2, h3, h4 {
@@ -27,6 +28,8 @@ table.matrix tr th {
 }
 table.matrix tbody tr:hover > td.testname {
     background-color: #ccc;
+}
+table.matrix tbody tr > td.testname {
 }
 table.matrix tbody tr:hover > td.result {
     color: #444;
@@ -71,7 +74,9 @@ table.matrix tr td:target {
     background-color: yellow;
 }
 table.matrix tr.headline td {
-    background-color: #bbb;
+    background-color: #ddd;
+    text-align: center;
+    border-top: 2px solid gray;
 }
 
 span.ok, span.json_ok, span.json_diff, span.diff, span.na, span.error {
@@ -105,9 +110,9 @@ div.framework {
     margin: 5px;
     padding: 5px;
     min-width: 10%;
+    max-width: 250px;
     min-height: 10em;
-    max-width: 320px;
-    max-height: 600px;
+    max-height: 400px;
     overflow-x: auto;
     overflow-y: auto;
 }

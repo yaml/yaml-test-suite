@@ -86,6 +86,19 @@ sub create_html {
             $type = $name;
             $name = "";
         }
+        elsif ($lang eq 'pyyaml') {
+            $type = $name;
+            $name = $lang;
+            $lang = "python";
+        }
+        elsif ($lang eq 'java') {
+            $type = $name;
+            $name = "";
+        }
+        elsif ($lang eq 'nimyaml') {
+            $type = $name;
+            $name = "";
+        }
         {
             lang => $lang,
             name => $name,
