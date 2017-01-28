@@ -17,14 +17,40 @@ doc: ReadMe.pod
 ReadMe.pod: doc/yaml-test-suite.swim
 	swim --to=pod --complete --wrap < $< > $@
 
-data: $(ALL_DATA)
+#------------------------------------------------------------------------------
+.PHONY: matrix
+matrix: gh-pages
+	mkdir -p matrix
+	for f in `YAML_EDITOR=$$PWD/../yaml-editor ./bin/run-framework-tests -l`; \
+	    do YAML_EDITOR=$$PWD/../yaml-editor ./bin/run-framework-tests $$f; done
+	./bin/create-matrix
+	rm -fr gh-pages/*.html gh-pages/css/
+	cp -r $@/html/*.html $@/html/css/ gh-pages/
 
-data/%: test/%.tml
+gh-pages:
+	git clone $$(git config remote.origin.url) -b $@ $@
+
+matrix-push:
+	@[ -z "$$(cd gh-pages; git status --short)" ] || { \
+	    cd gh-pages; \
+	    git add -Af .; \
+	    git commit -m 'Regenerated matrix files'; \
+	    git push --force origin gh-pages; \
+	}
+
+#------------------------------------------------------------------------------
+.PHONY: data
+data: clean-data $(ALL_DATA)
+
+clean-data:
 	@[ -d data ] || { \
 	    git clone $$(git config remote.origin.url) -b data data; \
 	    sleep 1; \
 	    touch test/*.tml; \
 	}
+	rm -fr data/*
+
+data/%: test/%.tml
 	@rm -fr $@
 	perl bin/generate-data $<
 	@touch $@
@@ -43,8 +69,9 @@ data-push:
 	    git push --force origin data; \
 	}
 
+#------------------------------------------------------------------------------
 clean:
-	rm -fr data
+	rm -fr data matrix
 	git clean -dxf
 
 .PHONY: test
