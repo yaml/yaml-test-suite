@@ -18,6 +18,7 @@ my %htc_args = (
     loop_context_vars => 1,
 );
 
+my $datadir = "$Bin/../data";
 gather_data();
 
 create_html();
@@ -44,14 +45,14 @@ sub gather_data {
             if ($results->{ok}) {
                 $frameworks{ $fw }->{ok}++;
             }
-            elsif ($results->{jsonok}) {
-                $frameworks{ $fw }->{jsonok}++;
+            elsif ($results->{json_ok}) {
+                $frameworks{ $fw }->{json_ok}++;
             }
             elsif ($results->{diff}) {
                 $frameworks{ $fw }->{diff}++;
             }
-            elsif ($results->{jsondiff}) {
-                $frameworks{ $fw }->{jsondiff}++;
+            elsif ($results->{json_diff}) {
+                $frameworks{ $fw }->{json_diff}++;
             }
             elsif ($results->{na}) {
                 $frameworks{ $fw }->{na}++;
@@ -69,12 +70,42 @@ sub create_html {
     mkdir "matrix/html";
     mkdir "matrix/html/css";
     my @tests;
+
+    my @framework_names = map {
+        my ($lang, $name, $type) = split /-/, $_;
+        if ($lang eq 'libyaml') {
+            $name = $lang;
+            $lang = 'C';
+            $type = 'event';
+        }
+        elsif ($lang eq 'ruby' and $name eq 'json') {
+            $type = $name;
+            $name = "";
+        }
+        elsif ($lang eq 'perl6') {
+            $type = $name;
+            $name = "";
+        }
+        {
+            lang => $lang,
+            name => $name,
+            type => $type,
+            fullname => $_,
+        };
+    } @frameworks;
+    @framework_names = sort {
+        $a->{type} cmp $b->{type}
+        || $a->{lang} cmp $b->{lang}
+        || $a->{name} cmp $b->{name}
+    } @framework_names;
+
+
     for my $test (sort { $tests{ $a }->{title} cmp $tests{ $b }->{title}} keys %tests) {
         my $data = $tests{ $test };
         my $frameworks = $data->{frameworks};
         my @frameworks;
-        for my $fw (sort keys %$frameworks) {
-            my $results = $frameworks->{ $fw };
+        for my $fw (@framework_names) {
+            my $results = $frameworks->{ $fw->{fullname} };
             push @frameworks, $results;
         }
         push @tests, {
@@ -84,6 +115,12 @@ sub create_html {
         };
         create_details($test);
     }
+    my @framework_headers;
+    for my $fw (@framework_names) {
+        push @framework_headers, {
+            %{ $frameworks{ $fw->{fullname} } || {} },
+        };
+    }
 
     my $htc = HTML::Template::Compiled->new(
         filename => "index.html",
@@ -91,8 +128,8 @@ sub create_html {
         %htc_args,
     );
     $htc->param(
-        framework_names => \@frameworks,
-        frameworks => \%frameworks,
+        framework_names => \@framework_names,
+        framework_headers => \@framework_headers,
         tests => \@tests,
     );
 
@@ -105,8 +142,14 @@ sub create_html {
 
 sub create_details {
     my ($id) = @_;
-    my $yaml = io->file("data/$id/in.yaml")->slurp;
-    my $events = io->file("data/$id/test.event")->slurp;
+    my $yaml = io->file("$datadir/$id/in.yaml")->slurp;
+    my $events = io->file("$datadir/$id/test.event")->slurp;
+
+    my $json;
+    if (-f "$datadir/$id/in.json") {
+        $json = io->file("$datadir/$id/in.json")->slurp;
+    }
+
     my $htc = HTML::Template::Compiled->new(
         filename => "details.html",
         path => "$Bin/../share/matrix/templates",
@@ -116,6 +159,7 @@ sub create_details {
         id => $id,
         test => $tests{ $id },
         yaml => $yaml,
+        json => $json,
         events => $events,
     );
     open my $fh, ">", "matrix/html/details-$id.html" or die $!;

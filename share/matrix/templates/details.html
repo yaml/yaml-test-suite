@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test [%= .id %]</title>
+<title>yaml-test-suite Framework Matrix - Test [%= .id %] - [%= .test.title %]</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
 </head>
 <body>
 <a href="index.html">Back to matrix</a><hr>
 
-<h1>yaml-test-suite Framework Matrix - Test [%= .id %]</h1>
+<h2>yaml-test-suite Framework Matrix - Test [%= .id %]</h2>
+<h3>[%= .test.title %]</h3>
 
-<div class="framework"><h3>YAML</h3><pre>[%= .yaml %]</pre></div>
-<div class="framework"><h3>Expected Events</h3><pre>[%= .events %]</pre></div>
-<div class="framework"><h3>Expected JSON</h3><pre>[%= .test.frameworks.perl-xs.expjson %]</pre></div>
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>[%= .yaml %]</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>[%= .events %]</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>[%= .json %]</pre></div>
 <hr style="clear: both;">
 [%each .test.frameworks %]
-<div class="framework">
-<h3>[%= __key__ %]</h3>
+<div class="framework" id="[%= __key__ %]">
+<h3><a href="#[%= __key__ %]">[%= __key__ %]</a></h3>
 [%set_var result value=__value__ %]
-[%if $result.ok %]ok
-[%elsif $result.error %]Error: <pre>[%= $result.msg %]</pre>
-[%elsif $result.diff %]diff
+[%if $result.ok %]<span class="ok">&nbsp;</span>ok
+[%elsif $result.json_ok %]<span class="json_ok">&nbsp;</span>json_ok
+[%elsif $result.json_diff %]<span class="json_diff">&nbsp;</span>json_diff
+<pre>[%= $result.got_json %]</pre>
+[%elsif $result.error %]<span class="error">&nbsp;</span>Error: <pre>[%= $result.msg %]</pre>
+[%elsif $result.na %]<span class="na">&nbsp;</span>n/a
+<pre>[%= $result.got_data %]</pre>
+[%elsif $result.diff %]<span class="diff">&nbsp;</span>diff
 <pre>[%loop $result.got_events %]
 [%= _ %][%/loop $result.got_events %]</pre>
 [%elsif $result.datadiff %]datadiff

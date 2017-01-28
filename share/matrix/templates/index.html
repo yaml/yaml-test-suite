@@ -7,46 +7,61 @@
 <body>
 
 <h1>yaml-test-suite Framework Matrix (<a href="https://github.com/yaml/yaml-test-suite">Github</a>)</h1>
+
 <table class="matrix">
+<thead>
 <tr><th>Frameworks<br>Tests</th>
-[%each .frameworks %]
-<th>[%= __key__ %]</th>
-[%/each %]
+[%loop .framework_names %]
+<th>[%= lang %]<br>[%= name %]<br>[%= type %]</th>
+[%/loop %]
 </tr>
-<tr>
+
+<tr class="overview">
 <td></td>
-[%each .frameworks %]
-[%set_var data value="__value__" %]
+[%loop .framework_headers %]
 <td>
-[%if data.ok %]ok: [%= data.ok %]<br>[%/if %]
-[%if data.dataok %]dataok: [%= data.dataok %]<br>[%/if %]
-[%if data.diff %]diff: [%= data.diff %]<br>[%/if %]
-[%if data.datadiff %]datadiff: [%= data.datadiff %]<br>[%/if %]
-[%if data.na %]n/a: [%= data.na %]<br>[%/if %]
-[%if data.error %]error: [%= data.error %]<br>[%/if %]
+[%if ok %]<span class="ok">&nbsp;</span>ok: [%= ok %][%/if %]
+[%if json_ok %]<span class="json_ok">&nbsp;</span>json_ok: [%= json_ok %][%/if %]
+<br>
+[%if diff %]<span class="diff">&nbsp;</span>diff: [%= diff %][%/if %]
+[%if json_diff %]<span class="json_diff">&nbsp;</span>json_diff: [%= json_diff %][%/if %]
+<br>
+[%if na %]<span class="na">&nbsp;</span>n/a: [%= na %][%/if %]
+<br>
+[%if error %]<span class="error">&nbsp;</span>error: [%= error %][%/if %]
+<br>
 </td>
-[%/each %]
+[%/loop %]
 </tr>
+</thead>
+
+<tbody>
 </tr>
 [%loop .tests break="20" %]
 [%if __break__ %]<tr class="headline"><td></td>
-[%each .frameworks %]
-<td>[%= __key__ %]</td>
-[%/each %]
+[%loop .framework_names %]
+<td>[%= lang %]<br>[%= name %]<br>[%= type %]</td>
+[%/loop %]
 </tr>[%/if %]
 <tr>
-<td id="[%= id %]"><tt><a href="#[%= id %]">#</tt></a>
+<td id="[%= id %]" class="testname"><tt><a href="#[%= id %]">#</tt></a>
 <a href="details-[%= id %].html"><tt>[%= id %]</tt> -
 [%= title %]</a></td>
 [%loop frameworks %]
-<td class=
-[%if ok %]ok[%elsif error %]error[%elsif dataok %]dataok[%elsif diff %]diff[%elsif datadiff %]datadiff[%elsif na %]na[%/if %]
->
+<td class="result
+[%if ok %]ok[%elsif error %]error[%elsif json_ok %]json_ok[%elsif diff
+%]diff[%elsif json_diff %]json_diff[%elsif na %]na[%/if %]
+">
+[%if ok %]ok[%elsif error %]error[%elsif json_ok %]json_ok[%elsif diff
+%]diff[%elsif json_diff %]json_diff[%elsif na %]n/a[%/if %]
+
 </td>
 [%/loop frameworks %]
 </tr>
 [%/loop .tests %]
+</tbody>
 </table>
+
 </body>
 </html>
 
