@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test TS54 - Folded Block Scalar</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test TS54</h2>
+<h3>Folded Block Scalar</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&gt;
+ ab
+ cd
+ 
+ ef
+
+
+ gh
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
+=VAL &gt;ab cd\nef\n\ngh\n
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&quot;ab cd\nef\n\ngh\n&quot;
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

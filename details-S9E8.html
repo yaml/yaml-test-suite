@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test S9E8 - Spec Example 5.3. Block Structure Indicators</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test S9E8</h2>
+<h3>Spec Example 5.3. Block Structure Indicators</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>sequence:
+- one
+- two
+mapping:
+  ? sky
+  : blue
+  sea : green
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
+=VAL :sequence
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
+=VAL :mapping
++MAP
+=VAL :sky
+=VAL :blue
+=VAL :sea
+=VAL :green
+-MAP
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>{
+  &quot;sequence&quot;: [&quot;one&quot;, &quot;two&quot;],
+  &quot;mapping&quot;: {
+    &quot;sky&quot;: &quot;blue&quot;,
+    &quot;sea&quot;: &quot;green&quot;
+  }
+}
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

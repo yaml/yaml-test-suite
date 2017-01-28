@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test 735Y - Spec Example 8.20. Block Node Types</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test 735Y</h2>
+<h3>Spec Example 8.20. Block Node Types</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>-
+  &quot;flow in block&quot;
+- &gt;
+ Block scalar
+- !!map # Block collection
+  foo : bar
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++SEQ
+=VAL &quot;flow in block
+=VAL &gt;Block scalar\n
++MAP &lt;tag:yaml.org,2002:map&gt;
+=VAL :foo
+=VAL :bar
+-MAP
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>[
+  &quot;flow in block&quot;,
+  &quot;Block scalar\n&quot;,
+  { &quot;foo&quot;: &quot;bar&quot; }
+]
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

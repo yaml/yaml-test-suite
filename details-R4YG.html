@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test R4YG - Spec Example 8.2. Block Indentation Indicator</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test R4YG</h2>
+<h3>Spec Example 8.2. Block Indentation Indicator</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- |
+ detected
+- &gt;
+ 
+  
+  # detected
+- |1
+  explicit
+- &gt;
+ 	
+ detected
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++SEQ
+=VAL |detected\n
+=VAL &gt;\n\n# detected\n
+=VAL | explicit\n
+=VAL &gt;\t\ndetected\n
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>[
+  &quot;detected\n&quot;,
+  &quot;\n\n# detected\n&quot;,
+  &quot; explicit\n&quot;,
+  &quot;\t\ndetected\n&quot;
+]
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Parse error: found a tab character where an intendation space is expected
++STR
++DOC
++SEQ
+=VAL |detected\n
+=VAL &gt;\n\n# detected\n
+=VAL | explicit\n
+</pre>
+ </div>
+
+ </body>
+</html>
+

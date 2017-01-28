@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test F2C7 - Anchors and Tags</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test F2C7</h2>
+<h3>Anchors and Tags</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre> - &amp;a !!str a
+ - !!int 2
+ - !!int &amp;c 4
+ - &amp;d d
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++SEQ
+=VAL &amp;a &lt;tag:yaml.org,2002:str&gt; :a
+=VAL &lt;tag:yaml.org,2002:int&gt; :2
+=VAL &amp;c &lt;tag:yaml.org,2002:int&gt; :4
+=VAL &amp;d :d
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &quot;a&quot;,
+  2,
+  4,
+  &quot;d&quot;
+]
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

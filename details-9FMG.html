@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test 9FMG - Multi-level Mapping Indent</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test 9FMG</h2>
+<h3>Multi-level Mapping Indent</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>a:
+  b:
+    c: d
+  e:
+    f: g
+h: i
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
+=VAL :a
++MAP
+=VAL :b
++MAP
+=VAL :c
+=VAL :d
+-MAP
+=VAL :e
++MAP
+=VAL :f
+=VAL :g
+-MAP
+-MAP
+=VAL :h
+=VAL :i
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:&quot;d&quot;},&quot;e&quot;:{&quot;f&quot;:&quot;g&quot;}},&quot;h&quot;:&quot;i&quot;}
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

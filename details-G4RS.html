@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test G4RS - Spec Example 2.17. Quoted Scalars</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test G4RS</h2>
+<h3>Spec Example 2.17. Quoted Scalars</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>unicode: &quot;Sosa did fine.\u263A&quot;
+control: &quot;\b1998\t1999\t2000\n&quot;
+hex esc: &quot;\x0d\x0a is \r\n&quot;
+
+single: &#39;&quot;Howdy!&quot; he cried.&#39;
+quoted: &#39; # Not a &#39;&#39;comment&#39;&#39;.&#39;
+tie-fighter: &#39;|\-*-/|&#39;
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
+=VAL :unicode
+=VAL &quot;Sosa did fine.☺
+=VAL :control
+=VAL &quot;\b1998\t1999\t2000\n
+=VAL :hex esc
+=VAL &quot;\r\n is \r\n
+=VAL :single
+=VAL &#39;&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL &#39; # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL &#39;|\\-*-/|
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>{
+  &quot;unicode&quot;: &quot;Sosa did fine.\u263A&quot;,
+  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,
+  &quot;hex esc&quot;: &quot;\u000d\u000a is \r\n&quot;,
+  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,
+  &quot;quoted&quot;: &quot; # Not a &#39;&#39;comment&#39;&#39;.&quot;,
+  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;
+}
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{
+  &quot;unicode&quot;: &quot;Sosa did fine.?&quot;,
+  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,
+  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,
+  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,
+  &quot;quoted&quot;: &quot; # Not a \u0027comment\u0027.&quot;,
+  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;
+}
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test M5DY - Spec Example 2.11. Mapping between Sequences</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test M5DY</h2>
+<h3>Spec Example 2.11. Mapping between Sequences</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>? - Detroit Tigers
+  - Chicago cubs
+:
+  - 2001-07-23
+
+? [ New York Yankees,
+    Atlanta Braves ]
+: [ 2001-07-02, 2001-08-12,
+    2001-08-14 ]
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
++SEQ
+=VAL :Detroit Tigers
+=VAL :Chicago cubs
+-SEQ
++SEQ
+=VAL :2001-07-23
+-SEQ
++SEQ
+=VAL :New York Yankees
+=VAL :Atlanta Braves
+-SEQ
++SEQ
+=VAL :2001-07-02
+=VAL :2001-08-12
+=VAL :2001-08-14
+-SEQ
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;[Detroit Tigers, Chicago cubs]&quot;: [
+    &quot;Jul 23, 2001 12:00:00 AM&quot;
+  ],
+  &quot;[New York Yankees, Atlanta Braves]&quot;: [
+    &quot;Jul 2, 2001 12:00:00 AM&quot;,
+    &quot;Aug 12, 2001 12:00:00 AM&quot;,
+    &quot;Aug 14, 2001 12:00:00 AM&quot;
+  ]
+}
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

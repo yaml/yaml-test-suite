@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test RZT7 - Spec Example 2.28. Log File</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test RZT7</h2>
+<h3>Spec Example 2.28. Log File</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+Time: 2001-11-23 15:01:42 -5
+User: ed
+Warning:
+  This is an error message
+  for the log file
+---
+Time: 2001-11-23 15:02:31 -5
+User: ed
+Warning:
+  A slightly different error
+  message.
+---
+Date: 2001-11-23 15:03:17 -5
+User: ed
+Fatal:
+  Unknown variable &quot;bar&quot;
+Stack:
+  - file: TopClass.py
+    line: 23
+    code: |
+      x = MoreObject(&quot;345\n&quot;)
+  - file: MoreClass.py
+    line: 58
+    code: |-
+      foo = bar
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:01:42 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :This is an error message for the log file
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:02:31 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :A slightly different error message.
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :Date
+=VAL :2001-11-23 15:03:17 -5
+=VAL :User
+=VAL :ed
+=VAL :Fatal
+=VAL :Unknown variable &quot;bar&quot;
+=VAL :Stack
++SEQ
++MAP
+=VAL :file
+=VAL :TopClass.py
+=VAL :line
+=VAL :23
+=VAL :code
+=VAL |x = MoreObject(&quot;345\\n&quot;)\n
+-MAP
++MAP
+=VAL :file
+=VAL :MoreClass.py
+=VAL :line
+=VAL :58
+=VAL :code
+=VAL |foo = bar
+-MAP
+-SEQ
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;Time&quot;: &quot;Nov 23, 2001 8:01:42 PM&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Warning&quot;: &quot;This is an error message for the log file&quot;
+}
+{
+  &quot;Time&quot;: &quot;Nov 23, 2001 8:02:31 PM&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Warning&quot;: &quot;A slightly different error message.&quot;
+}
+{
+  &quot;Date&quot;: &quot;Nov 23, 2001 8:03:17 PM&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Fatal&quot;: &quot;Unknown variable \&quot;bar\&quot;&quot;,
+  &quot;Stack&quot;: [
+    {
+      &quot;file&quot;: &quot;TopClass.py&quot;,
+      &quot;line&quot;: 23,
+      &quot;code&quot;: &quot;x \u003d MoreObject(\&quot;345\\n\&quot;)\n&quot;
+    },
+    {
+      &quot;file&quot;: &quot;MoreClass.py&quot;,
+      &quot;line&quot;: 58,
+      &quot;code&quot;: &quot;foo \u003d bar&quot;
+    }
+  ]
+}
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

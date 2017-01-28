@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test C4HZ - Spec Example 2.24. Global Tags</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test C4HZ</h2>
+<h3>Spec Example 2.24. Global Tags</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>%TAG ! tag:clarkevans.com,2002:
+--- !shape
+  # Use the ! handle for presenting
+  # tag:clarkevans.com,2002:circle
+- !circle
+  center: &amp;ORIGIN {x: 73, y: 129}
+  radius: 7
+- !line
+  start: *ORIGIN
+  finish: { x: 89, y: 102 }
+- !label
+  start: *ORIGIN
+  color: 0xFFEEBB
+  text: Pretty vector drawing.
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++SEQ &lt;tag:clarkevans.com,2002:shape&gt;
++MAP &lt;tag:clarkevans.com,2002:circle&gt;
+=VAL :center
++MAP &amp;ORIGIN
+=VAL :x
+=VAL :73
+=VAL :y
+=VAL :129
+-MAP
+=VAL :radius
+=VAL :7
+-MAP
++MAP &lt;tag:clarkevans.com,2002:line&gt;
+=VAL :start
+=ALI *ORIGIN
+=VAL :finish
++MAP
+=VAL :x
+=VAL :89
+=VAL :y
+=VAL :102
+-MAP
+-MAP
++MAP &lt;tag:clarkevans.com,2002:label&gt;
+=VAL :start
+=ALI *ORIGIN
+=VAL :color
+=VAL :0xFFEEBB
+=VAL :text
+=VAL :Pretty vector drawing.
+-MAP
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for tag:clarkevans.com,2002:shape; exception=Invalid tag: tag:clarkevans.com,2002:shape
+ in &#39;reader&#39;, line 2, column 5:
+    --- !shape
+        ^
+
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:350)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.com,2002:shape
+	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
+	... 6 more
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

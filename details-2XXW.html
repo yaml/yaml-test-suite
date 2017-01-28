@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test 2XXW - Spec Example 2.25. Unordered Sets</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test 2XXW</h2>
+<h3>Spec Example 2.25. Unordered Sets</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># Sets are represented as a
+# Mapping where each key is
+# associated with a null value
+--- !!set
+? Mark McGwire
+? Sammy Sosa
+? Ken Griff
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP &lt;tag:yaml.org,2002:set&gt;
+=VAL :Mark McGwire
+=VAL :
+=VAL :Sammy Sosa
+=VAL :
+=VAL :Ken Griff
+=VAL :
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &quot;Mark McGwire&quot;,
+  &quot;Sammy Sosa&quot;,
+  &quot;Ken Griff&quot;
+]
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test 4ABK - Spec Example 7.17. Flow Mapping Separate Values</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test 4ABK</h2>
+<h3>Spec Example 7.17. Flow Mapping Separate Values</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>{
+unquoted : &quot;separate&quot;,
+http://foo.com,
+omitted value:,
+: omitted key,
+}
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
+=VAL :unquoted
+=VAL &quot;separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value
+=VAL :
+=VAL :
+=VAL :omitted key
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>{
+  &quot;unquoted&quot;: &quot;separate&quot;,
+  &quot;http://foo.com&quot;: &quot;&quot;,
+  &quot;omitted value&quot;: &quot;&quot;,
+  &quot;&quot;: &quot;omitted key&quot;
+}
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a plain scalar
+ in &#39;reader&#39;, line 3, column 1:
+    http://foo.com,
+    ^
+found unexpected &#39;:&#39;
+ in &#39;reader&#39;, line 3, column 5:
+    http://foo.com,
+        ^
+Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanPlain(ScannerImpl.java:2016)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchPlain(ScannerImpl.java:1046)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:401)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:734)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:224)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Parse error: found unexpected &#39;:&#39;
++STR
++DOC
++MAP
+=VAL :unquoted
+=VAL &quot;separate
+</pre>
+ </div>
+
+ </body>
+</html>
+

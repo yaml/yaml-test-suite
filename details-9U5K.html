@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test 9U5K - Spec Example 2.12. Compact Nested Mapping</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+</head>
+<body>
+<a href="index.html">Back to matrix</a><hr>
+
+<h2>yaml-test-suite Framework Matrix - Test 9U5K</h2>
+<h3>Spec Example 2.12. Compact Nested Mapping</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+# Products purchased
+- item    : Super Hoop
+  quantity: 1
+- item    : Basketball
+  quantity: 4
+- item    : Big Shoes
+  quantity: 1
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++SEQ
++MAP
+=VAL :item
+=VAL :Super Hoop
+=VAL :quantity
+=VAL :1
+-MAP
++MAP
+=VAL :item
+=VAL :Basketball
+=VAL :quantity
+=VAL :4
+-MAP
++MAP
+=VAL :item
+=VAL :Big Shoes
+=VAL :quantity
+=VAL :1
+-MAP
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>[
+  {
+    &quot;item&quot;    : &quot;Super Hoop&quot;,
+    &quot;quantity&quot;: 1
+  },
+  {
+    &quot;item&quot;    : &quot;Basketball&quot;,
+    &quot;quantity&quot;: 4
+  },
+  {
+    &quot;item&quot;    : &quot;Big Shoes&quot;,
+    &quot;quantity&quot;: 1
+  }
+]
+</pre></div>
+<hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ </body>
+</html>
+
