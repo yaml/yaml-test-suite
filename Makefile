@@ -27,6 +27,12 @@ matrix: gh-pages
 	rm -fr gh-pages/*.html gh-pages/css/
 	cp -r $@/html/*.html $@/html/css/ gh-pages/
 
+perl5-%:
+	YAML_EDITOR=$$PWD/../yaml-editor ./bin/run-framework-tests $@
+	./bin/create-matrix
+	rm -fr gh-pages/*.html gh-pages/css/
+	cp -r matrix/html/*.html matrix/html/css/ gh-pages/
+
 gh-pages:
 	git clone $$(git config remote.origin.url) -b $@ $@
 
