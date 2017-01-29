@@ -85,7 +85,7 @@ sub create_html {
         }
         elsif ($lang eq 'perl6') {
             $type = $name;
-            $name = "";
+            $name = "yamlish";
         }
         elsif ($lang eq 'pyyaml') {
             $type = $name;
@@ -94,11 +94,12 @@ sub create_html {
         }
         elsif ($lang eq 'java') {
             $type = $name;
-            $name = "";
+            $name = "snake";
         }
         elsif ($lang eq 'nimyaml') {
+            $lang = "nim";
             $type = $name;
-            $name = "";
+            $name = "yaml";
         }
         {
             lang => $lang,
@@ -129,6 +130,7 @@ sub create_html {
         };
         create_details($test);
     }
+    say "Created detail pages matrix/html/details-<id>.html";
     my @framework_headers;
     for my $fw (@framework_names) {
         push @framework_headers, {
@@ -151,6 +153,7 @@ sub create_html {
     open my $fh, ">", "matrix/html/index.html" or die $!;
     print $fh $htc->output;
     close $fh;
+    say "Created matrix/html/index.html";
 
     copy ("share/matrix/css/matrix.css", "matrix/html/css");
 }

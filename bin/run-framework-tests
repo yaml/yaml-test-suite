@@ -15,6 +15,7 @@ GetOptions(
     "help|h" => \my $help,
     "list|l" => \my $list,
 );
+$verbose ||= 0;
 
 my @frameworks = qw/
     js-yaml-json
@@ -70,6 +71,7 @@ my $end;
 my %frameworks;
 @frameworks{ @frameworks } = (1) x @frameworks;
 
+my ($sum_ok, $sum_diff, $sum_na, $sum_err) = (0) x 4;
 my $out = "$data/out";
 if ($frameworks{ $framework }) {
     mkdir $out;
@@ -79,7 +81,7 @@ if ($frameworks{ $framework }) {
             my $id = basename $dir;
             my $in_yaml = "$dir/in.yaml";
             my $cmd = "timeout 3 $path < $in_yaml > $out/$id.error 2>&1";
-            say "Running $id";
+            print "Running $id\r";
             system $cmd;
             unless ($?) {
                 rename "$out/$id.error", "$out/$id.ok" or die $!;
@@ -103,6 +105,7 @@ if ($frameworks{ $framework }) {
         say "Running $cmd";
         system $cmd;
     }
+    print "\n";
     $end = time;
 }
 else {
@@ -110,17 +113,22 @@ else {
 }
 
 my @files = map { "$_" } grep { m{/\w+\.(error|ok)$} } io->dir("$data/out")->all;
+say "Comparing results...";
 for my $file (sort @files) {
     my @got = io->file($file)->chomp->slurp;
+    if (@got > 200) {
+        @got = (@got[0 .. 200], "----- 8< -----");
+    }
     $file = basename $file;
     my ($id, $status) = split m/\./, $file;
     my @test_events = io->file("$data/$id/test.event")->chomp->slurp;
     my ($title) = io->file("$data/$id/===")->chomp->slurp;
-    say "Comparing results for $id";
+    print "Comparing results for $id...\r";
     my $got_data = (join "\n", @got) . "\n";
     $tests{ $id }->{got_data} = $got_data;
     if ($status eq 'error') {
         $tests{ $id }->{error} = 1;
+        $sum_err++;
         my $msg = $got_data;
         $msg =~ s/\bat \S+ line .*//s;
         $tests{ $id }->{msg} = $msg;
@@ -137,31 +145,44 @@ for my $file (sort @files) {
             $got_json = Mojo::JSON::encode_json($got_data);
             if ($got_json eq $exp_json) {
                 $tests{ $id }->{json_ok} = 1;
+                $sum_ok++;
             }
             else {
                 $tests{ $id }->{json_diff} = 1;
+                $sum_diff++;
             }
         }
         else {
             $tests{ $id }->{na} = 1;
+            $sum_na++;
         }
     }
     elsif ($framework =~ m/-pl$/) {
         $tests{ $id }->{na} = 1;
+        $sum_na++;
+    }
+    elsif ($framework =~ m/-p6$/) {
+        $tests{ $id }->{na} = 1;
+        $sum_na++;
     }
     else {
         my @events = @got;
         if ("@events" eq "@test_events") {
             $tests{ $id }->{ok} = 1;
+            $sum_ok++;
         }
         else {
             $tests{ $id }->{diff} = 1;
+            $sum_diff++;
 #                $tests{ $id }->{exp_events} = \@test_events;
             $tests{ $id }->{got_events} = \@got;
         }
     }
     $tests{ $id }->{title} = $title;
 }
+print "Done                         \n";
+printf "ok: %d diff: %d n/a: %d error: %d\n",
+    $sum_ok, $sum_diff, $sum_na, $sum_err;
 rmtree $out;
 
 say "Saving tests into $Bin/../matrix/$framework.yaml";
@@ -182,7 +203,12 @@ Run in docker:
 Specify a script:
     $0 <framework> --path /path/to/framework
 
-If no --path is given, it will run the tests in docker.
+Options:
+--path          /path/to/framework
+                If no --path is given, it will run the tests in docker.
+--verbose, -v   Increase verbosity:
+                -v  Print the first differing lines of event output
+                -vv Dump events and expected events
 EOM
     exit 1;
 }
