@@ -6,6 +6,7 @@ use Data::Dumper;
 use FindBin '$Bin';
 use YAML::XS qw/ DumpFile /;
 use Getopt::Long;
+Getopt::Long::Configure ("bundling");
 use File::Basename qw/ basename /;
 use IO::All;
 use File::Path qw/ rmtree /;
@@ -14,6 +15,7 @@ GetOptions(
     "path=s" => \my $path,
     "help|h" => \my $help,
     "list|l" => \my $list,
+    "verbose|v+" => \my $verbose,
 );
 $verbose ||= 0;
 
@@ -165,13 +167,47 @@ for my $file (sort @files) {
         $tests{ $id }->{na} = 1;
         $sum_na++;
     }
+    elsif ($framework =~ m/-p6$/) {
+        $tests{ $id }->{na} = 1;
+    }
     else {
         my @events = @got;
-        if ("@events" eq "@test_events") {
+        my @orig_events = @test_events;
+        if ($framework eq "nimyaml-event") {
+            @test_events = minimal_events("nimyaml", @test_events);
+            @events = nim_event_to_event(@events);
+            $tests{ $id }->{minimal_events} = \@test_events;
+            $tests{ $id }->{transformed_events} = \@events;
+            push @events, "-STR";
+            unshift @events, "+STR";
+        }
+        elsif ($framework eq "pyyaml-event") {
+            @test_events = minimal_events("pyyaml", @test_events);
+            @events = map { py_event_to_event($_) } @events;
+            $tests{ $id }->{minimal_events} = \@test_events;
+            $tests{ $id }->{transformed_events} = \@events;
+        }
+        my $ok = 1;
+        for my $i (0 .. $#events) {
+            my $event = $events[ $i ];
+            my $exp = $test_events[ $i ];
+            if ($event ne $exp) {
+                $verbose and
+                    warn "$id line ${\($i + 1)}: <$event> ne <$exp>\n";
+                $ok = 0;
+                last;
+            }
+        }
+        if ($ok) {
             $tests{ $id }->{ok} = 1;
             $sum_ok++;
         }
         else {
+            if ($verbose >= 2) {
+                warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@events], ['events']);
+                warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@test_events], ['test_events']);
+                warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@orig_events], ['orig_events']);
+            }
             $tests{ $id }->{diff} = 1;
             $sum_diff++;
 #                $tests{ $id }->{exp_events} = \@test_events;
@@ -191,6 +227,207 @@ DumpFile("$Bin/../matrix/$framework.yaml", {
     date => time,
     time => $end - $start,
 });
+
+sub minimal_events {
+    my ($type, @events) = @_;
+    for my $event (@events) {
+        if ($event =~ m/^\+DOC ---/) {
+            $event = '+DOC';
+        }
+        elsif ($event =~ m/^-DOC \.\.\./) {
+            $event = '-DOC';
+        }
+        elsif ($event =~ s/^=VAL//) {
+            my $ev = '=VAL';
+            if ($event =~ s/^ &(\S+)//) {
+                $ev .= " &$1";
+            }
+            if ($event =~ s/^ (<.*?>)//) {
+                $ev .= " $1";
+            }
+            if ($type eq 'pyyaml' and $event =~ s/^ ["'>|](.*)//) {
+                $ev .= " :$1";
+            }
+            elsif ($type eq 'nimyaml' and $event =~ s/^ ['>|"](.*)//) {
+                $ev .= qq{ :$1};
+            }
+            else {
+                $ev .= $event;
+            }
+            $event = $ev;
+        }
+    }
+    return @events;
+}
+
+sub py_event_to_event {
+    my ($event) = @_;
+    if ($event eq "StreamStartEvent()") {
+        $event = "+STR";
+    }
+    elsif ($event eq "StreamEndEvent()") {
+        $event = "-STR";
+    }
+    elsif ($event eq "DocumentStartEvent()") {
+        $event = "+DOC";
+    }
+    elsif ($event eq "DocumentEndEvent()") {
+        $event = "-DOC";
+    }
+    elsif ($event =~ s/^MappingStartEvent\(//) {
+        my $ev = '+MAP';
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " &$anchor";
+            }
+        }
+        if (defined(my $tag = _py_match_tag($event))) {
+            if (_py_match_string($tag)) {
+                $ev .= " <$tag>";
+            }
+        }
+        $event = $ev;
+    }
+    elsif ($event eq "MappingEndEvent()") {
+        $event = "-MAP";
+    }
+    elsif ($event =~ s/^SequenceStartEvent\(//) {
+        my $ev = "+SEQ";
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " &$anchor";
+            }
+        }
+        if (defined(my $tag = _py_match_tag($event))) {
+            if (_py_match_string($tag)) {
+                $ev .= " <$tag>";
+            }
+        }
+        $event = $ev;
+    }
+    elsif ($event eq "SequenceEndEvent()") {
+        $event = "-SEQ";
+    }
+
+    elsif ($event =~ s/^AliasEvent\(//) {
+        my $ev = "=ALI";
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " *$anchor";
+            }
+        }
+        $event = $ev;
+    }
+    elsif ($event =~ s/^ScalarEvent\(//) {
+        my $ev = "=VAL";
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " &$anchor";
+            }
+        }
+        if (defined(my $tag = _py_match_tag($event))) {
+            if (_py_match_string($tag)) {
+                $ev .= " <$tag>";
+            }
+        }
+        if ($event =~ s/^implicit=\(\w+, \w+\), //) {
+        }
+        if ($event =~ s/^value=(.*)\)//) {
+            my $value = $1;
+            if (_py_match_string($value)) {
+                $ev .= " :$value";
+            }
+        }
+        $event = $ev;
+    }
+
+    return $event;
+}
+
+sub _py_match_anchor {
+    if ($_[0] =~ s/^anchor=(\S+)(, |\))//) {
+        return "$1";
+    }
+    return;
+}
+sub _py_match_tag {
+    if ($_[0] =~ s/^tag=(\S+)(, |\))//) {
+        return "$1";
+    }
+    return;
+}
+
+sub _py_match_string {
+    if ($_[0] =~ m/^u'((?:\\'|[^'])+)'/) {
+        $_[0] = "$1";
+        $_[0] =~ s/\\'/'/g;
+        return 1;
+    }
+    if ($_[0] =~ m/^u"([^"]+)"/) {
+        $_[0] = "$1";
+        return 1;
+    }
+    return;
+}
+
+sub nim_event_to_event {
+    my (@events) = @_;
+    my @new;
+    while (my $event = shift @events) {
+        while (@events and $events[0] !~ m/^yaml\w+\(/) {
+            my $next = shift @events;
+            $event .= "\n$next";
+        }
+        if ($event eq "yamlStartDoc()") {
+            $event = "+DOC";
+        }
+        elsif ($event eq "yamlEndDoc()") {
+            $event = "-DOC";
+        }
+        elsif ($event =~ s/^yamlStartMap\(//) {
+            $event = "+MAP";
+        }
+        elsif ($event =~ s/^yamlEndMap\(//) {
+            $event = "-MAP";
+        }
+        elsif ($event =~ s/^yamlStartSeq\(//) {
+            $event = "+SEQ";
+        }
+        elsif ($event =~ s/^yamlEndSeq\(//) {
+            $event = "-SEQ";
+        }
+        elsif ($event =~ m/^yamlAlias\(aliasTarget=(\d+)\)/) {
+            my $target = $1;
+            $event = "=ALI *$target";
+        }
+        elsif ($event =~ s/^yamlScalar\(//) {
+            my ($tag, $anchor);
+            if ($event =~ s/^tag=(\S+), //) {
+                if ($1 ne '?' and $1 ne '!') {
+                    $tag = $1;
+                }
+            }
+            if ($event =~ s/^anchor=(\S+), //) {
+                $anchor = $1;
+            }
+            $event =~ s/\t/\\t/g;
+            $event =~ s/\n/\\n/g;
+            if ($event =~ s/^content="([^"]*)"\)//) {
+                my $content = $1;
+                $event = "=VAL";
+                if (defined $anchor) {
+                    $event .= " &$anchor";
+                }
+                if (defined $tag) {
+                    $event .= " $tag";
+                }
+                $event .= " :$1";
+            }
+        }
+        push @new, $event;
+    }
+    return @new;
+}
 
 sub usage {
     say <<"EOM";
