@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test [%= .id %] - [%= .test.title %]</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test [%= .id %]</h2>
-<h3>[%= .test.title %]</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #[%= .id %] - [%= .test.title %]</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>[%= .yaml %]</pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>[%= .events %]</pre></div>

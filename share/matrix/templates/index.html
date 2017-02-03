@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
 
@@ -10,9 +12,9 @@
 
 <table class="matrix">
 <thead>
-<tr><th colspan="2">Frameworks<br>Tests</th>
+<tr class="headline"><th colspan="2">Frameworks<br>Tests</th>
 [%loop .framework_names %]
-<th class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</th>
+<td class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</td>
 [%/loop %]
 </tr>
 
@@ -43,22 +45,22 @@
 
 <tbody>
 </tr>
-[%loop .tests break="20" %]
+[%loop .tests break="30" %]
 [%if __break__ %]<tr class="headline"><td colspan="2"></td>
 [%loop .framework_names %]
 <td class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</td>
 [%/loop %]
 </tr>[%/if %]
 <tr>
-<td class="testname"><tt><a href="#[%= id %]">#[%= id %]</tt></a></td>
+<td class="testname"><tt><a href="#[%= id %]">[%= id %]</tt></a></td>
 <td id="[%= id %]" class="testname"><a href="details-[%= id %].html">[%= title %]</a></td>
 [%loop frameworks %]
 <td class="result [%= id %]
 [%if ok %]ok[%elsif error %]error[%elsif json_ok %]json_ok[%elsif diff
 %]diff[%elsif json_diff %]json_diff[%elsif na %]na[%/if %]
 ">
-[%if ok %]ok[%elsif error %]error[%elsif json_ok %]json_ok[%elsif diff
-%]diff[%elsif json_diff %]json_diff[%elsif na %]n/a[%/if %]
+<a href="details-[%= test %].html#[%= id %]">[%if ok %]ok[%elsif error %]error[%elsif json_ok %]ok[%elsif diff
+%]diff[%elsif json_diff %]diff[%elsif na %]n/a[%/if %]</a>
 
 </td>
 [%/loop frameworks %]

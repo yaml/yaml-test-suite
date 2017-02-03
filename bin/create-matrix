@@ -121,6 +121,7 @@ sub create_html {
         my @frameworks;
         for my $fw (@framework_names) {
             my $results = $frameworks->{ $fw->{fullname} };
+            $results->{test} = $test;
             push @frameworks, $results;
         }
         push @tests, {
@@ -155,6 +156,7 @@ sub create_html {
     close $fh;
     say "Created matrix/html/index.html";
 
+    copy ("share/matrix/css/yaml.css", "matrix/html/css");
     copy ("share/matrix/css/matrix.css", "matrix/html/css");
 }
 

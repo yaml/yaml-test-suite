@@ -1,27 +1,16 @@
-body {
-    background-color: linen;
-    font-family: Verdana, Arial;
-    font-size: 95%;
-}
-
-h1, h2, h3, h4 {
-    color: maroon;
-}
-h1 {
-    margin-left: 40px;
-}
 div.framework h3 {
     margin: 3px;
 }
 table.matrix {
-    border: 1px solid gray;
+    border: 1px solid #bbb;
     border-collapse: collapse;
     box-shadow: 2px 2px 4px 1px grey;
 }
 table.matrix tr th, td {
-    border: 1px solid gray;
+    border: 1px solid #bbb;
     background-color: white;
-    padding: 2px;
+    padding: 1px 2px 1px 2px;
+
 }
 table.matrix tr th {
     vertical-align: top;
@@ -34,38 +23,38 @@ table.matrix tbody tr > td.testname {
 table.matrix tbody tr:hover > td.result {
     color: #444;
 }
+table.matrix td.result a {
+    display: block;
+    text-decoration: none;
+}
+table.matrix tr:hover td.result a {
+    color: #444;
+}
 table.matrix thead tr.overview td {
     white-space: nowrap;
 }
 
-a {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-table.matrix tr td.ok, span.ok {
+table.matrix tr td.ok, span.ok, table.matrix td.ok a {
     background-color: lightgreen;
     color: lightgreen;
 }
-table.matrix tr td.json_ok, span.json_ok {
+table.matrix tr td.json_ok, span.json_ok, table.matrix td.json_ok a {
     background-color: #e8e811;
     color: #e8e811;
 }
-table.matrix tr td.diff, span.diff {
+table.matrix tr td.diff, span.diff, table.matrix td.diff a {
     background-color: #ff9922;
     color: #ff9922;
 }
-table.matrix tr td.json_diff, span.json_diff {
+table.matrix tr td.json_diff, span.json_diff, table.matrix td.json_diff a {
     background-color: #ff9922;
     color: #ff9922;
 }
-table.matrix tr td.na, span.na {
+table.matrix tr td.na, span.na, table.matrix td.na a {
     background-color: #ddd;
     color: #ddd;
 }
-table.matrix tr td.error, span.error {
+table.matrix tr td.error, span.error, table.matrix td.error a {
     background-color: #ff5858;
     color: #ff5858;
 }
