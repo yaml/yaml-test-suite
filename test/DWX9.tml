@@ -16,5 +16,8 @@ tags: spec,block,scalar,comment
 +++ out-yaml
 "\n\nliteral\n \n\ntext\n"
 
++++ in-json
+"\n\nliteral\n \n\ntext\n"
+
 +++ test-event
 =VAL |\n\nliteral\n \n\ntext\n

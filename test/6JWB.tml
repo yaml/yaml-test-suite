@@ -14,6 +14,16 @@ foo: !!seq
 - !!map
   key: !!str value
 
++++ in-json
+{
+  "foo": [
+    "a",
+    {
+      "key": "value"
+    }
+  ]
+}
+
 +++ test-event
 +MAP
 =VAL :foo

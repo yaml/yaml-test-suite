@@ -18,6 +18,19 @@ sequence: !!seq
 mapping: !!map
   foo: bar
 
++++ in-json
+{
+  "sequence": [
+    "entry",
+    [
+      "nested"
+    ]
+  ],
+  "mapping": {
+    "foo": "bar"
+  }
+}
+
 +++ test-event
 +MAP
 =VAL :sequence

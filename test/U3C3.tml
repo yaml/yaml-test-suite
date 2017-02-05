@@ -10,6 +10,9 @@ tags: spec,document,tags
 +++ out-yaml
 --- !!str "foo"
 
++++ in-json
+"foo"
+
 +++ test-event
 +DOC ---
 =VAL <tag:yaml.org,2002:str> "foo

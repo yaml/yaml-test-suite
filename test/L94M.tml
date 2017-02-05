@@ -12,6 +12,12 @@ tags: tags,mapping
 !!str a: !!int 47
 c: !!str d
 
++++ in-json
+{
+  "a": 47,
+  "c": "d"
+}
+
 +++ test-event
 +MAP
 =VAL <tag:yaml.org,2002:str> :a

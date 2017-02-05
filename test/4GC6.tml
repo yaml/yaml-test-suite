@@ -5,5 +5,8 @@ tags: spec,scalar
 +++ in-yaml
 'here''s to "quotes"'
 
++++ in-json
+"here's to \"quotes\""
+
 +++ test-event
 =VAL 'here's to "quotes"

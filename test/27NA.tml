@@ -6,6 +6,9 @@ tags: spec,document
 \%YAML 1.2
 --- text
 
++++ in-json
+"text"
+
 +++ test-event
 +DOC ---
 =VAL :text
