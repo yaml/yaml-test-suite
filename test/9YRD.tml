@@ -17,5 +17,8 @@ e
 
   e'
 
++++ in-json
+"a b c d\ne"
+
 +++ test-event
 =VAL :a b c d\ne

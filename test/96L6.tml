@@ -12,6 +12,9 @@ tags: spec,block,scalar
 --- >
   Mark McGwire's year was crippled by a knee injury.
 
++++ in-json
+"Mark McGwire's year was crippled by a knee injury.\n"
+
 +++ test-event
 +DOC ---
 =VAL >Mark McGwire's year was crippled by a knee injury.\n

@@ -19,5 +19,8 @@ tags: spec,whitespace,scalar
 
   as space
 
++++ in-json
+"trimmed\n\n\nas space"
+
 +++ test-event
 =VAL >trimmed\n\n\nas space

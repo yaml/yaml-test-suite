@@ -13,6 +13,9 @@ Document
 --- Document
 ...
 
++++ in-json
+"Document"
+
 +++ test-event
 +DOC ---
 =VAL :Document

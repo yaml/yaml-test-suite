@@ -13,5 +13,8 @@ tags: spec,block,scalar
 # XXX Should be literal?
 "literal\n\ttext\n"
 
++++ in-json
+"literal\n\ttext\n"
+
 +++ test-event
 =VAL |literal\n\ttext\n

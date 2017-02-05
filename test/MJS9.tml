@@ -14,5 +14,8 @@ tags: spec,scalar,whitespace
 # XXX Should be folded?
 "foo \n\n\t bar\n\nbaz\n"
 
++++ in-json
+"foo \n\n\t bar\n\nbaz\n"
+
 +++ test-event
 =VAL >foo \n\n\t bar\n\nbaz\n

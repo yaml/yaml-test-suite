@@ -13,6 +13,9 @@ tags: scalar
 "ab\n\n \n"
 ...
 
++++ in-json
+"ab\n\n \n"
+
 +++ test-event
 +DOC
 =VAL |ab\n\n \n

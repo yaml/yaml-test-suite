@@ -13,5 +13,8 @@ tags: spec,block,scalar
 >
   folded text
 
++++ in-json
+"folded text\n"
+
 +++ test-event
 =VAL >folded text\n

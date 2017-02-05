@@ -14,6 +14,14 @@ k: !!seq
 - a
 - !!str b
 
++++ in-json
+{
+  "k": [
+    "a",
+    "b"
+  ]
+}
+
 +++ test-event
 +MAP <tag:yaml.org,2002:map>
 =VAL :k
