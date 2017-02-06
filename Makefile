@@ -19,10 +19,11 @@ ReadMe.pod: doc/yaml-test-suite.swim
 
 #------------------------------------------------------------------------------
 .PHONY: matrix
-matrix: gh-pages
+matrix: gh-pages data
 	mkdir -p matrix
 	for f in `YAML_EDITOR=$$PWD/../yaml-editor ./bin/run-framework-tests -l`; \
-	    do YAML_EDITOR=$$PWD/../yaml-editor ./bin/run-framework-tests $$f; done
+	    do bash -c "printf '%.0s-' {1..80}; echo"; \
+	    YAML_EDITOR=$$PWD/../yaml-editor time ./bin/run-framework-tests $$f; done
 	./bin/create-matrix
 	rm -fr gh-pages/*.html gh-pages/css/
 	cp -r $@/html/*.html $@/html/css/ gh-pages/
