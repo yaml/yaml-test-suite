@@ -3,11 +3,11 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2787745
 tags: spec,scalar
 
 +++ in-yaml
-"folded 
-to a space,	
-\ 
-to a line feed, or 	\
- \ 	non-content"
+"folded·
+to a space,→
+\·
+to a line feed, or →\
+ \ →non-content"
 
 +++ out-yaml
 "folded to a space,\nto a line feed, or \t \tnon-content"

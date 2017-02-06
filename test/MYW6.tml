@@ -5,8 +5,8 @@ tags: scalar
 +++ in-yaml
 |-
  ab
-\ 
-\ 
+\·
+\·
 ...
 
 +++ out-yaml

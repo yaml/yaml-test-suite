@@ -4,9 +4,9 @@ tags: spec,scalar,whitespace
 
 +++ in-yaml
 >
-  foo 
-\ 
-  	 bar
+  foo·
+\·
+  → bar
 
   baz
 

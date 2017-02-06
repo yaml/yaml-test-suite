@@ -4,19 +4,19 @@ tags: spec,whitespace
 
 +++ in-yaml
 \# Tabs and spaces
-quoted: "Quoted 	"
-block:	|
+quoted: "Quoted →"
+block:→|
   void main() {
-  	printf("Hello, world!\n");
+  →printf("Hello, world!\n");
   }
 
 +++ out-yaml
 quoted: "Quoted \t"
 # XXX This should be literal
 block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
-# block:	|
+# block:→|
 #   void main() {
-#   	printf("Hello, world!\n");
+#   →printf("Hello, world!\n");
 #   }
 
 +++ in-json

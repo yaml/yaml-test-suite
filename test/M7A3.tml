@@ -18,7 +18,7 @@ document
 Bare document
 ...
 # XXX Following line has trailing space (libyaml)
---- 
+---·
 ...
 --- "%!PS-Adobe-2.0 # Not the first line\n"
 

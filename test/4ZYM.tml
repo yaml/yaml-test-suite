@@ -6,10 +6,10 @@ tags: spec,scalar,block
 plain: text
   lines
 quoted: "text
-  	lines"
+  →lines"
 block: |
   text
-   	lines
+   →lines
 
 +++ out-yaml
 plain: text lines

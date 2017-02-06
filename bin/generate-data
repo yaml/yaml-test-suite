@@ -61,6 +61,8 @@ sub process_file {
   if (length $output) {
     $output .= $1;
   }
+  $output =~ s/·/ /g;
+  $output =~ s/→/\t/g;
   $output =~ s/^# .*//gm;
   $output =~ s/^[\ \t]*$//gm;
   $output =~ s/^\\//gm;
