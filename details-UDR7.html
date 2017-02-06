@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test UDR7 - Spec Example 5.4. Flow Collection Indicators</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test UDR7</h2>
-<h3>Spec Example 5.4. Flow Collection Indicators</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #UDR7 - Spec Example 5.4. Flow Collection Indicators</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>sequence: [ one, two, ]
 mapping: { sky: blue, sea: green }
@@ -59,24 +60,7 @@ mapping: { sky: blue, sea: green }
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;sequence&quot;)
-yamlStartSeq(tag=?)
-yamlScalar(tag=?, content=&quot;one&quot;)
-yamlScalar(tag=?, content=&quot;two&quot;)
-yamlEndSeq()
-yamlScalar(tag=?, content=&quot;mapping&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;sky&quot;)
-yamlScalar(tag=?, content=&quot;blue&quot;)
-yamlScalar(tag=?, content=&quot;sea&quot;)
-yamlScalar(tag=?, content=&quot;green&quot;)
-yamlEndMap()
-yamlEndMap()
-yamlEndDoc()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -103,12 +87,13 @@ yamlEndDoc()</pre>
                 ]
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
 +STR
 +DOC
 +MAP
@@ -119,6 +104,7 @@ yamlEndDoc()</pre>
 -MAP
 -DOC
 -STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -160,6 +146,7 @@ yamlEndDoc()</pre>
                 ]
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-json">
@@ -169,9 +156,8 @@ yamlEndDoc()</pre>
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-{
+ <span class="na">&nbsp;</span>n/a
+<pre>{
   mapping  =&gt; {
     sea =&gt; &quot;green&quot;.Str,
     sky =&gt; &quot;blue&quot;.Str,
@@ -180,31 +166,14 @@ yamlEndDoc()</pre>
     &quot;one&quot;.Str,
     &quot;two&quot;.Str,
   ],
-}</pre>
+}
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;sequence&#39;)
-SequenceStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;one&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;two&#39;)
-SequenceEndEvent()
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;mapping&#39;)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;sky&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;blue&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;sea&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;green&#39;)
-MappingEndEvent()
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">

@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test 77H8 - Spec Example 2.23. Various Explicit Tags</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test 77H8</h2>
-<h3>Spec Example 2.23. Various Explicit Tags</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #77H8 - Spec Example 2.23. Various Explicit Tags</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 not-date: !!str 2002-04-28
@@ -107,8 +108,37 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
 <pre>
++STR
++DOC
++MAP
+=VAL :not-date
+=VAL &lt;tag:yaml.org,2002:str&gt; :2002-04-28
+=VAL :picture
+=VAL &lt;tag:yaml.org,2002:binary&gt; :R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n
+=VAL :application specific tag
+=VAL &lt;!something&gt; :The semantics of the tag\nabove may be different for\ndifferent documents.\n
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :not-date
+=VAL !!str :2002-04-28
+=VAL :picture
+=VAL !!binary :R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n
+=VAL :application specific tag
+=VAL &lt;10000&gt; :The semantics of the tag\nabove may be different for\ndifferent documents.\n
+-MAP
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
 yamlStartDoc()
 yamlStartMap(tag=?)
 yamlScalar(tag=?, content=&quot;not-date&quot;)
@@ -126,6 +156,7 @@ different documents.
 &quot;)
 yamlEndMap()
 yamlEndDoc()</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -138,6 +169,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>{&quot;application specific tag&quot;:&quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,&quot;not-date&quot;:&quot;2002-04-28&quot;,&quot;picture&quot;:&quot;R0lGODlhDAAMAIQAAP\/\/9\/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -156,12 +188,13 @@ Pz7Y6OjuDg4J+fn5OTk6enp
 &#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
 +STR
 +DOC ---
 +MAP
@@ -174,6 +207,7 @@ Pz7Y6OjuDg4J+fn5OTk6enp
 -MAP
 -DOC
 -STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -181,6 +215,7 @@ Pz7Y6OjuDg4J+fn5OTk6enp
  <span class="na">&nbsp;</span>n/a
 <pre>{&quot;application specific tag&quot;:&quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,&quot;not-date&quot;:&quot;2002-04-28&quot;,&quot;picture&quot;:&quot;GIF89a\f\u0000\f\u0000Â„\u0000\u0000Ã¿Ã¿&quot;}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -195,6 +230,7 @@ different documents.
   &#39;picture&#39; =&gt; &#39;GIF89a  „  ÿÿ&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -261,20 +297,7 @@ Couldn&#39;t resolve  to string
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;not-date&#39;)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;2002-04-28&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;picture&#39;)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:binary&#39;, implicit=(False, False), value=u&#39;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;application specific tag&#39;)
-ScalarEvent(anchor=None, tag=u&#39;!something&#39;, implicit=(False, False), value=u&#39;The semantics of the tag\nabove may be different for\ndifferent documents.\n&#39;)
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">

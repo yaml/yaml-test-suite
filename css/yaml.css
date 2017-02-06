@@ -1,0 +1,25 @@
+body {
+    font-family: Verdana, Arial;
+    font-size: 95%;
+    color: #111;
+    background-color: #ffee99;
+    border-top: 5px solid #fc0;
+  margin: 0px 5px 5px 5px;
+}
+h1 {
+    margin-left: 20px;
+}
+h1, h2, h3, h4 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+a {
+    color: #950;
+    text-decoration: none;
+}
+a:visited {
+    color: #730;
+}
+a:hover {
+    background-color: #444;
+    color: #fc0;
+}

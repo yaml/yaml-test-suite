@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test 9FMG - Multi-level Mapping Indent</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test 9FMG</h2>
-<h3>Multi-level Mapping Indent</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #9FMG - Multi-level Mapping Indent</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>a:
   b:
@@ -60,27 +61,7 @@ h: i
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;a&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;b&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;c&quot;)
-yamlScalar(tag=?, content=&quot;d&quot;)
-yamlEndMap()
-yamlScalar(tag=?, content=&quot;e&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;f&quot;)
-yamlScalar(tag=?, content=&quot;g&quot;)
-yamlEndMap()
-yamlEndMap()
-yamlScalar(tag=?, content=&quot;h&quot;)
-yamlScalar(tag=?, content=&quot;i&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -108,6 +89,7 @@ yamlEndDoc()</pre>
   &#39;h&#39; =&gt; &#39;i&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -135,6 +117,7 @@ yamlEndDoc()</pre>
   &#39;h&#39; =&gt; &#39;i&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -157,6 +140,7 @@ yamlEndDoc()</pre>
   &#39;h&#39; =&gt; &#39;i&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-xs-json">
@@ -179,6 +163,7 @@ yamlEndDoc()</pre>
   &#39;h&#39; =&gt; &#39;i&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-json">
@@ -188,9 +173,8 @@ yamlEndDoc()</pre>
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-{
+ <span class="na">&nbsp;</span>n/a
+<pre>{
   a =&gt; {
     b =&gt; {
       c =&gt; &quot;d&quot;.Str,
@@ -200,34 +184,14 @@ yamlEndDoc()</pre>
     },
   },
   h =&gt; &quot;i&quot;.Str,
-}</pre>
+}
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;a&#39;)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;b&#39;)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;c&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;d&#39;)
-MappingEndEvent()
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;e&#39;)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;f&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;g&#39;)
-MappingEndEvent()
-MappingEndEvent()
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;h&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;i&#39;)
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">

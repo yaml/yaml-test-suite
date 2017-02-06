@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test 229Q - Spec Example 2.4. Sequence of Mappings</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test 229Q</h2>
-<h3>Spec Example 2.4. Sequence of Mappings</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #229Q - Spec Example 2.4. Sequence of Mappings</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>-
   name: Mark McGwire
@@ -71,28 +72,7 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;name&quot;)
-yamlScalar(tag=?, content=&quot;Mark McGwire&quot;)
-yamlScalar(tag=?, content=&quot;hr&quot;)
-yamlScalar(tag=?, content=&quot;65&quot;)
-yamlScalar(tag=?, content=&quot;avg&quot;)
-yamlScalar(tag=?, content=&quot;0.278&quot;)
-yamlEndMap()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;name&quot;)
-yamlScalar(tag=?, content=&quot;Sammy Sosa&quot;)
-yamlScalar(tag=?, content=&quot;hr&quot;)
-yamlScalar(tag=?, content=&quot;63&quot;)
-yamlScalar(tag=?, content=&quot;avg&quot;)
-yamlScalar(tag=?, content=&quot;0.288&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlEndDoc()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -123,6 +103,7 @@ yamlEndDoc()</pre>
   }
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -153,6 +134,7 @@ yamlEndDoc()</pre>
   }
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -178,6 +160,7 @@ yamlEndDoc()</pre>
   }
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-xs-json">
@@ -201,6 +184,7 @@ yamlEndDoc()</pre>
   }
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-json">
@@ -210,9 +194,8 @@ yamlEndDoc()</pre>
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-[
+ <span class="na">&nbsp;</span>n/a
+<pre>[
   {
     avg  =&gt; 0.278.Rat,
     hr   =&gt; 65.Int,
@@ -223,35 +206,14 @@ yamlEndDoc()</pre>
     hr   =&gt; 63.Int,
     name =&gt; &quot;Sammy Sosa&quot;.Str,
   },
-]</pre>
+]
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-SequenceStartEvent(anchor=None, tag=None, implicit=True)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;name&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Mark McGwire&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;hr&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;65&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;avg&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;0.278&#39;)
-MappingEndEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;name&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Sammy Sosa&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;hr&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;63&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;avg&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;0.288&#39;)
-MappingEndEvent()
-SequenceEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">

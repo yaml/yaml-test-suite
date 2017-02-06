@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test N782 - Fake markers in flow style</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test N782</h2>
-<h3>Fake markers in flow style</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #N782 - Fake markers in flow style</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>[
 --- ,
@@ -101,14 +102,7 @@ expected the node content, but found DocumentStart
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=?, content=&quot;---&quot;)
-yamlScalar(tag=?, content=&quot;...&quot;)
-yamlEndSeq()
-yamlEndDoc()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -152,6 +146,7 @@ yamlEndDoc()</pre>
   &#39;...&#39;
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -193,12 +188,13 @@ while parsing a flow node at line: 2, column: 1
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-[
+ <span class="na">&nbsp;</span>n/a
+<pre>[
   &quot;---&quot;.Str,
   &quot;...&quot;.Str,
-]</pre>
+]
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">

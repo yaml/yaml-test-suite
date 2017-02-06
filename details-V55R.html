@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test V55R - Aliases in Block Sequence</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test V55R</h2>
-<h3>Aliases in Block Sequence</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #V55R - Aliases in Block Sequence</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- &amp;a a
 - &amp;b b
@@ -39,6 +40,7 @@
   &quot;b&quot;
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="js-yaml-json">
@@ -51,6 +53,7 @@
   &quot;b&quot;
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -60,8 +63,33 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
 <pre>
++STR
++DOC
++SEQ
+=VAL &amp;a :a
+=VAL &amp;b :b
+=ALI *a
+=ALI *b
+-SEQ
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
++SEQ
+=VAL &amp;0 :a
+=VAL &amp;1 :b
+=ALI *0
+=ALI *1
+-SEQ
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
 yamlStartDoc()
 yamlStartSeq(tag=?)
 yamlScalar(tag=?, anchor=0, content=&quot;a&quot;)
@@ -70,6 +98,7 @@ yamlAlias(aliasTarget=0)
 yamlAlias(aliasTarget=1)
 yamlEndSeq()
 yamlEndDoc()</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -82,6 +111,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>[&quot;a&quot;,&quot;b&quot;,&quot;a&quot;,&quot;b&quot;]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -94,6 +124,7 @@ yamlEndDoc()</pre>
   &#39;b&#39;
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -106,6 +137,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>[&quot;a&quot;,&quot;b&quot;,&quot;a&quot;,&quot;b&quot;]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -118,6 +150,7 @@ yamlEndDoc()</pre>
   &#39;b&#39;
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -135,6 +168,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>[&quot;a&quot;,&quot;b&quot;,&quot;a&quot;,&quot;b&quot;]
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -147,6 +181,7 @@ yamlEndDoc()</pre>
   ${\$VAR1-&gt;[1]}
 ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-json">
@@ -154,34 +189,25 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>[ &quot;&amp;a a&quot;, &quot;&amp;b b&quot;, &quot;&amp;a a&quot;, &quot;&amp;b b&quot; ]
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-[
+ <span class="na">&nbsp;</span>n/a
+<pre>[
   &quot;\&amp;a a&quot;.Str,
   &quot;\&amp;b b&quot;.Str,
   &quot;\&amp;a a&quot;.Str,
   &quot;\&amp;b b&quot;.Str,
-]</pre>
+]
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-SequenceStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=u&#39;a&#39;, tag=None, implicit=(True, False), value=u&#39;a&#39;)
-ScalarEvent(anchor=u&#39;b&#39;, tag=None, implicit=(True, False), value=u&#39;b&#39;)
-AliasEvent(anchor=u&#39;a&#39;)
-AliasEvent(anchor=u&#39;b&#39;)
-SequenceEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">
@@ -189,6 +215,7 @@ StreamEndEvent()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>[&quot;a&quot;,&quot;b&quot;,&quot;a&quot;,&quot;b&quot;]
 </pre>
+
  </div>
 
  </body>

@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test CC74 - Spec Example 6.20. Tag Handles</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test CC74</h2>
-<h3>Spec Example 6.20. Tag Handles</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #CC74 - Spec Example 6.20. Tag Handles</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>%TAG !e! tag:example.com,2000:app/
 ---
@@ -83,11 +84,27 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:example.com,
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
 <pre>
++STR
++DOC
+=VAL &lt;tag:example.com,2000:app/foo&gt; :bar
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
+=VAL &lt;10000&gt; :bar
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
 yamlStartDoc()
 yamlScalar(tag=&lt;10000&gt;, content=&quot;bar&quot;)
 yamlEndDoc()</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -123,6 +140,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>&quot;%TAG !e! tag:example.com,2000:app\/ --- !e!foo \&quot;bar\&quot;&quot;
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -130,6 +148,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>&#39;%TAG !e! tag:example.com,2000:app/ --- !e!foo &quot;bar&quot;&#39;
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -182,13 +201,7 @@ yamlEndDoc()</pre>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-ScalarEvent(anchor=None, tag=u&#39;tag:example.com,2000:app/foo&#39;, implicit=(False, False), value=u&#39;bar&#39;)
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">
@@ -196,6 +209,7 @@ StreamEndEvent()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>&quot;bar&quot;
 </pre>
+
  </div>
 
  </body>

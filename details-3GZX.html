@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test 3GZX - Spec Example 7.1. Alias Nodes</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test 3GZX</h2>
-<h3>Spec Example 7.1. Alias Nodes</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #3GZX - Spec Example 7.1. Alias Nodes</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>First occurrence: &amp;anchor Foo
 Second occurrence: *anchor
@@ -43,6 +44,7 @@ Reuse anchor: *anchor
   &quot;Reuse anchor&quot;: &quot;Bar&quot;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="js-yaml-json">
@@ -55,6 +57,7 @@ Reuse anchor: *anchor
   &quot;Reuse anchor&quot;: &quot;Bar&quot;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -64,8 +67,41 @@ Reuse anchor: *anchor
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
 <pre>
++STR
++DOC
++MAP
+=VAL :First occurrence
+=VAL &amp;anchor :Foo
+=VAL :Second occurrence
+=ALI *anchor
+=VAL :Override anchor
+=VAL &amp;anchor :Bar
+=VAL :Reuse anchor
+=ALI *anchor
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :First occurrence
+=VAL &amp;0 :Foo
+=VAL :Second occurrence
+=ALI *0
+=VAL :Override anchor
+=VAL &amp;1 :Bar
+=VAL :Reuse anchor
+=ALI *1
+-MAP
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
 yamlStartDoc()
 yamlStartMap(tag=?)
 yamlScalar(tag=?, content=&quot;First occurrence&quot;)
@@ -78,6 +114,7 @@ yamlScalar(tag=?, content=&quot;Reuse anchor&quot;)
 yamlAlias(aliasTarget=1)
 yamlEndMap()
 yamlEndDoc()</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -90,6 +127,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -102,6 +140,7 @@ yamlEndDoc()</pre>
   &#39;Second occurrence&#39; =&gt; &#39;Foo&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -114,6 +153,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -126,6 +166,7 @@ yamlEndDoc()</pre>
   &#39;Second occurrence&#39; =&gt; &#39;Foo&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -143,6 +184,7 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -155,6 +197,7 @@ yamlEndDoc()</pre>
   &#39;Second occurrence&#39; =&gt; ${\$VAR1-&gt;{&#39;First occurrence&#39;}}
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-json">
@@ -162,38 +205,25 @@ yamlEndDoc()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>{ &quot;Reuse anchor&quot; : &quot;&amp;anchor Bar&quot;, &quot;Override anchor&quot; : &quot;&amp;anchor Bar&quot;, &quot;Second occurrence&quot; : &quot;&amp;anchor Foo&quot;, &quot;First occurrence&quot; : &quot;&amp;anchor Foo&quot; }
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-{
+ <span class="na">&nbsp;</span>n/a
+<pre>{
   First occurrence  =&gt; &quot;\&amp;anchor Foo&quot;.Str,
   Override anchor   =&gt; &quot;\&amp;anchor Bar&quot;.Str,
   Reuse anchor      =&gt; &quot;\&amp;anchor Bar&quot;.Str,
   Second occurrence =&gt; &quot;\&amp;anchor Foo&quot;.Str,
-}</pre>
+}
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;First occurrence&#39;)
-ScalarEvent(anchor=u&#39;anchor&#39;, tag=None, implicit=(True, False), value=u&#39;Foo&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Second occurrence&#39;)
-AliasEvent(anchor=u&#39;anchor&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Override anchor&#39;)
-ScalarEvent(anchor=u&#39;anchor&#39;, tag=None, implicit=(True, False), value=u&#39;Bar&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Reuse anchor&#39;)
-AliasEvent(anchor=u&#39;anchor&#39;)
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">
@@ -201,6 +231,7 @@ StreamEndEvent()</pre>
  <span class="na">&nbsp;</span>n/a
 <pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;}
 </pre>
+
  </div>
 
  </body>

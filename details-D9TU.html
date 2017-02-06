@@ -3,13 +3,14 @@
 <head>
 <title>yaml-test-suite Framework Matrix - Test D9TU - Single Pair Block Mapping</title>
 <meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
-<a href="index.html">Back to matrix</a><hr>
 
-<h2>yaml-test-suite Framework Matrix - Test D9TU</h2>
-<h3>Single Pair Block Mapping</h3>
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #D9TU - Single Pair Block Mapping</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>foo: bar
 </pre></div>
@@ -42,14 +43,7 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;foo&quot;)
-yamlScalar(tag=?, content=&quot;bar&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -69,6 +63,7 @@ yamlEndDoc()</pre>
   &#39;foo&#39; =&gt; &#39;bar&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -88,6 +83,7 @@ yamlEndDoc()</pre>
   &#39;foo&#39; =&gt; &#39;bar&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -102,6 +98,7 @@ yamlEndDoc()</pre>
   &#39;foo&#39; =&gt; &#39;bar&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-xs-json">
@@ -116,6 +113,7 @@ yamlEndDoc()</pre>
   &#39;foo&#39; =&gt; &#39;bar&#39;
 }
 </pre>
+
  </div>
 
  <div class="framework" id="perl6-json">
@@ -125,25 +123,17 @@ yamlEndDoc()</pre>
 
  <div class="framework" id="perl6-p6">
 <h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-{
+ <span class="na">&nbsp;</span>n/a
+<pre>{
   foo =&gt; &quot;bar&quot;.Str,
-}</pre>
+}
+</pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff
-<pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;foo&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;bar&#39;)
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">
