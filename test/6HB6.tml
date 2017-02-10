@@ -5,7 +5,7 @@ tags: spec,indent
 +++ in-yaml
   # Leading comment line spaces are
    # neither content nor indentation.
-\····
+<SPC><SPC><SPC><SPC>
 Not indented:
  By one space: |
     By four
@@ -13,7 +13,7 @@ Not indented:
  Flow style: [    # Leading spaces
    By two,        # in flow style
   Also by two,    # are neither
-  →Still by two   # content nor
+  <TAB>Still by two   # content nor
     ]             # indentation.
 
 +++ out-yaml

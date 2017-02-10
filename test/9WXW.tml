@@ -7,7 +7,7 @@ tags: spec,document,tags
 !foo "bar"
 ...
 \# Global
-%TAG ! tag:example.com,2000:app/
+\%TAG ! tag:example.com,2000:app/
 ---
 !foo "bar"
 

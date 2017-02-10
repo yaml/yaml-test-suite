@@ -12,13 +12,13 @@ document
 # XXX libyaml wants a --- here
 |
 # XXX literal needs indentation? libyaml sees a directive.
-%!PS-Adobe-2.0 # Not the first line
+\%!PS-Adobe-2.0 # Not the first line
 
 +++ out-yaml
 Bare document
 ...
 # XXX Following line has trailing space (libyaml)
----·
+---<SPC>
 ...
 --- "%!PS-Adobe-2.0 # Not the first line\n"
 

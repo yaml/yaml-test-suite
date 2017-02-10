@@ -4,9 +4,9 @@ tags: spec,whitespace,scalar
 
 +++ in-yaml
 "
-  foo·
-\·
-  → bar
+  foo<SPC>
+<SPC>
+  <TAB> bar
 
   baz
 "
@@ -18,4 +18,4 @@ tags: spec,whitespace,scalar
 " foo\nbar\nbaz "
 
 +++ test-event
-=VAL " foo\nbar\nbaz·
+=VAL " foo\nbar\nbaz<SPC>

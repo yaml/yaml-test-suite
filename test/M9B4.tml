@@ -5,7 +5,7 @@ tags: spec,block,scalar
 +++ in-yaml
 |
  literal
- →text
+ <TAB>text
 
 \
 

@@ -3,7 +3,7 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2785009
 tags: spec,tags
 
 +++ in-yaml
-%TAG !e! tag:example.com,2000:app/
+\%TAG !e! tag:example.com,2000:app/
 ---
 - !local foo
 - !!str bar

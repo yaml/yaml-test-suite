@@ -5,8 +5,8 @@ tags: spec,block,indent
 +++ in-yaml
 # XXX Why are tabs allowed as indentation after dash?
 ? a
-: -→b
-  -  -→c
+: -<TAB>b
+  -  -<TAB>c
      - d
 
 +++ out-yaml

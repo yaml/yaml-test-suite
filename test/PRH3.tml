@@ -5,8 +5,8 @@ tags: spec,scalar
 +++ in-yaml
 ' 1st non-empty
 
- 2nd non-empty·
-→3rd non-empty '
+ 2nd non-empty<SPC>
+<TAB>3rd non-empty '
 
 +++ out-yaml
 ' 1st non-empty
@@ -17,4 +17,4 @@ tags: spec,scalar
 " 1st non-empty\n2nd non-empty 3rd non-empty "
 
 +++ test-event
-=VAL ' 1st non-empty\n2nd non-empty 3rd non-empty·
+=VAL ' 1st non-empty\n2nd non-empty 3rd non-empty<SPC>

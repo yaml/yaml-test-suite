@@ -5,8 +5,8 @@ tags: spec,whitespace,scalar
 +++ in-yaml
 >-
   trimmed
-\··
-\·
+<SPC><SPC>
+<SPC>
 
   as
   space

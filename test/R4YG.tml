@@ -6,13 +6,13 @@ tags: spec,block,scalar,libyaml
 - |
  detected
 - >
-\·
-\··
+<SPC>
+<SPC><SPC>
   # detected
 - |1
   explicit
 - >
-\ →
+ <TAB>
  detected
 
 +++ out-yaml

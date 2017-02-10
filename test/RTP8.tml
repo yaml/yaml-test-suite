@@ -3,7 +3,7 @@ from: http://www.yaml.org/spec/1.2/spec.html#id2800866
 tags: spec,document
 
 +++ in-yaml
-%YAML 1.2
+\%YAML 1.2
 ---
 Document
 # XXX Why is a comment allowed on ...?
