@@ -1,6 +1,6 @@
 === Tags in Implicit Mapping
 from: NimYAML tests
-tags: tags,mapping
+tags: tags mapping
 
 +++ in-yaml
 !!str a: b

@@ -1,6 +1,6 @@
 === Flow Mapping in Block Sequence
 from: NimYAML tests
-tags: mapping,sequence,block,flow
+tags: mapping sequence block flow
 
 +++ in-yaml
 - {a: b}

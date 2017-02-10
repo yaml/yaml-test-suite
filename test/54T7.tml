@@ -1,6 +1,6 @@
 === Flow Mapping
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
-tags: flow,mapping
+tags: flow mapping
 
 +++ in-yaml
 {foo: you, bar: far}

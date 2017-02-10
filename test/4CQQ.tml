@@ -1,6 +1,6 @@
 === Spec Example 2.18. Multi-line Flow Scalars
 from: http://www.yaml.org/spec/1.2/spec.html#id2761268
-tags: spec,scalar
+tags: spec scalar
 
 +++ in-yaml
 plain:

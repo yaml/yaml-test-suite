@@ -1,6 +1,6 @@
 === Spec Example 7.14. Flow Sequence Entries
 from: http://www.yaml.org/spec/1.2/spec.html#id2790726
-tags: spec,flow,sequence
+tags: spec flow sequence
 
 +++ in-yaml
 [

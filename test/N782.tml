@@ -1,6 +1,6 @@
 === Fake markers in flow style
 from: NimYAML tests
-tags: flow,edge
+tags: flow edge
 
 +++ in-yaml
 [

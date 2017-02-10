@@ -1,6 +1,6 @@
 === Sequence With Same Indentation as Parent Mapping
 from: NimYAML tests
-tags: block,mapping,sequence
+tags: block mapping sequence
 
 +++ in-yaml
 1:

@@ -1,6 +1,6 @@
 === Spec Example 5.6. Node Property Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2773402
-tags: spec,tags,anchors,aliases
+tags: spec tags anchors aliases
 
 +++ in-yaml
 anchored: !local &anchor value

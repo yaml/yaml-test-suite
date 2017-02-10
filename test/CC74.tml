@@ -1,6 +1,6 @@
 === Spec Example 6.20. Tag Handles
 from: http://www.yaml.org/spec/1.2/spec.html#id2783195
-tags: spec,document,tags
+tags: spec document tags
 
 +++ in-yaml
 \%TAG !e! tag:example.com,2000:app/

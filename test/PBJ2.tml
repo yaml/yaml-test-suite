@@ -1,6 +1,6 @@
 === Spec Example 2.3. Mapping Scalars to Sequences
 from: http://www.yaml.org/spec/1.2/spec.html#id2759963
-tags: spec,mapping,sequence
+tags: spec mapping sequence
 
 +++ in-yaml
 american:

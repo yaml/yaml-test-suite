@@ -1,6 +1,6 @@
 === Multi-level Mapping Indent
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
-tags: mapping,indent
+tags: mapping indent
 
 +++ in-yaml
 a:

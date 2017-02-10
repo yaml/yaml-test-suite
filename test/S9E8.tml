@@ -1,6 +1,6 @@
 === Spec Example 5.3. Block Structure Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2772312
-tags: spec,block,mapping,sequence
+tags: spec block mapping sequence
 
 +++ in-yaml
 sequence:

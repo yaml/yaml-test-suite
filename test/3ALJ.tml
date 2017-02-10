@@ -1,6 +1,6 @@
 === Block Sequence in Block Sequence
 from: NimYAML tests
-tags: sequence,block
+tags: sequence block
 
 +++ in-yaml
 - - s1_i1

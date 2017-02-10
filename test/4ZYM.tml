@@ -1,6 +1,6 @@
 === Spec Example 6.4. Line Prefixes
 from: http://www.yaml.org/spec/1.2/spec.html#id2778720
-tags: spec,scalar,block
+tags: spec scalar block
 
 +++ in-yaml
 plain: text

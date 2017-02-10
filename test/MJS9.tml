@@ -1,6 +1,6 @@
 === Spec Example 6.7. Block Folding
 from: http://www.yaml.org/spec/1.2/spec.html#id2779603
-tags: spec,scalar,whitespace
+tags: spec scalar whitespace
 
 +++ in-yaml
 >

@@ -1,6 +1,6 @@
 === Spec Example 6.16. “TAG” directive
 from: http://www.yaml.org/spec/1.2/spec.html#id2782252
-tags: spec,document,tags
+tags: spec document tags
 
 +++ in-yaml
 \%TAG !yaml! tag:yaml.org,2002:

@@ -1,6 +1,6 @@
 === Spec Example 2.12. Compact Nested Mapping
 from: http://www.yaml.org/spec/1.2/spec.html#id2760821
-tags: spec,mapping,sequence,block
+tags: spec mapping sequence block
 
 +++ in-yaml
 ---

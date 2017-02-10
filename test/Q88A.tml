@@ -1,6 +1,6 @@
 === Spec Example 7.23. Flow Content
 from: http://www.yaml.org/spec/1.2/spec.html#id2793163
-tags: spec,flow,sequence,mapping
+tags: spec flow sequence mapping
 
 +++ in-yaml
 - [ a, b ]

@@ -1,6 +1,6 @@
 === Blank lines
 from: IRC discussion with leont
-tags: comment,scalar
+tags: comment scalar
 
 +++ in-yaml
 foo: 1

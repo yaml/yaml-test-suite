@@ -1,6 +1,6 @@
 === Anchors With Colon in Name
 from: Mailing List Discussion
-tags: edge,anchors
+tags: edge anchors
 
 +++ in-yaml
 &a: key: &a value

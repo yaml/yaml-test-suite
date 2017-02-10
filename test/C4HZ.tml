@@ -1,6 +1,6 @@
 === Spec Example 2.24. Global Tags
 from: http://www.yaml.org/spec/1.2/spec.html#id2761719
-tags: spec,tags,anchors,directives
+tags: spec tags anchors directives
 
 +++ in-yaml
 \%TAG ! tag:clarkevans.com,2002:

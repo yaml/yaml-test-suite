@@ -1,6 +1,6 @@
 === Lookahead test cases
 from: NimYAML tests
-tags: mapping,edge
+tags: mapping edge
 
 +++ in-yaml
 - bla"keks: foo

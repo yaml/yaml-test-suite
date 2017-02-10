@@ -1,6 +1,6 @@
 === Spec Example 7.1. Alias Nodes
 from: http://www.yaml.org/spec/1.2/spec.html#id2786448
-tags: spec,anchors
+tags: spec anchors
 
 +++ in-yaml
 First occurrence: &anchor Foo

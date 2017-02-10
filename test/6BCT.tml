@@ -1,6 +1,6 @@
 === Spec Example 6.3. Separation Spaces
 from: http://www.yaml.org/spec/1.2/spec.html#id2778394
-tags: spec,block,whitespace
+tags: spec block whitespace
 
 +++ in-yaml
 # XXX Why are tabs allowed as indentation after dash?

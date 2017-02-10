@@ -1,6 +1,6 @@
 === Spec Example 8.1. Block Scalar Header
 from: http://www.yaml.org/spec/1.2/spec.html#id2793888
-tags: spec,block,comment,scalar
+tags: spec block comment scalar
 
 +++ in-yaml
 - | # Empty header↓

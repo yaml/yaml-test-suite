@@ -1,6 +1,6 @@
 === Whitespace After Scalars in Flow
 from: NimYAML tests
-tags: flow,scalar,whitespace
+tags: flow scalar whitespace
 
 +++ in-yaml
 - [a, b , c ]

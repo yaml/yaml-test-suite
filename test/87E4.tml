@@ -1,6 +1,6 @@
 === Spec Example 7.8. Single Quoted Implicit Keys
 from: http://www.yaml.org/spec/1.2/spec.html#id2788496
-tags: spec,flow,sequence,mapping
+tags: spec flow sequence mapping
 
 +++ in-yaml
 'implicit block key' : [

@@ -1,6 +1,6 @@
 === Spec Example 7.6. Double Quoted Lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2787994
-tags: spec,scalar
+tags: spec scalar
 
 +++ in-yaml
 " 1st non-empty

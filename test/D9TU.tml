@@ -1,6 +1,6 @@
 === Single Pair Block Mapping
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
-tags: simple,mapping
+tags: simple mapping
 
 +++ in-yaml
 foo: bar

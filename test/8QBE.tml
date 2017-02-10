@@ -1,6 +1,6 @@
 === Block Sequence in Block Mapping
 from: NimYAML tests
-tags: mapping,sequence,block
+tags: mapping sequence block
 
 +++ in-yaml
 key:

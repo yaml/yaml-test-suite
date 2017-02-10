@@ -8,18 +8,13 @@ use generate;
 sub main::process {
   my ($id, $label, $file, $output, $tags) = @_;
 
-  generate->_write("data/$id/===", "$label\n");
-  generate->_link("data/meta/$id.label", "$label");
-
-  generate->_write("data/$id/$file", $output);
-
   my $name = lc $label;
   $name =~ s/[^-\w]+/-/g;
   $name =~ s/^-?(.*?)-?$/$1/;
-  generate->_link("data/name/$name", "../$id");
+  generate->_link("test/name/$name.tml", "../$id.tml");
 
   for my $tag (@$tags) {
-    generate->_link("data/tags/$tag/$id", "../../$id");
+    generate->_link("test/tags/$tag/$id.tml", "../../$id.tml");
   }
 }
 

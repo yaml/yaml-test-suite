@@ -1,6 +1,6 @@
 === Spec Example 2.16. Indentation determines scope
 from: http://www.yaml.org/spec/1.2/spec.html#id2761083
-tags: spec,block,scalar
+tags: spec block scalar
 
 +++ in-yaml
 name: Mark McGwire

@@ -1,6 +1,6 @@
 === Spec Example 2.27. Invoice
 from: http://www.yaml.org/spec/1.2/spec.html#id2761823
-tags: spec,tags,block,mapping,sequence,anchors
+tags: spec tags block mapping sequence anchors
 
 +++ in-yaml
 --- !<tag:clarkevans.com,2002:invoice>

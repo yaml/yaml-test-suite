@@ -1,6 +1,6 @@
 === Spec Example 6.1. Indentation Spaces
 from: http://www.yaml.org/spec/1.2/spec.html#id2777865
-tags: spec,indent
+tags: spec indent
 
 +++ in-yaml
   # Leading comment line spaces are

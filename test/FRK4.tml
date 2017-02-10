@@ -1,6 +1,6 @@
 === Spec Example 7.3. Completely Empty Flow Nodes
 from: http://www.yaml.org/spec/1.2/spec.html#id2786868
-tags: spec,flow,scalar
+tags: spec flow scalar
 
 +++ in-yaml
 # XXX Why is ? supported in flow?

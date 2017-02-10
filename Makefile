@@ -1,7 +1,3 @@
-.PHONY: data doc
-ALL_TML := $(shell echo test/*.tml)
-ALL_DATA := $(ALL_TML:test/%.tml=data/%)
-
 default: help
 
 help:
@@ -12,10 +8,36 @@ help:
 
 all: doc data
 
+.PHONY: doc
 doc: ReadMe.pod
 
 ReadMe.pod: doc/yaml-test-suite.swim
 	swim --to=pod --complete --wrap < $< > $@
+
+link-update:
+	rm -fr test/name/ test/tags/
+	perl bin/generate-links
+
+#------------------------------------------------------------------------------
+data:
+	git clone $$(git config remote.origin.url) -b data $@
+
+data-update: data
+	perl bin/generate-data
+
+data-status:
+	@(cd data; git add -Af .; git status --short)
+
+data-diff:
+	@(cd data; git add -Af .; git diff --cached)
+
+data-push:
+	@[ -z "$$(cd data; git status --short)" ] || { \
+	    cd data; \
+	    git add -Af .; \
+	    git commit -m 'Regenerated data files'; \
+	    git push --force origin data; \
+	}
 
 #------------------------------------------------------------------------------
 .PHONY: matrix
@@ -43,37 +65,6 @@ matrix-push:
 	    git add -Af .; \
 	    git commit -m 'Regenerated matrix files'; \
 	    git push --force origin gh-pages; \
-	}
-
-#------------------------------------------------------------------------------
-.PHONY: data
-data: clean-data $(ALL_DATA)
-
-clean-data:
-	@[ -d data ] || { \
-	    git clone $$(git config remote.origin.url) -b data data; \
-	    sleep 1; \
-	    touch test/*.tml; \
-	}
-	rm -fr data/*
-
-data/%: test/%.tml
-	@rm -fr $@
-	perl bin/generate-data $<
-	@touch $@
-
-data-status:
-	@(cd data; git add -Af .; git status --short)
-
-data-diff:
-	@(cd data; git add -Af .; git diff --cached)
-
-data-push:
-	@[ -z "$$(cd data; git status --short)" ] || { \
-	    cd data; \
-	    git add -Af .; \
-	    git commit -m 'Regenerated data files'; \
-	    git push --force origin data; \
 	}
 
 #------------------------------------------------------------------------------

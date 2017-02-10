@@ -1,6 +1,6 @@
 === Spec Example 6.29. Node Anchors
 from: http://www.yaml.org/spec/1.2/spec.html#id2785977
-tags: spec,anchors
+tags: spec anchors
 
 +++ in-yaml
 First occurrence: &anchor Value

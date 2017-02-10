@@ -1,6 +1,6 @@
 === Spec Example 2.1. Sequence of Scalars
 from: http://www.yaml.org/spec/1.2/spec.html#id2759963
-tags: spec,sequence
+tags: spec sequence
 
 +++ in-yaml
 - Mark McGwire

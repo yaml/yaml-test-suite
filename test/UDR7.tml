@@ -1,6 +1,6 @@
 === Spec Example 5.4. Flow Collection Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2772813
-tags: spec,flow,sequence,mapping
+tags: spec flow sequence mapping
 
 +++ in-yaml
 sequence: [ one, two, ]
