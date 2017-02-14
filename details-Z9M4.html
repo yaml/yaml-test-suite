@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test Z9M4 - Spec Example 6.22. Global Tag Prefix</title>
+<title>Test Z9M4 - Spec Example 6.22. Global Tag Prefix - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -105,19 +105,23 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:example.com,
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +SEQ
-=VAL &lt;10000&gt; :bar
+=VAL !&lt;tag:example.com,2000:app/foo&gt; &quot;bar
 -SEQ
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=&lt;10000&gt;, content=&quot;bar&quot;)
-yamlEndSeq()
-yamlEndDoc()</pre>
++STR
++DOC
++SEQ
+=VAL !&lt;tag:example.com,2000:app/foo&gt; &quot;bar
+-SEQ
+-DOC
+-STR</pre>
 
  </div>
 

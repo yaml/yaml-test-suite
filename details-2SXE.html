@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 2SXE - Anchors With Colon in Name</title>
+<title>Test 2SXE - Anchors With Colon in Name - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -111,25 +111,29 @@ foo:
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
-=VAL &amp;0 :key
-=VAL &amp;1 :value
+=VAL &amp;a: :key
+=VAL &amp;a :value
 =VAL :foo
-=ALI *0
+=ALI *a:
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, anchor=0, content=&quot;key&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;value&quot;)
-yamlScalar(tag=?, content=&quot;foo&quot;)
-yamlAlias(aliasTarget=0)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL &amp;a: :key
+=VAL &amp;a :value
+=VAL :foo
+=ALI *a:
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

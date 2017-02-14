@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test UGM3 - Spec Example 2.27. Invoice</title>
+<title>Test UGM3 - Spec Example 2.27. Invoice - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -229,14 +229,15 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
-+MAP
++MAP !&lt;tag:clarkevans.com,2002:invoice&gt;
 =VAL :invoice
 =VAL :34843
 =VAL :date
 =VAL :2001-01-23
 =VAL :bill-to
-+MAP
++MAP &amp;id001
 =VAL :given
 =VAL :Chris
 =VAL :family
@@ -244,7 +245,7 @@ Transformed Events:
 =VAL :address
 +MAP
 =VAL :lines
-=VAL :458 Walkman Dr.\nSuite #292\n
+=VAL ! |458 Walkman Dr.\nSuite #292\n
 =VAL :city
 =VAL :Royal Oak
 =VAL :state
@@ -254,7 +255,69 @@ Transformed Events:
 -MAP
 -MAP
 =VAL :ship-to
-=ALI *0
+=ALI *id001
+=VAL :product
++SEQ
++MAP
+=VAL :sku
+=VAL :BL394D
+=VAL :quantity
+=VAL :4
+=VAL :description
+=VAL :Basketball
+=VAL :price
+=VAL :450.00
+-MAP
++MAP
+=VAL :sku
+=VAL :BL4438H
+=VAL :quantity
+=VAL :1
+=VAL :description
+=VAL :Super Hoop
+=VAL :price
+=VAL :2392.00
+-MAP
+-SEQ
+=VAL :tax
+=VAL :251.42
+=VAL :total
+=VAL :4443.52
+=VAL :comments
+=VAL :Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP !&lt;tag:clarkevans.com,2002:invoice&gt;
+=VAL :invoice
+=VAL :34843
+=VAL :date
+=VAL :2001-01-23
+=VAL :bill-to
++MAP &amp;id001
+=VAL :given
+=VAL :Chris
+=VAL :family
+=VAL :Dumars
+=VAL :address
++MAP
+=VAL :lines
+=VAL ! |458 Walkman Dr.\nSuite #292\n
+=VAL :city
+=VAL :Royal Oak
+=VAL :state
+=VAL :MI
+=VAL :postal
+=VAL :48046
+-MAP
+-MAP
+=VAL :ship-to
+=ALI *id001
 =VAL :product
 +SEQ
 +MAP
@@ -287,67 +350,6 @@ Transformed Events:
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=&lt;10000&gt;)
-yamlScalar(tag=?, content=&quot;invoice&quot;)
-yamlScalar(tag=?, content=&quot;34843&quot;)
-yamlScalar(tag=?, content=&quot;date&quot;)
-yamlScalar(tag=?, content=&quot;2001-01-23&quot;)
-yamlScalar(tag=?, content=&quot;bill-to&quot;)
-yamlStartMap(tag=?, anchor=0)
-yamlScalar(tag=?, content=&quot;given&quot;)
-yamlScalar(tag=?, content=&quot;Chris&quot;)
-yamlScalar(tag=?, content=&quot;family&quot;)
-yamlScalar(tag=?, content=&quot;Dumars&quot;)
-yamlScalar(tag=?, content=&quot;address&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;lines&quot;)
-yamlScalar(tag=!, content=&quot;458 Walkman Dr.
-Suite #292
-&quot;)
-yamlScalar(tag=?, content=&quot;city&quot;)
-yamlScalar(tag=?, content=&quot;Royal Oak&quot;)
-yamlScalar(tag=?, content=&quot;state&quot;)
-yamlScalar(tag=?, content=&quot;MI&quot;)
-yamlScalar(tag=?, content=&quot;postal&quot;)
-yamlScalar(tag=?, content=&quot;48046&quot;)
-yamlEndMap()
-yamlEndMap()
-yamlScalar(tag=?, content=&quot;ship-to&quot;)
-yamlAlias(aliasTarget=0)
-yamlScalar(tag=?, content=&quot;product&quot;)
-yamlStartSeq(tag=?)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;sku&quot;)
-yamlScalar(tag=?, content=&quot;BL394D&quot;)
-yamlScalar(tag=?, content=&quot;quantity&quot;)
-yamlScalar(tag=?, content=&quot;4&quot;)
-yamlScalar(tag=?, content=&quot;description&quot;)
-yamlScalar(tag=?, content=&quot;Basketball&quot;)
-yamlScalar(tag=?, content=&quot;price&quot;)
-yamlScalar(tag=?, content=&quot;450.00&quot;)
-yamlEndMap()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;sku&quot;)
-yamlScalar(tag=?, content=&quot;BL4438H&quot;)
-yamlScalar(tag=?, content=&quot;quantity&quot;)
-yamlScalar(tag=?, content=&quot;1&quot;)
-yamlScalar(tag=?, content=&quot;description&quot;)
-yamlScalar(tag=?, content=&quot;Super Hoop&quot;)
-yamlScalar(tag=?, content=&quot;price&quot;)
-yamlScalar(tag=?, content=&quot;2392.00&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlScalar(tag=?, content=&quot;tax&quot;)
-yamlScalar(tag=?, content=&quot;251.42&quot;)
-yamlScalar(tag=?, content=&quot;total&quot;)
-yamlScalar(tag=?, content=&quot;4443.52&quot;)
-yamlScalar(tag=?, content=&quot;comments&quot;)
-yamlScalar(tag=?, content=&quot;Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 
@@ -383,7 +385,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x194d108)&quot;
+<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x158eb70)&quot;
 </pre>
 
  </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test M5C3 - Spec Example 8.21. Block Scalar Nodes</title>
+<title>Test M5C3 - Spec Example 8.21. Block Scalar Nodes - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -92,27 +92,29 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :literal
-=VAL :value\n
+=VAL ! |value\n
 =VAL :folded
-=VAL &lt;10000&gt; :value\n
+=VAL !&lt;!foo&gt; &gt;value\n
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;literal&quot;)
-yamlScalar(tag=!, content=&quot;value
-&quot;)
-yamlScalar(tag=?, content=&quot;folded&quot;)
-yamlScalar(tag=&lt;10000&gt;, content=&quot;value
-&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL :literal
+=VAL ! |value\n
+=VAL :folded
+=VAL !&lt;!foo&gt; &gt;value\n
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 
@@ -126,8 +128,11 @@ yamlEndDoc()</pre>
 =VAL :literal
 =VAL |value\n
 =VAL :folded
-=VAL :   !foo
+=VAL :
 -MAP
+-DOC
++DOC
+=VAL :   !foo
 -DOC
 +DOC
 =VAL :  &gt;1
@@ -200,7 +205,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff
-<pre>{&quot;folded&quot;:&quot;foo=SCALAR(0x1bb6e68)&quot;,&quot;literal&quot;:&quot;value\n&quot;}
+<pre>{&quot;folded&quot;:&quot;foo=SCALAR(0x14bde18)&quot;,&quot;literal&quot;:&quot;value\n&quot;}
 </pre>
  </div>
 

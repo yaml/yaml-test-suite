@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test FUP4 - Flow Sequence in Flow Sequence</title>
+<title>Test FUP4 - Flow Sequence in Flow Sequence - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -46,7 +46,49 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++SEQ
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++SEQ
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

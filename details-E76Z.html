@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test E76Z - Aliases in Implicit Block Mapping</title>
+<title>Test E76Z - Aliases in Implicit Block Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -90,32 +90,42 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
-=VAL &amp;0 :a
-=VAL &amp;1 :b
-=ALI *0
-=ALI *1
+=VAL &amp;a :a
+=VAL &amp;b :b
+=ALI *a
+=ALI *b
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, anchor=0, content=&quot;a&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;b&quot;)
-yamlAlias(aliasTarget=0)
-yamlAlias(aliasTarget=1)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL &amp;a :a
+=VAL &amp;b :b
+=ALI *a
+=ALI *b
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
-</pre>
+ <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  msg:      Parse document failed for some reason
+  line:     2
+  column:   1
+  context:  *a : *b\n
+            ^
+  position: 11 (0 pre-lookahead)
+ </pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">
@@ -144,7 +154,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;YAML::Syck::BadAlias=HASH(0x1d1d590)&quot;:&quot;b&quot;,&quot;a&quot;:&quot;b&quot;}
+<pre>{&quot;YAML::Syck::BadAlias=HASH(0x11b96c0)&quot;:&quot;b&quot;,&quot;a&quot;:&quot;b&quot;}
 </pre>
 
  </div>
@@ -153,7 +163,7 @@ yamlEndDoc()</pre>
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;YAML::Syck::BadAlias=HASH(0x27bd2f0)&#39; =&gt; &#39;b&#39;,
+  &#39;YAML::Syck::BadAlias=HASH(0xc5a760)&#39; =&gt; &#39;b&#39;,
   &#39;a&#39; =&gt; &#39;b&#39;
 }
 </pre>

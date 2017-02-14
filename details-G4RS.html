@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test G4RS - Spec Example 2.17. Quoted Scalars</title>
+<title>Test G4RS - Spec Example 2.17. Quoted Scalars - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -53,7 +53,7 @@ tie-fighter: &#39;|\-*-/|&#39;
 <h3><a href="#java-json">java-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff
 <pre>{
-  &quot;unicode&quot;: &quot;Sosa did fine.?&quot;,
+  &quot;unicode&quot;: &quot;Sosa did fine.☺&quot;,
   &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,
   &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,
   &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,
@@ -108,50 +108,71 @@ tie-fighter: &#39;|\-*-/|&#39;
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :unicode
-=VAL :Sosa did fine.☺
+=VAL ! &quot;Sosa did fine.☺
 =VAL :control
-=VAL :1998\t1999\t2000\n
+=VAL ! &quot;1998	1999	2000\n
 =VAL :hex esc
-=VAL :\n is \n
+=VAL ! &quot;\c\n is \c\n
 =VAL :single
-content=&quot;&quot;Howdy!&quot; he cried.&quot;)
+=VAL ! &#39;&quot;Howdy!&quot; he cried.
 =VAL :quoted
-=VAL : # Not a &#39;comment&#39;.
+=VAL ! &#39; # Not a &#39;comment&#39;.
 =VAL :tie-fighter
-=VAL :|\-*-/|
+=VAL ! &#39;|\\-*-/|
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;unicode&quot;)
-yamlScalar(tag=!, content=&quot;Sosa did fine.☺&quot;)
-yamlScalar(tag=?, content=&quot;control&quot;)
-yamlScalar(tag=!, content=&quot;1998	1999	2000
-&quot;)
-yamlScalar(tag=?, content=&quot;hex esc&quot;)
-yamlScalar(tag=!, content=&quot;
- is 
-&quot;)
-yamlScalar(tag=?, content=&quot;single&quot;)
-yamlScalar(tag=!, content=&quot;&quot;Howdy!&quot; he cried.&quot;)
-yamlScalar(tag=?, content=&quot;quoted&quot;)
-yamlScalar(tag=!, content=&quot; # Not a &#39;comment&#39;.&quot;)
-yamlScalar(tag=?, content=&quot;tie-fighter&quot;)
-yamlScalar(tag=!, content=&quot;|\-*-/|&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL :unicode
+=VAL ! &quot;Sosa did fine.☺
+=VAL :control
+=VAL ! &quot;1998	1999	2000\n
+=VAL :hex esc
+=VAL ! &quot;\c\n is \c\n
+=VAL :single
+=VAL ! &#39;&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL ! &#39; # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL ! &#39;|\\-*-/|
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
++STR
++DOC
++MAP
+=VAL :unicode
+=VAL &quot;Sosa did fine.\u263A
+=VAL :control
+=VAL &quot;\b1998\t1999\t2000\n
+=VAL :hex esc
+=VAL &quot;\x0d\x0a is \r\n
+=VAL :single
+=VAL &#39;&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL &#39; # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL &#39;|\-*-/|
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-json">

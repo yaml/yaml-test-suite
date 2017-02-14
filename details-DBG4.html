@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test DBG4 - Spec Example 7.10. Plain Characters</title>
+<title>Test DBG4 - Spec Example 7.10. Plain Characters - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -127,7 +127,70 @@ expected the node content, but found Value
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++SEQ
+=VAL :::vector
+=VAL :: - ()
+=VAL :Up, up, and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
++SEQ
+=VAL :::vector
+=VAL :: - ()
+=VAL :Up, up and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
+-SEQ
+-SEQ
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++SEQ
+=VAL :::vector
+=VAL ! &quot;: - ()
+=VAL :Up, up, and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
++SEQ
+=VAL :::vector
+=VAL ! :: - ()
+=VAL ! :Up, up and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
+-SEQ
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
+=VAL :::vector
+=VAL ! &quot;: - ()
+=VAL :Up, up, and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
++SEQ
+=VAL :::vector
+=VAL ! :: - ()
+=VAL ! :Up, up and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
+-SEQ
+-SEQ
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 74H7 - Tags in Implicit Mapping</title>
+<title>Test 74H7 - Tags in Implicit Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -107,6 +107,26 @@ g: h
 Transformed Events:
 <pre>
 +STR
++STR
++DOC
++MAP
+=VAL !!str :a
+=VAL :b
+=VAL :c
+=VAL !!int :42
+=VAL :e
+=VAL !!str :f
+=VAL :g
+=VAL :h
+=VAL !!int :23
+=VAL !!bool :false
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
 +DOC
 +MAP
 =VAL !!str :a
@@ -122,22 +142,6 @@ Transformed Events:
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=!!str, content=&quot;a&quot;)
-yamlScalar(tag=?, content=&quot;b&quot;)
-yamlScalar(tag=?, content=&quot;c&quot;)
-yamlScalar(tag=!!int, content=&quot;42&quot;)
-yamlScalar(tag=?, content=&quot;e&quot;)
-yamlScalar(tag=!!str, content=&quot;f&quot;)
-yamlScalar(tag=?, content=&quot;g&quot;)
-yamlScalar(tag=?, content=&quot;h&quot;)
-yamlScalar(tag=!!int, content=&quot;23&quot;)
-yamlScalar(tag=!!bool, content=&quot;false&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 
@@ -191,7 +195,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff
-<pre>&quot;str=HASH(0x1323620)&quot;
+<pre>&quot;str=HASH(0x916750)&quot;
 </pre>
  </div>
 

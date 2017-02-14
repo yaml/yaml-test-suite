@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 2XXW - Spec Example 2.25. Unordered Sets</title>
+<title>Test 2XXW - Spec Example 2.25. Unordered Sets - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -84,8 +84,24 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
-+MAP
++MAP !!set
+=VAL :Mark McGwire
+=VAL :
+=VAL :Sammy Sosa
+=VAL :
+=VAL :Ken Griff
+=VAL :
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP !!set
 =VAL :Mark McGwire
 =VAL :
 =VAL :Sammy Sosa
@@ -95,18 +111,6 @@ Transformed Events:
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=&lt;10000&gt;)
-yamlScalar(tag=?, content=&quot;Mark McGwire&quot;)
-yamlScalar(tag=?, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;Sammy Sosa&quot;)
-yamlScalar(tag=?, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;Ken Griff&quot;)
-yamlScalar(tag=?, content=&quot;&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 
@@ -116,7 +120,10 @@ yamlEndDoc()</pre>
  <pre>
 +STR
 +DOC ---
-=VAL &lt;tag:yaml.org,2002:set&gt; :? Mark McGwire
+=VAL : !!set
+-DOC
++DOC
+=VAL :? Mark McGwire
 -DOC
 +DOC
 =VAL :? Sammy Sosa

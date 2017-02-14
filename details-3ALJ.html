@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 3ALJ - Block Sequence in Block Sequence</title>
+<title>Test 3ALJ - Block Sequence in Block Sequence - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -48,27 +48,54 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
- </div>
-
- <div class="framework" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++SEQ
++SEQ
+=VAL :s1_i1
+=VAL :s1_i2
+-SEQ
+=VAL :s2
+-SEQ
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++SEQ
++SEQ
+=VAL :s1_i1
+=VAL :s1_i2
+-SEQ
+=VAL :s2
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
  <pre>
 +STR
 +DOC
 +SEQ
-=VAL :- s1_i1
++SEQ
+=VAL :s1_i1
+=VAL :s1_i2
 -SEQ
--DOC
-+DOC
-=VAL :  - s1_i2
--DOC
-+DOC
-=VAL :- s2
+=VAL :s2
+-SEQ
 -DOC
 -STR</pre>
 
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pm-json">

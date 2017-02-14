@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test LE5A - Spec Example 7.24. Flow Nodes</title>
+<title>Test LE5A - Spec Example 7.24. Flow Nodes - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -84,27 +84,31 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +SEQ
-=VAL !!str :a
-=VAL :b
-=VAL &amp;0 :c
-=ALI *0
+=VAL !!str &quot;a
+=VAL ! &#39;b
+=VAL ! &amp;anchor &quot;c
+=ALI *anchor
+=VAL !!str :
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
+=VAL !!str &quot;a
+=VAL ! &#39;b
+=VAL ! &amp;anchor &quot;c
+=ALI *anchor
 =VAL !!str :
 -SEQ
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=!!str, content=&quot;a&quot;)
-yamlScalar(tag=!, content=&quot;b&quot;)
-yamlScalar(tag=!, anchor=0, content=&quot;c&quot;)
-yamlAlias(aliasTarget=0)
-yamlScalar(tag=!!str, content=&quot;&quot;)
-yamlEndSeq()
-yamlEndDoc()</pre>
 
  </div>
 

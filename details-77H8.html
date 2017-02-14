@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 77H8 - Spec Example 2.23. Various Explicit Tags</title>
+<title>Test 77H8 - Spec Example 2.23. Various Explicit Tags - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -126,36 +126,33 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :not-date
 =VAL !!str :2002-04-28
 =VAL :picture
-=VAL !!binary :R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n
+=VAL !!binary |R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n
 =VAL :application specific tag
-=VAL &lt;10000&gt; :The semantics of the tag\nabove may be different for\ndifferent documents.\n
+=VAL !&lt;!something&gt; |The semantics of the tag\nabove may be different for\ndifferent documents.\n
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;not-date&quot;)
-yamlScalar(tag=!!str, content=&quot;2002-04-28&quot;)
-yamlScalar(tag=?, content=&quot;picture&quot;)
-yamlScalar(tag=!!binary, content=&quot;R0lGODlhDAAMAIQAAP//9/X
-17unp5WZmZgAAAOfn515eXv
-Pz7Y6OjuDg4J+fn5OTk6enp
-56enmleECcgggoBADs=
-&quot;)
-yamlScalar(tag=?, content=&quot;application specific tag&quot;)
-yamlScalar(tag=&lt;10000&gt;, content=&quot;The semantics of the tag
-above may be different for
-different documents.
-&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL :not-date
+=VAL !!str :2002-04-28
+=VAL :picture
+=VAL !!binary |R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n
+=VAL :application specific tag
+=VAL !&lt;!something&gt; |The semantics of the tag\nabove may be different for\ndifferent documents.\n
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

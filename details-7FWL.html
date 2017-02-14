@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 7FWL - Spec Example 6.24. Verbatim Tags</title>
+<title>Test 7FWL - Spec Example 6.24. Verbatim Tags - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -104,21 +104,25 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL !!str :foo
-=VAL &lt;10000&gt; :baz
+=VAL !&lt;!bar&gt; :baz
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=!!str, content=&quot;foo&quot;)
-yamlScalar(tag=&lt;10000&gt;, content=&quot;baz&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL !!str :foo
+=VAL !&lt;!bar&gt; :baz
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 
@@ -129,9 +133,12 @@ yamlEndDoc()</pre>
 +STR
 +DOC
 +MAP
-=VAL &lt;!&lt;tag:yaml.org,2002:str&gt;&gt; :foo 
-=VAL :  !&lt;!bar&gt; baz
+=VAL &lt;!&lt;tag:yaml.org,2002:str&gt;&gt; :foo
+=VAL :
 -MAP
+-DOC
++DOC
+=VAL :  !&lt;!bar&gt; baz
 -DOC
 -STR</pre>
 
@@ -171,7 +178,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0xfae4e8)&quot;
+<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0xba2618)&quot;
 </pre>
 
  </div>

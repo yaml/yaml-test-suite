@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test NP9H - Spec Example 7.5. Double Quoted Line Breaks</title>
+<title>Test NP9H - Spec Example 7.5. Double Quoted Line Breaks - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -46,7 +46,31 @@ to a line feed, or 	\
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
+=VAL :folded to a space,\nto a line feed, or \t \tnon-content
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
+=VAL ! &quot;folded to a space,\nto a line feed, or 	 	non-content
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
+=VAL ! &quot;folded to a space,\nto a line feed, or 	 	non-content
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

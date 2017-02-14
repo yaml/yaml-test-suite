@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test L94M - Tags in Explicit Mapping</title>
+<title>Test L94M - Tags in Explicit Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -67,6 +67,20 @@
 Transformed Events:
 <pre>
 +STR
++STR
++DOC
++MAP
+=VAL !!str :a
+=VAL !!int :47
+=VAL :c
+=VAL !!str :d
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
 +DOC
 +MAP
 =VAL !!str :a
@@ -76,16 +90,6 @@ Transformed Events:
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=!!str, content=&quot;a&quot;)
-yamlScalar(tag=!!int, content=&quot;47&quot;)
-yamlScalar(tag=?, content=&quot;c&quot;)
-yamlScalar(tag=!!str, content=&quot;d&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 

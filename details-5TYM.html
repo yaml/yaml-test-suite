@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 5TYM - Spec Example 6.21. Local Tag Prefix</title>
+<title>Test 5TYM - Spec Example 6.21. Local Tag Prefix - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -105,21 +105,25 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !my-light
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
-=VAL &lt;10000&gt; :fluorescent
+=VAL !&lt;!my-light&gt; :fluorescent
 -DOC
 +DOC
-=VAL &lt;10000&gt; :green
+=VAL !&lt;!my-light&gt; :green
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlScalar(tag=&lt;10000&gt;, content=&quot;fluorescent&quot;)
-yamlEndDoc()
-yamlStartDoc()
-yamlScalar(tag=&lt;10000&gt;, content=&quot;green&quot;)
-yamlEndDoc()</pre>
++STR
++DOC
+=VAL !&lt;!my-light&gt; :fluorescent
+-DOC
++DOC
+=VAL !&lt;!my-light&gt; :green
+-DOC
+-STR</pre>
 
  </div>
 
@@ -190,7 +194,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;my-light=SCALAR(0x16d10c0)&quot;
+<pre>&quot;my-light=SCALAR(0x2020de8)&quot;
 </pre>
 
  </div>

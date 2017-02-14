@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test WZ62 - Spec Example 7.2. Empty Content</title>
+<title>Test WZ62 - Spec Example 7.2. Empty Content - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -119,6 +119,20 @@ expected &#39;,&#39; or &#39;}&#39;, but got Tag
 Transformed Events:
 <pre>
 +STR
++STR
++DOC
++MAP
+=VAL :foo
+=VAL !!str :
+=VAL !!str :
+=VAL :bar
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
 +DOC
 +MAP
 =VAL :foo
@@ -128,16 +142,6 @@ Transformed Events:
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;foo&quot;)
-yamlScalar(tag=!!str, content=&quot;&quot;)
-yamlScalar(tag=!!str, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;bar&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 
@@ -146,10 +150,10 @@ yamlEndDoc()</pre>
  <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
   msg:      Parse document failed for some reason
   line:     3
-  column:   9
+  column:   3
   context:    !!str : bar,\n}\n
-                    ^
-  position: 25 (0 pre-lookahead)
+              ^
+  position: 19 (0 pre-lookahead)
  </pre>
  </div>
 

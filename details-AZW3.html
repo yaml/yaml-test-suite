@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test AZW3 - Lookahead test cases</title>
+<title>Test AZW3 - Lookahead test cases - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -73,10 +73,28 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +SEQ
 +MAP
-content=&quot;bla&quot;keks&quot;)
+=VAL :bla&quot;keks
+=VAL :foo
+-MAP
++MAP
+=VAL :bla]keks
+=VAL :foo
+-MAP
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
++MAP
+=VAL :bla&quot;keks
 =VAL :foo
 -MAP
 +MAP
@@ -86,27 +104,29 @@ content=&quot;bla&quot;keks&quot;)
 -SEQ
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;bla&quot;keks&quot;)
-yamlScalar(tag=?, content=&quot;foo&quot;)
-yamlEndMap()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;bla]keks&quot;)
-yamlScalar(tag=?, content=&quot;foo&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlEndDoc()</pre>
 
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
-</pre>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
++STR
++DOC
++SEQ
+=VAL :bla&quot;keks
+-SEQ
+-DOC
++DOC
++MAP
+=VAL :
+=VAL :foo
+=VAL :- bla]keks
+=VAL :foo
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-json">

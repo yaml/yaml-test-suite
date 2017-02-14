@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test C4HZ - Spec Example 2.24. Global Tags</title>
+<title>Test C4HZ - Spec Example 2.24. Global Tags - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -170,11 +170,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
-+SEQ
-+MAP
++SEQ !&lt;tag:clarkevans.com,2002:shape&gt;
++MAP !&lt;tag:clarkevans.com,2002:circle&gt;
 =VAL :center
-+MAP
++MAP &amp;ORIGIN
 =VAL :x
 =VAL :73
 =VAL :y
@@ -183,9 +184,9 @@ Transformed Events:
 =VAL :radius
 =VAL :7
 -MAP
-+MAP
++MAP !&lt;tag:clarkevans.com,2002:line&gt;
 =VAL :start
-=ALI *0
+=ALI *ORIGIN
 =VAL :finish
 +MAP
 =VAL :x
@@ -194,9 +195,48 @@ Transformed Events:
 =VAL :102
 -MAP
 -MAP
-+MAP
++MAP !&lt;tag:clarkevans.com,2002:label&gt;
 =VAL :start
-=ALI *0
+=ALI *ORIGIN
+=VAL :color
+=VAL :0xFFEEBB
+=VAL :text
+=VAL :Pretty vector drawing.
+-MAP
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ !&lt;tag:clarkevans.com,2002:shape&gt;
++MAP !&lt;tag:clarkevans.com,2002:circle&gt;
+=VAL :center
++MAP &amp;ORIGIN
+=VAL :x
+=VAL :73
+=VAL :y
+=VAL :129
+-MAP
+=VAL :radius
+=VAL :7
+-MAP
++MAP !&lt;tag:clarkevans.com,2002:line&gt;
+=VAL :start
+=ALI *ORIGIN
+=VAL :finish
++MAP
+=VAL :x
+=VAL :89
+=VAL :y
+=VAL :102
+-MAP
+-MAP
++MAP !&lt;tag:clarkevans.com,2002:label&gt;
+=VAL :start
+=ALI *ORIGIN
 =VAL :color
 =VAL :0xFFEEBB
 =VAL :text
@@ -205,42 +245,6 @@ Transformed Events:
 -SEQ
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartSeq(tag=&lt;10000&gt;)
-yamlStartMap(tag=&lt;10001&gt;)
-yamlScalar(tag=?, content=&quot;center&quot;)
-yamlStartMap(tag=?, anchor=0)
-yamlScalar(tag=?, content=&quot;x&quot;)
-yamlScalar(tag=?, content=&quot;73&quot;)
-yamlScalar(tag=?, content=&quot;y&quot;)
-yamlScalar(tag=?, content=&quot;129&quot;)
-yamlEndMap()
-yamlScalar(tag=?, content=&quot;radius&quot;)
-yamlScalar(tag=?, content=&quot;7&quot;)
-yamlEndMap()
-yamlStartMap(tag=&lt;10002&gt;)
-yamlScalar(tag=?, content=&quot;start&quot;)
-yamlAlias(aliasTarget=0)
-yamlScalar(tag=?, content=&quot;finish&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;x&quot;)
-yamlScalar(tag=?, content=&quot;89&quot;)
-yamlScalar(tag=?, content=&quot;y&quot;)
-yamlScalar(tag=?, content=&quot;102&quot;)
-yamlEndMap()
-yamlEndMap()
-yamlStartMap(tag=&lt;10003&gt;)
-yamlScalar(tag=?, content=&quot;start&quot;)
-yamlAlias(aliasTarget=0)
-yamlScalar(tag=?, content=&quot;color&quot;)
-yamlScalar(tag=?, content=&quot;0xFFEEBB&quot;)
-yamlScalar(tag=?, content=&quot;text&quot;)
-yamlScalar(tag=?, content=&quot;Pretty vector drawing.&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlEndDoc()</pre>
 
  </div>
 

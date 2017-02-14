@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test SBG9 - Flow Sequence in Flow Mapping</title>
+<title>Test SBG9 - Flow Sequence in Flow Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -68,7 +68,64 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
++SEQ
+=VAL :d
+=VAL :e
+-SEQ
+=VAL :f
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
++SEQ
+=VAL :d
+=VAL :e
+-SEQ
+=VAL :f
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
++SEQ
+=VAL :d
+=VAL :e
+-SEQ
+=VAL :f
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -109,7 +166,7 @@
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x1488620)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
+<pre>{&quot;ARRAY(0x2539750)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
 </pre>
 
  </div>
@@ -118,7 +175,7 @@
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x1000be0)&#39; =&gt; &#39;f&#39;,
+  &#39;ARRAY(0x1028d50)&#39; =&gt; &#39;f&#39;,
   &#39;a&#39; =&gt; [
            &#39;b&#39;,
            &#39;c&#39;
@@ -141,7 +198,7 @@
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x10f00f0)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
+<pre>{&quot;ARRAY(0x18c0510)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
 </pre>
 
  </div>
@@ -150,7 +207,7 @@
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x176ea70)&#39; =&gt; &#39;f&#39;,
+  &#39;ARRAY(0x1809598)&#39; =&gt; &#39;f&#39;,
   &#39;a&#39; =&gt; [
            &#39;b&#39;,
            &#39;c&#39;

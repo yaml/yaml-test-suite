@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test RZT7 - Spec Example 2.28. Log File</title>
+<title>Test RZT7 - Spec Example 2.28. Log File - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -225,6 +225,7 @@ Stack:
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :Time
@@ -252,7 +253,7 @@ Transformed Events:
 =VAL :User
 =VAL :ed
 =VAL :Fatal
-content=&quot;Unknown variable &quot;bar&quot;&quot;)
+=VAL :Unknown variable &quot;bar&quot;
 =VAL :Stack
 +SEQ
 +MAP
@@ -261,7 +262,7 @@ content=&quot;Unknown variable &quot;bar&quot;&quot;)
 =VAL :line
 =VAL :23
 =VAL :code
-content=&quot;x = MoreObject(&quot;345\n&quot;)\n&quot;)
+=VAL ! |x = MoreObject(&quot;345\\n&quot;)\n
 -MAP
 +MAP
 =VAL :file
@@ -269,64 +270,66 @@ content=&quot;x = MoreObject(&quot;345\n&quot;)\n&quot;)
 =VAL :line
 =VAL :58
 =VAL :code
-=VAL :foo = bar
+=VAL ! |foo = bar
+-MAP
+-SEQ
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:01:42 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :This is an error message for the log file
+-MAP
+-DOC
++DOC
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:02:31 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :A slightly different error message.
+-MAP
+-DOC
++DOC
++MAP
+=VAL :Date
+=VAL :2001-11-23 15:03:17 -5
+=VAL :User
+=VAL :ed
+=VAL :Fatal
+=VAL :Unknown variable &quot;bar&quot;
+=VAL :Stack
++SEQ
++MAP
+=VAL :file
+=VAL :TopClass.py
+=VAL :line
+=VAL :23
+=VAL :code
+=VAL ! |x = MoreObject(&quot;345\\n&quot;)\n
+-MAP
++MAP
+=VAL :file
+=VAL :MoreClass.py
+=VAL :line
+=VAL :58
+=VAL :code
+=VAL ! |foo = bar
 -MAP
 -SEQ
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;Time&quot;)
-yamlScalar(tag=?, content=&quot;2001-11-23 15:01:42 -5&quot;)
-yamlScalar(tag=?, content=&quot;User&quot;)
-yamlScalar(tag=?, content=&quot;ed&quot;)
-yamlScalar(tag=?, content=&quot;Warning&quot;)
-yamlScalar(tag=?, content=&quot;This is an error message for the log file&quot;)
-yamlEndMap()
-yamlEndDoc()
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;Time&quot;)
-yamlScalar(tag=?, content=&quot;2001-11-23 15:02:31 -5&quot;)
-yamlScalar(tag=?, content=&quot;User&quot;)
-yamlScalar(tag=?, content=&quot;ed&quot;)
-yamlScalar(tag=?, content=&quot;Warning&quot;)
-yamlScalar(tag=?, content=&quot;A slightly different error message.&quot;)
-yamlEndMap()
-yamlEndDoc()
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;Date&quot;)
-yamlScalar(tag=?, content=&quot;2001-11-23 15:03:17 -5&quot;)
-yamlScalar(tag=?, content=&quot;User&quot;)
-yamlScalar(tag=?, content=&quot;ed&quot;)
-yamlScalar(tag=?, content=&quot;Fatal&quot;)
-yamlScalar(tag=?, content=&quot;Unknown variable &quot;bar&quot;&quot;)
-yamlScalar(tag=?, content=&quot;Stack&quot;)
-yamlStartSeq(tag=?)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;file&quot;)
-yamlScalar(tag=?, content=&quot;TopClass.py&quot;)
-yamlScalar(tag=?, content=&quot;line&quot;)
-yamlScalar(tag=?, content=&quot;23&quot;)
-yamlScalar(tag=?, content=&quot;code&quot;)
-yamlScalar(tag=!, content=&quot;x = MoreObject(&quot;345\n&quot;)
-&quot;)
-yamlEndMap()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;file&quot;)
-yamlScalar(tag=?, content=&quot;MoreClass.py&quot;)
-yamlScalar(tag=?, content=&quot;line&quot;)
-yamlScalar(tag=?, content=&quot;58&quot;)
-yamlScalar(tag=?, content=&quot;code&quot;)
-yamlScalar(tag=!, content=&quot;foo = bar&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 

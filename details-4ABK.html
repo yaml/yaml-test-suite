@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 4ABK - Spec Example 7.17. Flow Mapping Separate Values</title>
+<title>Test 4ABK - Spec Example 7.17. Flow Mapping Separate Values - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -97,7 +97,58 @@ Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :unquoted
+=VAL :separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value
+=VAL :
+=VAL :
+=VAL :omitted key
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :unquoted
+=VAL ! :separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value
+=VAL :
+=VAL :
+=VAL :omitted key
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :unquoted
+=VAL ! :separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value
+=VAL :
+=VAL :
+=VAL :omitted key
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

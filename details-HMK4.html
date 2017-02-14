@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test HMK4 - Spec Example 2.16. Indentation determines scope</title>
+<title>Test HMK4 - Spec Example 2.16. Indentation determines scope - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -57,7 +57,52 @@ stats: |
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :name
+=VAL :Mark McGwire
+=VAL :accomplishment
+=VAL :Mark set a major league home run record in 1998.\n
+=VAL :stats
+=VAL :65 Home Runs\n0.278 Batting Average\n
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :name
+=VAL :Mark McGwire
+=VAL :accomplishment
+=VAL ! &gt;Mark set a major league home run record in 1998.\n
+=VAL :stats
+=VAL ! |65 Home Runs\n0.278 Batting Average\n
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :name
+=VAL :Mark McGwire
+=VAL :accomplishment
+=VAL ! &gt;Mark set a major league home run record in 1998.\n
+=VAL :stats
+=VAL ! |65 Home Runs\n0.278 Batting Average\n
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

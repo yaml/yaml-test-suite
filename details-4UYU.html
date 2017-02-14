@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 4UYU - Colon in Double Quoted String</title>
+<title>Test 4UYU - Colon in Double Quoted String - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -51,15 +51,19 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
-content=&quot;foo: bar&quot;: baz&quot;)
+=VAL ! &quot;foo: bar&quot;: baz
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlScalar(tag=!, content=&quot;foo: bar&quot;: baz&quot;)
-yamlEndDoc()</pre>
++STR
++DOC
+=VAL ! &quot;foo: bar&quot;: baz
+-DOC
+-STR</pre>
 
  </div>
 

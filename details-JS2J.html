@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test JS2J - Spec Example 6.29. Node Anchors</title>
+<title>Test JS2J - Spec Example 6.29. Node Anchors - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -73,25 +73,29 @@ Second occurrence: *anchor
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :First occurrence
-=VAL &amp;0 :Value
+=VAL &amp;anchor :Value
 =VAL :Second occurrence
-=ALI *0
+=ALI *anchor
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;First occurrence&quot;)
-yamlScalar(tag=?, anchor=0, content=&quot;Value&quot;)
-yamlScalar(tag=?, content=&quot;Second occurrence&quot;)
-yamlAlias(aliasTarget=0)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL :First occurrence
+=VAL &amp;anchor :Value
+=VAL :Second occurrence
+=ALI *anchor
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

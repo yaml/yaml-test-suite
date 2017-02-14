@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test J3BT - Spec Example 5.12. Tabs and Spaces</title>
+<title>Test J3BT - Spec Example 5.12. Tabs and Spaces - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -91,28 +91,29 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :quoted
-=VAL :Quoted \t
+=VAL ! &quot;Quoted 	
 =VAL :block
-content=&quot;void main() {\n\tprintf(&quot;Hello, world!\n&quot;);\n}\n&quot;)
+=VAL ! |void main() {\n	printf(&quot;Hello, world!\\n&quot;);\n}\n
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;quoted&quot;)
-yamlScalar(tag=!, content=&quot;Quoted 	&quot;)
-yamlScalar(tag=?, content=&quot;block&quot;)
-yamlScalar(tag=!, content=&quot;void main() {
-	printf(&quot;Hello, world!\n&quot;);
-}
-&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL :quoted
+=VAL ! &quot;Quoted 	
+=VAL :block
+=VAL ! |void main() {\n	printf(&quot;Hello, world!\\n&quot;);\n}\n
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

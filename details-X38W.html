@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test X38W - Aliases in Flow Objects</title>
+<title>Test X38W - Aliases in Flow Objects - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -112,39 +112,43 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
-+SEQ
++SEQ &amp;a
 =VAL :a
-=VAL &amp;1 :b
+=VAL &amp;b :b
 -SEQ
-=ALI *1
-=ALI *0
+=ALI *b
+=ALI *a
 +SEQ
 =VAL :c
-=ALI *1
+=ALI *b
+=VAL :d
+-SEQ
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
++SEQ &amp;a
+=VAL :a
+=VAL &amp;b :b
+-SEQ
+=ALI *b
+=ALI *a
++SEQ
+=VAL :c
+=ALI *b
 =VAL :d
 -SEQ
 -MAP
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlStartSeq(tag=?, anchor=0)
-yamlScalar(tag=?, content=&quot;a&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;b&quot;)
-yamlEndSeq()
-yamlAlias(aliasTarget=1)
-yamlAlias(aliasTarget=0)
-yamlStartSeq(tag=?)
-yamlScalar(tag=?, content=&quot;c&quot;)
-yamlAlias(aliasTarget=1)
-yamlScalar(tag=?, content=&quot;d&quot;)
-yamlEndSeq()
-yamlEndMap()
-yamlEndDoc()</pre>
 
  </div>
 
@@ -186,7 +190,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x20fc4e8)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
+<pre>{&quot;ARRAY(0x146e618)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
 </pre>
 
  </div>
@@ -195,7 +199,7 @@ yamlEndDoc()</pre>
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x16afcb8)&#39; =&gt; [
+  &#39;ARRAY(0x26986f8)&#39; =&gt; [
                           &#39;c&#39;,
                           &#39;b&#39;,
                           &#39;d&#39;
@@ -218,7 +222,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x1e91a90)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
+<pre>{&quot;ARRAY(0x1cce7d0)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
 </pre>
 
  </div>
@@ -227,7 +231,7 @@ yamlEndDoc()</pre>
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x17fb140)&#39; =&gt; [
+  &#39;ARRAY(0x17f9378)&#39; =&gt; [
                           &#39;c&#39;,
                           &#39;b&#39;,
                           &#39;d&#39;

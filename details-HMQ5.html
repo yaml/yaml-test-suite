@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test HMQ5 - Spec Example 6.23. Node Properties</title>
+<title>Test HMQ5 - Spec Example 6.23. Node Properties - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -92,25 +92,29 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
-=VAL &amp;0 !!str :foo
+=VAL !!str &amp;a1 &quot;foo
 =VAL !!str :bar
-=VAL &amp;1 :baz
-=ALI *0
+=VAL &amp;a2 :baz
+=ALI *a1
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=!!str, anchor=0, content=&quot;foo&quot;)
-yamlScalar(tag=!!str, content=&quot;bar&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;baz&quot;)
-yamlAlias(aliasTarget=0)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL !!str &amp;a1 &quot;foo
+=VAL !!str :bar
+=VAL &amp;a2 :baz
+=ALI *a1
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

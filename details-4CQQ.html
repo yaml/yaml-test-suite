@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 4CQQ - Spec Example 2.18. Multi-line Flow Scalars</title>
+<title>Test 4CQQ - Spec Example 2.18. Multi-line Flow Scalars - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -53,7 +53,46 @@ quoted: &quot;So does this
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :plain
+=VAL :This unquoted scalar spans many lines.
+=VAL :quoted
+=VAL :So does this quoted scalar.\n
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :plain
+=VAL :This unquoted scalar spans many lines.
+=VAL :quoted
+=VAL ! &quot;So does this quoted scalar.\n
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :plain
+=VAL :This unquoted scalar spans many lines.
+=VAL :quoted
+=VAL ! &quot;So does this quoted scalar.\n
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

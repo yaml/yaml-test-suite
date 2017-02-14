@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test A2M4 - Spec Example 6.2. Indentation Indicators</title>
+<title>Test A2M4 - Spec Example 6.2. Indentation Indicators - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -87,7 +87,58 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :a
++SEQ
+=VAL :b
++SEQ
+=VAL :c
+=VAL :d
+-SEQ
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :a
++SEQ
+=VAL :b
++SEQ
+=VAL :c
+=VAL :d
+-SEQ
+-SEQ
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :a
++SEQ
+=VAL :b
++SEQ
+=VAL :c
+=VAL :d
+-SEQ
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -98,14 +149,16 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 +DOC
 +MAP
 =VAL :? a
++SEQ
 =VAL :-	b
--MAP
+-SEQ
 -DOC
 +DOC
-=VAL :  -  -	c
--DOC
-+DOC
-=VAL :     - d
++SEQ
++SEQ
+=VAL :-	c
+=VAL :d
+-SEQ
 -DOC
 -STR</pre>
 

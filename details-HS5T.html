@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test HS5T - Spec Example 7.12. Plain Lines</title>
+<title>Test HS5T - Spec Example 7.12. Plain Lines - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -60,7 +60,31 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
+=VAL :1st non-empty\n2nd non-empty 3rd non-empty
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
+=VAL :1st non-empty\n2nd non-empty 3rd non-empty
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
+=VAL :1st non-empty\n2nd non-empty 3rd non-empty
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
@@ -72,7 +96,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 =VAL :1st non-empty
 -DOC
 +DOC
-=VAL : 2nd non-empty 
+=VAL : 2nd non-empty
 -DOC
 +DOC
 =VAL :	3rd non-empty

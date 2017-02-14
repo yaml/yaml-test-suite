@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 6M2F - Aliases in Explicit Block Mapping</title>
+<title>Test 6M2F - Aliases in Explicit Block Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -114,25 +114,29 @@ expected &lt;block end&gt;, but found Value
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
-=VAL &amp;0 :a
-=VAL &amp;1 :b
+=VAL &amp;a :a
+=VAL &amp;b :b
 =VAL :
-=ALI *0
+=ALI *a
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, anchor=0, content=&quot;a&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;b&quot;)
-yamlScalar(tag=?, content=&quot;&quot;)
-yamlAlias(aliasTarget=0)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL &amp;a :a
+=VAL &amp;b :b
+=VAL :
+=ALI *a
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

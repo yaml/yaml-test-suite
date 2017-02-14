@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test PW8X - Anchors on Empty Scalars</title>
+<title>Test PW8X - Anchors on Empty Scalars - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -127,49 +127,53 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +SEQ
-=VAL &amp;0 :
+=VAL &amp;a :
 =VAL :a
 +MAP
-=VAL &amp;1 :
+=VAL &amp;a :
 =VAL :a
 =VAL :b
-=VAL &amp;2 :
-=VAL &amp;3 :
-=VAL &amp;4 :
+=VAL &amp;b :
+=VAL &amp;c :
+=VAL &amp;a :
 -MAP
 +MAP
-=VAL &amp;5 :
+=VAL &amp;d :
 =VAL :
-=VAL &amp;6 :
-=VAL &amp;7 :
+=VAL &amp;e :
+=VAL &amp;a :
+-MAP
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
+=VAL &amp;a :
+=VAL :a
++MAP
+=VAL &amp;a :
+=VAL :a
+=VAL :b
+=VAL &amp;b :
+=VAL &amp;c :
+=VAL &amp;a :
+-MAP
++MAP
+=VAL &amp;d :
+=VAL :
+=VAL &amp;e :
+=VAL &amp;a :
 -MAP
 -SEQ
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=?, anchor=0, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;a&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=?, anchor=1, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;a&quot;)
-yamlScalar(tag=?, content=&quot;b&quot;)
-yamlScalar(tag=?, anchor=2, content=&quot;&quot;)
-yamlScalar(tag=?, anchor=3, content=&quot;&quot;)
-yamlScalar(tag=?, anchor=4, content=&quot;&quot;)
-yamlEndMap()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, anchor=5, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;&quot;)
-yamlScalar(tag=?, anchor=6, content=&quot;&quot;)
-yamlScalar(tag=?, anchor=7, content=&quot;&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlEndDoc()</pre>
 
  </div>
 

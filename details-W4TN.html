@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test W4TN - Spec Example 9.5. Directives Documents</title>
+<title>Test W4TN - Spec Example 9.5. Directives Documents - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -77,7 +77,40 @@ expected alphabetic or numeric character, but found !(33)
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
+=VAL :%!PS-Adobe-2.0\n
+-DOC
++DOC
+=VAL :
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
+=VAL ! |%!PS-Adobe-2.0\n
+-DOC
++DOC
+=VAL :
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
+=VAL ! |%!PS-Adobe-2.0\n
+-DOC
++DOC
+=VAL :
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

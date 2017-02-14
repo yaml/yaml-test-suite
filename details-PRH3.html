@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test PRH3 - Spec Example 7.9. Single Quoted Lines</title>
+<title>Test PRH3 - Spec Example 7.9. Single Quoted Lines - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -45,19 +45,36 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
+=VAL : 1st non-empty\n2nd non-empty 3rd non-empty 
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
+=VAL ! &#39; 1st non-empty\n2nd non-empty 3rd non-empty 
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
+=VAL ! &#39; 1st non-empty\n2nd non-empty 3rd non-empty 
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- <pre>
-+STR
-+DOC
-=VAL &#39; 1st non-empty\\n2nd non-empty 3rd non-empty 
--DOC
--STR</pre>
-
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pm-json">

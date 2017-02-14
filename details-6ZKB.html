@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 6ZKB - Spec Example 9.6. Stream</title>
+<title>Test 6ZKB - Spec Example 9.6. Stream - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -76,19 +76,64 @@ null
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
+=VAL :Document
+-DOC
++DOC
+=VAL :
+-DOC
++DOC
++MAP
+=VAL :matches %
+=VAL :20
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
+=VAL :Document
+-DOC
++DOC
+=VAL :
+-DOC
++DOC
++MAP
+=VAL :matches %
+=VAL :20
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
+=VAL :Document
+-DOC
++DOC
+=VAL :
+-DOC
++DOC
++MAP
+=VAL :matches %
+=VAL :20
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
-  msg:      Parse document failed for some reason
-  line:     3
-  column:   1
-  context:  # Empty\n...\n%YAML 1.2\n---\nmatches %: 20\n
-            ^
-  position: 13 (9 pre-lookahead)
- </pre>
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">

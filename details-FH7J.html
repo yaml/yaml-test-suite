@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test FH7J - Tags on Empty Scalars</title>
+<title>Test FH7J - Tags on Empty Scalars - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -114,6 +114,27 @@
 Transformed Events:
 <pre>
 +STR
++STR
++DOC
++SEQ
+=VAL !!str :
++MAP
+=VAL !!null :
+=VAL :a
+=VAL :b
+=VAL !!str :
+-MAP
++MAP
+=VAL !!str :
+=VAL !!null :
+-MAP
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
 +DOC
 +SEQ
 =VAL !!str :
@@ -130,30 +151,35 @@ Transformed Events:
 -SEQ
 -DOC
 -STR</pre>
-Original Events:
- <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=!!str, content=&quot;&quot;)
-yamlStartMap(tag=?)
-yamlScalar(tag=!!null, content=&quot;&quot;)
-yamlScalar(tag=?, content=&quot;a&quot;)
-yamlScalar(tag=?, content=&quot;b&quot;)
-yamlScalar(tag=!!str, content=&quot;&quot;)
-yamlEndMap()
-yamlStartMap(tag=?)
-yamlScalar(tag=!!str, content=&quot;&quot;)
-yamlScalar(tag=!!null, content=&quot;&quot;)
-yamlEndMap()
-yamlEndSeq()
-yamlEndDoc()</pre>
 
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
-</pre>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
++STR
++DOC
++SEQ
+=VAL &lt;tag:yaml.org,2002:str&gt; :-
+-SEQ
+-DOC
++DOC
++MAP
+=VAL &lt;tag:yaml.org,2002:null&gt; :
+=VAL :a
+=VAL :b
+=VAL &lt;tag:yaml.org,2002:str&gt; :- !!str
+-MAP
+-DOC
++DOC
++MAP
+=VAL :
+=VAL &lt;tag:yaml.org,2002:null&gt; :
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-json">

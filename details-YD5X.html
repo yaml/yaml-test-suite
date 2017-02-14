@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test YD5X - Spec Example 2.5. Sequence of Sequences</title>
+<title>Test YD5X - Spec Example 2.5. Sequence of Sequences - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -61,7 +61,79 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++SEQ
++SEQ
+=VAL :name
+=VAL :hr
+=VAL :avg
+-SEQ
++SEQ
+=VAL :Mark McGwire
+=VAL :65
+=VAL :0.278
+-SEQ
++SEQ
+=VAL :Sammy Sosa
+=VAL :63
+=VAL :0.288
+-SEQ
+-SEQ
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++SEQ
++SEQ
+=VAL :name
+=VAL :hr
+=VAL :avg
+-SEQ
++SEQ
+=VAL :Mark McGwire
+=VAL :65
+=VAL :0.278
+-SEQ
++SEQ
+=VAL :Sammy Sosa
+=VAL :63
+=VAL :0.288
+-SEQ
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
++SEQ
+=VAL :name
+=VAL :hr
+=VAL :avg
+-SEQ
++SEQ
+=VAL :Mark McGwire
+=VAL :65
+=VAL :0.278
+-SEQ
++SEQ
+=VAL :Sammy Sosa
+=VAL :63
+=VAL :0.288
+-SEQ
+-SEQ
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

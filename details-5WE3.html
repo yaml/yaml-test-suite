@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 5WE3 - Spec Example 8.17. Explicit Block Mapping Entries</title>
+<title>Test 5WE3 - Spec Example 8.17. Explicit Block Mapping Entries - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -72,13 +72,82 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :explicit key
+=VAL :
+=VAL :block key\n
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :explicit key
+=VAL :
+=VAL ! |block key\n
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :explicit key
+=VAL :
+=VAL ! |block key\n
++SEQ
+=VAL :one
+=VAL :two
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
-</pre>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
+Use of uninitialized value in string eq at /lib/perl5/YAML/Pegex/Grammar.pm line 57, &lt;STDIN&gt; line 1.
++STR
++DOC
+=VAL :? explicit key
+-DOC
++DOC
+=VAL :? |
+-DOC
++DOC
++MAP
+=VAL :block key
+=VAL :- one
+-MAP
+-DOC
++DOC
++SEQ
+=VAL :two
+-SEQ
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-json">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test R4YG - Spec Example 8.2. Block Indentation Indicator</title>
+<title>Test R4YG - Spec Example 8.2. Block Indentation Indicator - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -67,7 +67,46 @@
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++SEQ
+=VAL :detected\n
+=VAL :\n\n# detected\n
+=VAL : explicit\n
+=VAL :\t\ndetected\n
+-SEQ
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++SEQ
+=VAL ! |detected\n
+=VAL ! &gt;\n\n# detected\n
+=VAL ! | explicit\n
+=VAL ! &gt;	\ndetected\n
+-SEQ
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++SEQ
+=VAL ! |detected\n
+=VAL ! &gt;\n\n# detected\n
+=VAL ! | explicit\n
+=VAL ! &gt;	\ndetected\n
+-SEQ
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">

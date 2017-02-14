@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test F2C7 - Anchors and Tags</title>
+<title>Test F2C7 - Anchors and Tags - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -79,25 +79,29 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +SEQ
-=VAL &amp;0 !!str :a
+=VAL !!str &amp;a :a
 =VAL !!int :2
-=VAL &amp;1 !!int :4
-=VAL &amp;2 :d
+=VAL !!int &amp;c :4
+=VAL &amp;d :d
 -SEQ
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=!!str, anchor=0, content=&quot;a&quot;)
-yamlScalar(tag=!!int, content=&quot;2&quot;)
-yamlScalar(tag=!!int, anchor=1, content=&quot;4&quot;)
-yamlScalar(tag=?, anchor=2, content=&quot;d&quot;)
-yamlEndSeq()
-yamlEndDoc()</pre>
++STR
++DOC
++SEQ
+=VAL !!str &amp;a :a
+=VAL !!int :2
+=VAL !!int &amp;c :4
+=VAL &amp;d :d
+-SEQ
+-DOC
+-STR</pre>
 
  </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test 8MK2 - Explicit Non-Specific Tag</title>
+<title>Test 8MK2 - Explicit Non-Specific Tag - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -51,15 +51,19 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
-=VAL :a
+=VAL ! :a
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlScalar(tag=!, content=&quot;a&quot;)
-yamlEndDoc()</pre>
++STR
++DOC
+=VAL ! :a
+-DOC
+-STR</pre>
 
  </div>
 
@@ -117,7 +121,7 @@ yamlEndDoc()</pre>
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff
-<pre>&quot;main=SCALAR(0x286c428)&quot;
+<pre>&quot;main=SCALAR(0x10d47e8)&quot;
 </pre>
  </div>
 

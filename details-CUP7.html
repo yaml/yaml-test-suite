@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test CUP7 - Spec Example 5.6. Node Property Indicators</title>
+<title>Test CUP7 - Spec Example 5.6. Node Property Indicators - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -111,25 +111,29 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
 =VAL :anchored
-=VAL &amp;0 &lt;10000&gt; :value
+=VAL !&lt;!local&gt; &amp;anchor :value
 =VAL :alias
-=ALI *0
+=ALI *anchor
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, content=&quot;anchored&quot;)
-yamlScalar(tag=&lt;10000&gt;, anchor=0, content=&quot;value&quot;)
-yamlScalar(tag=?, content=&quot;alias&quot;)
-yamlAlias(aliasTarget=0)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL :anchored
+=VAL !&lt;!local&gt; &amp;anchor :value
+=VAL :alias
+=ALI *anchor
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

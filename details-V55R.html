@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test V55R - Aliases in Block Sequence</title>
+<title>Test V55R - Aliases in Block Sequence - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -79,25 +79,29 @@
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +SEQ
-=VAL &amp;0 :a
-=VAL &amp;1 :b
-=ALI *0
-=ALI *1
+=VAL &amp;a :a
+=VAL &amp;b :b
+=ALI *a
+=ALI *b
 -SEQ
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartSeq(tag=?)
-yamlScalar(tag=?, anchor=0, content=&quot;a&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;b&quot;)
-yamlAlias(aliasTarget=0)
-yamlAlias(aliasTarget=1)
-yamlEndSeq()
-yamlEndDoc()</pre>
++STR
++DOC
++SEQ
+=VAL &amp;a :a
+=VAL &amp;b :b
+=ALI *a
+=ALI *b
+-SEQ
+-DOC
+-STR</pre>
 
  </div>
 

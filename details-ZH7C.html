@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test ZH7C - Anchors in Mapping</title>
+<title>Test ZH7C - Anchors in Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -91,25 +91,29 @@ c: &amp;d d
 Transformed Events:
 <pre>
 +STR
++STR
 +DOC
 +MAP
-=VAL &amp;0 :a
+=VAL &amp;a :a
 =VAL :b
 =VAL :c
-=VAL &amp;1 :d
+=VAL &amp;d :d
 -MAP
 -DOC
+-STR
 -STR</pre>
 Original Events:
  <pre>
-yamlStartDoc()
-yamlStartMap(tag=?)
-yamlScalar(tag=?, anchor=0, content=&quot;a&quot;)
-yamlScalar(tag=?, content=&quot;b&quot;)
-yamlScalar(tag=?, content=&quot;c&quot;)
-yamlScalar(tag=?, anchor=1, content=&quot;d&quot;)
-yamlEndMap()
-yamlEndDoc()</pre>
++STR
++DOC
++MAP
+=VAL &amp;a :a
+=VAL :b
+=VAL :c
+=VAL &amp;d :d
+-MAP
+-DOC
+-STR</pre>
 
  </div>
 

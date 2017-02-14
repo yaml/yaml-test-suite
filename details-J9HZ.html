@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>yaml-test-suite Framework Matrix - Test J9HZ - Spec Example 2.9. Single Document with Two Comments</title>
+<title>Test J9HZ - Spec Example 2.9. Single Document with Two Comments - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -61,13 +61,69 @@ rbi:
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :hr
++SEQ
+=VAL :Mark McGwire
+=VAL :Sammy Sosa
+-SEQ
+=VAL :rbi
++SEQ
+=VAL :Sammy Sosa
+=VAL :Ken Griffey
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++STR
++DOC
++MAP
+=VAL :hr
++SEQ
+=VAL :Mark McGwire
+=VAL :Sammy Sosa
+-SEQ
+=VAL :rbi
++SEQ
+=VAL :Sammy Sosa
+=VAL :Ken Griffey
+-SEQ
+-MAP
+-DOC
+-STR
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
++MAP
+=VAL :hr
++SEQ
+=VAL :Mark McGwire
+=VAL :Sammy Sosa
+-SEQ
+=VAL :rbi
++SEQ
+=VAL :Sammy Sosa
+=VAL :Ken Griffey
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
-</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pm-json">
