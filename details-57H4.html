@@ -69,62 +69,19 @@ mapping: !!map
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :sequence
-+SEQ &lt;tag:yaml.org,2002:seq&gt;
-=VAL :entry
-+SEQ &lt;tag:yaml.org,2002:seq&gt;
-=VAL :nested
--SEQ
--SEQ
-=VAL :mapping
-+MAP &lt;tag:yaml.org,2002:map&gt;
-=VAL :foo
-=VAL :bar
--MAP
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL :sequence
-+SEQ !!seq
-=VAL :entry
-+SEQ !!seq
-=VAL :nested
--SEQ
--SEQ
-=VAL :mapping
-+MAP !!map
-=VAL :foo
-=VAL :bar
--MAP
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +MAP
 =VAL :sequence
-+SEQ !!seq
++SEQ&lt;tag:yaml.org,2002:seq&gt;
 =VAL :entry
-+SEQ !!seq
++SEQ&lt;tag:yaml.org,2002:seq&gt;
 =VAL :nested
 -SEQ
 -SEQ
 =VAL :mapping
-+MAP !!map
++MAP&lt;tag:yaml.org,2002:map&gt;
 =VAL :foo
 =VAL :bar
 -MAP

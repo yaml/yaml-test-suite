@@ -76,41 +76,14 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :quoted
-=VAL :Quoted \t
-=VAL :block
-=VAL :void main() {\n\tprintf(&quot;Hello, world!\\n&quot;);\n}\n
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL :quoted
-=VAL ! &quot;Quoted 	
-=VAL :block
-=VAL ! |void main() {\n	printf(&quot;Hello, world!\\n&quot;);\n}\n
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +MAP
 =VAL :quoted
-=VAL ! &quot;Quoted 	
+=VAL &quot;Quoted 	
 =VAL :block
-=VAL ! |void main() {\n	printf(&quot;Hello, world!\\n&quot;);\n}\n
+=VAL |void main() {\n	printf(&quot;Hello, world!\\n&quot;);\n}\n
 -MAP
 -DOC
 -STR</pre>

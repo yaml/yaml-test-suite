@@ -108,58 +108,7 @@ expected &lt;block end&gt;, but found Value
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :plain key
-=VAL :in-line value
-=VAL :
-=VAL :
-=VAL :quoted key
-+SEQ
-=VAL :entry
--SEQ
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL :plain key
-=VAL :in-line value
-=VAL :
-=VAL :
-=VAL ! &quot;quoted key
-+SEQ
-=VAL :entry
--SEQ
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
- <pre>
-+STR
-+DOC
-+MAP
-=VAL :plain key
-=VAL :in-line value
-=VAL :
-=VAL :
-=VAL ! &quot;quoted key
-+SEQ
-=VAL :entry
--SEQ
--MAP
--DOC
--STR</pre>
-
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">

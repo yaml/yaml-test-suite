@@ -169,115 +169,6 @@ Stack:
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :Time
-=VAL :2001-11-23 15:01:42 -5
-=VAL :User
-=VAL :ed
-=VAL :Warning
-=VAL :This is an error message for the log file
--MAP
--DOC
-+DOC
-+MAP
-=VAL :Time
-=VAL :2001-11-23 15:02:31 -5
-=VAL :User
-=VAL :ed
-=VAL :Warning
-=VAL :A slightly different error message.
--MAP
--DOC
-+DOC
-+MAP
-=VAL :Date
-=VAL :2001-11-23 15:03:17 -5
-=VAL :User
-=VAL :ed
-=VAL :Fatal
-=VAL :Unknown variable &quot;bar&quot;
-=VAL :Stack
-+SEQ
-+MAP
-=VAL :file
-=VAL :TopClass.py
-=VAL :line
-=VAL :23
-=VAL :code
-=VAL :x = MoreObject(&quot;345\\n&quot;)\n
--MAP
-+MAP
-=VAL :file
-=VAL :MoreClass.py
-=VAL :line
-=VAL :58
-=VAL :code
-=VAL :foo = bar
--MAP
--SEQ
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL :Time
-=VAL :2001-11-23 15:01:42 -5
-=VAL :User
-=VAL :ed
-=VAL :Warning
-=VAL :This is an error message for the log file
--MAP
--DOC
-+DOC
-+MAP
-=VAL :Time
-=VAL :2001-11-23 15:02:31 -5
-=VAL :User
-=VAL :ed
-=VAL :Warning
-=VAL :A slightly different error message.
--MAP
--DOC
-+DOC
-+MAP
-=VAL :Date
-=VAL :2001-11-23 15:03:17 -5
-=VAL :User
-=VAL :ed
-=VAL :Fatal
-=VAL :Unknown variable &quot;bar&quot;
-=VAL :Stack
-+SEQ
-+MAP
-=VAL :file
-=VAL :TopClass.py
-=VAL :line
-=VAL :23
-=VAL :code
-=VAL ! |x = MoreObject(&quot;345\\n&quot;)\n
--MAP
-+MAP
-=VAL :file
-=VAL :MoreClass.py
-=VAL :line
-=VAL :58
-=VAL :code
-=VAL ! |foo = bar
--MAP
--SEQ
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
@@ -316,7 +207,7 @@ Original Events:
 =VAL :line
 =VAL :23
 =VAL :code
-=VAL ! |x = MoreObject(&quot;345\\n&quot;)\n
+=VAL |x = MoreObject(&quot;345\\n&quot;)\n
 -MAP
 +MAP
 =VAL :file
@@ -324,7 +215,7 @@ Original Events:
 =VAL :line
 =VAL :58
 =VAL :code
-=VAL ! |foo = bar
+=VAL |foo = bar
 -MAP
 -SEQ
 -MAP

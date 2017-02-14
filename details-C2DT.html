@@ -67,46 +67,15 @@
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :adjacent
-=VAL :value
-=VAL :readable
-=VAL :value
-=VAL :empty
-=VAL :
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL ! :adjacent
-=VAL :value
-=VAL ! :readable
-=VAL :value
-=VAL ! :empty
-=VAL :
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +MAP
-=VAL ! :adjacent
+=VAL &lt;!&gt; :adjacent
 =VAL :value
-=VAL ! :readable
+=VAL &lt;!&gt; :readable
 =VAL :value
-=VAL ! :empty
+=VAL &lt;!&gt; :empty
 =VAL :
 -MAP
 -DOC

@@ -77,39 +77,12 @@
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL &amp;a1 &lt;tag:yaml.org,2002:str&gt; :foo
-=VAL &lt;tag:yaml.org,2002:str&gt; :bar
-=VAL &amp;a2 :baz
-=ALI *a1
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL !!str &amp;a1 &quot;foo
-=VAL !!str :bar
-=VAL &amp;a2 :baz
-=ALI *a1
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +MAP
-=VAL !!str &amp;a1 &quot;foo
-=VAL !!str :bar
+=VAL&lt;tag:yaml.org,2002:str&gt; &amp;a1 &quot;foo
+=VAL&lt;tag:yaml.org,2002:str&gt; :bar
 =VAL &amp;a2 :baz
 =ALI *a1
 -MAP

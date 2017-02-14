@@ -97,38 +97,13 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL &lt;!local&gt; :foo
-=VAL &lt;tag:yaml.org,2002:str&gt; :bar
-=VAL &lt;tag:example.com,2000:app/tag!&gt; :baz
--SEQ
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+SEQ
-=VAL !&lt;!local&gt; :foo
-=VAL !!str :bar
-=VAL !&lt;tag:example.com,2000:app/tag!&gt; :baz
--SEQ
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +SEQ
-=VAL !&lt;!local&gt; :foo
-=VAL !!str :bar
-=VAL !&lt;tag:example.com,2000:app/tag!&gt; :baz
+=VAL&lt;!local&gt; :foo
+=VAL&lt;tag:yaml.org,2002:str&gt; :bar
+=VAL&lt;tag:example.com,2000:app/tag!&gt; :baz
 -SEQ
 -DOC
 -STR</pre>

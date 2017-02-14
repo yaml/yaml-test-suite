@@ -66,55 +66,6 @@
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+SEQ
-+SEQ
-=VAL :a
-=VAL :b
-=VAL :c
--SEQ
-+MAP
-=VAL :a
-=VAL :b
-=VAL :c
-=VAL :d
-=VAL :e
-=VAL :f
--MAP
-+SEQ
--SEQ
--SEQ
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+SEQ
-+SEQ
-=VAL :a
-=VAL :b
-=VAL :c
--SEQ
-+MAP
-=VAL ! :a
-=VAL :b
-=VAL :c
-=VAL ! :d
-=VAL :e
-=VAL ! :f
--MAP
-+SEQ
--SEQ
--SEQ
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
@@ -125,12 +76,12 @@ Original Events:
 =VAL :c
 -SEQ
 +MAP
-=VAL ! :a
+=VAL &lt;!&gt; :a
 =VAL :b
 =VAL :c
-=VAL ! :d
+=VAL &lt;!&gt; :d
 =VAL :e
-=VAL ! :f
+=VAL &lt;!&gt; :f
 -MAP
 +SEQ
 -SEQ

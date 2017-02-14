@@ -92,36 +92,13 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !my-light
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-=VAL &lt;!my-light&gt; :fluorescent
--DOC
-+DOC
-=VAL &lt;!my-light&gt; :green
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-=VAL !&lt;!my-light&gt; :fluorescent
--DOC
-+DOC
-=VAL !&lt;!my-light&gt; :green
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
-=VAL !&lt;!my-light&gt; :fluorescent
+=VAL&lt;!my-light&gt; :fluorescent
 -DOC
 +DOC
-=VAL !&lt;!my-light&gt; :green
+=VAL&lt;!my-light&gt; :green
 -DOC
 -STR</pre>
 

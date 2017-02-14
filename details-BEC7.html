@@ -51,27 +51,10 @@
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-=VAL :foo
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-=VAL ! &quot;foo
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
-=VAL ! &quot;foo
+=VAL &quot;foo
 -DOC
 -STR</pre>
 

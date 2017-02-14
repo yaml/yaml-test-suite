@@ -77,41 +77,14 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :literal
-=VAL :value\n
-=VAL :folded
-=VAL &lt;!foo&gt; :value\n
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL :literal
-=VAL ! |value\n
-=VAL :folded
-=VAL !&lt;!foo&gt; &gt;value\n
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +MAP
 =VAL :literal
-=VAL ! |value\n
+=VAL |value\n
 =VAL :folded
-=VAL !&lt;!foo&gt; &gt;value\n
+=VAL&lt;!foo&gt; &gt;value\n
 -MAP
 -DOC
 -STR</pre>

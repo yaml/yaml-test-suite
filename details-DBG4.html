@@ -128,62 +128,19 @@ expected the node content, but found Value
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL :::vector
-=VAL :: - ()
-=VAL :Up, up, and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
-+SEQ
-=VAL :::vector
-=VAL :: - ()
-=VAL :Up, up and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
--SEQ
--SEQ
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+SEQ
-=VAL :::vector
-=VAL ! &quot;: - ()
-=VAL :Up, up, and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
-+SEQ
-=VAL :::vector
-=VAL ! :: - ()
-=VAL ! :Up, up and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
--SEQ
--SEQ
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +SEQ
 =VAL :::vector
-=VAL ! &quot;: - ()
+=VAL &quot;: - ()
 =VAL :Up, up, and away!
 =VAL :-123
 =VAL :http://example.com/foo#bar
 +SEQ
 =VAL :::vector
-=VAL ! :: - ()
-=VAL ! :Up, up and away!
+=VAL &lt;!&gt; :: - ()
+=VAL &lt;!&gt; :Up, up and away!
 =VAL :-123
 =VAL :http://example.com/foo#bar
 -SEQ

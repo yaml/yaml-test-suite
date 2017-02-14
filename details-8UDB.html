@@ -63,51 +63,12 @@ single: pair,
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL :double quoted
-=VAL :single quoted
-=VAL :plain text
-+SEQ
-=VAL :nested
--SEQ
-+MAP
-=VAL :single
-=VAL :pair
--MAP
--SEQ
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+SEQ
-=VAL ! :double quoted
-=VAL ! :single quoted
-=VAL :plain text
-+SEQ
-=VAL :nested
--SEQ
-+MAP
-=VAL :single
-=VAL :pair
--MAP
--SEQ
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +SEQ
-=VAL ! :double quoted
-=VAL ! :single quoted
+=VAL &lt;!&gt; :double quoted
+=VAL &lt;!&gt; :single quoted
 =VAL :plain text
 +SEQ
 =VAL :nested

@@ -98,47 +98,12 @@ Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :unquoted
-=VAL :separate
-=VAL :http://foo.com
-=VAL :
-=VAL :omitted value
-=VAL :
-=VAL :
-=VAL :omitted key
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP
-=VAL :unquoted
-=VAL ! :separate
-=VAL :http://foo.com
-=VAL :
-=VAL :omitted value
-=VAL :
-=VAL :
-=VAL :omitted key
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
 +MAP
 =VAL :unquoted
-=VAL ! :separate
+=VAL &lt;!&gt; :separate
 =VAL :http://foo.com
 =VAL :
 =VAL :omitted value

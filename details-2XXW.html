@@ -67,41 +67,10 @@
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+MAP &lt;tag:yaml.org,2002:set&gt;
-=VAL :Mark McGwire
-=VAL :
-=VAL :Sammy Sosa
-=VAL :
-=VAL :Ken Griff
-=VAL :
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+STR
-+DOC
-+MAP !!set
-=VAL :Mark McGwire
-=VAL :
-=VAL :Sammy Sosa
-=VAL :
-=VAL :Ken Griff
-=VAL :
--MAP
--DOC
--STR
--STR</pre>
-Original Events:
  <pre>
 +STR
 +DOC
-+MAP !!set
++MAP&lt;tag:yaml.org,2002:set&gt;
 =VAL :Mark McGwire
 =VAL :
 =VAL :Sammy Sosa
