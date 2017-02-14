@@ -49,9 +49,288 @@ tie-fighter: &#39;|\-*-/|&#39;
 }
 </pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{
+  &quot;unicode&quot;: &quot;Sosa did fine.☺&quot;,
+  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,
+  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,
+  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,
+  &quot;quoted&quot;: &quot; # Not a \u0027comment\u0027.&quot;,
+  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;
+}
+</pre>
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{
+  &quot;unicode&quot;: &quot;Sosa did fine.☺&quot;,
+  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,
+  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,
+  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,
+  &quot;quoted&quot;: &quot; # Not a &#39;comment&#39;.&quot;,
+  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;
+}
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
++STR
++DOC
++MAP
+=VAL :unicode
+=VAL &quot;Sosa did fine.\u263A
+=VAL :control
+=VAL &quot;\b1998\t1999\t2000\n
+=VAL :hex esc
+=VAL &quot;\x0d\x0a is \r\n
+=VAL :single
+=VAL &#39;&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL &#39; # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL &#39;|\-*-/|
+-MAP
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{&quot;control&quot;:&quot;\\b1998\t1999\t2000\n&quot;,&quot;hex esc&quot;:&quot;\r\n is \r\n&quot;,&quot;quoted&quot;:&quot; # Not a &#39;comment&#39;.&quot;,&quot;single&quot;:&quot;\&quot;Howdy!\&quot; he cried.&quot;,&quot;tie-fighter&quot;:&quot;|\\-*-\/|&quot;,&quot;unicode&quot;:&quot;Sosa did fine.\\u263A&quot;}
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;control&#39; =&gt; &#39;\\b1998	1999	2000
+&#39;,
+  &#39;hex esc&#39; =&gt; &#39;
+ is 
+&#39;,
+  &#39;quoted&#39; =&gt; &#39; # Not a \&#39;comment\&#39;.&#39;,
+  &#39;single&#39; =&gt; &#39;&quot;Howdy!&quot; he cried.&#39;,
+  &#39;tie-fighter&#39; =&gt; &#39;|\\-*-/|&#39;,
+  &#39;unicode&#39; =&gt; &#39;Sosa did fine.\\u263A&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
+Wide character in say at /yaml-editor/sbin/perl5-pp-event line 10, &lt;&gt; line 1.
++STR
++DOC
++MAP
+=VAL :unicode
+=VAL &quot;Sosa did fine.☺
+=VAL :control
+=VAL &quot;\b1998\t1999\t2000\n
+=VAL :hex esc
+=VAL &quot;\x0d\x0a is \r\n
+=VAL :single
+=VAL &#39;&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL &#39; # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL &#39;|\\-*-/|
+-MAP
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{&quot;control&quot;:&quot;\b1998\t1999\t2000\n&quot;,&quot;hex esc&quot;:&quot;\r\n is \r\n&quot;,&quot;quoted&quot;:&quot; # Not a &#39;comment&#39;.&quot;,&quot;single&quot;:&quot;\&quot;Howdy!\&quot; he cried.&quot;,&quot;tie-fighter&quot;:&quot;|\\-*-\/|&quot;,&quot;unicode&quot;:&quot;Sosa did fine.\\u263A&quot;}
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;control&#39; =&gt; &#39;1998	1999	2000
+&#39;,
+  &#39;hex esc&#39; =&gt; &#39;
+ is 
+&#39;,
+  &#39;quoted&#39; =&gt; &#39; # Not a \&#39;comment\&#39;.&#39;,
+  &#39;single&#39; =&gt; &#39;&quot;Howdy!&quot; he cried.&#39;,
+  &#39;tie-fighter&#39; =&gt; &#39;|\\-*-/|&#39;,
+  &#39;unicode&#39; =&gt; &#39;Sosa did fine.\\u263A&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{&quot;control&quot;:&quot;\b1998\t1999\t2000\n&quot;,&quot;hex esc&quot;:&quot;\r\n is \r\n&quot;,&quot;quoted&quot;:&quot; # Not a &#39;comment&#39;.&quot;,&quot;single&quot;:&quot;\&quot;Howdy!\&quot; he cried.&quot;,&quot;tie-fighter&quot;:&quot;|\\-*-\/|&quot;,&quot;unicode&quot;:&quot;Sosa did fine.\\u263A&quot;}
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;control&#39; =&gt; &#39;1998	1999	2000
+&#39;,
+  &#39;hex esc&#39; =&gt; &#39;
+ is 
+&#39;,
+  &#39;quoted&#39; =&gt; &#39; # Not a \&#39;comment\&#39;.&#39;,
+  &#39;single&#39; =&gt; &#39;&quot;Howdy!&quot; he cried.&#39;,
+  &#39;tie-fighter&#39; =&gt; &#39;|\\-*-/|&#39;,
+  &#39;unicode&#39; =&gt; &#39;Sosa did fine.\\u263A&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{&quot;control&quot;:&quot;\b1998\t1999\t2000\n&quot;,&quot;hex esc&quot;:&quot;\r\n is \r\n&quot;,&quot;quoted&quot;:&quot; # Not a &#39;comment&#39;.&quot;,&quot;single&quot;:&quot;\&quot;Howdy!\&quot; he cried.&quot;,&quot;tie-fighter&quot;:&quot;|\\-*-\/|&quot;,&quot;unicode&quot;:&quot;Sosa did fine.☺&quot;}
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;control&#39; =&gt; &#39;1998	1999	2000
+&#39;,
+  &#39;hex esc&#39; =&gt; &#39;
+ is 
+&#39;,
+  &#39;quoted&#39; =&gt; &#39; # Not a \&#39;comment\&#39;.&#39;,
+  &#39;single&#39; =&gt; &#39;&quot;Howdy!&quot; he cried.&#39;,
+  &#39;tie-fighter&#39; =&gt; &#39;|\\-*-/|&#39;,
+  &#39;unicode&#39; =&gt; &quot;Sosa did fine.\x{263a}&quot;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{ &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;, &quot;hex esc&quot; : &quot;\u000d\u000a is \u000d\u000a&quot;, &quot;unicode&quot; : &quot;Sosa did fine.\u263a&quot;, &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;, &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;, &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot; }
+</pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  control     =&gt; &quot;\b1998\t1999\t2000\n&quot;.Str,
+  hex esc     =&gt; &quot;\r\n is \r\n&quot;.Str,
+  quoted      =&gt; &quot; # Not a &#39;comment&#39;.&quot;.Str,
+  single      =&gt; &quot;\&quot;Howdy!\&quot; he cried.&quot;.Str,
+  tie-fighter =&gt; &quot;|\\-*-/|&quot;.Str,
+  unicode     =&gt; &quot;Sosa did fine.☺&quot;.Str,
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :unicode
+=VAL :Sosa did fine.☺
+=VAL :control
+=VAL :\b1998\t1999\t2000\n
+=VAL :hex esc
+=VAL :\r\n is \r\n
+=VAL :single
+=VAL :&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL : # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL :|\\-*-/|
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :unicode
+=VAL :Sosa did fine.\u263a
+=VAL :control
+=VAL :\x081998\t1999\t2000\n
+=VAL :hex esc
+=VAL :\r\n is \r\n
+=VAL :single
+=VAL :&quot;Howdy!&quot; he cried.
+=VAL :quoted
+=VAL : # Not a &#39;comment&#39;.
+=VAL :tie-fighter
+=VAL :|\\-*-/|
+-MAP
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
+StreamStartEvent()
+DocumentStartEvent()
+MappingStartEvent(anchor=None, tag=None, implicit=True)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;unicode&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;Sosa did fine.\u263a&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;control&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;\x081998\t1999\t2000\n&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;hex esc&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;\r\n is \r\n&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;single&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;&quot;Howdy!&quot; he cried.&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;quoted&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&quot; # Not a &#39;comment&#39;.&quot;)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;tie-fighter&#39;)
+ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;|\\-*-/|&#39;)
+MappingEndEvent()
+DocumentEndEvent()
+StreamEndEvent()</pre>
+
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre>{&quot;unicode&quot;:&quot;Sosa did fine.☺&quot;,&quot;control&quot;:&quot;\b1998\t1999\t2000\n&quot;,&quot;hex esc&quot;:&quot;\r\n is \r\n&quot;,&quot;single&quot;:&quot;\&quot;Howdy!\&quot; he cried.&quot;,&quot;quoted&quot;:&quot; # Not a &#39;comment&#39;.&quot;,&quot;tie-fighter&quot;:&quot;|\\-*-/|&quot;}
+</pre>
  </div>
 
  </body>

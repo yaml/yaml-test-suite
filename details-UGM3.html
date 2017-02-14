@@ -104,9 +104,202 @@ comments:
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for tag:clarkevans.com,2002:invoice; exception=Invalid tag: tag:clarkevans.com,2002:invoice
+ in &#39;reader&#39;, line 1, column 5:
+    --- !&lt;tag:clarkevans.com,2002:invoice&gt;
+        ^
+
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:350)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.com,2002:invoice
+	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
+	... 6 more
+</pre>
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:invoice&gt; at line 30, column 1:
+    
+    ^
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1398:7)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1489:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
+    at Object.&lt;anonymous&gt; (/yaml-editor/sbin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/yaml-editor/sbin/js-yaml-json:3:1)
+    at Module._compile (module.js:410:26)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3
+
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 27
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 27
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Needed? </pre>
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x1db9010)&quot;
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>bless( {
+         &#39;bill-to&#39; =&gt; {
+                        &#39;address&#39; =&gt; {
+                                       &#39;city&#39; =&gt; &#39;Royal Oak&#39;,
+                                       &#39;lines&#39; =&gt; &#39;458 Walkman Dr.
+Suite #292
+&#39;,
+                                       &#39;postal&#39; =&gt; &#39;48046&#39;,
+                                       &#39;state&#39; =&gt; &#39;MI&#39;
+                                     },
+                        &#39;family&#39; =&gt; &#39;Dumars&#39;,
+                        &#39;given&#39; =&gt; &#39;Chris&#39;
+                      },
+         &#39;comments&#39; =&gt; &#39;Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.&#39;,
+         &#39;date&#39; =&gt; &#39;2001-01-23&#39;,
+         &#39;invoice&#39; =&gt; &#39;34843&#39;,
+         &#39;product&#39; =&gt; [
+                        {
+                          &#39;description&#39; =&gt; &#39;Basketball&#39;,
+                          &#39;price&#39; =&gt; &#39;450.00&#39;,
+                          &#39;quantity&#39; =&gt; &#39;4&#39;,
+                          &#39;sku&#39; =&gt; &#39;BL394D&#39;
+                        },
+                        {
+                          &#39;description&#39; =&gt; &#39;Super Hoop&#39;,
+                          &#39;price&#39; =&gt; &#39;2392.00&#39;,
+                          &#39;quantity&#39; =&gt; &#39;1&#39;,
+                          &#39;sku&#39; =&gt; &#39;BL4438H&#39;
+                        }
+                      ],
+         &#39;ship-to&#39; =&gt; $VAR1-&gt;{&#39;bill-to&#39;},
+         &#39;tax&#39; =&gt; &#39;251.42&#39;,
+         &#39;total&#39; =&gt; &#39;4443.52&#39;
+       }, &#39;&lt;tag::clarkevans.com,2002:invoice&gt;&#39; )
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+
+    bad tag found for hash: &#39;tag:clarkevans.com,2002:invoice&#39;
+
+was found at document: 1
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+
+    bad tag found for hash: &#39;tag:clarkevans.com,2002:invoice&#39;
+
+was found at document: 1
+</pre>
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls at /perl6/share/perl6/site/sources/8B3B742F9177F6BF1AD36045D4D379FBC556847E (YAMLish) line 720
+  in block &lt;unit&gt; </pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls at /perl6/share/perl6/site/sources/8B3B742F9177F6BF1AD36045D4D379FBC556847E (YAMLish) line 720
+  in block &lt;unit&gt; </pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;invoice&quot;:34843,&quot;date&quot;:&quot;2001-01-23&quot;,&quot;bill-to&quot;:{&quot;given&quot;:&quot;Chris&quot;,&quot;family&quot;:&quot;Dumars&quot;,&quot;address&quot;:{&quot;lines&quot;:&quot;458 Walkman Dr.\nSuite #292\n&quot;,&quot;city&quot;:&quot;Royal Oak&quot;,&quot;state&quot;:&quot;MI&quot;,&quot;postal&quot;:48046}},&quot;ship-to&quot;:{&quot;given&quot;:&quot;Chris&quot;,&quot;family&quot;:&quot;Dumars&quot;,&quot;address&quot;:{&quot;lines&quot;:&quot;458 Walkman Dr.\nSuite #292\n&quot;,&quot;city&quot;:&quot;Royal Oak&quot;,&quot;state&quot;:&quot;MI&quot;,&quot;postal&quot;:48046}},&quot;product&quot;:[{&quot;sku&quot;:&quot;BL394D&quot;,&quot;quantity&quot;:4,&quot;description&quot;:&quot;Basketball&quot;,&quot;price&quot;:450.0},{&quot;sku&quot;:&quot;BL4438H&quot;,&quot;quantity&quot;:1,&quot;description&quot;:&quot;Super Hoop&quot;,&quot;price&quot;:2392.0}],&quot;tax&quot;:251.42,&quot;total&quot;:4443.52,&quot;comments&quot;:&quot;Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.&quot;}
+</pre>
+
  </div>
 
  </body>

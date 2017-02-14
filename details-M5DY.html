@@ -47,9 +47,184 @@
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;[Detroit Tigers, Chicago cubs]&quot;: [
+    &quot;Jul 23, 2001 12:00:00 AM&quot;
+  ],
+  &quot;[New York Yankees, Atlanta Braves]&quot;: [
+    &quot;Jul 2, 2001 12:00:00 AM&quot;,
+    &quot;Aug 12, 2001 12:00:00 AM&quot;,
+    &quot;Aug 14, 2001 12:00:00 AM&quot;
+  ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;Detroit Tigers,Chicago cubs&quot;: [
+    &quot;2001-07-23T00:00:00.000Z&quot;
+  ],
+  &quot;New York Yankees,Atlanta Braves&quot;: [
+    &quot;2001-07-02T00:00:00.000Z&quot;,
+    &quot;2001-08-12T00:00:00.000Z&quot;,
+    &quot;2001-08-14T00:00:00.000Z&quot;
+  ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ <pre>
++STR
++DOC
+=VAL :? - Detroit Tigers
++SEQ
+=VAL :Chicago cubs
+-SEQ
++MAP
+=VAL :
++SEQ
+=VAL :2001-07-23
+-SEQ
+=VAL :? [ New York Yankees,
+=VAL :Atlanta Braves ]
+=VAL :
+=VAL :[ 2001-07-02, 2001-08-12, 2001-08-14 ]
+-MAP
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;ARRAY(0x1146660)&quot;:[&quot;2001-07-23&quot;],&quot;ARRAY(0x1146d20)&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;]}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;ARRAY(0x26706c0)&#39; =&gt; [
+                          &#39;2001-07-02&#39;,
+                          &#39;2001-08-12&#39;,
+                          &#39;2001-08-14&#39;
+                        ],
+  &#39;ARRAY(0x267e188)&#39; =&gt; [
+                          &#39;2001-07-23&#39;
+                        ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? - Detroit Tigers&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? - Detroit Tigers&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;ARRAY(0x1cbf618)&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;],&quot;ARRAY(0x1e6ff38)&quot;:[&quot;2001-07-23&quot;]}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;ARRAY(0x27a0358)&#39; =&gt; [
+                          &#39;2001-07-02&#39;,
+                          &#39;2001-08-12&#39;,
+                          &#39;2001-08-14&#39;
+                        ],
+  &#39;ARRAY(0x2806598)&#39; =&gt; [
+                          &#39;2001-07-23&#39;
+                        ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls at /perl6/share/perl6/site/sources/8B3B742F9177F6BF1AD36045D4D379FBC556847E (YAMLish) line 720
+  in block &lt;unit&gt; </pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls at /perl6/share/perl6/site/sources/8B3B742F9177F6BF1AD36045D4D379FBC556847E (YAMLish) line 720
+  in block &lt;unit&gt; </pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;[\&quot;Detroit Tigers\&quot;, \&quot;Chicago cubs\&quot;]&quot;:[&quot;2001-07-23&quot;],&quot;[\&quot;New York Yankees\&quot;, \&quot;Atlanta Braves\&quot;]&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;]}
+</pre>
+
  </div>
 
  </body>
