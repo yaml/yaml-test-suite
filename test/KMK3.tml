@@ -11,6 +11,8 @@ baz: 2
 {"foo":{"bar":1},"baz":2}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 +MAP
@@ -20,3 +22,5 @@ baz: 2
 =VAL :baz
 =VAL :2
 -MAP
+-DOC
+-STR

@@ -16,7 +16,11 @@ tags: flow edge
 [ "---", "..." ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL :---
 =VAL :...
 -SEQ
+-DOC
+-STR

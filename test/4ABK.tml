@@ -22,6 +22,8 @@ x
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :unquoted
 =VAL "separate
@@ -32,3 +34,5 @@ x
 =VAL :
 =VAL :omitted key
 -MAP
+-DOC
+-STR

@@ -14,9 +14,13 @@ foo: bar
 [ { "foo": "bar" } ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :foo
 =VAL :bar
 -MAP
 -SEQ
+-DOC
+-STR

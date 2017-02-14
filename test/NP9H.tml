@@ -16,4 +16,8 @@ to a line feed, or <TAB>\
 "folded to a space,\nto a line feed, or \t \tnon-content"
 
 +++ test-event
++STR
++DOC
 =VAL "folded to a space,\nto a line feed, or \t \tnon-content
+-DOC
+-STR

@@ -16,6 +16,8 @@ c:
 {"a": "", "b": "", "c": ""}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :a
 =VAL :
@@ -24,3 +26,5 @@ c:
 =VAL :c
 =VAL :
 -MAP
+-DOC
+-STR

@@ -11,6 +11,8 @@ tags: spec document tags
 --- !<tag:example.com,2000:app/int> 1 - 3
 
 +++ test-event
++STR
 +DOC ---
 =VAL <tag:example.com,2000:app/int> :1 - 3
 -DOC
+-STR

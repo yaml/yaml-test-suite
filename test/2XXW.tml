@@ -18,6 +18,7 @@ Sammy Sosa:
 Ken Griff:
 
 +++ test-event
++STR
 +DOC ---
 +MAP <tag:yaml.org,2002:set>
 =VAL :Mark McGwire
@@ -28,3 +29,4 @@ Ken Griff:
 =VAL :
 -MAP
 -DOC
+-STR

@@ -8,6 +8,8 @@ tags: spec block mapping
   : moon: white
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :sun
@@ -24,3 +26,5 @@ tags: spec block mapping
 -MAP
 -MAP
 -SEQ
+-DOC
+-STR

@@ -28,6 +28,7 @@ rbi:
 }
 
 +++ test-event
++STR
 +DOC ---
 +MAP
 =VAL :hr
@@ -42,3 +43,4 @@ rbi:
 -SEQ
 -MAP
 -DOC
+-STR

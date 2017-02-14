@@ -11,9 +11,13 @@ tags: mapping aliases
 *a: *b
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL &a :a
 =VAL &b :b
 =ALI *a
 =ALI *b
 -MAP
+-DOC
+-STR

@@ -13,9 +13,13 @@ double: "text"
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :single
 =VAL 'text
 =VAL :double
 =VAL "text
 -MAP
+-DOC
+-STR

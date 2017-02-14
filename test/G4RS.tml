@@ -30,6 +30,8 @@ tie-fighter: '|\-*-/|'
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :unicode
 =VAL "Sosa did fine.☺
@@ -44,3 +46,5 @@ tie-fighter: '|\-*-/|'
 =VAL :tie-fighter
 =VAL '|\\-*-/|
 -MAP
+-DOC
+-STR

@@ -20,6 +20,8 @@ tags: mapping sequence block
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :key
@@ -32,3 +34,5 @@ tags: mapping sequence block
 =VAL :value3
 -MAP
 -SEQ
+-DOC
+-STR

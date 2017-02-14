@@ -10,9 +10,13 @@ tags: mapping block
 {"": "a", "": "b"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :
 =VAL :a
 =VAL :
 =VAL :b
 -MAP
+-DOC
+-STR

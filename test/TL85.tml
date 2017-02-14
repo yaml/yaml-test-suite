@@ -18,4 +18,8 @@ tags: spec whitespace scalar
 " foo\nbar\nbaz "
 
 +++ test-event
++STR
++DOC
 =VAL " foo\nbar\nbaz<SPC>
+-DOC
+-STR

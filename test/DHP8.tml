@@ -14,8 +14,12 @@ tags: flow sequence
 ["foo","bar",42]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL :foo
 =VAL :bar
 =VAL :42
 -SEQ
+-DOC
+-STR

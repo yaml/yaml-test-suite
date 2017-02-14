@@ -16,6 +16,8 @@ plain key: in-line value
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :plain key
 =VAL :in-line value
@@ -26,3 +28,5 @@ plain key: in-line value
 =VAL :entry
 -SEQ
 -MAP
+-DOC
+-STR

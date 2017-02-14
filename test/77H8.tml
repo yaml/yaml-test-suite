@@ -31,6 +31,7 @@ application specific tag: !something |
   different documents.
 
 +++ test-event
++STR
 +DOC ---
 +MAP
 =VAL :not-date
@@ -41,3 +42,4 @@ application specific tag: !something |
 =VAL <!something> |The semantics of the tag\nabove may be different for\ndifferent documents.\n
 -MAP
 -DOC
+-STR

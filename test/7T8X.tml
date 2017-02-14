@@ -37,4 +37,8 @@ tags: spec block scalar comment
 "\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n"
 
 +++ test-event
++STR
++DOC
 =VAL >\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n
+-DOC
+-STR

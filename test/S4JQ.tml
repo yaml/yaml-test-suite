@@ -14,8 +14,12 @@ tags: spec tags
 - ! 12
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL "12
 =VAL :12
 =VAL <!> :12
 -SEQ
+-DOC
+-STR

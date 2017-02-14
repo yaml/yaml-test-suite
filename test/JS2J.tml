@@ -7,9 +7,13 @@ First occurrence: &anchor Value
 Second occurrence: *anchor
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :First occurrence
 =VAL &anchor :Value
 =VAL :Second occurrence
 =ALI *anchor
 -MAP
+-DOC
+-STR

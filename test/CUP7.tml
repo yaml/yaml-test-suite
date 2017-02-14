@@ -11,9 +11,13 @@ anchored: &anchor !local value
 alias: *anchor
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :anchored
 =VAL &anchor <!local> :value
 =VAL :alias
 =ALI *anchor
 -MAP
+-DOC
+-STR

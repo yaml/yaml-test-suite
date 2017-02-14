@@ -9,4 +9,8 @@ tags: spec scalar
 "here's to \"quotes\""
 
 +++ test-event
++STR
++DOC
 =VAL 'here's to "quotes"
+-DOC
+-STR

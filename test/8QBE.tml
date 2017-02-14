@@ -16,6 +16,8 @@ key:
 {"key": ["item1", "item2"]}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :key
 +SEQ
@@ -23,3 +25,5 @@ key:
 =VAL :item2
 -SEQ
 -MAP
+-DOC
+-STR

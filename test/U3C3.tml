@@ -14,6 +14,8 @@ tags: spec document tags
 "foo"
 
 +++ test-event
++STR
 +DOC ---
 =VAL <tag:yaml.org,2002:str> "foo
 -DOC
+-STR

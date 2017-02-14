@@ -21,4 +21,8 @@ e
 "a b c d\ne"
 
 +++ test-event
++STR
++DOC
 =VAL :a b c d\ne
+-DOC
+-STR

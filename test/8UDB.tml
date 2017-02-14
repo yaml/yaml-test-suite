@@ -27,6 +27,8 @@ single: pair,
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL "double quoted
 =VAL 'single quoted
@@ -39,3 +41,5 @@ single: pair,
 =VAL :pair
 -MAP
 -SEQ
+-DOC
+-STR

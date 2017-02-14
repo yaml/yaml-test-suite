@@ -12,8 +12,10 @@ tags: spec document tags
 - !<tag:example.com,2000:app/foo> "bar"
 
 +++ test-event
++STR
 +DOC ---
 +SEQ
 =VAL <tag:example.com,2000:app/foo> "bar
 -SEQ
 -DOC
+-STR

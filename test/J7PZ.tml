@@ -25,6 +25,7 @@ tags: spec mapping
 ]
 
 +++ test-event
++STR
 +DOC ---
 +SEQ <tag:yaml.org,2002:omap>
 +MAP
@@ -41,3 +42,4 @@ tags: spec mapping
 -MAP
 -SEQ
 -DOC
+-STR

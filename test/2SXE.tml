@@ -8,9 +8,13 @@ foo:
   *a:
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL &a: :key
 =VAL &a :value
 =VAL :foo
 =ALI *a:
 -MAP
+-DOC
+-STR

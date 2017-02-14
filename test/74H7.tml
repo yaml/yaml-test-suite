@@ -26,6 +26,8 @@ g: h
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL <tag:yaml.org,2002:str> :a
 =VAL :b
@@ -38,3 +40,5 @@ g: h
 =VAL <tag:yaml.org,2002:int> :23
 =VAL <tag:yaml.org,2002:bool> :false
 -MAP
+-DOC
+-STR

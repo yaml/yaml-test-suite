@@ -21,8 +21,12 @@ TEXT-VAL 2 12 1 3 :Sammy Sosa
 WS-NEWLN 14 1 1 15
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL :Mark McGwire
 =VAL :Sammy Sosa
 =VAL :Ken Griffey
 -SEQ
+-DOC
+-STR

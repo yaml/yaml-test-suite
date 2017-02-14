@@ -15,6 +15,8 @@ tags: spec block whitespace
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :foo
@@ -25,3 +27,5 @@ tags: spec block whitespace
 =VAL :baz
 -SEQ
 -SEQ
+-DOC
+-STR

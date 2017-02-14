@@ -15,9 +15,13 @@ a: 4.2
 {"a": 4.2, "23": "d"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :a
 =VAL :4.2
 =VAL :23
 =VAL :d
 -MAP
+-DOC
+-STR

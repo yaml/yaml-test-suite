@@ -25,4 +25,8 @@ tags: scalar
 "ab cd\nef\n\ngh\n"
 
 +++ test-event
++STR
++DOC
 =VAL >ab cd\nef\n\ngh\n
+-DOC
+-STR

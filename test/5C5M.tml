@@ -19,6 +19,8 @@ tags: spec flow mapping
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :one
@@ -33,3 +35,5 @@ tags: spec flow mapping
 =VAL :eight
 -MAP
 -SEQ
+-DOC
+-STR

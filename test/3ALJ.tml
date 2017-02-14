@@ -11,6 +11,8 @@ tags: sequence block
 [ ["s1_i1", "s1_i2"], "s2"]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +SEQ
 =VAL :s1_i1
@@ -18,3 +20,5 @@ tags: sequence block
 -SEQ
 =VAL :s2
 -SEQ
+-DOC
+-STR

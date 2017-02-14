@@ -25,6 +25,8 @@ tags: spec sequence
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +SEQ
 =VAL :name
@@ -42,3 +44,5 @@ tags: spec sequence
 =VAL :0.288
 -SEQ
 -SEQ
+-DOC
+-STR

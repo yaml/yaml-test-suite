@@ -14,9 +14,13 @@ tags: spec flow scalar
 { "foo": "", "": "bar" }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 =VAL :
 =VAL :
 =VAL :bar
 -MAP
+-DOC
+-STR

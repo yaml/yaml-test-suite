@@ -20,4 +20,8 @@ tags: spec block scalar comment
 "\n\nliteral\n \n\ntext\n"
 
 +++ test-event
++STR
++DOC
 =VAL |\n\nliteral\n \n\ntext\n
+-DOC
+-STR

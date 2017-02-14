@@ -33,9 +33,13 @@ tags: spec block comment scalar
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL |literal\n
 =VAL > folded\n
 =VAL |keep\n\n
 =VAL > strip
 -SEQ
+-DOC
+-STR

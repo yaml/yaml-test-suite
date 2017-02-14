@@ -11,6 +11,8 @@ baz: jazz
 {"foo":"blue","bar":"arrr","baz":"jazz"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 =VAL :blue
@@ -19,3 +21,5 @@ baz: jazz
 =VAL :baz
 =VAL :jazz
 -MAP
+-DOC
+-STR

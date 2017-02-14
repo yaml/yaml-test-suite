@@ -10,6 +10,8 @@ tags: spec document
 "text"
 
 +++ test-event
++STR
 +DOC ---
 =VAL :text
 -DOC
+-STR

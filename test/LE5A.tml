@@ -10,6 +10,8 @@ tags: spec flow tags anchors
 - !!str
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL <tag:yaml.org,2002:str> "a
 =VAL 'b
@@ -17,3 +19,5 @@ tags: spec flow tags anchors
 =ALI *anchor
 =VAL <tag:yaml.org,2002:str> :
 -SEQ
+-DOC
+-STR

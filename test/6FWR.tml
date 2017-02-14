@@ -17,6 +17,8 @@ tags: scalar
 "ab\n\n \n"
 
 +++ test-event
++STR
 +DOC
 =VAL |ab\n\n \n
 -DOC ...
+-STR

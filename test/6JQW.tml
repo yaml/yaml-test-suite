@@ -17,6 +17,8 @@ tags: spec scalar literal comment
 "\\//||\\/||\n// ||  ||__\n"
 
 +++ test-event
++STR
 +DOC ---
 =VAL |\\//||\\/||\n// ||  ||__\n
 -DOC
+-STR

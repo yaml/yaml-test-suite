@@ -14,6 +14,8 @@ a:
 : f
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :a
 +SEQ
@@ -26,3 +28,5 @@ a:
 -SEQ
 =VAL :f
 -MAP
+-DOC
+-STR

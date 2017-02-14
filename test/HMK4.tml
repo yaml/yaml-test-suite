@@ -27,6 +27,8 @@ stats: |
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :name
 =VAL :Mark McGwire
@@ -35,3 +37,5 @@ stats: |
 =VAL :stats
 =VAL |65 Home Runs\n0.278 Batting Average\n
 -MAP
+-DOC
+-STR

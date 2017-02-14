@@ -18,4 +18,8 @@ tags: spec scalar whitespace
 "foo \n\n\t bar\n\nbaz\n"
 
 +++ test-event
++STR
++DOC
 =VAL >foo \n\n\t bar\n\nbaz\n
+-DOC
+-STR

@@ -13,6 +13,8 @@ tags: mapping edge
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :bla"keks
@@ -23,3 +25,5 @@ tags: mapping edge
 =VAL :foo
 -MAP
 -SEQ
+-DOC
+-STR

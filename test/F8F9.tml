@@ -40,6 +40,8 @@ keep: |+
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :strip
 =VAL |# text
@@ -48,3 +50,5 @@ keep: |+
 =VAL :keep
 =VAL |# text\n\n
 -MAP
+-DOC
+-STR

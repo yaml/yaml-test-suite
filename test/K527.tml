@@ -23,4 +23,8 @@ tags: spec whitespace scalar
 "trimmed\n\n\nas space"
 
 +++ test-event
++STR
++DOC
 =VAL >trimmed\n\n\nas space
+-DOC
+-STR

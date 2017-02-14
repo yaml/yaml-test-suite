@@ -9,4 +9,8 @@ tags: tags
 "a"
 
 +++ test-event
++STR
++DOC
 =VAL <!> :a
+-DOC
+-STR

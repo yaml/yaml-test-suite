@@ -24,6 +24,7 @@ tags: spec document
 - St Louis Cardinals
 
 +++ test-event
++STR
 +DOC ---
 +SEQ
 =VAL :Mark McGwire
@@ -37,3 +38,4 @@ tags: spec document
 =VAL :St Louis Cardinals
 -SEQ
 -DOC
+-STR

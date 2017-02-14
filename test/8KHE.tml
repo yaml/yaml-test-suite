@@ -20,6 +20,8 @@ explicit key:
 { "explicit key": "", "block key": ["one", "two"]}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :explicit key
 =VAL :
@@ -29,3 +31,5 @@ explicit key:
 =VAL :two
 -SEQ
 -MAP
+-DOC
+-STR

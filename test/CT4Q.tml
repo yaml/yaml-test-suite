@@ -15,9 +15,13 @@ tags: spec flow mapping
 [ { "foo bar": "baz"} ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :foo bar
 =VAL :baz
 -MAP
 -SEQ
+-DOC
+-STR

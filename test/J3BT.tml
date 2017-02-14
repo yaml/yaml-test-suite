@@ -26,9 +26,13 @@ block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :quoted
 =VAL "Quoted \t
 =VAL :block
 =VAL |void main() {\n\tprintf("Hello, world!\\n");\n}\n
 -MAP
+-DOC
+-STR

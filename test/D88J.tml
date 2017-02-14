@@ -14,6 +14,8 @@ a:
 {"a": ["b", "c"]}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :a
 +SEQ
@@ -21,3 +23,5 @@ a:
 =VAL :c
 -SEQ
 -MAP
+-DOC
+-STR

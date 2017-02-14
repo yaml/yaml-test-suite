@@ -10,6 +10,7 @@ tags: spec tags
 - !e!tag%21 baz
 
 +++ test-event
++STR
 +DOC ---
 +SEQ
 =VAL <!local> :foo
@@ -17,3 +18,4 @@ tags: spec tags
 =VAL <tag:example.com,2000:app/tag!> :baz
 -SEQ
 -DOC
+-STR

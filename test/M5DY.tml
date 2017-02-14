@@ -24,6 +24,8 @@ tags: spec mapping sequence
   - 2001-08-14
 
 +++ test-event
++STR
++DOC
 +MAP
 +SEQ
 =VAL :Detroit Tigers
@@ -42,3 +44,5 @@ tags: spec mapping sequence
 =VAL :2001-08-14
 -SEQ
 -MAP
+-DOC
+-STR

@@ -19,6 +19,7 @@ matches %: 20
 ...
 
 +++ test-event
++STR
 +DOC ---
 +MAP
 =VAL :matches %
@@ -28,3 +29,4 @@ matches %: 20
 +DOC ---
 =VAL :
 -DOC ...
+-STR

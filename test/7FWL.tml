@@ -10,7 +10,11 @@ tags: spec tags
 !!str foo: !bar baz
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL <tag:yaml.org,2002:str> :foo
 =VAL <!bar> :baz
 -MAP
+-DOC
+-STR

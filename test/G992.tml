@@ -17,4 +17,8 @@ tags: spec block scalar
 "folded text\n"
 
 +++ test-event
++STR
++DOC
 =VAL >folded text\n
+-DOC
+-STR

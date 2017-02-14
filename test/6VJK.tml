@@ -26,4 +26,8 @@ tags: spec block scalar
 
 
 +++ test-event
++STR
++DOC
 =VAL >Sammy Sosa completed another fine season with great stats.\n\n  63 Home Runs\n  0.288 Batting Average\n\nWhat a year!\n
+-DOC
+-STR

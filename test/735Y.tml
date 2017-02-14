@@ -25,6 +25,8 @@ tags: spec block
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL "flow in block
 =VAL >Block scalar\n
@@ -33,3 +35,5 @@ tags: spec block
 =VAL :bar
 -MAP
 -SEQ
+-DOC
+-STR

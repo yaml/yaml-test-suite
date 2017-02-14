@@ -16,6 +16,8 @@ tags: flow aliases
 - d
 
 +++ test-event
++STR
++DOC
 +MAP
 +SEQ &a
 =VAL :a
@@ -29,3 +31,5 @@ tags: flow aliases
 =VAL :d
 -SEQ
 -MAP
+-DOC
+-STR

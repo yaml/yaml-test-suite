@@ -21,6 +21,8 @@ block sequence:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :block sequence
 +SEQ
@@ -31,3 +33,5 @@ block sequence:
 -MAP
 -SEQ
 -MAP
+-DOC
+-STR

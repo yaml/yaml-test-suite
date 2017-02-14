@@ -12,9 +12,13 @@ tags: mapping sequence block flow
 [{"a": "b"}]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :a
 =VAL :b
 -MAP
 -SEQ
+-DOC
+-STR

@@ -17,6 +17,8 @@ Document
 "Document"
 
 +++ test-event
++STR
 +DOC ---
 =VAL :Document
 -DOC ...
+-STR

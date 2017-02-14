@@ -16,9 +16,13 @@ tags: whitespace mapping block
 { "1": 2, "3": 4 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :1
 =VAL :2
 =VAL :3
 =VAL :4
 -MAP
+-DOC
+-STR

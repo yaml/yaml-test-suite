@@ -25,6 +25,8 @@ foo: !!seq
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 +SEQ <tag:yaml.org,2002:seq>
@@ -35,3 +37,5 @@ foo: !!seq
 -MAP
 -SEQ
 -MAP
+-DOC
+-STR

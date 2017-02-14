@@ -19,6 +19,8 @@ tags: spec flow sequence
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +SEQ
 =VAL :one
@@ -29,3 +31,5 @@ tags: spec flow sequence
 =VAL :four
 -SEQ
 -SEQ
+-DOC
+-STR

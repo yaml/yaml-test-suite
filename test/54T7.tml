@@ -13,9 +13,13 @@ bar: far
 {"foo":"you","bar":"far"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 =VAL :you
 =VAL :bar
 =VAL :far
 -MAP
+-DOC
+-STR

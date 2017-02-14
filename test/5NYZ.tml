@@ -13,7 +13,11 @@ key: value
 { "key": "value" }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :key
 =VAL :value
 -MAP
+-DOC
+-STR

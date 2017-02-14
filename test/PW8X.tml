@@ -24,6 +24,8 @@ tags: scalar anchors
   &e : &a
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL &a :
 =VAL :a
@@ -42,3 +44,5 @@ tags: scalar anchors
 =VAL &a :
 -MAP
 -SEQ
+-DOC
+-STR

@@ -38,6 +38,8 @@ mapping:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :sequence
 +SEQ
@@ -52,3 +54,5 @@ mapping:
 =VAL :green
 -MAP
 -MAP
+-DOC
+-STR

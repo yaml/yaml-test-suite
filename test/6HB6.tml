@@ -37,6 +37,8 @@ Not indented:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :Not indented
 +MAP
@@ -50,3 +52,5 @@ Not indented:
 -SEQ
 -MAP
 -MAP
+-DOC
+-STR

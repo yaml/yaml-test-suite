@@ -27,6 +27,8 @@ tags: flow scalar whitespace
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +SEQ
 =VAL :a
@@ -44,3 +46,5 @@ tags: flow scalar whitespace
 +SEQ
 -SEQ
 -SEQ
+-DOC
+-STR

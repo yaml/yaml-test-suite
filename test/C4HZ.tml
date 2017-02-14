@@ -36,6 +36,7 @@ tags: spec tags anchors directives
   text: Pretty vector drawing.
 
 +++ test-event
++STR
 +DOC ---
 +SEQ <tag:clarkevans.com,2002:shape>
 +MAP <tag:clarkevans.com,2002:circle>
@@ -70,3 +71,4 @@ tags: spec tags anchors directives
 -MAP
 -SEQ
 -DOC
+-STR

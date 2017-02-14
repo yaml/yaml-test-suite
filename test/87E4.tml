@@ -19,6 +19,8 @@ tags: spec flow sequence mapping
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL 'implicit block key
 +SEQ
@@ -28,3 +30,5 @@ tags: spec flow sequence mapping
 -MAP
 -SEQ
 -MAP
+-DOC
+-STR

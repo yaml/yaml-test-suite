@@ -8,6 +8,8 @@ tags: spec document
 --- "foo"
 
 +++ test-event
++STR
 +DOC ---
 =VAL "foo
 -DOC
+-STR

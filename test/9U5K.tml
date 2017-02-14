@@ -38,6 +38,7 @@ tags: spec mapping sequence block
 ]
 
 +++ test-event
++STR
 +DOC ---
 +SEQ
 +MAP
@@ -60,3 +61,4 @@ tags: spec mapping sequence block
 -MAP
 -SEQ
 -DOC
+-STR

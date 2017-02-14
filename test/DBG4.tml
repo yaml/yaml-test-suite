@@ -44,6 +44,8 @@ tags: spec block flow sequence scalar
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL :::vector
 =VAL ": - ()
@@ -58,3 +60,5 @@ tags: spec block flow sequence scalar
 =VAL :http://example.com/foo#bar
 -SEQ
 -SEQ
+-DOC
+-STR
