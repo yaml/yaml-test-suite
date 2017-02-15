@@ -38,11 +38,8 @@ data-push:
 matrix:
 	git clone $$(git config remote.origin.url) -b matrix $@
 
-matrix-build: matrix
-	make -C $< all
-
-matrix-push: matrix
-	make -C $< push
+matrix-build matrix-status matrix-push: matrix
+	make -C $< $(@:matrix-%=%)
 
 #------------------------------------------------------------------------------
 clean:
