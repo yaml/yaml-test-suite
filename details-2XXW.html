@@ -224,6 +224,54 @@ StreamEndEvent()</pre>
 
  </div>
 
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP &lt;tag:yaml.org,2002:set&gt;
+=VAL :Mark McGwire
+=VAL :
+=VAL :Sammy Sosa
+=VAL :
+=VAL :Ken Griff
+=VAL :
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
++MAP &lt;tag:yaml.org,2002:set&gt;
+=VAL :Mark McGwire
+=VAL
+=VAL :Sammy Sosa
+=VAL
+=VAL :Ken Griff
+=VAL
+-MAP
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
+StreamStartEvent()
+DocumentStartEvent()
+MappingStartEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:set&#39;, implicit=False, flow_style=False)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Mark McGwire&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Sammy Sosa&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Ken Griff&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
+MappingEndEvent()
+DocumentEndEvent()
+StreamEndEvent()</pre>
+
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
  <span class="na">&nbsp;</span>n/a

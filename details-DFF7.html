@@ -221,6 +221,54 @@ StreamEndEvent()</pre>
 
  </div>
 
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :explicit
+=VAL :entry
+=VAL :implicit
+=VAL :entry
+=VAL :
+=VAL :
+-MAP
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :explicit
+=VAL :entry
+=VAL :implicit
+=VAL :entry
+=VAL
+=VAL
+-MAP
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
+StreamStartEvent()
+DocumentStartEvent()
+MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=True)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;explicit&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;entry&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;implicit&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;entry&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
+ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
+MappingEndEvent()
+DocumentEndEvent()
+StreamEndEvent()</pre>
+
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff

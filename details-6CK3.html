@@ -213,6 +213,38 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
  <span class="ok">&nbsp;</span>ok
  </div>
 
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
+DocumentStartEvent()
+SequenceStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
+ScalarEvent(anchor=None, tag=u&#39;!local&#39;, implicit=(False, False), value=u&#39;foo&#39;, style=None)
+ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;bar&#39;, style=None)
+Traceback (most recent call last):
+  File &quot;/yaml-editor/sbin/ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
+    while loader.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 436, in parse_block_sequence_entry
+    token.move_comment(self.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 137, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 244, in fetch_more_tokens
+    return self.fetch_tag()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 644, in fetch_tag
+    self.tokens.append(self.scan_tag())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 995, in scan_tag
+    suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1466, in scan_tag_uri
+    chunks.append(self.scan_uri_escapes(name, start_mark))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1502, in scan_uri_escapes
+    value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)
+TypeError: decoding Unicode is not supported
+</pre>
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
  <span class="na">&nbsp;</span>n/a

@@ -240,6 +240,33 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 </pre>
  </div>
 
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
+DocumentStartEvent()
+MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
+ScalarEvent(anchor=u&#39;a&#39;, tag=None, implicit=(True, False), value=u&#39;a&#39;, style=None)
+ScalarEvent(anchor=u&#39;b&#39;, tag=None, implicit=(True, False), value=u&#39;b&#39;, style=None)
+Traceback (most recent call last):
+  File &quot;/yaml-editor/sbin/ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
+    while loader.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 505, in parse_block_mapping_key
+    token.start_mark)
+ruamel.yaml.parser.ParserError: while parsing a block mapping
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
+    ? &amp;a a
+    ^ (line: 1)
+expected &lt;block end&gt;, but found &#39;:&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 3, column 1:
+    : *a
+    ^ (line: 3)
+</pre>
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
  <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected key while parsing a block mapping at line 1 column 1 (Psych::SyntaxError)

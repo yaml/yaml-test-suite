@@ -225,6 +225,34 @@ expected the node content, but found &#39;&lt;document start&gt;&#39;
 </pre>
  </div>
 
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
+DocumentStartEvent()
+SequenceStartEvent(anchor=None, tag=None, implicit=True, flow_style=True)
+Traceback (most recent call last):
+  File &quot;/yaml-editor/sbin/ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
+    while loader.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 548, in parse_flow_sequence_first_entry
+    return self.parse_flow_sequence_entry(first=True)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 571, in parse_flow_sequence_entry
+    return self.parse_flow_node()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 293, in parse_flow_node
+    return self.parse_node()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 420, in parse_node
+    token.start_mark)
+ruamel.yaml.parser.ParserError: while parsing a flow node
+expected the node content, but found &#39;&lt;document start&gt;&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
+    --- ,
+    ^ (line: 2)
+</pre>
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
  <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected node content while parsing a flow node at line 2 column 1 (Psych::SyntaxError)
