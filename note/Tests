@@ -15,3 +15,4 @@ https://gist.github.com/a98d50ce42a59b1e999552bea7a31f57 comment directly after 
 https://gist.github.com/327d4902d04eb9d8833042d20c9d80ac flow map one token per line
 https://gist.github.com/9f623d56a7ad256d0b36219a30484b05 flow map one token per line; indented
 https://gist.github.com/01ff478ce0dcf46dec9d4af469de48f8 multiline quoted key
+https://gist.github.com/0c3a4ba58d51bc0ffea191091c8a3073 flow ? no space: { ?key: val}
