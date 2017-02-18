@@ -1,6 +1,6 @@
 === Multi-level Mapping Indent
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
-tags: mapping,indent
+tags: mapping indent
 
 +++ in-yaml
 a:
@@ -14,6 +14,8 @@ h: i
 {"a":{"b":{"c":"d"},"e":{"f":"g"}},"h":"i"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :a
 +MAP
@@ -31,3 +33,5 @@ h: i
 =VAL :h
 =VAL :i
 -MAP
+-DOC
+-STR

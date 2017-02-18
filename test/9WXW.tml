@@ -1,13 +1,13 @@
 === Spec Example 6.18. Primary Tag Handle
 from: http://www.yaml.org/spec/1.2/spec.html#id2782728
-tags: spec,document,tags
+tags: spec document tags
 
 +++ in-yaml
 \# Private
 !foo "bar"
 ...
 \# Global
-%TAG ! tag:example.com,2000:app/
+\%TAG ! tag:example.com,2000:app/
 ---
 !foo "bar"
 
@@ -17,7 +17,11 @@ tags: spec,document,tags
 --- !<tag:example.com,2000:app/foo> "bar"
 
 +++ test-event
++STR
++DOC
 =VAL <!foo> "bar
 -DOC ...
 +DOC ---
 =VAL <tag:example.com,2000:app/foo> "bar
+-DOC
+-STR

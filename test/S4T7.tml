@@ -1,6 +1,6 @@
 === Document with footer
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/footer.tml
-tags: pegex,mapping,footer
+tags: pegex mapping footer
 
 +++ in-yaml
 aaa: bbb
@@ -10,9 +10,11 @@ aaa: bbb
 {"aaa":"bbb"}
 
 +++ test-event
++STR
 +DOC
 +MAP
 =VAL :aaa
 =VAL :bbb
 -MAP
 -DOC ...
+-STR

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>yaml-test-suite Framework Matrix - Test [%= .id %] - [%= .test.title %]</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h3>Test #[%= .id %] - [%= .test.title %]</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>[%= .yaml %]</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>[%= .events %]</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre>[%= .json %]</pre></div>
+<hr style="clear: both;">
+[%each .test.frameworks %]
+<div class="framework" id="[%= __key__ %]">
+<h3><a href="#[%= __key__ %]">[%= __key__ %]</a></h3>
+[%set_var result value=__value__ %]
+[%if $result.ok %]<span class="ok">&nbsp;</span>ok
+[%elsif $result.json_ok %]<span class="json_ok">&nbsp;</span>json_ok
+[%elsif $result.json_diff %]<span class="json_diff">&nbsp;</span>json_diff
+<pre>[%= $result.got_json %]</pre>
+[%elsif $result.error %]<span class="error">&nbsp;</span>error <pre>[%= $result.msg %]</pre>
+[%elsif $result.na %]<span class="na">&nbsp;</span>n/a
+<pre>[%= $result.got_data %]</pre>
+
+[%elsif $result.diff %]<span class="diff">&nbsp;</span>diff<br>
+[%if $result.minimal_events %]
+Minimal Events:
+<pre>[%loop $result.minimal_events POST_CHOMP=0 %]
+[%= _ %][%/loop %]</pre>
+Transformed Events:
+<pre>[%loop $result.transformed_events POST_CHOMP=0 %]
+[%= _ %][%/loop %]</pre>
+Original Events:
+[%/if %]
+<pre>[%loop $result.got_events POST_CHOMP=0 %]
+[%= _ %][%/loop %]</pre>
+
+[%else %]
+<pre>[%= $result escape=dump|html %]</pre>
+[%/if %]
+</div>
+
+[%/each .test.frameworks %]
+</body>
+</html>
+

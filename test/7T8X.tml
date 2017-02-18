@@ -1,6 +1,6 @@
 === Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2796543
-tags: spec,block,scalar,comment
+tags: spec block scalar comment
 
 +++ in-yaml
 >
@@ -33,5 +33,12 @@ tags: spec,block,scalar,comment
 
   last line
 
++++ in-json
+"\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n"
+
 +++ test-event
++STR
++DOC
 =VAL >\nfolded line\nnext line\n  * bullet\n\n  * list\n  * lines\n\nlast line\n
+-DOC
+-STR

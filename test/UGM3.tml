@@ -1,6 +1,6 @@
 === Spec Example 2.27. Invoice
 from: http://www.yaml.org/spec/1.2/spec.html#id2761823
-tags: spec,tags,block,mapping,sequence,anchors
+tags: spec tags block mapping sequence anchors
 
 +++ in-yaml
 --- !<tag:clarkevans.com,2002:invoice>
@@ -62,6 +62,7 @@ total: 4443.52
 comments: Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
 
 +++ test-event
++STR
 +DOC ---
 +MAP <tag:clarkevans.com,2002:invoice>
 =VAL :invoice
@@ -119,3 +120,4 @@ comments: Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
 =VAL :Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
 -MAP
 -DOC
+-STR

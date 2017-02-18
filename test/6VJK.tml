@@ -1,6 +1,6 @@
 === Spec Example 2.15. Folded newlines are preserved for "more indented" and blank lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2761056
-tags: spec,block,scalar
+tags: spec block scalar
 
 +++ in-yaml
 >
@@ -21,5 +21,13 @@ tags: spec,block,scalar
 
   What a year!
 
++++ in-json
+"Sammy Sosa completed another fine season with great stats.\n\n  63 Home Runs\n  0.288 Batting Average\n\nWhat a year!\n"
+
+
 +++ test-event
++STR
++DOC
 =VAL >Sammy Sosa completed another fine season with great stats.\n\n  63 Home Runs\n  0.288 Batting Average\n\nWhat a year!\n
+-DOC
+-STR

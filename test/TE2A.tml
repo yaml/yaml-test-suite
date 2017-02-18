@@ -1,6 +1,6 @@
 === Spec Example 8.16. Block Mappings
 from: http://www.yaml.org/spec/1.2/spec.html#id2798147
-tags: spec,block,mapping
+tags: spec block mapping
 
 +++ in-yaml
 block mapping:
@@ -18,6 +18,8 @@ block mapping:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :block mapping
 +MAP
@@ -25,3 +27,5 @@ block mapping:
 =VAL :value
 -MAP
 -MAP
+-DOC
+-STR

@@ -1,6 +1,6 @@
 === Spec Example 2.5. Sequence of Sequences
 from: http://www.yaml.org/spec/1.2/spec.html#id2760351
-tags: spec,sequence
+tags: spec sequence
 
 +++ in-yaml
 - [name        , hr, avg  ]
@@ -25,6 +25,8 @@ tags: spec,sequence
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +SEQ
 =VAL :name
@@ -42,3 +44,5 @@ tags: spec,sequence
 =VAL :0.288
 -SEQ
 -SEQ
+-DOC
+-STR

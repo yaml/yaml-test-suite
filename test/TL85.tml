@@ -1,12 +1,12 @@
 === Spec Example 6.8. Flow Folding
 from: http://www.yaml.org/spec/1.2/spec.html#id2779950
-tags: spec,whitespace,scalar
+tags: spec whitespace scalar
 
 +++ in-yaml
 "
-  foo 
-\ 
-  	 bar
+  foo<SPC>
+<SPC>
+  <TAB> bar
 
   baz
 "
@@ -14,5 +14,12 @@ tags: spec,whitespace,scalar
 +++ out-yaml
 " foo\nbar\nbaz "
 
++++ in-json
+" foo\nbar\nbaz "
+
 +++ test-event
-=VAL " foo\nbar\nbaz 
++STR
++DOC
+=VAL " foo\nbar\nbaz<SPC>
+-DOC
+-STR

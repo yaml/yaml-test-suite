@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+
+use strict;
+use FindBin;
+use lib "$FindBin::Bin";
+use generate;
+
+sub main::process {
+  my ($id, $label, $file, $output, $tags) = @_;
+
+  my $name = lc $label;
+  $name =~ s/[^-\w]+/-/g;
+  $name =~ s/^-?(.*?)-?$/$1/;
+  generate->_link("test/name/$name.tml", "../$id.tml");
+
+  for my $tag (@$tags) {
+    generate->_link("test/tags/$tag/$id.tml", "../../$id.tml");
+  }
+}
+
+generate->all;

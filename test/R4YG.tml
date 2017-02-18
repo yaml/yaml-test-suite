@@ -1,18 +1,18 @@
 === Spec Example 8.2. Block Indentation Indicator
 from: http://www.yaml.org/spec/1.2/spec.html#id2794311
-tags: spec,block,scalar,libyaml
+tags: spec block scalar libyaml
 
 +++ in-yaml
 - |
  detected
 - >
-\ 
-\  
+<SPC>
+<SPC><SPC>
   # detected
 - |1
   explicit
 - >
-\ 	
+ <TAB>
  detected
 
 +++ out-yaml
@@ -36,9 +36,13 @@ tags: spec,block,scalar,libyaml
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL |detected\n
 =VAL >\n\n# detected\n
 =VAL | explicit\n
 =VAL >\t\ndetected\n
 -SEQ
+-DOC
+-STR

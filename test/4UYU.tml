@@ -5,5 +5,12 @@ tags: scalar
 +++ in-yaml
 "foo: bar\": baz"
 
++++ in-json
+"foo: bar\": baz"
+
 +++ test-event
++STR
++DOC
 =VAL "foo: bar": baz
+-DOC
+-STR

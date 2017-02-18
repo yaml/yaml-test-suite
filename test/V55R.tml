@@ -1,6 +1,6 @@
 === Aliases in Block Sequence
 from: NimYAML tests
-tags: sequence,aliases
+tags: sequence aliases
 
 +++ in-yaml
 - &a a
@@ -9,9 +9,13 @@ tags: sequence,aliases
 - *b
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL &a :a
 =VAL &b :b
 =ALI *a
 =ALI *b
 -SEQ
+-DOC
+-STR

@@ -6,7 +6,7 @@ tags: scalar
 >
  ab
  cd
-\ 
+<SPC>
  ef
 
 
@@ -21,5 +21,12 @@ tags: scalar
 
   gh
 
++++ in-json
+"ab cd\nef\n\ngh\n"
+
 +++ test-event
++STR
++DOC
 =VAL >ab cd\nef\n\ngh\n
+-DOC
+-STR

@@ -1,12 +1,12 @@
 === Spec Example 6.6. Line Folding
 from: http://www.yaml.org/spec/1.2/spec.html#id2779289
-tags: spec,whitespace,scalar
+tags: spec whitespace scalar
 
 +++ in-yaml
 >-
   trimmed
-\  
-\ 
+<SPC><SPC>
+<SPC>
 
   as
   space
@@ -19,5 +19,12 @@ tags: spec,whitespace,scalar
 
   as space
 
++++ in-json
+"trimmed\n\n\nas space"
+
 +++ test-event
++STR
++DOC
 =VAL >trimmed\n\n\nas space
+-DOC
+-STR

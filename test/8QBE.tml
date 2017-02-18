@@ -1,6 +1,6 @@
 === Block Sequence in Block Mapping
 from: NimYAML tests
-tags: mapping,sequence,block
+tags: mapping sequence block
 
 +++ in-yaml
 key:
@@ -13,9 +13,11 @@ key:
 - item2
 
 +++ in-json
-{"key": ["item2", "item2"]}
+{"key": ["item1", "item2"]}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :key
 +SEQ
@@ -23,3 +25,5 @@ key:
 =VAL :item2
 -SEQ
 -MAP
+-DOC
+-STR

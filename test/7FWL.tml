@@ -1,6 +1,6 @@
 === Spec Example 6.24. Verbatim Tags
 from: http://www.yaml.org/spec/1.2/spec.html#id2784370
-tags: spec,tags
+tags: spec tags
 
 +++ in-yaml
 !<tag:yaml.org,2002:str> foo :
@@ -10,7 +10,11 @@ tags: spec,tags
 !!str foo: !bar baz
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL <tag:yaml.org,2002:str> :foo
 =VAL <!bar> :baz
 -MAP
+-DOC
+-STR

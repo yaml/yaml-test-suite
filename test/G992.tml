@@ -1,6 +1,6 @@
 === Spec Example 8.9. Folded Scalar
 from: http://www.yaml.org/spec/1.2/spec.html#id2796371
-tags: spec,block,scalar
+tags: spec block scalar
 
 +++ in-yaml
 >
@@ -13,5 +13,12 @@ tags: spec,block,scalar
 >
   folded text
 
++++ in-json
+"folded text\n"
+
 +++ test-event
++STR
++DOC
 =VAL >folded text\n
+-DOC
+-STR

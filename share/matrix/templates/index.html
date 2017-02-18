@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
+<link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h1>yaml-test-suite Framework Matrix (<a href="https://github.com/yaml/yaml-test-suite">Github</a>)</h1>
+
+<table class="matrix">
+<thead>
+<tr class="headline"><th colspan="2">Frameworks<br>Tests</th>
+[%loop .framework_names %]
+<td class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</td>
+[%/loop %]
+</tr>
+
+<tr class="overview">
+<td></td>
+<td>
+<span class="ok">&nbsp;</span>ok <span class="json_ok">&nbsp;</span>json_ok<br>
+<span class="diff">&nbsp;</span>diff <span class="json_diff">&nbsp;</span>json_diff<br>
+<span class="na">&nbsp;</span>n/a<br>
+<span class="error">&nbsp;</span>error<br>
+</td>
+[%loop .framework_headers %]
+<td class="[%= fullname %]">
+[%if ok %]<span class="ok">&nbsp;</span>[%= ok %][%/if %]
+[%if json_ok %]<span class="json_ok">&nbsp;</span>[%= json_ok %][%/if %]
+<br>
+[%if diff %]<span class="diff">&nbsp;</span>[%= diff %][%/if %]
+[%if json_diff %]<span class="json_diff">&nbsp;</span>[%= json_diff %][%/if %]
+<br>
+[%if na %]<span class="na">&nbsp;</span>[%= na %][%/if %]
+<br>
+[%if error %]<span class="error">&nbsp;</span>[%= error %][%/if %]
+<br>
+</td>
+[%/loop %]
+</tr>
+</thead>
+
+<tbody>
+</tr>
+[%loop .tests break="30" %]
+[%if __break__ %]<tr class="headline"><td colspan="2"></td>
+[%loop .framework_names %]
+<td class="[%= fullname %]">[%= lang %]<br>[%= name %]<br>[%= type %]</td>
+[%/loop %]
+</tr>[%/if %]
+<tr>
+<td class="testname"><tt><a href="#[%= id %]">[%= id %]</tt></a></td>
+<td id="[%= id %]" class="testname"><a href="details-[%= id %].html">[%= title %]</a></td>
+[%loop frameworks %]
+<td class="result [%= id %]
+[%if ok %]ok[%elsif error %]error[%elsif json_ok %]json_ok[%elsif diff
+%]diff[%elsif json_diff %]json_diff[%elsif na %]na[%/if %]
+">
+<a href="details-[%= test %].html#[%= id %]">[%if ok %]ok[%elsif error %]error[%elsif json_ok %]ok[%elsif diff
+%]diff[%elsif json_diff %]diff[%elsif na %]n/a[%/if %]</a>
+
+</td>
+[%/loop frameworks %]
+</tr>
+[%/loop .tests %]
+</tbody>
+</table>
+
+</body>
+</html>
+

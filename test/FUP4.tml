@@ -1,6 +1,6 @@
 === Flow Sequence in Flow Sequence
 from: NimYAML tests
-tags: sequence,flow
+tags: sequence flow
 
 +++ in-yaml
 [a, [b, c]]
@@ -14,6 +14,8 @@ tags: sequence,flow
 ["a", ["b", "c"]]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL :a
 +SEQ
@@ -21,3 +23,5 @@ tags: sequence,flow
 =VAL :c
 -SEQ
 -SEQ
+-DOC
+-STR

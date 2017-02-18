@@ -1,6 +1,6 @@
 === Spec Example 7.24. Flow Nodes
 from: http://www.yaml.org/spec/1.2/spec.html#id2793490
-tags: spec,flow,tags,anchors
+tags: spec flow tags anchors
 
 +++ in-yaml
 - !!str "a"
@@ -10,6 +10,8 @@ tags: spec,flow,tags,anchors
 - !!str
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL <tag:yaml.org,2002:str> "a
 =VAL 'b
@@ -17,3 +19,5 @@ tags: spec,flow,tags,anchors
 =ALI *anchor
 =VAL <tag:yaml.org,2002:str> :
 -SEQ
+-DOC
+-STR

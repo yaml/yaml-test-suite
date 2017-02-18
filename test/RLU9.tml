@@ -1,6 +1,6 @@
 === Sequence Indent
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
-tags: sequence,indent
+tags: sequence indent
 
 +++ in-yaml
 foo:
@@ -18,6 +18,8 @@ bar:
 {"foo":[42],"bar":[44]}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 +SEQ
@@ -28,3 +30,5 @@ bar:
 =VAL :44
 -SEQ
 -MAP
+-DOC
+-STR

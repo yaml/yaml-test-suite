@@ -1,6 +1,6 @@
 === Anchors With Colon in Name
 from: Mailing List Discussion
-tags: edge,anchors
+tags: edge anchors
 
 +++ in-yaml
 &a: key: &a value
@@ -8,9 +8,13 @@ foo:
   *a:
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL &a: :key
 =VAL &a :value
 =VAL :foo
 =ALI *a:
 -MAP
+-DOC
+-STR

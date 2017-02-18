@@ -1,6 +1,6 @@
 === Spec Example 8.14. Block Sequence
 from: http://www.yaml.org/spec/1.2/spec.html#id2797596
-tags: spec,block,sequence
+tags: spec block sequence
 
 +++ in-yaml
 block sequence:
@@ -21,6 +21,8 @@ block sequence:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :block sequence
 +SEQ
@@ -31,3 +33,5 @@ block sequence:
 -MAP
 -SEQ
 -MAP
+-DOC
+-STR

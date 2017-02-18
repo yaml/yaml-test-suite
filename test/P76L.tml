@@ -1,9 +1,9 @@
 === Spec Example 6.19. Secondary Tag Handle
 from: http://www.yaml.org/spec/1.2/spec.html#id2782940
-tags: spec,document,tags
+tags: spec document tags
 
 +++ in-yaml
-%TAG !! tag:example.com,2000:app/
+\%TAG !! tag:example.com,2000:app/
 ---
 !!int 1 - 3 # Interval, not integer
 
@@ -11,6 +11,8 @@ tags: spec,document,tags
 --- !<tag:example.com,2000:app/int> 1 - 3
 
 +++ test-event
++STR
 +DOC ---
 =VAL <tag:example.com,2000:app/int> :1 - 3
 -DOC
+-STR

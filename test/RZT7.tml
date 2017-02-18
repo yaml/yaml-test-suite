@@ -1,6 +1,6 @@
 === Spec Example 2.28. Log File
 from: http://www.yaml.org/spec/1.2/spec.html#id2761866
-tags: spec,document,block,mapping,sequence
+tags: spec document block mapping sequence
 
 +++ in-yaml
 ---
@@ -54,6 +54,7 @@ Stack:
     foo = bar
 
 +++ test-event
++STR
 +DOC ---
 +MAP
 =VAL :Time
@@ -103,3 +104,4 @@ Stack:
 -SEQ
 -MAP
 -DOC
+-STR

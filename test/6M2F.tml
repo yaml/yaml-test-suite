@@ -1,6 +1,6 @@
 === Aliases in Explicit Block Mapping
 from: NimYAML tests
-tags: mapping,aliases
+tags: mapping aliases
 
 +++ in-yaml
 ? &a a
@@ -8,9 +8,13 @@ tags: mapping,aliases
 : *a
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL &a :a
 =VAL &b :b
 =VAL :
 =ALI *a
 -MAP
+-DOC
+-STR

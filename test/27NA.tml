@@ -1,10 +1,17 @@
 === Spec Example 5.9. Directive Indicator
 from: http://www.yaml.org/spec/1.2/spec.html#id2774058
-tags: spec,document
+tags: spec document
 
 +++ in-yaml
-%YAML 1.2
+\%YAML 1.2
 --- text
 
++++ in-json
+"text"
+
 +++ test-event
++STR
++DOC ---
 =VAL :text
+-DOC
+-STR

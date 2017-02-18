@@ -12,7 +12,11 @@ tags: whitespace
 { "": "" }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :
 =VAL :
 -MAP
+-DOC
+-STR

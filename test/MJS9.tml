@@ -1,12 +1,12 @@
 === Spec Example 6.7. Block Folding
 from: http://www.yaml.org/spec/1.2/spec.html#id2779603
-tags: spec,scalar,whitespace
+tags: spec scalar whitespace
 
 +++ in-yaml
 >
-  foo 
-\ 
-  	 bar
+  foo<SPC>
+<SPC>
+  <TAB> bar
 
   baz
 
@@ -14,5 +14,12 @@ tags: spec,scalar,whitespace
 # XXX Should be folded?
 "foo \n\n\t bar\n\nbaz\n"
 
++++ in-json
+"foo \n\n\t bar\n\nbaz\n"
+
 +++ test-event
++STR
++DOC
 =VAL >foo \n\n\t bar\n\nbaz\n
+-DOC
+-STR

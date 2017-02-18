@@ -1,12 +1,12 @@
 === Spec Example 6.2. Indentation Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2778101
-tags: spec,block,indent
+tags: spec block indent
 
 +++ in-yaml
 # XXX Why are tabs allowed as indentation after dash?
 ? a
-: -	b
-  -  -	c
+: -<TAB>b
+  -  -<TAB>c
      - d
 
 +++ out-yaml
@@ -24,6 +24,8 @@ a:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :a
 +SEQ
@@ -34,3 +36,5 @@ a:
 -SEQ
 -SEQ
 -MAP
+-DOC
+-STR

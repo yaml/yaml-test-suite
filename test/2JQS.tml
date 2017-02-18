@@ -1,6 +1,6 @@
 === Block Mapping with Missing Keys
 from: NimYAML tests
-tags: mapping,block
+tags: mapping block
 
 +++ in-yaml
 : a
@@ -10,9 +10,13 @@ tags: mapping,block
 {"": "a", "": "b"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :
 =VAL :a
 =VAL :
 =VAL :b
 -MAP
+-DOC
+-STR

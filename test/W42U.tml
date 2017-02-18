@@ -1,6 +1,6 @@
 === Spec Example 8.15. Block Sequence Entry Types
 from: http://www.yaml.org/spec/1.2/spec.html#id2797944
-tags: spec,block,sequence
+tags: spec block sequence
 
 +++ in-yaml
 - # Empty
@@ -27,6 +27,8 @@ tags: spec,block,sequence
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL :
 =VAL |block node\n
@@ -39,3 +41,5 @@ tags: spec,block,sequence
 =VAL :two
 -MAP
 -SEQ
+-DOC
+-STR

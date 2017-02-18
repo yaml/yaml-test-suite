@@ -1,6 +1,6 @@
 === Spec Example 2.14. In the folded scalars, newlines become spaces
 from: http://www.yaml.org/spec/1.2/spec.html#id2761032
-tags: spec,block,scalar
+tags: spec block scalar
 
 +++ in-yaml
 --- >
@@ -12,7 +12,12 @@ tags: spec,block,scalar
 --- >
   Mark McGwire's year was crippled by a knee injury.
 
++++ in-json
+"Mark McGwire's year was crippled by a knee injury.\n"
+
 +++ test-event
++STR
 +DOC ---
 =VAL >Mark McGwire's year was crippled by a knee injury.\n
 -DOC
+-STR

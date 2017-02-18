@@ -1,6 +1,6 @@
 === Spec Example 7.14. Flow Sequence Entries
 from: http://www.yaml.org/spec/1.2/spec.html#id2790726
-tags: spec,flow,sequence
+tags: spec flow sequence
 
 +++ in-yaml
 [
@@ -23,10 +23,12 @@ single: pair,
 [
   "double quoted", "single quoted",
   "plain text", [ "nested" ],
-  { "single": "pair" ]
+  { "single": "pair" }
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL "double quoted
 =VAL 'single quoted
@@ -39,3 +41,5 @@ single: pair,
 =VAL :pair
 -MAP
 -SEQ
+-DOC
+-STR

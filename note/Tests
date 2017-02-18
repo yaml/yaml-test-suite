@@ -1,0 +1,18 @@
+https://gist.github.com/f192e7dab6da31831f264dbf1947cb83 multiline prefix error
+https://gist.github.com/3c9e11fc05b384421306e3acedcf82fd multiline prefix
+https://gist.github.com/ae9dacd60b781350df66c31344235f5d one space indent block seq
+https://gist.github.com/67253c55141b1fd960b421e66d66c3a2 single dash stream
+https://gist.github.com/d4c470e22d7daf3c01649f773aa9bdf5 single colon stream
+https://gist.github.com/6aeda3bb55cf32ac9cb2e87909fcfb89 trailing spaces after map values
+https://gist.github.com/36aa1afc368d73d03beed8574161df63 trailing spaces and comments
+https://gist.github.com/fcacd562c79420ce81a5510f86822f71 leading tab in literal content first line
+https://gist.github.com/964347db93d350b9a4c86cfeac515d02 multiline prefix
+https://gist.github.com/d4caa65cbf3f7f2a20f98928f6e0f237 top scalar with comment
+https://gist.github.com/269f16d582fdd30a7dcf8c9249c5da7f top scalar with comment in middle
+https://gist.github.com/d305fd8e54cfe7a484088c91a8a2e533 colon in multiline map value
+https://gist.github.com/0c8db51d151baf8113205ba3ce71d1b4 a: b: c: d
+https://gist.github.com/a98d50ce42a59b1e999552bea7a31f57 comment directly after :
+https://gist.github.com/327d4902d04eb9d8833042d20c9d80ac flow map one token per line
+https://gist.github.com/9f623d56a7ad256d0b36219a30484b05 flow map one token per line; indented
+https://gist.github.com/01ff478ce0dcf46dec9d4af469de48f8 multiline quoted key
+https://gist.github.com/0c3a4ba58d51bc0ffea191091c8a3073 flow ? no space: { ?key: val}

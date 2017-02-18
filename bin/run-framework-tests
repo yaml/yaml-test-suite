@@ -1,0 +1,451 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+use Data::Dumper;
+use FindBin '$Bin';
+use YAML::XS qw/ DumpFile /;
+use Getopt::Long;
+Getopt::Long::Configure ("bundling");
+use File::Basename qw/ basename /;
+use IO::All;
+use File::Path qw/ rmtree /;
+
+GetOptions(
+    "path=s" => \my $path,
+    "help|h" => \my $help,
+    "list|l" => \my $list,
+    "verbose|v+" => \my $verbose,
+);
+$verbose ||= 0;
+
+my @frameworks = qw/
+    js-yaml-json
+
+    java-json
+
+    libyaml-event
+
+    nimyaml-event
+
+    perl5-pegex-event
+
+    perl5-pm-pl
+    perl5-pm-json
+
+    perl5-pp-event
+
+    perl5-syck-pl
+    perl5-syck-json
+
+    perl5-tiny-pl
+    perl5-tiny-json
+
+    perl5-xs-pl
+    perl5-xs-json
+
+    perl6-json
+    perl6-p6
+    pyyaml-event
+    ruby-json
+
+/;
+
+if ($list) {
+    say for @frameworks;
+    exit;
+}
+
+usage() if $help;
+usage() if @ARGV < 1;
+
+my ($framework) = @ARGV;
+
+my $data = "$Bin/../data";
+
+my %tests;
+
+my $start = time;
+my $end;
+
+
+
+my %frameworks;
+@frameworks{ @frameworks } = (1) x @frameworks;
+
+my ($sum_ok, $sum_diff, $sum_na, $sum_err) = (0) x 4;
+my $out = "$data/out";
+if ($frameworks{ $framework }) {
+    mkdir $out;
+    if ($path) {
+        my @dirs = grep { m{/[A-Z0-9]{4}$} } map { "$_" } io->dir($data)->all;
+        for my $dir (sort @dirs) {
+            my $id = basename $dir;
+            my $in_yaml = "$dir/in.yaml";
+            my $cmd = "timeout 3 $path < $in_yaml > $out/$id.error 2>&1";
+            print "Running $id\r";
+            system $cmd;
+            unless ($?) {
+                rename "$out/$id.error", "$out/$id.ok" or die $!;
+            }
+        }
+    }
+    else {
+        usage() if (not $ENV{YAML_EDITOR} or not -d $ENV{YAML_EDITOR});
+        my $path = " /yaml-editor/sbin/$framework";
+        if ($framework eq 'java-json') {
+            $path = "/bin/java-json";
+        }
+        elsif ($framework eq 'nimyaml-event') {
+            $path = "/bin/nimyaml-event";
+        }
+        my $cmd = q{docker run -i}
+            . q{ -v $PWD/data:/yaml-test-suite-data}
+            . q{ -v $PWD/bin:/matrix}
+            . qq{ -v $ENV{YAML_EDITOR}:/yaml-editor}
+            . qq{ yamlio/yaml-editor /matrix/run-framework-tests-docker.sh $path};
+        say "Running $cmd";
+        system $cmd;
+    }
+    print "\n";
+    $end = time;
+}
+else {
+    die "Framework $framework not supported";
+}
+
+my @files = map { "$_" } grep { m{/\w+\.(error|ok)$} } io->dir("$data/out")->all;
+say "Comparing results...";
+for my $file (sort @files) {
+    my @got = io->file($file)->chomp->slurp;
+    if (@got > 200) {
+        @got = (@got[0 .. 200], "----- 8< -----");
+    }
+    $file = basename $file;
+    my ($id, $status) = split m/\./, $file;
+    my @test_events = io->file("$data/$id/test.event")->chomp->slurp;
+    my ($title) = io->file("$data/$id/===")->chomp->slurp;
+    print "Comparing results for $id...\r";
+    my $got_data = (join "\n", @got) . "\n";
+    $tests{ $id }->{got_data} = $got_data;
+    if ($status eq 'error') {
+        $tests{ $id }->{error} = 1;
+        $sum_err++;
+        my $msg = $got_data;
+        $msg =~ s/\bat \S+ line .*//s;
+        $tests{ $id }->{msg} = $msg;
+    }
+    elsif ($framework =~ m/-json$/) {
+        my $got_json = $got_data;
+        $tests{ $id }->{got_json} = $got_json;
+        if (-f "$data/$id/in.json") {
+            my $exp_json = io->file("$data/$id/in.json")->slurp;
+            require Mojo::JSON;
+            my $exp_data = Mojo::JSON::decode_json($exp_json);
+            $exp_json = Mojo::JSON::encode_json($exp_data);
+            my $got_data = eval { Mojo::JSON::decode_json($got_json) };
+            $got_json = Mojo::JSON::encode_json($got_data);
+            if ($got_json eq $exp_json) {
+                $tests{ $id }->{json_ok} = 1;
+                $sum_ok++;
+            }
+            else {
+                $tests{ $id }->{json_diff} = 1;
+                $sum_diff++;
+            }
+        }
+        else {
+            $tests{ $id }->{na} = 1;
+            $sum_na++;
+        }
+    }
+    elsif ($framework =~ m/-pl$/) {
+        $tests{ $id }->{na} = 1;
+        $sum_na++;
+    }
+    elsif ($framework =~ m/-p6$/) {
+        $tests{ $id }->{na} = 1;
+        $sum_na++;
+    }
+    elsif ($framework =~ m/-p6$/) {
+        $tests{ $id }->{na} = 1;
+    }
+    else {
+        my @events = @got;
+        my @orig_events = @test_events;
+        if ($framework eq "nimyaml-event") {
+            @test_events = minimal_events("nimyaml", @test_events);
+            @events = nim_event_to_event(@events);
+            $tests{ $id }->{minimal_events} = \@test_events;
+            $tests{ $id }->{transformed_events} = \@events;
+            push @events, "-STR";
+            unshift @events, "+STR";
+        }
+        elsif ($framework eq "pyyaml-event") {
+            @test_events = minimal_events("pyyaml", @test_events);
+            @events = map { py_event_to_event($_) } @events;
+            $tests{ $id }->{minimal_events} = \@test_events;
+            $tests{ $id }->{transformed_events} = \@events;
+        }
+        my $ok = 1;
+        for my $i (0 .. $#events) {
+            my $event = $events[ $i ];
+            my $exp = $test_events[ $i ];
+            if ($event ne $exp) {
+                $verbose and
+                    warn "$id line ${\($i + 1)}: <$event> ne <$exp>\n";
+                $ok = 0;
+                last;
+            }
+        }
+        if ($ok) {
+            $tests{ $id }->{ok} = 1;
+            $sum_ok++;
+        }
+        else {
+            if ($verbose >= 2) {
+                warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@events], ['events']);
+                warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@test_events], ['test_events']);
+                warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@orig_events], ['orig_events']);
+            }
+            $tests{ $id }->{diff} = 1;
+            $sum_diff++;
+#                $tests{ $id }->{exp_events} = \@test_events;
+            $tests{ $id }->{got_events} = \@got;
+        }
+    }
+    $tests{ $id }->{title} = $title;
+}
+print "Done                         \n";
+printf "ok: %d diff: %d n/a: %d error: %d\n",
+    $sum_ok, $sum_diff, $sum_na, $sum_err;
+rmtree $out;
+
+say "Saving tests into $Bin/../matrix/$framework.yaml";
+DumpFile("$Bin/../matrix/$framework.yaml", {
+    tests => \%tests,
+    date => time,
+    time => $end - $start,
+});
+
+sub minimal_events {
+    my ($type, @events) = @_;
+    for my $event (@events) {
+        if ($event =~ m/^\+DOC ---/) {
+            $event = '+DOC';
+        }
+        elsif ($event =~ m/^-DOC \.\.\./) {
+            $event = '-DOC';
+        }
+        elsif ($event =~ s/^=VAL//) {
+            my $ev = '=VAL';
+            if ($event =~ s/^ &(\S+)//) {
+                $ev .= " &$1";
+            }
+            if ($event =~ s/^ (<.*?>)//) {
+                $ev .= " $1";
+            }
+            if ($type eq 'pyyaml' and $event =~ s/^ ["'>|](.*)//) {
+                $ev .= " :$1";
+            }
+            elsif ($type eq 'nimyaml' and $event =~ s/^ ['>|"](.*)//) {
+                $ev .= qq{ :$1};
+            }
+            else {
+                $ev .= $event;
+            }
+            $event = $ev;
+        }
+    }
+    return @events;
+}
+
+sub py_event_to_event {
+    my ($event) = @_;
+    if ($event eq "StreamStartEvent()") {
+        $event = "+STR";
+    }
+    elsif ($event eq "StreamEndEvent()") {
+        $event = "-STR";
+    }
+    elsif ($event eq "DocumentStartEvent()") {
+        $event = "+DOC";
+    }
+    elsif ($event eq "DocumentEndEvent()") {
+        $event = "-DOC";
+    }
+    elsif ($event =~ s/^MappingStartEvent\(//) {
+        my $ev = '+MAP';
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " &$anchor";
+            }
+        }
+        if (defined(my $tag = _py_match_tag($event))) {
+            if (_py_match_string($tag)) {
+                $ev .= " <$tag>";
+            }
+        }
+        $event = $ev;
+    }
+    elsif ($event eq "MappingEndEvent()") {
+        $event = "-MAP";
+    }
+    elsif ($event =~ s/^SequenceStartEvent\(//) {
+        my $ev = "+SEQ";
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " &$anchor";
+            }
+        }
+        if (defined(my $tag = _py_match_tag($event))) {
+            if (_py_match_string($tag)) {
+                $ev .= " <$tag>";
+            }
+        }
+        $event = $ev;
+    }
+    elsif ($event eq "SequenceEndEvent()") {
+        $event = "-SEQ";
+    }
+
+    elsif ($event =~ s/^AliasEvent\(//) {
+        my $ev = "=ALI";
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " *$anchor";
+            }
+        }
+        $event = $ev;
+    }
+    elsif ($event =~ s/^ScalarEvent\(//) {
+        my $ev = "=VAL";
+        if (defined(my $anchor = _py_match_anchor($event))) {
+            if (_py_match_string($anchor)) {
+                $ev .= " &$anchor";
+            }
+        }
+        if (defined(my $tag = _py_match_tag($event))) {
+            if (_py_match_string($tag)) {
+                $ev .= " <$tag>";
+            }
+        }
+        if ($event =~ s/^implicit=\(\w+, \w+\), //) {
+        }
+        if ($event =~ s/^value=(.*)\)//) {
+            my $value = $1;
+            if (_py_match_string($value)) {
+                $ev .= " :$value";
+            }
+        }
+        $event = $ev;
+    }
+
+    return $event;
+}
+
+sub _py_match_anchor {
+    if ($_[0] =~ s/^anchor=(\S+)(, |\))//) {
+        return "$1";
+    }
+    return;
+}
+sub _py_match_tag {
+    if ($_[0] =~ s/^tag=(\S+)(, |\))//) {
+        return "$1";
+    }
+    return;
+}
+
+sub _py_match_string {
+    if ($_[0] =~ m/^u'((?:\\'|[^'])+)'/) {
+        $_[0] = "$1";
+        $_[0] =~ s/\\'/'/g;
+        return 1;
+    }
+    if ($_[0] =~ m/^u"([^"]+)"/) {
+        $_[0] = "$1";
+        return 1;
+    }
+    return;
+}
+
+sub nim_event_to_event {
+    my (@events) = @_;
+    my @new;
+    while (my $event = shift @events) {
+        while (@events and $events[0] !~ m/^yaml\w+\(/) {
+            my $next = shift @events;
+            $event .= "\n$next";
+        }
+        if ($event eq "yamlStartDoc()") {
+            $event = "+DOC";
+        }
+        elsif ($event eq "yamlEndDoc()") {
+            $event = "-DOC";
+        }
+        elsif ($event =~ s/^yamlStartMap\(//) {
+            $event = "+MAP";
+        }
+        elsif ($event =~ s/^yamlEndMap\(//) {
+            $event = "-MAP";
+        }
+        elsif ($event =~ s/^yamlStartSeq\(//) {
+            $event = "+SEQ";
+        }
+        elsif ($event =~ s/^yamlEndSeq\(//) {
+            $event = "-SEQ";
+        }
+        elsif ($event =~ m/^yamlAlias\(aliasTarget=(\d+)\)/) {
+            my $target = $1;
+            $event = "=ALI *$target";
+        }
+        elsif ($event =~ s/^yamlScalar\(//) {
+            my ($tag, $anchor);
+            if ($event =~ s/^tag=(\S+), //) {
+                if ($1 ne '?' and $1 ne '!') {
+                    $tag = $1;
+                }
+            }
+            if ($event =~ s/^anchor=(\S+), //) {
+                $anchor = $1;
+            }
+            $event =~ s/\t/\\t/g;
+            $event =~ s/\n/\\n/g;
+            if ($event =~ s/^content="([^"]*)"\)//) {
+                my $content = $1;
+                $event = "=VAL";
+                if (defined $anchor) {
+                    $event .= " &$anchor";
+                }
+                if (defined $tag) {
+                    $event .= " $tag";
+                }
+                $event .= " :$1";
+            }
+        }
+        push @new, $event;
+    }
+    return @new;
+}
+
+sub usage {
+    say <<"EOM";
+
+Usage:
+
+Run in docker:
+    YAML_EDITOR=/path/to/yaml-editor-repo $0 <framework>
+
+Specify a script:
+    $0 <framework> --path /path/to/framework
+
+Options:
+--path          /path/to/framework
+                If no --path is given, it will run the tests in docker.
+--verbose, -v   Increase verbosity:
+                -v  Print the first differing lines of event output
+                -vv Dump events and expected events
+EOM
+    exit 1;
+}

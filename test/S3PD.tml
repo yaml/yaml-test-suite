@@ -1,6 +1,6 @@
 === Spec Example 8.18. Implicit Block Mapping Entries
 from: http://www.yaml.org/spec/1.2/spec.html#id2798896
-tags: spec,block,mapping
+tags: spec block mapping
 
 +++ in-yaml
 plain key: in-line value
@@ -16,6 +16,8 @@ plain key: in-line value
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :plain key
 =VAL :in-line value
@@ -26,3 +28,5 @@ plain key: in-line value
 =VAL :entry
 -SEQ
 -MAP
+-DOC
+-STR

@@ -1,13 +1,13 @@
 === Spec Example 9.5. Directives Documents
 from: http://www.yaml.org/spec/1.2/spec.html#id2801606
-tags: spec,document
+tags: spec document
 
 +++ in-yaml
-%YAML 1.2
+\%YAML 1.2
 --- |
-%!PS-Adobe-2.0
+\%!PS-Adobe-2.0
 ...
-%YAML1.2
+\%YAML1.2
 ---
 \# Empty
 ...
@@ -20,9 +20,11 @@ tags: spec,document
 ...
 
 +++ test-event
++STR
 +DOC ---
 =VAL |%!PS-Adobe-2.0\n
 -DOC ...
 +DOC ---
 =VAL :
 -DOC ...
+-STR

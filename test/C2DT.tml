@@ -1,6 +1,6 @@
 === Spec Example 7.18. Flow Mapping Adjacent Values
 from: http://www.yaml.org/spec/1.2/spec.html#id2792073
-tags: spec,flow,mapping
+tags: spec flow mapping
 
 +++ in-yaml
 {
@@ -22,6 +22,8 @@ tags: spec,flow,mapping
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL "adjacent
 =VAL :value
@@ -30,3 +32,5 @@ tags: spec,flow,mapping
 =VAL "empty
 =VAL :
 -MAP
+-DOC
+-STR

@@ -1,6 +1,6 @@
 === Spec Example 7.16. Flow Mapping Entries
 from: http://www.yaml.org/spec/1.2/spec.html#id2791260
-tags: spec,flow,mapping
+tags: spec flow mapping
 
 +++ in-yaml
 {
@@ -22,6 +22,8 @@ implicit: entry
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :explicit
 =VAL :entry
@@ -30,3 +32,5 @@ implicit: entry
 =VAL :
 =VAL :
 -MAP
+-DOC
+-STR

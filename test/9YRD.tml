@@ -4,7 +4,7 @@ tags: scalar
 
 +++ in-yaml
 a
-b  
+b<SPC><SPC>
   c
 d
 
@@ -17,5 +17,12 @@ e
 
   e'
 
++++ in-json
+"a b c d\ne"
+
 +++ test-event
++STR
++DOC
 =VAL :a b c d\ne
+-DOC
+-STR

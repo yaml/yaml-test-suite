@@ -1,6 +1,6 @@
 === Simple Mapping Indent
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
-tags: simple,mapping,indent
+tags: simple mapping indent
 
 +++ in-yaml
 foo:
@@ -10,6 +10,8 @@ foo:
 {"foo":{"bar":"baz"}}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 +MAP
@@ -17,3 +19,5 @@ foo:
 =VAL :baz
 -MAP
 -MAP
+-DOC
+-STR

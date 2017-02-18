@@ -1,6 +1,6 @@
 === Spec Example 7.20. Single Pair Explicit Entry
 from: http://www.yaml.org/spec/1.2/spec.html#id2792424
-tags: spec,flow,mapping
+tags: spec flow mapping
 
 +++ in-yaml
 [
@@ -15,9 +15,13 @@ tags: spec,flow,mapping
 [ { "foo bar": "baz"} ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :foo bar
 =VAL :baz
 -MAP
 -SEQ
+-DOC
+-STR

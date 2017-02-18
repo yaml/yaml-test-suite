@@ -6,7 +6,11 @@ tags: tags
 ! a
 
 +++ in-json
-{"a"}
+"a"
 
 +++ test-event
++STR
++DOC
 =VAL <!> :a
+-DOC
+-STR

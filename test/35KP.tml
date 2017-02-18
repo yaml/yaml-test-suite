@@ -20,6 +20,7 @@ a: b
 --- !!str d e
 
 +++ test-event
++STR
 +DOC ---
 +MAP <tag:yaml.org,2002:map>
 =VAL :a
@@ -34,3 +35,4 @@ a: b
 +DOC ---
 =VAL <tag:yaml.org,2002:str> :d e
 -DOC
+-STR

@@ -5,8 +5,8 @@ tags: scalar
 +++ in-yaml
 |-
  ab
-\ 
-\ 
+<SPC>
+<SPC>
 ...
 
 +++ out-yaml
@@ -14,7 +14,12 @@ tags: scalar
   ab
 ...
 
++++ in-json
+"ab"
+
 +++ test-event
++STR
 +DOC
 =VAL |ab
 -DOC ...
+-STR

@@ -1,19 +1,19 @@
 === Blank lines
 from: IRC discussion with leont
-tags: comment,scalar
+tags: comment scalar
 
 +++ in-yaml
 foo: 1
 
 bar: 2
-\    
+<SPC><SPC><SPC><SPC>
 text: |
   a
-\    
+<SPC><SPC><SPC><SPC>
   b
 
   c
-\ 
+<SPC>
   d
 
 +++ out-yaml
@@ -26,6 +26,8 @@ text: "a\n  \nb\n\nc\n\nd\n"
 {"foo":1,"bar":2,"text":"a\n  \nb\n\nc\n\nd\n"}
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :foo
 =VAL :1
@@ -34,3 +36,5 @@ text: "a\n  \nb\n\nc\n\nd\n"
 =VAL :text
 =VAL |a\n  \nb\n\nc\n\nd\n
 -MAP
+-DOC
+-STR

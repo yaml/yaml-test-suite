@@ -1,6 +1,6 @@
 === Spec Example 2.17. Quoted Scalars
 from: http://www.yaml.org/spec/1.2/spec.html#id2761245
-tags: spec,scalar
+tags: spec scalar
 
 +++ in-yaml
 unicode: "Sosa did fine.\u263A"
@@ -30,6 +30,8 @@ tie-fighter: '|\-*-/|'
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :unicode
 =VAL "Sosa did fine.☺
@@ -44,3 +46,5 @@ tie-fighter: '|\-*-/|'
 =VAL :tie-fighter
 =VAL '|\\-*-/|
 -MAP
+-DOC
+-STR

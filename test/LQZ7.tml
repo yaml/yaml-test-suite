@@ -1,6 +1,6 @@
 === Spec Example 7.4. Double Quoted Implicit Keys
 from: http://www.yaml.org/spec/1.2/spec.html#id2787420
-tags: spec,scalar,flow
+tags: spec scalar flow
 
 +++ in-yaml
 "implicit block key" : [
@@ -19,6 +19,8 @@ tags: spec,scalar,flow
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL "implicit block key
 +SEQ
@@ -28,3 +30,5 @@ tags: spec,scalar,flow
 -MAP
 -SEQ
 -MAP
+-DOC
+-STR

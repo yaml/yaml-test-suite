@@ -1,6 +1,6 @@
 === Spec Example 7.11. Plain Implicit Keys
 from: http://www.yaml.org/spec/1.2/spec.html#id2789794
-tags: spec,flow,mapping
+tags: spec flow mapping
 
 +++ in-yaml
 implicit block key : [
@@ -19,6 +19,8 @@ implicit block key:
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :implicit block key
 +SEQ
@@ -28,3 +30,5 @@ implicit block key:
 -MAP
 -SEQ
 -MAP
+-DOC
+-STR

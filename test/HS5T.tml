@@ -1,12 +1,12 @@
 === Spec Example 7.12. Plain Lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2789986
-tags: spec,scalar
+tags: spec scalar
 
 +++ in-yaml
 1st non-empty
 
- 2nd non-empty 
-	3rd non-empty
+ 2nd non-empty<SPC>
+<TAB>3rd non-empty
 
 +++ out-yaml
 # XXX Should this be doublequote?
@@ -14,5 +14,12 @@ tags: spec,scalar
 
   2nd non-empty 3rd non-empty'
 
++++ in-json
+"1st non-empty\n2nd non-empty 3rd non-empty"
+
 +++ test-event
++STR
++DOC
 =VAL :1st non-empty\n2nd non-empty 3rd non-empty
+-DOC
+-STR

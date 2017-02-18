@@ -1,6 +1,6 @@
 === Spec Example 2.25. Unordered Sets
 from: http://www.yaml.org/spec/1.2/spec.html#id2761758
-tags: spec,mapping
+tags: spec mapping
 
 +++ in-yaml
 \# Sets are represented as a
@@ -18,6 +18,7 @@ Sammy Sosa:
 Ken Griff:
 
 +++ test-event
++STR
 +DOC ---
 +MAP <tag:yaml.org,2002:set>
 =VAL :Mark McGwire
@@ -28,3 +29,4 @@ Ken Griff:
 =VAL :
 -MAP
 -DOC
+-STR

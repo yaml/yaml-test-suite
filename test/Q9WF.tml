@@ -1,6 +1,6 @@
 === Spec Example 6.12. Separation Spaces
 from: http://www.yaml.org/spec/1.2/spec.html#id2780989
-tags: spec,comment,whitespace
+tags: spec comment whitespace
 
 +++ in-yaml
 { first: Sammy, last: Sosa }:
@@ -17,6 +17,8 @@ tags: spec,comment,whitespace
   avg: 0.278
 
 +++ test-event
++STR
++DOC
 +MAP
 +MAP
 =VAL :first
@@ -31,3 +33,5 @@ tags: spec,comment,whitespace
 =VAL :0.278
 -MAP
 -MAP
+-DOC
+-STR

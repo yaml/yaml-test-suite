@@ -1,6 +1,6 @@
 === Tags for Flow Objects
 from: NimYAML tests
-tags: tags,flow
+tags: tags flow
 
 +++ in-yaml
 !!map {
@@ -14,7 +14,17 @@ k: !!seq
 - a
 - !!str b
 
++++ in-json
+{
+  "k": [
+    "a",
+    "b"
+  ]
+}
+
 +++ test-event
++STR
++DOC
 +MAP <tag:yaml.org,2002:map>
 =VAL :k
 +SEQ <tag:yaml.org,2002:seq>
@@ -22,3 +32,5 @@ k: !!seq
 =VAL <tag:yaml.org,2002:str> :b
 -SEQ
 -MAP
+-DOC
+-STR

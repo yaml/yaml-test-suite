@@ -1,6 +1,6 @@
 === Spec Example 5.8. Quoted Scalar Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2773890
-tags: spec,scalar
+tags: spec scalar
 
 +++ in-yaml
 single: 'text'
@@ -13,9 +13,13 @@ double: "text"
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :single
 =VAL 'text
 =VAL :double
 =VAL "text
 -MAP
+-DOC
+-STR

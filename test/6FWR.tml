@@ -5,15 +5,20 @@ tags: scalar
 +++ in-yaml
 |+
  ab
-\ 
-\  
+<SPC>
+<SPC><SPC>
 ...
 
 +++ out-yaml
 "ab\n\n \n"
 ...
 
++++ in-json
+"ab\n\n \n"
+
 +++ test-event
++STR
 +DOC
 =VAL |ab\n\n \n
 -DOC ...
+-STR

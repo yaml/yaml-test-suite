@@ -1,6 +1,6 @@
 === Tags in Block Sequence
 from: NimYAML tests
-tags: tags,sequence
+tags: tags sequence
 
 +++ in-yaml
  - !!str a
@@ -14,10 +14,22 @@ tags: tags,sequence
 - !!int 42
 - d
 
++++ in-json
+[
+  "a",
+  "b",
+  42,
+  "d"
+]
+
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL <tag:yaml.org,2002:str> :a
 =VAL :b
 =VAL <tag:yaml.org,2002:int> :42
 =VAL :d
 -SEQ
+-DOC
+-STR

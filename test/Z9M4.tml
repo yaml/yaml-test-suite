@@ -1,9 +1,9 @@
 === Spec Example 6.22. Global Tag Prefix
 from: http://www.yaml.org/spec/1.2/spec.html#id2783726
-tags: spec,document,tags
+tags: spec document tags
 
 +++ in-yaml
-%TAG !e! tag:example.com,2000:app/
+\%TAG !e! tag:example.com,2000:app/
 ---
 - !e!foo "bar"
 
@@ -12,8 +12,10 @@ tags: spec,document,tags
 - !<tag:example.com,2000:app/foo> "bar"
 
 +++ test-event
++STR
 +DOC ---
 +SEQ
 =VAL <tag:example.com,2000:app/foo> "bar
 -SEQ
 -DOC
+-STR

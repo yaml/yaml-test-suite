@@ -1,6 +1,6 @@
 === Spec Example 8.19. Compact Block Mappings
 from: http://www.yaml.org/spec/1.2/spec.html#id2799091
-tags: spec,block,mapping
+tags: spec block mapping
 
 +++ in-yaml
 - sun: yellow
@@ -8,6 +8,8 @@ tags: spec,block,mapping
   : moon: white
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :sun
@@ -24,3 +26,5 @@ tags: spec,block,mapping
 -MAP
 -MAP
 -SEQ
+-DOC
+-STR

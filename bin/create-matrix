@@ -1,0 +1,189 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+use Data::Dumper;
+use FindBin '$Bin';
+use YAML::XS qw/ LoadFile /;
+use IO::All;
+use File::Copy qw/ copy /;
+use HTML::Template::Compiled;
+
+my %tests;
+my %frameworks;
+my @frameworks;
+my %htc_args = (
+    tagstyle => [qw/ -classic -comment -jsp +tt /],
+    default_escape => 'HTML',
+    loop_context_vars => 1,
+    post_chomp => 2,
+);
+
+my $datadir = "$Bin/../data";
+gather_data();
+
+create_html();
+
+sub gather_data {
+    my @files = map { "$_" } grep { m/\.yaml$/ } io->dir("matrix")->all_files;
+
+    for my $file (sort @files) {
+        unless ($file =~ m{/([A-Z0-9-]+)\.yaml}i) {
+            next;
+        }
+        my $fw = $1;
+        push @frameworks, $fw;
+        my $data = LoadFile($file);
+        my $testdata = $data->{tests};
+
+        for my $test (keys %$testdata) {
+            my $results = $testdata->{ $test };
+            my $title = $results->{title};
+            $tests{ $test }->{id} = $test;
+            $tests{ $test }->{title} = $title;
+            $tests{ $test }->{frameworks}->{ $fw } = $results;
+            $tests{ $test }->{frameworks}->{ $fw }->{id} = $fw;
+            if ($results->{ok}) {
+                $frameworks{ $fw }->{ok}++;
+            }
+            elsif ($results->{json_ok}) {
+                $frameworks{ $fw }->{json_ok}++;
+            }
+            elsif ($results->{diff}) {
+                $frameworks{ $fw }->{diff}++;
+            }
+            elsif ($results->{json_diff}) {
+                $frameworks{ $fw }->{json_diff}++;
+            }
+            elsif ($results->{na}) {
+                $frameworks{ $fw }->{na}++;
+            }
+            elsif ($results->{error}) {
+                $frameworks{ $fw }->{error}++;
+            }
+            $frameworks{ $fw }->{count}++;
+
+        }
+    }
+}
+
+sub create_html {
+    mkdir "matrix/html";
+    mkdir "matrix/html/css";
+    my @tests;
+
+    my @framework_names = map {
+        my ($lang, $name, $type) = split /-/, $_;
+        if ($lang eq 'libyaml') {
+            $name = $lang;
+            $lang = 'C';
+            $type = 'event';
+        }
+        elsif ($lang eq 'ruby' and $name eq 'json') {
+            $type = $name;
+            $name = "";
+        }
+        elsif ($lang eq 'perl6') {
+            $type = $name;
+            $name = "yamlish";
+        }
+        elsif ($lang eq 'pyyaml') {
+            $type = $name;
+            $name = $lang;
+            $lang = "python";
+        }
+        elsif ($lang eq 'java') {
+            $type = $name;
+            $name = "snake";
+        }
+        elsif ($lang eq 'nimyaml') {
+            $lang = "nim";
+            $type = $name;
+            $name = "yaml";
+        }
+        {
+            lang => $lang,
+            name => $name,
+            type => $type,
+            fullname => $_,
+        };
+    } @frameworks;
+    @framework_names = sort {
+        $a->{type} cmp $b->{type}
+        || $a->{lang} cmp $b->{lang}
+        || $a->{name} cmp $b->{name}
+    } @framework_names;
+
+
+    for my $test (sort { $tests{ $a }->{title} cmp $tests{ $b }->{title}} keys %tests) {
+        my $data = $tests{ $test };
+        my $frameworks = $data->{frameworks};
+        my @frameworks;
+        for my $fw (@framework_names) {
+            my $results = $frameworks->{ $fw->{fullname} };
+            $results->{test} = $test;
+            push @frameworks, $results;
+        }
+        push @tests, {
+            id => $data->{id},
+            title => $data->{title},
+            frameworks => \@frameworks,
+        };
+        create_details($test);
+    }
+    say "Created detail pages matrix/html/details-<id>.html";
+    my @framework_headers;
+    for my $fw (@framework_names) {
+        push @framework_headers, {
+            fullname => $fw->{fullname},
+            %{ $frameworks{ $fw->{fullname} } || {} },
+        };
+    }
+
+    my $htc = HTML::Template::Compiled->new(
+        filename => "index.html",
+        path => "$Bin/../share/matrix/templates",
+        %htc_args,
+    );
+    $htc->param(
+        framework_names => \@framework_names,
+        framework_headers => \@framework_headers,
+        tests => \@tests,
+    );
+
+    open my $fh, ">", "matrix/html/index.html" or die $!;
+    print $fh $htc->output;
+    close $fh;
+    say "Created matrix/html/index.html";
+
+    copy ("share/matrix/css/yaml.css", "matrix/html/css");
+    copy ("share/matrix/css/matrix.css", "matrix/html/css");
+}
+
+sub create_details {
+    my ($id) = @_;
+    my $yaml = io->file("$datadir/$id/in.yaml")->slurp;
+    my $events = io->file("$datadir/$id/test.event")->slurp;
+
+    my $json;
+    if (-f "$datadir/$id/in.json") {
+        $json = io->file("$datadir/$id/in.json")->slurp;
+    }
+
+    my $htc = HTML::Template::Compiled->new(
+        filename => "details.html",
+        path => "$Bin/../share/matrix/templates",
+        %htc_args,
+    );
+    $htc->param(
+        id => $id,
+        test => $tests{ $id },
+        yaml => $yaml,
+        json => $json,
+        events => $events,
+    );
+    open my $fh, ">", "matrix/html/details-$id.html" or die $!;
+    print $fh $htc->output;
+    close $fh;
+}
+

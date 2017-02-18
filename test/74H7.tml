@@ -1,6 +1,6 @@
 === Tags in Implicit Mapping
 from: NimYAML tests
-tags: tags,mapping
+tags: tags mapping
 
 +++ in-yaml
 !!str a: b
@@ -16,7 +16,18 @@ e: !!str f
 g: h
 !!int 23: !!bool false
 
++++ in-json
+{
+  "a": "b",
+  "c": 42,
+  "e": "f",
+  "g": "h",
+  "23": false
+}
+
 +++ test-event
++STR
++DOC
 +MAP
 =VAL <tag:yaml.org,2002:str> :a
 =VAL :b
@@ -29,3 +40,5 @@ g: h
 =VAL <tag:yaml.org,2002:int> :23
 =VAL <tag:yaml.org,2002:bool> :false
 -MAP
+-DOC
+-STR

@@ -1,22 +1,22 @@
 === Spec Example 5.12. Tabs and Spaces
 from: http://www.yaml.org/spec/1.2/spec.html#id2775350
-tags: spec,whitespace
+tags: spec whitespace
 
 +++ in-yaml
 \# Tabs and spaces
-quoted: "Quoted 	"
-block:	|
+quoted: "Quoted <TAB>"
+block:<TAB>|
   void main() {
-  	printf("Hello, world!\n");
+  <TAB>printf("Hello, world!\n");
   }
 
 +++ out-yaml
 quoted: "Quoted \t"
 # XXX This should be literal
 block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
-# block:	|
+# block:<TAB>|
 #   void main() {
-#   	printf("Hello, world!\n");
+#   <TAB>printf("Hello, world!\n");
 #   }
 
 +++ in-json
@@ -26,9 +26,13 @@ block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
 }
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL :quoted
 =VAL "Quoted \t
 =VAL :block
 =VAL |void main() {\n\tprintf("Hello, world!\\n");\n}\n
 -MAP
+-DOC
+-STR

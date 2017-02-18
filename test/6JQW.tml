@@ -1,6 +1,6 @@
 === Spec Example 2.13. In literals, newlines are preserved
 from: http://www.yaml.org/spec/1.2/spec.html#id2759963
-tags: spec,scalar,literal,comment
+tags: spec scalar literal comment
 
 +++ in-yaml
 \# ASCII Art
@@ -17,6 +17,8 @@ tags: spec,scalar,literal,comment
 "\\//||\\/||\n// ||  ||__\n"
 
 +++ test-event
++STR
 +DOC ---
 =VAL |\\//||\\/||\n// ||  ||__\n
 -DOC
+-STR

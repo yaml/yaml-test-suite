@@ -1,6 +1,6 @@
 === Lookahead test cases
 from: NimYAML tests
-tags: mapping,edge
+tags: mapping edge
 
 +++ in-yaml
 - bla"keks: foo
@@ -9,10 +9,12 @@ tags: mapping,edge
 +++ in-json
 [
   {"bla\"keks": "foo"},
-  {"bla]keks]: "foo"}
+  {"bla]keks": "foo"}
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +MAP
 =VAL :bla"keks
@@ -23,3 +25,5 @@ tags: mapping,edge
 =VAL :foo
 -MAP
 -SEQ
+-DOC
+-STR

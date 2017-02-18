@@ -1,6 +1,6 @@
 === Spec Example 8.20. Block Node Types
 from: http://www.yaml.org/spec/1.2/spec.html#id2799426
-tags: spec,block
+tags: spec block
 
 +++ in-yaml
 -
@@ -25,6 +25,8 @@ tags: spec,block
 ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 =VAL "flow in block
 =VAL >Block scalar\n
@@ -33,3 +35,5 @@ tags: spec,block
 =VAL :bar
 -MAP
 -SEQ
+-DOC
+-STR

@@ -1,15 +1,16 @@
 === Spec Example 6.26. Tag Shorthands
 from: http://www.yaml.org/spec/1.2/spec.html#id2785009
-tags: spec,tags
+tags: spec tags
 
 +++ in-yaml
-%TAG !e! tag:example.com,2000:app/
+\%TAG !e! tag:example.com,2000:app/
 ---
 - !local foo
 - !!str bar
 - !e!tag%21 baz
 
 +++ test-event
++STR
 +DOC ---
 +SEQ
 =VAL <!local> :foo
@@ -17,3 +18,4 @@ tags: spec,tags
 =VAL <tag:example.com,2000:app/tag!> :baz
 -SEQ
 -DOC
+-STR

@@ -7,9 +7,13 @@ tags: anchors
 c: &d d
 
 +++ test-event
++STR
++DOC
 +MAP
 =VAL &a :a
 =VAL :b
 =VAL :c
 =VAL &d :d
 -MAP
+-DOC
+-STR

@@ -1,9 +1,16 @@
 === Spec Example 7.7. Single Quoted Characters
 from: http://www.yaml.org/spec/1.2/spec.html#id2788307
-tags: spec,scalar
+tags: spec scalar
 
 +++ in-yaml
 'here''s to "quotes"'
 
++++ in-json
+"here's to \"quotes\""
+
 +++ test-event
++STR
++DOC
 =VAL 'here's to "quotes"
+-DOC
+-STR

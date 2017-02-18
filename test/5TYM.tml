@@ -1,6 +1,6 @@
 === Spec Example 6.21. Local Tag Prefix
 from: http://www.yaml.org/spec/1.2/spec.html#id2783499
-tags: spec,document,tags
+tags: spec document tags
 
 +++ in-yaml
 \%TAG !m! !my-
@@ -12,9 +12,11 @@ tags: spec,document,tags
 !m!light green
 
 +++ test-event
++STR
 +DOC ---
 =VAL <!my-light> :fluorescent
 -DOC ...
 +DOC ---
 =VAL <!my-light> :green
 -DOC
+-STR

@@ -1,6 +1,6 @@
 === Spec Example 7.21. Single Pair Implicit Entries
 from: http://www.yaml.org/spec/1.2/spec.html#id2792785
-tags: spec,flow,mapping
+tags: spec flow mapping
 
 +++ in-yaml
 - [ YAML : separate ]
@@ -8,6 +8,8 @@ tags: spec,flow,mapping
 - [ {JSON: like}:adjacent ]
 
 +++ test-event
++STR
++DOC
 +SEQ
 +SEQ
 +MAP
@@ -31,3 +33,5 @@ tags: spec,flow,mapping
 -MAP
 -SEQ
 -SEQ
+-DOC
+-STR

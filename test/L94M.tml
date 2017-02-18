@@ -1,6 +1,6 @@
 === Tags in Explicit Mapping
 from: NimYAML tests
-tags: tags,mapping
+tags: tags mapping
 
 +++ in-yaml
 ? !!str a
@@ -12,10 +12,20 @@ tags: tags,mapping
 !!str a: !!int 47
 c: !!str d
 
++++ in-json
+{
+  "a": 47,
+  "c": "d"
+}
+
 +++ test-event
++STR
++DOC
 +MAP
 =VAL <tag:yaml.org,2002:str> :a
 =VAL <tag:yaml.org,2002:int> :47
 =VAL :c
 =VAL <tag:yaml.org,2002:str> :d
 -MAP
+-DOC
+-STR
