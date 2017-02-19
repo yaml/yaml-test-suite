@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test M7A3 - Spec Example 9.3. Bare Documents - YAML Framework Matrix</title>
+<title>#M7A3 - Spec Example 9.3. Bare Documents - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #M7A3 - Spec Example 9.3. Bare Documents</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>Bare
@@ -31,6 +31,48 @@ document
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+ Minimal Events:
+<pre>
++STR
++DOC
+=VAL :Bare document
+-DOC
++DOC
+=VAL :%!PS-Adobe-2.0 # Not the first line\n
+-DOC
+-STR</pre>
+Transformed Events:
+<pre>
++STR
++DOC
+=VAL :Bare document
+-DOC
++DOC
+=VAL :
+-DOC
+-STR</pre>
+Original Events:
+ <pre>
++STR
++DOC
+=VAL :Bare document
+-DOC
++DOC
+=VAL :
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="error">&nbsp;</span>error <pre>&quot;Bare document&quot;
@@ -89,11 +131,11 @@ null
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
   msg:      Parse document failed for some reason
-  line:     5
+  line:     7
   column:   1
-  context:  ...\n|\n%!PS-Adobe-2.0 # Not the first line\n
+  context:  %!PS-Adobe-2.0 # Not the first line\n
             ^
-  position: 32 (0 pre-lookahead)
+  position: 38 (0 pre-lookahead)
  </pre>
  </div>
 
@@ -199,7 +241,7 @@ DocumentStartEvent()
 ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Bare document&#39;)
 DocumentEndEvent()
 Traceback (most recent call last):
-  File &quot;/yaml-editor/sbin/pyyaml-event&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
     while loader.check_event():
@@ -221,7 +263,7 @@ DocumentStartEvent()
 ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Bare document&#39;, style=None)
 DocumentEndEvent()
 Traceback (most recent call last):
-  File &quot;/yaml-editor/sbin/ruamel-event&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
     while loader.check_event():
@@ -241,7 +283,7 @@ ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but f
  <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected &lt;document start&gt; at line 1 column 1 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
 	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
-	from /yaml-editor/sbin/ruby-json:6:in `&lt;main&gt;&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
  </div>
 

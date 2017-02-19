@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test E76Z - Aliases in Implicit Block Mapping - YAML Framework Matrix</title>
+<title>#E76Z - Aliases in Implicit Block Mapping - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #E76Z - Aliases in Implicit Block Mapping</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&amp;a a: &amp;b b
@@ -28,6 +28,17 @@
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="na">&nbsp;</span>n/a
@@ -48,8 +59,8 @@
     at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1509:5)
     at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
     at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
-    at Object.&lt;anonymous&gt; (/yaml-editor/sbin/js-yaml-json:6:6)
-    at Object.&lt;anonymous&gt; (/yaml-editor/sbin/js-yaml-json:3:1)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
     at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
     at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
@@ -115,7 +126,7 @@
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;YAML::Syck::BadAlias=HASH(0x223a6c0)&quot;:&quot;b&quot;,&quot;a&quot;:&quot;b&quot;}
+<pre>{&quot;YAML::Syck::BadAlias=HASH(0x1ddd670)&quot;:&quot;b&quot;,&quot;a&quot;:&quot;b&quot;}
 </pre>
 
  </div>
@@ -124,7 +135,7 @@
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;YAML::Syck::BadAlias=HASH(0x1209568)&#39; =&gt; &#39;b&#39;,
+  &#39;YAML::Syck::BadAlias=HASH(0xc12b30)&#39; =&gt; &#39;b&#39;,
   &#39;a&#39; =&gt; &#39;b&#39;
 }
 </pre>

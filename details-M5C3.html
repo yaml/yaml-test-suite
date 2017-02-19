@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test M5C3 - Spec Example 8.21. Block Scalar Nodes - YAML Framework Matrix</title>
+<title>#M5C3 - Spec Example 8.21. Block Scalar Nodes - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #M5C3 - Spec Example 8.21. Block Scalar Nodes</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>literal: |2
@@ -36,6 +36,17 @@ folded:
 }
 </pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
@@ -89,11 +100,8 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 =VAL :literal
 =VAL |value\n
 =VAL :folded
-=VAL :
+=VAL &lt;!foo&gt; :   !foo
 -MAP
--DOC
-+DOC
-=VAL :   !foo
 -DOC
 +DOC
 =VAL :  &gt;1
@@ -166,7 +174,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff
-<pre>{&quot;folded&quot;:&quot;foo=SCALAR(0x26878b8)&quot;,&quot;literal&quot;:&quot;value\n&quot;}
+<pre>{&quot;folded&quot;:&quot;foo=SCALAR(0x20fbc40)&quot;,&quot;literal&quot;:&quot;value\n&quot;}
 </pre>
  </div>
 

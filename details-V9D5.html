@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test V9D5 - Spec Example 8.19. Compact Block Mappings - YAML Framework Matrix</title>
+<title>#V9D5 - Spec Example 8.19. Compact Block Mappings - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #V9D5 - Spec Example 8.19. Compact Block Mappings</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- sun: yellow
@@ -39,6 +39,17 @@
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="na">&nbsp;</span>n/a
@@ -180,7 +191,7 @@
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>[{&quot;sun&quot;:&quot;yellow&quot;},{&quot;HASH(0x2590600)&quot;:{&quot;moon&quot;:&quot;white&quot;}}]
+<pre>[{&quot;sun&quot;:&quot;yellow&quot;},{&quot;HASH(0xd715b0)&quot;:{&quot;moon&quot;:&quot;white&quot;}}]
 </pre>
 
  </div>
@@ -193,7 +204,7 @@
     &#39;sun&#39; =&gt; &#39;yellow&#39;
   },
   {
-    &#39;HASH(0x2587c70)&#39; =&gt; {
+    &#39;HASH(0x1279520)&#39; =&gt; {
                            &#39;moon&#39; =&gt; &#39;white&#39;
                          }
   }

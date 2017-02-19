@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test 565N - Construct Binary - YAML Framework Matrix</title>
+<title>#565N - Construct Binary - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #565N - Construct Binary</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>canonical: !!binary &quot;\
@@ -40,6 +40,17 @@ description:
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="na">&nbsp;</span>n/a
@@ -480,11 +491,8 @@ description:
 =VAL :generic
 =VAL &lt;tag:yaml.org,2002:binary&gt; |R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n
 =VAL :description
-=VAL :
--MAP
--DOC
-+DOC
 =VAL : The binary value above is a tiny arrow encoded as a gif image.
+-MAP
 -DOC
 -STR</pre>
 
@@ -598,9 +606,9 @@ description:
 	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
 	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
 	from /usr/lib/ruby/vendor_ruby/json/common.rb:394:in `dump&#39;
-	from /yaml-editor/sbin/ruby-json:7:in `block in &lt;main&gt;&#39;
-	from /yaml-editor/sbin/ruby-json:6:in `each&#39;
-	from /yaml-editor/sbin/ruby-json:6:in `&lt;main&gt;&#39;
+	from /bin/ruby-json:7:in `block in &lt;main&gt;&#39;
+	from /bin/ruby-json:6:in `each&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
  </div>
 

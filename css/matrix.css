@@ -1,10 +1,25 @@
 div.framework h3 {
     margin: 3px;
 }
+table.matrix td.hide, table.matrix th.hide {
+    display: none;
+}
 table.matrix {
     border: 1px solid #bbb;
     border-collapse: collapse;
     box-shadow: 2px 2px 4px 1px grey;
+    margin-left: 3px;
+    margin-right: 3px;
+    max-height: 98%;
+}
+table.matrix thead {
+    display: block;
+}
+table.matrix tbody {
+    display: block;
+    z-index: -1;
+    max-height: 500px;
+    overflow-y: scroll;
 }
 table.matrix tr th, td {
     border: 1px solid #bbb;
@@ -18,10 +33,29 @@ table.matrix tr th {
 table.matrix tbody tr:hover > td.testname {
     background-color: #ddd;
 }
-table.matrix tbody tr > td.testname {
+table.matrix td.testname, table.matrix th.testname {
+    min-width: 25em;
+    max-width: 25em;
+}
+table.matrix td.testid, table.matrix th.testid {
+    min-width: 2.5em;
+}
+table.matrix td.testid a {
+    color: black;
+    font-size: 125%;
+    font-family: monospace;
 }
 table.matrix tbody tr:hover > td.result {
     color: #444;
+}
+table.matrix thead td.result {
+    min-width: 3em;
+    max-width: 3em;
+}
+table.matrix tbody td.result {
+    min-width: 3em;
+    max-width: 3em;
+    overflow-x: hidden;
 }
 table.matrix td.result a {
     display: block;
@@ -65,7 +99,6 @@ table.matrix tr td:target {
 table.matrix tr.headline td {
     background-color: #ddd;
     text-align: center;
-    border-top: 2px solid gray;
 }
 
 span.ok, span.json_ok, span.json_diff, span.diff, span.na, span.error {
@@ -108,4 +141,30 @@ div.framework {
 div.framework:target, div.framework:hover {
     border: 4px solid #ff9922;
     margin: 2px;
+}
+
+div.selector {
+    float: left;
+    display: block;
+}
+
+#github {
+    float: right;
+    margin:  5px;
+    padding: 5px 10px 5px 10px;
+    background-color: #c0ffee; /* for ingy */
+    box-shadow: 2px 2px 4px 1px grey;
+    border-radius: 5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+#github span.link span.info {
+    display: none;
+    position: absolute;
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid #333;
+    padding: 3px;
+}
+#github span.link:hover span.info {
+    display: inline;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test 5WE3 - Spec Example 8.17. Explicit Block Mapping Entries - YAML Framework Matrix</title>
+<title>#5WE3 - Spec Example 8.17. Explicit Block Mapping Entries - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #5WE3 - Spec Example 8.17. Explicit Block Mapping Entries</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>? explicit key # Empty value
@@ -40,6 +40,17 @@
 }
 </pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="json_diff">&nbsp;</span>json_diff
@@ -77,29 +88,8 @@
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- <pre>
-Use of uninitialized value in string eq at /lib/perl5/YAML/Pegex/Grammar.pm line 57, &lt;STDIN&gt; line 1.
-+STR
-+DOC
-=VAL :? explicit key
--DOC
-+DOC
-=VAL :? |
--DOC
-+DOC
-+MAP
-=VAL :block key
-=VAL :- one
--MAP
--DOC
-+DOC
-+SEQ
-=VAL :two
--SEQ
--DOC
--STR</pre>
-
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">

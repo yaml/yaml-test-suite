@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test 2SXE - Anchors With Colon in Name - YAML Framework Matrix</title>
+<title>#2SXE - Anchors With Colon in Name - YAML Framework Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="index.html">yaml-test-suite Framework Matrix</a></h2>
+<h2><a href="index.html">YAML Framework Matrix</a></h2>
 <h3>Test #2SXE - Anchors With Colon in Name</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&amp;a: key: &amp;a value
@@ -29,6 +29,17 @@ foo:
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3><pre></pre></div>
 <hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+</pre>
+ </div>
+
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; mapping values are not allowed here
@@ -63,8 +74,8 @@ foo:
     at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1509:5)
     at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
     at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
-    at Object.&lt;anonymous&gt; (/yaml-editor/sbin/js-yaml-json:6:6)
-    at Object.&lt;anonymous&gt; (/yaml-editor/sbin/js-yaml-json:3:1)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
     at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
     at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
@@ -184,7 +195,7 @@ MappingStartEvent(anchor=None, tag=None, implicit=True)
 ScalarEvent(anchor=u&#39;a&#39;, tag=None, implicit=(True, False), value=u&#39;&#39;)
 ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;key&#39;)
 Traceback (most recent call last):
-  File &quot;/yaml-editor/sbin/pyyaml-event&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
     while loader.check_event():
@@ -215,7 +226,7 @@ yaml.scanner.ScannerError: mapping values are not allowed here
  <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): mapping values are not allowed in this context at line 1 column 8 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
 	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
-	from /yaml-editor/sbin/ruby-json:6:in `&lt;main&gt;&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
  </div>
 
