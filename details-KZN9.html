@@ -53,7 +53,24 @@
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>timeout: failed to run command ‘java-event’: No such file or directory
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
+ in &#39;reader&#39;, line 2, column 5:
+    - [ : empty key entry ]
+        ^
+expected the node content, but found Value
+ in &#39;reader&#39;, line 2, column 5:
+    - [ : empty key entry ]
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:481)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:363)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:116)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:647)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:616)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
 </pre>
  </div>
 
