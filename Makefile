@@ -1,3 +1,5 @@
+MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
+
 default: help
 
 help:
@@ -36,14 +38,40 @@ data-push:
 
 #------------------------------------------------------------------------------
 matrix:
-	git clone $$(git config remote.origin.url) -b matrix $@
+	git clone $(MATRIX_REPO) $@
 
-matrix-build matrix-status matrix-push: matrix
+matrix-build: matrix
 	make -C $< $(@:matrix-%=%)
+
+matrix-push: matrix-copy
+	( \
+	    cd gh-pages && \
+	    git add -A . && \
+	    git commit -m 'Regenerated matrix files' && \
+	    git push \
+	)
+
+matrix-status:
+	( \
+	    cd gh-pages && \
+	    git status \
+	)
+
+matrix-copy: gh-pages
+	rm -fr gh-pages/css \
+	       gh-pages/js \
+	       gh-pages/*.html
+	cp -r matrix/matrix/html/css \
+	      matrix/matrix/html/js \
+	      matrix/matrix/html/*.html \
+	      $<
+
+gh-pages:
+	git clone $$(git config remote.origin.url) -b $@ $@
 
 #------------------------------------------------------------------------------
 clean:
-	rm -fr data matrix
+	rm -fr data matrix gh-pages
 
 .PHONY: test
 test:
