@@ -34,6 +34,7 @@ document
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
+
  Minimal Events:
 <pre>
 +STR
@@ -44,7 +45,7 @@ document
 =VAL :%!PS-Adobe-2.0 # Not the first line\n
 -DOC
 -STR</pre>
-Transformed Events:
+  Transformed Events:
 <pre>
 +STR
 +DOC
@@ -54,8 +55,8 @@ Transformed Events:
 =VAL :
 -DOC
 -STR</pre>
-Original Events:
- <pre>
+ Got Events:
+<pre>
 +STR
 +DOC
 =VAL :Bare document
@@ -90,7 +91,7 @@ Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, 
     |
     ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:224)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:225)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
 	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
@@ -124,7 +125,9 @@ null
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 =VAL :Bare document
@@ -169,7 +172,9 @@ null
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 =VAL :Bare
@@ -245,10 +250,10 @@ was found at document: 2, line: 6, column: 1
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Bare document&#39;)
-DocumentEndEvent()
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
+=VAL :Bare document
+-DOC
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -267,10 +272,10 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Bare document&#39;, style=None)
-DocumentEndEvent()
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
+=VAL :Bare document
+-DOC
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):

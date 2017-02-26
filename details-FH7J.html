@@ -70,11 +70,11 @@
              ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
     at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:932:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1326:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1489:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
+    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:934:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1330:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -107,7 +107,9 @@
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 +SEQ
@@ -135,8 +137,7 @@
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Argument &quot;&quot; isn&#39;t numeric in addition (+) at /lib/perl5/YAML/Loader.pm line 460, &lt;&gt; line 1.
-[null,{&quot;0&quot;:&quot;a&quot;,&quot;b&quot;:null},&quot;: !!null&quot;]
+<pre>[null,{&quot;&quot;:&quot;a&quot;,&quot;b&quot;:null},&quot;: !!null&quot;]
 </pre>
 
  </div>
@@ -144,11 +145,10 @@
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Argument &quot;&quot; isn&#39;t numeric in addition (+) at /lib/perl5/YAML/Loader.pm line 460, &lt;&gt; line 1.
-[
+<pre>[
   undef,
   {
-    &#39;0&#39; =&gt; &#39;a&#39;,
+    &#39;&#39; =&gt; &#39;a&#39;,
     &#39;b&#39; =&gt; undef
   },
   &#39;: !!null&#39;
@@ -160,7 +160,9 @@
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 +SEQ
@@ -225,128 +227,12 @@
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str&gt; :
-+MAP
-=VAL &lt;tag:yaml.org,2002:null&gt; :
-=VAL :a
-=VAL :b
-=VAL &lt;tag:yaml.org,2002:str&gt; :
--MAP
-+MAP
-=VAL &lt;tag:yaml.org,2002:str&gt; :
-=VAL &lt;tag:yaml.org,2002:null&gt; :
--MAP
--SEQ
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str&gt;
-+MAP
-=VAL &lt;tag:yaml.org,2002:null&gt;
-=VAL :a
-=VAL :b
-=VAL &lt;tag:yaml.org,2002:str&gt;
--MAP
-+MAP
-=VAL &lt;tag:yaml.org,2002:str&gt;
-=VAL &lt;tag:yaml.org,2002:null&gt;
--MAP
--SEQ
--DOC
--STR</pre>
-Original Events:
- <pre>
-StreamStartEvent()
-DocumentStartEvent()
-SequenceStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;&#39;)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:null&#39;, implicit=(False, False), value=u&#39;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;a&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;b&#39;)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;&#39;)
-MappingEndEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;&#39;)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:null&#39;, implicit=(False, False), value=u&#39;&#39;)
-MappingEndEvent()
-SequenceEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
-
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str&gt; :
-+MAP
-=VAL &lt;tag:yaml.org,2002:null&gt; :
-=VAL :a
-=VAL :b
-=VAL &lt;tag:yaml.org,2002:str&gt; :
--MAP
-+MAP
-=VAL &lt;tag:yaml.org,2002:str&gt; :
-=VAL &lt;tag:yaml.org,2002:null&gt; :
--MAP
--SEQ
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str&gt;
-+MAP
-=VAL &lt;tag:yaml.org,2002:null&gt;
-=VAL :a
-=VAL :b
-=VAL &lt;tag:yaml.org,2002:str&gt;
--MAP
-+MAP
-=VAL &lt;tag:yaml.org,2002:str&gt;
-=VAL &lt;tag:yaml.org,2002:null&gt;
--MAP
--SEQ
--DOC
--STR</pre>
-Original Events:
- <pre>
-StreamStartEvent()
-DocumentStartEvent()
-SequenceStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;&#39;, style=None)
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:null&#39;, implicit=(False, False), value=u&#39;&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;a&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;b&#39;, style=None)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;&#39;, style=None)
-MappingEndEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:str&#39;, implicit=(False, False), value=u&#39;&#39;, style=None)
-ScalarEvent(anchor=None, tag=u&#39;tag:yaml.org,2002:null&#39;, implicit=(False, False), value=u&#39;&#39;, style=None)
-MappingEndEvent()
-SequenceEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
-
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">

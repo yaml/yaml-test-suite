@@ -83,7 +83,7 @@ found unexpected &#39;:&#39;
         ^
 Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanPlain(ScannerImpl.java:2016)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanPlain(ScannerImpl.java:2017)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchPlain(ScannerImpl.java:1046)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:401)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
@@ -162,7 +162,9 @@ Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 =VAL :{
@@ -239,11 +241,15 @@ while scanning a plain scalar at line: 3, column: 1
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;unquoted&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;separate&#39;)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :unquoted
+=VAL :separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value
+=VAL :
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -251,39 +257,31 @@ Traceback (most recent call last):
     while loader.check_event():
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 551, in parse_flow_mapping_key
-    if self.check_token(KeyToken):
-  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
-    self.fetch_more_tokens()
-  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 252, in fetch_more_tokens
-    return self.fetch_plain()
-  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 676, in fetch_plain
-    self.tokens.append(self.scan_plain())
-  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 1305, in scan_plain
-    &quot;Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.&quot;)
-yaml.scanner.ScannerError: while scanning a plain scalar
-  in &quot;&lt;string&gt;&quot;, line 3, column 1:
-    http://foo.com,
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
+    return self.parse_flow_node()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
+    return self.parse_node()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
+    token.start_mark)
+yaml.parser.ParserError: while parsing a flow node
+expected the node content, but found &#39;:&#39;
+  in &quot;&lt;string&gt;&quot;, line 5, column 1:
+    : omitted key,
     ^
-found unexpected &#39;:&#39;
-  in &quot;&lt;string&gt;&quot;, line 3, column 5:
-    http://foo.com,
-        ^
-Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
 </pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;unquoted&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;separate&#39;, style=u&#39;&quot;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;http://foo.com&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;omitted value:&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;&#39;, style=None)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :unquoted
+=VAL :separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value:
+=VAL :
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):

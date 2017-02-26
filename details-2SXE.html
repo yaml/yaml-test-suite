@@ -59,7 +59,7 @@ foo:
     &amp;a: key: &amp;a value
            ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:871)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:872)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:360)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:557)
@@ -83,9 +83,9 @@ foo:
            ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
     at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1509:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -130,8 +130,7 @@ foo:
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Argument &quot;&quot; isn&#39;t numeric in addition (+) at /lib/perl5/YAML/Loader.pm line 460, &lt;&gt; line 1.
-{&quot;0&quot;:&quot;key: &amp;a value&quot;,&quot;foo&quot;:{&quot;0&quot;:null}}
+<pre>{&quot;&quot;:&quot;key: &amp;a value&quot;,&quot;foo&quot;:{&quot;&quot;:null}}
 </pre>
 
  </div>
@@ -139,11 +138,10 @@ foo:
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Argument &quot;&quot; isn&#39;t numeric in addition (+) at /lib/perl5/YAML/Loader.pm line 460, &lt;&gt; line 1.
-{
-  &#39;0&#39; =&gt; &#39;key: &amp;a value&#39;,
+<pre>{
+  &#39;&#39; =&gt; &#39;key: &amp;a value&#39;,
   &#39;foo&#39; =&gt; {
-             &#39;0&#39; =&gt; undef
+             &#39;&#39; =&gt; undef
            }
 }
 </pre>
@@ -201,11 +199,11 @@ foo:
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=u&#39;a&#39;, tag=None, implicit=(True, False), value=u&#39;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;key&#39;)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL &amp;a :
+=VAL :key
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):

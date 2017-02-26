@@ -67,7 +67,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
     block:	|
           ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
@@ -141,9 +141,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre>{&quot;block&quot;:&quot;void main() {\nprintf(\&quot;Hello, world!\\n\&quot;);\n}\n&quot;,&quot;quoted&quot;:&quot;Quoted \t&quot;}
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
@@ -151,7 +149,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
  <span class="na">&nbsp;</span>n/a
 <pre>{
   &#39;block&#39; =&gt; &#39;void main() {
-printf(&quot;Hello, world!\\n&quot;);
+	printf(&quot;Hello, world!\\n&quot;);
 }
 &#39;,
   &#39;quoted&#39; =&gt; &#39;Quoted 	&#39;
@@ -197,12 +195,12 @@ printf(&quot;Hello, world!\\n&quot;);
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;quoted&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;Quoted \t&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;block&#39;)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :quoted
+=VAL :Quoted \t
+=VAL :block
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -226,12 +224,12 @@ found character &#39;\t&#39; that cannot start any token
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;quoted&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;Quoted \t&#39;, style=u&#39;&quot;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;block&#39;, style=None)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :quoted
+=VAL :Quoted \t
+=VAL :block
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):

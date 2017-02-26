@@ -121,7 +121,7 @@ comments:
     --- !&lt;tag:clarkevans.com,2002:invoice&gt;
         ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:350)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
@@ -144,10 +144,10 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
     ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
     at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1398:7)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1489:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1402:7)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -180,7 +180,9 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC ---
 +MAP &lt;!&lt;tag:clarkevans.com,2002:invoice&gt;&gt;
@@ -297,7 +299,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x218bb20)&quot;
+<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x22efc80)&quot;
 </pre>
 
  </div>

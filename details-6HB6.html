@@ -84,7 +84,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
       	Still by two   # content nor
       ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:639)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
@@ -149,7 +149,9 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 +MAP
@@ -243,17 +245,17 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Not indented&#39;)
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;By one space&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;By four\n  spaces\n&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Flow style&#39;)
-SequenceStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;By two&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Also by two&#39;)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :Not indented
++MAP
+=VAL :By one space
+=VAL :By four\n  spaces\n
+=VAL :Flow style
++SEQ
+=VAL :By two
+=VAL :Also by two
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -277,17 +279,17 @@ found character &#39;\t&#39; that cannot start any token
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Not indented&#39;, style=None)
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;By one space&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;By four\n  spaces\n&#39;, style=u&#39;|&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Flow style&#39;, style=None)
-SequenceStartEvent(anchor=None, tag=None, implicit=True, flow_style=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;By two&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;Also by two&#39;, style=None)
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :Not indented
++MAP
+=VAL :By one space
+=VAL :By four\n  spaces\n
+=VAL :Flow style
++SEQ
+=VAL :By two
+=VAL :Also by two
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):

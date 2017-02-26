@@ -43,7 +43,7 @@
       !&lt;!bar&gt; baz
       ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:350)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:376)
 	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:185)
@@ -71,9 +71,9 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
                                  ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
     at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1509:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1545:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1553:19)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -106,7 +106,9 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 +MAP
@@ -139,7 +141,9 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 =VAL :!&lt;tag:yaml.org,2002:str&gt; foo :
@@ -152,7 +156,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x177a5c8)&quot;
+<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x9935c8)&quot;
 </pre>
 
  </div>

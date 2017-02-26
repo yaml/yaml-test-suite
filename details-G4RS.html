@@ -100,7 +100,9 @@ tie-fighter: &#39;|\-*-/|&#39;
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 +STR
 +DOC
 +MAP
@@ -150,7 +152,9 @@ tie-fighter: &#39;|\-*-/|&#39;
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="diff">&nbsp;</span>diff<br>
- <pre>
+
+  Got Events:
+<pre>
 Wide character in say at /bin/perl5-pp-event line 10, &lt;&gt; line 1.
 +STR
 +DOC
@@ -272,134 +276,28 @@ Wide character in say at /bin/perl5-pp-event line 10, &lt;&gt; line 1.
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :unicode
-=VAL :Sosa did fine.☺
-=VAL :control
-=VAL :\b1998\t1999\t2000\n
-=VAL :hex esc
-=VAL :\r\n is \r\n
-=VAL :single
-=VAL :&quot;Howdy!&quot; he cried.
-=VAL :quoted
-=VAL : # Not a &#39;comment&#39;.
-=VAL :tie-fighter
-=VAL :|\\-*-/|
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :unicode
-=VAL :Sosa did fine.\u263a
-=VAL :control
-=VAL :\x081998\t1999\t2000\n
-=VAL :hex esc
-=VAL :\r\n is \r\n
-=VAL :single
-=VAL :&quot;Howdy!&quot; he cried.
-=VAL :quoted
-=VAL : # Not a &#39;comment&#39;.
-=VAL :tie-fighter
-=VAL :|\\-*-/|
--MAP
--DOC
--STR</pre>
-Original Events:
- <pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;unicode&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;Sosa did fine.\u263a&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;control&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;\x081998\t1999\t2000\n&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;hex esc&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;\r\n is \r\n&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;single&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;&quot;Howdy!&quot; he cried.&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;quoted&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&quot; # Not a &#39;comment&#39;.&quot;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;tie-fighter&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;|\\-*-/|&#39;)
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
-
+=VALTraceback (most recent call last):
+  File &quot;/bin/pyyaml-event&quot;, line 47, in &lt;module&gt;
+    sys.stdout.write(&#39; :&#39; + value)
+UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\u263a&#39; in position 16: ordinal not in range(128)
+</pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
- Minimal Events:
-<pre>
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :unicode
-=VAL :Sosa did fine.☺
-=VAL :control
-=VAL :\b1998\t1999\t2000\n
-=VAL :hex esc
-=VAL :\r\n is \r\n
-=VAL :single
-=VAL :&quot;Howdy!&quot; he cried.
-=VAL :quoted
-=VAL : # Not a &#39;comment&#39;.
-=VAL :tie-fighter
-=VAL :|\\-*-/|
--MAP
--DOC
--STR</pre>
-Transformed Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :unicode
-=VAL :Sosa did fine.\u263a
-=VAL :control
-=VAL :\x081998\t1999\t2000\n
-=VAL :hex esc
-=VAL :\r\n is \r\n
-=VAL :single
-=VAL :&quot;Howdy!&quot; he cried.
-=VAL :quoted
-=VAL : # Not a &#39;comment&#39;.
-=VAL :tie-fighter
-=VAL :|\\-*-/|
--MAP
--DOC
--STR</pre>
-Original Events:
- <pre>
-StreamStartEvent()
-DocumentStartEvent()
-MappingStartEvent(anchor=None, tag=None, implicit=True, flow_style=False)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;unicode&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;Sosa did fine.\u263a&#39;, style=u&#39;&quot;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;control&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;\x081998\t1999\t2000\n&#39;, style=u&#39;&quot;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;hex esc&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;\r\n is \r\n&#39;, style=u&#39;&quot;&#39;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;single&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;&quot;Howdy!&quot; he cried.&#39;, style=u&quot;&#39;&quot;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;quoted&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&quot; # Not a &#39;comment&#39;.&quot;, style=u&quot;&#39;&quot;)
-ScalarEvent(anchor=None, tag=None, implicit=(True, False), value=u&#39;tie-fighter&#39;, style=None)
-ScalarEvent(anchor=None, tag=None, implicit=(False, True), value=u&#39;|\\-*-/|&#39;, style=u&quot;&#39;&quot;)
-MappingEndEvent()
-DocumentEndEvent()
-StreamEndEvent()</pre>
-
+=VALTraceback (most recent call last):
+  File &quot;/bin/ruamel-event&quot;, line 46, in &lt;module&gt;
+    sys.stdout.write(&#39; :&#39; + value)
+UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\u263a&#39; in position 16: ordinal not in range(128)
+</pre>
  </div>
 
  <div class="framework" id="ruby-json">
