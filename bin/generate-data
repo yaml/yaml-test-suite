@@ -5,6 +5,11 @@ use FindBin;
 use lib "$FindBin::Bin";
 use generate;
 
+sub main::initial {
+  File::Path::rmtree "data/name";
+  File::Path::rmtree "data/tags";
+}
+
 sub main::process {
   my ($id, $label, $file, $output, $tags) = @_;
 
@@ -21,6 +26,10 @@ sub main::process {
   for my $tag (@$tags) {
     generate->_link("data/tags/$tag/$id", "../../$id");
   }
+}
+
+sub main::final {
+    system('cd data; git add -A -f .');
 }
 
 generate->all;

@@ -5,11 +5,15 @@ use File::Path qw'mkpath rmtree';
 use XXX;
 
 sub all {
+  main::initial() if defined &main::initial;
+
   my @tml = glob 'test/*.tml';
   for my $tml (@tml) {
     process($tml);
   }
   print "Done\n";
+
+  main::final() if defined &main::final;
 }
 
 sub process {
@@ -17,6 +21,9 @@ sub process {
   my $self = bless { tml => $tml };
   $self->{cog_id} = $tml;
   $self->{cog_id} =~ s/.*\/(.*)\.tml$/$1/;
+
+  do {local $|=1; print "$self->{cog_id}\r"};
+
   my $text = $self->{text} = $self->_read($tml);
   $self->parse_meta($text);
   $$text =~ s/^#.*\n//gm;
@@ -86,8 +93,6 @@ sub process_file {
 
   my $label = $self->{meta}{label};
   my $tags = [split /\s+/, $self->{meta}{tags}];
-
-  do {local $|=1; print "$id\r"};
 
   main::process(
     $id,
