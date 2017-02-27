@@ -1,6 +1,6 @@
 === Spec Example 6.22. Global Tag Prefix
 from: http://www.yaml.org/spec/1.2/spec.html#id2783726
-tags: spec document tags
+tags: spec document tag
 
 +++ in-yaml
 \%TAG !e! tag:example.com,2000:app/

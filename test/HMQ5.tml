@@ -1,6 +1,6 @@
 === Spec Example 6.23. Node Properties
 from: http://www.yaml.org/spec/1.2/spec.html#id2783940
-tags: spec tags anchors
+tags: spec tag alias
 
 +++ in-yaml
 !!str &a1 "foo":

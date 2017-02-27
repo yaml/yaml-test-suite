@@ -1,6 +1,6 @@
 === Anchors on Empty Scalars
 from: NimYAML tests
-tags: scalar anchors
+tags: scalar alias
 
 +++ in-yaml
 - &a

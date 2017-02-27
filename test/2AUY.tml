@@ -1,6 +1,6 @@
 === Tags in Block Sequence
 from: NimYAML tests
-tags: tags sequence
+tags: tag sequence
 
 +++ in-yaml
  - !!str a

@@ -1,6 +1,6 @@
 === Tags for Root Objects
 from: NimYAML tests
-tags: tags
+tags: tag
 
 +++ in-yaml
 --- !!map

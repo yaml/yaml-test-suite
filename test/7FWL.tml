@@ -1,6 +1,6 @@
 === Spec Example 6.24. Verbatim Tags
 from: http://www.yaml.org/spec/1.2/spec.html#id2784370
-tags: spec tags
+tags: spec tag
 
 +++ in-yaml
 !<tag:yaml.org,2002:str> foo :

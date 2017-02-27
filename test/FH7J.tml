@@ -1,6 +1,6 @@
 === Tags on Empty Scalars
 from: NimYAML tests
-tags: tags scalar
+tags: tag scalar
 
 +++ in-yaml
 - !!str

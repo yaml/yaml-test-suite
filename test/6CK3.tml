@@ -1,6 +1,6 @@
 === Spec Example 6.26. Tag Shorthands
 from: http://www.yaml.org/spec/1.2/spec.html#id2785009
-tags: spec tags
+tags: spec tag
 
 +++ in-yaml
 \%TAG !e! tag:example.com,2000:app/

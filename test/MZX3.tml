@@ -1,6 +1,6 @@
 === Non-Specific Tags on Scalars
 from: NimYAML tests
-tags: scalar tags
+tags: scalar tag
 
 +++ in-yaml
 - plain

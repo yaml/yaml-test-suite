@@ -1,6 +1,6 @@
 === Explicit Non-Specific Tag
 from: NimYAML tests
-tags: tags
+tags: tag
 
 +++ in-yaml
 ! a

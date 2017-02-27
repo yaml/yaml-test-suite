@@ -1,6 +1,6 @@
 === Tags for Flow Objects
 from: NimYAML tests
-tags: tags flow
+tags: tag flow
 
 +++ in-yaml
 !!map {

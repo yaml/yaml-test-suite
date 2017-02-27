@@ -1,6 +1,6 @@
 === Anchors and Tags
 from: NimYAML tests
-tags: anchors tags
+tags: alias tag
 
 +++ in-yaml
  - &a !!str a

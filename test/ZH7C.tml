@@ -1,6 +1,6 @@
 === Anchors in Mapping
 from: NimYAML tests
-tags: anchors
+tags: alias
 
 +++ in-yaml
 &a a: b
