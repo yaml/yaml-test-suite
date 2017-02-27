@@ -9,6 +9,7 @@ sub all {
   for my $tml (@tml) {
     process($tml);
   }
+  print "Done\n";
 }
 
 sub process {
@@ -85,6 +86,8 @@ sub process_file {
 
   my $label = $self->{meta}{label};
   my $tags = [split /\s+/, $self->{meta}{tags}];
+
+  do {local $|=1; print "$id\r"};
 
   main::process(
     $id,
