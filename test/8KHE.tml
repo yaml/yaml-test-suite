@@ -17,7 +17,7 @@ explicit key:
   - two
 
 +++ in-json
-{ "explicit key": "", "block key": ["one", "two"]}
+{ "explicit key": "", "block key\n": ["one", "two"]}
 
 +++ test-event
 +STR
