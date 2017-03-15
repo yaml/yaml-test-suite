@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#F2C7 - Anchors and Tags - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #F2C7 - Anchors and Tags</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre> - &amp;a !!str a
+ - !!int 2
+ - !!int &amp;c 4
+ - &amp;d d
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++SEQ
+=VAL &amp;a &lt;tag:yaml.org,2002:str&gt; :a
+=VAL &lt;tag:yaml.org,2002:int&gt; :2
+=VAL &amp;c &lt;tag:yaml.org,2002:int&gt; :4
+=VAL &amp;d :d
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &quot;a&quot;,
+  2,
+  4,
+  &quot;d&quot;
+]
+</pre>
+
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &quot;a&quot;,
+  2,
+  4,
+  &quot;d&quot;
+]
+</pre>
+
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[&quot;a&quot;,2,4,&quot;d&quot;]
+</pre>
+
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[&quot;a&quot;,2,4,&quot;d&quot;]
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &#39;a&#39;,
+  2,
+  4,
+  &#39;d&#39;
+]
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[&quot;a&quot;,2,4,&quot;d&quot;]
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &#39;a&#39;,
+  2,
+  4,
+  &#39;d&#39;
+]
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39; - &amp;a !!str a&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39; - &amp;a !!str a&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>[&quot;a&quot;,2,4,&quot;d&quot;]
+</pre>
+
+ </div>
+
+ </body>
+</html>
+

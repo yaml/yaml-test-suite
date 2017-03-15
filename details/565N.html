@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#565N - Construct Binary - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #565N - Construct Binary</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>canonical: !!binary &quot;\
+ R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\
+ OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\
+ +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\
+ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;
+generic: !!binary |
+ R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
+ OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
+ +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
+ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+description:
+ The binary value above is a tiny arrow encoded as a gif image.
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
+=VAL :canonical
+=VAL &lt;tag:yaml.org,2002:binary&gt; &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+=VAL :generic
+=VAL &lt;tag:yaml.org,2002:binary&gt; |R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n
+=VAL :description
+=VAL :The binary value above is a tiny arrow encoded as a gif image.
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;canonical&quot;: [
+    71,
+    73,
+    70,
+    56,
+    57,
+    97,
+    12,
+    0,
+    12,
+    0,
+    -124,
+    0,
+    0,
+    -1,
+    -1,
+    -9,
+    -11,
+    -11,
+    -18,
+    -23,
+    -23,
+    -27,
+    102,
+    102,
+    102,
+    0,
+    0,
+    0,
+    -25,
+    -25,
+    -25,
+    94,
+    94,
+    94,
+    -13,
+    -13,
+    -19,
+    -114,
+    -114,
+    -114,
+    -32,
+    -32,
+    -32,
+    -97,
+    -97,
+    -97,
+    -109,
+    -109,
+    -109,
+    -89,
+    -89,
+    -89,
+    -98,
+    -98,
+    -98,
+    105,
+    105,
+    105,
+    99,
+    99,
+    99,
+    -93,
+    -93,
+    -93,
+    -124,
+    -124,
+    -124,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    -1,
+    -2,
+    -7,
+    33,
+    -2,
+    14,
+    77,
+    97,
+    100,
+    101,
+    32,
+    119,
+    105,
+    116,
+    104,
+    32,
+    71,
+    73,
+    77,
+    80,
+    0,
+    44,
+    0,
+    0,
+    0,
+    0,
+    12,
+    0,
+    12,
+    0,
+    0,
+    5,
+    44,
+    32,
+    32,
+    -114,
+    -127,
+    48,
+    -98,
+    -29,
+    64,
+    20,
+    -24,
+    105,
+    16,
+    -60,
+    -47,
+    -118,
+    8,
+    28,
+    -49,
+    -128,
+    77,
+    36,
+    122,
+    -17,
+    -1,
+    48,
+    -123,
+    112,
+    -72,
+    -80,
+    49,
+    102,
+    13,
+    27,
+    -50,
+    1,
+    -61,
+    1,
+    30,
+    16,
+    39,
+    32,
+    -126,
+    10,
+    1,
+    0,
+    59
+  ],
+  &quot;generic&quot;: [
+    71,
+    73,
+    70,
+    56,
+    57,
+    97,
+    12,
+    0,
+    12,
+    0,
+    -124,
+    0,
+----- 8&lt; -----
+</pre>
+
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>TypeError: this is not a typed array.
+    at Function.from (native)
+    at Type.constructYamlBinary [as construct] (/node_modules/js-yaml/lib/js-yaml/type/binary.js:80:41)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1396:29)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1061:11)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
+    at Module._compile (module.js:410:26)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3
+
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;canonical&quot;:&quot;GIF89a\f\u0000\f\u0000„\u0000\u0000ÿÿ÷õõîééåfff\u0000\u0000\u0000ççç^^^óóíàààŸŸŸ“““§§§iiiccc£££„„„ÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşù!ş\u000eMade with GIMP\u0000,\u0000\u0000\u0000\u0000\f\u0000\f\u0000\u0000\u0005,  0ã@\u0014èi\u0010ÄÑŠ\b\u001cÏ€M$zïÿ0…p¸°1f\r\u001bÎ\u0001Ã\u0001\u001e\u0010&#39; ‚\n\u0001\u0000;&quot;,&quot;generic&quot;:&quot;GIF89a\f\u0000\f\u0000„\u0000\u0000ÿÿ÷õõîééåfff\u0000\u0000\u0000ççç^^^óóíàààŸŸŸ“““§§§iiiccc£££„„„ÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşù!ş\u000eMade with GIMP\u0000,\u0000\u0000\u0000\u0000\f\u0000\f\u0000\u0000\u0005,  0ã@\u0014èi\u0010ÄÑŠ\b\u001cÏ€M$zïÿ0…p¸°1f\r\u001bÎ\u0001Ã\u0001\u001e\u0010&#39; ‚\n\u0001\u0000;&quot;,&quot;description&quot;:&quot;The binary value above is a tiny arrow encoded as a gif image.&quot;}
+</pre>
+
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :canonical
+=VAL &lt;tag:yaml.org,2002:binary&gt; &quot;\ R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\ OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\ +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+=VAL :generic
+=VAL &lt;tag:yaml.org,2002:binary&gt; |R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n
+=VAL :description
+=VAL : The binary value above is a tiny arrow encoded as a gif image.
+-MAP
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :canonical
+=VAL &lt;tag:yaml.org,2002:binary&gt; &quot;\ R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\ OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\ +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+=VAL :generic
+=VAL &lt;tag:yaml.org,2002:binary&gt; |R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n
+=VAL :description
+=VAL :The binary value above is a tiny arrow encoded as a gif image.
+-MAP
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;canonical&quot;:&quot;GIF89a\f\u0000\f\u0000Â„\u0000\u0000Ã¿Ã¿Ã·ÃµÃµÃ®Ã©Ã©Ã¥fff\u0000\u0000\u0000Ã§Ã§Ã§^^^Ã³Ã³Ã­ÂÂÂÃ Ã Ã ÂŸÂŸÂŸÂ“Â“Â“Â§Â§Â§ÂÂÂiiicccÂ£Â£Â£Â„Â„Â„Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹Ã¿Ã¾Ã¹!Ã¾\u000EMade with GIMP\u0000,\u0000\u0000\u0000\u0000\f\u0000\f\u0000\u0000\u0005,  ÂÂ0ÂÃ£@\u0014Ã¨i\u0010Ã„Ã‘ÂŠ\b\u001CÃÂ€M$zÃ¯Ã¿0Â…pÂ¸Â°1f\r\u001BÃ\u0001Ãƒ\u0001\u001E\u0010&#39; Â‚\n\u0001\u0000;&quot;,&quot;description&quot;:&quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,&quot;generic&quot;:&quot;GIF89a\f\u0000\f\u0000Â„\u0000\u0000Ã¿Ã¿Ã·ÃµÃµÃ®Ã©Ã©Ã¥fff\u0000\u0000\u0000Ã§Ã§Ã§^^^Ã³Ã³Ã­ÂÂÂÃ Ã Ã ÂŸÂŸ&quot;}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;canonical&#39; =&gt; &#39;GIF89a  „  ÿÿ÷õõîééåfff   ççç^^^óóíàààŸŸŸ“““§§§iiiccc£££„„„ÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşùÿşù!şMade with GIMP ,       ,  0ã@èiÄÑŠÏ€M$zïÿ0…p¸°1fÎÃ\&#39; ‚
+ ;&#39;,
+  &#39;description&#39; =&gt; &#39;The binary value above is a tiny arrow encoded as a gif image.&#39;,
+  &#39;generic&#39; =&gt; &#39;GIF89a  „  ÿÿ÷õõîééåfff   ççç^^^óóíàààŸŸ&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!binary &quot;\&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!binary &quot;\&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/vendor_ruby/json/common.rb:223:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
+	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
+	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
+	from /usr/lib/ruby/vendor_ruby/json/common.rb:394:in `dump&#39;
+	from /bin/ruby-json:7:in `block in &lt;main&gt;&#39;
+	from /bin/ruby-json:6:in `each&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
+</pre>
+ </div>
+
+ </body>
+</html>
+

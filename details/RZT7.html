@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#RZT7 - Spec Example 2.28. Log File - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #RZT7 - Spec Example 2.28. Log File</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+Time: 2001-11-23 15:01:42 -5
+User: ed
+Warning:
+  This is an error message
+  for the log file
+---
+Time: 2001-11-23 15:02:31 -5
+User: ed
+Warning:
+  A slightly different error
+  message.
+---
+Date: 2001-11-23 15:03:17 -5
+User: ed
+Fatal:
+  Unknown variable &quot;bar&quot;
+Stack:
+  - file: TopClass.py
+    line: 23
+    code: |
+      x = MoreObject(&quot;345\n&quot;)
+  - file: MoreClass.py
+    line: 58
+    code: |-
+      foo = bar
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:01:42 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :This is an error message for the log file
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:02:31 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :A slightly different error message.
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :Date
+=VAL :2001-11-23 15:03:17 -5
+=VAL :User
+=VAL :ed
+=VAL :Fatal
+=VAL :Unknown variable &quot;bar&quot;
+=VAL :Stack
++SEQ
++MAP
+=VAL :file
+=VAL :TopClass.py
+=VAL :line
+=VAL :23
+=VAL :code
+=VAL |x = MoreObject(&quot;345\\n&quot;)\n
+-MAP
++MAP
+=VAL :file
+=VAL :MoreClass.py
+=VAL :line
+=VAL :58
+=VAL :code
+=VAL |foo = bar
+-MAP
+-SEQ
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;Time&quot;: &quot;Nov 23, 2001 8:01:42 PM&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Warning&quot;: &quot;This is an error message for the log file&quot;
+}
+{
+  &quot;Time&quot;: &quot;Nov 23, 2001 8:02:31 PM&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Warning&quot;: &quot;A slightly different error message.&quot;
+}
+{
+  &quot;Date&quot;: &quot;Nov 23, 2001 8:03:17 PM&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Fatal&quot;: &quot;Unknown variable \&quot;bar\&quot;&quot;,
+  &quot;Stack&quot;: [
+    {
+      &quot;file&quot;: &quot;TopClass.py&quot;,
+      &quot;line&quot;: 23,
+      &quot;code&quot;: &quot;x \u003d MoreObject(\&quot;345\\n\&quot;)\n&quot;
+    },
+    {
+      &quot;file&quot;: &quot;MoreClass.py&quot;,
+      &quot;line&quot;: 58,
+      &quot;code&quot;: &quot;foo \u003d bar&quot;
+    }
+  ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;Time&quot;: &quot;2001-11-23T20:01:42.000Z&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Warning&quot;: &quot;This is an error message for the log file&quot;
+}
+{
+  &quot;Time&quot;: &quot;2001-11-23T20:02:31.000Z&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Warning&quot;: &quot;A slightly different error message.&quot;
+}
+{
+  &quot;Date&quot;: &quot;2001-11-23T20:03:17.000Z&quot;,
+  &quot;User&quot;: &quot;ed&quot;,
+  &quot;Fatal&quot;: &quot;Unknown variable \&quot;bar\&quot;&quot;,
+  &quot;Stack&quot;: [
+    {
+      &quot;file&quot;: &quot;TopClass.py&quot;,
+      &quot;line&quot;: 23,
+      &quot;code&quot;: &quot;x = MoreObject(\&quot;345\\n\&quot;)\n&quot;
+    },
+    {
+      &quot;file&quot;: &quot;MoreClass.py&quot;,
+      &quot;line&quot;: 58,
+      &quot;code&quot;: &quot;foo = bar&quot;
+    }
+  ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: bad argument #1 to &#39;encode&#39; (expected 1 argument)
+stack traceback:
+	[C]: in function &#39;encode&#39;
+	/bin/luajit-json:6: in main chunk
+	[C]: at 0x004044a0
+</pre>
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 5
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 5
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre>
++STR
++DOC ---
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:01:42 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :This is an error message
+=VAL :for the log file
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :Time
+=VAL :2001-11-23 15:02:31 -5
+=VAL :User
+=VAL :ed
+=VAL :Warning
+=VAL :A slightly different error
+=VAL :message.
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :Date
+=VAL :2001-11-23 15:03:17 -5
+=VAL :User
+=VAL :ed
+=VAL :Fatal
+=VAL :Unknown variable &quot;bar&quot;
+=VAL :Stack
++SEQ
++MAP
+=VAL :file
+=VAL :TopClass.py
+=VAL :line
+=VAL :23
+=VAL :code
+=VAL |x = MoreObject(&quot;345\\n&quot;)\n
+-MAP
++MAP
+=VAL :file
+=VAL :MoreClass.py
+=VAL :line
+=VAL :58
+=VAL :code
+=VAL |foo = bar
+-MAP
+-SEQ
+-MAP
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;Time&quot;:&quot;2001-11-23 15:01:42 -5&quot;,&quot;User&quot;:&quot;ed&quot;,&quot;Warning&quot;:&quot;This is an error message for the log file&quot;}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;Time&#39; =&gt; &#39;2001-11-23 15:01:42 -5&#39;,
+  &#39;User&#39; =&gt; &#39;ed&#39;,
+  &#39;Warning&#39; =&gt; &#39;This is an error message for the log file&#39;
+}
+{
+  &#39;Time&#39; =&gt; &#39;2001-11-23 15:02:31 -5&#39;,
+  &#39;User&#39; =&gt; &#39;ed&#39;,
+  &#39;Warning&#39; =&gt; &#39;A slightly different error message.&#39;
+}
+{
+  &#39;Date&#39; =&gt; &#39;2001-11-23 15:03:17 -5&#39;,
+  &#39;Fatal&#39; =&gt; &#39;Unknown variable &quot;bar&quot;&#39;,
+  &#39;Stack&#39; =&gt; [
+               {
+                 &#39;code&#39; =&gt; &#39;x = MoreObject(&quot;345\\n&quot;)
+&#39;,
+                 &#39;file&#39; =&gt; &#39;TopClass.py&#39;,
+                 &#39;line&#39; =&gt; &#39;23&#39;
+               },
+               {
+                 &#39;code&#39; =&gt; &#39;foo = bar&#39;,
+                 &#39;file&#39; =&gt; &#39;MoreClass.py&#39;,
+                 &#39;line&#39; =&gt; &#39;58&#39;
+               }
+             ],
+  &#39;User&#39; =&gt; &#39;ed&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  This is an error message&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  This is an error message&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;Time&quot;:&quot;2001-11-23 15:01:42 -5&quot;,&quot;User&quot;:&quot;ed&quot;,&quot;Warning&quot;:&quot;This is an error message for the log file&quot;}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;Time&#39; =&gt; &#39;2001-11-23 15:01:42 -5&#39;,
+  &#39;User&#39; =&gt; &#39;ed&#39;,
+  &#39;Warning&#39; =&gt; &#39;This is an error message for the log file&#39;
+}
+{
+  &#39;Time&#39; =&gt; &#39;2001-11-23 15:02:31 -5&#39;,
+  &#39;User&#39; =&gt; &#39;ed&#39;,
+  &#39;Warning&#39; =&gt; &#39;A slightly different error message.&#39;
+}
+{
+  &#39;Date&#39; =&gt; &#39;2001-11-23 15:03:17 -5&#39;,
+  &#39;Fatal&#39; =&gt; &#39;Unknown variable &quot;bar&quot;&#39;,
+  &#39;Stack&#39; =&gt; [
+               {
+                 &#39;code&#39; =&gt; &#39;x = MoreObject(&quot;345\\n&quot;)
+&#39;,
+                 &#39;file&#39; =&gt; &#39;TopClass.py&#39;,
+                 &#39;line&#39; =&gt; 23
+               },
+               {
+                 &#39;code&#39; =&gt; &#39;foo = bar&#39;,
+                 &#39;file&#39; =&gt; &#39;MoreClass.py&#39;,
+                 &#39;line&#39; =&gt; 58
+               }
+             ],
+  &#39;User&#39; =&gt; &#39;ed&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;Time&quot;:&quot;2001-11-23 20:01:42 +0000&quot;,&quot;User&quot;:&quot;ed&quot;,&quot;Warning&quot;:&quot;This is an error message for the log file&quot;}
+{&quot;Time&quot;:&quot;2001-11-23 20:02:31 +0000&quot;,&quot;User&quot;:&quot;ed&quot;,&quot;Warning&quot;:&quot;A slightly different error message.&quot;}
+{&quot;Date&quot;:&quot;2001-11-23 20:03:17 +0000&quot;,&quot;User&quot;:&quot;ed&quot;,&quot;Fatal&quot;:&quot;Unknown variable \&quot;bar\&quot;&quot;,&quot;Stack&quot;:[{&quot;file&quot;:&quot;TopClass.py&quot;,&quot;line&quot;:23,&quot;code&quot;:&quot;x = MoreObject(\&quot;345\\n\&quot;)\n&quot;},{&quot;file&quot;:&quot;MoreClass.py&quot;,&quot;line&quot;:58,&quot;code&quot;:&quot;foo = bar&quot;}]}
+</pre>
+
+ </div>
+
+ </body>
+</html>
+

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#HS5T - Spec Example 7.12. Plain Lines - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #HS5T - Spec Example 7.12. Plain Lines</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>1st non-empty
+
+ 2nd non-empty 
+	3rd non-empty
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
+=VAL :1st non-empty\n2nd non-empty 3rd non-empty
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre>&quot;1st non-empty\n2nd non-empty 3rd non-empty&quot;<br></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
+found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
+ in &#39;reader&#39;, line 4, column 1:
+    	3rd non-empty
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:249)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:252)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
+</pre>
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
+found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
+ in &#39;reader&#39;, line 4, column 1:
+    	3rd non-empty
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:249)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:252)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:167)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:124)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="diff_line">1</span>
+</pre>
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre>
++STR
++DOC
+=VAL :1st non-empty
+-DOC
++DOC
+=VAL : 2nd non-empty
+-DOC
++DOC
+=VAL :	3rd non-empty
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre>
++STR
++DOC
+=VAL :1st non-empty
+=VAL :2nd non-empty
+=VAL :	3rd non-empty
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="diff_line">&quot;1st non-empty\n2nd non-empty \t3rd non-empty&quot;</span>
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&#39;1st non-empty
+2nd non-empty 	3rd non-empty&#39;
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;1st non-empty&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;1st non-empty&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&#39;1st non-empty
+2nd non-empty 3rd non-empty&#39;
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
+  in sub load-yamls </pre>
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
+=VAL :1st non-empty\n2nd non-empty
+Traceback (most recent call last):
+  File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
+    for event in yaml.parse(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
+    while loader.check_event():
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 193, in parse_document_end
+    token = self.peek_token()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 128, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 257, in fetch_more_tokens
+    % ch.encode(&#39;utf-8&#39;), self.get_mark())
+yaml.scanner.ScannerError: while scanning for the next token
+found character &#39;\t&#39; that cannot start any token
+  in &quot;&lt;string&gt;&quot;, line 4, column 1:
+    	3rd non-empty
+    ^
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
+=VAL :1st non-empty\n2nd non-empty
+Traceback (most recent call last):
+  File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
+    while loader.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 215, in parse_document_end
+    token = self.peek_token()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 137, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 269, in fetch_more_tokens
+    % utf8(ch), self.get_mark())
+ruamel.yaml.scanner.ScannerError: while scanning for the next token
+found character &#39;\t&#39; that cannot start any token
+  in &quot;&lt;byte string&gt;&quot;, line 4, column 1:
+    	3rd non-empty
+    ^ (line: 4)
+</pre>
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ </body>
+</html>
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#TL85 - Spec Example 6.8. Flow Folding - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #TL85 - Spec Example 6.8. Flow Folding</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&quot;
+  foo 
+ 
+  	 bar
+
+  baz
+&quot;
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
+=VAL &quot; foo\nbar\nbaz 
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre>&quot; foo\nbar\nbaz &quot;<br></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="diff_line">&quot; foo \nbar\nbaz &quot;</span>
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ </pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre>
++STR
++DOC
+=VAL &quot; foo  \t bar baz 
+-DOC
+-STR</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="diff_line">&quot; foo \n\t bar\nbaz &quot;</span>
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&#39; foo 
+	 bar
+baz &#39;
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&quot;&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&quot;&#39; </pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&#39; foo
+bar
+baz &#39;
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl6-json">
+<h3><a href="#perl6-json">perl6-json</a></h3>
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="diff_line">&quot; foo  bar  baz &quot;</span>
+</pre>
+ </div>
+
+ <div class="framework" id="perl6-p6">
+<h3><a href="#perl6-p6">perl6-p6</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>&quot; foo  bar  baz &quot;.Str
+</pre>
+
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="json_ok">&nbsp;</span>json_ok
+ </div>
+
+ </body>
+</html>
+
