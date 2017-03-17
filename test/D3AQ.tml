@@ -1,0 +1,30 @@
+=== Node and Mapping Key Anchors
+from: YAML::PP tests
+tags: anchor mapping
+
++++ in-yaml
+---
+foo: &node
+  &key key1: one
+  key2: &val two
+
++++ out-yaml
+---
+foo: &node
+  &key key1: one
+  key2: &val two
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :foo
++MAP &node
+=VAL &key :key1
+=VAL :one
+=VAL :key2
+=VAL &val :two
+-MAP
+-MAP
+-DOC
+-STR
