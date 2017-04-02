@@ -175,26 +175,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre>
-+STR
-+DOC
-=VAL :{
-+MAP
-=VAL :unquoted
-=VAL &quot;separate
-=VAL :,
-=VAL :http://foo.com,
-=VAL :omitted value:,
-=VAL :
-=VAL :omitted key,
-=VAL :}
--MAP
--DOC
--STR</pre>
-
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -237,18 +218,6 @@ while scanning a plain scalar at line: 3, column: 1
 was found at document: 1, line: 3, column: 5
 while scanning a plain scalar at line: 3, column: 1
 </pre>
- </div>
-
- <div class="framework" id="perl6-json">
-<h3><a href="#perl6-json">perl6-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
- <div class="framework" id="perl6-p6">
-<h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
  </div>
 
  <div class="framework" id="pyyaml-event">
@@ -297,15 +266,15 @@ expected the node content, but found &#39;:&#39;
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
-    while loader.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+    while loader._parser.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 641, in parse_flow_mapping_key
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 676, in parse_flow_mapping_key
     return self.parse_flow_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 293, in parse_flow_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 312, in parse_flow_node
     return self.parse_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 420, in parse_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 442, in parse_node
     token.start_mark)
 ruamel.yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;

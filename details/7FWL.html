@@ -118,15 +118,23 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
  <span class="diff">&nbsp;</span>diff<br>
 
   Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL &lt;!&lt;tag:yaml.org,2002:str&gt;&gt; :foo
-=VAL &lt;!&lt;!bar&gt;&gt; :  !&lt;!bar&gt; baz
--MAP
--DOC
--STR</pre>
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="diff_line">=VAL &lt;!&lt;tag:yaml.org,2002:str&gt;&gt; :foo</span>
+<span
+class="">=VAL &lt;!&lt;!bar&gt;&gt; :  !&lt;!bar&gt; baz</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
 
  </div>
 
@@ -150,23 +158,13 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre>
-+STR
-+DOC
-=VAL :!&lt;tag:yaml.org,2002:str&gt; foo :
-=VAL :!&lt;!bar&gt; baz
--DOC
--STR</pre>
-
+ <span class="error">&nbsp;</span>error <pre>Unexpected content </pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x235e5c8)&quot;
+<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0xaa75c8)&quot;
 </pre>
 
  </div>
@@ -199,18 +197,6 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
- </div>
-
- <div class="framework" id="perl6-json">
-<h3><a href="#perl6-json">perl6-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
- <div class="framework" id="perl6-p6">
-<h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
  </div>
 
  <div class="framework" id="pyyaml-event">

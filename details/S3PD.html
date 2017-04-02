@@ -149,21 +149,35 @@ stack traceback:
  <span class="diff">&nbsp;</span>diff<br>
 
   Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :plain key
-=VAL :in-line value
-=VAL :
-=VAL &quot;quoted key
-=VAL :
-+SEQ
-=VAL :entry
--SEQ
--MAP
--DOC
--STR</pre>
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :plain key</span>
+<span
+class="">=VAL :in-line value</span>
+<span
+class="">=VAL :</span>
+<span
+class="diff_line">=VAL &quot;quoted key</span>
+<span
+class="">=VAL :</span>
+<span
+class="">+SEQ</span>
+<span
+class="">=VAL :entry</span>
+<span
+class="">-SEQ</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
 
  </div>
 
@@ -187,25 +201,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :plain key
-=VAL :in-line value
-=VAL :
-=VAL &quot;quoted key
-=VAL :
-+SEQ
-=VAL :entry
--SEQ
--MAP
--DOC
--STR</pre>
-
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -250,18 +246,6 @@ while parsing a block mapping at line: 1, column: 1
 </pre>
  </div>
 
- <div class="framework" id="perl6-json">
-<h3><a href="#perl6-json">perl6-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
- <div class="framework" id="perl6-p6">
-<h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>+STR
@@ -299,11 +283,11 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
-    while loader.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+    while loader._parser.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 505, in parse_block_mapping_key
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 532, in parse_block_mapping_key
     token.start_mark)
 ruamel.yaml.parser.ParserError: while parsing a block mapping
   in &quot;&lt;byte string&gt;&quot;, line 1, column 1:

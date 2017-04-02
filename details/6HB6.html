@@ -147,27 +147,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :Not indented
-+MAP
-=VAL :By one space
-=VAL |By four\n  spaces\n
-=VAL :Flow style
-=VAL :[ By two,        # in flow style
-=VAL :Also by two,   
-=VAL :	Still by two  
-=VAL :]            
--MAP
--MAP
--DOC
--STR</pre>
-
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -228,18 +208,6 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  </div>
 
- <div class="framework" id="perl6-json">
-<h3><a href="#perl6-json">perl6-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
- <div class="framework" id="perl6-p6">
-<h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>+STR
@@ -290,16 +258,16 @@ found character &#39;\t&#39; that cannot start any token
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 42, in parse
-    while loader.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 116, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+    while loader._parser.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 562, in parse_flow_sequence_entry
-    if self.check_token(KeyToken):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 125, in check_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 592, in parse_flow_sequence_entry
+    if self.scanner.check_token(KeyToken):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 140, in check_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 269, in fetch_more_tokens
-    % utf8(ch), self.get_mark())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
+    % utf8(ch), self.reader.get_mark())
 ruamel.yaml.scanner.ScannerError: while scanning for the next token
 found character &#39;\t&#39; that cannot start any token
   in &quot;&lt;byte string&gt;&quot;, line 11, column 3:

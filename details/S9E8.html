@@ -83,25 +83,43 @@ mapping:
  <span class="diff">&nbsp;</span>diff<br>
 
   Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :sequence
-+SEQ
-=VAL :one
-=VAL :two
--SEQ
-=VAL :mapping
-=VAL :  ? sky
-+MAP
-=VAL :
-=VAL :blue
-=VAL :sea
-=VAL :green
--MAP
--DOC
--STR</pre>
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :sequence</span>
+<span
+class="">+SEQ</span>
+<span
+class="">=VAL :one</span>
+<span
+class="">=VAL :two</span>
+<span
+class="">-SEQ</span>
+<span
+class="">=VAL :mapping</span>
+<span
+class="diff_line">=VAL :  ? sky</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :</span>
+<span
+class="">=VAL :blue</span>
+<span
+class="">=VAL :sea</span>
+<span
+class="">=VAL :green</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
 
  </div>
 
@@ -125,30 +143,7 @@ mapping:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :sequence
-+SEQ
-=VAL :one
-=VAL :two
--SEQ
-=VAL :mapping
-=VAL :? sky
-+MAP
-=VAL :
-=VAL :blue
-=VAL :sea
-=VAL :green
--MAP
--MAP
--DOC
--STR</pre>
-
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Explicit Key ? </pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -200,28 +195,6 @@ mapping:
                   &#39;one&#39;,
                   &#39;two&#39;
                 ]
-}
-</pre>
-
- </div>
-
- <div class="framework" id="perl6-json">
-<h3><a href="#perl6-json">perl6-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
- </div>
-
- <div class="framework" id="perl6-p6">
-<h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  mapping  =&gt; {
-    sea =&gt; &quot;green&quot;.Str,
-    sky =&gt; &quot;blue&quot;.Str,
-  },
-  sequence =&gt; [
-    &quot;one&quot;.Str,
-    &quot;two&quot;.Str,
-  ],
 }
 </pre>
 

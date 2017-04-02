@@ -97,23 +97,39 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
  <span class="diff">&nbsp;</span>diff<br>
 
   Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :literal
-=VAL |value\n
-=VAL :folded
-=VAL &lt;!foo&gt; :   !foo
--MAP
--DOC
-+DOC
-=VAL :  &gt;1
--DOC
-+DOC
-=VAL : value
--DOC
--STR</pre>
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :literal</span>
+<span
+class="">=VAL |value\n</span>
+<span
+class="">=VAL :folded</span>
+<span
+class="diff_line">=VAL &lt;!foo&gt; :   !foo</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">+DOC</span>
+<span
+class="">=VAL :  &gt;1</span>
+<span
+class="">-DOC</span>
+<span
+class="">+DOC</span>
+<span
+class="">=VAL : value</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
 
  </div>
 
@@ -137,24 +153,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre>
-+STR
-+DOC
-+MAP
-=VAL :literal
-=VAL :|2
-=VAL :value
-=VAL :folded
-=VAL :!foo
-=VAL :&gt;1
-=VAL :value
--MAP
--DOC
--STR</pre>
-
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Block Scalar Explicit Indent </pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -183,7 +182,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;folded&quot; : &quot;foo=SCALAR(0x2bb3670)&quot;,</span>
+class="diff_line">   &quot;folded&quot; : &quot;foo=SCALAR(0x186dfa8)&quot;,</span>
 <span
 class="">   &quot;literal&quot; : &quot;value\n&quot;</span>
 <span
@@ -202,18 +201,6 @@ class="">}</span>
 }
 </pre>
 
- </div>
-
- <div class="framework" id="perl6-json">
-<h3><a href="#perl6-json">perl6-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
- </div>
-
- <div class="framework" id="perl6-p6">
-<h3><a href="#perl6-p6">perl6-p6</a></h3>
- <span class="error">&nbsp;</span>error <pre>Couldn&#39;t parse YAML
-  in sub load-yamls </pre>
  </div>
 
  <div class="framework" id="pyyaml-event">
