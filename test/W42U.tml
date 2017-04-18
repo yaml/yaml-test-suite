@@ -20,7 +20,7 @@ tags: spec block sequence
 
 +++ in-json
 [
-  "",
+  null,
   "block node\n",
   [ "one", "two" ],
   { "one": "two" }

@@ -18,7 +18,7 @@ explicit key:
 
 +++ in-json
 {
-  "explicit key": "",
+  "explicit key": null,
   "block key\n": [
     "one", "two"
   ]

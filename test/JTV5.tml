@@ -15,7 +15,7 @@ a true: null d
 e 42:
 
 +++ in-json
-{"a true": "null d", "e 42": ""}
+{"a true": "null d", "e 42": null}
 
 +++ test-event
 +STR

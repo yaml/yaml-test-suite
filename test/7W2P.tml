@@ -13,7 +13,7 @@ b:
 c:
 
 +++ in-json
-{"a": "", "b": "", "c": ""}
+{"a": null, "b": null, "c": null}
 
 +++ test-event
 +STR
