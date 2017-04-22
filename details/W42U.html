@@ -37,7 +37,7 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>[<br>   &quot;&quot;,<br>   &quot;block node\n&quot;,<br>   [<br>      &quot;one&quot;,<br>      &quot;two&quot;<br>   ],<br>   {<br>      &quot;one&quot; : &quot;two&quot;<br>   }<br>]<br></pre>
+<pre>[<br>   null,<br>   &quot;block node\n&quot;,<br>   [<br>      &quot;one&quot;,<br>      &quot;two&quot;<br>   ],<br>   {<br>      &quot;one&quot; : &quot;two&quot;<br>   }<br>]<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -52,58 +52,12 @@
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   null,</span>
-<span
-class="">   &quot;block node\n&quot;,</span>
-<span
-class="">   [</span>
-<span
-class="">      &quot;one&quot;,</span>
-<span
-class="">      &quot;two&quot;</span>
-<span
-class="">   ],</span>
-<span
-class="">   {</span>
-<span
-class="">      &quot;one&quot; : &quot;two&quot;</span>
-<span
-class="">   }</span>
-<span
-class="">]</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   null,</span>
-<span
-class="">   &quot;block node\n&quot;,</span>
-<span
-class="">   [</span>
-<span
-class="">      &quot;one&quot;,</span>
-<span
-class="">      &quot;two&quot;</span>
-<span
-class="">   ],</span>
-<span
-class="">   {</span>
-<span
-class="">      &quot;one&quot; : &quot;two&quot;</span>
-<span
-class="">   }</span>
-<span
-class="">]</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -113,7 +67,30 @@ class="">]</span>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">[</span>
+<span
+class="diff_line">   &quot;&quot;,</span>
+<span
+class="">   &quot;block node\n&quot;,</span>
+<span
+class="">   [</span>
+<span
+class="">      &quot;one&quot;,</span>
+<span
+class="">      &quot;two&quot;</span>
+<span
+class="">   ],</span>
+<span
+class="">   {</span>
+<span
+class="">      &quot;one&quot; : &quot;two&quot;</span>
+<span
+class="">   }</span>
+<span
+class="">]</span>
+</pre>
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -152,30 +129,7 @@ class="">]</span>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   null,</span>
-<span
-class="">   &quot;block node\n&quot;,</span>
-<span
-class="">   [</span>
-<span
-class="">      &quot;one&quot;,</span>
-<span
-class="">      &quot;two&quot;</span>
-<span
-class="">   ],</span>
-<span
-class="">   {</span>
-<span
-class="">      &quot;one&quot; : &quot;two&quot;</span>
-<span
-class="">   }</span>
-<span
-class="">]</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -199,30 +153,7 @@ class="">]</span>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   null,</span>
-<span
-class="">   &quot;block node\n&quot;,</span>
-<span
-class="">   [</span>
-<span
-class="">      &quot;one&quot;,</span>
-<span
-class="">      &quot;two&quot;</span>
-<span
-class="">   ],</span>
-<span
-class="">   {</span>
-<span
-class="">      &quot;one&quot; : &quot;two&quot;</span>
-<span
-class="">   }</span>
-<span
-class="">]</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -256,30 +187,7 @@ class="">]</span>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   null,</span>
-<span
-class="">   &quot;block node\n&quot;,</span>
-<span
-class="">   [</span>
-<span
-class="">      &quot;one&quot;,</span>
-<span
-class="">      &quot;two&quot;</span>
-<span
-class="">   ],</span>
-<span
-class="">   {</span>
-<span
-class="">      &quot;one&quot; : &quot;two&quot;</span>
-<span
-class="">   }</span>
-<span
-class="">]</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -313,30 +221,7 @@ class="">]</span>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   null,</span>
-<span
-class="">   &quot;block node\n&quot;,</span>
-<span
-class="">   [</span>
-<span
-class="">      &quot;one&quot;,</span>
-<span
-class="">      &quot;two&quot;</span>
-<span
-class="">   ],</span>
-<span
-class="">   {</span>
-<span
-class="">      &quot;one&quot; : &quot;two&quot;</span>
-<span
-class="">   }</span>
-<span
-class="">]</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

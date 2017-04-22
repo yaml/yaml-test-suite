@@ -31,7 +31,7 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;a true&quot; : &quot;null d&quot;,<br>   &quot;e 42&quot; : &quot;&quot;<br>}<br></pre>
+<pre>{<br>   &quot;a true&quot; : &quot;null d&quot;,<br>   &quot;e 42&quot; : null<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -58,16 +58,7 @@ class="">}</span>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;a true&quot; : &quot;null d&quot;,</span>
-<span
-class="diff_line">   &quot;e 42&quot; : null</span>
-<span
-class="">}</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -77,7 +68,16 @@ class="">}</span>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">   &quot;a true&quot; : &quot;null d&quot;,</span>
+<span
+class="diff_line">   &quot;e 42&quot; : &quot;&quot;</span>
+<span
+class="">}</span>
+</pre>
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -116,16 +116,7 @@ class="">}</span>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;a true&quot; : &quot;null d&quot;,</span>
-<span
-class="diff_line">   &quot;e 42&quot; : null</span>
-<span
-class="">}</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -161,16 +152,7 @@ class="">}</span>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;a true&quot; : &quot;null d&quot;,</span>
-<span
-class="diff_line">   &quot;e 42&quot; : null</span>
-<span
-class="">}</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -196,16 +178,7 @@ class="">}</span>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;a true&quot; : &quot;null d&quot;,</span>
-<span
-class="diff_line">   &quot;e 42&quot; : null</span>
-<span
-class="">}</span>
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>
