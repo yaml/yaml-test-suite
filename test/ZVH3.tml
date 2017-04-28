@@ -1,0 +1,18 @@
+=== Wrong indented sequence item
+from: @perlpunk
+tags: error
+
++++ in-yaml
+- foo: x
+ - bar
+
++++ error
+
++++ test-event
++STR
++DOC
++SEQ
++MAP
+=VAL :foo
+=VAL :x
+-MAP

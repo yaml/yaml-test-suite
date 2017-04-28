@@ -1,0 +1,15 @@
+=== Invalid mapping in plain single line value
+from: https://gist.github.com/anonymous/0c8db51d151baf8113205ba3ce71d1b4 via @ingydotnet
+tags: error
+
++++ in-yaml
+a: b: c: d
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :a
+=VAL :b

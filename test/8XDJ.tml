@@ -1,0 +1,17 @@
+=== Comment in plain multiline value
+from: https://gist.github.com/anonymous/deeb1ace28d5bf21fb56d80c13e2dc69 via @ingydotnet
+tags: error
+
++++ in-yaml
+foo: bar
+#  xxx
+  baz
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo
+=VAL :bar

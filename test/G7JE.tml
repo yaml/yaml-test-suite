@@ -1,0 +1,17 @@
+=== Multiline implicit keys
+from: @perlpunk
+tags: error
+
++++ in-yaml
+a\nb: 1
+c
+ d: 1
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :a\\nb
+=VAL :1

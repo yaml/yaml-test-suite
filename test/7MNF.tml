@@ -1,0 +1,20 @@
+=== Missing colon
+from: @perlpunk
+tags: error
+
++++ in-yaml
+foo1:
+  key1: val1
+foo2
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo1
++MAP
+=VAL :key1
+=VAL :val1
+-MAP

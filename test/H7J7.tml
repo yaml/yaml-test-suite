@@ -1,0 +1,17 @@
+=== Node Anchor and Tag on Seperate Lines
+from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
+tags: error
+
++++ in-yaml
+foo: &x
+!y
+  foo: bar
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo
+=VAL &x :

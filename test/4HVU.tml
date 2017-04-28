@@ -1,0 +1,21 @@
+=== Wrong indendation in Sequence
+from: @perlpunk
+tags: error
+
++++ in-yaml
+foo:
+   - ok
+   - also ok
+  - wrong
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo
++SEQ
+=VAL :ok
+=VAL :also ok
+-SEQ

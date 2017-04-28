@@ -1,0 +1,15 @@
+=== Sequence on same Line as Mapping Key
+from: @perlpunk
+tags: error
+
++++ in-yaml
+foo: - a
+     - b
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo

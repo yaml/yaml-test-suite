@@ -1,0 +1,17 @@
+=== Invalid value after mapping
+from: @perlpunk
+tags: error
+
++++ in-yaml
+foo:
+  bar
+invalid
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo
+=VAL :bar

@@ -1,0 +1,13 @@
+=== Mapping starting at --- line
+from: https://gist.github.com/anonymous/c728390e92ec93fb371ac77f21435cca via @ingydotnet
+tags: error
+
++++ in-yaml
+--- foo: bar
+    bar: bar
+
++++ error
+
++++ test-event
++STR
++DOC ---

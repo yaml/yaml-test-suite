@@ -1,0 +1,15 @@
+=== Flow Mapping Key on two lines
+from: @perlpunk
+tags: error
+
++++ in-yaml
+[23
+]: 42
+
++++ error
+
++++ test-event
++STR
++DOC
++SEQ
+=VAL :23

@@ -1,0 +1,21 @@
+=== Wrong indendation in map
+from: @perlpunk
+tags: error
+
++++ in-yaml
+foo:
+ - bar
+ - baz
+invalid
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :foo
++SEQ
+=VAL :bar
+=VAL :baz
+-SEQ
