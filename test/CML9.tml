@@ -1,11 +1,11 @@
 === Missing comma in flow
 from: ihttps://gist.github.com/anonymous/4ba3365607cc14b4f656e391b45bf4f4 via @ingydotnet
-tags: error
+tags: error flow comment
 
 +++ in-yaml
-foo: [ bar
+key: [ word1
 #  xxx
-  baz ]
+  word2 ]
 
 +++ error
 
@@ -13,6 +13,6 @@ foo: [ bar
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key
 +SEQ
-=VAL :bar
+=VAL :word1

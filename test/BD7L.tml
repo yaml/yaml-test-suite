@@ -1,10 +1,10 @@
 === Invalid mapping after sequence
 from: @perlpunk
-tags: error
+tags: error mapping sequence
 
 +++ in-yaml
-- foo
-- bar
+- item1
+- item2
 invalid: x
 
 +++ error
@@ -13,5 +13,5 @@ invalid: x
 +STR
 +DOC
 +SEQ
-=VAL :foo
-=VAL :bar
+=VAL :item1
+=VAL :item2

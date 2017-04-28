@@ -1,11 +1,11 @@
-=== Node Anchor and Tag on Seperate Lines
+=== Node anchor not indented
 from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
-tags: error
+tags: error anchor indendation mapping
 
 +++ in-yaml
-foo: &x
+key: &x
 !y
-  foo: bar
+  a: b
 
 +++ error
 
@@ -13,5 +13,5 @@ foo: &x
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key
 =VAL &x :

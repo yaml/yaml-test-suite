@@ -1,10 +1,10 @@
 === Wrong indented sequence item
 from: @perlpunk
-tags: error
+tags: error sequence indendation
 
 +++ in-yaml
-- foo: x
- - bar
+- key: value
+ - item1
 
 +++ error
 
@@ -13,6 +13,6 @@ tags: error
 +DOC
 +SEQ
 +MAP
-=VAL :foo
-=VAL :x
+=VAL :key
+=VAL :value
 -MAP

@@ -3,13 +3,13 @@ from: https://gist.github.com/anonymous/269f16d582fdd30a7dcf8c9249c5da7f via @in
 tags: error
 
 +++ in-yaml
-foo  # comment
-foo
+word1  # comment
+word2
 
 +++ error
 
 +++ test-event
 +STR
 +DOC
-=VAL :foo
+=VAL :word1
 -DOC

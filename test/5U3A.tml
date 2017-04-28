@@ -1,9 +1,9 @@
 === Sequence on same Line as Mapping Key
 from: @perlpunk
-tags: error
+tags: error sequence mapping
 
 +++ in-yaml
-foo: - a
+key: - a
      - b
 
 +++ error
@@ -12,4 +12,4 @@ foo: - a
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key

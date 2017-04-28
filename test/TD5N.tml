@@ -1,10 +1,10 @@
-=== Invalid value after sequence
+=== Invalid scalar after sequence
 from: @perlpunk
-tags: error
+tags: error sequence scalar
 
 +++ in-yaml
-- foo
-- bar
+- item1
+- item2
 invalid
 
 +++ error
@@ -13,5 +13,5 @@ invalid
 +STR
 +DOC
 +SEQ
-=VAL :foo
-=VAL :bar
+=VAL :item1
+=VAL :item2

@@ -1,10 +1,10 @@
 === Anchor plus Alias
 from: @perlpunk
-tags: error
+tags: error anchor alias
 
 +++ in-yaml
-foo1: &a value
-foo2: &b *a
+key1: &a value
+key2: &b *a
 
 +++ error
 
@@ -12,6 +12,6 @@ foo2: &b *a
 +STR
 +DOC
 +MAP
-=VAL :foo1
+=VAL :key1
 =VAL &a :value
-=VAL :foo2
+=VAL :key2

@@ -1,6 +1,6 @@
 === Multiline single quoted implicit keys
 from: @perlpunk
-tags: error
+tags: error quote mapping
 
 +++ in-yaml
 'a\nb': 1

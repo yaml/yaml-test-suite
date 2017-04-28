@@ -1,9 +1,17 @@
 === Backslashes in singlequotes
 from: @perlpunk
-tags:
+tags: scalar quote
 
 +++ in-yaml
 'foo: bar\': baz'
+
++++ out-yaml
+'foo: bar\': baz'
+
++++ in-json
+{
+  "foo: bar\\": "baz'"
+}
 
 +++ test-event
 +STR
@@ -14,3 +22,4 @@ tags:
 -MAP
 -DOC
 -STR
+

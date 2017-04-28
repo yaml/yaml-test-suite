@@ -1,21 +1,26 @@
 === Node Anchor and Tag on Seperate Lines
 from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
-tags:
+tags: mapping anchor indendation
 
 +++ in-yaml
-foo: &x
- !y
-  foo: bar
+key: &anchor
+ !tag
+  a: b
+
++++ out-yaml
+key: &anchor !tag
+  a: b
 
 +++ test-event
 +STR
 +DOC
 +MAP
-=VAL :foo
-+MAP &x <!y>
-=VAL :foo
-=VAL :bar
+=VAL :key
++MAP &anchor <!tag>
+=VAL :a
+=VAL :b
 -MAP
 -MAP
 -DOC
 -STR
+

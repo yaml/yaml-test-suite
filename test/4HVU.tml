@@ -1,9 +1,9 @@
 === Wrong indendation in Sequence
 from: @perlpunk
-tags: error
+tags: error sequence indentation
 
 +++ in-yaml
-foo:
+key:
    - ok
    - also ok
   - wrong
@@ -14,7 +14,7 @@ foo:
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key
 +SEQ
 =VAL :ok
 =VAL :also ok

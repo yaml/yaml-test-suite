@@ -1,10 +1,17 @@
-=== Plain Scalar on two lines
+=== Plain Scalar looking like key, comment, anchor and tag
 from: https://gist.github.com/anonymous/a98d50ce42a59b1e999552bea7a31f57 via @ingydotnet
-tags:
+tags: scalar
 
 +++ in-yaml
 k:#foo
  &a !t s
+
++++ out-yaml
+&a k:#foo &a !t s
+...
+
++++ in-json
+"k:#foo &a !t s"
 
 +++ test-event
 +STR
@@ -12,3 +19,4 @@ k:#foo
 =VAL :k:#foo &a !t s
 -DOC
 -STR
+

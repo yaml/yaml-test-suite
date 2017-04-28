@@ -1,11 +1,11 @@
 === Node anchor in sequence
 from: @perlpunk
-tags: error
+tags: error anchor sequence
 
 +++ in-yaml
-- foo
+- item1
 &node
-- bar
+- item2
 
 +++ error
 
@@ -13,4 +13,4 @@ tags: error
 +STR
 +DOC
 +SEQ
-=VAL :foo
+=VAL :item1

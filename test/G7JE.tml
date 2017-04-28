@@ -1,6 +1,6 @@
 === Multiline implicit keys
 from: @perlpunk
-tags: error
+tags: error mapping
 
 +++ in-yaml
 a\nb: 1

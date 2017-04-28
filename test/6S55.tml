@@ -1,9 +1,9 @@
-=== Wrong indendation in map
+=== Invalid scalar at the end of sequence
 from: @perlpunk
-tags: error
+tags: error mapping sequence
 
 +++ in-yaml
-foo:
+key:
  - bar
  - baz
  invalid
@@ -14,7 +14,7 @@ foo:
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key
 +SEQ
 =VAL :bar
 =VAL :baz

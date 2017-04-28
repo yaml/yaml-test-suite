@@ -1,6 +1,6 @@
 === Invalid value after mapping
 from: @perlpunk
-tags: error
+tags: error mapping
 
 +++ in-yaml
 foo:

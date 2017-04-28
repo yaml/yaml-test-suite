@@ -1,9 +1,9 @@
 === Wrong indendation in Map
 from: @perlpunk
-tags: error
+tags: error mapping indendation
 
 +++ in-yaml
-foo:
+key:
   ok: 1
  wrong: 2
 
@@ -13,7 +13,7 @@ foo:
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key
 +MAP
 =VAL :ok
 =VAL :1

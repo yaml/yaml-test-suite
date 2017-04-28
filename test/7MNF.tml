@@ -1,11 +1,11 @@
 === Missing colon
 from: @perlpunk
-tags: error
+tags: error mapping
 
 +++ in-yaml
-foo1:
+top1:
   key1: val1
-foo2
+top2
 
 +++ error
 
@@ -13,7 +13,7 @@ foo2
 +STR
 +DOC
 +MAP
-=VAL :foo1
+=VAL :top1
 +MAP
 =VAL :key1
 =VAL :val1

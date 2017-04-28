@@ -1,11 +1,11 @@
 === Invalid Mapping in plain scalar
 from: https://gist.github.com/anonymous/d305fd8e54cfe7a484088c91a8a2e533 via @ingydotnet
-tags: error
+tags: error mapping scalar
 
 +++ in-yaml
-foo:
-  foo bar
-  foo: bar
+key:
+  word1 word2
+  no: key
 
 +++ error
 
@@ -13,4 +13,4 @@ foo:
 +STR
 +DOC
 +MAP
-=VAL :foo
+=VAL :key

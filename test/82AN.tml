@@ -1,14 +1,21 @@
 === Three dashes and content without space
 from: @perlpunk
-tags:
+tags: scalar
 
 +++ in-yaml
----foo
-bar
+---word1
+word2
+
++++ out-yaml
+'---word1 word2'
+
++++ in-json
+"word1 word2"
 
 +++ test-event
 +STR
 +DOC
-=VAL :---foo bar
+=VAL :---word1 word2
 -DOC
 -STR
+

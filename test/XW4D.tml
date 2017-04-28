@@ -1,6 +1,6 @@
 === Various Trailing Comments
 from: @perlpunk
-tags:
+tags: comment
 
 +++ in-yaml
 a: "double
@@ -18,6 +18,17 @@ e:
  &node # lala
  - x: y
 block: > # lala
+  abcde
+
++++ out-yaml
+a: "double quotes"
+b: plain value
+c: d
+? - seq1
+: - seq2
+e: &node
+- x: y
+block: >
   abcde
 
 +++ test-event
@@ -48,3 +59,4 @@ block: > # lala
 -MAP
 -DOC
 -STR
+

@@ -1,11 +1,16 @@
-=== Quoted string on --- line
+=== Scalars on --- line
 from: @perlpunk
-tags:
+tags: document scalar anchor
 
 +++ in-yaml
 --- "quoted
 string"
 --- &node foo
+
++++ out-yaml
+--- "quoted string"
+--- &node foo
+...
 
 +++ test-event
 +STR
@@ -16,3 +21,4 @@ string"
 =VAL &node :foo
 -DOC
 -STR
+

@@ -1,6 +1,6 @@
 === Flow Mapping Key on two lines
 from: @perlpunk
-tags: error
+tags: error flow mapping
 
 +++ in-yaml
 [23
