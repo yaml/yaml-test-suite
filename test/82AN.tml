@@ -1,0 +1,14 @@
+=== Three dashes and content without space
+from: @perlpunk
+tags:
+
++++ in-yaml
+---foo
+bar
+
++++ test-event
++STR
++DOC
+=VAL :---foo bar
+-DOC
+-STR

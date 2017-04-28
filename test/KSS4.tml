@@ -1,0 +1,18 @@
+=== Quoted string on --- line
+from: @perlpunk
+tags:
+
++++ in-yaml
+--- "quoted
+string"
+--- &node foo
+
++++ test-event
++STR
++DOC ---
+=VAL "quoted string
+-DOC
++DOC ---
+=VAL &node :foo
+-DOC
+-STR

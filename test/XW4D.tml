@@ -1,0 +1,50 @@
+=== Various Trailing Comments
+from: @perlpunk
+tags:
+
++++ in-yaml
+a: "double
+quotes" # lala
+b: plain
+ value  # lala
+c  : #lala
+  d
+? # lala
+ - seq1
+: # lala
+ - #lala
+  seq2
+e:
+ &node # lala
+ - x: y
+block: > # lala
+  abcde
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :a
+=VAL "double quotes
+=VAL :b
+=VAL :plain value
+=VAL :c
+=VAL :d
++SEQ
+=VAL :seq1
+-SEQ
++SEQ
+=VAL :seq2
+-SEQ
+=VAL :e
++SEQ &node
++MAP
+=VAL :x
+=VAL :y
+-MAP
+-SEQ
+=VAL :block
+=VAL >abcde\n
+-MAP
+-DOC
+-STR

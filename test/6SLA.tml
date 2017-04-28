@@ -1,0 +1,19 @@
+=== Allowed mapping key characters
+from: @perlpunk
+tags:
+
++++ in-yaml
+"foo\nbar:baz\tx \\$%^&*()x": 23
+'x\ny:z\tx $%^&*()x': 24
+
++++ test-event
++STR
++DOC
++MAP
+=VAL "foo\nbar:baz\tx \\$%^&*()x
+=VAL :23
+=VAL 'x\\ny:z\\tx $%^&*()x
+=VAL :24
+-MAP
+-DOC
+-STR
