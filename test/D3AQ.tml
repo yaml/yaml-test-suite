@@ -1,0 +1,74 @@
+=== Node and Mapping Key Anchors
+from: YAML::PP tests
+tags: anchor mapping
+
++++ in-yaml
+---
+foo1: &node1
+  &k1 key1: one
+foo2: &node2 # comment
+  key2: two
+foo3:
+  &k3 key3: three
+foo4:
+  &node4
+  &k4 key4: four
+foo5:
+  &node5
+  key5: five
+foo6: &val6
+  six
+foo7:
+  &val7 seven
+
++++ out-yaml
+---
+foo1: &node1
+  &k1 key1: one
+foo2: &node2
+  key2: two
+foo3:
+  &k3 key3: three
+foo4: &node4
+  &k4 key4: four
+foo5: &node5
+  key5: five
+foo6: &val6 six
+foo7: &val7 seven
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :foo1
++MAP &node1
+=VAL &k1 :key1
+=VAL :one
+-MAP
+=VAL :foo2
++MAP &node2
+=VAL :key2
+=VAL :two
+-MAP
+=VAL :foo3
++MAP
+=VAL &k3 :key3
+=VAL :three
+-MAP
+=VAL :foo4
++MAP &node4
+=VAL &k4 :key4
+=VAL :four
+-MAP
+=VAL :foo5
++MAP &node5
+=VAL :key5
+=VAL :five
+-MAP
+=VAL :foo6
+=VAL &val6 :six
+=VAL :foo7
+=VAL &val7 :seven
+-MAP
+-DOC
+-STR
