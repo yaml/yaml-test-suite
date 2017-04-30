@@ -1,6 +1,6 @@
 === Wrong indented sequence item
 from: @perlpunk
-tags: error sequence indendation
+tags: error sequence indent
 
 +++ in-yaml
 - key: value

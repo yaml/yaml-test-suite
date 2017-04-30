@@ -1,6 +1,6 @@
 === Wrong indendation in Map
 from: @perlpunk
-tags: error mapping indendation
+tags: error mapping indent
 
 +++ in-yaml
 key:
