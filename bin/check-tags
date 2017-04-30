@@ -1,0 +1,53 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use 5.010;
+use FindBin '$Bin';
+use File::Basename qw/ basename /;
+use autodie qw/ open close opendir closedir /;
+use Term::ANSIColor qw/ colored /;
+use lib "$Bin/lib";
+use tags qw/ tml_files get_tags get_index /;
+
+#grep -A1000 '^----' foo.md| tail -n+1
+
+my $index = "$Bin/../doc/tag-usage.md";
+my %index = get_index($index);
+
+
+my @tml = tml_files("$Bin/../test");
+my $error = 0;
+for my $tml (@tml) {
+    my @tags = get_tags($tml);
+    my $basename = basename $tml;
+    unless (@tags) {
+        warn "(E) $basename: No tags\n";
+        $error = 1;
+        next;
+    }
+    my @invalid;
+    my @xtag;
+    for my $tag (sort @tags) {
+        unless (exists $index{ $tag }) {
+            if ($tag =~ m/^x-/) {
+                push @xtag, $tag;
+            }
+            else {
+                push @invalid, $tag;
+            }
+        }
+    }
+    if (@invalid) {
+        warn colored(['bright_red'], "(E) $basename: Invalid tags: @invalid"), "\n";
+        $error = 1;
+    }
+    if (@xtag) {
+        warn colored(['yellow'], "(W) $basename: Invalid tags: @xtag"), "\n";
+    }
+}
+
+unless ($error) {
+    say colored(['cyan'], "Everything seems ok \\o/");
+}
+exit $error;
+
