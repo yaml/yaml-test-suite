@@ -12,4 +12,3 @@ a: b: c: d
 +DOC
 +MAP
 =VAL :a
-=VAL :b
