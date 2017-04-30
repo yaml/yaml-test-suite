@@ -10,7 +10,7 @@ word2
 '---word1 word2'
 
 +++ in-json
-"word1 word2"
+"---word1 word2"
 
 +++ test-event
 +STR
