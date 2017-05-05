@@ -28,18 +28,21 @@ anchor      The test uses anchors (but *not* aliases)
 binary      The test encodes binary data
 comment     The test uses YAML comments
 directive   The test has directives
+double      The test involves double quoted scalars
 error       The test is about YAML that has errors
 header      The test has '---' header tokens
 edge        The test is an edge case
 empty       The test has empty scalars
 flow        The test has flow style
+folded      The test uses '>' folded scalars
 footer      The test has '...' footer tokens
 indent      The test is concerned with indentation issues
-literal     The test uses a '|' literal scalar
+literal     The test uses '|' literal scalars
 mapping     The test is concerned with mapping issues
 scalar      The test is concerned with scalar issues
 sequence    The test is concerned with sequence issues
 simple      The test uses simple YAML
+single      The test involves single quoted scalars
 spec        The test is a YAML 1.2 Spec example
 tag         The test has tags
 whitespace  The test is concerned with whitespace issues
