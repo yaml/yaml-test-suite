@@ -1,6 +1,6 @@
 === Block Mapping with Multiline Scalars
 from: NimYAML tests
-tags: mapping scalar block
+tags: mapping scalar
 
 +++ in-yaml
 ? a

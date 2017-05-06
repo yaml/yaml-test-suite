@@ -1,6 +1,6 @@
 === Spec Example 9.2. Document Markers
 from: http://www.yaml.org/spec/1.2/spec.html#id2800866
-tags: spec document
+tags: spec header footer
 
 +++ in-yaml
 \%YAML 1.2

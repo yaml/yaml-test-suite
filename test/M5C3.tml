@@ -1,6 +1,6 @@
 === Spec Example 8.21. Block Scalar Nodes
 from: http://www.yaml.org/spec/1.2/spec.html#id2799693
-tags: spec block
+tags: spec literal folded
 
 +++ in-yaml
 literal: |2

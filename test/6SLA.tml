@@ -1,6 +1,6 @@
 === Allowed characters in quoted mapping key
 from: @perlpunk
-tags: mapping quote
+tags: mapping single double
 
 +++ in-yaml
 "foo\nbar:baz\tx \\$%^&*()x": 23

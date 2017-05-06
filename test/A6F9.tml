@@ -1,6 +1,6 @@
 === Spec Example 8.4. Chomping Final Line Break
 from: http://www.yaml.org/spec/1.2/spec.html#id2795034
-tags: spec block scalar
+tags: spec literal scalar
 
 +++ in-yaml
 strip: |-

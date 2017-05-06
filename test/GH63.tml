@@ -1,6 +1,6 @@
 === Mixed Block Mapping (explicit to implicit)
 from: NimYAML tests
-tags: mapping block
+tags: mapping
 
 +++ in-yaml
 ? a

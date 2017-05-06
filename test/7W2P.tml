@@ -1,6 +1,6 @@
 === Block Mapping with Missing Values
 from: NimYAML tests
-tags: mapping block
+tags: mapping
 
 +++ in-yaml
 ? a

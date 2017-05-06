@@ -1,6 +1,6 @@
 === Spec Example 2.7. Two Documents in a Stream
 from: http://www.yaml.org/spec/1.2/spec.html#id2760493
-tags: spec document
+tags: spec header
 
 +++ in-yaml
 \# Ranking of 1998 home runs

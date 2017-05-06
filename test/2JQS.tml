@@ -1,6 +1,6 @@
 === Block Mapping with Missing Keys
 from: NimYAML tests
-tags: mapping block
+tags: mapping empty
 
 +++ in-yaml
 : a

@@ -1,6 +1,6 @@
 === Spec Example 6.18. Primary Tag Handle
 from: http://www.yaml.org/spec/1.2/spec.html#id2782728
-tags: spec document tag
+tags: spec directive tag
 
 +++ in-yaml
 \# Private

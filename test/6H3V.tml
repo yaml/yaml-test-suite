@@ -1,6 +1,6 @@
 === Backslashes in singlequotes
 from: @perlpunk
-tags: scalar quote
+tags: scalar single
 
 +++ in-yaml
 'foo: bar\': baz'

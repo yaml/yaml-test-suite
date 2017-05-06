@@ -1,6 +1,6 @@
 === Spec Example 8.18. Implicit Block Mapping Entries
 from: http://www.yaml.org/spec/1.2/spec.html#id2798896
-tags: spec block mapping
+tags: spec mapping
 
 +++ in-yaml
 plain key: in-line value

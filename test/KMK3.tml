@@ -1,6 +1,6 @@
 === Block Submapping
 from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
-tags: block mapping
+tags: mapping
 
 +++ in-yaml
 foo:

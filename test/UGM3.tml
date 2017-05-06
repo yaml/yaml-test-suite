@@ -1,6 +1,6 @@
 === Spec Example 2.27. Invoice
 from: http://www.yaml.org/spec/1.2/spec.html#id2761823
-tags: spec tag block mapping sequence alias
+tags: spec tag literal mapping sequence alias
 
 +++ in-yaml
 --- !<tag:clarkevans.com,2002:invoice>

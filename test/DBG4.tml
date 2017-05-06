@@ -1,6 +1,6 @@
 === Spec Example 7.10. Plain Characters
 from: http://www.yaml.org/spec/1.2/spec.html#id2789510
-tags: spec block flow sequence scalar
+tags: spec flow sequence scalar
 
 +++ in-yaml
 \# Outside flow collection:

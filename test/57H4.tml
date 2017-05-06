@@ -1,6 +1,6 @@
 === Spec Example 8.22. Block Collection Nodes
 from: http://www.yaml.org/spec/1.2/spec.html#id2800008
-tags: block sequence mapping tag
+tags: sequence mapping tag
 
 +++ in-yaml
 sequence: !!seq

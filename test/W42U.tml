@@ -1,6 +1,6 @@
 === Spec Example 8.15. Block Sequence Entry Types
 from: http://www.yaml.org/spec/1.2/spec.html#id2797944
-tags: spec block sequence
+tags: spec literal sequence
 
 +++ in-yaml
 - # Empty

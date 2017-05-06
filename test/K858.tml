@@ -1,6 +1,6 @@
 === Spec Example 8.6. Empty Scalar Chomping
 from: http://www.yaml.org/spec/1.2/spec.html#id2795596
-tags: spec block whitespace
+tags: spec folded literal whitespace
 
 +++ in-yaml
 strip: >-

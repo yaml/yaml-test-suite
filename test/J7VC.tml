@@ -1,6 +1,6 @@
 === Empty Lines Between Mapping Elements
 from: NimYAML tests
-tags: whitespace mapping block
+tags: whitespace mapping
 
 +++ in-yaml
 1: 2

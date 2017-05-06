@@ -1,6 +1,6 @@
 === Tags for Block Objects
 from: NimYAML tests
-tags: tag block
+tags: tag
 
 +++ in-yaml
 foo: !!seq
