@@ -1,6 +1,6 @@
 package generate;
 
-use Carp 'croak';
+use Carp qw'croak confess';
 use File::Path qw'mkpath rmtree';
 use XXX;
 
@@ -50,6 +50,9 @@ sub parse_meta {
     }
     elsif ($$text =~ s/\A(?:$re_comment|$re_blank)\n//) {
       next;
+    }
+    elsif ($$text =~ s/\A.*\n//) {
+        next;
     }
     else {
       $self->parse_error;
@@ -107,7 +110,7 @@ sub parse_error {
   my ($self) = @_;
   my $text = $self->{text};
   (my $context = $$text) =~ s/\n.*//s;
-  croak "Can't parse at '$context'";
+  confess "Can't parse at '$context'";
 }
 
 sub _read {
