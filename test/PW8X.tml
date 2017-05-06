@@ -1,6 +1,8 @@
 === Anchors on Empty Scalars
 from: NimYAML tests
-tags: scalar alias
+tags: anchor empty missing
+
+Test showing empty values and missing explicit components.
 
 +++ in-yaml
 - &a

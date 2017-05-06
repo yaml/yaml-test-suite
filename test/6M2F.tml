@@ -1,6 +1,11 @@
 === Aliases in Explicit Block Mapping
 from: NimYAML tests
-tags: mapping alias
+tags: alias missing
+
+This test is showing a mapping with explicit keys, in which one pair is missing
+the key component.
+
+It also is testing an alias to a scalar anchored in an explicit key.
 
 +++ in-yaml
 ? &a a

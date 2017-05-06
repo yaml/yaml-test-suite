@@ -1,6 +1,8 @@
 === Anchors and Tags
 from: NimYAML tests
-tags: alias tag
+tags: anchor tag
+
+This test show all the possible orders of properties (anchors and tags).
 
 +++ in-yaml
  - &a !!str a

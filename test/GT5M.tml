@@ -1,6 +1,6 @@
 === Node anchor in sequence
 from: @perlpunk
-tags: error anchor sequence
+tags: anchor error sequence
 
 +++ in-yaml
 - item1

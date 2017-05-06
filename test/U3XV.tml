@@ -1,6 +1,8 @@
 === Node and Mapping Key Anchors
 from: @perlpunk
-tags: anchor mapping scalar
+tags: anchor comment
+
+Testing anchors in many permutations with other tokens like comments.
 
 +++ in-yaml
 ---

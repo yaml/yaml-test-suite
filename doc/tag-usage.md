@@ -37,8 +37,10 @@ flow        The test has flow style
 folded      The test uses '>' folded scalars
 footer      The test has '...' footer tokens
 indent      The test is concerned with indentation issues
+jayt        Just Another YAML Test. Tests of dubious value.
 literal     The test uses '|' literal scalars
 mapping     The test is concerned with mapping issues
+missing     The test has explicit pair with key or value missing
 scalar      The test is concerned with scalar issues
 sequence    The test is concerned with sequence issues
 simple      The test uses simple YAML

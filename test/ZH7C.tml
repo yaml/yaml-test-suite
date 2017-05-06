@@ -1,6 +1,8 @@
 === Anchors in Mapping
 from: NimYAML tests
-tags: alias
+tags: jayt
+
+This came from an edge case in NimYAML development.
 
 +++ in-yaml
 &a a: b

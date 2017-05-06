@@ -1,6 +1,6 @@
 === Construct Binary
 from: https://github.com/yaml/pyyaml/blob/master/tests/data/construct-binary-py2.data
-tags: mapping binary tag
+tags: jayt
 
 +++ in-yaml
 canonical: !!binary "\

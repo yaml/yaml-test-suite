@@ -1,6 +1,8 @@
 === Aliases in Flow Objects
 from: NimYAML tests
-tags: flow alias
+tags: alias flow
+
+Anchors and aliases in flow collections.
 
 +++ in-yaml
 { &a [a, &b b]: *b, *a : [c, *b, d]}

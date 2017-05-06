@@ -1,6 +1,10 @@
 === Node Anchor and Tag on Seperate Lines
 from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
-tags: mapping anchor indent
+tags: anchor indent 1.3-err
+
+This test is showing node properties spread over multiple lines.
+
+This is an error in 1.3 [[RFC 10]].
 
 +++ in-yaml
 key: &anchor
