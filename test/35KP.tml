@@ -16,7 +16,7 @@ e
 --- !!map
 a: b
 --- !!seq
-- c
+- !!str c
 --- !!str d e
 
 +++ test-event
