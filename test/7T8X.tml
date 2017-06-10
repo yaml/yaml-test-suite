@@ -1,6 +1,6 @@
 === Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2796543
-tags: spec folded scalar comment
+tags: spec folded scalar comment 1.3-err
 
 +++ in-yaml
 >

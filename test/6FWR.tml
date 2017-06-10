@@ -3,7 +3,7 @@ from: NimYAML tests
 tags: scalar
 
 +++ in-yaml
-|+
+--- |+
  ab
 <SPC>
 <SPC><SPC>

@@ -1,6 +1,6 @@
 === Spec Example 8.8. Literal Content
 from: http://www.yaml.org/spec/1.2/spec.html#id2796118
-tags: spec literal scalar comment
+tags: spec literal scalar comment 1.3-err
 
 +++ in-yaml
 |

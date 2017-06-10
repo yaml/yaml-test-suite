@@ -1,6 +1,6 @@
 === Spec Example 2.15. Folded newlines are preserved for "more indented" and blank lines
 from: http://www.yaml.org/spec/1.2/spec.html#id2761056
-tags: spec folded scalar
+tags: spec folded scalar 1.3-err
 
 +++ in-yaml
 >
