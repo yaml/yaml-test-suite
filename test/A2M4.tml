@@ -1,6 +1,6 @@
 === Spec Example 6.2. Indentation Indicators
 from: http://www.yaml.org/spec/1.2/spec.html#id2778101
-tags: spec libyaml-err indent whitespace sequence
+tags: spec libyaml-err indent whitespace sequence upto-1.2
 
 +++ in-yaml
 # XXX Why are tabs allowed as indentation after dash?

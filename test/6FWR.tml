@@ -18,7 +18,7 @@ tags: scalar
 
 +++ test-event
 +STR
-+DOC
++DOC ---
 =VAL |ab\n\n \n
 -DOC ...
 -STR
