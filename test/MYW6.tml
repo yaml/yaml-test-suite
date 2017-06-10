@@ -1,6 +1,6 @@
 === Block Scalar Strip
 from: NimYAML tests
-tags: scalar
+tags: scalar 1.3-err
 
 +++ in-yaml
 |-

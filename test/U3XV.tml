@@ -1,6 +1,6 @@
 === Node and Mapping Key Anchors
 from: @perlpunk
-tags: anchor comment
+tags: anchor comment 1.3-err
 
 Testing anchors in many permutations with other tokens like comments.
 
