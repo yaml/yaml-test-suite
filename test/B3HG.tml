@@ -1,0 +1,24 @@
+=== Spec Example 8.9. Folded Scalar [1.3]
+from: G992, modified for YAML 1.3
+tags: spec folded scalar 1.3-mod
+
++++ in-yaml
+--- >
+ folded
+ text
+
+\
+
++++ out-yaml
+>
+  folded text
+
++++ in-json
+"folded text\n"
+
++++ test-event
++STR
++DOC ---
+=VAL >folded text\n
+-DOC
+-STR

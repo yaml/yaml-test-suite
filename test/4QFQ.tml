@@ -1,0 +1,47 @@
+=== Spec Example 8.2. Block Indentation Indicator [1.3]
+from: R4YG, modified for YAML 1.3
+tags: spec literal folded scalar libyaml-err 1.3-mod
+
++++ in-yaml
+- |
+ detected
+- >
+<SPC>
+<SPC><SPC>
+  # detected
+- |1
+  explicit
+- >
+ detected
+
++++ out-yaml
+- |
+  detected
+- >2
+
+
+  # detected
+- |2
+   explicit
+# XXX > becomes "?
+- "detected\n"
+
++++ in-json
+[
+  "detected\n",
+  "\n\n# detected\n",
+  " explicit\n",
+  "detected\n"
+]
+
++++ test-event
++STR
++DOC
++SEQ
+=VAL |detected\n
+=VAL >\n\n# detected\n
+=VAL | explicit\n
+=VAL >detected\n
+-SEQ
+-DOC
+-STR

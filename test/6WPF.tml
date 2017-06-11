@@ -1,0 +1,26 @@
+=== Spec Example 6.8. Flow Folding [1.3]
+from: TL85, modified for YAML 1.3
+tags: spec whitespace scalar 1.3-mod
+
++++ in-yaml
+---
+"
+  foo<SPC>
+<SPC>
+    bar
+
+  baz
+"
+
++++ out-yaml
+" foo\nbar\nbaz "
+
++++ in-json
+" foo\nbar\nbaz "
+
++++ test-event
++STR
++DOC ---
+=VAL " foo\nbar\nbaz<SPC>
+-DOC
+-STR

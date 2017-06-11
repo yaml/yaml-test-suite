@@ -6,7 +6,16 @@ while true; do
   [[ -e "$file" ]] || break
 done
 
-cp share/template "$file"
+# may give a command line param to copy an existing file
+if [ $# -eq 1 ]; then
+  if [ ! -f "test/${1}.tml" ]; then
+    echo "test case does not exist: ${1}"
+    exit 1
+  fi
+  sed "2s/.*/from: ${1}/" "test/${1}.tml" > "$file"
+else
+  cp share/template "$file"
+fi
 
 vim $file
 

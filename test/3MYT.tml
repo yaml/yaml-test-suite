@@ -1,6 +1,6 @@
 === Plain Scalar looking like key, comment, anchor and tag
 from: https://gist.github.com/anonymous/a98d50ce42a59b1e999552bea7a31f57 via @ingydotnet
-tags: scalar
+tags: scalar 1.3-err
 
 +++ in-yaml
 k:#foo
