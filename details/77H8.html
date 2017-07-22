@@ -86,12 +86,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
  <span class="error">&nbsp;</span>error <pre>TypeError: this is not a typed array.
     at Function.from (native)
     at Type.constructYamlBinary [as construct] (/node_modules/js-yaml/lib/js-yaml/type/binary.js:80:41)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1396:29)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1061:11)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1395:29)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1062:11)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -222,22 +222,26 @@ different documents.
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="pyyaml-event">

@@ -143,8 +143,7 @@ class="">]</span>
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Parse error: did not find expected node content
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
 =VAL :::vector
@@ -153,6 +152,7 @@ class="">]</span>
 =VAL :-123
 =VAL :http://example.com/foo#bar
 +SEQ
+Parse error: did not find expected node content
 </pre>
  </div>
 
@@ -184,7 +184,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
    Line: 9
    Document: 1
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 736.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -193,22 +194,34 @@ stack traceback:
    Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
    Line: 9
    Document: 1
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 736.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
+=VAL :::vector
+=VAL &quot;: - ()
+=VAL :Up, up, and away!
+=VAL :-123
+=VAL :http://example.com/foo#bar
+Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -223,7 +236,7 @@ class="">   &quot;: - ()&quot;,</span>
 <span
 class="">   &quot;Up, up, and away!&quot;,</span>
 <span
-class="">   &quot;-123&quot;,</span>
+class="diff_line">   -123,</span>
 <span
 class="">   &quot;http://example.com/foo#bar&quot;,</span>
 <span
@@ -231,11 +244,11 @@ class="">   [</span>
 <span
 class="">      &quot;::vector&quot;,</span>
 <span
-class="diff_line">      &quot;: - ()&quot;,</span>
+class="">      &quot;: - ()&quot;,</span>
 <span
 class="">      &quot;Up, up and away!&quot;,</span>
 <span
-class="">      &quot;-123&quot;,</span>
+class="">      -123,</span>
 <span
 class="">      &quot;http://example.com/foo#bar&quot;</span>
 <span
@@ -252,13 +265,13 @@ class="">]</span>
   &#39;::vector&#39;,
   &#39;: - ()&#39;,
   &#39;Up, up, and away!&#39;,
-  &#39;-123&#39;,
+  -123,
   &#39;http://example.com/foo#bar&#39;,
   [
     &#39;::vector&#39;,
     &#39;: - ()&#39;,
     &#39;Up, up and away!&#39;,
-    &#39;-123&#39;,
+    -123,
     &#39;http://example.com/foo#bar&#39;
   ]
 ]
@@ -268,12 +281,14 @@ class="">]</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  &quot;: - ()&quot;,&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  &quot;: - ()&quot;,&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  &quot;: - ()&quot;,&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  &quot;: - ()&quot;,&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">

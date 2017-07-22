@@ -71,11 +71,11 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
  <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 30:
     !&lt;tag:yaml.org,2002:str&gt; foo :
                                  ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1512:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -144,7 +144,8 @@ class="">-STR</span>
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 2
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -153,7 +154,8 @@ class="">-STR</span>
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 2
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -184,7 +186,7 @@ class="">-STR</span>
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x1e705c8)&quot;
+<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x1bef658)&quot;
 </pre>
 
  </div>
@@ -201,22 +203,26 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="pyyaml-event">

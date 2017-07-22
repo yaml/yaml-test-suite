@@ -78,13 +78,13 @@
  <span class="error">&nbsp;</span>error <pre>YAMLException: bad indentation of a sequence entry at line 4, column 6:
       &amp;a : a
          ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:934:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1330:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:935:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -130,12 +130,24 @@
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Use of uninitialized value $key in string </pre>
+ <span class="error">&nbsp;</span>error <pre>Use of uninitialized value $key in string at /lib/perl5/YAML/Loader.pm line 331, &lt;&gt; line 1.
+YAML Error: Invalid element in map
+   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
+   Line: 9
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 350.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Use of uninitialized value $key in string </pre>
+ <span class="error">&nbsp;</span>error <pre>Use of uninitialized value $key in string at /lib/perl5/YAML/Loader.pm line 331, &lt;&gt; line 1.
+YAML Error: Invalid element in map
+   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
+   Line: 9
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 350.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -146,11 +158,7 @@
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 117, &lt;&gt; line 1.
-Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 118, &lt;&gt; line 1.
-Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 117, &lt;&gt; line 1.
-Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 118, &lt;&gt; line 1.
-[
+<pre>[
    null,
    &quot;a&quot;,
    {
@@ -161,6 +169,10 @@ Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.p
       &quot;&quot; : null
    }
 ]
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 198, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 199, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 198, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 199, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -168,11 +180,7 @@ Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.p
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 117, &lt;&gt; line 1.
-Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 118, &lt;&gt; line 1.
-Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 117, &lt;&gt; line 1.
-Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 118, &lt;&gt; line 1.
-[
+<pre>[
   undef,
   &#39;a&#39;,
   {
@@ -183,38 +191,46 @@ Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.p
     &#39;&#39; =&gt; undef
   }
 ]
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 198, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 199, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 198, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 199, &lt;&gt; line 1.
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 4, column 6): syntax error </pre>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 4, column 6): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 4, column 6): syntax error </pre>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 4, column 6): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+<pre>[null,&quot;a&quot;,{&quot;&quot;:null,&quot;b&quot;:null},{&quot;&quot;:null}]
 Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
 Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
 Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
-[null,&quot;a&quot;,{&quot;&quot;:null,&quot;b&quot;:null},{&quot;&quot;:null}]
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -222,11 +238,7 @@ Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &l
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
-Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
-Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
-Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
-[
+<pre>[
   undef,
   &#39;a&#39;,
   {
@@ -237,6 +249,10 @@ Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;
     &#39;&#39; =&gt; undef
   }
 ]
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
 </pre>
 
  </div>

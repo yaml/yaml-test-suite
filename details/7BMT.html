@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#7BMT - Node and Mapping Key Anchors [1.3] - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #7BMT - Node and Mapping Key Anchors [1.3]</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+top1: &amp;node1
+  &amp;k1 key1: one
+top2: &amp;node2 # comment
+  key2: two
+top3:
+  &amp;k3 key3: three
+top4: &amp;node4
+  &amp;k4 key4: four
+top5: &amp;node5
+  key5: five
+top6: &amp;val6
+  six
+top7:
+  &amp;val7 seven
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP
+=VAL :top1
++MAP &amp;node1
+=VAL &amp;k1 :key1
+=VAL :one
+-MAP
+=VAL :top2
++MAP &amp;node2
+=VAL :key2
+=VAL :two
+-MAP
+=VAL :top3
++MAP
+=VAL &amp;k3 :key3
+=VAL :three
+-MAP
+=VAL :top4
++MAP &amp;node4
+=VAL &amp;k4 :key4
+=VAL :four
+-MAP
+=VAL :top5
++MAP &amp;node5
+=VAL :key5
+=VAL :five
+-MAP
+=VAL :top6
+=VAL &amp;val6 :six
+=VAL :top7
+=VAL &amp;val7 :seven
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;top1&quot;: {
+    &quot;key1&quot;: &quot;one&quot;
+  },
+  &quot;top2&quot;: {
+    &quot;key2&quot;: &quot;two&quot;
+  },
+  &quot;top3&quot;: {
+    &quot;key3&quot;: &quot;three&quot;
+  },
+  &quot;top4&quot;: {
+    &quot;key4&quot;: &quot;four&quot;
+  },
+  &quot;top5&quot;: {
+    &quot;key5&quot;: &quot;five&quot;
+  },
+  &quot;top6&quot;: &quot;six&quot;,
+  &quot;top7&quot;: &quot;seven&quot;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAMLException: duplication of an anchor property at line 3, column 3:
+      &amp;k1 key1: one
+      ^
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readAnchorProperty (/node_modules/js-yaml/lib/js-yaml/loader.js:1209:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1298:38)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1062:11)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
+    at Module._compile (module.js:410:26)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3
+
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top2&quot;:{&quot;key2&quot;:&quot;two&quot;},&quot;top7&quot;:&quot;seven&quot;,&quot;top6&quot;:&quot;six&quot;,&quot;top5&quot;:{&quot;key5&quot;:&quot;five&quot;},&quot;top4&quot;:{&quot;key4&quot;:&quot;four&quot;},&quot;top1&quot;:{&quot;key1&quot;:&quot;one&quot;},&quot;top3&quot;:{&quot;key3&quot;:&quot;three&quot;}}
+</pre>
+
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 5
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 736.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 5
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 736.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pp-json">
+<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+   &quot;top1&quot; : {
+      &quot;key1&quot; : &quot;one&quot;
+   },
+   &quot;top2&quot; : {
+      &quot;key2&quot; : &quot;two&quot;
+   },
+   &quot;top3&quot; : {
+      &quot;key3&quot; : &quot;three&quot;
+   },
+   &quot;top4&quot; : {
+      &quot;key4&quot; : &quot;four&quot;
+   },
+   &quot;top5&quot; : {
+      &quot;key5&quot; : &quot;five&quot;
+   },
+   &quot;top6&quot; : &quot;six&quot;,
+   &quot;top7&quot; : &quot;seven&quot;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pp-pl">
+<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;top1&#39; =&gt; {
+              &#39;key1&#39; =&gt; &#39;one&#39;
+            },
+  &#39;top2&#39; =&gt; {
+              &#39;key2&#39; =&gt; &#39;two&#39;
+            },
+  &#39;top3&#39; =&gt; {
+              &#39;key3&#39; =&gt; &#39;three&#39;
+            },
+  &#39;top4&#39; =&gt; {
+              &#39;key4&#39; =&gt; &#39;four&#39;
+            },
+  &#39;top5&#39; =&gt; {
+              &#39;key5&#39; =&gt; &#39;five&#39;
+            },
+  &#39;top6&#39; =&gt; &#39;six&#39;,
+  &#39;top7&#39; =&gt; &#39;seven&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top1&quot;:{&quot;key1&quot;:&quot;one&quot;},&quot;top2&quot;:{&quot;key2&quot;:&quot;two&quot;},&quot;top3&quot;:{&quot;key3&quot;:&quot;three&quot;},&quot;top4&quot;:{&quot;key4&quot;:&quot;four&quot;},&quot;top5&quot;:{&quot;key5&quot;:&quot;five&quot;},&quot;top6&quot;:&quot;six&quot;,&quot;top7&quot;:&quot;seven&quot;}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;top1&#39; =&gt; {
+              &#39;key1&#39; =&gt; &#39;one&#39;
+            },
+  &#39;top2&#39; =&gt; {
+              &#39;key2&#39; =&gt; &#39;two&#39;
+            },
+  &#39;top3&#39; =&gt; {
+              &#39;key3&#39; =&gt; &#39;three&#39;
+            },
+  &#39;top4&#39; =&gt; {
+              &#39;key4&#39; =&gt; &#39;four&#39;
+            },
+  &#39;top5&#39; =&gt; {
+              &#39;key5&#39; =&gt; &#39;five&#39;
+            },
+  &#39;top6&#39; =&gt; &#39;six&#39;,
+  &#39;top7&#39; =&gt; &#39;seven&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;node1&#39; at /bin/perl5-tiny-json line 14.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;node1&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top1&quot;:{&quot;key1&quot;:&quot;one&quot;},&quot;top2&quot;:{&quot;key2&quot;:&quot;two&quot;},&quot;top3&quot;:{&quot;key3&quot;:&quot;three&quot;},&quot;top4&quot;:{&quot;key4&quot;:&quot;four&quot;},&quot;top5&quot;:{&quot;key5&quot;:&quot;five&quot;},&quot;top6&quot;:&quot;six&quot;,&quot;top7&quot;:&quot;seven&quot;}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;top1&#39; =&gt; {
+              &#39;key1&#39; =&gt; &#39;one&#39;
+            },
+  &#39;top2&#39; =&gt; {
+              &#39;key2&#39; =&gt; &#39;two&#39;
+            },
+  &#39;top3&#39; =&gt; {
+              &#39;key3&#39; =&gt; &#39;three&#39;
+            },
+  &#39;top4&#39; =&gt; {
+              &#39;key4&#39; =&gt; &#39;four&#39;
+            },
+  &#39;top5&#39; =&gt; {
+              &#39;key5&#39; =&gt; &#39;five&#39;
+            },
+  &#39;top6&#39; =&gt; &#39;six&#39;,
+  &#39;top7&#39; =&gt; &#39;seven&#39;
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top1&quot;:{&quot;key1&quot;:&quot;one&quot;},&quot;top2&quot;:{&quot;key2&quot;:&quot;two&quot;},&quot;top3&quot;:{&quot;key3&quot;:&quot;three&quot;},&quot;top4&quot;:{&quot;key4&quot;:&quot;four&quot;},&quot;top5&quot;:{&quot;key5&quot;:&quot;five&quot;},&quot;top6&quot;:&quot;six&quot;,&quot;top7&quot;:&quot;seven&quot;}
+</pre>
+
+ </div>
+
+ </body>
+</html>
+

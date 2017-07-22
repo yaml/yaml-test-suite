@@ -86,17 +86,17 @@ expected &#39;,&#39; or &#39;}&#39;, but got Tag
  <span class="error">&nbsp;</span>error <pre>YAMLException: tag suffix cannot contain flow indicator characters at line 2, column 15:
       foo : !!str,
                   ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readTagProperty (/node_modules/js-yaml/lib/js-yaml/loader.js:1172:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1297:12)
-    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:718:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:11)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1008:16)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readTagProperty (/node_modules/js-yaml/lib/js-yaml/loader.js:1173:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1298:12)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:719:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1333:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1009:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -118,12 +118,12 @@ expected &#39;,&#39; or &#39;}&#39;, but got Tag
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :foo
 =VAL &lt;tag:yaml.org,2002:str,&gt; :
+Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
 </pre>
  </div>
 
@@ -153,7 +153,8 @@ stack traceback:
   context:    !!str : bar,\n}\n
               ^
   position: 19 (0 pre-lookahead)
- </pre>
+ at /bin/perl5-pegex-event line 23.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">
@@ -162,7 +163,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -171,52 +173,64 @@ stack traceback:
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
+Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error </pre>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error </pre>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="pyyaml-event">

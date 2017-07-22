@@ -83,11 +83,11 @@ foo:
  <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 8:
     &amp;a: key: &amp;a value
            ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1512:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -109,12 +109,12 @@ foo:
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Parse error: mapping values are not allowed in this context
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL &amp;a :
 =VAL :key
+Parse error: mapping values are not allowed in this context
 </pre>
  </div>
 
@@ -190,32 +190,48 @@ stack traceback:
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 1, column 3): syntax error </pre>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 1, column 3): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 1, column 3): syntax error </pre>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 1, column 3): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;key: &amp;a value&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;key: &amp;a value&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;key: &amp;a value&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;key: &amp;a value&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Use of uninitialized value in subroutine entry </pre>
+ <span class="error">&nbsp;</span>error <pre>Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+YAML::XS::Load Error: The problem:
+
+    mapping values are not allowed in this context
+
+was found at document: 1, line: 1, column: 8
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Use of uninitialized value in subroutine entry </pre>
+ <span class="error">&nbsp;</span>error <pre>Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+YAML::XS::Load Error: The problem:
+
+    mapping values are not allowed in this context
+
+was found at document: 1, line: 1, column: 8
+</pre>
  </div>
 
  <div class="framework" id="pyyaml-event">

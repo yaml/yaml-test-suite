@@ -144,12 +144,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
  <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:invoice&gt; at line 30, column 1:
     
     ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1402:7)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -376,7 +376,8 @@ class="">-STR</span>
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 27
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -385,7 +386,8 @@ class="">-STR</span>
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 27
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -485,7 +487,7 @@ Suite #292
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x235e228)&quot;
+<pre>&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x2293d90)&quot;
 </pre>
 
  </div>
@@ -500,7 +502,7 @@ Suite #292
                                        &#39;lines&#39; =&gt; &#39;458 Walkman Dr.
 Suite #292
 &#39;,
-                                       &#39;postal&#39; =&gt; &#39;48046&#39;,
+                                       &#39;postal&#39; =&gt; 48046,
                                        &#39;state&#39; =&gt; &#39;MI&#39;
                                      },
                         &#39;family&#39; =&gt; &#39;Dumars&#39;,
@@ -508,18 +510,18 @@ Suite #292
                       },
          &#39;comments&#39; =&gt; &#39;Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.&#39;,
          &#39;date&#39; =&gt; &#39;2001-01-23&#39;,
-         &#39;invoice&#39; =&gt; &#39;34843&#39;,
+         &#39;invoice&#39; =&gt; 34843,
          &#39;product&#39; =&gt; [
                         {
                           &#39;description&#39; =&gt; &#39;Basketball&#39;,
-                          &#39;price&#39; =&gt; &#39;450.00&#39;,
-                          &#39;quantity&#39; =&gt; &#39;4&#39;,
+                          &#39;price&#39; =&gt; &#39;450&#39;,
+                          &#39;quantity&#39; =&gt; 4,
                           &#39;sku&#39; =&gt; &#39;BL394D&#39;
                         },
                         {
                           &#39;description&#39; =&gt; &#39;Super Hoop&#39;,
-                          &#39;price&#39; =&gt; &#39;2392.00&#39;,
-                          &#39;quantity&#39; =&gt; &#39;1&#39;,
+                          &#39;price&#39; =&gt; &#39;2392&#39;,
+                          &#39;quantity&#39; =&gt; 1,
                           &#39;sku&#39; =&gt; &#39;BL4438H&#39;
                         }
                       ],
@@ -533,12 +535,14 @@ Suite #292
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">

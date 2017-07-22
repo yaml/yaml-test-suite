@@ -124,11 +124,11 @@ null
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Parse error: did not find expected &lt;document start&gt;
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 =VAL :Bare document
 -DOC ...
+Parse error: did not find expected &lt;document start&gt;
 </pre>
  </div>
 
@@ -157,7 +157,8 @@ stack traceback:
   context:  %!PS-Adobe-2.0 # Not the first line\n
             ^
   position: 38 (0 pre-lookahead)
- </pre>
+ at /bin/perl5-pegex-event line 23.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">
@@ -166,7 +167,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -175,7 +177,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -248,12 +251,14 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;Bare&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;Bare&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;Bare&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;Bare&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">

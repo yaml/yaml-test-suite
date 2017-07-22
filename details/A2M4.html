@@ -96,12 +96,12 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Parse error: found character that cannot start any token
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :a
 +SEQ
+Parse error: found character that cannot start any token
 </pre>
  </div>
 
@@ -134,7 +134,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
    Line: 3
    Document: 1
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 736.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -143,7 +144,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
    Line: 3
    Document: 1
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 736.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -196,12 +198,14 @@ class="">}</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? a&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? a&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? a&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? a&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">

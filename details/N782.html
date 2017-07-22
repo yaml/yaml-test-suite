@@ -32,13 +32,13 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>terminate called after throwing an instance of &#39;YAML::ParserException&#39;
-  what():  yaml-cpp: error at line 2, column 1: end of sequence flow not found
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 +SEQ []
 =VAL :
+terminate called after throwing an instance of &#39;YAML::ParserException&#39;
+  what():  yaml-cpp: error at line 2, column 1: end of sequence flow not found
 timeout: the monitored command dumped core
 </pre>
  </div>
@@ -100,15 +100,15 @@ expected the node content, but found DocumentStart
  <span class="error">&nbsp;</span>error <pre>YAMLException: missed comma between flow collection entries at line 2, column 1:
     --- ,
     ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:690:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:11)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1008:16)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:691:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1333:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1009:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -130,10 +130,10 @@ expected the node content, but found DocumentStart
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Parse error: did not find expected node content
-+STR
+ <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
+Parse error: did not find expected node content
 </pre>
  </div>
 
@@ -165,7 +165,8 @@ stack traceback:
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -174,22 +175,28 @@ stack traceback:
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- </pre>
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
+Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style </pre>
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -210,12 +217,14 @@ stack traceback:
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;[&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;[&#39; at /bin/perl5-tiny-json line 14.
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;[&#39; </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;[&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">

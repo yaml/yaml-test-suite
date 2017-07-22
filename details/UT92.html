@@ -13,9 +13,11 @@
 <h3>Test #UT92 - Spec Example 9.4. Explicit Documents</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
-matches %: 20
+{ matches
+% : 20 }
 ...
 ---
+# Empty
 ...
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
@@ -36,46 +38,112 @@ matches %: 20
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP {}
+=VAL :
+=VAL :
+terminate called after throwing an instance of &#39;YAML::ParserException&#39;
+  what():  yaml-cpp: error at line 2, column 3: end of map flow not found
+timeout: the monitored command dumped core
+</pre>
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow mapping
+ in &#39;reader&#39;, line 2, column 1:
+    { matches
+    ^
+expected &#39;,&#39; or &#39;}&#39;, but got Value
+ in &#39;reader&#39;, line 3, column 3:
+    % : 20 }
+      ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:731)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
+</pre>
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;matches %&quot;: 20
-}
-null
-</pre>
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow mapping
+ in &#39;reader&#39;, line 2, column 1:
+    { matches
+    ^
+expected &#39;,&#39; or &#39;}&#39;, but got Value
+ in &#39;reader&#39;, line 3, column 3:
+    % : 20 }
+      ^
 
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:731)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:227)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;matches %&quot;: 20
-}
-null
-</pre>
+ <span class="error">&nbsp;</span>error <pre>YAMLException: missed comma between flow collection entries at line 3, column 3:
+    % : 20 }
+      ^
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:691:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1333:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1009:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
+    at Module._compile (module.js:410:26)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3
 
+</pre>
  </div>
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC ---
++MAP
+=VAL :matches %
+=VAL :
+Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
+</pre>
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: bad argument #1 to &#39;encode&#39; (expected 1 argument)
+ <span class="error">&nbsp;</span>error <pre>luajit: did not find expected &#39;,&#39; or &#39;}&#39; at document: 1, line: 3, column: 3
+while parsing a flow mapping at line: 2, column: 1
+
 stack traceback:
-	[C]: in function &#39;encode&#39;
+	[C]: in function &#39;load&#39;
 	/bin/luajit-json:6: in main chunk
 	[C]: at 0x004044a0
 </pre>
@@ -88,154 +156,164 @@ stack traceback:
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre><span
-class="">+STR</span>
-<span
-class="">+DOC ---</span>
-<span
-class="">+MAP</span>
-<span
-class="">=VAL :matches %</span>
-<span
-class="">=VAL :20</span>
-<span
-class="">-MAP</span>
-<span
-class="">-DOC ...</span>
-<span
-class="">+DOC ---</span>
-<span
-class="diff_line">=VAL :...</span>
-<span
-class="">-DOC</span>
-<span
-class="">-STR</span>
+ <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  msg:      Parse document failed for some reason
+  line:     2
+  column:   0
+  context:  { matches\n% : 20 }\n...\n---\n# Empty\n...\n
+                     ^
+  position: 13 (0 pre-lookahead)
+ at /bin/perl5-pegex-event line 23.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
-   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
-   Line: 3
-   Document: 1
- </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 2
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
-   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
-   Line: 3
-   Document: 1
- </pre>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 2
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC ---
+Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;matches %&quot; : 20
-}
-&quot;&quot;
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &#39;matches %&#39; =&gt; 20
-}
-&#39;&#39;
+ <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 672, &lt;&gt; line 1.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;matches %&quot;:&quot;20&quot;}
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 3, column 1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &#39;matches %&#39; =&gt; &#39;20&#39;
-}
-undef
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 3, column 1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;matches %&quot;:&quot;20&quot;}
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{ matches&#39; at /bin/perl5-tiny-json line 14.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &#39;matches %&#39; =&gt; &#39;20&#39;
-}
-undef
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{ matches&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;matches %&quot;:20}
-</pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
+    did not find expected &#39;,&#39; or &#39;}&#39;
+
+was found at document: 1, line: 3, column: 3
+while parsing a flow mapping at line: 2, column: 1
+</pre>
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &#39;matches %&#39; =&gt; 20
-}
-undef
-</pre>
+ <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
+    did not find expected &#39;,&#39; or &#39;}&#39;
+
+was found at document: 1, line: 3, column: 3
+while parsing a flow mapping at line: 2, column: 1
+</pre>
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :matches %
+=VAL :
+Traceback (most recent call last):
+  File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
+    for event in yaml.parse(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
+    while loader.check_event():
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 550, in parse_flow_mapping_key
+    &quot;expected &#39;,&#39; or &#39;}&#39;, but got %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a flow mapping
+  in &quot;&lt;string&gt;&quot;, line 2, column 1:
+    { matches
+    ^
+expected &#39;,&#39; or &#39;}&#39;, but got &#39;:&#39;
+  in &quot;&lt;string&gt;&quot;, line 3, column 3:
+    % : 20 }
+      ^
+</pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :matches %
+=VAL :
+Traceback (most recent call last):
+  File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+    while loader._parser.check_event():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 664, in parse_flow_mapping_key
+    token.start_mark)
+ruamel.yaml.parser.ParserError: while parsing a flow mapping
+  in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
+    { matches
+    ^ (line: 2)
+expected &#39;,&#39; or &#39;}&#39;, but got &#39;:&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 3, column 3:
+    % : 20 }
+      ^ (line: 3)
+</pre>
  </div>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;matches %&quot;:20}
-null
+ <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected &#39;,&#39; or &#39;}&#39; while parsing a flow mapping at line 2 column 1 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
+	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
-
  </div>
 
  </body>
