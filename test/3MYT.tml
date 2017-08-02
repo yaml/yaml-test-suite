@@ -7,7 +7,7 @@ k:#foo
  &a !t s
 
 +++ out-yaml
-&a k:#foo &a !t s
+k:#foo &a !t s
 ...
 
 +++ in-json
