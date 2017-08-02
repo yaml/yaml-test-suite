@@ -1,0 +1,15 @@
+=== Invalid document-start marker in doublequoted tring
+from: 
+tags: 
+
++++ in-yaml
+---
+"
+---
+"
+
++++ error
+
++++ test-event
++STR
++DOC ---
