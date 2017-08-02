@@ -1,6 +1,6 @@
-=== Fake markers in flow style
+=== Invalid document markers in flow style
 from: NimYAML tests
-tags: flow edge
+tags: flow edge header footer error
 
 +++ in-yaml
 [
@@ -12,15 +12,9 @@ tags: flow edge
 - '---'
 - '...'
 
-+++ in-json
-[ "---", "..." ]
++++ error
 
 +++ test-event
 +STR
 +DOC
 +SEQ
-=VAL :---
-=VAL :...
--SEQ
--DOC
--STR
