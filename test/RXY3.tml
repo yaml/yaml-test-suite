@@ -1,0 +1,13 @@
+=== Invalid document-end marker in double quoted string
+from: @perlpunk
+tags: footer double error
+
++++ in-yaml
+--- "
+... "
+
++++ error
+
++++ test-event
++STR
++DOC ---
