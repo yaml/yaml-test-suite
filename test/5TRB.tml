@@ -1,6 +1,6 @@
 === Invalid document-start marker in doublequoted tring
-from: 
-tags: 
+from: @perlpunk
+tags: header double error
 
 +++ in-yaml
 ---
