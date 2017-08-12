@@ -27,7 +27,7 @@ foo: 1
 bar: 2
 text: |
   a
-    
+<SPC><SPC><SPC><SPC>
   b
 
   c
