@@ -18,6 +18,11 @@ e
 
   e'
 
++++ emit-yaml
+--- a b c d
+
+e
+
 +++ in-json
 "a b c d\ne"
 

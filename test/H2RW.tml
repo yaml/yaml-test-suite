@@ -22,6 +22,18 @@ bar: 2
 # XXX libyaml changes | scalar events to " emission
 text: "a\n  \nb\n\nc\n\nd\n"
 
++++ emit-yaml
+foo: 1
+bar: 2
+text: |
+  a
+    
+  b
+
+  c
+
+  d
+
 +++ in-json
 {"foo":1,"bar":2,"text":"a\n  \nb\n\nc\n\nd\n"}
 

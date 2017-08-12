@@ -13,6 +13,11 @@ tags: spec scalar upto-1.2
 
   2nd non-empty 3rd non-empty '
 
++++ emit-yaml
+' 1st non-empty
+
+2nd non-empty 3rd non-empty '
+
 +++ in-json
 " 1st non-empty\n2nd non-empty 3rd non-empty "
 
