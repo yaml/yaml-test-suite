@@ -9,6 +9,9 @@ tags: spec scalar 1.3-mod
 +++ in-json
 "here's to \"quotes\""
 
++++ out-yaml
+--- 'here''s to "quotes"'
+
 +++ test-event
 +STR
 +DOC ---

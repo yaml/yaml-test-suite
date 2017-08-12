@@ -11,6 +11,10 @@ anchors. See [[rfc 3]].
 foo:
   *a:
 
++++ out-yaml
+&a: key: &a value
+foo: *a:
+
 +++ test-event
 +STR
 +DOC

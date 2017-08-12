@@ -6,6 +6,9 @@ tags: spec directive 1.3-err
 \%YAML 1.2
 --- text
 
++++ out-yaml
+--- text
+
 +++ in-json
 "text"
 

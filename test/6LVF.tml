@@ -7,6 +7,9 @@ tags: spec directive header double
               # with a warning.
 --- "foo"
 
++++ out-yaml
+--- "foo"
+
 +++ test-event
 +STR
 +DOC ---
