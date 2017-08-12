@@ -13,6 +13,9 @@ to a line feed, or <TAB>\
 +++ out-yaml
 "folded to a space,\nto a line feed, or \t \tnon-content"
 
++++ emit-yaml
+--- "folded to a space,\nto a line feed, or \t \tnon-content"
+
 +++ in-json
 "folded to a space,\nto a line feed, or \t \tnon-content"
 

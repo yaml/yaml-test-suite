@@ -16,6 +16,13 @@ plain: text lines
 quoted: "text lines"
 block: "text\n \tlines\n"
 
++++ emit-yaml
+plain: text lines
+quoted: "text lines"
+block: |
+  text
+   <TAB>lines
+
 +++ in-json
 {
   "plain": "text lines",

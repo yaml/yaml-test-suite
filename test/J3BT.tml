@@ -12,12 +12,10 @@ block:<TAB>|
 
 +++ out-yaml
 quoted: "Quoted \t"
-# XXX This should be literal
-block: "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
-# block:<TAB>|
-#   void main() {
-#   <TAB>printf("Hello, world!\n");
-#   }
+block: |
+  void main() {
+  <TAB>printf("Hello, world!\n");
+  }
 
 +++ in-json
 {

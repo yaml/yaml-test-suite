@@ -10,8 +10,9 @@ tags: spec literal scalar 1.3-err
 \
 
 +++ out-yaml
-# XXX Should be literal?
-"literal\n\ttext\n"
+|
+  literal
+  <TAB>text
 
 +++ in-json
 "literal\n\ttext\n"

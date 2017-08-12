@@ -11,9 +11,9 @@ tags: tag scalar
 
 +++ out-yaml
 - !!str
-- !!null: a
+- !!null : a
   b: !!str
-- !!str: !!null
+- !!str : !!null
 
 +++ test-event
 +STR

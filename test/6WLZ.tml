@@ -19,6 +19,11 @@ tags: spec directive tag 1.3-mod
 --- !<tag:example.com,2000:app/foo>
 "bar"
 
++++ emit-yaml
+--- !foo "bar"
+...
+--- !<tag:example.com,2000:app/foo> "bar"
+
 +++ test-event
 +STR
 +DOC ---
