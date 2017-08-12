@@ -8,7 +8,7 @@ tags: mapping alias
 
 +++ out-yaml
 &a a: &b b
-*a: *b
+*a : *b
 
 +++ test-event
 +STR
