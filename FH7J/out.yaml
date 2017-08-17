@@ -1,4 +1,4 @@
 - !!str
-- !!null: a
+- !!null : a
   b: !!str
-- !!str: !!null
+- !!str : !!null
