@@ -12,6 +12,9 @@ tags: spec directive header double 1.3-mod
 ---
 "foo"
 
++++ emit-yaml
+--- "foo"
+
 +++ test-event
 +STR
 +DOC ---
