@@ -1,0 +1,9 @@
+=== Directive without document
+from: AdaYaml tests
+tags: error directive document
+
++++ in-yaml
+%YAML 1.2
+...
+
++++ test-event
