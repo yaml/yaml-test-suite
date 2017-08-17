@@ -6,4 +6,6 @@ tags: error directive document
 \%YAML 1.2
 ...
 
++++ error
+
 +++ test-event
