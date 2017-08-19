@@ -1,0 +1,40 @@
+=== Allowed characters in plain scalars
+from: @perlpunk
+tags: scalar
+
++++ in-yaml
+safe: a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
+     !"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
+safe question mark: ?foo
+safe colon: :foo
+safe dash: -foo
+
++++ out-yaml
+safe: a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~ !"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
+safe question mark: ?foo
+safe colon: :foo
+safe dash: -foo
+
++++ in-json
+{
+  "safe": "a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~ !\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~",
+  "safe question mark": "?foo",
+  "safe colon": ":foo",
+  "safe dash": "-foo"
+}
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :safe
+=VAL :a!"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~ !"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~
+=VAL :safe question mark
+=VAL :?foo
+=VAL :safe colon
+=VAL ::foo
+=VAL :safe dash
+=VAL :-foo
+-MAP
+-DOC
+-STR

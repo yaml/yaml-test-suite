@@ -1,0 +1,22 @@
+=== Implicit Flow Mapping Key on one line
+from: @perlpunk
+tags: mapping flow sequence
+
++++ in-yaml
+[flow]: block
+
++++ out-yaml
+? - flow
+: block
+
++++ test-event
++STR
++DOC
++MAP
++SEQ
+=VAL :flow
+-SEQ
+=VAL :block
+-MAP
+-DOC
+-STR

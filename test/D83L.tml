@@ -1,0 +1,31 @@
+=== Block scalar indicator order
+from: @perlpunk
+tags: literal
+
++++ in-yaml
+- |2-
+  explicit indent and chomp
+- |-2
+  chomp and explicit indent
+
++++ out-yaml
+- |-
+  explicit indent and chomp
+- |-
+  chomp and explicit indent
+
++++ in-json
+[
+  "explicit indent and chomp",
+  "chomp and explicit indent"
+]
+
++++ test-event
++STR
++DOC
++SEQ
+=VAL |explicit indent and chomp
+=VAL |chomp and explicit indent
+-SEQ
+-DOC
+-STR

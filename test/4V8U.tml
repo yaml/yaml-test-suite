@@ -1,0 +1,20 @@
+=== Plain scalar with backslashes
+from: @perlpunk
+tags: scalar
+
++++ in-yaml
+---
+plain\value\with\backslashes
+
++++ out-yaml
+--- plain\value\with\backslashes
+
++++ in-json
+"plain\\value\\with\\backslashes"
+
++++ test-event
++STR
++DOC ---
+=VAL :plain\\value\\with\\backslashes
+-DOC
+-STR

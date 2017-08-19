@@ -1,0 +1,25 @@
+=== Allowed characters in alias
+from: @perlpunk
+tags: alias
+
++++ in-yaml
+a: &:@*!$"<foo>: scalar a
+b: *:@*!$"<foo>:
+
++++ in-json
+{
+  "a": "scalar a",
+  "b": "scalar a"
+}
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :a
+=VAL &:@*!$"<foo>: :scalar a
+=VAL :b
+=ALI *:@*!$"<foo>:
+-MAP
+-DOC
+-STR
