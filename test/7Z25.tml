@@ -8,9 +8,10 @@ scalar1
 ...
 scalar2
 
-+++ in-json
-"scalar1"
-"scalar2"
++++ out-yaml
+--- scalar1
+...
+scalar2
 
 +++ test-event
 +STR
