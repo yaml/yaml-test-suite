@@ -2,7 +2,7 @@ foo: 1
 bar: 2
 text: |
   a
-
+    
   b
 
   c

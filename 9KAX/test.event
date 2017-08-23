@@ -1,0 +1,40 @@
++STR
++DOC ---
+=VAL &a1 <!t1> :scalar1
+-DOC
++DOC ---
+=VAL &a2 <!t2> :scalar2
+-DOC
++DOC ---
+=VAL &a3 <!t3> :scalar3
+-DOC
++DOC ---
++MAP &a4 <!t4>
+=VAL &a5 <!t5> :key5
+=VAL :value4
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :a6
+=VAL :1
+=VAL &anchor6 :b6
+=VAL :2
+-MAP
+-DOC
++DOC ---
++MAP <!t7>
+=VAL &a8 <!t8> :key8
+=VAL :value7
+-MAP
+-DOC
++DOC ---
++MAP <!t9>
+=VAL &a10 <!t10> :key10
+=VAL :value9
+-MAP
+-DOC
++DOC ---
+=VAL &a11 <!t11> :value11
+-DOC
+-STR
