@@ -1,0 +1,19 @@
+=== Trailing content that looks like a mapping
+from: @perlpunk
+tags: error mapping double
+
++++ in-yaml
+key1: "quoted1"
+key2: "quoted2" no key: nor value
+key3: "quoted3"
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :key1
+=VAL "quoted1
+=VAL :key2
+=VAL "quoted2
