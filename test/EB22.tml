@@ -9,6 +9,8 @@ scalar1 # comment
 ---
 scalar2
 
++++ error
+
 +++ test-event
 +STR
 +DOC ---
