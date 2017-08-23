@@ -6,12 +6,12 @@ tags: footer
 ---
 scalar1
 ...
-scalar2
+key: value
 
 +++ out-yaml
 --- scalar1
 ...
-scalar2
+key: value
 
 +++ test-event
 +STR
@@ -19,6 +19,9 @@ scalar2
 =VAL :scalar1
 -DOC ...
 +DOC
-=VAL :scalar2
++MAP
+=VAL :key
+=VAL :value
+-MAP
 -DOC
 -STR
