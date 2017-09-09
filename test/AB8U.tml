@@ -1,0 +1,24 @@
+=== Sequence entry that looks like two with wrong indentation
+from: @perlpunk
+tags: sequence
+
++++ in-yaml
+- single multiline
+ - sequence entry
+
++++ out-yaml
+- single multiline - sequence entry
+
++++ in-json
+[
+  "single multiline - sequence entry"
+]
+
++++ test-event
++STR
++DOC
++SEQ
+=VAL :single multiline - sequence entry
+-SEQ
+-DOC
+-STR
