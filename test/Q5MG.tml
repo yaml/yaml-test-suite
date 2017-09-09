@@ -1,0 +1,11 @@
+=== Tab at beginning of line followed by a flow mapping
+from: IRC
+tags: error flow whitespace
+
++++ in-yaml
+<TAB>{}
+
++++ error
+
++++ test-event
++STR
