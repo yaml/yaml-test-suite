@@ -1,0 +1,15 @@
+=== Comment without whitespace after block scalar indicator
+from: @perlpunk
+tags: block comment error whitespace
+
++++ in-yaml
+block: ># comment
+  scalar
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :block
