@@ -8,10 +8,6 @@ tags: flow edge header footer error
 ...
 ]
 
-+++ out-yaml
-- '---'
-- '...'
-
 +++ error
 
 +++ test-event
