@@ -1,0 +1,23 @@
+=== Zero indented block scalar with line that looks like a comment
+from: @perlpunk
+tags: comment folded scalar
+
++++ in-yaml
+--- >
+line1
+# no comment
+line3
+
++++ out-yaml
+--- >
+line1 # no comment line3
+
++++ in-json
+"line1 # no comment line3\n"
+
++++ test-event
++STR
++DOC ---
+=VAL >line1 # no comment line3\n
+-DOC
+-STR
