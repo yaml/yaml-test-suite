@@ -10,7 +10,7 @@ line3
 
 +++ out-yaml
 --- >
-line1 # no comment line3
+  line1 # no comment line3
 
 +++ in-json
 "line1 # no comment line3\n"
