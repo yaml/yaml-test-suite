@@ -5,7 +5,7 @@ tags: comment folded scalar
 +++ in-yaml
 --- >
 line1
-# no comment
+\# no comment
 line3
 
 +++ out-yaml
