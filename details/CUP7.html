@@ -47,24 +47,26 @@ alias: *anchor
     anchored: !local &amp;anchor value
               ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:376)
-	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:185)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:357)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:532)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:462)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:183)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:443)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:519)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
-	... 11 more
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
+	... 13 more
 </pre>
  </div>
 
@@ -151,7 +153,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-   &quot;alias&quot; : null,
+   &quot;alias&quot; : &quot;value&quot;,
    &quot;anchored&quot; : &quot;value&quot;
 }
 </pre>
@@ -162,7 +164,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;alias&#39; =&gt; undef,
+  &#39;alias&#39; =&gt; &#39;value&#39;,
   &#39;anchored&#39; =&gt; &#39;value&#39;
 }
 </pre>

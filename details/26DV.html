@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#26DV - Whitespace around colon in mappings - YAML Framework Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h3>Test #26DV - Whitespace around colon in mappings</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&quot;top1&quot; : 
+  &quot;key1&quot; : &amp;alias1 scalar1
+&#39;top2&#39; : 
+  &#39;key2&#39; : &amp;alias2 scalar2
+top3: &amp;node3 
+  *alias1 : scalar3
+top4: 
+  *alias2 : scalar4
+top5   :    
+  scalar5
+top6: 
+  &amp;anchor6 &#39;key6&#39; : scalar6
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++MAP
+=VAL &quot;top1
++MAP
+=VAL &quot;key1
+=VAL &amp;alias1 :scalar1
+-MAP
+=VAL &#39;top2
++MAP
+=VAL &#39;key2
+=VAL &amp;alias2 :scalar2
+-MAP
+=VAL :top3
++MAP &amp;node3
+=ALI *alias1
+=VAL :scalar3
+-MAP
+=VAL :top4
++MAP
+=ALI *alias2
+=VAL :scalar4
+-MAP
+=VAL :top5
+=VAL :scalar5
+=VAL :top6
++MAP
+=VAL &amp;anchor6 &#39;key6
+=VAL :scalar6
+-MAP
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &quot;top1&quot;: {
+    &quot;key1&quot;: &quot;scalar1&quot;
+  },
+  &quot;top2&quot;: {
+    &quot;key2&quot;: &quot;scalar2&quot;
+  },
+  &quot;top3&quot;: {
+    &quot;scalar1&quot;: &quot;scalar3&quot;
+  },
+  &quot;top4&quot;: {
+    &quot;scalar2&quot;: &quot;scalar4&quot;
+  },
+  &quot;top5&quot;: &quot;scalar5&quot;,
+  &quot;top6&quot;: {
+    &quot;key6&quot;: &quot;scalar6&quot;
+  }
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAMLException: bad indentation of a mapping entry at line 12, column 19:
+      &amp;anchor6 &#39;key6&#39; : scalar6
+                      ^
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1080:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
+    at Module._compile (module.js:410:26)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3
+
+</pre>
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top2&quot;:{&quot;key2&quot;:&quot;scalar2&quot;},&quot;top6&quot;:{&quot;key6&quot;:&quot;scalar6&quot;},&quot;top5&quot;:&quot;scalar5&quot;,&quot;top4&quot;:{&quot;scalar2&quot;:&quot;scalar4&quot;},&quot;top1&quot;:{&quot;key1&quot;:&quot;scalar1&quot;},&quot;top3&quot;:{&quot;scalar1&quot;:&quot;scalar3&quot;}}
+</pre>
+
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 10
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 10
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pp-json">
+<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+   &quot;top1&quot; : {
+      &quot;key1&quot; : &quot;scalar1&quot;
+   },
+   &quot;top2&quot; : {
+      &quot;key2&quot; : &quot;scalar2&quot;
+   },
+   &quot;top3&quot; : {
+      &quot;scalar1&quot; : &quot;scalar3&quot;
+   },
+   &quot;top4&quot; : {
+      &quot;scalar2&quot; : &quot;scalar4&quot;
+   },
+   &quot;top5&quot; : &quot;scalar5&quot;,
+   &quot;top6&quot; : {
+      &quot;key6&quot; : &quot;scalar6&quot;
+   }
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pp-pl">
+<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;top1&#39; =&gt; {
+              &#39;key1&#39; =&gt; &#39;scalar1&#39;
+            },
+  &#39;top2&#39; =&gt; {
+              &#39;key2&#39; =&gt; &#39;scalar2&#39;
+            },
+  &#39;top3&#39; =&gt; {
+              &#39;scalar1&#39; =&gt; &#39;scalar3&#39;
+            },
+  &#39;top4&#39; =&gt; {
+              &#39;scalar2&#39; =&gt; &#39;scalar4&#39;
+            },
+  &#39;top5&#39; =&gt; &#39;scalar5&#39;,
+  &#39;top6&#39; =&gt; {
+              &#39;key6&#39; =&gt; &#39;scalar6&#39;
+            }
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top1&quot;:{&quot;key1&quot;:&quot;scalar1&quot;},&quot;top2&quot;:{&quot;key2&quot;:&quot;scalar2&quot;},&quot;top3&quot;:{&quot;scalar1&quot;:&quot;scalar3&quot;},&quot;top4&quot;:{&quot;scalar2&quot;:&quot;scalar4&quot;},&quot;top5&quot;:&quot;scalar5&quot;,&quot;top6&quot;:{&quot;key6&quot;:&quot;scalar6&quot;}}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;top1&#39; =&gt; {
+              &#39;key1&#39; =&gt; &#39;scalar1&#39;
+            },
+  &#39;top2&#39; =&gt; {
+              &#39;key2&#39; =&gt; &#39;scalar2&#39;
+            },
+  &#39;top3&#39; =&gt; {
+              &#39;scalar1&#39; =&gt; &#39;scalar3&#39;
+            },
+  &#39;top4&#39; =&gt; {
+              &#39;scalar2&#39; =&gt; &#39;scalar4&#39;
+            },
+  &#39;top5&#39; =&gt; &#39;scalar5&#39;,
+  &#39;top6&#39; =&gt; {
+              &#39;key6&#39; =&gt; &#39;scalar6&#39;
+            }
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;alias1 scalar1&#39; at /bin/perl5-tiny-json line 14.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;alias1 scalar1&#39; at /bin/perl5-tiny-pl line 13.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top1&quot;:{&quot;key1&quot;:&quot;scalar1&quot;},&quot;top2&quot;:{&quot;key2&quot;:&quot;scalar2&quot;},&quot;top3&quot;:{&quot;scalar1&quot;:&quot;scalar3&quot;},&quot;top4&quot;:{&quot;scalar2&quot;:&quot;scalar4&quot;},&quot;top5&quot;:&quot;scalar5&quot;,&quot;top6&quot;:{&quot;key6&quot;:&quot;scalar6&quot;}}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;top1&#39; =&gt; {
+              &#39;key1&#39; =&gt; &#39;scalar1&#39;
+            },
+  &#39;top2&#39; =&gt; {
+              &#39;key2&#39; =&gt; &#39;scalar2&#39;
+            },
+  &#39;top3&#39; =&gt; {
+              &#39;scalar1&#39; =&gt; &#39;scalar3&#39;
+            },
+  &#39;top4&#39; =&gt; {
+              &#39;scalar2&#39; =&gt; &#39;scalar4&#39;
+            },
+  &#39;top5&#39; =&gt; &#39;scalar5&#39;,
+  &#39;top6&#39; =&gt; {
+              &#39;key6&#39; =&gt; &#39;scalar6&#39;
+            }
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="na">&nbsp;</span>n/a
+<pre>{&quot;top1&quot;:{&quot;key1&quot;:&quot;scalar1&quot;},&quot;top2&quot;:{&quot;key2&quot;:&quot;scalar2&quot;},&quot;top3&quot;:{&quot;scalar1&quot;:&quot;scalar3&quot;},&quot;top4&quot;:{&quot;scalar2&quot;:&quot;scalar4&quot;},&quot;top5&quot;:&quot;scalar5&quot;,&quot;top6&quot;:{&quot;key6&quot;:&quot;scalar6&quot;}}
+</pre>
+
+ </div>
+
+ </body>
+</html>
+

@@ -49,24 +49,26 @@ folded: !foo &gt;1
     folded: !foo &gt;1
             ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:376)
-	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:185)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:357)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:532)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:462)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:183)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:443)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:519)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
-	... 11 more
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
+	... 13 more
 </pre>
  </div>
 
@@ -229,7 +231,7 @@ class="">-STR</span>
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;folded&quot; : &quot;foo=SCALAR(0x1c16bf0)&quot;,</span>
+class="diff_line">   &quot;folded&quot; : &quot;foo=SCALAR(0x1d3c210)&quot;,</span>
 <span
 class="">   &quot;literal&quot; : &quot;value\n&quot;</span>
 <span

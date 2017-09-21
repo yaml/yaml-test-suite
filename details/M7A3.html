@@ -87,7 +87,7 @@ class="">-STR</span>
 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:225)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
 </pre>
@@ -105,8 +105,8 @@ Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, 
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
 	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:94)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:522)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:112)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:542)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -216,7 +216,7 @@ class="">-STR</span>
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>&quot;Bare document&quot;
-&quot;&quot;
+null
 &quot;%!PS-Adobe-2.0 # Not the first line\n&quot;
 </pre>
 
@@ -226,7 +226,7 @@ class="">-STR</span>
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>&#39;Bare document&#39;
-&#39;&#39;
+undef
 &#39;%!PS-Adobe-2.0 # Not the first line
 &#39;
 </pre>

@@ -44,7 +44,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:249)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:252)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
 </pre>
@@ -65,8 +65,8 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:167)
 	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:124)
 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
