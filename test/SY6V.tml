@@ -1,0 +1,11 @@
+=== Anchor before sequence entry on same line
+from: @perlpunk
+tags: anchor error sequence
+
++++ in-yaml
+&anchor - sequence entry
+
++++ error
+
++++ test-event
++STR
