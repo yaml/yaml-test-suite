@@ -1,0 +1,37 @@
+=== Anchor before zero indented sequence
+from: @perlpunk
+tags: anchor sequence
+
++++ in-yaml
+---
+seq:
+ &anchor
+- a
+- b
+
++++ out-yaml
+---
+seq: &anchor
+- a
+- b
+
++++ in-json
+{
+  "seq": [
+    "a",
+    "b"
+  ]
+}
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :seq
++SEQ &anchor
+=VAL :a
+=VAL :b
+-SEQ
+-MAP
+-DOC
+-STR
