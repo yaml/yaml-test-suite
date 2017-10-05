@@ -1,0 +1,50 @@
+=== Nested flow collections on one line
+from: @perlpunk
+tags: flow mapping sequence
+
++++ in-yaml
+---
+{ a: [b, c, { d: [e, f] } ] }
+
++++ out-yaml
+---
+a:
+- b
+- c
+- d:
+  - e
+  - f
+
++++ in-json
+{
+  "a": [
+    "b",
+    "c",
+    {
+      "d": [
+        "e",
+        "f"
+      ]
+    }
+  ]
+}
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :a
++SEQ
+=VAL :b
+=VAL :c
++MAP
+=VAL :d
++SEQ
+=VAL :e
+=VAL :f
+-SEQ
+-MAP
+-SEQ
+-MAP
+-DOC
+-STR
