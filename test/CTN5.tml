@@ -1,0 +1,17 @@
+=== Flow sequence with invalid extra comma
+from: @perlpunk
+tags: error flow
+
++++ in-yaml
+---
+[ a, b, c, , ]
+
++++ error
+
++++ test-event
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c

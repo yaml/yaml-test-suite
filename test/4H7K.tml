@@ -1,0 +1,19 @@
+=== Flow sequence with invalid extra closing bracket
+from: @perlpunk
+tags: error flow
+
++++ in-yaml
+---
+[ a, b, c ] ]
+
++++ error
+
++++ test-event
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-DOC

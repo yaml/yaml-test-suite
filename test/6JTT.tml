@@ -1,0 +1,20 @@
+=== Flow sequence without closing bracket
+from: @perlpunk
+tags: error flow
+
++++ in-yaml
+---
+[ [ a, b, c ]
+
+
++++ error
+
++++ test-event
++STR
++DOC ---
++SEQ
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
