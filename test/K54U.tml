@@ -1,0 +1,20 @@
+=== Tab after document header
+from: @perlpunk
+tags: header whitespace
+
++++ in-yaml
+---<TAB>scalar
+
++++ out-yaml
+--- scalar
+...
+
++++ in-json
+"scalar"
+
++++ test-event
++STR
++DOC ---
+=VAL :scalar
+-DOC
+-STR

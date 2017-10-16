@@ -1,0 +1,30 @@
+=== Mapping, key and flow sequence item anchors
+from: @perlpunk
+tags: anchor flow mapping sequence
+
++++ in-yaml
+---
+&mapping
+&key [ &item a, b, c ]: value
+
++++ out-yaml
+--- &mapping
+? &key
+- &item a
+- b
+- c
+: value
+
++++ test-event
++STR
++DOC ---
++MAP &mapping
++SEQ &key
+=VAL &item :a
+=VAL :b
+=VAL :c
+-SEQ
+=VAL :value
+-MAP
+-DOC
+-STR
