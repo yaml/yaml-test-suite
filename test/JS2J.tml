@@ -6,6 +6,12 @@ tags: spec alias
 First occurrence: &anchor Value
 Second occurrence: *anchor
 
++++ in-json
+{
+   "First occurrence" : "Value",
+   "Second occurrence" : "Value"
+}
+
 +++ test-event
 +STR
 +DOC

@@ -12,6 +12,12 @@ It also is testing an alias to a scalar anchored in an explicit key.
 : &b b
 : *a
 
++++ in-json
+{
+   "" : "a",
+   "a" : "b"
+}
+
 +++ out-yaml
 &a a: &b b
 : *a

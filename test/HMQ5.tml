@@ -7,6 +7,12 @@ tags: spec tag alias
   !!str bar
 &a2 baz : *a1
 
++++ in-json
+{
+   "baz" : "foo",
+   "foo" : "bar"
+}
+
 +++ out-yaml
 &a1 !!str "foo": !!str bar
 &a2 baz: *a1

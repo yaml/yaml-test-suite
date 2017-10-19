@@ -8,6 +8,9 @@ tags: spec directive
 ---
 "foo"
 
++++ in-json
+"foo"
+
 +++ out-yaml
 --- "foo"
 

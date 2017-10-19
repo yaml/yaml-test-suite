@@ -10,6 +10,14 @@ Anchors and aliases in a block sequence.
 - *a
 - *b
 
++++ in-json
+[
+  "a",
+  "b",
+  "a",
+  "b"
+]
+
 +++ test-event
 +STR
 +DOC

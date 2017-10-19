@@ -9,6 +9,18 @@ tags: tag scalar
   b: !!str
 - !!str : !!null
 
++++ in-json
+[
+   "",
+   {
+      "" : "a",
+      "b" : ""
+   },
+   {
+      "" : ""
+   }
+]
+
 +++ out-yaml
 - !!str
 - !!null : a

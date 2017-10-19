@@ -11,6 +11,12 @@ anchors. See [[rfc 3]].
 foo:
   *a:
 
++++ in-json
+{
+   "foo" : "key",
+   "key" : "value"
+}
+
 +++ out-yaml
 &a: key: &a value
 foo: *a:

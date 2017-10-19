@@ -8,6 +8,14 @@ Second occurrence: *anchor
 Override anchor: &anchor Bar
 Reuse anchor: *anchor
 
++++ in-json
+{
+   "First occurrence" : "Foo",
+   "Override anchor" : "Bar",
+   "Reuse anchor" : "Bar",
+   "Second occurrence" : "Foo"
+}
+
 +++ test-event
 +STR
 +DOC

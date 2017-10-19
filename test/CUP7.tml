@@ -6,6 +6,12 @@ tags: spec tag alias
 anchored: !local &anchor value
 alias: *anchor
 
++++ in-json
+{
+   "alias" : "value",
+   "anchored" : "value"
+}
+
 +++ out-yaml
 anchored: &anchor !local value
 alias: *anchor

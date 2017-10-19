@@ -9,6 +9,15 @@ tags: spec flow tag alias
 - *anchor
 - !!str
 
++++ in-json
+[
+   "a",
+   "b",
+   "c",
+   "c",
+   ""
+]
+
 +++ test-event
 +STR
 +DOC

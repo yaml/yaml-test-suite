@@ -12,6 +12,18 @@ rbi:
   - *SS # Subsequent occurrence
   - Ken Griffey
 
++++ in-json
+{
+   "hr" : [
+      "Mark McGwire",
+      "Sammy Sosa"
+   ],
+   "rbi" : [
+      "Sammy Sosa",
+      "Ken Griffey"
+   ]
+}
+
 +++ out-yaml
 ---
 hr:

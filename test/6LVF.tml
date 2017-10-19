@@ -7,6 +7,9 @@ tags: spec directive header double 1.3-err
               # with a warning.
 --- "foo"
 
++++ in-json
+"foo"
+
 +++ out-yaml
 --- "foo"
 

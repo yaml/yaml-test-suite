@@ -8,6 +8,12 @@ This came from an edge case in NimYAML development.
 &a a: b
 c: &d d
 
++++ in-json
+{
+   "a" : "b",
+   "c" : "d"
+}
+
 +++ test-event
 +STR
 +DOC

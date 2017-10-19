@@ -6,6 +6,11 @@ tags: mapping alias
 &a a: &b b
 *a : *b
 
++++ in-json
+{
+   "a" : "b"
+}
+
 +++ out-yaml
 &a a: &b b
 *a : *b

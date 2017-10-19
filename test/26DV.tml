@@ -16,6 +16,26 @@ top5   :<SPC><SPC><SPC><SPC>
 top6:<SPC>
   &anchor6 'key6' : scalar6
 
++++ in-json
+{
+   "top1" : {
+      "key1" : "scalar1"
+   },
+   "top2" : {
+      "key2" : "scalar2"
+   },
+   "top3" : {
+      "scalar1" : "scalar3"
+   },
+   "top4" : {
+      "scalar2" : "scalar4"
+   },
+   "top5" : "scalar5",
+   "top6" : {
+      "key6" : "scalar6"
+   }
+}
+
 +++ out-yaml
 "top1":
   "key1": &alias1 scalar1

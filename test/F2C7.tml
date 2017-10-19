@@ -10,6 +10,14 @@ This test show all the possible orders of properties (anchors and tags).
  - !!int &c 4
  - &d d
 
++++ in-json
+[
+  "a",
+  2,
+  4,
+  "d"
+]
+
 +++ out-yaml
 - &a !!str a
 - !!int 2
