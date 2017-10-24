@@ -1,0 +1,28 @@
+=== Block scalar with spaces only
+from: @perlpunk
+tags: folded comment scalar whitespace
+
++++ in-yaml
+empty block scalar: >
+<SPC>
+<SPC><SPC>
+<SPC><SPC><SPC>
+ # comment
+
++++ out-yaml
+empty block scalar: ""
+
++++ in-json
+{
+  "empty block scalar": ""
+}
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL >
+-MAP
+-DOC
+-STR

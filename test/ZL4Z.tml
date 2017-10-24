@@ -1,0 +1,16 @@
+=== Invalid nested mapping
+from: @perlpunk
+tags: error mapping
+
++++ in-yaml
+---
+a: 'b': c
+
++++ error
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :a
+=VAL 'b

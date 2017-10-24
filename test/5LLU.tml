@@ -1,0 +1,19 @@
+=== Block scalar with wrong indented line after spaces only
+from: @perlpunk
+tags: error folded whitespace
+
++++ in-yaml
+block scalar: >
+<SPC>
+<SPC><SPC>
+<SPC><SPC><SPC>
+ invalid
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :block scalar
+=VAL >
