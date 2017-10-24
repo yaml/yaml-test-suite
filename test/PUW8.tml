@@ -13,12 +13,6 @@ a: b
 ---
 ...
 
-+++ in-json
-{
-  "a": "b"
-}
-null
-
 +++ test-event
 +STR
 +DOC ---
