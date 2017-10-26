@@ -1,0 +1,31 @@
+=== Multiline plain scalar with empty line
+from: @perlpunk
+tags: scalar
+
++++ in-yaml
+---
+plain: a
+ b
+
+ c
+
++++ out-yaml
+---
+plain: 'a b
+
+  c'
+
++++ in-json
+{
+  "plain": "a b\nc"
+}
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :plain
+=VAL :a b\nc
+-MAP
+-DOC
+-STR

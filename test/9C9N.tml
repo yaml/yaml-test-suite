@@ -1,0 +1,19 @@
+=== Wrong indented flow sequence
+from: @perlpunk
+tags: error flow indent sequence
+
++++ in-yaml
+---
+flow: [a,
+b,
+c]
+
++++ error
+
++++ test-event
++STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
