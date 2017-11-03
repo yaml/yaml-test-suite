@@ -51,7 +51,7 @@ timeout: the monitored command dumped core
 	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:249)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:252)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
 </pre>
@@ -72,8 +72,8 @@ timeout: the monitored command dumped core
 	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:167)
 	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:124)
 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -84,11 +84,11 @@ timeout: the monitored command dumped core
  <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 14:
     --- &amp;anchor a: b
                  ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1512:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -156,22 +156,22 @@ class="diff_line">&quot;a: b&quot;</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
-+DOC ---
-Unexpected content: &#39;a:&#39; at /lib/perl5/YAML/PP/Parser.pm line 727, &lt;&gt; line 1.
-</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Unexpected content: &#39;a:&#39; at /lib/perl5/YAML/PP/Parser.pm line 727, &lt;&gt; line 1.
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Unexpected content: &#39;a:&#39; at /lib/perl5/YAML/PP/Parser.pm line 727, &lt;&gt; line 1.
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;a&#39; =&gt; &#39;b&#39;
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">

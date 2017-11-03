@@ -65,16 +65,16 @@
  <span class="error">&nbsp;</span>error <pre>YAMLException: duplicated mapping key at line 1, column 36:
     { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
                                        ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at storeMappingPair (/node_modules/js-yaml/lib/js-yaml/loader.js:307:7)
-    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:723:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:11)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1008:16)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at storeMappingPair (/node_modules/js-yaml/lib/js-yaml/loader.js:308:7)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:724:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1333:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1009:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -143,26 +143,38 @@ stack traceback:
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
-Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; line 1.
+Line      : 1
+Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL QUESTION SCALAR SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 495
+YAML      : &quot;{ &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}&quot;
+  at /bin/perl5-pp-event line 18.
 </pre>
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; line 1.
+ <span class="error">&nbsp;</span>error <pre>Line      : 1
+Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL QUESTION SCALAR SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 495
+YAML      : &quot;{ &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; line 1.
+ <span class="error">&nbsp;</span>error <pre>Line      : 1
+Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL QUESTION SCALAR SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 495
+YAML      : &quot;{ &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0xb2f5c8)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
+<pre>{&quot;ARRAY(0x20e2658)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
 </pre>
 
  </div>
@@ -171,7 +183,7 @@ Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; l
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x1eb0b38)&#39; =&gt; [
+  &#39;ARRAY(0x1eb20f0)&#39; =&gt; [
                           &#39;c&#39;,
                           &#39;b&#39;,
                           &#39;d&#39;
@@ -196,7 +208,7 @@ Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; l
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x2bb5a50)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
+<pre>{&quot;ARRAY(0x25adc70)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
 </pre>
 
  </div>
@@ -205,11 +217,11 @@ Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; l
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x97d590)&#39; =&gt; [
-                         &#39;c&#39;,
-                         &#39;b&#39;,
-                         &#39;d&#39;
-                       ]
+  &#39;ARRAY(0x1a87468)&#39; =&gt; [
+                          &#39;c&#39;,
+                          &#39;b&#39;,
+                          &#39;d&#39;
+                        ]
 }
 </pre>
 

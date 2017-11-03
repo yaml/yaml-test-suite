@@ -101,19 +101,20 @@ value11
     &amp;a1
     ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !t1
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
-	... 6 more
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
+	... 7 more
 </pre>
  </div>
 
@@ -122,12 +123,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !t1
  <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!t1&gt; at line 5, column 1:
     ---
     ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1402:7)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -202,45 +203,55 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
-+DOC ---
-=VAL &amp;a1 &lt;!t1&gt; :scalar1
--DOC
-+DOC ---
-=VAL &amp;a2 &lt;!t2&gt; :scalar2
--DOC
-+DOC ---
-=VAL &amp;a3 &lt;!t3&gt; :scalar3
--DOC
-+DOC ---
-+MAP &amp;a4 &lt;!t4&gt;
-=VAL &amp;a5 &lt;!t5&gt; :key5
-=VAL :value4
--MAP
--DOC
-+DOC ---
-+MAP
-=VAL :a6
-=VAL :1
-=VAL &amp;anchor6 :b6
-=VAL :2
--MAP
--DOC
-+DOC ---
-Unexpected content at /lib/perl5/YAML/PP/Parser.pm line 749, &lt;&gt; line 1.
-</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Unexpected content at /lib/perl5/YAML/PP/Parser.pm line 749, &lt;&gt; line 1.
+ <span class="na">&nbsp;</span>n/a
+<pre>&quot;scalar1&quot;
+&quot;scalar2&quot;
+&quot;scalar3&quot;
+{
+   &quot;key5&quot; : &quot;value4&quot;
+}
+{
+   &quot;a6&quot; : 1,
+   &quot;b6&quot; : 2
+}
+{
+   &quot;key8&quot; : &quot;value7&quot;
+}
+{
+   &quot;key10&quot; : &quot;value9&quot;
+}
+&quot;value11&quot;
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Unexpected content at /lib/perl5/YAML/PP/Parser.pm line 749, &lt;&gt; line 1.
+ <span class="na">&nbsp;</span>n/a
+<pre>&#39;scalar1&#39;
+&#39;scalar2&#39;
+&#39;scalar3&#39;
+{
+  &#39;key5&#39; =&gt; &#39;value4&#39;
+}
+{
+  &#39;a6&#39; =&gt; 1,
+  &#39;b6&#39; =&gt; 2
+}
+{
+  &#39;key8&#39; =&gt; &#39;value7&#39;
+}
+{
+  &#39;key10&#39; =&gt; &#39;value9&#39;
+}
+&#39;value11&#39;
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -270,7 +281,7 @@ Unexpected content at /lib/perl5/YAML/PP/Parser.pm line 749, &lt;&gt; line 1.
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&quot;t1=SCALAR(0xbe3118)&quot;
+<pre>&quot;t1=SCALAR(0x2509c80)&quot;
 </pre>
 
  </div>
@@ -282,17 +293,17 @@ Unexpected content at /lib/perl5/YAML/PP/Parser.pm line 749, &lt;&gt; line 1.
 bless( do{\(my $o = &#39;scalar2&#39;)}, &#39;t2&#39; )
 bless( do{\(my $o = &#39;scalar3&#39;)}, &#39;t3&#39; )
 bless( {
-         &#39;t5=SCALAR(0x106f690)&#39; =&gt; &#39;value4&#39;
+         &#39;t5=SCALAR(0xc09290)&#39; =&gt; &#39;value4&#39;
        }, &#39;t4&#39; )
 {
   &#39;a6&#39; =&gt; 1,
   &#39;b6&#39; =&gt; 2
 }
 bless( {
-         &#39;t8=SCALAR(0xf68bf8)&#39; =&gt; &#39;value7&#39;
+         &#39;t8=SCALAR(0xbe1cb8)&#39; =&gt; &#39;value7&#39;
        }, &#39;t7&#39; )
 bless( {
-         &#39;t10=SCALAR(0xf87820)&#39; =&gt; &#39;value9&#39;
+         &#39;t10=SCALAR(0xc00850)&#39; =&gt; &#39;value9&#39;
        }, &#39;t9&#39; )
 bless( do{\(my $o = &#39;value11&#39;)}, &#39;t11&#39; )
 </pre>

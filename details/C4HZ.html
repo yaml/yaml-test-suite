@@ -85,19 +85,20 @@
     --- !shape
         ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.com,2002:shape
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
-	... 6 more
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
+	... 7 more
 </pre>
  </div>
 
@@ -106,14 +107,14 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
  <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:circle&gt; at line 8, column 1:
     - !line
     ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1402:7)
-    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:927:5)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1330:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
+    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:928:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -193,19 +194,31 @@ YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
 +SEQ &lt;tag:clarkevans.com,2002:shape&gt;
 +MAP &lt;tag:clarkevans.com,2002:circle&gt;
 =VAL :center
-Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; line 1.
+Line      : 6
+Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL QUESTION SCALAR SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 495
+YAML      : &quot;{x: 73, y: 129}&quot;
+  at /bin/perl5-pp-event line 18.
 </pre>
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; line 1.
+ <span class="error">&nbsp;</span>error <pre>Line      : 6
+Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL QUESTION SCALAR SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 495
+YAML      : &quot;{x: 73, y: 129}&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Not Implemented: Flow Style at /lib/perl5/YAML/PP/Parser.pm line 637, &lt;&gt; line 1.
+ <span class="error">&nbsp;</span>error <pre>Line      : 6
+Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL QUESTION SCALAR SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 495
+YAML      : &quot;{x: 73, y: 129}&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
  </div>
 
