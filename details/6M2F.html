@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#6M2F - Aliases in Explicit Block Mapping - YAML Framework Matrix</title>
+<title>#6M2F - Aliases in Explicit Block Mapping - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #6M2F - Aliases in Explicit Block Mapping</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>? &amp;a a
@@ -28,7 +28,7 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;&quot; : &quot;a&quot;,<br>   &quot;a&quot; : &quot;b&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -49,7 +49,7 @@ expected &lt;block end&gt;, but found Value
 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:571)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
 </pre>
@@ -73,8 +73,8 @@ expected &lt;block end&gt;, but found Value
 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
 	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -82,16 +82,16 @@ expected &lt;block end&gt;, but found Value
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 3, column 1:
+ <span class="error">&nbsp;</span>error <pre>YAMLException: incomplete explicit mapping pair; a key node is missed at line 3, column 1:
     : *a
     ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1000:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:999:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -147,10 +147,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;&quot;:&quot;a&quot;,&quot;a&quot;:&quot;b&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -171,20 +168,23 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;&quot; : &quot;a&quot;,
-   &quot;a&quot; : &quot;b&quot;
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;&quot; : null,</span>
+<span
+class="">   &quot;a&quot; : &quot;b&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;&#39; =&gt; &#39;a&#39;,
+  &#39;&#39; =&gt; undef,
   &#39;a&#39; =&gt; &#39;b&#39;
 }
 </pre>

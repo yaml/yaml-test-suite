@@ -46,7 +46,7 @@ table.matrix td.testid a {
     font-family: monospace;
 }
 table.matrix tbody tr:hover > td.result {
-    color: #444;
+    color: #ddd;
 }
 table.matrix thead td.result {
     min-width: 3em;
@@ -61,34 +61,53 @@ table.matrix td.result a {
     display: block;
     text-decoration: none;
 }
-table.matrix tr:hover td.result a {
-    color: #444;
+a.invisible {
+    background-color: inherit !important;
 }
+a.invisible:hover {
+    background-color: inherit !important;
+}
+/*
+table.matrix td.result a.invisible {
+    background-color: none;
+}
+table.matrix tr:hover td.result a.invisible {
+    background-color: none;
+}
+*/
 table.matrix thead tr.overview td {
     white-space: nowrap;
 }
 
-table.matrix tr td.ok, span.ok, table.matrix td.ok a {
-    background-color: lightgreen;
-    color: lightgreen;
+.color_ok, table.matrix tbody td.color_ok {
+    background-color: #88ddcc;
+    color: #88ddcc;
 }
-table.matrix tr td.json_ok, span.json_ok, table.matrix td.json_ok a {
-    background-color: #e8e811;
-    color: #e8e811;
+.color_json_ok, table.matrix tbody td.color_json_ok {
+    background-color: #e8ff08;
+    color: #e8ff08;
 }
-table.matrix tr td.diff, span.diff, table.matrix td.diff a {
-    background-color: #ff9922;
-    color: #ff9922;
+.color_diff, table.matrix tbody td.color_diff {
+    background-color: #ffa500;
+    color: #ffa500;
 }
-table.matrix tr td.json_diff, span.json_diff, table.matrix td.json_diff a {
-    background-color: #ff9922;
-    color: #ff9922;
+.color_json_diff, table.matrix tbody td.color_json_diff {
+    background-color: #ffa500;
+    color: #ffa500;
 }
-table.matrix tr td.na, span.na, table.matrix td.na a {
-    background-color: #ddd;
-    color: #ddd;
+.color_na, table.matrix tbody td.color_na {
+    background-color: #dadada;
+    color: #dadada;
 }
-table.matrix tr td.error, span.error, table.matrix td.error a {
+.color_error, table.matrix tbody td.color_error {
+    background-color: #ff5858;
+    color: #ff5858;
+}
+.color_invalid_correct {
+    background-color: #88aaff;
+    color: #0099dd;
+}
+.color_invalid_incorrect {
     background-color: #ff5858;
     color: #ff5858;
 }
@@ -101,7 +120,24 @@ table.matrix tr.headline td {
     text-align: center;
 }
 
-span.ok, span.json_ok, span.json_diff, span.diff, span.na, span.error {
+td.percentage span.bar_left {
+    border-radius: 3px 0px 0px 3px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+td.percentage span.bar_middle {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+td.percentage span.bar_right {
+    border-radius: 0px 3px 3px 0px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+span.status_box {
     width:  10px;
     height: 10px;
     vertical-align: middle;
@@ -110,6 +146,14 @@ span.ok, span.json_ok, span.json_diff, span.diff, span.na, span.error {
     border: 1px solid gray;
     padding: 0px;
     margin: 0px 3px 0px 0px;
+}
+
+span.overview_status {
+    display: inline-block;
+    height: 14px;
+    vertical-align: middle;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 pre {
@@ -175,8 +219,8 @@ div.selector {
 #framework-info table.framework-list {
     border: 1px solid #bbb;
     border-collapse: collapse;
-    margin-left: 3px;
-    margin-right: 3px;
+    box-shadow: 2px 2px 4px 1px grey;
+    margin: 5px;
 }
 #framework-info table.framework-list tr th,
     #framework-info table.framework-list tr td {
@@ -196,4 +240,11 @@ div.selector {
 #framework-info table.framework-list tr:hover > td,
     #framework-info table.framework-list tr:hover > th {
     background-color: #ddd;
+}
+
+div.content {
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #eee;
 }

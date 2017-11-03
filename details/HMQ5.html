@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#HMQ5 - Spec Example 6.23. Node Properties - YAML Framework Matrix</title>
+<title>#HMQ5 - Spec Example 6.23. Node Properties - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #HMQ5 - Spec Example 6.23. Node Properties</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>!!str &amp;a1 &quot;foo&quot;:
@@ -28,7 +28,7 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;baz&quot; : &quot;foo&quot;,<br>   &quot;foo&quot; : &quot;bar&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -43,13 +43,7 @@
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;foo&quot;: &quot;bar&quot;,
-  &quot;baz&quot;: &quot;foo&quot;
-}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
@@ -57,11 +51,11 @@
  <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 16:
     !!str &amp;a1 &quot;foo&quot;:
                    ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1512:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -134,20 +128,23 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;baz&quot; : &quot;foo&quot;,
-   &quot;foo&quot; : &quot;bar&quot;
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;baz&quot; : null,</span>
+<span
+class="">   &quot;foo&quot; : &quot;bar&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;baz&#39; =&gt; &#39;foo&#39;,
+  &#39;baz&#39; =&gt; undef,
   &#39;foo&#39; =&gt; &#39;bar&#39;
 }
 </pre>
@@ -208,10 +205,7 @@ Deep recursion on subroutine &quot;Mojo::JSON::_encode_object&quot; at /lib/perl
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;foo&quot;:&quot;bar&quot;,&quot;baz&quot;:&quot;foo&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

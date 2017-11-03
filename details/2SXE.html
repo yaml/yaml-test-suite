@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#2SXE - Anchors With Colon in Name - YAML Framework Matrix</title>
+<title>#2SXE - Anchors With Colon in Name - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #2SXE - Anchors With Colon in Name</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&amp;a: key: &amp;a value
@@ -28,7 +28,7 @@ foo:
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;foo&quot; : &quot;key&quot;,<br>   &quot;key&quot; : &quot;value&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -48,7 +48,7 @@ foo:
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:557)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:685)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
 </pre>
@@ -71,8 +71,8 @@ foo:
 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
 	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:105)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -83,11 +83,11 @@ foo:
  <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 8:
     &amp;a: key: &amp;a value
            ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1512:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -142,10 +142,20 @@ stack traceback:
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;&quot;:&quot;key: &amp;a value&quot;,&quot;foo&quot;:{&quot;&quot;:null}}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;&quot; : &quot;key: &amp;a value&quot;,</span>
+<span
+class="">   &quot;foo&quot; : {</span>
+<span
+class="">      &quot;&quot; : null</span>
+<span
+class="">   }</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -168,20 +178,23 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;foo&quot; : &quot;key&quot;,
-   &quot;key&quot; : &quot;value&quot;
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;foo&quot; : null,</span>
+<span
+class="">   &quot;key&quot; : &quot;value&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;foo&#39; =&gt; &#39;key&#39;,
+  &#39;foo&#39; =&gt; undef,
   &#39;key&#39; =&gt; &#39;value&#39;
 }
 </pre>

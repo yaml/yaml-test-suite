@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#2EBW - Allowed characters in keys - YAML Framework Matrix</title>
+<title>#2EBW - Allowed characters in keys - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #2EBW - Allowed characters in keys</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>a!&quot;#$%&amp;&#39;()*+,-./09:;&lt;=&gt;?@AZ[\]^_`az{|}~: safe
@@ -178,7 +178,22 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">   &quot;-foo&quot; : &quot;safe dash&quot;,</span>
+<span
+class="">   &quot;:foo&quot; : &quot;safe colon&quot;,</span>
+<span
+class="">   &quot;?foo&quot; : &quot;safe question mark&quot;,</span>
+<span
+class="diff_line">   &quot;a!\&quot;#$%&amp;&#39;()*+,-./09:;&lt;=&gt;?@AZ[\\\\]^_`az{|}~&quot; : &quot;safe&quot;,</span>
+<span
+class="">   &quot;this is#not&quot; : &quot;a comment&quot;</span>
+<span
+class="">}</span>
+</pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -188,7 +203,7 @@ class="">-STR</span>
   &#39;-foo&#39; =&gt; &#39;safe dash&#39;,
   &#39;:foo&#39; =&gt; &#39;safe colon&#39;,
   &#39;?foo&#39; =&gt; &#39;safe question mark&#39;,
-  &#39;a!&quot;#$%&amp;\&#39;()*+,-./09:;&lt;=&gt;?@AZ[\\]^_`az{|}~&#39; =&gt; &#39;safe&#39;,
+  &#39;a!&quot;#$%&amp;\&#39;()*+,-./09:;&lt;=&gt;?@AZ[\\\\]^_`az{|}~&#39; =&gt; &#39;safe&#39;,
   &#39;this is#not&#39; =&gt; &#39;a comment&#39;
 }
 </pre>

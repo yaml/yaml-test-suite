@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#CUP7 - Spec Example 5.6. Node Property Indicators - YAML Framework Matrix</title>
+<title>#CUP7 - Spec Example 5.6. Node Property Indicators - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #CUP7 - Spec Example 5.6. Node Property Indicators</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>anchored: !local &amp;anchor value
@@ -27,7 +27,7 @@ alias: *anchor
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;alias&quot; : &quot;value&quot;,<br>   &quot;anchored&quot; : &quot;value&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -47,26 +47,24 @@ alias: *anchor
     anchored: !local &amp;anchor value
               ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:462)
-	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:183)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:443)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:519)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:351)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:376)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:185)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:357)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:532)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:184)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:143)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:109)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:526)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
-	... 13 more
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:661)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:346)
+	... 11 more
 </pre>
  </div>
 
@@ -75,14 +73,14 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
  <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!local&gt; at line 1, column 31:
     anchored: !local &amp;anchor value
                                   ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1062:11)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1402:7)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1061:11)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -109,10 +107,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;anchored&quot;:&quot;value&quot;,&quot;alias&quot;:&quot;value&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -127,10 +122,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;alias&quot;:&quot;value&quot;,&quot;anchored&quot;:&quot;value&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -151,20 +143,23 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;alias&quot; : &quot;value&quot;,
-   &quot;anchored&quot; : &quot;value&quot;
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;alias&quot; : null,</span>
+<span
+class="">   &quot;anchored&quot; : &quot;value&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;alias&#39; =&gt; &#39;value&#39;,
+  &#39;alias&#39; =&gt; undef,
   &#39;anchored&#39; =&gt; &#39;value&#39;
 }
 </pre>
@@ -173,10 +168,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;alias&quot;:&quot;value&quot;,&quot;anchored&quot;:&quot;value&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -226,10 +218,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;anchored&quot;:&quot;value&quot;,&quot;alias&quot;:&quot;value&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#3GZX - Spec Example 7.1. Alias Nodes - YAML Framework Matrix</title>
+<title>#3GZX - Spec Example 7.1. Alias Nodes - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #3GZX - Spec Example 7.1. Alias Nodes</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>First occurrence: &amp;anchor Foo
@@ -33,7 +33,7 @@ Reuse anchor: *anchor
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;First occurrence&quot; : &quot;Foo&quot;,<br>   &quot;Override anchor&quot; : &quot;Bar&quot;,<br>   &quot;Reuse anchor&quot; : &quot;Bar&quot;,<br>   &quot;Second occurrence&quot; : &quot;Foo&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -48,28 +48,12 @@ Reuse anchor: *anchor
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;First occurrence&quot;: &quot;Foo&quot;,
-  &quot;Second occurrence&quot;: &quot;Foo&quot;,
-  &quot;Override anchor&quot;: &quot;Bar&quot;,
-  &quot;Reuse anchor&quot;: &quot;Bar&quot;
-}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;First occurrence&quot;: &quot;Foo&quot;,
-  &quot;Second occurrence&quot;: &quot;Foo&quot;,
-  &quot;Override anchor&quot;: &quot;Bar&quot;,
-  &quot;Reuse anchor&quot;: &quot;Bar&quot;
-}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -79,10 +63,7 @@ Reuse anchor: *anchor
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -97,10 +78,7 @@ Reuse anchor: *anchor
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -123,15 +101,20 @@ Reuse anchor: *anchor
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;First occurrence&quot; : &quot;Foo&quot;,
-   &quot;Override anchor&quot; : &quot;Bar&quot;,
-   &quot;Reuse anchor&quot; : &quot;Bar&quot;,
-   &quot;Second occurrence&quot; : &quot;Foo&quot;
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">   &quot;First occurrence&quot; : &quot;Foo&quot;,</span>
+<span
+class="">   &quot;Override anchor&quot; : &quot;Bar&quot;,</span>
+<span
+class="diff_line">   &quot;Reuse anchor&quot; : null,</span>
+<span
+class="">   &quot;Second occurrence&quot; : null</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -140,8 +123,8 @@ Reuse anchor: *anchor
 <pre>{
   &#39;First occurrence&#39; =&gt; &#39;Foo&#39;,
   &#39;Override anchor&#39; =&gt; &#39;Bar&#39;,
-  &#39;Reuse anchor&#39; =&gt; &#39;Bar&#39;,
-  &#39;Second occurrence&#39; =&gt; &#39;Foo&#39;
+  &#39;Reuse anchor&#39; =&gt; undef,
+  &#39;Second occurrence&#39; =&gt; undef
 }
 </pre>
 
@@ -149,10 +132,7 @@ Reuse anchor: *anchor
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -182,10 +162,7 @@ Reuse anchor: *anchor
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -213,10 +190,7 @@ Reuse anchor: *anchor
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;First occurrence&quot;:&quot;Foo&quot;,&quot;Second occurrence&quot;:&quot;Foo&quot;,&quot;Override anchor&quot;:&quot;Bar&quot;,&quot;Reuse anchor&quot;:&quot;Bar&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

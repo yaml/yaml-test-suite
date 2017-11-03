@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#E76Z - Aliases in Implicit Block Mapping - YAML Framework Matrix</title>
+<title>#E76Z - Aliases in Implicit Block Mapping - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #E76Z - Aliases in Implicit Block Mapping</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&amp;a a: &amp;b b
@@ -27,7 +27,7 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;a&quot; : &quot;b&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -42,12 +42,7 @@
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;a&quot;: &quot;b&quot;
-}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
@@ -55,11 +50,11 @@
  <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 5:
     &amp;a a: &amp;b b
         ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1512:5)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1513:5)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1557:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:410:26)
@@ -86,10 +81,7 @@
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;a&quot;:&quot;b&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -112,10 +104,7 @@
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;a&quot;:&quot;b&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -135,37 +124,44 @@
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;a&quot; : &quot;b&quot;
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="diff_line">null</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
+  &#39;&#39; =&gt; undef,
   &#39;a&#39; =&gt; &#39;b&#39;
 }
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 150, &lt;&gt; line 1.
+Use of uninitialized value $value in hash element at /lib/perl5/YAML/PP/Loader.pm line 151, &lt;&gt; line 1.
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;YAML::Syck::BadAlias=HASH(0xe415f8)&quot;:&quot;b&quot;,&quot;a&quot;:&quot;b&quot;}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;YAML::Syck::BadAlias=HASH(0x1349670)&quot; : &quot;b&quot;,</span>
+<span
+class="">   &quot;a&quot; : &quot;b&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;YAML::Syck::BadAlias=HASH(0x8b6c70)&#39; =&gt; &#39;b&#39;,
+  &#39;YAML::Syck::BadAlias=HASH(0xd7cc70)&#39; =&gt; &#39;b&#39;,
   &#39;a&#39; =&gt; &#39;b&#39;
 }
 </pre>
@@ -186,10 +182,7 @@
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;a&quot;:&quot;b&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -214,10 +207,7 @@
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;a&quot;:&quot;b&quot;}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

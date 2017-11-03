@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#7BUB - Spec Example 2.10. Node for “Sammy Sosa” appears twice in this document - YAML Framework Matrix</title>
+<title>#7BUB - Spec Example 2.10. Node for “Sammy Sosa” appears twice in this document - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #7BUB - Spec Example 2.10. Node for “Sammy Sosa” appears twice in this document</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
@@ -39,7 +39,7 @@ rbi:
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>   &quot;hr&quot; : [<br>      &quot;Mark McGwire&quot;,<br>      &quot;Sammy Sosa&quot;<br>   ],<br>   &quot;rbi&quot; : [<br>      &quot;Sammy Sosa&quot;,<br>      &quot;Ken Griffey&quot;<br>   ]<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -54,36 +54,12 @@ rbi:
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;hr&quot;: [
-    &quot;Mark McGwire&quot;,
-    &quot;Sammy Sosa&quot;
-  ],
-  &quot;rbi&quot;: [
-    &quot;Sammy Sosa&quot;,
-    &quot;Ken Griffey&quot;
-  ]
-}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-  &quot;hr&quot;: [
-    &quot;Mark McGwire&quot;,
-    &quot;Sammy Sosa&quot;
-  ],
-  &quot;rbi&quot;: [
-    &quot;Sammy Sosa&quot;,
-    &quot;Ken Griffey&quot;
-  ]
-}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -93,10 +69,7 @@ rbi:
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;hr&quot;:[&quot;Mark McGwire&quot;,&quot;Sammy Sosa&quot;],&quot;rbi&quot;:[&quot;Sammy Sosa&quot;,&quot;Ken Griffey&quot;]}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -111,10 +84,7 @@ rbi:
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;hr&quot;:[&quot;Mark McGwire&quot;,&quot;Sammy Sosa&quot;],&quot;rbi&quot;:[&quot;Sammy Sosa&quot;,&quot;Ken Griffey&quot;]}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pm-pl">
@@ -141,19 +111,28 @@ rbi:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{
-   &quot;hr&quot; : [
-      &quot;Mark McGwire&quot;,
-      &quot;Sammy Sosa&quot;
-   ],
-   &quot;rbi&quot; : [
-      &quot;Sammy Sosa&quot;,
-      &quot;Ken Griffey&quot;
-   ]
-}
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">   &quot;hr&quot; : [</span>
+<span
+class="">      &quot;Mark McGwire&quot;,</span>
+<span
+class="">      &quot;Sammy Sosa&quot;</span>
+<span
+class="">   ],</span>
+<span
+class="">   &quot;rbi&quot; : [</span>
+<span
+class="diff_line">      null,</span>
+<span
+class="">      &quot;Ken Griffey&quot;</span>
+<span
+class="">   ]</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -165,7 +144,7 @@ rbi:
             &#39;Sammy Sosa&#39;
           ],
   &#39;rbi&#39; =&gt; [
-             &#39;Sammy Sosa&#39;,
+             undef,
              &#39;Ken Griffey&#39;
            ]
 }
@@ -175,10 +154,7 @@ rbi:
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;hr&quot;:[&quot;Mark McGwire&quot;,&quot;Sammy Sosa&quot;],&quot;rbi&quot;:[&quot;Sammy Sosa&quot;,&quot;Ken Griffey&quot;]}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -212,10 +188,7 @@ rbi:
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;hr&quot;:[&quot;Mark McGwire&quot;,&quot;Sammy Sosa&quot;],&quot;rbi&quot;:[&quot;Sammy Sosa&quot;,&quot;Ken Griffey&quot;]}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -247,10 +220,7 @@ rbi:
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;hr&quot;:[&quot;Mark McGwire&quot;,&quot;Sammy Sosa&quot;],&quot;rbi&quot;:[&quot;Sammy Sosa&quot;,&quot;Ken Griffey&quot;]}
-</pre>
-
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

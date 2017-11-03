@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#FBC9 - Allowed characters in plain scalars - YAML Framework Matrix</title>
+<title>#FBC9 - Allowed characters in plain scalars - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Framework Matrix</a></h2>
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
 <h3>Test #FBC9 - Allowed characters in plain scalars</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>safe: a!&quot;#$%&amp;&#39;()*+,-./09:;&lt;=&gt;?@AZ[\]^_`az{|}~
@@ -155,7 +155,39 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :safe</span>
+<span
+class="diff_line">=VAL :a!&quot;#$%&amp;&#39;()*+,-./09:;&lt;=&gt;?@AZ[\]^_`az{|}~ !&quot;#$%&amp;&#39;()*+,-./09:;&lt;=&gt;?@AZ[\]^_`az{|}~</span>
+<span
+class="">=VAL :safe question mark</span>
+<span
+class="">=VAL :?foo</span>
+<span
+class="">=VAL :safe colon</span>
+<span
+class="">=VAL ::foo</span>
+<span
+class="">=VAL :safe dash</span>
+<span
+class="">=VAL :-foo</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-json">
