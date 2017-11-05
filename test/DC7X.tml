@@ -1,0 +1,40 @@
+=== Various trailing tabs
+from: @perlpunk
+tags: comment whitespace
+
++++ in-yaml
+a: b<TAB>
+seq:<TAB>
+ - a<TAB>
+c: d<TAB>#X
+
++++ out-yaml
+a: b
+seq:
+- a
+c: d
+
++++ in-json
+{
+  "a": "b",
+  "seq": [
+    "a"
+  ],
+  "c": "d"
+}
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :a
+=VAL :b
+=VAL :seq
++SEQ
+=VAL :a
+-SEQ
+=VAL :c
+=VAL :d
+-MAP
+-DOC
+-STR
