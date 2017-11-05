@@ -1,0 +1,25 @@
+=== Anchor with unicode character
+from: https://github.com/yaml/pyyaml/issues/94
+tags: anchor
+
++++ in-yaml
+---
+- &😁 unicode anchor
+
++++ out-yaml
+---
+- &😁 unicode anchor
+
++++ in-json
+[
+  "unicode anchor"
+]
+
++++ test-event
++STR
++DOC ---
++SEQ
+=VAL &😁 :unicode anchor
+-SEQ
+-DOC
+-STR
