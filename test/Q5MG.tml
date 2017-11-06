@@ -1,11 +1,20 @@
 === Tab at beginning of line followed by a flow mapping
 from: IRC
-tags: error flow whitespace
+tags: flow whitespace
 
 +++ in-yaml
 <TAB>{}
 
-+++ error
++++ out-yaml
+{}
+
++++ in-json
+{}
 
 +++ test-event
 +STR
++DOC
++MAP
+-MAP
+-DOC
+-STR
