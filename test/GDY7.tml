@@ -1,0 +1,16 @@
+=== Comment that looks like a mapping key
+from: @perlpunk
+tags: comment error mapping
+
++++ in-yaml
+key: value
+this is #not a: key
+
++++ error
+
++++ test-event
++STR
++DOC
++MAP
+=VAL :key
+=VAL :value

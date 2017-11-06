@@ -1,0 +1,13 @@
+=== Invalid tag
+from: @perlpunk
+tags: error tag
+
++++ in-yaml
+---
+!invalid{}tag scalar
+
++++ error
+
++++ test-event
++STR
++DOC ---
