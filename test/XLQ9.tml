@@ -5,7 +5,7 @@ tags: directive scalar
 +++ in-yaml
 ---
 scalar
-%YAML 1.2
+\%YAML 1.2
 
 +++ out-yaml
 --- scalar %YAML 1.2
