@@ -29,3 +29,7 @@ to use them.
 The tests are currently written in TestML under the `test` directory on the
 `master` branch. The test data is split into the separate files structure, and
 kept on the `data` branch. This makes tests easier to groom.
+
+To get a quick overview of the tests you can have a look at the "YAML Test
+Matrix"[http://matrix.yaml.io/]
+- [https://github.com/perlpunk/yaml-test-matrix].
