@@ -179,7 +179,7 @@ class="">   &quot;flow in block&quot;,</span>
 <span
 class="">   &quot;Block scalar\n&quot;,</span>
 <span
-class="diff_line">   &quot;map=HASH(0x18275f8)&quot;</span>
+class="diff_line">   &quot;map=HASH(0x261f5f8)&quot;</span>
 <span
 class="">]</span>
 </pre>
@@ -214,22 +214,22 @@ class="">]</span>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    bad tag found for hash: &#39;tag:yaml.org,2002:map&#39;
-
-was found at document: 1
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    bad tag found for hash: &#39;tag:yaml.org,2002:map&#39;
-
-was found at document: 1
+ <span class="na">&nbsp;</span>n/a
+<pre>[
+  &#39;flow in block&#39;,
+  &#39;Block scalar
+&#39;,
+  {
+    &#39;foo&#39; =&gt; &#39;bar&#39;
+  }
+]
 </pre>
+
  </div>
 
  <div class="framework" id="pyyaml-event">

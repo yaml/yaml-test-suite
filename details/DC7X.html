@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#K54U - Tab after document header - YAML Test Matrix</title>
+<title>#DC7X - Various trailing tabs - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -10,18 +10,30 @@
 <body>
 
 <h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test #K54U - Tab after document header</h3>
+<h3>Test #DC7X - Various trailing tabs</h3>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---	scalar
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>a: b	
+seq:	
+ - a	
+c: d	#X
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC ---
-=VAL :scalar
++DOC
++MAP
+=VAL :a
+=VAL :b
+=VAL :seq
++SEQ
+=VAL :a
+-SEQ
+=VAL :c
+=VAL :d
+-MAP
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>&quot;scalar&quot;<br></pre>
+<pre>{<br>   &quot;a&quot; : &quot;b&quot;,<br>   &quot;c&quot; : &quot;d&quot;,<br>   &quot;seq&quot; : [<br>      &quot;a&quot;<br>   ]<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -33,13 +45,13 @@
 <h3><a href="#java-event">java-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
 found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
- in &#39;reader&#39;, line 1, column 4:
-    ---	scalar
-       ^
+ in &#39;reader&#39;, line 2, column 5:
+    seq:	
+        ^
 
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentContent.produce(ParserImpl.java:271)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
 	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
@@ -51,16 +63,20 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 <h3><a href="#java-json">java-json</a></h3>
  <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
 found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
- in &#39;reader&#39;, line 1, column 4:
-    ---	scalar
-       ^
+ in &#39;reader&#39;, line 2, column 5:
+    seq:	
+        ^
 
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentContent.produce(ParserImpl.java:271)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:133)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:249)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:240)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:228)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
 	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
@@ -97,13 +113,34 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">   &quot;a&quot; : &quot;b&quot;,</span>
+<span
+class="diff_line">   &quot;c&quot; : &quot;d\t#X&quot;,</span>
+<span
+class="">   &quot;seq&quot; : [</span>
+<span
+class="">      &quot;a&quot;</span>
+<span
+class="">   ]</span>
+<span
+class="">}</span>
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&#39;scalar&#39;
+<pre>{
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;c&#39; =&gt; &#39;d	#X&#39;,
+  &#39;seq&#39; =&gt; [
+             &#39;a&#39;
+           ]
+}
 </pre>
 
  </div>
@@ -121,25 +158,27 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&#39;scalar&#39;
+<pre>{
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;c&#39; =&gt; &#39;d&#39;,
+  &#39;seq&#39; =&gt; [
+             &#39;a&#39;
+           ]
+}
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="diff_line">&quot;---\tscalar&quot;</span>
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 7, column 0): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>&#39;---	scalar&#39;
+ <span class="error">&nbsp;</span>error <pre>Syck parser (line 7, column 0): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-tiny-json">
@@ -150,7 +189,13 @@ class="diff_line">&quot;---\tscalar&quot;</span>
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&#39;scalar&#39;
+<pre>{
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;c&#39; =&gt; &#39;d&#39;,
+  &#39;seq&#39; =&gt; [
+           &#39;a&#39;
+         ]
+}
 </pre>
 
  </div>
@@ -163,7 +208,13 @@ class="diff_line">&quot;---\tscalar&quot;</span>
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>&#39;scalar&#39;
+<pre>{
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;c&#39; =&gt; &#39;d&#39;,
+  &#39;seq&#39; =&gt; [
+             &#39;a&#39;
+           ]
+}
 </pre>
 
  </div>
@@ -171,7 +222,10 @@ class="diff_line">&quot;---\tscalar&quot;</span>
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>+STR
-+DOC ---
++DOC
++MAP
+=VAL :a
+=VAL :b
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -179,24 +233,27 @@ Traceback (most recent call last):
     while loader.check_event():
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 210, in parse_document_content
-    DocumentStartToken, DocumentEndToken, StreamEndToken):
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
   File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
     self.fetch_more_tokens()
   File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 257, in fetch_more_tokens
     % ch.encode(&#39;utf-8&#39;), self.get_mark())
 yaml.scanner.ScannerError: while scanning for the next token
 found character &#39;\t&#39; that cannot start any token
-  in &quot;&lt;string&gt;&quot;, line 1, column 4:
-    ---	scalar
-       ^
+  in &quot;&lt;string&gt;&quot;, line 1, column 5:
+    a: b	
+        ^
 </pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
  <span class="error">&nbsp;</span>error <pre>+STR
-+DOC ---
++DOC
++MAP
+=VAL :a
+=VAL :b
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
@@ -204,17 +261,17 @@ Traceback (most recent call last):
     while loader._parser.check_event():
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 248, in parse_document_content
-    DocumentStartToken, DocumentEndToken, StreamEndToken):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 518, in parse_block_mapping_key
+    if self.scanner.check_token(KeyToken):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 140, in check_token
     self.fetch_more_tokens()
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
     % utf8(ch), self.reader.get_mark())
 ruamel.yaml.scanner.ScannerError: while scanning for the next token
 found character &#39;\t&#39; that cannot start any token
-  in &quot;&lt;byte string&gt;&quot;, line 1, column 4:
-    ---	scalar
-       ^ (line: 1)
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 5:
+    a: b	
+        ^ (line: 1)
 </pre>
  </div>
 

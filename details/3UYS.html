@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#J3BT - Spec Example 5.12. Tabs and Spaces - YAML Test Matrix</title>
+<title>#3UYS - Escaped slash in double quotes - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -10,28 +10,21 @@
 <body>
 
 <h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test #J3BT - Spec Example 5.12. Tabs and Spaces</h3>
+<h3>Test #3UYS - Escaped slash in double quotes</h3>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># Tabs and spaces
-quoted: &quot;Quoted 	&quot;
-block:	|
-  void main() {
-  	printf(&quot;Hello, world!\n&quot;);
-  }
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>escaped slash: &quot;a\/b&quot;
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +MAP
-=VAL :quoted
-=VAL &quot;Quoted \t
-=VAL :block
-=VAL |void main() {\n\tprintf(&quot;Hello, world!\\n&quot;);\n}\n
+=VAL :escaped slash
+=VAL &quot;a/b
 -MAP
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;block&quot; : &quot;void main() {\n\tprintf(\&quot;Hello, world!\\n\&quot;);\n}\n&quot;,<br>   &quot;quoted&quot; : &quot;Quoted \t&quot;<br>}<br></pre>
+<pre>{<br>   &quot;escaped slash&quot; : &quot;a/b&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -41,13 +34,20 @@ block:	|
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
-found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
- in &#39;reader&#39;, line 3, column 7:
-    block:	|
-          ^
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a double-quoted scalar
+ in &#39;reader&#39;, line 1, column 16:
+    escaped slash: &quot;a\/b&quot;
+                   ^
+found unknown escape character /(47)
+ in &#39;reader&#39;, line 1, column 19:
+    escaped slash: &quot;a\/b&quot;
+                      ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1911)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1845)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1029)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1011)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:396)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
@@ -59,13 +59,20 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
-found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
- in &#39;reader&#39;, line 3, column 7:
-    block:	|
-          ^
+ <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a double-quoted scalar
+ in &#39;reader&#39;, line 1, column 16:
+    escaped slash: &quot;a\/b&quot;
+                   ^
+found unknown escape character /(47)
+ in &#39;reader&#39;, line 1, column 19:
+    escaped slash: &quot;a\/b&quot;
+                      ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1911)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1845)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1029)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1011)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:396)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
@@ -91,12 +98,24 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :escaped slash
+Parse error: found unknown escape character
+</pre>
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="error">&nbsp;</span>error <pre>luajit: found unknown escape character at document: 1, line: 1, column: 18
+while parsing a quoted scalar at line: 1, column: 16
+
+stack traceback:
+	[C]: in function &#39;load&#39;
+	/bin/luajit-json:6: in main chunk
+	[C]: at 0x004044a0
+</pre>
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -106,27 +125,49 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :escaped slash</span>
+<span
+class="diff_line">=VAL &quot;a\/b</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
+
  </div>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
-   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
-   Line: 3
-   Document: 1
- at /lib/perl5/YAML/Loader.pm line 350.
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;escaped slash&quot; : &quot;a\\/b&quot;</span>
+<span
+class="">}</span>
 </pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
-   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
-   Line: 3
-   Document: 1
- at /lib/perl5/YAML/Loader.pm line 350.
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;escaped slash&#39; =&gt; &#39;a\\/b&#39;
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-event">
@@ -143,11 +184,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;block&#39; =&gt; &#39;void main() {
-	printf(&quot;Hello, world!\\n&quot;);
-}
-&#39;,
-  &#39;quoted&#39; =&gt; &#39;Quoted 	&#39;
+  &#39;escaped slash&#39; =&gt; &#39;a/b&#39;
 }
 </pre>
 
@@ -155,30 +192,43 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 7, column -1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;escaped slash&quot; : &quot;a\\/b&quot;</span>
+<span
+class="">}</span>
 </pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 7, column -1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+ <span class="na">&nbsp;</span>n/a
+<pre>{
+  &#39;escaped slash&#39; =&gt; &#39;a\\/b&#39;
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">   &quot;escaped slash&quot; : &quot;a\\/b&quot;</span>
+<span
+class="">}</span>
+</pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;block&#39; =&gt; &#39;void main() {
-	printf(&quot;Hello, world!\\n&quot;);
-}
-&#39;,
-  &#39;quoted&#39; =&gt; &#39;Quoted 	&#39;
+  &#39;escaped slash&#39; =&gt; &#39;a\\/b&#39;
 }
 </pre>
 
@@ -193,11 +243,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
 <pre>{
-  &#39;block&#39; =&gt; &#39;void main() {
-	printf(&quot;Hello, world!\\n&quot;);
-}
-&#39;,
-  &#39;quoted&#39; =&gt; &#39;Quoted 	&#39;
+  &#39;escaped slash&#39; =&gt; &#39;a/b&#39;
 }
 </pre>
 
@@ -208,9 +254,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
  <span class="error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
-=VAL :quoted
-=VAL &quot;Quoted \t
-=VAL :block
+=VAL :escaped slash
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -222,48 +266,39 @@ Traceback (most recent call last):
     if not self.check_token(KeyToken, ValueToken, BlockEndToken):
   File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
     self.fetch_more_tokens()
-  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 257, in fetch_more_tokens
-    % ch.encode(&#39;utf-8&#39;), self.get_mark())
-yaml.scanner.ScannerError: while scanning for the next token
-found character &#39;\t&#39; that cannot start any token
-  in &quot;&lt;string&gt;&quot;, line 3, column 7:
-    block:	|
-          ^
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 248, in fetch_more_tokens
+    return self.fetch_double()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 652, in fetch_double
+    self.fetch_flow_scalar(style=&#39;&quot;&#39;)
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 663, in fetch_flow_scalar
+    self.tokens.append(self.scan_flow_scalar(style))
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 1152, in scan_flow_scalar
+    chunks.extend(self.scan_flow_scalar_non_spaces(double, start_mark))
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 1226, in scan_flow_scalar_non_spaces
+    &quot;found unknown escape character %r&quot; % ch.encode(&#39;utf-8&#39;), self.get_mark())
+yaml.scanner.ScannerError: while scanning a double-quoted scalar
+  in &quot;&lt;string&gt;&quot;, line 1, column 16:
+    escaped slash: &quot;a\/b&quot;
+                   ^
+found unknown escape character &#39;/&#39;
+  in &quot;&lt;string&gt;&quot;, line 1, column 19:
+    escaped slash: &quot;a\/b&quot;
+                      ^
 </pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
-+DOC
-+MAP
-=VAL :quoted
-=VAL &quot;Quoted \t
-=VAL :block
-Traceback (most recent call last):
-  File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
-    for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
-    while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
-    self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 546, in parse_block_mapping_value
-    if self.scanner.check_token(ValueToken):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 140, in check_token
-    self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
-    % utf8(ch), self.reader.get_mark())
-ruamel.yaml.scanner.ScannerError: while scanning for the next token
-found character &#39;\t&#39; that cannot start any token
-  in &quot;&lt;byte string&gt;&quot;, line 3, column 7:
-    block:	|
-          ^ (line: 3)
-</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found unknown escape character while parsing a quoted scalar at line 1 column 16 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
+	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
+</pre>
  </div>
 
  </body>

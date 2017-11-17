@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#YD5X - Spec Example 2.5. Sequence of Sequences - YAML Test Matrix</title>
+<title>#XLQ9 - Multiline scalar that looks like a YAML directive - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -10,36 +10,20 @@
 <body>
 
 <h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test #YD5X - Spec Example 2.5. Sequence of Sequences</h3>
+<h3>Test #XLQ9 - Multiline scalar that looks like a YAML directive</h3>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- [name        , hr, avg  ]
-- [Mark McGwire, 65, 0.278]
-- [Sammy Sosa  , 63, 0.288]
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+scalar
+%YAML 1.2
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC
-+SEQ
-+SEQ
-=VAL :name
-=VAL :hr
-=VAL :avg
--SEQ
-+SEQ
-=VAL :Mark McGwire
-=VAL :65
-=VAL :0.278
--SEQ
-+SEQ
-=VAL :Sammy Sosa
-=VAL :63
-=VAL :0.288
--SEQ
--SEQ
++DOC ---
+=VAL :scalar %YAML 1.2
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>[<br>   [<br>      &quot;name&quot;,<br>      &quot;hr&quot;,<br>      &quot;avg&quot;<br>   ],<br>   [<br>      &quot;Mark McGwire&quot;,<br>      65,<br>      0.278<br>   ],<br>   [<br>      &quot;Sammy Sosa&quot;,<br>      63,<br>      0.288<br>   ]<br>]<br></pre>
+<pre>&quot;scalar %YAML 1.2&quot;<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -79,69 +63,53 @@
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  msg:      Parse document failed for some reason
+  line:     4
+  column:   1
+  context:  
+            ^
+  position: 21 (0 pre-lookahead)
+ at /bin/perl5-pegex-event line 23.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 2
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 79.
+</pre>
  </div>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>[
-  [
-    &#39;name&#39;,
-    &#39;hr&#39;,
-    &#39;avg&#39;
-  ],
-  [
-    &#39;Mark McGwire&#39;,
-    65,
-    &#39;0.278&#39;
-  ],
-  [
-    &#39;Sammy Sosa&#39;,
-    63,
-    &#39;0.288&#39;
-  ]
-]
+ <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 2
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 79.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
-+DOC
-+SEQ
-Line      : 1
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
-YAML      : &quot;[name        , hr, avg  ]&quot;
-  at /bin/perl5-pp-event line 18.
-</pre>
+ <span class="ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 1
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
-YAML      : &quot;[name        , hr, avg  ]&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
-</pre>
+ <span class="json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 1
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
-YAML      : &quot;[name        , hr, avg  ]&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
+ <span class="na">&nbsp;</span>n/a
+<pre>&#39;scalar %YAML 1.2&#39;
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -152,53 +120,21 @@ YAML      : &quot;[name        , hr, avg  ]&quot;
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>[
-  [
-    &#39;name&#39;,
-    &#39;hr&#39;,
-    &#39;avg&#39;
-  ],
-  [
-    &#39;Mark McGwire&#39;,
-    65,
-    &#39;0.278&#39;
-  ],
-  [
-    &#39;Sammy Sosa&#39;,
-    63,
-    &#39;0.288&#39;
-  ]
-]
+<pre>&#39;scalar %YAML 1.2&#39;
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">[</span>
-<span
-class="diff_line">   &quot;[name        , hr, avg  ]&quot;,</span>
-<span
-class="">   &quot;[Mark McGwire, 65, 0.278]&quot;,</span>
-<span
-class="">   &quot;[Sammy Sosa  , 63, 0.288]&quot;</span>
-<span
-class="">]</span>
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;scalar&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>[
-  &#39;[name        , hr, avg  ]&#39;,
-  &#39;[Mark McGwire, 65, 0.278]&#39;,
-  &#39;[Sammy Sosa  , 63, 0.288]&#39;
-]
+ <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;scalar&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-xs-json">
@@ -209,23 +145,7 @@ class="">]</span>
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="na">&nbsp;</span>n/a
-<pre>[
-  [
-    &#39;name&#39;,
-    &#39;hr&#39;,
-    &#39;avg&#39;
-  ],
-  [
-    &#39;Mark McGwire&#39;,
-    65,
-    &#39;0.278&#39;
-  ],
-  [
-    &#39;Sammy Sosa&#39;,
-    63,
-    &#39;0.288&#39;
-  ]
-]
+<pre>&#39;scalar %YAML 1.2&#39;
 </pre>
 
  </div>
