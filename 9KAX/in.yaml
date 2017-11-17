@@ -1,26 +1,26 @@
 ---
 &a1
-!t1
+!!str
 scalar1
 ---
-!t2
+!!str
 &a2
 scalar2
 ---
 &a3
-!t3 scalar3
+!!str scalar3
 ---
-&a4 !t4
-&a5 !t5 key5: value4
+&a4 !!str
+&a5 !!str key5: value4
 ---
 a6: 1
 &anchor6 b6: 2
 ---
-!t7
-&a8 !t8 key8: value7
+!!map
+&a8 !!str key8: value7
 ---
-!t9
-!t10 &a10 key10: value9
+!!map
+!!str &a10 key10: value9
 ---
-!t11 &a11
+!!str &a11
 value11

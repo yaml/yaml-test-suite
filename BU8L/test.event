@@ -2,7 +2,7 @@
 +DOC
 +MAP
 =VAL :key
-+MAP &anchor <!tag>
++MAP &anchor <!!map>
 =VAL :a
 =VAL :b
 -MAP

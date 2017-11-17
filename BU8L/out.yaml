@@ -1,2 +1,2 @@
-key: &anchor !tag
+key: &anchor !!map
   a: b

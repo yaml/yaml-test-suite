@@ -1,16 +1,16 @@
 +STR
 +DOC ---
-=VAL &a1 <!t1> :scalar1
+=VAL &a1 <!!str> :scalar1
 -DOC
 +DOC ---
-=VAL &a2 <!t2> :scalar2
+=VAL &a2 <!!str> :scalar2
 -DOC
 +DOC ---
-=VAL &a3 <!t3> :scalar3
+=VAL &a3 <!!str> :scalar3
 -DOC
 +DOC ---
-+MAP &a4 <!t4>
-=VAL &a5 <!t5> :key5
++MAP &a4 <!!str>
+=VAL &a5 <!!str> :key5
 =VAL :value4
 -MAP
 -DOC
@@ -23,18 +23,18 @@
 -MAP
 -DOC
 +DOC ---
-+MAP <!t7>
-=VAL &a8 <!t8> :key8
++MAP <!!map>
+=VAL &a8 <!!str> :key8
 =VAL :value7
 -MAP
 -DOC
 +DOC ---
-+MAP <!t9>
-=VAL &a10 <!t10> :key10
++MAP <!!map>
+=VAL &a10 <!!str> :key10
 =VAL :value9
 -MAP
 -DOC
 +DOC ---
-=VAL &a11 <!t11> :value11
+=VAL &a11 <!!str> :value11
 -DOC
 -STR
