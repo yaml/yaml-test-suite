@@ -18,7 +18,7 @@ tags: spec flow mapping
 {
   "adjacent": "value",
   "readable": "value",
-  "empty": ""
+  "empty": null
 }
 
 +++ test-event
