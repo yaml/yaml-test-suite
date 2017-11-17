@@ -6,7 +6,7 @@ This is an error because the property that is on its own line is not properly in
 
 +++ in-yaml
 key: &x
-!y
+!!map
   a: b
 
 +++ error

@@ -8,11 +8,11 @@ This is an error in 1.3 [[RFC 10]].
 
 +++ in-yaml
 key: &anchor
- !tag
+ !!map
   a: b
 
 +++ out-yaml
-key: &anchor !tag
+key: &anchor !!map
   a: b
 
 +++ test-event
@@ -20,7 +20,7 @@ key: &anchor !tag
 +DOC
 +MAP
 =VAL :key
-+MAP &anchor <!tag>
++MAP &anchor <!!map>
 =VAL :a
 =VAL :b
 -MAP
