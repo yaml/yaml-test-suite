@@ -11,6 +11,13 @@ key: &anchor
  !!map
   a: b
 
++++ in-json
+{
+  "key": {
+    "a": "b"
+  }
+}
+
 +++ out-yaml
 key: &anchor !!map
   a: b
