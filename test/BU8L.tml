@@ -27,7 +27,7 @@ key: &anchor !!map
 +DOC
 +MAP
 =VAL :key
-+MAP &anchor <!!map>
++MAP &anchor <tag:yaml.org,2002:map>
 =VAL :a
 =VAL :b
 -MAP
