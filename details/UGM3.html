@@ -108,17 +108,17 @@ comments:
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for tag:clarkevans.com,2002:invoice; exception=Invalid tag: tag:clarkevans.com,2002:invoice
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for tag:clarkevans.com,2002:invoice; exception=Invalid tag: tag:clarkevans.com,2002:invoice
  in &#39;reader&#39;, line 1, column 5:
     --- !&lt;tag:clarkevans.com,2002:invoice&gt;
         ^
@@ -142,7 +142,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:invoice&gt; at line 30, column 1:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:invoice&gt; at line 30, column 1:
     
     ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
@@ -172,12 +172,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
 <pre><span
 class="">{</span>
 <span
@@ -265,12 +265,12 @@ class="">}</span>
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
 
   Got Events:
 <pre><span
@@ -453,7 +453,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 27
    Document: 2
@@ -463,7 +463,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 27
    Document: 2
@@ -473,17 +473,17 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
   &#39;bill-to&#39; =&gt; {
                  &#39;address&#39; =&gt; {
@@ -524,15 +524,15 @@ Suite #292
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
 <pre><span
-class="diff_line">&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x2c0f030)&quot;</span>
+class="diff_line">&quot;&lt;tag::clarkevans.com,2002:invoice&gt;=HASH(0x1227eb0)&quot;</span>
 </pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>bless( {
          &#39;bill-to&#39; =&gt; {
                         &#39;address&#39; =&gt; {
@@ -573,19 +573,19 @@ Suite #292
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!&lt;tag:clarkevans.com,2002:invoice&gt;&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     bad tag found for hash: &#39;tag:clarkevans.com,2002:invoice&#39;
 
@@ -595,7 +595,7 @@ was found at document: 1
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     bad tag found for hash: &#39;tag:clarkevans.com,2002:invoice&#39;
 
@@ -605,17 +605,105 @@ was found at document: 1
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 43, in construct_document
+    data = self.construct_object(node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
+    data = constructor(self, node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
+    node.start_mark)
+yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;tag:clarkevans.com,2002:invoice&#39;
+  in &quot;&lt;string&gt;&quot;, line 1, column 5:
+    --- !&lt;tag:clarkevans.com,2002:invoice&gt;
+        ^
+</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 43, in construct_document
+    data = self.construct_object(node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
+    data = constructor(self, node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
+    node.start_mark)
+yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;tag:clarkevans.com,2002:invoice&#39;
+  in &quot;&lt;string&gt;&quot;, line 1, column 5:
+    --- !&lt;tag:clarkevans.com,2002:invoice&gt;
+        ^
+</pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 91, in construct_document
+    data = self.construct_object(node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 141, in construct_object
+    data = constructor(self, node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 567, in construct_undefined
+    node.start_mark)
+ruamel.yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;tag:clarkevans.com,2002:invoice&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 5:
+    --- !&lt;tag:clarkevans.com,2002:invoice&gt;
+        ^ (line: 1)
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 91, in construct_document
+    data = self.construct_object(node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 141, in construct_object
+    data = constructor(self, node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 567, in construct_undefined
+    node.start_mark)
+ruamel.yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;tag:clarkevans.com,2002:invoice&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 5:
+    --- !&lt;tag:clarkevans.com,2002:invoice&gt;
+        ^ (line: 1)
+</pre>
  </div>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

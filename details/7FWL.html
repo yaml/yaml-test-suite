@@ -30,17 +30,17 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !bar; exception=Invalid tag: !bar
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !bar; exception=Invalid tag: !bar
  in &#39;reader&#39;, line 2, column 3:
       !&lt;!bar&gt; baz
       ^
@@ -70,7 +70,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 30:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 30:
     !&lt;tag:yaml.org,2002:str&gt; foo :
                                  ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
@@ -99,12 +99,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{&quot;foo&quot;:&quot;baz&quot;}
 </pre>
 
@@ -112,12 +112,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !bar
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
 
   Got Events:
 <pre><span
@@ -142,7 +142,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 2
    Document: 2
@@ -152,7 +152,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 2
    Document: 2
@@ -162,12 +162,12 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
    &quot;foo&quot; : &quot;baz&quot;
 }
@@ -177,7 +177,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
   &#39;foo&#39; =&gt; &#39;baz&#39;
 }
@@ -187,15 +187,15 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x1607658)&quot;
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&quot;&lt;tag::yaml.org,2002:str&gt;=HASH(0x1043658)&quot;
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>bless( {
          &#39;foo&#39; =&gt; &#39;baz&#39;
        }, &#39;&lt;tag::yaml.org,2002:str&gt;&#39; )
@@ -205,27 +205,27 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;foo&quot;:&quot;bar=SCALAR(0x2bb4740)&quot;}
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&quot;foo&quot;:&quot;bar=SCALAR(0x22633d8)&quot;}
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
   &#39;foo&#39; =&gt; bless( do{\(my $o = &#39;baz&#39;)}, &#39;bar&#39; )
 }
@@ -235,17 +235,129 @@ class="">-STR</span>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+    for dummy in generator:
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 133, in construct_mapping
+    value = self.construct_object(value_node, deep=deep)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
+    data = constructor(self, node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
+    node.start_mark)
+yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!bar&#39;
+  in &quot;&lt;string&gt;&quot;, line 2, column 3:
+      !&lt;!bar&gt; baz
+      ^
+</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+    for dummy in generator:
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 133, in construct_mapping
+    value = self.construct_object(value_node, deep=deep)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
+    data = constructor(self, node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
+    node.start_mark)
+yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!bar&#39;
+  in &quot;&lt;string&gt;&quot;, line 2, column 3:
+      !&lt;!bar&gt; baz
+      ^
+</pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 96, in construct_document
+    for dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 547, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 305, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 212, in construct_mapping
+    value = self.construct_object(value_node, deep=deep)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 141, in construct_object
+    data = constructor(self, node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 567, in construct_undefined
+    node.start_mark)
+ruamel.yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!bar&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 2, column 3:
+      !&lt;!bar&gt; baz
+      ^ (line: 2)
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 96, in construct_document
+    for dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 547, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 305, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 212, in construct_mapping
+    value = self.construct_object(value_node, deep=deep)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 141, in construct_object
+    data = constructor(self, node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 567, in construct_undefined
+    node.start_mark)
+ruamel.yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!bar&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 2, column 3:
+      !&lt;!bar&gt; baz
+      ^ (line: 2)
+</pre>
  </div>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{&quot;foo&quot;:&quot;baz&quot;}
 </pre>
 

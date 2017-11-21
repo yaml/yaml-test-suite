@@ -29,12 +29,12 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning an anchor
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning an anchor
  in &#39;reader&#39;, line 2, column 3:
     - &amp;😁 unicode anchor
       ^
@@ -58,7 +58,7 @@ expected alphabetic or numeric character, but found 😁(128513)
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning an anchor
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning an anchor
  in &#39;reader&#39;, line 2, column 3:
     - &amp;😁 unicode anchor
       ^
@@ -88,12 +88,12 @@ expected alphabetic or numeric character, but found 😁(128513)
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
 Parse error: did not find expected alphabetic or numeric character
@@ -102,7 +102,7 @@ Parse error: did not find expected alphabetic or numeric character
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>luajit: did not find expected alphabetic or numeric character at document: 1, line: 2, column: 4
+ <span class="status_box color_error">&nbsp;</span>error <pre>luajit: did not find expected alphabetic or numeric character at document: 1, line: 2, column: 4
 while scanning an anchor at line: 2, column: 3
 
 stack traceback:
@@ -114,12 +114,12 @@ stack traceback:
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
 
   Got Events:
 <pre><span
@@ -140,7 +140,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Invalid anchor
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Invalid anchor
    Code: YAML_PARSE_ERR_BAD_ANCHOR
    Line: 2
    Document: 1
@@ -150,7 +150,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Invalid anchor
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Invalid anchor
    Code: YAML_PARSE_ERR_BAD_ANCHOR
    Line: 2
    Document: 1
@@ -160,12 +160,12 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
 Line      : 2
 Message   : Expected (EOL WS), but got Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;\237\230\201 unicode anchor&quot;
   at /bin/perl5-pp-event line 18.
 </pre>
@@ -173,9 +173,9 @@ YAML      : &quot;\237\230\201 unicode anchor&quot;
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 2
+ <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
 Message   : Expected (EOL WS), but got Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;\237\230\201 unicode anchor&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
@@ -183,9 +183,9 @@ YAML      : &quot;\237\230\201 unicode anchor&quot;
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 2
+ <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
 Message   : Expected (EOL WS), but got Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;\237\230\201 unicode anchor&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
@@ -193,7 +193,7 @@ YAML      : &quot;\237\230\201 unicode anchor&quot;
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="json_diff">&nbsp;</span>json_diff
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
 <pre><span
 class="">[</span>
 <span
@@ -205,7 +205,7 @@ class="">]</span>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>[
   &#39;&amp;😁 unicode anchor&#39;
 ]
@@ -215,19 +215,19 @@ class="">]</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     did not find expected alphabetic or numeric character
 
@@ -238,7 +238,7 @@ while scanning an anchor at line: 2, column: 3
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     did not find expected alphabetic or numeric character
 
@@ -249,7 +249,7 @@ while scanning an anchor at line: 2, column: 3
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
 Traceback (most recent call last):
@@ -282,9 +282,93 @@ expected alphabetic or numeric character, but found &#39;\xf0\x9f\x98\x81&#39;
 </pre>
  </div>
 
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 379, in parse_block_sequence_first_entry
+    return self.parse_block_sequence_entry()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 384, in parse_block_sequence_entry
+    if not self.check_token(BlockEntryToken, BlockEndToken):
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 228, in fetch_more_tokens
+    return self.fetch_anchor()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 618, in fetch_anchor
+    self.tokens.append(self.scan_anchor(AnchorToken))
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 926, in scan_anchor
+    % ch.encode(&#39;utf-8&#39;), self.get_mark())
+yaml.scanner.ScannerError: while scanning an anchor
+  in &quot;&lt;string&gt;&quot;, line 2, column 3:
+    - &amp;😁 unicode anchor
+      ^
+expected alphabetic or numeric character, but found &#39;\xf0\x9f\x98\x81&#39;
+  in &quot;&lt;string&gt;&quot;, line 2, column 4:
+    - &amp;😁 unicode anchor
+       ^
+</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 379, in parse_block_sequence_first_entry
+    return self.parse_block_sequence_entry()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 384, in parse_block_sequence_entry
+    if not self.check_token(BlockEntryToken, BlockEndToken):
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 228, in fetch_more_tokens
+    return self.fetch_anchor()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 618, in fetch_anchor
+    self.tokens.append(self.scan_anchor(AnchorToken))
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 926, in scan_anchor
+    % ch.encode(&#39;utf-8&#39;), self.get_mark())
+yaml.scanner.ScannerError: while scanning an anchor
+  in &quot;&lt;string&gt;&quot;, line 2, column 3:
+    - &amp;😁 unicode anchor
+      ^
+expected alphabetic or numeric character, but found &#39;\xf0\x9f\x98\x81&#39;
+  in &quot;&lt;string&gt;&quot;, line 2, column 4:
+    - &amp;😁 unicode anchor
+       ^
+</pre>
+ </div>
+
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
 Traceback (most recent call last):
@@ -310,9 +394,79 @@ ruamel.yaml.scanner.ScannerError: &lt;exception str() failed&gt;
 </pre>
  </div>
 
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+    return self.compose_document()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 125, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 157, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 454, in parse_block_sequence_first_entry
+    return self.parse_block_sequence_entry()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 261, in fetch_more_tokens
+    return self.fetch_anchor()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 644, in fetch_anchor
+    self.tokens.append(self.scan_anchor(AnchorToken))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 966, in scan_anchor
+    % utf8(ch), self.reader.get_mark())
+ruamel.yaml.scanner.ScannerError: &lt;exception str() failed&gt;
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+    return self.compose_document()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 125, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 157, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 454, in parse_block_sequence_first_entry
+    return self.parse_block_sequence_entry()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 261, in fetch_more_tokens
+    return self.fetch_anchor()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 644, in fetch_anchor
+    self.tokens.append(self.scan_anchor(AnchorToken))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 966, in scan_anchor
+    % utf8(ch), self.reader.get_mark())
+ruamel.yaml.scanner.ScannerError: &lt;exception str() failed&gt;
+</pre>
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected alphabetic or numeric character while scanning an anchor at line 2 column 3 (Psych::SyntaxError)
+ <span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected alphabetic or numeric character while scanning an anchor at line 2 column 3 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
 	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
 	from /bin/ruby-json:6:in `&lt;main&gt;&#39;

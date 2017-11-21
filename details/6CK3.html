@@ -34,7 +34,7 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
 
  Minimal Events:
 <pre>
@@ -83,12 +83,12 @@ class="">-STR</span>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !local; exception=Invalid tag: !local
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !local; exception=Invalid tag: !local
  in &#39;reader&#39;, line 3, column 3:
     - !local foo
       ^
@@ -117,7 +117,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!local&gt; at line 3, column 13:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!local&gt; at line 3, column 13:
     - !local foo
                 ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
@@ -149,12 +149,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>[&quot;foo&quot;,&quot;bar&quot;,&quot;baz&quot;]
 </pre>
 
@@ -162,17 +162,17 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
@@ -182,7 +182,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
@@ -192,12 +192,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>[
    &quot;foo&quot;,
    &quot;bar&quot;,
@@ -209,7 +209,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>[
   &#39;foo&#39;,
   &#39;bar&#39;,
@@ -221,7 +221,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>&quot;%TAG !e! tag:example.com,2000:app\/ --- - !local foo - !!str bar - !e!tag%21 baz&quot;
 </pre>
 
@@ -229,7 +229,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>&#39;%TAG !e! tag:example.com,2000:app/ --- - !local foo - !!str bar - !e!tag%21 baz&#39;
 </pre>
 
@@ -237,36 +237,88 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/tag!&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/tag!&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/tag!&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/tag!&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
 </pre>
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+    for dummy in generator:
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 393, in construct_yaml_seq
+    data.extend(self.construct_sequence(node))
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 118, in construct_sequence
+    for child in node.value]
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
+    data = constructor(self, node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
+    node.start_mark)
+yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!local&#39;
+  in &quot;&lt;string&gt;&quot;, line 3, column 3:
+    - !local foo
+      ^
+</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+    for dummy in generator:
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 393, in construct_yaml_seq
+    data.extend(self.construct_sequence(node))
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 118, in construct_sequence
+    for child in node.value]
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
+    data = constructor(self, node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
+    node.start_mark)
+yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!local&#39;
+  in &quot;&lt;string&gt;&quot;, line 3, column 3:
+    - !local foo
+      ^
+</pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
 =VAL &lt;!local&gt; :foo
@@ -296,9 +348,83 @@ TypeError: decoding Unicode is not supported
 </pre>
  </div>
 
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+    return self.compose_document()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 125, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 157, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 265, in fetch_more_tokens
+    return self.fetch_tag()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 653, in fetch_tag
+    self.tokens.append(self.scan_tag())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1014, in scan_tag
+    suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1497, in scan_tag_uri
+    chunks.append(self.scan_uri_escapes(name, start_mark))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1534, in scan_uri_escapes
+    value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
+TypeError: decoding Unicode is not supported
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+    return self.compose_document()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 125, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 157, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 265, in fetch_more_tokens
+    return self.fetch_tag()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 653, in fetch_tag
+    self.tokens.append(self.scan_tag())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1014, in scan_tag
+    suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1497, in scan_tag_uri
+    chunks.append(self.scan_uri_escapes(name, start_mark))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1534, in scan_uri_escapes
+    value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
+TypeError: decoding Unicode is not supported
+</pre>
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>[&quot;foo&quot;,&quot;bar&quot;,&quot;baz&quot;]
 </pre>
 

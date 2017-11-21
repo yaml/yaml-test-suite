@@ -27,12 +27,12 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
 found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
  in &#39;reader&#39;, line 1, column 1:
     	{}
@@ -50,7 +50,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning for the next token
 found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TAB) for indentation)
  in &#39;reader&#39;, line 1, column 1:
     	{}
@@ -71,19 +71,19 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 Parse error: found character that cannot start any token
 </pre>
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>luajit: found character that cannot start any token at document: 0
+ <span class="status_box color_error">&nbsp;</span>error <pre>luajit: found character that cannot start any token at document: 0
 while scanning for the next token at line: 1, column: 1
 
 stack traceback:
@@ -95,7 +95,7 @@ stack traceback:
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Traceback (most recent call last)
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last)
 nimyaml_event.nim(5)     nimyaml_event
 parser.nim(1082)         parse
 parser.nim(1066)         init
@@ -106,7 +106,7 @@ Error: unhandled exception: Unexpected character (expected line end): &quot;{&qu
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="diff">&nbsp;</span>diff<br>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
 
   Got Events:
 <pre><span
@@ -125,7 +125,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: YAML_PARSE_ERR_NONSPACE_INDENTATION
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: YAML_PARSE_ERR_NONSPACE_INDENTATION
    Code: YAML_PARSE_ERR_NONSPACE_INDENTATION
    Line: 1
    Document: 1
@@ -135,7 +135,7 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: YAML_PARSE_ERR_NONSPACE_INDENTATION
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: YAML_PARSE_ERR_NONSPACE_INDENTATION
    Code: YAML_PARSE_ERR_NONSPACE_INDENTATION
    Line: 1
    Document: 1
@@ -145,11 +145,11 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 Line      : 1
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got WS
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got WS
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;\t{}&quot;
   at /bin/perl5-pp-event line 18.
 </pre>
@@ -157,9 +157,9 @@ YAML      : &quot;\t{}&quot;
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 1
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got WS
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+ <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
+Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got WS
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;\t{}&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
@@ -167,9 +167,9 @@ YAML      : &quot;\t{}&quot;
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 1
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got WS
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+ <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
+Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got WS
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;\t{}&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
@@ -177,12 +177,12 @@ YAML      : &quot;\t{}&quot;
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="json_ok">&nbsp;</span>json_ok
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{}
 </pre>
 
@@ -190,19 +190,19 @@ YAML      : &quot;\t{}&quot;
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;	{}&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;	{}&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;	{}&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;	{}&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     found character that cannot start any token
 
@@ -213,7 +213,7 @@ while scanning for the next token at line: 1, column: 1
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     found character that cannot start any token
 
@@ -224,7 +224,7 @@ while scanning for the next token at line: 1, column: 1
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -246,9 +246,63 @@ found character &#39;\t&#39; that cannot start any token
 </pre>
  </div>
 
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 89, in load_all
+    while loader.check_data():
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 28, in check_data
+    return self.check_node()
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 22, in check_node
+    return not self.check_event(StreamEndEvent)
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 143, in parse_implicit_document_start
+    StreamEndToken):
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 257, in fetch_more_tokens
+    % ch.encode(&#39;utf-8&#39;), self.get_mark())
+yaml.scanner.ScannerError: while scanning for the next token
+found character &#39;\t&#39; that cannot start any token
+  in &quot;&lt;string&gt;&quot;, line 1, column 1:
+    	{}
+    ^
+</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 89, in load_all
+    while loader.check_data():
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 28, in check_data
+    return self.check_node()
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 22, in check_node
+    return not self.check_event(StreamEndEvent)
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 143, in parse_implicit_document_start
+    StreamEndToken):
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/lib/python2.7/site-packages/yaml/scanner.py&quot;, line 257, in fetch_more_tokens
+    % ch.encode(&#39;utf-8&#39;), self.get_mark())
+yaml.scanner.ScannerError: while scanning for the next token
+found character &#39;\t&#39; that cannot start any token
+  in &quot;&lt;string&gt;&quot;, line 1, column 1:
+    	{}
+    ^
+</pre>
+ </div>
+
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Traceback (most recent call last):
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
@@ -269,9 +323,63 @@ found character &#39;\t&#39; that cannot start any token
 </pre>
  </div>
 
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 112, in load_all
+    while loader._constructor.check_data():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 73, in check_data
+    return self.composer.check_node()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 50, in check_node
+    if self.parser.check_event(StreamStartEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 166, in parse_stream_start
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
+    % utf8(ch), self.reader.get_mark())
+ruamel.yaml.scanner.ScannerError: while scanning for the next token
+found character &#39;\t&#39; that cannot start any token
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
+    	{}
+    ^ (line: 1)
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 112, in load_all
+    while loader._constructor.check_data():
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 73, in check_data
+    return self.composer.check_node()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 50, in check_node
+    if self.parser.check_event(StreamStartEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 166, in parse_stream_start
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
+    % utf8(ch), self.reader.get_mark())
+ruamel.yaml.scanner.ScannerError: while scanning for the next token
+found character &#39;\t&#39; that cannot start any token
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
+    	{}
+    ^ (line: 1)
+</pre>
+ </div>
+
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found character that cannot start any token while scanning for the next token at line 1 column 1 (Psych::SyntaxError)
+ <span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found character that cannot start any token while scanning for the next token at line 1 column 1 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
 	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
 	from /bin/ruby-json:6:in `&lt;main&gt;&#39;

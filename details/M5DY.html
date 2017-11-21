@@ -51,17 +51,17 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
   &quot;[Detroit Tigers, Chicago cubs]&quot;: [
     &quot;Jul 23, 2001 12:00:00 AM&quot;
@@ -78,7 +78,7 @@
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
   &quot;Detroit Tigers,Chicago cubs&quot;: [
     &quot;2001-07-23T00:00:00.000Z&quot;
@@ -95,12 +95,12 @@
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: Cannot serialise table: table key must be a number or string
+ <span class="status_box color_error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: Cannot serialise table: table key must be a number or string
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/bin/luajit-json:6: in main chunk
@@ -110,18 +110,18 @@ stack traceback:
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+ <span class="status_box color_error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
 </pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
    Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
    Line: 2
    Document: 1
@@ -131,7 +131,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
    Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
    Line: 2
    Document: 1
@@ -141,7 +141,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>+STR
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 +SEQ
@@ -152,8 +152,8 @@ stack traceback:
 =VAL :2001-07-23
 -SEQ
 Line      : 6
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;[ New York Yankees,&quot;
   at /bin/perl5-pp-event line 18.
 </pre>
@@ -161,9 +161,9 @@ YAML      : &quot;[ New York Yankees,&quot;
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 6
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+ <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 6
+Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;[ New York Yankees,&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
@@ -171,9 +171,9 @@ YAML      : &quot;[ New York Yankees,&quot;
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Line      : 6
-Message   : Expected (ALIAS COLON DASH DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 486
+ <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 6
+Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
+Where     : /lib/perl5/YAML/PP/Parser.pm line 492
 YAML      : &quot;[ New York Yankees,&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
@@ -181,22 +181,22 @@ YAML      : &quot;[ New York Yankees,&quot;
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x132f628)&quot;:[&quot;2001-07-23&quot;],&quot;ARRAY(0x132fcb8)&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;]}
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&quot;ARRAY(0x19e8628)&quot;:[&quot;2001-07-23&quot;],&quot;ARRAY(0x19e8ce8)&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;]}
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x98f670)&#39; =&gt; [
+  &#39;ARRAY(0xc9c670)&#39; =&gt; [
                          &#39;2001-07-02&#39;,
                          &#39;2001-08-12&#39;,
                          &#39;2001-08-14&#39;
                        ],
-  &#39;ARRAY(0xa966a0)&#39; =&gt; [
+  &#39;ARRAY(0xd40f88)&#39; =&gt; [
                          &#39;2001-07-23&#39;
                        ]
 }
@@ -206,36 +206,36 @@ YAML      : &quot;[ New York Yankees,&quot;
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? - Detroit Tigers&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? - Detroit Tigers&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? - Detroit Tigers&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? - Detroit Tigers&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x1a3c658)&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;],&quot;ARRAY(0x1a3cc40)&quot;:[&quot;2001-07-23&quot;]}
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&quot;ARRAY(0xfdf658)&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;],&quot;ARRAY(0xfdfc40)&quot;:[&quot;2001-07-23&quot;]}
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0xdf0e90)&#39; =&gt; [
-                         &#39;2001-07-23&#39;
-                       ],
-  &#39;ARRAY(0xe1af78)&#39; =&gt; [
-                         &#39;2001-07-02&#39;,
-                         &#39;2001-08-12&#39;,
-                         &#39;2001-08-14&#39;
-                       ]
+  &#39;ARRAY(0x1e28088)&#39; =&gt; [
+                          &#39;2001-07-23&#39;
+                        ],
+  &#39;ARRAY(0x1f6c080)&#39; =&gt; [
+                          &#39;2001-07-02&#39;,
+                          &#39;2001-08-12&#39;,
+                          &#39;2001-08-14&#39;
+                        ]
 }
 </pre>
 
@@ -243,17 +243,102 @@ YAML      : &quot;[ New York Yankees,&quot;
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+    for dummy in generator:
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+    &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
+yaml.constructor.ConstructorError: while constructing a mapping
+  in &quot;&lt;string&gt;&quot;, line 1, column 1:
+    ? - Detroit Tigers
+    ^
+found unacceptable key (unhashable type: &#39;list&#39;)
+  in &quot;&lt;string&gt;&quot;, line 1, column 3:
+    ? - Detroit Tigers
+      ^
+</pre>
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+    for dummy in generator:
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+    &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
+yaml.constructor.ConstructorError: while constructing a mapping
+  in &quot;&lt;string&gt;&quot;, line 1, column 1:
+    ? - Detroit Tigers
+    ^
+found unacceptable key (unhashable type: &#39;list&#39;)
+  in &quot;&lt;string&gt;&quot;, line 1, column 3:
+    ? - Detroit Tigers
+      ^
+</pre>
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;type &#39;exceptions.TypeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 10, in &lt;module&gt;
+    print json.dumps(doc, sort_keys=True, indent=2)
+  File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 209, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 382, in _iterencode_dict
+    raise TypeError(&quot;key &quot; + repr(key) + &quot; is not a string&quot;)
+TypeError: key (&#39;Detroit Tigers&#39;, &#39;Chicago cubs&#39;) is not a string
+</pre>
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{(&#39;Detroit Tigers&#39;, &#39;Chicago cubs&#39;): [datetime.date(2001, 7, 23)],
+ (&#39;New York Yankees&#39;, &#39;Atlanta Braves&#39;): [datetime.date(2001, 7, 2),
+                                          datetime.date(2001, 8, 12),
+                                          datetime.date(2001, 8, 14)]}
+</pre>
+
  </div>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{&quot;[\&quot;Detroit Tigers\&quot;, \&quot;Chicago cubs\&quot;]&quot;:[&quot;2001-07-23&quot;],&quot;[\&quot;New York Yankees\&quot;, \&quot;Atlanta Braves\&quot;]&quot;:[&quot;2001-07-02&quot;,&quot;2001-08-12&quot;,&quot;2001-08-14&quot;]}
 </pre>
 

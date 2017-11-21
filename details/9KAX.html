@@ -14,44 +14,44 @@
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 &amp;a1
-!t1
+!!str
 scalar1
 ---
-!t2
+!!str
 &amp;a2
 scalar2
 ---
 &amp;a3
-!t3 scalar3
+!!str scalar3
 ---
-&amp;a4 !t4
-&amp;a5 !t5 key5: value4
+&amp;a4 !!map
+&amp;a5 !!str key5: value4
 ---
 a6: 1
 &amp;anchor6 b6: 2
 ---
-!t7
-&amp;a8 !t8 key8: value7
+!!map
+&amp;a8 !!str key8: value7
 ---
-!t9
-!t10 &amp;a10 key10: value9
+!!map
+!!str &amp;a10 key10: value9
 ---
-!t11 &amp;a11
+!!str &amp;a11
 value11
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC ---
-=VAL &amp;a1 &lt;!t1&gt; :scalar1
+=VAL &amp;a1 &lt;tag:yaml.org,2002:str&gt; :scalar1
 -DOC
 +DOC ---
-=VAL &amp;a2 &lt;!t2&gt; :scalar2
+=VAL &amp;a2 &lt;tag:yaml.org,2002:str&gt; :scalar2
 -DOC
 +DOC ---
-=VAL &amp;a3 &lt;!t3&gt; :scalar3
+=VAL &amp;a3 &lt;tag:yaml.org,2002:str&gt; :scalar3
 -DOC
 +DOC ---
-+MAP &amp;a4 &lt;!t4&gt;
-=VAL &amp;a5 &lt;!t5&gt; :key5
++MAP &amp;a4 &lt;tag:yaml.org,2002:map&gt;
+=VAL &amp;a5 &lt;tag:yaml.org,2002:str&gt; :key5
 =VAL :value4
 -MAP
 -DOC
@@ -64,19 +64,19 @@ value11
 -MAP
 -DOC
 +DOC ---
-+MAP &lt;!t7&gt;
-=VAL &amp;a8 &lt;!t8&gt; :key8
++MAP &lt;tag:yaml.org,2002:map&gt;
+=VAL &amp;a8 &lt;tag:yaml.org,2002:str&gt; :key8
 =VAL :value7
 -MAP
 -DOC
 +DOC ---
-+MAP &lt;!t9&gt;
-=VAL &amp;a10 &lt;!t10&gt; :key10
++MAP &lt;tag:yaml.org,2002:map&gt;
+=VAL &amp;a10 &lt;tag:yaml.org,2002:str&gt; :key10
 =VAL :value9
 -MAP
 -DOC
 +DOC ---
-=VAL &amp;a11 &lt;!t11&gt; :value11
+=VAL &amp;a11 &lt;tag:yaml.org,2002:str&gt; :value11
 -DOC
 -STR
 </pre></div>
@@ -86,46 +86,47 @@ value11
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !t1; exception=Invalid tag: !t1
- in &#39;reader&#39;, line 2, column 1:
-    &amp;a1
-    ^
-
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !t1
-	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
-	... 7 more
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&quot;scalar1&quot;
+&quot;scalar2&quot;
+&quot;scalar3&quot;
+{
+  &quot;key5&quot;: &quot;value4&quot;
+}
+{
+  &quot;a6&quot;: 1,
+  &quot;b6&quot;: 2
+}
+{
+  &quot;key8&quot;: &quot;value7&quot;
+}
+{
+  &quot;key10&quot;: &quot;value9&quot;
+}
+&quot;value11&quot;
 </pre>
+
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!t1&gt; at line 5, column 1:
-    ---
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: duplication of an anchor property at line 14, column 1:
+    &amp;a5 !!str key5: value4
     ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
     at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
+    at readAnchorProperty (/node_modules/js-yaml/lib/js-yaml/loader.js:1209:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1298:38)
     at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
     at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
     at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
@@ -150,12 +151,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !t1
 
  <div class="framework" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: bad argument #1 to &#39;encode&#39; (expected 1 argument)
+ <span class="status_box color_error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: bad argument #1 to &#39;encode&#39; (expected 1 argument)
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/bin/luajit-json:6: in main chunk
@@ -165,25 +166,25 @@ stack traceback:
 
  <div class="framework" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="error">&nbsp;</span>error <pre>Error parsing Pegex document:
+ <span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
   msg:      Parse document failed for some reason
   line:     4
   column:   0
-  context:  scalar1\n---\n!t2\n&amp;a2\nscalar2\n---\n&amp;a3\n!t3 scalar3\n---\n&amp;a4 !
+  context:  scalar1\n---\n!!str\n&amp;a2\nscalar2\n---\n&amp;a3\n!!str scalar3\n---\n&amp;
                    ^
-  position: 19 (0 pre-lookahead)
+  position: 21 (0 pre-lookahead)
  at /bin/perl5-pegex-event line 23.
 </pre>
  </div>
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 2
    Document: 2
@@ -193,7 +194,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 2
    Document: 2
@@ -203,12 +204,12 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>&quot;scalar1&quot;
 &quot;scalar2&quot;
 &quot;scalar3&quot;
@@ -232,7 +233,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>&#39;scalar1&#39;
 &#39;scalar2&#39;
 &#39;scalar3&#39;
@@ -256,73 +257,151 @@ stack traceback:
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 4, column 0): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+ <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 4, column 0): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
  <div class="framework" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>Syck parser (line 4, column 0): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+ <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 4, column 0): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-json line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-pl line 13.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>&quot;t1=SCALAR(0x2905cb8)&quot;
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&quot;scalar1&quot;
 </pre>
 
  </div>
 
  <div class="framework" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="na">&nbsp;</span>n/a
-<pre>bless( do{\(my $o = &#39;scalar1&#39;)}, &#39;t1&#39; )
-bless( do{\(my $o = &#39;scalar2&#39;)}, &#39;t2&#39; )
-bless( do{\(my $o = &#39;scalar3&#39;)}, &#39;t3&#39; )
-bless( {
-         &#39;t5=SCALAR(0x261d4a8)&#39; =&gt; &#39;value4&#39;
-       }, &#39;t4&#39; )
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&#39;scalar1&#39;
+&#39;scalar2&#39;
+&#39;scalar3&#39;
+{
+  &#39;key5&#39; =&gt; &#39;value4&#39;
+}
 {
   &#39;a6&#39; =&gt; 1,
   &#39;b6&#39; =&gt; 2
 }
-bless( {
-         &#39;t8=SCALAR(0x25febf8)&#39; =&gt; &#39;value7&#39;
-       }, &#39;t7&#39; )
-bless( {
-         &#39;t10=SCALAR(0x261d820)&#39; =&gt; &#39;value9&#39;
-       }, &#39;t9&#39; )
-bless( do{\(my $o = &#39;value11&#39;)}, &#39;t11&#39; )
+{
+  &#39;key8&#39; =&gt; &#39;value7&#39;
+}
+{
+  &#39;key10&#39; =&gt; &#39;value9&#39;
+}
+&#39;value11&#39;
 </pre>
 
  </div>
 
  <div class="framework" id="pyyaml-event">
 <h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&quot;scalar1&quot;
+&quot;scalar2&quot;
+&quot;scalar3&quot;
+{
+  &quot;key5&quot;: &quot;value4&quot;
+}
+{
+  &quot;a6&quot;: 1, 
+  &quot;b6&quot;: 2
+}
+{
+  &quot;key8&quot;: &quot;value7&quot;
+}
+{
+  &quot;key10&quot;: &quot;value9&quot;
+}
+&quot;value11&quot;
+</pre>
+
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&#39;scalar1&#39;
+&#39;scalar2&#39;
+&#39;scalar3&#39;
+{&#39;key5&#39;: &#39;value4&#39;}
+{&#39;a6&#39;: 1, &#39;b6&#39;: 2}
+{&#39;key8&#39;: &#39;value7&#39;}
+{&#39;key10&#39;: &#39;value9&#39;}
+&#39;value11&#39;
+</pre>
+
  </div>
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="ok">&nbsp;</span>ok
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&quot;scalar1&quot;
+&quot;scalar2&quot;
+&quot;scalar3&quot;
+{
+  &quot;key5&quot;: &quot;value4&quot;
+}
+{
+  &quot;a6&quot;: 1, 
+  &quot;b6&quot;: 2
+}
+{
+  &quot;key8&quot;: &quot;value7&quot;
+}
+{
+  &quot;key10&quot;: &quot;value9&quot;
+}
+&quot;value11&quot;
+</pre>
+
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&#39;scalar1&#39;
+&#39;scalar2&#39;
+&#39;scalar3&#39;
+{&#39;key5&#39;: &#39;value4&#39;}
+{&#39;a6&#39;: 1, &#39;b6&#39;: 2}
+{&#39;key8&#39;: &#39;value7&#39;}
+{&#39;key10&#39;: &#39;value9&#39;}
+&#39;value11&#39;
+</pre>
+
  </div>
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="na">&nbsp;</span>n/a
+ <span class="status_box color_na">&nbsp;</span>n/a
 <pre>&quot;scalar1&quot;
 &quot;scalar2&quot;
 &quot;scalar3&quot;
