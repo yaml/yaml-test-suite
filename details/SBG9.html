@@ -120,40 +120,41 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-Line      : 1
-Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;{a: [b, c], [d, e]: f}&quot;
-  at /bin/perl5-pp-event line 18.
-</pre>
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
-Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;{a: [b, c], [d, e]: f}&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+   &quot;[&#39;d&#39;,&#39;e&#39;]&quot; : &quot;f&quot;,
+   &quot;a&quot; : [
+      &quot;b&quot;,
+      &quot;c&quot;
+   ]
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
-Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;{a: [b, c], [d, e]: f}&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &#39;[\&#39;d\&#39;,\&#39;e\&#39;]&#39; =&gt; &#39;f&#39;,
+  &#39;a&#39; =&gt; [
+           &#39;b&#39;,
+           &#39;c&#39;
+         ]
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x217d730)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
+<pre>{&quot;ARRAY(0x806730)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
 </pre>
 
  </div>
@@ -162,7 +163,7 @@ YAML      : &quot;{a: [b, c], [d, e]: f}&quot;
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x20c42a0)&#39; =&gt; &#39;f&#39;,
+  &#39;ARRAY(0x957d78)&#39; =&gt; &#39;f&#39;,
   &#39;a&#39; =&gt; [
            &#39;b&#39;,
            &#39;c&#39;
@@ -187,7 +188,7 @@ YAML      : &quot;{a: [b, c], [d, e]: f}&quot;
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x1ac95b0)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
+<pre>{&quot;ARRAY(0xf3c5b0)&quot;:&quot;f&quot;,&quot;a&quot;:[&quot;b&quot;,&quot;c&quot;]}
 </pre>
 
  </div>
@@ -196,7 +197,7 @@ YAML      : &quot;{a: [b, c], [d, e]: f}&quot;
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x248f278)&#39; =&gt; &#39;f&#39;,
+  &#39;ARRAY(0x12ee690)&#39; =&gt; &#39;f&#39;,
   &#39;a&#39; =&gt; [
            &#39;b&#39;,
            &#39;c&#39;

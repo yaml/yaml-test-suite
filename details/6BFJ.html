@@ -141,10 +141,11 @@ stack traceback:
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
++SEQ &amp;key
 Line      : 3
-Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
+Message   : A node can only have one anchor
+Where     : /lib/perl5/YAML/PP/Parser.pm line 717
+YAML      : &quot;, b, c ]: value&quot;
   at /bin/perl5-pp-event line 18.
 </pre>
  </div>
@@ -152,9 +153,9 @@ YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 3
-Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
+Message   : A node can only have one anchor
+Where     : /lib/perl5/YAML/PP/Parser.pm line 717
+YAML      : &quot;, b, c ]: value&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
  </div>
@@ -162,9 +163,9 @@ YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 3
-Message   : Expected (ALIAS COLON DOUBLEQUOTE FOLDED LITERAL PLAIN QUESTION SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
+Message   : A node can only have one anchor
+Where     : /lib/perl5/YAML/PP/Parser.pm line 717
+YAML      : &quot;, b, c ]: value&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 52.
 </pre>
  </div>
@@ -196,7 +197,7 @@ YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x1cd43c0)&quot;:&quot;value&quot;}
+<pre>{&quot;ARRAY(0x1d118f0)&quot;:&quot;value&quot;}
 </pre>
 
  </div>
@@ -205,7 +206,7 @@ YAML      : &quot;[ &amp;item a, b, c ]: value&quot;
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x1f4b4a8)&#39; =&gt; &#39;value&#39;
+  &#39;ARRAY(0xefc698)&#39; =&gt; &#39;value&#39;
 }
 </pre>
 

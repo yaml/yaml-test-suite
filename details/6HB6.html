@@ -149,40 +149,31 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-+MAP
-=VAL :Not indented
-+MAP
-=VAL :By one space
-=VAL |By four\n  spaces\n
-=VAL :Flow style
-Line      : 8
-Message   : Expected (ALIAS DOUBLEQUOTE FOLDED LITERAL PLAIN SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;[    # Leading spaces&quot;
-  at /bin/perl5-pp-event line 18.
-</pre>
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 8
-Message   : Expected (ALIAS DOUBLEQUOTE FOLDED LITERAL PLAIN SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;[    # Leading spaces&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 8
-Message   : Expected (ALIAS DOUBLEQUOTE FOLDED LITERAL PLAIN SINGLEQUOTE), but got Not Implemented: Flow Style
-Where     : /lib/perl5/YAML/PP/Parser.pm line 492
-YAML      : &quot;[    # Leading spaces&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &#39;Not indented&#39; =&gt; {
+                      &#39;By one space&#39; =&gt; &#39;By four
+  spaces
+&#39;,
+                      &#39;Flow style&#39; =&gt; [
+                                        &#39;By two&#39;,
+                                        &#39;Also by two&#39;,
+                                        &#39;Still by two&#39;
+                                      ]
+                    }
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
