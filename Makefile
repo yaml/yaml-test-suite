@@ -32,8 +32,9 @@ data-push:
 	@[ -z "$$(cd data; git status --short)" ] || { \
 	    cd data; \
 	    git add -Af .; \
-	    git commit -m 'Regenerated data files'; \
-	    git push --force origin data; \
+	    COMMIT=`cd ..; git rev-parse --short HEAD` ; \
+	    git commit -m "Regenerated data from master $$COMMIT"; \
+	    git push origin data; \
 	}
 
 #------------------------------------------------------------------------------
