@@ -37,6 +37,7 @@ tags: spec flow sequence scalar
   "http://example.com/foo#bar",
   [
     "::vector",
+    ": - ()",
     "Up, up and away!",
     -123,
     "http://example.com/foo#bar"
