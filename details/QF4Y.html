@@ -106,7 +106,9 @@ foo: bar
 +SEQ
 =VAL :foo
 Line      : 2
-Message   : Expected (EOL FLOWSEQ_END FLOW_COMMA WS), but got COLON
+Column    : 3
+Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
+Got       : COLON
 Where     : /lib/perl5/YAML/PP/Parser.pm line 487
 YAML      : &quot;: bar&quot;
   at /bin/perl5-pp-event line 18.
@@ -116,20 +118,24 @@ YAML      : &quot;: bar&quot;
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
-Message   : Expected (EOL FLOWSEQ_END FLOW_COMMA WS), but got COLON
+Column    : 3
+Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
+Got       : COLON
 Where     : /lib/perl5/YAML/PP/Parser.pm line 487
 YAML      : &quot;: bar&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
+  at /lib/perl5/YAML/PP/Loader.pm line 58.
 </pre>
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
-Message   : Expected (EOL FLOWSEQ_END FLOW_COMMA WS), but got COLON
+Column    : 3
+Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
+Got       : COLON
 Where     : /lib/perl5/YAML/PP/Parser.pm line 487
 YAML      : &quot;: bar&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 52.
+  at /lib/perl5/YAML/PP/Loader.pm line 58.
 </pre>
  </div>
 
