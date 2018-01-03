@@ -1,11 +1,11 @@
 {
+  "mapping": {
+    "foo": "bar"
+  },
   "sequence": [
     "entry",
     [
       "nested"
     ]
-  ],
-  "mapping": {
-    "foo": "bar"
-  }
+  ]
 }

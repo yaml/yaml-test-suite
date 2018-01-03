@@ -1,5 +1,5 @@
 {
-  "strip": "",
   "clip": "",
-  "keep": "\n"
+  "keep": "\n",
+  "strip": ""
 }

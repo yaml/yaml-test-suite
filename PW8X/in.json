@@ -1,11 +1,11 @@
 [
-   null,
-   "a",
-   {
-      "" : null,
-      "b" : null
-   },
-   {
-      "" : null
-   }
+  null,
+  "a",
+  {
+    "": null,
+    "b": null
+  },
+  {
+    "": null
+  }
 ]

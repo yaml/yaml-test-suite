@@ -1,8 +1,8 @@
 {
-  "unicode": "Sosa did fine.\u263A",
-  "control": "\b1998\t1999\t2000\n",
-  "hex esc": "\u000d\u000a is \r\n",
-  "single": "\"Howdy!\" he cried.",
+  "control": "\u00081998\t1999\t2000\n",
+  "hex esc": "\r\n is \r\n",
   "quoted": " # Not a 'comment'.",
-  "tie-fighter": "|\\-*-/|"
+  "single": "\"Howdy!\" he cried.",
+  "tie-fighter": "|\\-*-/|",
+  "unicode": "Sosa did fine.☺"
 }

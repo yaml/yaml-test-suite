@@ -1,1 +1,5 @@
-{"foo":"blue","bar":"arrr","baz":"jazz"}
+{
+  "bar": "arrr",
+  "baz": "jazz",
+  "foo": "blue"
+}
