@@ -1,14 +1,14 @@
 [
   {
-    "item"    : "Super Hoop",
+    "item": "Super Hoop",
     "quantity": 1
   },
   {
-    "item"    : "Basketball",
+    "item": "Basketball",
     "quantity": 4
   },
   {
-    "item"    : "Big Shoes",
+    "item": "Big Shoes",
     "quantity": 1
   }
 ]

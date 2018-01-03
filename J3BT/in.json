@@ -1,4 +1,4 @@
 {
-  "quoted": "Quoted \t",
-  "block": "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
+  "block": "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n",
+  "quoted": "Quoted \t"
 }

@@ -1,6 +1,8 @@
 {
   "block sequence": [
     "one",
-    { "two": "three" }
+    {
+      "two": "three"
+    }
   ]
 }

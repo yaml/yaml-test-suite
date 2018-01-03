@@ -1,5 +1,7 @@
 {
   "implicit block key": [
-    { "implicit flow key": "value" }
+    {
+      "implicit flow key": "value"
+    }
   ]
 }

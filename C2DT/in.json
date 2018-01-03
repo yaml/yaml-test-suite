@@ -1,5 +1,5 @@
 {
   "adjacent": "value",
-  "readable": "value",
-  "empty": null
+  "empty": null,
+  "readable": "value"
 }
