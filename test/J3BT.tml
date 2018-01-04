@@ -10,18 +10,18 @@ block:<TAB>|
   <TAB>printf("Hello, world!\n");
   }
 
++++ in-json
+{
+  "block": "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n",
+  "quoted": "Quoted \t"
+}
+
 +++ out-yaml
 quoted: "Quoted \t"
 block: |
   void main() {
   <TAB>printf("Hello, world!\n");
   }
-
-+++ in-json
-{
-  "quoted": "Quoted \t",
-  "block": "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n"
-}
 
 +++ test-event
 +STR

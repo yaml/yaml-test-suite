@@ -8,14 +8,14 @@ tags: spec scalar upto-1.2
  2nd non-empty<SPC>
 <TAB>3rd non-empty
 
++++ in-json
+"1st non-empty\n2nd non-empty 3rd non-empty"
+
 +++ out-yaml
 # XXX Should this be doublequote?
 '1st non-empty
 
   2nd non-empty 3rd non-empty'
-
-+++ in-json
-"1st non-empty\n2nd non-empty 3rd non-empty"
 
 +++ test-event
 +STR

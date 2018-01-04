@@ -9,16 +9,16 @@ plain: a
 
  c
 
++++ in-json
+{
+  "plain": "a b\nc"
+}
+
 +++ out-yaml
 ---
 plain: 'a b
 
   c'
-
-+++ in-json
-{
-  "plain": "a b\nc"
-}
 
 +++ test-event
 +STR

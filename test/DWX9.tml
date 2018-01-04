@@ -13,6 +13,9 @@ tags: spec literal scalar comment 1.3-err
 
  # Comment
 
++++ in-json
+"\n\nliteral\n \n\ntext\n"
+
 +++ out-yaml
 "\n\nliteral\n \n\ntext\n"
 
@@ -24,9 +27,6 @@ tags: spec literal scalar comment 1.3-err
 <SPC><SPC><SPC>
 
   text
-
-+++ in-json
-"\n\nliteral\n \n\ntext\n"
 
 +++ test-event
 +STR

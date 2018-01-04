@@ -12,6 +12,22 @@ tags: spec mapping sequence
 - item    : Big Shoes
   quantity: 1
 
++++ in-json
+[
+  {
+    "item": "Super Hoop",
+    "quantity": 1
+  },
+  {
+    "item": "Basketball",
+    "quantity": 4
+  },
+  {
+    "item": "Big Shoes",
+    "quantity": 1
+  }
+]
+
 +++ out-yaml
 ---
 - item: Super Hoop
@@ -20,22 +36,6 @@ tags: spec mapping sequence
   quantity: 4
 - item: Big Shoes
   quantity: 1
-
-+++ in-json
-[
-  {
-    "item"    : "Super Hoop",
-    "quantity": 1
-  },
-  {
-    "item"    : "Basketball",
-    "quantity": 4
-  },
-  {
-    "item"    : "Big Shoes",
-    "quantity": 1
-  }
-]
 
 +++ test-event
 +STR

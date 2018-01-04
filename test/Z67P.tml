@@ -8,17 +8,17 @@ literal: |2
 folded: !foo >1
  value
 
++++ in-json
+{
+  "folded": "value\n",
+  "literal": "value\n"
+}
+
 +++ out-yaml
 literal: |
   value
 folded: !foo >
   value
-
-+++ in-json
-{
-  "literal": "value\n",
-  "folded": "value\n"
-}
 
 +++ test-event
 +STR

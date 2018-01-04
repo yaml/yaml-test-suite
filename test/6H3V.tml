@@ -5,13 +5,13 @@ tags: scalar single
 +++ in-yaml
 'foo: bar\': baz'
 
-+++ out-yaml
-'foo: bar\': baz'
-
 +++ in-json
 {
   "foo: bar\\": "baz'"
 }
+
++++ out-yaml
+'foo: bar\': baz'
 
 +++ test-event
 +STR

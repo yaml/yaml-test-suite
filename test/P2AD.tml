@@ -13,6 +13,14 @@ tags: spec literal folded comment scalar
 - >1- # Both indicators↓
   strip
 
++++ in-json
+[
+  "literal\n",
+  " folded\n",
+  "keep\n\n",
+  " strip"
+]
+
 +++ out-yaml
 - |
   literal
@@ -23,14 +31,6 @@ tags: spec literal folded comment scalar
 
 - >2-
    strip
-
-+++ in-json
-[
-  "literal\n",
-  " folded\n",
-  "keep\n\n",
-  " strip"
-]
 
 +++ test-event
 +STR

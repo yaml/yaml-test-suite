@@ -9,7 +9,9 @@ tags: whitespace
 \
 
 +++ in-json
-{ "": null }
+{
+  "": null
+}
 
 +++ test-event
 +STR

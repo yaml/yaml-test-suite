@@ -12,6 +12,9 @@ tags: scalar 1.3-mod
 
  gh
 
++++ in-json
+"ab cd\nef\n\ngh\n"
+
 +++ out-yaml
 --- >
   ab cd
@@ -20,9 +23,6 @@ tags: scalar 1.3-mod
 
 
   gh
-
-+++ in-json
-"ab cd\nef\n\ngh\n"
 
 +++ test-event
 +STR

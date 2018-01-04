@@ -6,14 +6,14 @@ tags: mapping scalar
 ---
 key ends with two colons::: value
 
-+++ out-yaml
----
-'key ends with two colons::': value
-
 +++ in-json
 {
   "key ends with two colons::": "value"
 }
+
++++ out-yaml
+---
+'key ends with two colons::': value
 
 +++ test-event
 +STR

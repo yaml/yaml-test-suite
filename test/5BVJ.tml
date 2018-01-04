@@ -10,18 +10,18 @@ folded: >
   some
   text
 
++++ in-json
+{
+  "folded": "some text\n",
+  "literal": "some\ntext\n"
+}
+
 +++ out-yaml
 literal: |
   some
   text
 folded: >
   some text
-
-+++ in-json
-{
-  "literal": "some\ntext\n",
-  "folded": "some text\n"
-}
 
 +++ test-event
 +STR

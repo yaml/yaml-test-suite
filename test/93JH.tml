@@ -8,16 +8,21 @@ tags: mapping sequence
  -
    key3: value3
 
++++ in-json
+[
+  {
+    "key": "value",
+    "key2": "value2"
+  },
+  {
+    "key3": "value3"
+  }
+]
+
 +++ out-yaml
 - key: value
   key2: value2
 - key3: value3
-
-+++ in-json
-[
-  {"key": "value", "key2": "value2"},
-  {"key3": "value3"}
-]
 
 +++ test-event
 +STR

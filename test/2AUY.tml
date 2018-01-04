@@ -8,12 +8,6 @@ tags: tag sequence
  - !!int 42
  - d
 
-+++ out-yaml
-- !!str a
-- b
-- !!int 42
-- d
-
 +++ in-json
 [
   "a",
@@ -21,6 +15,12 @@ tags: tag sequence
   42,
   "d"
 ]
+
++++ out-yaml
+- !!str a
+- b
+- !!int 42
+- d
 
 +++ test-event
 +STR

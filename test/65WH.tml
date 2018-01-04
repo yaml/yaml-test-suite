@@ -6,7 +6,9 @@ tags: sequence
 - foo
 
 +++ in-json
-["foo"]
+[
+  "foo"
+]
 
 +++ test-event
 +STR

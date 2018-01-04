@@ -8,17 +8,17 @@ tags: literal
 - |-2
   chomp and explicit indent
 
-+++ out-yaml
-- |-
-  explicit indent and chomp
-- |-
-  chomp and explicit indent
-
 +++ in-json
 [
   "explicit indent and chomp",
   "chomp and explicit indent"
 ]
+
++++ out-yaml
+- |-
+  explicit indent and chomp
+- |-
+  chomp and explicit indent
 
 +++ test-event
 +STR

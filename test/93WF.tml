@@ -11,6 +11,9 @@ tags: spec whitespace scalar 1.3-mod
   as
   space
 
++++ in-json
+"trimmed\n\n\nas space"
+
 +++ out-yaml
 --- >-
   trimmed
@@ -18,9 +21,6 @@ tags: spec whitespace scalar 1.3-mod
 
 
   as space
-
-+++ in-json
-"trimmed\n\n\nas space"
 
 +++ test-event
 +STR

@@ -9,11 +9,13 @@ key:    # Comment
 
 \
 
++++ in-json
+{
+  "key": "value"
+}
+
 +++ out-yaml
 key: value
-
-+++ in-json
-{ "key": "value" }
 
 +++ test-event
 +STR

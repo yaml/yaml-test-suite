@@ -7,7 +7,9 @@ aaa: bbb
 ...
 
 +++ in-json
-{"aaa":"bbb"}
+{
+  "aaa": "bbb"
+}
 
 +++ test-event
 +STR

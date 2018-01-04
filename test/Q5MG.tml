@@ -5,10 +5,10 @@ tags: flow whitespace
 +++ in-yaml
 <TAB>{}
 
-+++ out-yaml
++++ in-json
 {}
 
-+++ in-json
++++ out-yaml
 {}
 
 +++ test-event

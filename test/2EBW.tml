@@ -9,21 +9,21 @@ a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~: safe
 -foo: safe dash
 this is#not: a comment
 
++++ in-json
+{
+  "-foo": "safe dash",
+  ":foo": "safe colon",
+  "?foo": "safe question mark",
+  "a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~": "safe",
+  "this is#not": "a comment"
+}
+
 +++ out-yaml
 a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~: safe
 ?foo: safe question mark
 :foo: safe colon
 -foo: safe dash
 this is#not: a comment
-
-+++ in-json
-{
-  "a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~": "safe",
-  "?foo": "safe question mark",
-  ":foo": "safe colon",
-  "-foo": "safe dash",
-  "this is#not": "a comment"
-}
 
 +++ test-event
 +STR

@@ -5,13 +5,13 @@ tags: double
 +++ in-yaml
 escaped slash: "a\/b"
 
-+++ out-yaml
-escaped slash: "a/b"
-
 +++ in-json
 {
   "escaped slash": "a/b"
 }
+
++++ out-yaml
+escaped slash: "a/b"
 
 +++ test-event
 +STR

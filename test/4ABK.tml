@@ -10,16 +10,16 @@ omitted value:,
 : omitted key,
 }
 
-+++ out-yaml
-x
-
 +++ in-json
 {
-  "unquoted": "separate",
+  "": "omitted key",
   "http://foo.com": "",
   "omitted value": "",
-  "": "omitted key"
+  "unquoted": "separate"
 }
+
++++ out-yaml
+x
 
 +++ test-event
 +STR

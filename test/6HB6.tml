@@ -16,6 +16,18 @@ Not indented:
   <TAB>Still by two   # content nor
     ]             # indentation.
 
++++ in-json
+{
+  "Not indented": {
+    "By one space": "By four\n  spaces\n",
+    "Flow style": [
+      "By two",
+      "Also by two",
+      "Still by two"
+    ]
+  }
+}
+
 +++ out-yaml
 Not indented:
   By one space: |
@@ -25,16 +37,6 @@ Not indented:
   - By two
   - Also by two
   - Still by two
-
-+++ in-json
-{
-  "Not indented": {
-    "By one space": "By four\n  spaces\n",
-    "Flow style": [
-      "By two", "Also by two", "Still by two"
-    ]
-  }
-}
 
 +++ test-event
 +STR

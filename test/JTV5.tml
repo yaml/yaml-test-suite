@@ -10,12 +10,15 @@ tags: mapping scalar
 ? e
   42
 
++++ in-json
+{
+  "a true": "null d",
+  "e 42": null
+}
+
 +++ out-yaml
 a true: null d
 e 42:
-
-+++ in-json
-{"a true": "null d", "e 42": null}
 
 +++ test-event
 +STR

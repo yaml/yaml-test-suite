@@ -8,7 +8,11 @@ tags: sequence
 - 42
 
 +++ in-json
-["foo","bar",42]
+[
+  "foo",
+  "bar",
+  42
+]
 
 +++ test-event
 +STR

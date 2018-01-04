@@ -6,16 +6,16 @@ tags: mapping single double
 "foo\nbar:baz\tx \\$%^&*()x": 23
 'x\ny:z\tx $%^&*()x': 24
 
-+++ out-yaml
-? "foo\nbar:baz\tx \\$%^&*()x"
-: 23
-'x\ny:z\tx $%^&*()x': 24
-
 +++ in-json
 {
   "foo\nbar:baz\tx \\$%^&*()x": 23,
   "x\\ny:z\\tx $%^&*()x": 24
 }
+
++++ out-yaml
+? "foo\nbar:baz\tx \\$%^&*()x"
+: 23
+'x\ny:z\tx $%^&*()x': 24
 
 +++ test-event
 +STR

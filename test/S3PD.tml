@@ -10,9 +10,11 @@ plain key: in-line value
 
 +++ in-json
 {
-  "plain key": "in-line value",
   "": null,
-  "quoted key": [ "entry" ]
+  "plain key": "in-line value",
+  "quoted key": [
+    "entry"
+  ]
 }
 
 +++ test-event

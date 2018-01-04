@@ -16,18 +16,6 @@ tags: spec flow sequence scalar
   -123,
   http://example.com/foo#bar ]
 
-+++ out-yaml
-- ::vector
-- ": - ()"
-- Up, up, and away!
-- -123
-- http://example.com/foo#bar
-- - ::vector
-  - ": - ()"
-  - "Up, up and away!"
-  - -123
-  - http://example.com/foo#bar
-
 +++ in-json
 [
   "::vector",
@@ -43,6 +31,18 @@ tags: spec flow sequence scalar
     "http://example.com/foo#bar"
   ]
 ]
+
++++ out-yaml
+- ::vector
+- ": - ()"
+- Up, up, and away!
+- -123
+- http://example.com/foo#bar
+- - ::vector
+  - ": - ()"
+  - "Up, up and away!"
+  - -123
+  - http://example.com/foo#bar
 
 +++ test-event
 +STR

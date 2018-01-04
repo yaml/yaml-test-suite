@@ -11,6 +11,13 @@ block: |
   text
    <TAB>lines
 
++++ in-json
+{
+  "block": "text\n \tlines\n",
+  "plain": "text lines",
+  "quoted": "text lines"
+}
+
 +++ out-yaml
 plain: text lines
 quoted: "text lines"
@@ -22,13 +29,6 @@ quoted: "text lines"
 block: |
   text
    <TAB>lines
-
-+++ in-json
-{
-  "plain": "text lines",
-  "quoted": "text lines",
-  "block": "text\n \tlines\n"
-}
 
 +++ test-event
 +STR

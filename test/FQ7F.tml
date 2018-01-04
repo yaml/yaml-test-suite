@@ -8,17 +8,11 @@ tags: spec sequence
 - Ken Griffey
 
 +++ in-json
-["Mark McGwire","Sammy Sosa","Ken Griffey"]
-
-+++ lex-token
-SEQ-MARK 0 1 1 1
-WS-SPACE 1 1 1 2
-TEXT-VAL 2 12 1 3 :Mark McGwire
-WS-NEWLN 14 1 1 15
-SEQ-MARK 15 1 2 1
-WS-SPACE 1 1 1 2
-TEXT-VAL 2 12 1 3 :Sammy Sosa
-WS-NEWLN 14 1 1 15
+[
+  "Mark McGwire",
+  "Sammy Sosa",
+  "Ken Griffey"
+]
 
 +++ test-event
 +STR

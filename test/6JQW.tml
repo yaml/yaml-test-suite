@@ -8,13 +8,13 @@ tags: spec scalar literal comment
   \//||\/||
   // ||  ||__
 
++++ in-json
+"\\//||\\/||\n// ||  ||__\n"
+
 +++ out-yaml
 --- |
   \//||\/||
   // ||  ||__
-
-+++ in-json
-"\\//||\\/||\n// ||  ||__\n"
 
 +++ test-event
 +STR
