@@ -5,15 +5,15 @@ tags: flow scalar
 +++ in-yaml
 - { url: http://example.org }
 
-+++ out-yaml
-- url: http://example.org
-
 +++ in-json
 [
   {
     "url": "http://example.org"
   }
 ]
+
++++ out-yaml
+- url: http://example.org
 
 +++ test-event
 +STR

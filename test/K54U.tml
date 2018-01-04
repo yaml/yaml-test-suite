@@ -5,12 +5,12 @@ tags: header whitespace
 +++ in-yaml
 ---<TAB>scalar
 
++++ in-json
+"scalar"
+
 +++ out-yaml
 --- scalar
 ...
-
-+++ in-json
-"scalar"
 
 +++ test-event
 +STR

@@ -7,11 +7,15 @@ tags: spec flow mapping
 foo: bar
 ]
 
++++ in-json
+[
+  {
+    "foo": "bar"
+  }
+]
+
 +++ out-yaml
 - foo: bar
-
-+++ in-json
-[ { "foo": "bar" } ]
 
 +++ test-event
 +STR

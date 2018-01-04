@@ -9,13 +9,13 @@ tags: spec scalar 1.3-mod
  2nd non-empty<SPC>
  3rd non-empty '
 
++++ in-json
+" 1st non-empty\n2nd non-empty 3rd non-empty "
+
 +++ out-yaml
 ' 1st non-empty
 
   2nd non-empty 3rd non-empty '
-
-+++ in-json
-" 1st non-empty\n2nd non-empty 3rd non-empty "
 
 +++ test-event
 +STR

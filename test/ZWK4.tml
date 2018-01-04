@@ -8,18 +8,18 @@ a: 1
 ? b
 &anchor c: 3
 
-+++ out-yaml
----
-a: 1
-b:
-&anchor c: 3
-
 +++ in-json
 {
   "a": 1,
   "b": null,
   "c": 3
 }
+
++++ out-yaml
+---
+a: 1
+b:
+&anchor c: 3
 
 +++ test-event
 +STR

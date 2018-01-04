@@ -12,6 +12,20 @@ tags: sequence mapping spec
   hr:   63
   avg:  0.288
 
++++ in-json
+[
+  {
+    "avg": 0.278,
+    "hr": 65,
+    "name": "Mark McGwire"
+  },
+  {
+    "avg": 0.288,
+    "hr": 63,
+    "name": "Sammy Sosa"
+  }
+]
+
 +++ out-yaml
 - name: Mark McGwire
   hr: 65
@@ -19,17 +33,6 @@ tags: sequence mapping spec
 - name: Sammy Sosa
   hr: 63
   avg: 0.288
-
-+++ in-json
-[
-  { "name": "Mark McGwire",
-    "hr"  : 65,
-    "avg" : 0.278 },
-  { "name": "Sammy Sosa",
-    "hr"  : 63,
-    "avg" : 0.288
-  }
-]
 
 +++ test-event
 +STR

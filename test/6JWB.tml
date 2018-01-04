@@ -8,12 +8,6 @@ foo: !!seq
   - !!map
     key: !!str value
 
-+++ out-yaml
-foo: !!seq
-- !!str a
-- !!map
-  key: !!str value
-
 +++ in-json
 {
   "foo": [
@@ -23,6 +17,12 @@ foo: !!seq
     }
   ]
 }
+
++++ out-yaml
+foo: !!seq
+- !!str a
+- !!map
+  key: !!str value
 
 +++ test-event
 +STR

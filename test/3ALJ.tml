@@ -8,7 +8,13 @@ tags: sequence
 - s2
 
 +++ in-json
-[ ["s1_i1", "s1_i2"], "s2"]
+[
+  [
+    "s1_i1",
+    "s1_i2"
+  ],
+  "s2"
+]
 
 +++ test-event
 +STR

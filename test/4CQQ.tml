@@ -10,15 +10,15 @@ plain:
 quoted: "So does this
   quoted scalar.\n"
 
-+++ out-yaml
-plain: This unquoted scalar spans many lines.
-quoted: "So does this quoted scalar.\n"
-
 +++ in-json
 {
   "plain": "This unquoted scalar spans many lines.",
   "quoted": "So does this quoted scalar.\n"
 }
+
++++ out-yaml
+plain: This unquoted scalar spans many lines.
+quoted: "So does this quoted scalar.\n"
 
 +++ test-event
 +STR

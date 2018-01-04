@@ -10,6 +10,19 @@ tags: spec literal sequence
   - two # sequence
 - one: two # Compact mapping
 
++++ in-json
+[
+  null,
+  "block node\n",
+  [
+    "one",
+    "two"
+  ],
+  {
+    "one": "two"
+  }
+]
+
 +++ out-yaml
 -
 - |
@@ -17,14 +30,6 @@ tags: spec literal sequence
 - - one
   - two
 - one: two
-
-+++ in-json
-[
-  null,
-  "block node\n",
-  [ "one", "two" ],
-  { "one": "two" }
-]
 
 +++ test-event
 +STR

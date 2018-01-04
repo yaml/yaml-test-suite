@@ -9,17 +9,17 @@ tags: spec flow mapping
 "empty":
 }
 
++++ in-json
+{
+  "adjacent": "value",
+  "empty": null,
+  "readable": "value"
+}
+
 +++ out-yaml
 "adjacent": value
 "readable": value
 "empty":
-
-+++ in-json
-{
-  "adjacent": "value",
-  "readable": "value",
-  "empty": null
-}
 
 +++ test-event
 +STR

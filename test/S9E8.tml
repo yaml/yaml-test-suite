@@ -13,11 +13,14 @@ mapping:
 
 +++ in-json
 {
-  "sequence": ["one", "two"],
   "mapping": {
-    "sky": "blue",
-    "sea": "green"
-  }
+    "sea": "green",
+    "sky": "blue"
+  },
+  "sequence": [
+    "one",
+    "two"
+  ]
 }
 
 +++ out-yaml
@@ -27,15 +30,6 @@ sequence:
 mapping:
   sky: blue
   sea: green
-
-+++ in-json
-{
-  "sequence": ["one", "two"],
-  "mapping": {
-    "sky": "blue",
-    "sea": "green"
-  }
-}
 
 +++ test-event
 +STR

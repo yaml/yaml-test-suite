@@ -18,15 +18,15 @@ Test showing empty values and missing explicit components.
 
 +++ in-json
 [
-   null,
-   "a",
-   {
-      "" : null,
-      "b" : null
-   },
-   {
-      "" : null
-   }
+  null,
+  "a",
+  {
+    "": null,
+    "b": null
+  },
+  {
+    "": null
+  }
 ]
 
 +++ out-yaml

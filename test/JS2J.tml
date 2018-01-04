@@ -8,8 +8,8 @@ Second occurrence: *anchor
 
 +++ in-json
 {
-   "First occurrence" : "Value",
-   "Second occurrence" : "Value"
+  "First occurrence": "Value",
+  "Second occurrence": "Value"
 }
 
 +++ test-event

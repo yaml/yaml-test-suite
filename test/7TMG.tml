@@ -8,16 +8,16 @@ tags: comment flow mapping
 \# comment
 , word2]
 
-+++ out-yaml
----
-- word1
-- word2
-
 +++ in-json
 [
   "word1",
   "word2"
 ]
+
++++ out-yaml
+---
+- word1
+- word2
 
 +++ test-event
 +STR

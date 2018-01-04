@@ -9,13 +9,13 @@ tags: scalar 1.3-mod
 <SPC>
 ...
 
++++ in-json
+"ab"
+
 +++ out-yaml
 --- |-
   ab
 ...
-
-+++ in-json
-"ab"
 
 +++ test-event
 +STR

@@ -7,16 +7,18 @@ tags: spec flow sequence mapping
   'implicit flow key' : value,
  ]
 
-+++ out-yaml
-'implicit block key':
-- 'implicit flow key': value
-
 +++ in-json
 {
   "implicit block key": [
-    { "implicit flow key": "value" }
+    {
+      "implicit flow key": "value"
+    }
   ]
 }
+
++++ out-yaml
+'implicit block key':
+- 'implicit flow key': value
 
 +++ test-event
 +STR

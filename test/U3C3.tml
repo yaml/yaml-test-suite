@@ -7,11 +7,11 @@ tags: spec header tag
 ---
 !yaml!str "foo"
 
-+++ out-yaml
---- !!str "foo"
-
 +++ in-json
 "foo"
+
++++ out-yaml
+--- !!str "foo"
 
 +++ test-event
 +STR

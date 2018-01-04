@@ -9,12 +9,12 @@ tags: scalar
 <SPC><SPC>
 ...
 
++++ in-json
+"ab\n\n \n"
+
 +++ out-yaml
 "ab\n\n \n"
 ...
-
-+++ in-json
-"ab\n\n \n"
 
 +++ test-event
 +STR

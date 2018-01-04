@@ -11,11 +11,11 @@ tags: spec flow tag alias
 
 +++ in-json
 [
-   "a",
-   "b",
-   "c",
-   "c",
-   ""
+  "a",
+  "b",
+  "c",
+  "c",
+  ""
 ]
 
 +++ test-event

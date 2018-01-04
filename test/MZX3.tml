@@ -11,8 +11,13 @@ tags: scalar tag
 - plain again
 
 +++ in-json
-["plain", "double quoted", "single quoted",
- "block\n", "plain again"]
+[
+  "plain",
+  "double quoted",
+  "single quoted",
+  "block\n",
+  "plain again"
+]
 
 +++ test-event
 +STR

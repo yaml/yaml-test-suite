@@ -8,14 +8,21 @@ foo:
 bar:
   - 44
 
++++ in-json
+{
+  "bar": [
+    44
+  ],
+  "foo": [
+    42
+  ]
+}
+
 +++ out-yaml
 foo:
 - 42
 bar:
 - 44
-
-+++ in-json
-{"foo":[42],"bar":[44]}
 
 +++ test-event
 +STR

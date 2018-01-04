@@ -7,12 +7,15 @@ a: 4.2
 ? 23
 : d
 
++++ in-json
+{
+  "23": "d",
+  "a": 4.2
+}
+
 +++ out-yaml
 a: 4.2
 23: d
-
-+++ in-json
-{"a": 4.2, "23": "d"}
 
 +++ test-event
 +STR

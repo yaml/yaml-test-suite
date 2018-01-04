@@ -13,8 +13,18 @@ national:
   - Atlanta Braves
 
 +++ in-json
-{"american":["Boston Red Sox","Detroit Tigers","New York Yankees"]
-,"national":["New York Mets","Chicago Cubs","Atlanta Braves"]}
+{
+  "american": [
+    "Boston Red Sox",
+    "Detroit Tigers",
+    "New York Yankees"
+  ],
+  "national": [
+    "New York Mets",
+    "Chicago Cubs",
+    "Atlanta Braves"
+  ]
+}
 
 +++ out-yaml
 american:

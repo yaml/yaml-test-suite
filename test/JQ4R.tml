@@ -7,18 +7,20 @@ block sequence:
   - one
   - two : three
 
-+++ out-yaml
-block sequence:
-- one
-- two: three
-
 +++ in-json
 {
   "block sequence": [
     "one",
-    { "two": "three" }
+    {
+      "two": "three"
+    }
   ]
 }
+
++++ out-yaml
+block sequence:
+- one
+- two: three
 
 +++ test-event
 +STR
