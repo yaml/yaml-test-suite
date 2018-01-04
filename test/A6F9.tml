@@ -10,6 +10,13 @@ clip: |
 keep: |+
   text
 
++++ in-json
+{
+  "clip": "text\n",
+  "keep": "text\n",
+  "strip": "text"
+}
+
 +++ out-yaml
 strip: |-
   text
@@ -17,13 +24,6 @@ clip: |
   text
 keep: |
   text
-
-+++ in-json
-{
-  "strip": "text",
-  "clip": "text\n",
-  "keep": "text\n"
-}
 
 +++ test-event
 +STR

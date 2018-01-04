@@ -8,12 +8,12 @@ tags: spec folded scalar
   year was crippled
   by a knee injury.
 
++++ in-json
+"Mark McGwire's year was crippled by a knee injury.\n"
+
 +++ out-yaml
 --- >
   Mark McGwire's year was crippled by a knee injury.
-
-+++ in-json
-"Mark McGwire's year was crippled by a knee injury.\n"
 
 +++ test-event
 +STR

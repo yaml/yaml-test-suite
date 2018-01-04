@@ -23,6 +23,13 @@ keep: |+
  # Trail
   # comments.
 
++++ in-json
+{
+  "clip": "# text\n",
+  "keep": "# text\n\n",
+  "strip": "# text"
+}
+
 +++ out-yaml
 strip: |-
   # text
@@ -31,13 +38,6 @@ clip: |
 keep: |+
   # text
 \
-
-+++ in-json
-{
-  "strip": "# text",
-  "clip": "# text\n",
-  "keep": "# text\n\n"
-}
 
 +++ test-event
 +STR

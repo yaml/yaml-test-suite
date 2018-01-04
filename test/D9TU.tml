@@ -6,7 +6,9 @@ tags: simple mapping
 foo: bar
 
 +++ in-json
-{"foo":"bar"}
+{
+  "foo": "bar"
+}
 
 +++ test-event
 +STR

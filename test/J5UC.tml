@@ -8,7 +8,11 @@ bar: arrr
 baz: jazz
 
 +++ in-json
-{"foo":"blue","bar":"arrr","baz":"jazz"}
+{
+  "bar": "arrr",
+  "baz": "jazz",
+  "foo": "blue"
+}
 
 +++ test-event
 +STR

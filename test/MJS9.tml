@@ -10,11 +10,11 @@ tags: spec scalar whitespace 1.3-err
 
   baz
 
-+++ out-yaml
-# XXX Should be folded?
++++ in-json
 "foo \n\n\t bar\n\nbaz\n"
 
-+++ in-json
++++ out-yaml
+# XXX Should be folded?
 "foo \n\n\t bar\n\nbaz\n"
 
 +++ test-event

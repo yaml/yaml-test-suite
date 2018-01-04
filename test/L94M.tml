@@ -8,15 +8,15 @@ tags: tag mapping
 ? c
 : !!str d
 
-+++ out-yaml
-!!str a: !!int 47
-c: !!str d
-
 +++ in-json
 {
   "a": 47,
   "c": "d"
 }
+
++++ out-yaml
+!!str a: !!int 47
+c: !!str d
 
 +++ test-event
 +STR

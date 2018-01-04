@@ -8,8 +8,8 @@ alias: *anchor
 
 +++ in-json
 {
-   "alias" : "value",
-   "anchored" : "value"
+  "alias": "value",
+  "anchored": "value"
 }
 
 +++ out-yaml

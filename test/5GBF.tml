@@ -12,16 +12,16 @@ Chomping: |
 <SPC>
 \
 
++++ in-json
+{
+  "Chomping": "Clipped empty lines\n",
+  "Folding": "Empty line\nas a line feed"
+}
+
 +++ out-yaml
 Folding: "Empty line\nas a line feed"
 Chomping: |
   Clipped empty lines
-
-+++ in-json
-{
-  "Folding": "Empty line\nas a line feed",
-  "Chomping": "Clipped empty lines\n"
-}
 
 +++ test-event
 +STR

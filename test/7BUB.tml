@@ -14,14 +14,14 @@ rbi:
 
 +++ in-json
 {
-   "hr" : [
-      "Mark McGwire",
-      "Sammy Sosa"
-   ],
-   "rbi" : [
-      "Sammy Sosa",
-      "Ken Griffey"
-   ]
+  "hr": [
+    "Mark McGwire",
+    "Sammy Sosa"
+  ],
+  "rbi": [
+    "Sammy Sosa",
+    "Ken Griffey"
+  ]
 }
 
 +++ out-yaml

@@ -9,13 +9,13 @@ empty block scalar: >
 <SPC><SPC><SPC>
  # comment
 
-+++ out-yaml
-empty block scalar: ""
-
 +++ in-json
 {
   "empty block scalar": ""
 }
+
++++ out-yaml
+empty block scalar: ""
 
 +++ test-event
 +STR

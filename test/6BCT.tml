@@ -10,8 +10,13 @@ tags: spec libyaml-err sequence whitespace upto-1.2
 
 +++ in-json
 [
-  {"foo": "bar"},
-  ["baz", "baz"]
+  {
+    "foo": "bar"
+  },
+  [
+    "baz",
+    "baz"
+  ]
 ]
 
 +++ out-yaml

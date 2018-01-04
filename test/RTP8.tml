@@ -9,12 +9,12 @@ Document
 # XXX Why is a comment allowed on ...?
 ... # Suffix
 
++++ in-json
+"Document"
+
 +++ out-yaml
 --- Document
 ...
-
-+++ in-json
-"Document"
 
 +++ test-event
 +STR

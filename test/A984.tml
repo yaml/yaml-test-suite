@@ -9,12 +9,15 @@ d:
  e
   f
 
++++ in-json
+{
+  "a": "b c",
+  "d": "e f"
+}
+
 +++ out-yaml
 a: b c
 d: e f
-
-+++ in-json
-{"a": "b c", "d": "e f"}
 
 +++ test-event
 +STR

@@ -8,12 +8,12 @@ line1
 line2
 line3
 
++++ in-json
+"line1 line2 line3\n"
+
 +++ out-yaml
 --- >
   line1 line2 line3
-
-+++ in-json
-"line1 line2 line3\n"
 
 +++ test-event
 +STR

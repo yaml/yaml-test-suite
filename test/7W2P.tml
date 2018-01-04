@@ -7,13 +7,17 @@ tags: mapping
 ? b
 c:
 
++++ in-json
+{
+  "a": null,
+  "b": null,
+  "c": null
+}
+
 +++ out-yaml
 a:
 b:
 c:
-
-+++ in-json
-{"a": null, "b": null, "c": null}
 
 +++ test-event
 +STR

@@ -5,13 +5,18 @@ tags: flow sequence mapping
 +++ in-yaml
 a: [b, c]
 
++++ in-json
+{
+  "a": [
+    "b",
+    "c"
+  ]
+}
+
 +++ out-yaml
 a:
 - b
 - c
-
-+++ in-json
-{"a": ["b", "c"]}
 
 +++ test-event
 +STR

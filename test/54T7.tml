@@ -5,12 +5,15 @@ tags: flow mapping
 +++ in-yaml
 {foo: you, bar: far}
 
++++ in-json
+{
+  "bar": "far",
+  "foo": "you"
+}
+
 +++ out-yaml
 foo: you
 bar: far
-
-+++ in-json
-{"foo":"you","bar":"far"}
 
 +++ test-event
 +STR

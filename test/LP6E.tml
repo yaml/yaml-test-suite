@@ -10,6 +10,21 @@ tags: flow scalar whitespace
   }
 - [      ]
 
++++ in-json
+[
+  [
+    "a",
+    "b",
+    "c"
+  ],
+  {
+    "a": "b",
+    "c": "d",
+    "e": "f"
+  },
+  []
+]
+
 +++ out-yaml
 - - a
   - b
@@ -18,13 +33,6 @@ tags: flow scalar whitespace
   c: 'd'
   e: "f"
 - []
-
-+++ in-json
-[
-  ["a", "b", "c"],
-  { "a": "b", "c": "d", "e": "f" },
-  []
-]
 
 +++ test-event
 +STR

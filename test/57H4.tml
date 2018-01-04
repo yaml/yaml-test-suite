@@ -10,6 +10,19 @@ sequence: !!seq
 mapping: !!map
  foo: bar
 
++++ in-json
+{
+  "mapping": {
+    "foo": "bar"
+  },
+  "sequence": [
+    "entry",
+    [
+      "nested"
+    ]
+  ]
+}
+
 +++ out-yaml
 sequence: !!seq
 - entry
@@ -17,19 +30,6 @@ sequence: !!seq
   - nested
 mapping: !!map
   foo: bar
-
-+++ in-json
-{
-  "sequence": [
-    "entry",
-    [
-      "nested"
-    ]
-  ],
-  "mapping": {
-    "foo": "bar"
-  }
-}
 
 +++ test-event
 +STR

@@ -6,13 +6,13 @@ tags: sequence
 - single multiline
  - sequence entry
 
-+++ out-yaml
-- single multiline - sequence entry
-
 +++ in-json
 [
   "single multiline - sequence entry"
 ]
+
++++ out-yaml
+- single multiline - sequence entry
 
 +++ test-event
 +STR

@@ -7,12 +7,12 @@ tags: directive scalar
 scalar
 \%YAML 1.2
 
++++ in-json
+"scalar %YAML 1.2"
+
 +++ out-yaml
 --- scalar %YAML 1.2
 ...
-
-+++ in-json
-"scalar %YAML 1.2"
 
 +++ test-event
 +STR

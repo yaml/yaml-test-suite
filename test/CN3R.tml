@@ -10,14 +10,6 @@ tags: anchor flow
  &g { g: h }
 ]
 
-+++ out-yaml
-&flowseq
-- a: b
-- &c c: d
-- &e e: f
-- &g
-  g: h
-
 +++ in-json
 [
   {
@@ -33,6 +25,14 @@ tags: anchor flow
     "g": "h"
   }
 ]
+
++++ out-yaml
+&flowseq
+- a: b
+- &c c: d
+- &e e: f
+- &g
+  g: h
 
 +++ test-event
 +STR

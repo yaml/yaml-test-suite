@@ -9,19 +9,22 @@ tags: spec libyaml-err indent whitespace sequence upto-1.2
   -  -<TAB>c
      - d
 
++++ in-json
+{
+  "a": [
+    "b",
+    [
+      "c",
+      "d"
+    ]
+  ]
+}
+
 +++ out-yaml
 a:
 - b
 - - c
   - d
-
-+++ in-json
-{
-  "a": [
-    "b",
-    ["c", "d"]
-  ]
-}
 
 +++ test-event
 +STR

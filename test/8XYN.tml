@@ -6,14 +6,14 @@ tags: anchor
 ---
 - &😁 unicode anchor
 
-+++ out-yaml
----
-- &😁 unicode anchor
-
 +++ in-json
 [
   "unicode anchor"
 ]
+
++++ out-yaml
+---
+- &😁 unicode anchor
 
 +++ test-event
 +STR

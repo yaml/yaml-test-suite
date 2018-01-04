@@ -12,6 +12,11 @@ a: |
 
 ...
 
++++ in-json
+{
+  "a": "ab\n\ncd\nef\n"
+}
+
 +++ out-yaml
 a: |
   ab
@@ -19,9 +24,6 @@ a: |
   cd
   ef
 ...
-
-+++ in-json
-{"a": "ab\n\ncd\nef\n"}
 
 +++ test-event
 +STR

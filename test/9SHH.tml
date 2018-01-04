@@ -8,8 +8,8 @@ double: "text"
 
 +++ in-json
 {
-  "single": "text",
-  "double": "text"
+  "double": "text",
+  "single": "text"
 }
 
 +++ test-event

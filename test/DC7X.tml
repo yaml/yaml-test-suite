@@ -8,20 +8,20 @@ seq:<TAB>
  - a<TAB>
 c: d<TAB>#X
 
++++ in-json
+{
+  "a": "b",
+  "c": "d",
+  "seq": [
+    "a"
+  ]
+}
+
 +++ out-yaml
 a: b
 seq:
 - a
 c: d
-
-+++ in-json
-{
-  "a": "b",
-  "seq": [
-    "a"
-  ],
-  "c": "d"
-}
 
 +++ test-event
 +STR

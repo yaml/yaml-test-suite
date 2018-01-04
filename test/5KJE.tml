@@ -6,17 +6,23 @@ tags: spec flow sequence
 - [ one, two, ]
 - [three ,four]
 
++++ in-json
+[
+  [
+    "one",
+    "two"
+  ],
+  [
+    "three",
+    "four"
+  ]
+]
+
 +++ out-yaml
 - - one
   - two
 - - three
   - four
-
-+++ in-json
-[
-  [ "one", "two" ],
-  [ "three", "four" ]
-]
 
 +++ test-event
 +STR

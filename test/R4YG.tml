@@ -15,6 +15,14 @@ tags: spec literal folded scalar libyaml-err upto-1.2
  <TAB>
  detected
 
++++ in-json
+[
+  "detected\n",
+  "\n\n# detected\n",
+  " explicit\n",
+  "\t\ndetected\n"
+]
+
 +++ out-yaml
 - |
   detected
@@ -26,14 +34,6 @@ tags: spec literal folded scalar libyaml-err upto-1.2
    explicit
 # XXX > becomes "?
 - "\t\ndetected\n"
-
-+++ in-json
-[
-  "detected\n",
-  "\n\n# detected\n",
-  " explicit\n",
-  "\t\ndetected\n"
-]
 
 +++ test-event
 +STR

@@ -9,6 +9,20 @@ tags: spec flow sequence mapping
 - 'b'
 - c
 
++++ in-json
+[
+  [
+    "a",
+    "b"
+  ],
+  {
+    "a": "b"
+  },
+  "a",
+  "b",
+  "c"
+]
+
 +++ out-yaml
 - - a
   - b
@@ -16,13 +30,6 @@ tags: spec flow sequence mapping
 - "a"
 - 'b'
 - c
-
-+++ in-json
-[
-  [ "a", "b" ],
-  { "a": "b" },
-  "a", "b", "c"
-]
 
 +++ test-event
 +STR

@@ -7,13 +7,18 @@ key:
  - item1
  - item2
 
++++ in-json
+{
+  "key": [
+    "item1",
+    "item2"
+  ]
+}
+
 +++ out-yaml
 key:
 - item1
 - item2
-
-+++ in-json
-{"key": ["item1", "item2"]}
 
 +++ test-event
 +STR

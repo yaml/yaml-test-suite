@@ -6,11 +6,11 @@ tags: scalar 1.3-err
 ---word1
 word2
 
-+++ out-yaml
-'---word1 word2'
-
 +++ in-json
 "---word1 word2"
+
++++ out-yaml
+'---word1 word2'
 
 +++ test-event
 +STR

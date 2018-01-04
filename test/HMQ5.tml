@@ -9,8 +9,8 @@ tags: spec tag alias
 
 +++ in-json
 {
-   "baz" : "foo",
-   "foo" : "bar"
+  "baz": "foo",
+  "foo": "bar"
 }
 
 +++ out-yaml

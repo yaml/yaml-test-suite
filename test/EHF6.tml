@@ -8,12 +8,6 @@ tags: tag flow
   [ a, !!str b]
 }
 
-+++ out-yaml
-!!map
-k: !!seq
-- a
-- !!str b
-
 +++ in-json
 {
   "k": [
@@ -21,6 +15,12 @@ k: !!seq
     "b"
   ]
 }
+
++++ out-yaml
+!!map
+k: !!seq
+- a
+- !!str b
 
 +++ test-event
 +STR

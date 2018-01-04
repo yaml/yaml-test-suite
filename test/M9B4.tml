@@ -9,13 +9,13 @@ tags: spec literal scalar 1.3-err
 
 \
 
++++ in-json
+"literal\n\ttext\n"
+
 +++ out-yaml
 |
   literal
   <TAB>text
-
-+++ in-json
-"literal\n\ttext\n"
 
 +++ test-event
 +STR

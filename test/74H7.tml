@@ -9,21 +9,21 @@ e: !!str f
 g: h
 !!int 23: !!bool false
 
++++ in-json
+{
+  "23": false,
+  "a": "b",
+  "c": 42,
+  "e": "f",
+  "g": "h"
+}
+
 +++ out-yaml
 !!str a: b
 c: !!int 42
 e: !!str f
 g: h
 !!int 23: !!bool false
-
-+++ in-json
-{
-  "a": "b",
-  "c": 42,
-  "e": "f",
-  "g": "h",
-  "23": false
-}
 
 +++ test-event
 +STR

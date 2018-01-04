@@ -10,8 +10,8 @@ c: &d d
 
 +++ in-json
 {
-   "a" : "b",
-   "c" : "d"
+  "a": "b",
+  "c": "d"
 }
 
 +++ test-event

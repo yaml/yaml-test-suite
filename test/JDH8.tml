@@ -7,13 +7,13 @@ tags: scalar 1.3-mod
 k:#foo
  &a !t s
 
++++ in-json
+"k:#foo &a !t s"
+
 +++ out-yaml
 ---
 "k:#foo &a !t s"
 ...
-
-+++ in-json
-"k:#foo &a !t s"
 
 +++ test-event
 +STR

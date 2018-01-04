@@ -11,10 +11,10 @@ tags: spec whitespace scalar upto-1.2
   baz
 "
 
-+++ out-yaml
++++ in-json
 " foo\nbar\nbaz "
 
-+++ in-json
++++ out-yaml
 " foo\nbar\nbaz "
 
 +++ test-event

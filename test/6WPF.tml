@@ -12,14 +12,14 @@ tags: spec whitespace scalar 1.3-mod
   baz
 "
 
++++ in-json
+" foo\nbar\nbaz "
+
 +++ out-yaml
 " foo\nbar\nbaz "
 
 +++ emit-yaml
 --- " foo\nbar\nbaz "
-
-+++ in-json
-" foo\nbar\nbaz "
 
 +++ test-event
 +STR

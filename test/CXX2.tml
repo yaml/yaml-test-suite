@@ -5,14 +5,14 @@ tags: anchor header mapping
 +++ in-yaml
 --- &anchor a: b
 
-+++ out-yaml
----
-&anchor a: b
-
 +++ in-json
 {
   "a": "b"
 }
+
++++ out-yaml
+---
+&anchor a: b
 
 +++ test-event
 +STR

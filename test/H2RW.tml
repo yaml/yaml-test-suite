@@ -16,6 +16,13 @@ text: |
 <SPC>
   d
 
++++ in-json
+{
+  "bar": 2,
+  "foo": 1,
+  "text": "a\n  \nb\n\nc\n\nd\n"
+}
+
 +++ out-yaml
 foo: 1
 bar: 2
@@ -33,9 +40,6 @@ text: |
   c
 
   d
-
-+++ in-json
-{"foo":1,"bar":2,"text":"a\n  \nb\n\nc\n\nd\n"}
 
 +++ test-event
 +STR

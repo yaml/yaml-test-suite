@@ -9,12 +9,6 @@ seq:
 - a
 - b
 
-+++ out-yaml
----
-seq: &anchor
-- a
-- b
-
 +++ in-json
 {
   "seq": [
@@ -22,6 +16,12 @@ seq: &anchor
     "b"
   ]
 }
+
++++ out-yaml
+---
+seq: &anchor
+- a
+- b
 
 +++ test-event
 +STR

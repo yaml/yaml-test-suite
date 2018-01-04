@@ -6,14 +6,14 @@ tags: mapping
 ---
 wanted: love ♥ and peace ☮
 
-+++ out-yaml
----
-wanted: "love \u2665 and peace \u262E"
-
 +++ in-json
 {
   "wanted": "love ♥ and peace ☮"
 }
+
++++ out-yaml
+---
+wanted: "love \u2665 and peace \u262E"
 
 +++ test-event
 +STR
