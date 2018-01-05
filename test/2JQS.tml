@@ -6,9 +6,6 @@ tags: mapping empty
 : a
 : b
 
-+++ in-json
-{"": "a", "": "b"}
-
 +++ test-event
 +STR
 +DOC
