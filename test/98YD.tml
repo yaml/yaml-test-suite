@@ -5,6 +5,8 @@ tags: spec comment empty
 +++ in-yaml
 \# Comment only.
 
++++ in-json
+
 +++ out-yaml
 
 +++ test-event

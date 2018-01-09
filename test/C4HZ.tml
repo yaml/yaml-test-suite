@@ -18,6 +18,35 @@ tags: spec tag alias directive
   color: 0xFFEEBB
   text: Pretty vector drawing.
 
++++ in-json
+[
+  {
+    "center": {
+      "x": 73,
+      "y": 129
+    },
+    "radius": 7
+  },
+  {
+    "finish": {
+      "x": 89,
+      "y": 102
+    },
+    "start": {
+      "x": 73,
+      "y": 129
+    }
+  },
+  {
+    "color": 16772795,
+    "start": {
+      "x": 73,
+      "y": 129
+    },
+    "text": "Pretty vector drawing."
+  }
+]
+
 +++ out-yaml
 --- !<tag:clarkevans.com,2002:shape>
 - !<tag:clarkevans.com,2002:circle>

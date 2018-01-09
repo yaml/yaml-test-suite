@@ -8,6 +8,8 @@ tags: spec comment empty scalar
 
 \
 
++++ in-json
+
 +++ out-yaml
 
 +++ test-event

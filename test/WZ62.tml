@@ -8,6 +8,12 @@ tags: spec flow scalar
   !!str : bar,
 }
 
++++ in-json
+{
+  "": "bar",
+  "foo": ""
+}
+
 +++ out-yaml
 foo: !!str
 !!str: bar

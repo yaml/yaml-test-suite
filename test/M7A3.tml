@@ -14,6 +14,10 @@ document
 # XXX literal needs indentation? libyaml sees a directive.
 \%!PS-Adobe-2.0 # Not the first line
 
++++ in-json
+"Bare document"
+"%!PS-Adobe-2.0 # Not the first line\n"
+
 +++ out-yaml
 Bare document
 ...

@@ -12,6 +12,10 @@ lines.
 string"
 --- &node foo
 
++++ in-json
+"quoted string"
+"foo"
+
 +++ out-yaml
 --- "quoted string"
 --- &node foo

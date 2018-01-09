@@ -14,6 +14,18 @@ player: Sammy Sosa
 action: grand slam
 ...
 
++++ in-json
+{
+  "action": "strike (miss)",
+  "player": "Sammy Sosa",
+  "time": "20:03:20"
+}
+{
+  "action": "grand slam",
+  "player": "Sammy Sosa",
+  "time": "20:03:47"
+}
+
 +++ test-event
 +STR
 +DOC ---
