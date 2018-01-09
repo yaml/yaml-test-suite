@@ -8,6 +8,12 @@ scalar1
 ...
 key: value
 
++++ in-json
+"scalar1"
+{
+  "key": "value"
+}
+
 +++ out-yaml
 --- scalar1
 ...

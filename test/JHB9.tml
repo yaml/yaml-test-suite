@@ -14,6 +14,17 @@ tags: spec header
 - Chicago Cubs
 - St Louis Cardinals
 
++++ in-json
+[
+  "Mark McGwire",
+  "Sammy Sosa",
+  "Ken Griffey"
+]
+[
+  "Chicago Cubs",
+  "St Louis Cardinals"
+]
+
 +++ out-yaml
 ---
 - Mark McGwire

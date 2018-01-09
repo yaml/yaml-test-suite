@@ -12,6 +12,15 @@ tags: tag
 d
 e
 
++++ in-json
+{
+  "a": "b"
+}
+[
+  "c"
+]
+"d e"
+
 +++ out-yaml
 --- !!map
 a: b
