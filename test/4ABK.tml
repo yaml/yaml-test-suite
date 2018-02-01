@@ -13,8 +13,8 @@ omitted value:,
 +++ in-json
 {
   "": "omitted key",
-  "http://foo.com": "",
-  "omitted value": "",
+  "http://foo.com": null,
+  "omitted value": null,
   "unquoted": "separate"
 }
 
