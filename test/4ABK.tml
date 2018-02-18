@@ -19,7 +19,10 @@ omitted value:,
 }
 
 +++ out-yaml
-x
+unquoted: "separate"
+http://foo.com: null
+omitted value: null
+null: omitted key
 
 +++ test-event
 +STR
