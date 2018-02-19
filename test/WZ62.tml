@@ -10,7 +10,7 @@ tags: spec flow scalar
 
 +++ out-yaml
 foo: !!str
-!!str: bar
+!!str : bar
 
 +++ test-event
 +STR
