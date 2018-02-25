@@ -1,3 +1,7 @@
 /data/
 /gh-pages/
 /matrix/
+
+# Ignore IntelliJ IDEA files
+.idea
+
