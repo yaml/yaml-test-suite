@@ -24,7 +24,7 @@ insert() {
   local section=$1 data=$2
   cat <<'...' | perl - "$id" "$1" || die
 use IO::All;
-use XXX;
+#use XXX;
 
 my ($id, $section) = @ARGV;
 

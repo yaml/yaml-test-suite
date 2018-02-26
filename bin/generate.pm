@@ -2,7 +2,7 @@ package generate;
 
 use Carp qw'croak confess';
 use File::Path qw'mkpath rmtree';
-use XXX;
+#use XXX;
 
 sub all {
   main::initial() if defined &main::initial;
