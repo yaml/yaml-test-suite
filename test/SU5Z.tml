@@ -1,4 +1,4 @@
-=== Comment without whitespace after doublequoted scalar
+=== Comment without whitespace after doublequoted scalar (backwards incompatible with YAML 1.1)
 from: @perlpunk
 tags: comment error double whitespace
 

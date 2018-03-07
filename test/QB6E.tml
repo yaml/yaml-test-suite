@@ -1,4 +1,4 @@
-=== Wrong indented multiline quoted scalar
+=== Wrong indented multiline quoted scalar (backwards incompatible with YAML 1.1)
 from: @perlpunk
 tags: double error indent
 

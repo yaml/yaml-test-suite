@@ -1,4 +1,4 @@
-=== Wrong indented flow sequence
+=== Wrong indented flow sequence (backwards incompatible with YAML 1.1)
 from: @perlpunk
 tags: error flow indent sequence
 

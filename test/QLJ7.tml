@@ -1,4 +1,4 @@
-=== Tag shorthand used in documents but only defined in the first
+=== Tag shorthand used in documents but only defined in the first (backwards incompatible with YAML 1.1)
 from: IRC
 tags: error directive tag
 

@@ -1,4 +1,4 @@
-=== Missing document-end marker before directive
+=== Missing document-end marker before directive (backwards incompatible with YAML 1.1)
 from: @perlpunk
 tags: error directive footer
 
