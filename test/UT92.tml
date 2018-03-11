@@ -11,6 +11,12 @@ tags: spec header footer comment
 \# Empty
 ...
 
++++ in-json
+{
+  "matches %": 20
+}
+null
+
 +++ out-yaml
 ---
 matches %: 20

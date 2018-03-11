@@ -11,6 +11,13 @@ Document
 ---
 matches %: 20
 
++++ in-json
+"Document"
+null
+{
+  "matches %": 20
+}
+
 +++ test-event
 +STR
 +DOC

@@ -11,6 +11,15 @@ Mapping: Document
 ---
 matches %: 20
 
++++ in-json
+{
+  "Mapping": "Document"
+}
+null
+{
+  "matches %": 20
+}
+
 +++ test-event
 +STR
 +DOC

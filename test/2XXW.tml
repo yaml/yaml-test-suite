@@ -11,6 +11,13 @@ tags: spec mapping
 ? Sammy Sosa
 ? Ken Griff
 
++++ in-json
+{
+  "Ken Griff": null,
+  "Mark McGwire": null,
+  "Sammy Sosa": null
+}
+
 +++ out-yaml
 --- !!set
 Mark McGwire:

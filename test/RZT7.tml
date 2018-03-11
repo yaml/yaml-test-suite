@@ -30,6 +30,35 @@ Stack:
     code: |-
       foo = bar
 
++++ in-json
+{
+  "Time": "2001-11-23 15:01:42 -5",
+  "User": "ed",
+  "Warning": "This is an error message for the log file"
+}
+{
+  "Time": "2001-11-23 15:02:31 -5",
+  "User": "ed",
+  "Warning": "A slightly different error message."
+}
+{
+  "Date": "2001-11-23 15:03:17 -5",
+  "Fatal": "Unknown variable \"bar\"",
+  "Stack": [
+    {
+      "code": "x = MoreObject(\"345\\n\")\n",
+      "file": "TopClass.py",
+      "line": 23
+    },
+    {
+      "code": "foo = bar",
+      "file": "MoreClass.py",
+      "line": 58
+    }
+  ],
+  "User": "ed"
+}
+
 +++ out-yaml
 ---
 Time: 2001-11-23 15:01:42 -5
