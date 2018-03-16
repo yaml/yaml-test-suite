@@ -9,13 +9,6 @@ tags: spec flow scalar
   : bar,
 }
 
-+++ in-json
-# XXX Why are nulls spaces here?
-{
-  "foo": "",
-  "": "bar"
-}
-
 +++ test-event
 +STR
 +DOC
