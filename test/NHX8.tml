@@ -8,6 +8,9 @@ tags: whitespace
 
 \
 
++++ emit-yaml
+:
+
 +++ in-json
 {
   "": null

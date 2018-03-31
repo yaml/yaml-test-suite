@@ -8,6 +8,12 @@ plain key: in-line value
 "quoted key":
 - entry
 
++++ emit-yaml
+plain key: in-line value
+:
+"quoted key":
+- entry
+
 +++ in-json
 {
   "": null,

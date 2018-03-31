@@ -13,8 +13,7 @@ tags: mapping single double
 }
 
 +++ out-yaml
-? "foo\nbar:baz\tx \\$%^&*()x"
-: 23
+"foo\nbar:baz\tx \\$%^&*()x": 23
 'x\ny:z\tx $%^&*()x': 24
 
 +++ test-event
