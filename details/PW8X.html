@@ -47,11 +47,16 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>[<br>   null,<br>   &quot;a&quot;,<br>   {<br>      &quot;&quot; : null,<br>      &quot;b&quot; : null<br>   },<br>   {<br>      &quot;&quot; : null<br>   }<br>]<br></pre>
+<pre>[<br>  null,<br>  &quot;a&quot;,<br>  {<br>    &quot;&quot;: null,<br>    &quot;b&quot;: null<br>  },<br>  {<br>    &quot;&quot;: null<br>  }<br>]<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -66,13 +71,13 @@
 <pre><span
 class="">[</span>
 <span
-class="">   null,</span>
+class="">  null,</span>
 <span
-class="">   &quot;a&quot;,</span>
+class="">  &quot;a&quot;,</span>
 <span
-class="diff_line">   {},</span>
+class="diff_line">  {},</span>
 <span
-class="">   {}</span>
+class="">  {}</span>
 <span
 class="">]</span>
 </pre>
@@ -97,7 +102,7 @@ class="">]</span>
     at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
     at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
     at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
     at Module._compile (module.js:410:26)
     at Object.Module._extensions..js (module.js:417:10)
     at Module.load (module.js:344:32)
@@ -105,7 +110,6 @@ class="">]</span>
     at Function.Module.runMain (module.js:442:10)
     at startup (node.js:136:18)
     at node.js:966:3
-
 </pre>
  </div>
 
@@ -120,23 +124,23 @@ class="">]</span>
 <pre><span
 class="">[</span>
 <span
-class="diff_line">   &quot;&quot;,</span>
+class="diff_line">  &quot;&quot;,</span>
 <span
-class="">   &quot;a&quot;,</span>
+class="">  &quot;a&quot;,</span>
 <span
-class="">   {</span>
+class="">  {</span>
 <span
-class="">      &quot;&quot; : &quot;&quot;,</span>
+class="">    &quot;&quot;: &quot;&quot;,</span>
 <span
-class="">      &quot;b&quot; : &quot;&quot;</span>
+class="">    &quot;b&quot;: &quot;&quot;</span>
 <span
-class="">   },</span>
+class="">  },</span>
 <span
-class="">   {</span>
+class="">  {</span>
 <span
-class="">      &quot;&quot; : &quot;&quot;</span>
+class="">    &quot;&quot;: &quot;&quot;</span>
 <span
-class="">   }</span>
+class="">  }</span>
 <span
 class="">]</span>
 </pre>
@@ -217,13 +221,13 @@ YAML Error: Invalid element in map
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
@@ -262,7 +266,7 @@ Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 13, &lt;
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -296,7 +300,7 @@ second occurrence
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -338,23 +342,23 @@ second occurrence
 <pre><span
 class="">[</span>
 <span
-class="">   null,</span>
+class="">  null,</span>
 <span
-class="">   &quot;a&quot;,</span>
+class="">  &quot;a&quot;,</span>
 <span
-class="">   {</span>
+class="">  {</span>
 <span
-class="diff_line">      &quot;b&quot; : null,</span>
+class="diff_line">    &quot;b&quot;: null,</span>
 <span
-class="">      &quot;null&quot; : null</span>
+class="">    &quot;null&quot;: null</span>
 <span
-class="">   },</span>
+class="">  },</span>
 <span
-class="">   {</span>
+class="">  {</span>
 <span
-class="">      &quot;null&quot; : null</span>
+class="">    &quot;null&quot;: null</span>
 <span
-class="">   }</span>
+class="">  }</span>
 <span
 class="">]</span>
 </pre>
@@ -364,33 +368,65 @@ class="">]</span>
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>[None, &#39;a&#39;, {None: None, &#39;b&#39;: None}, {None: None}]
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:120: ReusedAnchorWarning: 
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:125: ReusedAnchorWarning: 
 found duplicate anchor u&#39;a&#39;
-first occurence   in &quot;&lt;byte string&gt;&quot;, line 1, column 3:
+first occurrence   in &quot;&lt;byte string&gt;&quot;, line 1, column 3:
     - &amp;a
       ^ (line: 1)
-second occurence   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
+second occurrence   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
       &amp;a : a
       ^ (line: 4)
   warnings.warn(ws, ReusedAnchorWarning)
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:120: ReusedAnchorWarning: 
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:125: ReusedAnchorWarning: 
 found duplicate anchor u&#39;a&#39;
-first occurence   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
+first occurrence   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
       &amp;a : a
       ^ (line: 4)
-second occurence   in &quot;&lt;byte string&gt;&quot;, line 6, column 8:
+second occurrence   in &quot;&lt;byte string&gt;&quot;, line 6, column 8:
       &amp;c : &amp;a
            ^ (line: 6)
   warnings.warn(ws, ReusedAnchorWarning)
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:120: ReusedAnchorWarning: 
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:125: ReusedAnchorWarning: 
 found duplicate anchor u&#39;a&#39;
-first occurence   in &quot;&lt;byte string&gt;&quot;, line 6, column 8:
+first occurrence   in &quot;&lt;byte string&gt;&quot;, line 6, column 8:
       &amp;c : &amp;a
            ^ (line: 6)
-second occurence   in &quot;&lt;byte string&gt;&quot;, line 10, column 5:
+second occurrence   in &quot;&lt;byte string&gt;&quot;, line 10, column 5:
       : &amp;a
         ^ (line: 10)
   warnings.warn(ws, ReusedAnchorWarning)
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:262: DuplicateKeyFutureWarning: while constructing a mapping
+  in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
+      &amp;a : a
+      ^ (line: 4)
+found duplicate key &quot;None&quot; with value &quot;None&quot; (original value: &quot;a&quot;)
+  in &quot;&lt;byte string&gt;&quot;, line 6, column 3:
+      &amp;c : &amp;a
+      ^ (line: 6)
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become and error in future releases, and are errors
+by default when using the new API.
+
+  warnings.warn(DuplicateKeyFutureWarning(*args))
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:262: DuplicateKeyFutureWarning: while constructing a mapping
+  in &quot;&lt;byte string&gt;&quot;, line 8, column 3:
+      ? &amp;d
+      ^ (line: 8)
+found duplicate key &quot;None&quot; with value &quot;None&quot; (original value: &quot;None&quot;)
+  in &quot;&lt;byte string&gt;&quot;, line 9, column 5:
+      ? &amp;e
+        ^ (line: 9)
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become and error in future releases, and are errors
+by default when using the new API.
+
+  warnings.warn(DuplicateKeyFutureWarning(*args))
 </pre>
 
  </div>

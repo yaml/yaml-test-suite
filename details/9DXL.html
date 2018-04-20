@@ -39,11 +39,16 @@ matches %: 20
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>  &quot;Mapping&quot;: &quot;Document&quot;<br>}<br>null<br>{<br>  &quot;matches %&quot;: 20<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -54,30 +59,12 @@ matches %: 20
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;Mapping&quot;: &quot;Document&quot;
-}
-null
-{
-  &quot;matches %&quot;: 20
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;Mapping&quot;: &quot;Document&quot;
-}
-null
-{
-  &quot;matches %&quot;: 20
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -145,16 +132,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-   &quot;Mapping&quot; : &quot;Document&quot;
-}
-null
-{
-   &quot;matches %&quot; : 20
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -173,10 +151,14 @@ undef
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;Mapping&quot;:&quot;Document&quot;}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;Mapping&quot;: &quot;Document&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -196,10 +178,14 @@ undef
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;Mapping&quot;:&quot;Document&quot;}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;Mapping&quot;: &quot;Document&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
@@ -243,16 +229,7 @@ was found at document: 3, line: 5, column: 1
 
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;Mapping&quot;: &quot;Document&quot;
-}
-null
-{
-  &quot;matches %&quot;: 20
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="pyyaml-py">
@@ -272,16 +249,7 @@ None
 
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;Mapping&quot;: &quot;Document&quot;
-}
-null
-{
-  &quot;matches %&quot;: 20
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="ruamel-py">

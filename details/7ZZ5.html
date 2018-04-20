@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#7ZZ5 - Empty flow collections - YAML Test Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h2><a href="../index.html">YAML Test Matrix</a></h2>
+<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/7ZZ5.tml">#7ZZ5</a> - Empty flow collections</h3>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+nested sequences:
+- - - []
+- - - {}
+key1: []
+key2: {}
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP
+=VAL :nested sequences
++SEQ
++SEQ
++SEQ
++SEQ
+-SEQ
+-SEQ
+-SEQ
++SEQ
++SEQ
++MAP
+-MAP
+-SEQ
+-SEQ
+-SEQ
+=VAL :key1
++SEQ
+-SEQ
+=VAL :key2
++MAP
+-MAP
+-MAP
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre>{<br>  &quot;key1&quot;: [],<br>  &quot;key2&quot;: {},<br>  &quot;nested sequences&quot;: [<br>    [<br>      [<br>        []<br>      ]<br>    ],<br>    [<br>      [<br>        {}<br>      ]<br>    ]<br>  ]<br>}<br></pre>
+</div>
+<hr style="clear: both;">
+ <div class="framework" id="cpp-event">
+<h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-event">
+<h3><a href="#java-event">java-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="libyaml-event">
+<h3><a href="#libyaml-event">libyaml-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="diff_line">  &quot;key1&quot;: {},</span>
+<span
+class="">  &quot;key2&quot;: {},</span>
+<span
+class="">  &quot;nested sequences&quot;: [</span>
+<span
+class="">    [</span>
+<span
+class="">      [</span>
+<span
+class="">        {}</span>
+<span
+class="">      ]</span>
+<span
+class="">    ],</span>
+<span
+class="">    [</span>
+<span
+class="">      [</span>
+<span
+class="">        {}</span>
+<span
+class="">      ]</span>
+<span
+class="">    ]</span>
+<span
+class="">  ]</span>
+<span
+class="">}</span>
+</pre>
+ </div>
+
+ <div class="framework" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC ---</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :nested sequences</span>
+<span
+class="">+SEQ</span>
+<span
+class="">+SEQ</span>
+<span
+class="">+SEQ</span>
+<span
+class="">+SEQ</span>
+<span
+class="">-SEQ</span>
+<span
+class="">-SEQ</span>
+<span
+class="">-SEQ</span>
+<span
+class="diff_line">=VAL :- - {}</span>
+<span
+class="">-SEQ</span>
+<span
+class="">=VAL :key1</span>
+<span
+class="">+SEQ</span>
+<span
+class="">-SEQ</span>
+<span
+class="">=VAL :key2</span>
+<span
+class="">+MAP</span>
+<span
+class="">-MAP</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
+   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
+   Line: 3
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 350.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
+   Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
+   Line: 3
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 350.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="perl5-pp-json">
+<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="perl5-pp-pl">
+<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &#39;key1&#39; =&gt; [],
+  &#39;key2&#39; =&gt; {},
+  &#39;nested sequences&#39; =&gt; [
+                        [
+                          [
+                            []
+                          ]
+                        ],
+                        [
+                          [
+                            {}
+                          ]
+                        ]
+                      ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &#39;key1&#39; =&gt; [],
+  &#39;key2&#39; =&gt; {},
+  &#39;nested sequences&#39; =&gt; [
+                          [
+                            [
+                              []
+                            ]
+                          ],
+                          [
+                            [
+                              {}
+                            ]
+                          ]
+                        ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;- - []&#39; at /bin/perl5-tiny-json line 15.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;- - []&#39; at /bin/perl5-tiny-pl line 14.
+</pre>
+ </div>
+
+ <div class="framework" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &#39;key1&#39; =&gt; [],
+  &#39;key2&#39; =&gt; {},
+  &#39;nested sequences&#39; =&gt; [
+                          [
+                            [
+                              []
+                            ]
+                          ],
+                          [
+                            [
+                              {}
+                            ]
+                          ]
+                        ]
+}
+</pre>
+
+ </div>
+
+ <div class="framework" id="pyyaml-event">
+<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="pyyaml-py">
+<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&#39;key1&#39;: [], &#39;key2&#39;: {}, &#39;nested sequences&#39;: [[[[]]], [[{}]]]}
+</pre>
+
+ </div>
+
+ <div class="framework" id="ruamel-event">
+<h3><a href="#ruamel-event">ruamel-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ <div class="framework" id="ruamel-py">
+<h3><a href="#ruamel-py">ruamel-py</a></h3>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&#39;key1&#39;: [], &#39;key2&#39;: {}, &#39;nested sequences&#39;: [[[[]]], [[{}]]]}
+</pre>
+
+ </div>
+
+ <div class="framework" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
+ </div>
+
+ </body>
+</html>
+

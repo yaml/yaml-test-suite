@@ -41,6 +41,18 @@
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL &amp;a :
+=VAL :
+-MAP
+parsing error near byte offset 5 (Unexpected &#39;[&#39;)
+</pre>
+ </div>
+
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
@@ -82,7 +94,7 @@
     at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
     at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
     at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
     at Module._compile (module.js:410:26)
     at Object.Module._extensions..js (module.js:417:10)
     at Module.load (module.js:344:32)
@@ -90,7 +102,6 @@
     at Function.Module.runMain (module.js:442:10)
     at startup (node.js:136:18)
     at node.js:966:3
-
 </pre>
  </div>
 
@@ -148,12 +159,11 @@ stack traceback:
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-   &quot;ARRAY(0x2c26b50)&quot; : [
+   &quot;[&#39;a&#39;,&#39;b&#39;]&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
-   ],
-   &quot;[&#39;a&#39;,&#39;b&#39;]&quot; : &quot;b&quot;
+   ]
 }
 </pre>
 
@@ -163,12 +173,11 @@ stack traceback:
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0xc95128)&#39; =&gt; [
-                         &#39;c&#39;,
-                         &#39;b&#39;,
-                         &#39;d&#39;
-                       ],
-  &#39;[\&#39;a\&#39;,\&#39;b\&#39;]&#39; =&gt; &#39;b&#39;
+  &#39;[\&#39;a\&#39;,\&#39;b\&#39;]&#39; =&gt; [
+                       &#39;c&#39;,
+                       &#39;b&#39;,
+                       &#39;d&#39;
+                     ]
 }
 </pre>
 
@@ -177,7 +186,7 @@ stack traceback:
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0xa06658)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
+<pre>{&quot;ARRAY(0xe21658)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
 </pre>
 
  </div>
@@ -186,7 +195,7 @@ stack traceback:
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0x1c38278)&#39; =&gt; [
+  &#39;ARRAY(0x2713620)&#39; =&gt; [
                           &#39;c&#39;,
                           &#39;b&#39;,
                           &#39;d&#39;
@@ -198,20 +207,20 @@ stack traceback:
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;*b, *a : [c, *b, d]}&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;*b, *a : [c, *b, d]}&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;*b, *a : [c, *b, d]}&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;*b, *a : [c, *b, d]}&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;ARRAY(0x19763d8)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
+<pre>{&quot;ARRAY(0x2545be8)&quot;:[&quot;c&quot;,&quot;b&quot;,&quot;d&quot;]}
 </pre>
 
  </div>
@@ -220,11 +229,11 @@ stack traceback:
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;ARRAY(0xe99278)&#39; =&gt; [
-                         &#39;c&#39;,
-                         &#39;b&#39;,
-                         &#39;d&#39;
-                       ]
+  &#39;ARRAY(0x15f3e90)&#39; =&gt; [
+                          &#39;c&#39;,
+                          &#39;b&#39;,
+                          &#39;d&#39;
+                        ]
 }
 </pre>
 
@@ -238,7 +247,7 @@ stack traceback:
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -266,7 +275,7 @@ found unacceptable key (unhashable type: &#39;list&#39;)
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -299,8 +308,24 @@ found unacceptable key (unhashable type: &#39;list&#39;)
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;type &#39;exceptions.TypeError&#39;&gt;
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:262: DuplicateKeyFutureWarning: while constructing a mapping
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
+    { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
+    ^ (line: 1)
+found duplicate key &quot;(&#39;a&#39;, &#39;b&#39;)&quot; with value &quot;[]&quot; (original value: &quot;b&quot;)
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 3:
+    { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
+      ^ (line: 1)
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become and error in future releases, and are errors
+by default when using the new API.
+
+  warnings.warn(DuplicateKeyFutureWarning(*args))
 Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 10, in &lt;module&gt;
+  File &quot;/bin/ruamel-json&quot;, line 21, in &lt;module&gt;
     print json.dumps(doc, sort_keys=True, indent=2)
   File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
     sort_keys=sort_keys, **kw).encode(obj)
@@ -318,6 +343,22 @@ TypeError: key (&#39;a&#39;, &#39;b&#39;) is not a string
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{(&#39;a&#39;, &#39;b&#39;): [&#39;c&#39;, &#39;b&#39;, &#39;d&#39;]}
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:262: DuplicateKeyFutureWarning: while constructing a mapping
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
+    { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
+    ^ (line: 1)
+found duplicate key &quot;(&#39;a&#39;, &#39;b&#39;)&quot; with value &quot;[]&quot; (original value: &quot;b&quot;)
+  in &quot;&lt;byte string&gt;&quot;, line 1, column 3:
+    { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
+      ^ (line: 1)
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become and error in future releases, and are errors
+by default when using the new API.
+
+  warnings.warn(DuplicateKeyFutureWarning(*args))
 </pre>
 
  </div>

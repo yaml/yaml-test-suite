@@ -31,11 +31,16 @@ folded:
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;folded&quot; : &quot;value\n&quot;,<br>   &quot;literal&quot; : &quot;value\n&quot;<br>}<br></pre>
+<pre>{<br>  &quot;folded&quot;: &quot;value\n&quot;,<br>  &quot;literal&quot;: &quot;value\n&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -51,16 +56,16 @@ folded:
        !foo
        ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:462)
-	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:183)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:443)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:519)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:314)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:453)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:184)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:434)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:521)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:159)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
 	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
@@ -68,8 +73,8 @@ folded:
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
 	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:300)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
 	... 13 more
 </pre>
  </div>
@@ -192,13 +197,13 @@ class="">-STR</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
@@ -208,9 +213,9 @@ class="">-STR</span>
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;folded&quot; : &quot;foo=SCALAR(0x1bbe3d8)&quot;,</span>
+class="diff_line">  &quot;folded&quot;: &quot;foo=SCALAR(0xafac40)&quot;,</span>
 <span
-class="">   &quot;literal&quot; : &quot;value\n&quot;</span>
+class="">  &quot;literal&quot;: &quot;value\n&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -236,58 +241,16 @@ class="">}</span>
 
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
-    yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
-    for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 133, in construct_mapping
-    value = self.construct_object(value_node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
-    data = constructor(self, node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
-    node.start_mark)
-yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!foo&#39;
-  in &quot;&lt;string&gt;&quot;, line 4, column 4:
-       !foo
-       ^
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
-    yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
-    for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 133, in construct_mapping
-    value = self.construct_object(value_node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
-    data = constructor(self, node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
-    node.start_mark)
-yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!foo&#39;
-  in &quot;&lt;string&gt;&quot;, line 4, column 4:
-       !foo
-       ^
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&#39;folded&#39;: GenericScalar(tag=u&#39;!foo&#39;, content=u&#39;value\n&#39;),
+ &#39;literal&#39;: &#39;value\n&#39;}
 </pre>
+
  </div>
 
  <div class="framework" id="ruamel-event">
@@ -297,58 +260,16 @@ yaml.constructor.ConstructorError: could not determine a constructor for the tag
 
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 96, in construct_document
-    for dummy in generator:
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 547, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 305, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 212, in construct_mapping
-    value = self.construct_object(value_node, deep=deep)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 141, in construct_object
-    data = constructor(self, node)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 567, in construct_undefined
-    node.start_mark)
-ruamel.yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!foo&#39;
-  in &quot;&lt;byte string&gt;&quot;, line 4, column 4:
-       !foo
-       ^ (line: 4)
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 96, in construct_document
-    for dummy in generator:
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 547, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 305, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 212, in construct_mapping
-    value = self.construct_object(value_node, deep=deep)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 141, in construct_object
-    data = constructor(self, node)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 567, in construct_undefined
-    node.start_mark)
-ruamel.yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!foo&#39;
-  in &quot;&lt;byte string&gt;&quot;, line 4, column 4:
-       !foo
-       ^ (line: 4)
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{&#39;folded&#39;: GenericScalar(tag=u&#39;!foo&#39;, content=u&#39;value\n&#39;),
+ &#39;literal&#39;: &#39;value\n&#39;}
 </pre>
+
  </div>
 
  <div class="framework" id="ruby-json">

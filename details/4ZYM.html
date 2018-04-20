@@ -34,11 +34,16 @@ block: |
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;block&quot; : &quot;text\n \tlines\n&quot;,<br>   &quot;plain&quot; : &quot;text lines&quot;,<br>   &quot;quoted&quot; : &quot;text lines&quot;<br>}<br></pre>
+<pre>{<br>  &quot;block&quot;: &quot;text\n \tlines\n&quot;,<br>  &quot;plain&quot;: &quot;text lines&quot;,<br>  &quot;quoted&quot;: &quot;text lines&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -128,11 +133,11 @@ block: |
 <pre><span
 class="">{</span>
 <span
-class="">   &quot;block&quot; : &quot;text\n \tlines\n&quot;,</span>
+class="">  &quot;block&quot;: &quot;text\n \tlines\n&quot;,</span>
 <span
-class="">   &quot;plain&quot; : &quot;text lines&quot;,</span>
+class="">  &quot;plain&quot;: &quot;text lines&quot;,</span>
 <span
-class="diff_line">   &quot;quoted&quot; : &quot;text \tlines&quot;</span>
+class="diff_line">  &quot;quoted&quot;: &quot;text \tlines&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -154,13 +159,13 @@ class="">}</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  lines&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  lines&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  lines&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;  lines&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 

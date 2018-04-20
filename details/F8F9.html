@@ -46,11 +46,16 @@ keep: |+
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;clip&quot; : &quot;# text\n&quot;,<br>   &quot;keep&quot; : &quot;# text\n\n&quot;,<br>   &quot;strip&quot; : &quot;# text&quot;<br>}<br></pre>
+<pre>{<br>  &quot;clip&quot;: &quot;# text\n&quot;,<br>  &quot;keep&quot;: &quot;# text\n\n&quot;,<br>  &quot;strip&quot;: &quot;# text&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -95,11 +100,11 @@ keep: |+
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;clip&quot; : &quot;# text\n\n# comments:\n&quot;,</span>
+class="diff_line">  &quot;clip&quot;: &quot;# text\n\n# comments:\n&quot;,</span>
 <span
-class="">   &quot;keep&quot; : &quot;# text\n\n# comments.\n&quot;,</span>
+class="">  &quot;keep&quot;: &quot;# text\n\n# comments.\n&quot;,</span>
 <span
-class="">   &quot;strip&quot; : &quot;# text\n\n# comments:&quot;</span>
+class="">  &quot;strip&quot;: &quot;# text\n\n# comments:&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -172,13 +177,13 @@ class="">}</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;clip: |&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;clip: |&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;clip: |&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;clip: |&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 

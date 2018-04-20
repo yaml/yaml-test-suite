@@ -81,12 +81,44 @@ value11
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>&quot;scalar1&quot;<br>&quot;scalar2&quot;<br>&quot;scalar3&quot;<br>{<br>  &quot;key5&quot;: &quot;value4&quot;<br>}<br>{<br>  &quot;a6&quot;: 1,<br>  &quot;b6&quot;: 2<br>}<br>{<br>  &quot;key8&quot;: &quot;value7&quot;<br>}<br>{<br>  &quot;key10&quot;: &quot;value9&quot;<br>}<br>&quot;value11&quot;<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+ <span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC ---
+=VAL &amp;a1 &lt;tag:yaml.org,2002:str&gt; :scalar1
+-DOC
++DOC ---
+=VAL &amp;a2 &lt;tag:yaml.org,2002:str&gt; :scalar2
+-DOC
++DOC ---
+=VAL &amp;a3 &lt;tag:yaml.org,2002:str&gt; :scalar3
+-DOC
++DOC ---
++MAP &amp;a4 &lt;tag:yaml.org,2002:map&gt;
+=VAL &amp;a5 &lt;tag:yaml.org,2002:str&gt; :key5
+=VAL :value4
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :a6
+=VAL :1
+=VAL &amp;anchor6 :b6
+=VAL :2
+-MAP
+-DOC
++DOC ---
+=VAL :
+parsing error near byte offset 132
+</pre>
  </div>
 
  <div class="framework" id="java-event">
@@ -96,26 +128,7 @@ value11
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;scalar1&quot;
-&quot;scalar2&quot;
-&quot;scalar3&quot;
-{
-  &quot;key5&quot;: &quot;value4&quot;
-}
-{
-  &quot;a6&quot;: 1,
-  &quot;b6&quot;: 2
-}
-{
-  &quot;key8&quot;: &quot;value7&quot;
-}
-{
-  &quot;key10&quot;: &quot;value9&quot;
-}
-&quot;value11&quot;
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
@@ -137,7 +150,7 @@ value11
     at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
     at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
     at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
     at Module._compile (module.js:410:26)
     at Object.Module._extensions..js (module.js:417:10)
     at Module.load (module.js:344:32)
@@ -145,7 +158,6 @@ value11
     at Function.Module.runMain (module.js:442:10)
     at startup (node.js:136:18)
     at node.js:966:3
-
 </pre>
  </div>
 
@@ -209,26 +221,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;scalar1&quot;
-&quot;scalar2&quot;
-&quot;scalar3&quot;
-{
-   &quot;key5&quot; : &quot;value4&quot;
-}
-{
-   &quot;a6&quot; : 1,
-   &quot;b6&quot; : 2
-}
-{
-   &quot;key8&quot; : &quot;value7&quot;
-}
-{
-   &quot;key10&quot; : &quot;value9&quot;
-}
-&quot;value11&quot;
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -269,22 +262,22 @@ stack traceback:
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;&amp;a1&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;scalar1&quot;
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">&quot;scalar1&quot;</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -318,26 +311,7 @@ stack traceback:
 
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;scalar1&quot;
-&quot;scalar2&quot;
-&quot;scalar3&quot;
-{
-  &quot;key5&quot;: &quot;value4&quot;
-}
-{
-  &quot;a6&quot;: 1, 
-  &quot;b6&quot;: 2
-}
-{
-  &quot;key8&quot;: &quot;value7&quot;
-}
-{
-  &quot;key10&quot;: &quot;value9&quot;
-}
-&quot;value11&quot;
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="pyyaml-py">
@@ -362,26 +336,7 @@ stack traceback:
 
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;scalar1&quot;
-&quot;scalar2&quot;
-&quot;scalar3&quot;
-{
-  &quot;key5&quot;: &quot;value4&quot;
-}
-{
-  &quot;a6&quot;: 1, 
-  &quot;b6&quot;: 2
-}
-{
-  &quot;key8&quot;: &quot;value7&quot;
-}
-{
-  &quot;key10&quot;: &quot;value9&quot;
-}
-&quot;value11&quot;
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="ruamel-py">
@@ -401,17 +356,7 @@ stack traceback:
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;scalar1&quot;
-&quot;scalar2&quot;
-&quot;scalar3&quot;
-{&quot;key5&quot;:&quot;value4&quot;}
-{&quot;a6&quot;:1,&quot;b6&quot;:2}
-{&quot;key8&quot;:&quot;value7&quot;}
-{&quot;key10&quot;:&quot;value9&quot;}
-&quot;value11&quot;
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

@@ -31,11 +31,16 @@ block:	|
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;block&quot; : &quot;void main() {\n\tprintf(\&quot;Hello, world!\\n\&quot;);\n}\n&quot;,<br>   &quot;quoted&quot; : &quot;Quoted \t&quot;<br>}<br></pre>
+<pre>{<br>  &quot;block&quot;: &quot;void main() {\n\tprintf(\&quot;Hello, world!\\n\&quot;);\n}\n&quot;,<br>  &quot;quoted&quot;: &quot;Quoted \t&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -47,13 +52,13 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
     block:	|
           ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:419)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:711)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:110)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:118)
 </pre>
  </div>
 
@@ -65,18 +70,17 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
     block:	|
           ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:421)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:133)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:249)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:240)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:228)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
-	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:419)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:124)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:236)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:227)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:215)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
 	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
@@ -235,7 +239,7 @@ found character &#39;\t&#39; that cannot start any token
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -270,7 +274,7 @@ found character &#39;\t&#39; that cannot start any token
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -313,15 +317,15 @@ found character &#39;\t&#39; that cannot start any token
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
     while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 546, in parse_block_mapping_value
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 577, in parse_block_mapping_value
     if self.scanner.check_token(ValueToken):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 140, in check_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 160, in check_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 310, in fetch_more_tokens
     % utf8(ch), self.reader.get_mark())
 ruamel.yaml.scanner.ScannerError: while scanning for the next token
 found character &#39;\t&#39; that cannot start any token
@@ -334,29 +338,29 @@ found character &#39;\t&#39; that cannot start any token
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 127, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
     node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 189, in compose_mapping_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 194, in compose_mapping_node
     item_value = self.compose_node(node, item_key)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 106, in compose_node
     if self.parser.check_event(AliasEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 546, in parse_block_mapping_value
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 577, in parse_block_mapping_value
     if self.scanner.check_token(ValueToken):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 140, in check_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 160, in check_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 310, in fetch_more_tokens
     % utf8(ch), self.reader.get_mark())
 ruamel.yaml.scanner.ScannerError: while scanning for the next token
 found character &#39;\t&#39; that cannot start any token
@@ -369,29 +373,29 @@ found character &#39;\t&#39; that cannot start any token
  <div class="framework" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 127, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
     node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 189, in compose_mapping_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 194, in compose_mapping_node
     item_value = self.compose_node(node, item_key)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 106, in compose_node
     if self.parser.check_event(AliasEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 546, in parse_block_mapping_value
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 577, in parse_block_mapping_value
     if self.scanner.check_token(ValueToken):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 140, in check_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 160, in check_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 310, in fetch_more_tokens
     % utf8(ch), self.reader.get_mark())
 ruamel.yaml.scanner.ScannerError: while scanning for the next token
 found character &#39;\t&#39; that cannot start any token

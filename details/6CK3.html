@@ -81,6 +81,11 @@ class="">-STR</span>
 
  </div>
 
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
@@ -93,15 +98,15 @@ class="">-STR</span>
     - !local foo
       ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:313)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequenceStep2(BaseConstructor.java:373)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequence(BaseConstructor.java:357)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq.construct(SafeConstructor.java:498)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:207)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:196)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:161)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:314)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequenceStep2(BaseConstructor.java:364)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequence(BaseConstructor.java:348)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq.construct(SafeConstructor.java:499)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:159)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
 	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
@@ -109,8 +114,8 @@ class="">-STR</span>
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
 	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:298)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:308)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:300)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
 	... 12 more
 </pre>
  </div>
@@ -135,7 +140,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
     at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
     at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
     at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:7:41)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
     at Module._compile (module.js:410:26)
     at Object.Module._extensions..js (module.js:417:10)
     at Module.load (module.js:344:32)
@@ -143,7 +148,6 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
     at Function.Module.runMain (module.js:442:10)
     at startup (node.js:136:18)
     at node.js:966:3
-
 </pre>
  </div>
 
@@ -237,13 +241,13 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
@@ -266,54 +270,24 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
-    yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
-    for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 393, in construct_yaml_seq
-    data.extend(self.construct_sequence(node))
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 118, in construct_sequence
-    for child in node.value]
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
-    data = constructor(self, node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
-    node.start_mark)
-yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!local&#39;
-  in &quot;&lt;string&gt;&quot;, line 3, column 3:
-    - !local foo
-      ^
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>[
+  &quot;foo&quot;, 
+  &quot;bar&quot;, 
+  &quot;baz&quot;
+]
 </pre>
+
  </div>
 
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
-    yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
-    for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 393, in construct_yaml_seq
-    data.extend(self.construct_sequence(node))
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 118, in construct_sequence
-    for child in node.value]
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 88, in construct_object
-    data = constructor(self, node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 414, in construct_undefined
-    node.start_mark)
-yaml.constructor.ConstructorError: could not determine a constructor for the tag &#39;!local&#39;
-  in &quot;&lt;string&gt;&quot;, line 3, column 3:
-    - !local foo
-      ^
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>[GenericScalar(tag=u&#39;!local&#39;, content=u&#39;foo&#39;),
+ &#39;bar&#39;,
+ GenericScalar(tag=u&#39;tag:example.com,2000:app/tag!&#39;, content=u&#39;baz&#39;)]
 </pre>
+
  </div>
 
  <div class="framework" id="ruamel-event">
@@ -326,23 +300,23 @@ yaml.constructor.ConstructorError: could not determine a constructor for the tag
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
     while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
     token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 265, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 285, in fetch_more_tokens
     return self.fetch_tag()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 653, in fetch_tag
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 673, in fetch_tag
     self.tokens.append(self.scan_tag())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1014, in scan_tag
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1051, in scan_tag
     suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1497, in scan_tag_uri
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1548, in scan_tag_uri
     chunks.append(self.scan_uri_escapes(name, start_mark))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1534, in scan_uri_escapes
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1585, in scan_uri_escapes
     value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
 TypeError: decoding Unicode is not supported
 </pre>
@@ -351,35 +325,35 @@ TypeError: decoding Unicode is not supported
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 125, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 130, in compose_node
     node = self.compose_sequence_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 157, in compose_sequence_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 162, in compose_sequence_node
     while not self.parser.check_event(SequenceEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
     token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 265, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 285, in fetch_more_tokens
     return self.fetch_tag()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 653, in fetch_tag
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 673, in fetch_tag
     self.tokens.append(self.scan_tag())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1014, in scan_tag
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1051, in scan_tag
     suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1497, in scan_tag_uri
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1548, in scan_tag_uri
     chunks.append(self.scan_uri_escapes(name, start_mark))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1534, in scan_uri_escapes
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1585, in scan_uri_escapes
     value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
 TypeError: decoding Unicode is not supported
 </pre>
@@ -388,35 +362,35 @@ TypeError: decoding Unicode is not supported
  <div class="framework" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 125, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 130, in compose_node
     node = self.compose_sequence_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 157, in compose_sequence_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 162, in compose_sequence_node
     while not self.parser.check_event(SequenceEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 460, in parse_block_sequence_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
     token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 153, in peek_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 265, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 285, in fetch_more_tokens
     return self.fetch_tag()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 653, in fetch_tag
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 673, in fetch_tag
     self.tokens.append(self.scan_tag())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1014, in scan_tag
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1051, in scan_tag
     suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1497, in scan_tag_uri
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1548, in scan_tag_uri
     chunks.append(self.scan_uri_escapes(name, start_mark))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1534, in scan_uri_escapes
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1585, in scan_uri_escapes
     value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
 TypeError: decoding Unicode is not supported
 </pre>

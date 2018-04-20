@@ -25,11 +25,16 @@ wanted: love ♥ and peace ☮
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;wanted&quot; : &quot;love \u00e2\u0099\u00a5 and peace \u00e2\u0098\u00ae&quot;<br>}<br></pre>
+<pre>{<br>  &quot;wanted&quot;: &quot;love â¥ and peace â®&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -70,21 +75,14 @@ wanted: love ♥ and peace ☮
 
  <div class="framework" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="diff_line">   &quot;wanted&quot; : &quot;love \u00c3\u00a2\u00c2\u0099\u00c2\u00a5 and peace \u00c3\u00a2\u00c2\u0098\u00c2\u00ae&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;wanted&#39; =&gt; &#39;love ♥ and peace ☮&#39;
+  &#39;wanted&#39; =&gt; &quot;love \x{2665} and peace \x{262e}&quot;
 }
 </pre>
 
@@ -92,42 +90,22 @@ class="">}</span>
 
  <div class="framework" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC ---
-+MAP
-=VAL :wanted
-Line      : 2
-Column    : 14
-Expected  : COMMENT EOL
-Got       : Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 487
-YAML      : &quot;\231\245 and peace \342\230\256\n&quot;
-  at /bin/perl5-pp-event line 18.
-</pre>
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
-Column    : 14
-Expected  : COMMENT EOL
-Got       : Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 487
-YAML      : &quot;\231\245 and peace \342\230\256\n&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 58.
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
-Column    : 14
-Expected  : COMMENT EOL
-Got       : Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 487
-YAML      : &quot;\231\245 and peace \342\230\256\n&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 58.
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &#39;wanted&#39; =&gt; &quot;love \x{2665} and peace \x{262e}&quot;
+}
 </pre>
+
  </div>
 
  <div class="framework" id="perl5-syck-json">
@@ -136,7 +114,7 @@ YAML      : &quot;\231\245 and peace \342\230\256\n&quot;
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;wanted&quot; : &quot;love \u00c3\u00a2\u00c2\u0099\u00c2\u00a5 and peace \u00c3\u00a2\u00c2\u0098\u00c2\u00ae&quot;</span>
+class="diff_line">  &quot;wanted&quot;: &quot;love â¥ and peace â®&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -154,21 +132,14 @@ class="">}</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="diff_line">   &quot;wanted&quot; : &quot;love \u00c3\u00a2\u00c2\u0099\u00c2\u00a5 and peace \u00c3\u00a2\u00c2\u0098\u00c2\u00ae&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
  <span class="status_box color_na">&nbsp;</span>n/a
 <pre>{
-  &#39;wanted&#39; =&gt; &quot;love \x{e2}\x{99}\x{a5} and peace \x{e2}\x{98}\x{ae}&quot;
+  &#39;wanted&#39; =&gt; &quot;love \x{2665} and peace \x{262e}&quot;
 }
 </pre>
 
@@ -205,14 +176,7 @@ UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\u266
 
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="diff_line">   &quot;wanted&quot; : &quot;love \u2665 and peace \u262e&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="pyyaml-py">
@@ -239,14 +203,7 @@ UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\u266
 
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="diff_line">   &quot;wanted&quot; : &quot;love \u2665 and peace \u262e&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="ruamel-py">

@@ -35,7 +35,7 @@ omitted value:,
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;&quot; : &quot;omitted key&quot;,<br>   &quot;http://foo.com&quot; : &quot;&quot;,<br>   &quot;omitted value&quot; : &quot;&quot;,<br>   &quot;unquoted&quot; : &quot;separate&quot;<br>}<br></pre>
+<pre></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
@@ -43,53 +43,85 @@ omitted value:,
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+ <span class="status_box color_diff">&nbsp;</span>diff<br>
+
+  Got Events:
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL :unquoted</span>
+<span
+class="">=VAL &quot;separate</span>
+<span
+class="">=VAL :http://foo.com</span>
+<span
+class="">=VAL :</span>
+<span
+class="diff_line">=VAL :omitted value:</span>
+<span
+class="">=VAL :</span>
+<span
+class="">=VAL :</span>
+<span
+class="">=VAL :omitted key</span>
+<span
+class="">-MAP</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
+
+ </div>
+
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a plain scalar
- in &#39;reader&#39;, line 3, column 1:
-    http://foo.com,
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
     ^
-found unexpected &#39;:&#39;
- in &#39;reader&#39;, line 3, column 5:
-    http://foo.com,
-        ^
-Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
+expected the node content, but found &#39;:&#39;
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
+    ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanPlain(ScannerImpl.java:2017)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchPlain(ScannerImpl.java:1046)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:401)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:734)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:711)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:110)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:118)
 </pre>
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a plain scalar
- in &#39;reader&#39;, line 3, column 1:
-    http://foo.com,
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
     ^
-found unexpected &#39;:&#39;
- in &#39;reader&#39;, line 3, column 5:
-    http://foo.com,
-        ^
-Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
+expected the node content, but found &#39;:&#39;
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
+    ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanPlain(ScannerImpl.java:2017)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchPlain(ScannerImpl.java:1046)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:401)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:734)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:227)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
-	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
 	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
@@ -99,20 +131,15 @@ Please check http://pyyaml.org/wiki/YAMLColonInFlowContext for details.
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="diff_line">   &quot;http://foo.com&quot; : null,</span>
-<span
-class="">   &quot;null&quot; : &quot;omitted key&quot;,</span>
-<span
-class="">   &quot;omitted value&quot; : null,</span>
-<span
-class="">   &quot;unquoted&quot; : &quot;separate&quot;</span>
-<span
-class="">}</span>
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>{
+  &quot;unquoted&quot;: &quot;separate&quot;,
+  &quot;http://foo.com&quot;: null,
+  &quot;omitted value&quot;: null,
+  &quot;null&quot;: &quot;omitted key&quot;
+}
 </pre>
+
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -193,7 +220,7 @@ Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
 Got       : Invalid plain scalar
 Where     : /lib/perl5/YAML/PP/Parser.pm line 487
 YAML      : &quot;:,\n&quot;
-  at /bin/perl5-pp-event line 18.
+  at /bin/perl5-pp-event line 19.
 </pre>
  </div>
 
@@ -205,7 +232,7 @@ Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
 Got       : Invalid plain scalar
 Where     : /lib/perl5/YAML/PP/Parser.pm line 487
 YAML      : &quot;:,\n&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 58.
+  at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
  </div>
 
@@ -217,7 +244,7 @@ Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
 Got       : Invalid plain scalar
 Where     : /lib/perl5/YAML/PP/Parser.pm line 487
 YAML      : &quot;:,\n&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 58.
+  at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
  </div>
 
@@ -235,13 +262,13 @@ YAML      : &quot;:,\n&quot;
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
@@ -302,7 +329,7 @@ expected the node content, but found &#39;:&#39;
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -335,7 +362,7 @@ expected the node content, but found &#39;:&#39;
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -379,15 +406,15 @@ expected the node content, but found &#39;:&#39;
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
     while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 676, in parse_flow_mapping_key
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 711, in parse_flow_mapping_key
     return self.parse_flow_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 312, in parse_flow_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 329, in parse_flow_node
     return self.parse_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 442, in parse_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 470, in parse_node
     token.start_mark)
 ruamel.yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;
@@ -400,27 +427,27 @@ expected the node content, but found &#39;:&#39;
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 127, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
     node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 182, in compose_mapping_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 187, in compose_mapping_node
     while not self.parser.check_event(MappingEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 676, in parse_flow_mapping_key
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 711, in parse_flow_mapping_key
     return self.parse_flow_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 312, in parse_flow_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 329, in parse_flow_node
     return self.parse_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 442, in parse_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 470, in parse_node
     token.start_mark)
 ruamel.yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;
@@ -433,27 +460,27 @@ expected the node content, but found &#39;:&#39;
  <div class="framework" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 113, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 79, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 60, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 91, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 127, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
     node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 182, in compose_mapping_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 187, in compose_mapping_node
     while not self.parser.check_event(MappingEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 676, in parse_flow_mapping_key
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 711, in parse_flow_mapping_key
     return self.parse_flow_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 312, in parse_flow_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 329, in parse_flow_node
     return self.parse_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 442, in parse_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 470, in parse_node
     token.start_mark)
 ruamel.yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;

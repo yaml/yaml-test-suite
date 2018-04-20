@@ -69,32 +69,37 @@ class="">-STR</span>
 
  </div>
 
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
  <div class="framework" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, but found Scalar
+ <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;scalar&gt;&#39;
  in &#39;reader&#39;, line 2, column 1:
     line1
     ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:225)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:711)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:110)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:118)
 </pre>
  </div>
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>&quot;&quot;
-Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, but found Scalar
+Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;scalar&gt;&#39;
  in &#39;reader&#39;, line 2, column 1:
     line1
     ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:225)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
 	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:112)
 	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:542)
@@ -249,7 +254,7 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>&quot;&quot;
 Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 89, in load_all
     while loader.check_data():
@@ -272,7 +277,7 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>&#39;&#39;
 Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 89, in load_all
     while loader.check_data():
@@ -293,70 +298,20 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 
  <div class="framework" id="ruamel-event">
 <h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC ---
-=VAL &gt;
--DOC
-Traceback (most recent call last):
-  File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
-    for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 52, in parse
-    while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
-    self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 209, in parse_document_start
-    self.scanner.peek_token().start_mark)
-ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;scalar&gt;&#39;
-  in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
-    line1
-    ^ (line: 2)
-</pre>
+ <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>&quot;&quot;
-Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 8, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 112, in load_all
-    while loader._constructor.check_data():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 73, in check_data
-    return self.composer.check_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 50, in check_node
-    if self.parser.check_event(StreamStartEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
-    self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 209, in parse_document_start
-    self.scanner.peek_token().start_mark)
-ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;scalar&gt;&#39;
-  in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
-    line1
-    ^ (line: 2)
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>&#39;&#39;
-Traceback (most recent call last):
-  File &quot;/bin/ruamel-py&quot;, line 7, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 112, in load_all
-    while loader._constructor.check_data():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 73, in check_data
-    return self.composer.check_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 50, in check_node
-    if self.parser.check_event(StreamStartEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 130, in check_event
-    self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 209, in parse_document_start
-    self.scanner.peek_token().start_mark)
-ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;scalar&gt;&#39;
-  in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
-    line1
-    ^ (line: 2)
+ <span class="status_box color_na">&nbsp;</span>n/a
+<pre>&#39;line1 line2 line3\n&#39;
 </pre>
+
  </div>
 
  <div class="framework" id="ruby-json">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#U3C3 - Spec Example 6.16. “TAG” directive - YAML Test Matrix</title>
+<title>#U3C3 - Spec Example 6.16. âTAGâ directive - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -10,7 +10,7 @@
 <body>
 
 <h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/U3C3.tml">#U3C3</a> - Spec Example 6.16. “TAG” directive</h3>
+<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/U3C3.tml">#U3C3</a> - Spec Example 6.16. âTAGâ directive</h3>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>%TAG !yaml! tag:yaml.org,2002:
 ---
@@ -28,6 +28,11 @@
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -112,7 +117,7 @@ YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
 <pre><span
 class="diff_line">{</span>
 <span
-class="">   &quot;%TAG !yaml! tag:yaml.org,2002&quot; : null</span>
+class="">  &quot;%TAG !yaml! tag:yaml.org,2002&quot;: null</span>
 <span
 class="">}</span>
 </pre>
@@ -131,13 +136,13 @@ class="">}</span>
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!yaml!str &quot;foo&quot;&#39; at /bin/perl5-tiny-json line 14.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!yaml!str &quot;foo&quot;&#39; at /bin/perl5-tiny-json line 15.
 </pre>
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!yaml!str &quot;foo&quot;&#39; at /bin/perl5-tiny-pl line 13.
+ <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!yaml!str &quot;foo&quot;&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 

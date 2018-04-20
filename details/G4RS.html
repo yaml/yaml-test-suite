@@ -40,11 +40,16 @@ tie-fighter: &#39;|\-*-/|&#39;
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,<br>   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,<br>   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,<br>   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,<br>   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,<br>   &quot;unicode&quot; : &quot;Sosa did fine.\u263a&quot;<br>}<br></pre>
+<pre>{<br>  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,<br>  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,<br>  &quot;quoted&quot;: &quot; # Not a &#39;comment&#39;.&quot;,<br>  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,<br>  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;,<br>  &quot;unicode&quot;: &quot;Sosa did fine.âº&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -55,46 +60,12 @@ tie-fighter: &#39;|\-*-/|&#39;
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
-<span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
-<span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
-<span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
-<span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
-<span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\u00e2\u0098\u00ba&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
-<span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
-<span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
-<span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
-<span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
-<span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\u00e2\u0098\u00ba&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -104,24 +75,7 @@ class="">}</span>
 
  <div class="framework" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
-<span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
-<span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
-<span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
-<span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
-<span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\u00e2\u0098\u00ba&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="nimyaml-event">
@@ -180,17 +134,17 @@ class="">-STR</span>
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;control&quot; : &quot;\\b1998\t1999\t2000\n&quot;,</span>
+class="diff_line">  &quot;control&quot;: &quot;\\b1998\t1999\t2000\n&quot;,</span>
 <span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
+class="">  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,</span>
 <span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
+class="">  &quot;quoted&quot;: &quot; # Not a &#39;comment&#39;.&quot;,</span>
 <span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
+class="">  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
 <span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
+class="">  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;,</span>
 <span
-class="">   &quot;unicode&quot; : &quot;Sosa did fine.\\u263A&quot;</span>
+class="">  &quot;unicode&quot;: &quot;Sosa did fine.\\u263A&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -248,17 +202,17 @@ class="">}</span>
 <pre><span
 class="">{</span>
 <span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
+class="">  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,</span>
 <span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
+class="">  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,</span>
 <span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
+class="">  &quot;quoted&quot;: &quot; # Not a &#39;comment&#39;.&quot;,</span>
 <span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
+class="">  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
 <span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
+class="">  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;,</span>
 <span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\\u263A&quot;</span>
+class="diff_line">  &quot;unicode&quot;: &quot;Sosa did fine.\\u263A&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -288,17 +242,17 @@ class="">}</span>
 <pre><span
 class="">{</span>
 <span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
+class="">  &quot;control&quot;: &quot;\b1998\t1999\t2000\n&quot;,</span>
 <span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
+class="">  &quot;hex esc&quot;: &quot;\r\n is \r\n&quot;,</span>
 <span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
+class="">  &quot;quoted&quot;: &quot; # Not a &#39;comment&#39;.&quot;,</span>
 <span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
+class="">  &quot;single&quot;: &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
 <span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
+class="">  &quot;tie-fighter&quot;: &quot;|\\-*-/|&quot;,</span>
 <span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\\u263A&quot;</span>
+class="diff_line">  &quot;unicode&quot;: &quot;Sosa did fine.\\u263A&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -324,24 +278,7 @@ class="">}</span>
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
-<span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
-<span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
-<span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
-<span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
-<span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\u00e2\u0098\u00ba&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -428,24 +365,7 @@ UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode character u&#39;\u263
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="">{</span>
-<span
-class="">   &quot;control&quot; : &quot;\b1998\t1999\t2000\n&quot;,</span>
-<span
-class="">   &quot;hex esc&quot; : &quot;\r\n is \r\n&quot;,</span>
-<span
-class="">   &quot;quoted&quot; : &quot; # Not a &#39;comment&#39;.&quot;,</span>
-<span
-class="">   &quot;single&quot; : &quot;\&quot;Howdy!\&quot; he cried.&quot;,</span>
-<span
-class="">   &quot;tie-fighter&quot; : &quot;|\\-*-/|&quot;,</span>
-<span
-class="diff_line">   &quot;unicode&quot; : &quot;Sosa did fine.\u00e2\u0098\u00ba&quot;</span>
-<span
-class="">}</span>
-</pre>
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  </body>

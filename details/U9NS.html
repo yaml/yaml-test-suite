@@ -47,11 +47,16 @@ action: grand slam
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>  &quot;action&quot;: &quot;strike (miss)&quot;,<br>  &quot;player&quot;: &quot;Sammy Sosa&quot;,<br>  &quot;time&quot;: &quot;20:03:20&quot;<br>}<br>{<br>  &quot;action&quot;: &quot;grand slam&quot;,<br>  &quot;player&quot;: &quot;Sammy Sosa&quot;,<br>  &quot;time&quot;: &quot;20:03:47&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -62,36 +67,54 @@ action: grand slam
 
  <div class="framework" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;time&quot;: 72200,
-  &quot;player&quot;: &quot;Sammy Sosa&quot;,
-  &quot;action&quot;: &quot;strike (miss)&quot;
-}
-{
-  &quot;time&quot;: 72227,
-  &quot;player&quot;: &quot;Sammy Sosa&quot;,
-  &quot;action&quot;: &quot;grand slam&quot;
-}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="diff_line">  &quot;time&quot;: 72200</span>
+<span
+class="">}</span>
+<span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;grand slam&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="">  &quot;time&quot;: 72227</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;time&quot;: 72200,
-  &quot;player&quot;: &quot;Sammy Sosa&quot;,
-  &quot;action&quot;: &quot;strike (miss)&quot;
-}
-{
-  &quot;time&quot;: 72227,
-  &quot;player&quot;: &quot;Sammy Sosa&quot;,
-  &quot;action&quot;: &quot;grand slam&quot;
-}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="diff_line">  &quot;time&quot;: 72200</span>
+<span
+class="">}</span>
+<span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;grand slam&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="">  &quot;time&quot;: 72227</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="libyaml-event">
@@ -146,19 +169,7 @@ stack traceback:
 
  <div class="framework" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-   &quot;action&quot; : &quot;strike (miss)&quot;,
-   &quot;player&quot; : &quot;Sammy Sosa&quot;,
-   &quot;time&quot; : &quot;20:03:20&quot;
-}
-{
-   &quot;action&quot; : &quot;grand slam&quot;,
-   &quot;player&quot; : &quot;Sammy Sosa&quot;,
-   &quot;time&quot; : &quot;20:03:47&quot;
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="perl5-pp-pl">
@@ -180,10 +191,18 @@ stack traceback:
 
  <div class="framework" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;action&quot;:&quot;strike (miss)&quot;,&quot;player&quot;:&quot;Sammy Sosa&quot;,&quot;time&quot;:72200}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="diff_line">  &quot;time&quot;: 72200</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-syck-pl">
@@ -205,10 +224,18 @@ stack traceback:
 
  <div class="framework" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;action&quot;:&quot;strike (miss)&quot;,&quot;player&quot;:&quot;Sammy Sosa&quot;,&quot;time&quot;:&quot;20:03:20&quot;}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="">  &quot;time&quot;: &quot;20:03:20&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-tiny-pl">
@@ -230,10 +257,18 @@ stack traceback:
 
  <div class="framework" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;action&quot;:&quot;strike (miss)&quot;,&quot;player&quot;:&quot;Sammy Sosa&quot;,&quot;time&quot;:&quot;20:03:20&quot;}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="">  &quot;time&quot;: &quot;20:03:20&quot;</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="perl5-xs-pl">
@@ -260,19 +295,28 @@ stack traceback:
 
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;action&quot;: &quot;strike (miss)&quot;, 
-  &quot;player&quot;: &quot;Sammy Sosa&quot;, 
-  &quot;time&quot;: 72200
-}
-{
-  &quot;action&quot;: &quot;grand slam&quot;, 
-  &quot;player&quot;: &quot;Sammy Sosa&quot;, 
-  &quot;time&quot;: 72227
-}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="diff_line">  &quot;time&quot;: 72200</span>
+<span
+class="">}</span>
+<span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;grand slam&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="">  &quot;time&quot;: 72227</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  <div class="framework" id="pyyaml-py">
@@ -291,19 +335,7 @@ stack traceback:
 
  <div class="framework" id="ruamel-json">
 <h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;action&quot;: &quot;strike (miss)&quot;, 
-  &quot;player&quot;: &quot;Sammy Sosa&quot;, 
-  &quot;time&quot;: &quot;20:03:20&quot;
-}
-{
-  &quot;action&quot;: &quot;grand slam&quot;, 
-  &quot;player&quot;: &quot;Sammy Sosa&quot;, 
-  &quot;time&quot;: &quot;20:03:47&quot;
-}
-</pre>
-
+ <span class="status_box color_json_ok">&nbsp;</span>json_ok
  </div>
 
  <div class="framework" id="ruamel-py">
@@ -317,11 +349,28 @@ stack traceback:
 
  <div class="framework" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;time&quot;:72200,&quot;player&quot;:&quot;Sammy Sosa&quot;,&quot;action&quot;:&quot;strike (miss)&quot;}
-{&quot;time&quot;:72227,&quot;player&quot;:&quot;Sammy Sosa&quot;,&quot;action&quot;:&quot;grand slam&quot;}
+ <span class="status_box color_json_diff">&nbsp;</span>json_diff
+<pre><span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;strike (miss)&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="diff_line">  &quot;time&quot;: 72200</span>
+<span
+class="">}</span>
+<span
+class="">{</span>
+<span
+class="">  &quot;action&quot;: &quot;grand slam&quot;,</span>
+<span
+class="">  &quot;player&quot;: &quot;Sammy Sosa&quot;,</span>
+<span
+class="">  &quot;time&quot;: 72227</span>
+<span
+class="">}</span>
 </pre>
-
  </div>
 
  </body>

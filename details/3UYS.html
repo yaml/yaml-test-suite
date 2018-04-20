@@ -24,11 +24,16 @@
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>   &quot;escaped slash&quot; : &quot;a/b&quot;<br>}<br></pre>
+<pre>{<br>  &quot;escaped slash&quot;: &quot;a/b&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
  <div class="framework" id="cpp-event">
 <h3><a href="#cpp-event">cpp-event</a></h3>
+ <span class="status_box color_ok">&nbsp;</span>ok
+ </div>
+
+ <div class="framework" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
  <span class="status_box color_ok">&nbsp;</span>ok
  </div>
 
@@ -43,17 +48,17 @@ found unknown escape character /(47)
     escaped slash: &quot;a\/b&quot;
                       ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1911)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1845)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1029)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1011)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:396)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:713)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:109)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:117)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1907)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1841)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1027)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1009)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:394)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:711)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:110)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:118)
 </pre>
  </div>
 
@@ -68,22 +73,21 @@ found unknown escape character /(47)
     escaped slash: &quot;a\/b&quot;
                       ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1911)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1845)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1029)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1011)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:396)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:585)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:133)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:249)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:240)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:228)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154)
-	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1907)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1841)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1027)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1009)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:394)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:124)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:236)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:227)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:215)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
 	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
@@ -154,7 +158,7 @@ class="">-STR</span>
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;escaped slash&quot; : &quot;a\\/b&quot;</span>
+class="diff_line">  &quot;escaped slash&quot;: &quot;a\\/b&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -196,7 +200,7 @@ class="">}</span>
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;escaped slash&quot; : &quot;a\\/b&quot;</span>
+class="diff_line">  &quot;escaped slash&quot;: &quot;a\\/b&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -218,7 +222,7 @@ class="">}</span>
 <pre><span
 class="">{</span>
 <span
-class="diff_line">   &quot;escaped slash&quot; : &quot;a\\/b&quot;</span>
+class="diff_line">  &quot;escaped slash&quot;: &quot;a\\/b&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -290,7 +294,7 @@ found unknown escape character &#39;/&#39;
  <div class="framework" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 8, in &lt;module&gt;
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
@@ -336,7 +340,7 @@ found unknown escape character &#39;/&#39;
  <div class="framework" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
  <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-py&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
     yield loader.get_data()
