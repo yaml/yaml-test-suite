@@ -9,8 +9,11 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/6WLZ.tml">#6WLZ</a> - Spec Example 6.18. Primary Tag Handle [1.3]</h3>
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/6WLZ.tml">&test-6WLZ</a><br>
+&nbsp;&nbsp;Title: Spec Example 6.18. Primary Tag Handle [1.3]</br>
+&nbsp;&nbsp;Tags: [ 1.3-mod, directive, spec, tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># Private
 ---
@@ -34,24 +37,49 @@
 <pre></pre>
 </div>
 <hr style="clear: both;">
- <div class="framework" id="cpp-event">
-<h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
+   <div class="framework framework_box_ok" id="cpp-event">
+<h3><a href="#">cpp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="hs-yaml-event">
-<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="java-event">
-<h3><a href="#java-event">java-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
+  <div class="framework framework_box_ok" id="hs-yaml-event">
+<h3><a href="#">hs-yaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="java-json">
-<h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
+
+  <div class="framework framework_box_ok" id="java-event">
+<h3><a href="#">java-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="libyaml-event">
+<h3><a href="#">libyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="nimyaml-event">
+<h3><a href="#">nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="perl5-pp-event">
+<h3><a href="#">perl5-pp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="pyyaml-event">
+<h3><a href="#">pyyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="ruamel-event">
+<h3><a href="#">ruamel-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="java-json">
+<h3><a href="#">java-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
  in &#39;reader&#39;, line 3, column 1:
     !foo &quot;bar&quot;
     ^
@@ -73,9 +101,10 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 </pre>
  </div>
 
- <div class="framework" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!foo&gt; at line 3, column 11:
+
+  <div class="framework framework_box_error" id="js-yaml-json">
+<h3><a href="#">js-yaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!foo&gt; at line 3, column 11:
     !foo &quot;bar&quot;
               ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
@@ -102,29 +131,10 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 </pre>
  </div>
 
- <div class="framework" id="libyaml-event">
-<h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="luajit-json">
-<h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: bad argument #1 to &#39;encode&#39; (expected 1 argument)
-stack traceback:
-	[C]: in function &#39;encode&#39;
-	/bin/luajit-json:6: in main chunk
-	[C]: at 0x004044a0
-</pre>
- </div>
-
- <div class="framework" id="nimyaml-event">
-<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
-
- <div class="framework" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  <div class="framework framework_box_error" id="perl5-pegex-event">
+<h3><a href="#">perl5-pegex-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
   msg:      Parse document failed for some reason
   line:     6
   column:   1
@@ -135,145 +145,147 @@ stack traceback:
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-json">
+<h3><a href="#">perl5-pm-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 3
    Document: 2
- at /lib/perl5/YAML/Loader.pm line 79.
+ at /lib/perl5/YAML/Loader.pm line 87.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-pl">
-<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-pl">
+<h3><a href="#">perl5-pm-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 3
    Document: 2
- at /lib/perl5/YAML/Loader.pm line 79.
+ at /lib/perl5/YAML/Loader.pm line 87.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pp-event">
-<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
+
+  <div class="framework framework_box_error" id="perl5-tiny-json">
+<h3><a href="#">perl5-tiny-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /bin/perl5-tiny-json line 12.
+</pre>
  </div>
 
- <div class="framework" id="perl5-pp-json">
-<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;bar&quot;
+
+  <div class="framework framework_box_error" id="perl5-tiny-pl">
+<h3><a href="#">perl5-tiny-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /bin/perl5-tiny-pl line 14.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-xs-json">
+<h3><a href="#">perl5-xs-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /bin/perl5-xs-json line 12, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-xs-pl">
+<h3><a href="#">perl5-xs-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="luajit-json">
+<h3><a href="#">luajit-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
 &quot;bar&quot;
 </pre>
 
  </div>
 
- <div class="framework" id="perl5-pp-pl">
-<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&#39;bar&#39;
+
+  <div class="framework framework_box_na" id="perl5-pp-json">
+<h3><a href="#">perl5-pp-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
+&quot;bar&quot;
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pp-pl">
+<h3><a href="#">perl5-pp-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
 &#39;bar&#39;
 </pre>
 
  </div>
 
- <div class="framework" id="perl5-syck-json">
-<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;bar&quot;
+
+  <div class="framework framework_box_na" id="perl5-syck-json">
+<h3><a href="#">perl5-syck-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
+&quot;%TAG ! tag:example.com,2000:app/ --- !foo \&quot;bar\&quot;&quot;
 </pre>
 
  </div>
 
- <div class="framework" id="perl5-syck-pl">
-<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&#39;bar&#39;
+
+  <div class="framework framework_box_na" id="perl5-syck-pl">
+<h3><a href="#">perl5-syck-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
 &#39;%TAG ! tag:example.com,2000:app/ --- !foo &quot;bar&quot;&#39;
 </pre>
 
  </div>
 
- <div class="framework" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /bin/perl5-tiny-json line 15.
-</pre>
- </div>
 
- <div class="framework" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /bin/perl5-tiny-pl line 14.
-</pre>
- </div>
-
- <div class="framework" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
-</pre>
- </div>
-
- <div class="framework" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
-</pre>
- </div>
-
- <div class="framework" id="pyyaml-event">
-<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
-
- <div class="framework" id="pyyaml-json">
-<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;bar&quot;
+  <div class="framework framework_box_na" id="pyyaml-json">
+<h3><a href="#">pyyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
 &quot;bar&quot;
 </pre>
 
  </div>
 
- <div class="framework" id="pyyaml-py">
-<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>GenericScalar(tag=u&#39;!foo&#39;, content=u&#39;bar&#39;)
+
+  <div class="framework framework_box_na" id="pyyaml-py">
+<h3><a href="#">pyyaml-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>GenericScalar(tag=u&#39;!foo&#39;, content=u&#39;bar&#39;)
 GenericScalar(tag=u&#39;tag:example.com,2000:app/foo&#39;, content=u&#39;bar&#39;)
 </pre>
 
  </div>
 
- <div class="framework" id="ruamel-event">
-<h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;bar&quot;
+  <div class="framework framework_box_na" id="ruamel-json">
+<h3><a href="#">ruamel-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
 &quot;bar&quot;
 </pre>
 
  </div>
 
- <div class="framework" id="ruamel-py">
-<h3><a href="#ruamel-py">ruamel-py</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>GenericScalar(tag=u&#39;!foo&#39;, content=u&#39;bar&#39;)
+
+  <div class="framework framework_box_na" id="ruamel-py">
+<h3><a href="#">ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>GenericScalar(tag=u&#39;!foo&#39;, content=u&#39;bar&#39;)
 GenericScalar(tag=u&#39;tag:example.com,2000:app/foo&#39;, content=u&#39;bar&#39;)
 </pre>
 
  </div>
 
- <div class="framework" id="ruby-json">
-<h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&quot;bar&quot;
+
+  <div class="framework framework_box_na" id="ruby-json">
+<h3><a href="#">ruby-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
 &quot;bar&quot;
 </pre>
 
  </div>
 
- </body>
+
+ <hr style="clear: both;">        </body>
 </html>
 

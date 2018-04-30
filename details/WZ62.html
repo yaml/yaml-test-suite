@@ -9,8 +9,11 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/WZ62.tml">#WZ62</a> - Spec Example 7.2. Empty Content</h3>
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/WZ62.tml">&test-WZ62</a><br>
+&nbsp;&nbsp;Title: Spec Example 7.2. Empty Content</br>
+&nbsp;&nbsp;Tags: [ flow, scalar, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>{
   foo : !!str,
@@ -32,19 +35,24 @@
 <pre>{<br>  &quot;&quot;: &quot;bar&quot;,<br>  &quot;foo&quot;: &quot;&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
- <div class="framework" id="cpp-event">
-<h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
+   <div class="framework framework_box_ok" id="cpp-event">
+<h3><a href="#">cpp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="hs-yaml-event">
-<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="java-event">
-<h3><a href="#java-event">java-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow mapping
+  <div class="framework framework_box_ok" id="hs-yaml-event">
+<h3><a href="#">hs-yaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="nimyaml-event">
+<h3><a href="#">nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="java-event">
+<h3><a href="#">java-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow mapping
  in &#39;reader&#39;, line 1, column 1:
     {
     ^
@@ -61,9 +69,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &lt;tag&gt;
 </pre>
  </div>
 
- <div class="framework" id="java-json">
-<h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow mapping
+
+  <div class="framework framework_box_error" id="java-json">
+<h3><a href="#">java-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow mapping
  in &#39;reader&#39;, line 1, column 1:
     {
     ^
@@ -85,9 +94,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &lt;tag&gt;
 </pre>
  </div>
 
- <div class="framework" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: tag suffix cannot contain flow indicator characters at line 2, column 15:
+
+  <div class="framework framework_box_error" id="js-yaml-json">
+<h3><a href="#">js-yaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: tag suffix cannot contain flow indicator characters at line 2, column 15:
       foo : !!str,
                   ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
@@ -119,9 +129,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &lt;tag&gt;
 </pre>
  </div>
 
- <div class="framework" id="libyaml-event">
-<h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+
+  <div class="framework framework_box_error" id="libyaml-event">
+<h3><a href="#">libyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :foo
@@ -130,9 +141,10 @@ Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
 </pre>
  </div>
 
- <div class="framework" id="luajit-json">
-<h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>luajit: did not find expected &#39;,&#39; or &#39;}&#39; at document: 1, line: 3, column: 3
+
+  <div class="framework framework_box_error" id="luajit-json">
+<h3><a href="#">luajit-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>luajit: did not find expected &#39;,&#39; or &#39;}&#39; at document: 1, line: 3, column: 3
 while parsing a flow mapping at line: 1, column: 1
 
 stack traceback:
@@ -142,14 +154,10 @@ stack traceback:
 </pre>
  </div>
 
- <div class="framework" id="nimyaml-event">
-<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  <div class="framework framework_box_error" id="perl5-pegex-event">
+<h3><a href="#">perl5-pegex-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
   msg:      Parse document failed for some reason
   line:     3
   column:   3
@@ -160,29 +168,32 @@ stack traceback:
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-json">
+<h3><a href="#">perl5-pm-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- at /lib/perl5/YAML/Loader.pm line 79.
+ at /lib/perl5/YAML/Loader.pm line 87.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-pl">
-<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-pl">
+<h3><a href="#">perl5-pm-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- at /lib/perl5/YAML/Loader.pm line 79.
+ at /lib/perl5/YAML/Loader.pm line 87.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pp-event">
-<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+
+  <div class="framework framework_box_error" id="perl5-pp-event">
+<h3><a href="#">perl5-pp-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :foo
@@ -196,9 +207,10 @@ YAML      : &quot;,  &quot;
 </pre>
  </div>
 
- <div class="framework" id="perl5-pp-json">
-<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
+
+  <div class="framework framework_box_error" id="perl5-pp-json">
+<h3><a href="#">perl5-pp-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
 Column    : 13
 Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
 Got       : FLOW_COMMA
@@ -208,9 +220,10 @@ YAML      : &quot;,  &quot;
 </pre>
  </div>
 
- <div class="framework" id="perl5-pp-pl">
-<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
+
+  <div class="framework framework_box_error" id="perl5-pp-pl">
+<h3><a href="#">perl5-pp-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
 Column    : 13
 Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
 Got       : FLOW_COMMA
@@ -220,45 +233,52 @@ YAML      : &quot;,  &quot;
 </pre>
  </div>
 
- <div class="framework" id="perl5-syck-json">
-<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+
+  <div class="framework framework_box_error" id="perl5-syck-json">
+<h3><a href="#">perl5-syck-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
- <div class="framework" id="perl5-syck-pl">
-<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+
+  <div class="framework framework_box_error" id="perl5-syck-pl">
+<h3><a href="#">perl5-syck-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
- <div class="framework" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 15.
+
+  <div class="framework framework_box_error" id="perl5-tiny-json">
+<h3><a href="#">perl5-tiny-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 12.
 </pre>
  </div>
 
- <div class="framework" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-pl line 14.
+
+  <div class="framework framework_box_error" id="perl5-tiny-pl">
+<h3><a href="#">perl5-tiny-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
- <div class="framework" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+
+  <div class="framework framework_box_error" id="perl5-xs-json">
+<h3><a href="#">perl5-xs-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; at /bin/perl5-xs-json line 12, &lt;&gt; line 1.
 </pre>
  </div>
 
- <div class="framework" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
+
+  <div class="framework framework_box_error" id="perl5-xs-pl">
+<h3><a href="#">perl5-xs-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:str,&#39; at /bin/perl5-xs-pl line 13, &lt;&gt; line 1.
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-event">
-<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+
+  <div class="framework framework_box_error" id="pyyaml-event">
+<h3><a href="#">pyyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :foo
@@ -283,9 +303,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-json">
-<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="pyyaml-json">
+<h3><a href="#">pyyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
@@ -315,9 +336,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-py">
-<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="pyyaml-py">
+<h3><a href="#">pyyaml-py</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
@@ -347,9 +369,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
 </pre>
  </div>
 
- <div class="framework" id="ruamel-event">
-<h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+
+  <div class="framework framework_box_error" id="ruamel-event">
+<h3><a href="#">ruamel-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 =VAL :foo
@@ -374,9 +397,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
 </pre>
  </div>
 
- <div class="framework" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="ruamel-json">
+<h3><a href="#">ruamel-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
@@ -406,9 +430,10 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
 </pre>
  </div>
 
- <div class="framework" id="ruamel-py">
-<h3><a href="#ruamel-py">ruamel-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="ruamel-py">
+<h3><a href="#">ruamel-py</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
@@ -438,15 +463,17 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
 </pre>
  </div>
 
- <div class="framework" id="ruby-json">
-<h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected &#39;,&#39; or &#39;}&#39; while parsing a flow mapping at line 1 column 1 (Psych::SyntaxError)
+
+  <div class="framework framework_box_error" id="ruby-json">
+<h3><a href="#">ruby-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): did not find expected &#39;,&#39; or &#39;}&#39; while parsing a flow mapping at line 1 column 1 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
 	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
 	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
  </div>
 
- </body>
+
+ <hr style="clear: both;">           </body>
 </html>
 

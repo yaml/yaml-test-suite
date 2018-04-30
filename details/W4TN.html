@@ -9,8 +9,11 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/W4TN.tml">#W4TN</a> - Spec Example 9.5. Directives Documents</h3>
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/W4TN.tml">&test-W4TN</a><br>
+&nbsp;&nbsp;Title: Spec Example 9.5. Directives Documents</br>
+&nbsp;&nbsp;Tags: [ 1.3-err, footer, header, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>%YAML 1.2
 --- |
@@ -34,9 +37,34 @@
 <pre>&quot;%!PS-Adobe-2.0\n&quot;<br>null<br></pre>
 </div>
 <hr style="clear: both;">
- <div class="framework" id="cpp-event">
-<h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="status_box color_diff">&nbsp;</span>diff<br>
+   <div class="framework framework_box_ok" id="nimyaml-event">
+<h3><a href="#">nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="perl5-pp-event">
+<h3><a href="#">perl5-pp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="ruamel-event">
+<h3><a href="#">ruamel-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="perl5-pp-json">
+<h3><a href="#">perl5-pp-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="ruamel-json">
+<h3><a href="#">ruamel-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_diff" id="cpp-event">
+<h3><a href="#">cpp-event</a></h3>
+<span class="status_box color_diff">&nbsp;</span>diff <br>
 
  Minimal Events:
 <pre>
@@ -88,9 +116,54 @@ class="">-STR</span>
 
  </div>
 
- <div class="framework" id="hs-yaml-event">
-<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+
+  <div class="framework framework_box_diff" id="perl5-pegex-event">
+<h3><a href="#">perl5-pegex-event</a></h3>
+<span class="status_box color_diff">&nbsp;</span>diff <br>
+
+  Got Events:
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC ---</span>
+<span
+class="diff_line">=VAL |%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
+
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_json_diff" id="js-yaml-json">
+<h3><a href="#">js-yaml-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n&quot;</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="perl5-syck-json">
+<h3><a href="#">perl5-syck-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="diff_line">&quot;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty ...&quot;</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="perl5-tiny-json">
+<h3><a href="#">perl5-tiny-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n...\n&quot;</span>
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="hs-yaml-event">
+<h3><a href="#">hs-yaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 =VAL |%!PS-Adobe-2.0\n
 -DOC ...
@@ -99,9 +172,10 @@ parsing error near byte offset 35
 </pre>
  </div>
 
- <div class="framework" id="java-event">
-<h3><a href="#java-event">java-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a directive
+
+  <div class="framework framework_box_error" id="java-event">
+<h3><a href="#">java-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a directive
  in &#39;reader&#39;, line 3, column 1:
     %!PS-Adobe-2.0
     ^
@@ -123,9 +197,10 @@ expected alphabetic or numeric character, but found !(33)
 </pre>
  </div>
 
- <div class="framework" id="java-json">
-<h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a directive
+
+  <div class="framework framework_box_error" id="java-json">
+<h3><a href="#">java-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a directive
  in &#39;reader&#39;, line 3, column 1:
     %!PS-Adobe-2.0
     ^
@@ -150,24 +225,18 @@ expected alphabetic or numeric character, but found !(33)
 </pre>
  </div>
 
- <div class="framework" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n&quot;</span>
-</pre>
- </div>
 
- <div class="framework" id="libyaml-event">
-<h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+  <div class="framework framework_box_error" id="libyaml-event">
+<h3><a href="#">libyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 Parse error: found incompatible YAML document
 </pre>
  </div>
 
- <div class="framework" id="luajit-json">
-<h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>luajit: found incompatible YAML document at document: 0
+
+  <div class="framework framework_box_error" id="luajit-json">
+<h3><a href="#">luajit-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>luajit: found incompatible YAML document at document: 0
 
 stack traceback:
 	[C]: in function &#39;load&#39;
@@ -176,110 +245,32 @@ stack traceback:
 </pre>
  </div>
 
- <div class="framework" id="nimyaml-event">
-<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="status_box color_diff">&nbsp;</span>diff<br>
-
-  Got Events:
-<pre><span
-class="">+STR</span>
-<span
-class="">+DOC ---</span>
-<span
-class="diff_line">=VAL |%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n</span>
-<span
-class="">-DOC</span>
-<span
-class="">-STR</span>
-</pre>
-
- </div>
-
- <div class="framework" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+  <div class="framework framework_box_error" id="perl5-pm-json">
+<h3><a href="#">perl5-pm-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- at /lib/perl5/YAML/Loader.pm line 79.
+ at /lib/perl5/YAML/Loader.pm line 87.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-pl">
-<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-pl">
+<h3><a href="#">perl5-pm-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
- at /lib/perl5/YAML/Loader.pm line 79.
+ at /lib/perl5/YAML/Loader.pm line 87.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pp-event">
-<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="perl5-pp-json">
-<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_json_ok">&nbsp;</span>json_ok
- </div>
-
- <div class="framework" id="perl5-pp-pl">
-<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&#39;%!PS-Adobe-2.0
-&#39;
-undef
-</pre>
-
- </div>
-
- <div class="framework" id="perl5-syck-json">
-<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="diff_line">&quot;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty ...&quot;</span>
-</pre>
- </div>
-
- <div class="framework" id="perl5-syck-pl">
-<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&#39;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty ...&#39;
-</pre>
-
- </div>
-
- <div class="framework" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_json_diff">&nbsp;</span>json_diff
-<pre><span
-class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n...\n&quot;</span>
-</pre>
- </div>
-
- <div class="framework" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&#39;%!PS-Adobe-2.0
-...
-%YAML1.2
----
-...
-&#39;
-</pre>
-
- </div>
-
- <div class="framework" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+  <div class="framework framework_box_error" id="perl5-xs-json">
+<h3><a href="#">perl5-xs-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     found incompatible YAML document
 
@@ -287,9 +278,10 @@ was found at document: 1
 </pre>
  </div>
 
- <div class="framework" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+
+  <div class="framework framework_box_error" id="perl5-xs-pl">
+<h3><a href="#">perl5-xs-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
     found incompatible YAML document
 
@@ -297,9 +289,10 @@ was found at document: 1
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-event">
-<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>+STR
+
+  <div class="framework framework_box_error" id="pyyaml-event">
+<h3><a href="#">pyyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 =VAL |
 Traceback (most recent call last):
@@ -332,9 +325,10 @@ expected alphabetic or numeric character, but found &#39;!&#39;
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-json">
-<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="pyyaml-json">
+<h3><a href="#">pyyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
@@ -370,9 +364,10 @@ expected alphabetic or numeric character, but found &#39;!&#39;
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-py">
-<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="pyyaml-py">
+<h3><a href="#">pyyaml-py</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
@@ -408,34 +403,57 @@ expected alphabetic or numeric character, but found &#39;!&#39;
 </pre>
  </div>
 
- <div class="framework" id="ruamel-event">
-<h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_json_ok">&nbsp;</span>json_ok
- </div>
-
- <div class="framework" id="ruamel-py">
-<h3><a href="#ruamel-py">ruamel-py</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>&#39;%!PS-Adobe-2.0\n&#39;
-None
-</pre>
-
- </div>
-
- <div class="framework" id="ruby-json">
-<h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found incompatible YAML document at line 1 column 1 (Psych::SyntaxError)
+  <div class="framework framework_box_error" id="ruby-json">
+<h3><a href="#">ruby-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found incompatible YAML document at line 1 column 1 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
 	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
 	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
  </div>
 
- </body>
+
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="perl5-pp-pl">
+<h3><a href="#">perl5-pp-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%!PS-Adobe-2.0
+&#39;
+undef
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-syck-pl">
+<h3><a href="#">perl5-syck-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty ...&#39;
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-tiny-pl">
+<h3><a href="#">perl5-tiny-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%!PS-Adobe-2.0
+...
+%YAML1.2
+---
+...
+&#39;
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruamel-py">
+<h3><a href="#">ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%!PS-Adobe-2.0\n&#39;
+None
+</pre>
+
+ </div>
+
+
+ <hr style="clear: both;">        </body>
 </html>
 

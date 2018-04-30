@@ -9,8 +9,11 @@
 </head>
 <body>
 
-<h2><a href="../index.html">YAML Test Matrix</a></h2>
-<h3>Test <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/KK5P.tml">#KK5P</a> - Various combinations of explicit block mappings</h3>
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/KK5P.tml">&test-KK5P</a><br>
+&nbsp;&nbsp;Title: Various combinations of explicit block mappings</br>
+&nbsp;&nbsp;Tags: [ mapping, sequence ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>complex1:
   ? - a
@@ -75,242 +78,117 @@ complex5:
 <pre></pre>
 </div>
 <hr style="clear: both;">
- <div class="framework" id="cpp-event">
-<h3><a href="#cpp-event">cpp-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
+   <div class="framework framework_box_ok" id="cpp-event">
+<h3><a href="#">cpp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="hs-yaml-event">
-<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="java-event">
-<h3><a href="#java-event">java-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
+  <div class="framework framework_box_ok" id="hs-yaml-event">
+<h3><a href="#">hs-yaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="java-json">
-<h3><a href="#java-json">java-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;complex1&quot;: {},
-  &quot;complex2&quot;: {
-    &quot;[a]&quot;: &quot;b&quot;
-  },
-  &quot;complex3&quot;: {
-    &quot;[a]&quot;: &quot;b\n&quot;
-  },
-  &quot;complex4&quot;: {},
-  &quot;complex5&quot;: {
-    &quot;[a]&quot;: [
-      &quot;b&quot;
-    ]
-  }
-}
-</pre>
 
- </div>
+  <div class="framework framework_box_ok" id="java-event">
+<h3><a href="#">java-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &quot;complex1&quot;: {
-    &quot;a&quot;: null
-  },
-  &quot;complex2&quot;: {
-    &quot;a&quot;: &quot;b&quot;
-  },
-  &quot;complex3&quot;: {
-    &quot;a&quot;: &quot;b\n&quot;
-  },
-  &quot;complex4&quot;: {
-    &quot;a\n&quot;: null
-  },
-  &quot;complex5&quot;: {
-    &quot;a&quot;: [
-      &quot;b&quot;
-    ]
-  }
-}
-</pre>
 
- </div>
+  <div class="framework framework_box_ok" id="libyaml-event">
+<h3><a href="#">libyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
 
- <div class="framework" id="libyaml-event">
-<h3><a href="#libyaml-event">libyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="luajit-json">
-<h3><a href="#luajit-json">luajit-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:6: Cannot serialise table: table key must be a number or string
+  <div class="framework framework_box_ok" id="nimyaml-event">
+<h3><a href="#">nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="perl5-pp-event">
+<h3><a href="#">perl5-pp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="pyyaml-event">
+<h3><a href="#">pyyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="ruamel-event">
+<h3><a href="#">ruamel-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="luajit-json">
+<h3><a href="#">luajit-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>luajit: /bin/luajit-json:8: Cannot serialise table: table key must be a number or string
 stack traceback:
 	[C]: in function &#39;encode&#39;
-	/bin/luajit-json:6: in main chunk
+	/bin/luajit-json:8: in main chunk
 	[C]: at 0x004044a0
 </pre>
  </div>
 
- <div class="framework" id="nimyaml-event">
-<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
+  <div class="framework framework_box_error" id="perl5-pegex-event">
+<h3><a href="#">perl5-pegex-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Maximum parsing rules reached (1000)
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Unrecognized implicit value &#39;- a&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-json">
+<h3><a href="#">perl5-pm-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Unrecognized implicit value &#39;- a&#39;
    Code: YAML_PARSE_ERR_BAD_IMPLICIT
    Line: 3
    Document: 1
- at /lib/perl5/YAML/Loader.pm line 580.
+ at /lib/perl5/YAML/Loader.pm line 592.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pm-pl">
-<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Unrecognized implicit value &#39;- a&#39;
+
+  <div class="framework framework_box_error" id="perl5-pm-pl">
+<h3><a href="#">perl5-pm-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Unrecognized implicit value &#39;- a&#39;
    Code: YAML_PARSE_ERR_BAD_IMPLICIT
    Line: 3
    Document: 1
- at /lib/perl5/YAML/Loader.pm line 580.
+ at /lib/perl5/YAML/Loader.pm line 592.
 </pre>
  </div>
 
- <div class="framework" id="perl5-pp-event">
-<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="perl5-pp-json">
-<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-   &quot;complex1&quot; : {
-      &quot;[&#39;a&#39;]&quot; : null
-   },
-   &quot;complex2&quot; : {
-      &quot;[&#39;a&#39;]&quot; : &quot;b&quot;
-   },
-   &quot;complex3&quot; : {
-      &quot;[&#39;a&#39;]&quot; : &quot;b\n&quot;
-   },
-   &quot;complex4&quot; : {
-      &quot;a\n&quot; : null
-   },
-   &quot;complex5&quot; : {
-      &quot;[&#39;a&#39;]&quot; : [
-         &quot;b&quot;
-      ]
-   }
-}
-</pre>
-
- </div>
-
- <div class="framework" id="perl5-pp-pl">
-<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &#39;complex1&#39; =&gt; {
-                &#39;[\&#39;a\&#39;]&#39; =&gt; undef
-              },
-  &#39;complex2&#39; =&gt; {
-                &#39;[\&#39;a\&#39;]&#39; =&gt; &#39;b&#39;
-              },
-  &#39;complex3&#39; =&gt; {
-                &#39;[\&#39;a\&#39;]&#39; =&gt; &#39;b
-&#39;
-              },
-  &#39;complex4&#39; =&gt; {
-                &#39;a
-&#39; =&gt; undef
-              },
-  &#39;complex5&#39; =&gt; {
-                &#39;[\&#39;a\&#39;]&#39; =&gt; [
-                               &#39;b&#39;
-                             ]
-              }
-}
-</pre>
-
- </div>
-
- <div class="framework" id="perl5-syck-json">
-<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column -1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+  <div class="framework framework_box_error" id="perl5-syck-json">
+<h3><a href="#">perl5-syck-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column -1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
- <div class="framework" id="perl5-syck-pl">
-<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column -1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+
+  <div class="framework framework_box_error" id="perl5-syck-pl">
+<h3><a href="#">perl5-syck-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column -1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
- <div class="framework" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? - a&#39; at /bin/perl5-tiny-json line 15.
+
+  <div class="framework framework_box_error" id="perl5-tiny-json">
+<h3><a href="#">perl5-tiny-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? - a&#39; at /bin/perl5-tiny-json line 12.
 </pre>
  </div>
 
- <div class="framework" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? - a&#39; at /bin/perl5-tiny-pl line 14.
+
+  <div class="framework framework_box_error" id="perl5-tiny-pl">
+<h3><a href="#">perl5-tiny-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? - a&#39; at /bin/perl5-tiny-pl line 14.
 </pre>
  </div>
 
- <div class="framework" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;complex1&quot;:{&quot;ARRAY(0x23acbe8)&quot;:null},&quot;complex2&quot;:{&quot;ARRAY(0x220f610)&quot;:&quot;b&quot;},&quot;complex3&quot;:{&quot;ARRAY(0x220f7c0)&quot;:&quot;b\n&quot;},&quot;complex4&quot;:{&quot;a\n&quot;:null},&quot;complex5&quot;:{&quot;ARRAY(0x222e8a0)&quot;:[&quot;b&quot;]}}
-</pre>
 
- </div>
-
- <div class="framework" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{
-  &#39;complex1&#39; =&gt; {
-                  &#39;ARRAY(0x19d9520)&#39; =&gt; undef
-                },
-  &#39;complex2&#39; =&gt; {
-                  &#39;ARRAY(0x195ed00)&#39; =&gt; &#39;b&#39;
-                },
-  &#39;complex3&#39; =&gt; {
-                  &#39;ARRAY(0x1a35b30)&#39; =&gt; &#39;b
-&#39;
-                },
-  &#39;complex4&#39; =&gt; {
-                  &#39;a
-&#39; =&gt; undef
-                },
-  &#39;complex5&#39; =&gt; {
-                  &#39;ARRAY(0x195e670)&#39; =&gt; [
-                                          &#39;b&#39;
-                                        ]
-                }
-}
-</pre>
-
- </div>
-
- <div class="framework" id="pyyaml-event">
-<h3><a href="#pyyaml-event">pyyaml-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
-
- <div class="framework" id="pyyaml-json">
-<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  <div class="framework framework_box_error" id="pyyaml-json">
+<h3><a href="#">pyyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
@@ -336,9 +214,10 @@ found unacceptable key (unhashable type: &#39;list&#39;)
 </pre>
  </div>
 
- <div class="framework" id="pyyaml-py">
-<h3><a href="#pyyaml-py">pyyaml-py</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+
+  <div class="framework framework_box_error" id="pyyaml-py">
+<h3><a href="#">pyyaml-py</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
     for doc in yaml.load_all(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
@@ -364,35 +243,190 @@ found unacceptable key (unhashable type: &#39;list&#39;)
 </pre>
  </div>
 
- <div class="framework" id="ruamel-event">
-<h3><a href="#ruamel-event">ruamel-event</a></h3>
- <span class="status_box color_ok">&nbsp;</span>ok
- </div>
 
- <div class="framework" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
- <span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;type &#39;exceptions.TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 21, in &lt;module&gt;
-    print json.dumps(doc, sort_keys=True, indent=2)
-  File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
-    sort_keys=sort_keys, **kw).encode(obj)
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 209, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 434, in _iterencode
-    for chunk in _iterencode_dict(o, _current_indent_level):
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 408, in _iterencode_dict
-    for chunk in chunks:
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 382, in _iterencode_dict
-    raise TypeError(&quot;key &quot; + repr(key) + &quot; is not a string&quot;)
-TypeError: key (&#39;a&#39;,) is not a string
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="java-json">
+<h3><a href="#">java-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;complex1&quot;: {},
+  &quot;complex2&quot;: {
+    &quot;[a]&quot;: &quot;b&quot;
+  },
+  &quot;complex3&quot;: {
+    &quot;[a]&quot;: &quot;b\n&quot;
+  },
+  &quot;complex4&quot;: {},
+  &quot;complex5&quot;: {
+    &quot;[a]&quot;: [
+      &quot;b&quot;
+    ]
+  }
+}
 </pre>
+
  </div>
 
- <div class="framework" id="ruamel-py">
-<h3><a href="#ruamel-py">ruamel-py</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&#39;complex1&#39;: {(&#39;a&#39;,): None},
+
+  <div class="framework framework_box_na" id="js-yaml-json">
+<h3><a href="#">js-yaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;complex1&quot;: {
+    &quot;a&quot;: null
+  },
+  &quot;complex2&quot;: {
+    &quot;a&quot;: &quot;b&quot;
+  },
+  &quot;complex3&quot;: {
+    &quot;a&quot;: &quot;b\n&quot;
+  },
+  &quot;complex4&quot;: {
+    &quot;a\n&quot;: null
+  },
+  &quot;complex5&quot;: {
+    &quot;a&quot;: [
+      &quot;b&quot;
+    ]
+  }
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pp-json">
+<h3><a href="#">perl5-pp-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+   &quot;complex1&quot; : {
+      &quot;[&#39;a&#39;]&quot; : null
+   },
+   &quot;complex2&quot; : {
+      &quot;[&#39;a&#39;]&quot; : &quot;b&quot;
+   },
+   &quot;complex3&quot; : {
+      &quot;[&#39;a&#39;]&quot; : &quot;b\n&quot;
+   },
+   &quot;complex4&quot; : {
+      &quot;a\n&quot; : null
+   },
+   &quot;complex5&quot; : {
+      &quot;[&#39;a&#39;]&quot; : [
+         &quot;b&quot;
+      ]
+   }
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pp-pl">
+<h3><a href="#">perl5-pp-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;complex1&#39; =&gt; {
+                &#39;[\&#39;a\&#39;]&#39; =&gt; undef
+              },
+  &#39;complex2&#39; =&gt; {
+                &#39;[\&#39;a\&#39;]&#39; =&gt; &#39;b&#39;
+              },
+  &#39;complex3&#39; =&gt; {
+                &#39;[\&#39;a\&#39;]&#39; =&gt; &#39;b
+&#39;
+              },
+  &#39;complex4&#39; =&gt; {
+                &#39;a
+&#39; =&gt; undef
+              },
+  &#39;complex5&#39; =&gt; {
+                &#39;[\&#39;a\&#39;]&#39; =&gt; [
+                               &#39;b&#39;
+                             ]
+              }
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-json">
+<h3><a href="#">perl5-xs-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+   &quot;complex1&quot; : {
+      &quot;ARRAY(0x2288900)&quot; : null
+   },
+   &quot;complex2&quot; : {
+      &quot;ARRAY(0x22b7220)&quot; : &quot;b&quot;
+   },
+   &quot;complex3&quot; : {
+      &quot;ARRAY(0x22778b0)&quot; : &quot;b\n&quot;
+   },
+   &quot;complex4&quot; : {
+      &quot;a\n&quot; : null
+   },
+   &quot;complex5&quot; : {
+      &quot;ARRAY(0x2269a00)&quot; : [
+         &quot;b&quot;
+      ]
+   }
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-pl">
+<h3><a href="#">perl5-xs-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;complex1&#39; =&gt; {
+                  &#39;ARRAY(0x19600e0)&#39; =&gt; undef
+                },
+  &#39;complex2&#39; =&gt; {
+                  &#39;ARRAY(0x1a0fbc0)&#39; =&gt; &#39;b&#39;
+                },
+  &#39;complex3&#39; =&gt; {
+                  &#39;ARRAY(0x19460c8)&#39; =&gt; &#39;b
+&#39;
+                },
+  &#39;complex4&#39; =&gt; {
+                  &#39;a
+&#39; =&gt; undef
+                },
+  &#39;complex5&#39; =&gt; {
+                  &#39;ARRAY(0x1938670)&#39; =&gt; [
+                                          &#39;b&#39;
+                                        ]
+                }
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruamel-json">
+<h3><a href="#">ruamel-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;complex1&quot;: {
+    
+  }, 
+  &quot;complex2&quot;: {
+    
+  }, 
+  &quot;complex3&quot;: {
+    
+  }, 
+  &quot;complex4&quot;: {
+    &quot;a\n&quot;: null
+  }, 
+  &quot;complex5&quot;: {
+    
+  }
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruamel-py">
+<h3><a href="#">ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;complex1&#39;: {(&#39;a&#39;,): None},
  &#39;complex2&#39;: {(&#39;a&#39;,): &#39;b&#39;},
  &#39;complex3&#39;: {(&#39;a&#39;,): &#39;b\n&#39;},
  &#39;complex4&#39;: {&#39;a\n&#39;: None},
@@ -401,14 +435,15 @@ TypeError: key (&#39;a&#39;,) is not a string
 
  </div>
 
- <div class="framework" id="ruby-json">
-<h3><a href="#ruby-json">ruby-json</a></h3>
- <span class="status_box color_na">&nbsp;</span>n/a
-<pre>{&quot;complex1&quot;:{&quot;[\&quot;a\&quot;]&quot;:null},&quot;complex2&quot;:{&quot;[\&quot;a\&quot;]&quot;:&quot;b&quot;},&quot;complex3&quot;:{&quot;[\&quot;a\&quot;]&quot;:&quot;b\n&quot;},&quot;complex4&quot;:{&quot;a\n&quot;:null},&quot;complex5&quot;:{&quot;[\&quot;a\&quot;]&quot;:[&quot;b&quot;]}}
+
+  <div class="framework framework_box_na" id="ruby-json">
+<h3><a href="#">ruby-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;complex1&quot;:{&quot;[\&quot;a\&quot;]&quot;:null},&quot;complex2&quot;:{&quot;[\&quot;a\&quot;]&quot;:&quot;b&quot;},&quot;complex3&quot;:{&quot;[\&quot;a\&quot;]&quot;:&quot;b\n&quot;},&quot;complex4&quot;:{&quot;a\n&quot;:null},&quot;complex5&quot;:{&quot;[\&quot;a\&quot;]&quot;:[&quot;b&quot;]}}
 </pre>
 
  </div>
 
- </body>
+
+ <hr style="clear: both;">        </body>
 </html>
 

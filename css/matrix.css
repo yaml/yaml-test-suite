@@ -186,6 +186,42 @@ div.framework:target, div.framework:hover {
     border: 4px solid #ff9922;
     margin: 2px;
 }
+div.framework_box_ok {
+    min-width: 5em;
+    max-width: 13em;
+    min-height: 3em;
+    max-height: 3em;
+}
+div.framework_box_json_ok {
+    min-width: 5em;
+    max-width: 13em;
+    min-height: 3em;
+    max-height: 3em;
+}
+div.framework_box_diff {
+    min-width: 15em;
+    max-width: 15em;
+    min-height: 15em;
+    max-height: 15em;
+}
+div.framework_box_json_diff {
+    min-width: 15em;
+    max-width: 15em;
+    min-height: 15em;
+    max-height: 15em;
+}
+div.framework_box_error {
+    min-width: 20em;
+    max-width: 20em;
+    min-height: 20em;
+    max-height: 20em;
+}
+div.framework_box_na {
+    min-width: 20em;
+    max-width: 20em;
+    min-height: 20em;
+    max-height: 20em;
+}
 span.diff_line {
     background-color: #ff9922;
 }
