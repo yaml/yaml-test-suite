@@ -33,3 +33,16 @@ kept on the `data` branch. This makes tests easier to groom.
 To get a quick overview of the tests you can have a look at the "YAML Test
 Matrix"[http://matrix.yaml.io/]
 - [https://github.com/perlpunk/yaml-test-matrix].
+
+== Updating the Data Branch
+
+To update the data branch under a directory called `data`, run:
+```
+make data-update`
+```
+
+You will need NodeJS and CoffeeScript. To install `coffee` after you have
+`node`, run:
+```
+npm install -g coffee
+```
