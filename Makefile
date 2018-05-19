@@ -9,7 +9,7 @@ help:
 
 update: doc node_modules
 	rm -fr test/name/ test/tags/
-	perl bin/generate-links test/*.tml
+	bin/generate-links test/*.tml
 	git add -A -f test/
 
 .PHONY: doc
