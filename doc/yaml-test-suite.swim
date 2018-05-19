@@ -34,15 +34,14 @@ To get a quick overview of the tests you can have a look at the "YAML Test
 Matrix"[http://matrix.yaml.io/]
 - [https://github.com/perlpunk/yaml-test-matrix].
 
-== Updating the Data Branch
+== Updating Things
 
-To update the data branch under a directory called `data`, run:
+When test files change you need to update various artifacts. To do this, run
+the following commands:
+
 ```
-make data-update`
+make update         # Updates tags and name artifacts
+make data-update    # Updates the data branch (under ./data/)
 ```
 
-You will need NodeJS and CoffeeScript. To install `coffee` after you have
-`node`, run:
-```
-npm install -g coffee
-```
+You will need Bash, NodeJS and Perl for these things.

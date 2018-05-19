@@ -59,4 +59,14 @@ To get a quick overview of the tests you can have a look at the L<YAML Test
 Matrix|http://matrix.yaml.io/> -
 L<https://github.com/perlpunk/yaml-test-matrix>.
 
+=head2 Updating Things
+
+When test files change you need to update various artifacts. To do this, run
+the following commands:
+
+C<>C< make update # Updates tags and name artifacts make data-update # Updates
+the data branch (under ./data/) >C<>
+
+You will need Bash, NodeJS and Perl for these things.
+
 =cut

@@ -1,3 +1,5 @@
+export PATH := $(PWD)/node_modules/.bin:$(PATH)
+
 MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
 
 default: help
@@ -5,7 +7,7 @@ default: help
 help:
 	@grep -E '^[-a-zA-Z0-9]+:' Makefile | cut -d: -f1
 
-update: doc
+update: doc node_modules
 	rm -fr test/name/ test/tags/
 	perl bin/generate-links test/*.tml
 	git add -A -f test/
@@ -21,6 +23,8 @@ data:
 	git worktree add -f $@ $@
 
 data-update: data node_modules
+	@echo $(PATH)
+	which coffee
 	rm -fr data/*
 	bin/generate-data test/*.tml
 
@@ -41,7 +45,7 @@ data-push:
 
 node_modules:
 	mkdir $@
-	npm install lodash testml-compiler
+	npm install coffeescript lodash testml-compiler
 	rm -f package*
 
 #------------------------------------------------------------------------------
