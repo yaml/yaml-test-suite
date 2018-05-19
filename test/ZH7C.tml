@@ -1,20 +1,20 @@
 === Anchors in Mapping
-from: NimYAML tests
-tags: jayt
+--- from: NimYAML tests
+--- tags: jayt
 
 This came from an edge case in NimYAML development.
 
-+++ in-yaml
+--- in-yaml
 &a a: b
 c: &d d
 
-+++ in-json
+--- in-json
 {
   "a": "b",
   "c": "d"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

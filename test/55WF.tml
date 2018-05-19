@@ -1,13 +1,13 @@
 === Invalid escape in double quoted string
-from: @perlpunk
-tags: error double
+--- from: @perlpunk
+--- tags: error double
 
-+++ in-yaml
----
-"\."
+--- in-yaml(<)
+    ---
+    "\."
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---

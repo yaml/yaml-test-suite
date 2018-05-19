@@ -1,21 +1,21 @@
 === Plain URL in flow mapping
-from: https://github.com/yaml/libyaml/pull/28
-tags: flow scalar
+--- from: https://github.com/yaml/libyaml/pull/28
+--- tags: flow scalar
 
-+++ in-yaml
+--- in-yaml
 - { url: http://example.org }
 
-+++ in-json
+--- in-json
 [
   {
     "url": "http://example.org"
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - url: http://example.org
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

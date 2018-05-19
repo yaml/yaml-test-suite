@@ -1,22 +1,22 @@
 === Spec Example 9.2. Document Markers
-from: http://www.yaml.org/spec/1.2/spec.html#id2800866
-tags: spec header footer
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2800866
+--- tags: spec header footer
 
-+++ in-yaml
-\%YAML 1.2
----
-Document
+--- in-yaml(<)
 # XXX Why is a comment allowed on ...?
-... # Suffix
+    %YAML 1.2
+    ---
+    Document
+    ... # Suffix
 
-+++ in-json
+--- in-json
 "Document"
 
-+++ out-yaml
---- Document
-...
+--- out-yaml(<)
+    --- Document
+    ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL :Document

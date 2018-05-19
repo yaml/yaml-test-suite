@@ -1,13 +1,13 @@
 === Spec Example 7.11. Plain Implicit Keys
-from: http://www.yaml.org/spec/1.2/spec.html#id2789794
-tags: spec flow mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2789794
+--- tags: spec flow mapping
 
-+++ in-yaml
+--- in-yaml
 implicit block key : [
   implicit flow key : value,
  ]
 
-+++ in-json
+--- in-json
 {
   "implicit block key": [
     {
@@ -16,11 +16,11 @@ implicit block key : [
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 implicit block key:
 - implicit flow key: value
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

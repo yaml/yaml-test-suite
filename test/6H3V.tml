@@ -1,19 +1,19 @@
 === Backslashes in singlequotes
-from: @perlpunk
-tags: scalar single
+--- from: @perlpunk
+--- tags: scalar single
 
-+++ in-yaml
+--- in-yaml
 'foo: bar\': baz'
 
-+++ in-json
+--- in-json
 {
   "foo: bar\\": "baz'"
 }
 
-+++ out-yaml
+--- out-yaml
 'foo: bar\': baz'
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

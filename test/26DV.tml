@@ -1,8 +1,8 @@
 === Whitespace around colon in mappings
-from: @perlpunk
-tags: alias mapping whitespace
+--- from: @perlpunk
+--- tags: alias mapping whitespace
 
-+++ in-yaml
+--- in-yaml
 "top1" :<SPC>
   "key1" : &alias1 scalar1
 'top2' :<SPC>
@@ -16,7 +16,7 @@ top5   :<SPC><SPC><SPC><SPC>
 top6:<SPC>
   &anchor6 'key6' : scalar6
 
-+++ in-json
+--- in-json
 {
   "top1": {
     "key1": "scalar1"
@@ -36,7 +36,7 @@ top6:<SPC>
   }
 }
 
-+++ out-yaml
+--- out-yaml
 "top1":
   "key1": &alias1 scalar1
 'top2':
@@ -50,7 +50,7 @@ top6:
   &anchor6 'key6': scalar6
 
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

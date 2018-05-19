@@ -1,22 +1,22 @@
 === Spec Example 5.6. Node Property Indicators
-from: http://www.yaml.org/spec/1.2/spec.html#id2773402
-tags: spec tag alias
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2773402
+--- tags: spec tag alias
 
-+++ in-yaml
+--- in-yaml
 anchored: !local &anchor value
 alias: *anchor
 
-+++ in-json
+--- in-json
 {
   "alias": "value",
   "anchored": "value"
 }
 
-+++ out-yaml
+--- out-yaml
 anchored: &anchor !local value
 alias: *anchor
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

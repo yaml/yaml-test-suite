@@ -1,21 +1,21 @@
 === Spec Example 7.5. Double Quoted Line Breaks
-from: http://www.yaml.org/spec/1.2/spec.html#id2787745
-tags: spec scalar upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2787745
+--- tags: spec scalar upto-1.2
 
-+++ in-yaml
+--- in-yaml
 "folded<SPC>
 to a space,<TAB>
 <SPC>
 to a line feed, or <TAB>\
  \ <TAB>non-content"
 
-+++ in-json
+--- in-json
 "folded to a space,\nto a line feed, or \t \tnon-content"
 
-+++ out-yaml
+--- out-yaml
 "folded to a space,\nto a line feed, or \t \tnon-content"
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL "folded to a space,\nto a line feed, or \t \tnon-content

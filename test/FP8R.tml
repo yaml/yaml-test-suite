@@ -1,21 +1,21 @@
 === Zero indented block scalar
-from: @perlpunk
-tags: folded indent scalar
+--- from: @perlpunk
+--- tags: folded indent scalar
 
-+++ in-yaml
---- >
-line1
-line2
-line3
+--- in-yaml(<)
+    --- >
+    line1
+    line2
+    line3
 
-+++ in-json
+--- in-json
 "line1 line2 line3\n"
 
-+++ out-yaml
---- >
-  line1 line2 line3
+--- out-yaml(<)
+    --- >
+      line1 line2 line3
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL >line1 line2 line3\n

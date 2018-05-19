@@ -1,29 +1,29 @@
 === Spec Example 5.12. Tabs and Spaces
-from: http://www.yaml.org/spec/1.2/spec.html#id2775350
-tags: spec whitespace upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2775350
+--- tags: spec whitespace upto-1.2
 
-+++ in-yaml
-\# Tabs and spaces
-quoted: "Quoted <TAB>"
-block:<TAB>|
-  void main() {
-  <TAB>printf("Hello, world!\n");
-  }
+--- in-yaml(<)
+    # Tabs and spaces
+    quoted: "Quoted <TAB>"
+    block:<TAB>|
+      void main() {
+      <TAB>printf("Hello, world!\n");
+      }
 
-+++ in-json
+--- in-json
 {
   "block": "void main() {\n\tprintf(\"Hello, world!\\n\");\n}\n",
   "quoted": "Quoted \t"
 }
 
-+++ out-yaml
+--- out-yaml
 quoted: "Quoted \t"
 block: |
   void main() {
   <TAB>printf("Hello, world!\n");
   }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

@@ -1,27 +1,27 @@
 === Key with anchor after missing explicit mapping value
-from: @perlpunk
-tags: anchor mapping
+--- from: @perlpunk
+--- tags: anchor mapping
 
-+++ in-yaml
----
-a: 1
-? b
-&anchor c: 3
+--- in-yaml(<)
+    ---
+    a: 1
+    ? b
+    &anchor c: 3
 
-+++ in-json
+--- in-json
 {
   "a": 1,
   "b": null,
   "c": 3
 }
 
-+++ out-yaml
----
-a: 1
-b:
-&anchor c: 3
+--- out-yaml(<)
+    ---
+    a: 1
+    b:
+    &anchor c: 3
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

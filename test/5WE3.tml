@@ -1,15 +1,15 @@
 === Spec Example 8.17. Explicit Block Mapping Entries
-from: http://www.yaml.org/spec/1.2/spec.html#id2798425
-tags: spec mapping comment literal
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2798425
+--- tags: spec mapping comment literal
 
-+++ in-yaml
+--- in-yaml
 ? explicit key # Empty value
 ? |
   block key
 : - one # Explicit compact
   - two # block value
 
-+++ in-json
+--- in-json
 {
   "block key\n": [
     "one",
@@ -18,14 +18,14 @@ tags: spec mapping comment literal
   "explicit key": null
 }
 
-+++ out-yaml
+--- out-yaml
 explicit key:
 ? |
   block key
 : - one
   - two
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

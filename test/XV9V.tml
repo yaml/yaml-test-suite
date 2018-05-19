@@ -1,29 +1,28 @@
 === Spec Example 6.5. Empty Lines [1.3]
-from: 5GBF, modified for YAML 1.3
-tags: spec scalar 1.3-mod
+--- from: 5GBF, modified for YAML 1.3
+--- tags: spec scalar 1.3-mod
 
-+++ in-yaml
+--- in-yaml(+)
 Folding:
   "Empty line
-   
+
   as a line feed"
 Chomping: |
   Clipped empty lines
 <SPC>
-\
 
-+++ in-json
+--- in-json
 {
   "Chomping": "Clipped empty lines\n",
   "Folding": "Empty line\nas a line feed"
 }
 
-+++ out-yaml
+--- out-yaml
 Folding: "Empty line\nas a line feed"
 Chomping: |
   Clipped empty lines
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

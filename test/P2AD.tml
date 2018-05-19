@@ -1,8 +1,8 @@
 === Spec Example 8.1. Block Scalar Header
-from: http://www.yaml.org/spec/1.2/spec.html#id2793888
-tags: spec literal folded comment scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2793888
+--- tags: spec literal folded comment scalar
 
-+++ in-yaml
+--- in-yaml
 - | # Empty header↓
  literal
 - >1 # Indentation indicator↓
@@ -13,7 +13,7 @@ tags: spec literal folded comment scalar
 - >1- # Both indicators↓
   strip
 
-+++ in-json
+--- in-json
 [
   "literal\n",
   " folded\n",
@@ -21,7 +21,7 @@ tags: spec literal folded comment scalar
   " strip"
 ]
 
-+++ out-yaml
+--- out-yaml
 - |
   literal
 - >2
@@ -32,7 +32,7 @@ tags: spec literal folded comment scalar
 - >2-
    strip
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

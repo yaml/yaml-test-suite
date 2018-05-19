@@ -1,8 +1,8 @@
 === Non-Specific Tags on Scalars
-from: NimYAML tests
-tags: scalar tag
+--- from: NimYAML tests
+--- tags: scalar tag
 
-+++ in-yaml
+--- in-yaml
 - plain
 - "double quoted"
 - 'single quoted'
@@ -10,7 +10,7 @@ tags: scalar tag
   block
 - plain again
 
-+++ in-json
+--- in-json
 [
   "plain",
   "double quoted",
@@ -19,7 +19,7 @@ tags: scalar tag
   "plain again"
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

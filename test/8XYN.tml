@@ -1,21 +1,21 @@
 === Anchor with unicode character
-from: https://github.com/yaml/pyyaml/issues/94
-tags: anchor
+--- from: https://github.com/yaml/pyyaml/issues/94
+--- tags: anchor
 
-+++ in-yaml
----
-- &😁 unicode anchor
+--- in-yaml(<)
+    ---
+    - &😁 unicode anchor
 
-+++ in-json
+--- in-json
 [
   "unicode anchor"
 ]
 
-+++ out-yaml
----
-- &😁 unicode anchor
+--- out-yaml(<)
+    ---
+    - &😁 unicode anchor
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ

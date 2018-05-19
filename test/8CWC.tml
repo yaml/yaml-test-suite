@@ -1,21 +1,21 @@
 === Plain mapping key ending with colon
-from: @perlpunk
-tags: mapping scalar
+--- from: @perlpunk
+--- tags: mapping scalar
 
-+++ in-yaml
----
-key ends with two colons::: value
+--- in-yaml(<)
+    ---
+    key ends with two colons::: value
 
-+++ in-json
+--- in-json
 {
   "key ends with two colons::": "value"
 }
 
-+++ out-yaml
----
-'key ends with two colons::': value
+--- out-yaml(<)
+    ---
+    'key ends with two colons::': value
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

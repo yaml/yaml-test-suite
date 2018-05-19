@@ -1,24 +1,24 @@
 === Empty flow collections
-from: @perlpunk
-tags: flow mapping sequence
+--- from: @perlpunk
+--- tags: flow mapping sequence
 
-+++ in-yaml
----
-nested sequences:
-- - - []
-- - - {}
-key1: []
-key2: {}
+--- in-yaml(<)
+    ---
+    nested sequences:
+    - - - []
+    - - - {}
+    key1: []
+    key2: {}
 
-+++ out-yaml
----
-nested sequences:
-- - - []
-- - - {}
-key1: []
-key2: {}
+--- out-yaml(<)
+    ---
+    nested sequences:
+    - - - []
+    - - - {}
+    key1: []
+    key2: {}
 
-+++ in-json
+--- in-json
 {
   "key1": [],
   "key2": {},
@@ -36,7 +36,7 @@ key2: {}
   ]
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

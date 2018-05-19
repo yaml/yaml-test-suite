@@ -1,11 +1,11 @@
 === Flow Sequence in Flow Sequence
-from: NimYAML tests
-tags: sequence flow
+--- from: NimYAML tests
+--- tags: sequence flow
 
-+++ in-yaml
+--- in-yaml
 [a, [b, c]]
 
-+++ in-json
+--- in-json
 [
   "a",
   [
@@ -14,12 +14,12 @@ tags: sequence flow
   ]
 ]
 
-+++ out-yaml
+--- out-yaml
 - a
 - - b
   - c
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

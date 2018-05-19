@@ -1,8 +1,8 @@
 === Spec Example 6.1. Indentation Spaces
-from: http://www.yaml.org/spec/1.2/spec.html#id2777865
-tags: spec indent upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2777865
+--- tags: spec indent upto-1.2
 
-+++ in-yaml
+--- in-yaml
   # Leading comment line spaces are
    # neither content nor indentation.
 <SPC><SPC><SPC><SPC>
@@ -16,7 +16,7 @@ Not indented:
   <TAB>Still by two   # content nor
     ]             # indentation.
 
-+++ in-json
+--- in-json
 {
   "Not indented": {
     "By one space": "By four\n  spaces\n",
@@ -28,7 +28,7 @@ Not indented:
   }
 }
 
-+++ out-yaml
+--- out-yaml
 Not indented:
   By one space: |
     By four
@@ -38,7 +38,7 @@ Not indented:
   - Also by two
   - Still by two
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

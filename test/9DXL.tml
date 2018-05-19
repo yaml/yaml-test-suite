@@ -1,17 +1,17 @@
 === Spec Example 9.6. Stream [1.3]
-from: 6ZKB, modified for YAML 1.3
-tags: spec header 1.3-mod
+--- from: 6ZKB, modified for YAML 1.3
+--- tags: spec header 1.3-mod
 
-+++ in-yaml
-Mapping: Document
----
-\# Empty
-...
-\%YAML 1.2
----
-matches %: 20
+--- in-yaml(<)
+    Mapping: Document
+    ---
+    # Empty
+    ...
+    %YAML 1.2
+    ---
+    matches %: 20
 
-+++ in-json
+--- in-json
 {
   "Mapping": "Document"
 }
@@ -20,7 +20,7 @@ null
   "matches %": 20
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

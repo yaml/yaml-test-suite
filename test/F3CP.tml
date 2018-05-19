@@ -1,12 +1,12 @@
 === Nested flow collections on one line
-from: @perlpunk
-tags: flow mapping sequence
+--- from: @perlpunk
+--- tags: flow mapping sequence
 
-+++ in-yaml
----
-{ a: [b, c, { d: [e, f] } ] }
+--- in-yaml(<)
+    ---
+    { a: [b, c, { d: [e, f] } ] }
 
-+++ in-json
+--- in-json
 {
   "a": [
     "b",
@@ -20,16 +20,16 @@ tags: flow mapping sequence
   ]
 }
 
-+++ out-yaml
----
-a:
-- b
-- c
-- d:
-  - e
-  - f
+--- out-yaml(<)
+    ---
+    a:
+    - b
+    - c
+    - d:
+      - e
+      - f
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

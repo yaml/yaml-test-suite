@@ -1,26 +1,26 @@
 === Multiline plain scalar with empty line
-from: @perlpunk
-tags: scalar
+--- from: @perlpunk
+--- tags: scalar
 
-+++ in-yaml
----
-plain: a
- b
+--- in-yaml(<)
+    ---
+    plain: a
+     b
 
- c
+     c
 
-+++ in-json
+--- in-json
 {
   "plain": "a b\nc"
 }
 
-+++ out-yaml
----
-plain: 'a b
+--- out-yaml(<)
+    ---
+    plain: 'a b
 
-  c'
+      c'
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

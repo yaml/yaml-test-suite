@@ -1,8 +1,8 @@
 === Spec Example 8.5. Chomping Trailing Lines
-from: http://www.yaml.org/spec/1.2/spec.html#id2795435
-tags: spec literal scalar comment
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2795435
+--- tags: spec literal scalar comment
 
-+++ in-yaml
+--- in-yaml
  # Strip
   # Comments:
 strip: |-
@@ -23,23 +23,22 @@ keep: |+
  # Trail
   # comments.
 
-+++ in-json
+--- in-json
 {
   "clip": "# text\n",
   "keep": "# text\n\n",
   "strip": "# text"
 }
 
-+++ out-yaml
+--- out-yaml(+)
 strip: |-
   # text
 clip: |
   # text
 keep: |+
   # text
-\
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

@@ -1,8 +1,8 @@
 === Spec Example 6.5. Empty Lines
-from: http://www.yaml.org/spec/1.2/spec.html#id2778971
-tags: spec scalar upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2778971
+--- tags: spec scalar upto-1.2
 
-+++ in-yaml
+--- in-yaml(+)
 Folding:
   "Empty line
    <TAB>
@@ -10,20 +10,19 @@ Folding:
 Chomping: |
   Clipped empty lines
 <SPC>
-\
 
-+++ in-json
+--- in-json
 {
   "Chomping": "Clipped empty lines\n",
   "Folding": "Empty line\nas a line feed"
 }
 
-+++ out-yaml
+--- out-yaml
 Folding: "Empty line\nas a line feed"
 Chomping: |
   Clipped empty lines
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

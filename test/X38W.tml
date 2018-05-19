@@ -1,13 +1,13 @@
 === Aliases in Flow Objects
-from: NimYAML tests
-tags: alias flow
+--- from: NimYAML tests
+--- tags: alias flow
 
 Anchors and aliases in flow collections.
 
-+++ in-yaml
+--- in-yaml
 { &a [a, &b b]: *b, *a : [c, *b, d]}
 
-+++ out-yaml
+--- out-yaml
 ? &a
 - a
 - &b b
@@ -17,7 +17,7 @@ Anchors and aliases in flow collections.
 - *b
 - d
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

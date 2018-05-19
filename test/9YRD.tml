@@ -1,8 +1,8 @@
 === Multiline Scalar at Top Level
-from: NimYAML tests
-tags: scalar 1.3-err
+--- from: NimYAML tests
+--- tags: scalar 1.3-err
 
-+++ in-yaml
+--- in-yaml
 a
 b<SPC><SPC>
   c
@@ -10,17 +10,17 @@ d
 
 e
 
-+++ in-json
+--- in-json
 "a b c d\ne"
 
-+++ out-yaml
+--- out-yaml
 # XXX This should emit as double quoted (opinion)
 # "a b c d\ne"
 'a b c d
 
   e'
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL :a b c d\ne

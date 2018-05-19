@@ -1,12 +1,12 @@
 === Lookahead test cases
-from: NimYAML tests
-tags: mapping edge
+--- from: NimYAML tests
+--- tags: mapping edge
 
-+++ in-yaml
+--- in-yaml
 - bla"keks: foo
 - bla]keks: foo
 
-+++ in-json
+--- in-json
 [
   {
     "bla\"keks": "foo"
@@ -16,7 +16,7 @@ tags: mapping edge
   }
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

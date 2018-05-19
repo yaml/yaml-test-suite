@@ -1,8 +1,8 @@
 === Blank lines
-from: IRC discussion with leont
-tags: comment scalar
+--- from: IRC discussion with leont
+--- tags: comment scalar
 
-+++ in-yaml
+--- in-yaml
 foo: 1
 
 bar: 2
@@ -16,20 +16,20 @@ text: |
 <SPC>
   d
 
-+++ in-json
+--- in-json
 {
   "bar": 2,
   "foo": 1,
   "text": "a\n  \nb\n\nc\n\nd\n"
 }
 
-+++ out-yaml
+--- out-yaml
 foo: 1
 bar: 2
 # XXX libyaml changes | scalar events to " emission
 text: "a\n  \nb\n\nc\n\nd\n"
 
-+++ emit-yaml
+--- emit-yaml
 foo: 1
 bar: 2
 text: |
@@ -41,7 +41,7 @@ text: |
 
   d
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

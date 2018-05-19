@@ -1,19 +1,19 @@
 === Plain Scalar looking like key, comment, anchor and tag
-from: https://gist.github.com/anonymous/a98d50ce42a59b1e999552bea7a31f57 via @ingydotnet
-tags: scalar 1.3-err
+--- from: https://gist.github.com/anonymous/a98d50ce42a59b1e999552bea7a31f57 via @ingydotnet
+--- tags: scalar 1.3-err
 
-+++ in-yaml
+--- in-yaml
 k:#foo
  &a !t s
 
-+++ in-json
+--- in-json
 "k:#foo &a !t s"
 
-+++ out-yaml
+--- out-yaml
 k:#foo &a !t s
 ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL :k:#foo &a !t s

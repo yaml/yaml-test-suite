@@ -1,8 +1,8 @@
 === Spec Example 2.11. Mapping between Sequences
-from: http://www.yaml.org/spec/1.2/spec.html#id2760799
-tags: spec mapping sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760799
+--- tags: spec mapping sequence
 
-+++ in-yaml
+--- in-yaml
 ? - Detroit Tigers
   - Chicago cubs
 :
@@ -13,7 +13,7 @@ tags: spec mapping sequence
 : [ 2001-07-02, 2001-08-12,
     2001-08-14 ]
 
-+++ out-yaml
+--- out-yaml
 ? - Detroit Tigers
   - Chicago cubs
 : - 2001-07-23
@@ -23,7 +23,7 @@ tags: spec mapping sequence
   - 2001-08-12
   - 2001-08-14
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

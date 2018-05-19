@@ -1,17 +1,17 @@
 === Trailing comment in multiline plain scalar
-from: @perlpunk
-tags: comment error scalar
+--- from: @perlpunk
+--- tags: comment error scalar
 
-+++ in-yaml
----
-plain: a
-       b # end of scalar
-       c
+--- in-yaml(<)
+    ---
+    plain: a
+           b # end of scalar
+           c
 
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

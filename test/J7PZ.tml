@@ -1,17 +1,17 @@
 === Spec Example 2.26. Ordered Mappings
-from: http://www.yaml.org/spec/1.2/spec.html#id2761780
-tags: spec mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2761780
+--- tags: spec mapping
 
-+++ in-yaml
-\# Ordered maps are represented as
-\# A sequence of mappings, with
-\# each mapping having one key
---- !!omap
-- Mark McGwire: 65
-- Sammy Sosa: 63
-- Ken Griffy: 58
+--- in-yaml(<)
+    # Ordered maps are represented as
+    # A sequence of mappings, with
+    # each mapping having one key
+    --- !!omap
+    - Mark McGwire: 65
+    - Sammy Sosa: 63
+    - Ken Griffy: 58
 
-+++ in-json
+--- in-json
 [
   {
     "Mark McGwire": 65
@@ -24,13 +24,13 @@ tags: spec mapping
   }
 ]
 
-+++ out-yaml
---- !!omap
-- Mark McGwire: 65
-- Sammy Sosa: 63
-- Ken Griffy: 58
+--- out-yaml(<)
+    --- !!omap
+    - Mark McGwire: 65
+    - Sammy Sosa: 63
+    - Ken Griffy: 58
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ <tag:yaml.org,2002:omap>

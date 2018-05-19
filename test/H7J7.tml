@@ -1,17 +1,17 @@
 === Node anchor not indented
-from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
-tags: anchor error indent
+--- from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
+--- tags: anchor error indent
 
 This is an error because the property that is on its own line is not properly indented.
 
-+++ in-yaml
+--- in-yaml
 key: &x
 !!map
   a: b
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

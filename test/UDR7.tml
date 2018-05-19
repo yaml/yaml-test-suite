@@ -1,12 +1,12 @@
 === Spec Example 5.4. Flow Collection Indicators
-from: http://www.yaml.org/spec/1.2/spec.html#id2772813
-tags: spec flow sequence mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2772813
+--- tags: spec flow sequence mapping
 
-+++ in-yaml
+--- in-yaml
 sequence: [ one, two, ]
 mapping: { sky: blue, sea: green }
 
-+++ in-json
+--- in-json
 {
   "mapping": {
     "sea": "green",
@@ -18,7 +18,7 @@ mapping: { sky: blue, sea: green }
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 sequence:
 - one
 - two
@@ -26,7 +26,7 @@ mapping:
   sky: blue
   sea: green
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

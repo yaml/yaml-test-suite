@@ -1,21 +1,21 @@
 === Spec Example 2.14. In the folded scalars, newlines become spaces
-from: http://www.yaml.org/spec/1.2/spec.html#id2761032
-tags: spec folded scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2761032
+--- tags: spec folded scalar
 
-+++ in-yaml
---- >
-  Mark McGwire's
-  year was crippled
-  by a knee injury.
+--- in-yaml(<)
+    --- >
+      Mark McGwire's
+      year was crippled
+      by a knee injury.
 
-+++ in-json
+--- in-json
 "Mark McGwire's year was crippled by a knee injury.\n"
 
-+++ out-yaml
---- >
-  Mark McGwire's year was crippled by a knee injury.
+--- out-yaml(<)
+    --- >
+      Mark McGwire's year was crippled by a knee injury.
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL >Mark McGwire's year was crippled by a knee injury.\n

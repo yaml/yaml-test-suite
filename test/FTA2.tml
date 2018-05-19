@@ -1,21 +1,21 @@
 === Single block sequence with anchor and explicit document start
-from: @perlpunk
-tags: anchor header sequence
+--- from: @perlpunk
+--- tags: anchor header sequence
 
-+++ in-yaml
---- &sequence
-- a
+--- in-yaml(<)
+    --- &sequence
+    - a
 
-+++ out-yaml
---- &sequence
-- a
+--- out-yaml(<)
+    --- &sequence
+    - a
 
-+++ in-json
+--- in-json
 [
   "a"
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ &sequence

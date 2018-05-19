@@ -1,15 +1,15 @@
 === Invalid document-start marker in doublequoted tring
-from: @perlpunk
-tags: header double error
+--- from: @perlpunk
+--- tags: header double error
 
-+++ in-yaml
----
-"
----
-"
+--- in-yaml(<)
+    ---
+    "
+    ---
+    "
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---

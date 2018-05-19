@@ -1,15 +1,15 @@
 === Missing colon
-from: @perlpunk
-tags: error mapping
+--- from: @perlpunk
+--- tags: error mapping
 
-+++ in-yaml
+--- in-yaml
 top1:
   key1: val1
 top2
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

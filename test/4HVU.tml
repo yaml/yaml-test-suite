@@ -1,16 +1,16 @@
 === Wrong indendation in Sequence
-from: @perlpunk
-tags: error sequence indent
+--- from: @perlpunk
+--- tags: error sequence indent
 
-+++ in-yaml
+--- in-yaml
 key:
    - ok
    - also ok
   - wrong
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

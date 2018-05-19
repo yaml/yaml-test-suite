@@ -1,14 +1,14 @@
 === Sequence on same Line as Mapping Key
-from: @perlpunk
-tags: error sequence mapping
+--- from: @perlpunk
+--- tags: error sequence mapping
 
-+++ in-yaml
+--- in-yaml
 key: - a
      - b
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

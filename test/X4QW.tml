@@ -1,14 +1,14 @@
 === Comment without whitespace after block scalar indicator
-from: @perlpunk
-tags: block comment error whitespace
+--- from: @perlpunk
+--- tags: block comment error whitespace
 
-+++ in-yaml
+--- in-yaml
 block: ># comment
   scalar
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

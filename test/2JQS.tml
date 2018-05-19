@@ -1,12 +1,12 @@
 === Block Mapping with Missing Keys
-from: NimYAML tests
-tags: mapping empty
+--- from: NimYAML tests
+--- tags: mapping empty
 
-+++ in-yaml
+--- in-yaml
 : a
 : b
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

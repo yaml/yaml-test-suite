@@ -1,18 +1,18 @@
 === Invalid anchor in zero indented sequence
-from: @perlpunk
-tags: anchor error sequence
+--- from: @perlpunk
+--- tags: anchor error sequence
 
-+++ in-yaml
----
-seq:
-&anchor
-- a
-- b
+--- in-yaml(<)
+    ---
+    seq:
+    &anchor
+    - a
+    - b
 
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

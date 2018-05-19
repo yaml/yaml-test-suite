@@ -1,11 +1,11 @@
 === Flow Sequence in Block Mapping
-from: NimYAML tests
-tags: flow sequence mapping
+--- from: NimYAML tests
+--- tags: flow sequence mapping
 
-+++ in-yaml
+--- in-yaml
 a: [b, c]
 
-+++ in-json
+--- in-json
 {
   "a": [
     "b",
@@ -13,12 +13,12 @@ a: [b, c]
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 a:
 - b
 - c
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

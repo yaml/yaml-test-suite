@@ -1,15 +1,15 @@
 === Invalid scalar after sequence
-from: @perlpunk
-tags: error sequence scalar
+--- from: @perlpunk
+--- tags: error sequence scalar
 
-+++ in-yaml
+--- in-yaml
 - item1
 - item2
 invalid
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

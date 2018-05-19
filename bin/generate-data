@@ -1,35 +1,49 @@
-#!/usr/bin/env perl
+#!/usr/bin/env coffee
 
-use strict;
-use FindBin;
-use lib "$FindBin::Bin";
-use generate;
+require './generate'
 
-sub main::initial {
-  File::Path::rmtree "data/name";
-  File::Path::rmtree "data/tags";
-}
+mkdir "data/meta"
+mkdir "data/name"
+mkdir "data/tags"
 
-sub main::process {
-  my ($id, $label, $file, $output, $tags) = @_;
+for input_file in process.argv[2..]
+  id = input_file.replace /^test\/(.*)\.tml$/, '$1'
+  print "\r#{id}"
+  testml = read input_file
+  ast = (new TestMLCompiler.Compiler).compile(testml)
+  data = JSON.parse(ast).data[0]
+  {label, point} = data
+  tags = point.tags.split /\ +/
 
-  generate->_write("data/$id/===", "$label\n");
-  generate->_link("data/meta/$id.label", "$label");
+  mkdir "data/#{id}"
+  write "data/#{id}/===", "#{label}\n"
 
-  generate->_write("data/$id/$file", $output);
+  name = _.lowerCase label
+  name = name.replace /[^-\w]+/g, '-'
+  name = name.replace /^-?(.*?)-?$/, '$1'
+  link "data/name/#{name}", "../#{id}"
 
-  my $name = lc $label;
-  $name =~ s/[^-\w]+/-/g;
-  $name =~ s/^-?(.*?)-?$/$1/;
-  generate->_link("data/name/$name", "../$id");
+  mkdir "data/meta/#{id}"
+  link "data/meta/#{id}.label", label
 
-  for my $tag (@$tags) {
-    generate->_link("data/tags/$tag/$id", "../../$id");
-  }
-}
+  for tag in tags
+    mkdir "data/tags/#{tag}" unless exists "data/tags/#{tag}"
+    link "data/tags/#{tag}/#{id}", "../../#{id}"
 
-sub main::final {
-    system('cd data; git add -A -f .');
-}
+  for name in [
+    'in-yaml',
+    'out-yaml',
+    'emit-yaml',
+    'in-json',
+    'test-event',
+    'lex-token',
+    'error',
+  ]
+    if (text = point[name])?
+      file = name.replace /^(.*)-(.*)$/, '$1.$2'
+      if name.match /^(in-yaml|out-yaml|test-event|emit-yaml)$/
+        text = text.replace /<SPC>/g, ' '
+        text = text.replace /<TAB>/g, '\t'
+      write "data/#{id}/#{file}", text
 
-generate->all;
+say '\rDone'

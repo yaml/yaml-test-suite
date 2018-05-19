@@ -1,34 +1,34 @@
 === Spec Example 8.8. Literal Content [1.3]
-from: DWX9, modified for YAML 1.3
-tags: spec literal scalar comment 1.3-mod
+--- from: DWX9, modified for YAML 1.3
+--- tags: spec literal scalar comment 1.3-mod
 
-+++ in-yaml
---- |
-<SPC>
-<SPC><SPC>
-  literal
-<SPC><SPC><SPC>
-<SPC><SPC>
-  text
+--- in-yaml(<)
+    --- |
+    <SPC>
+    <SPC><SPC>
+      literal
+    <SPC><SPC><SPC>
+    <SPC><SPC>
+      text
 
- # Comment
+     # Comment
 
-+++ in-json
+--- in-json
 "\n\nliteral\n \n\ntext\n"
 
-+++ out-yaml
+--- out-yaml
 "\n\nliteral\n \n\ntext\n"
 
-+++ emit-yaml
---- |
+--- emit-yaml(<)
+    --- |
 
 
-  literal
-<SPC><SPC><SPC>
+      literal
+    <SPC><SPC><SPC>
 
-  text
+      text
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL |\n\nliteral\n \n\ntext\n

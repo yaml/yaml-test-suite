@@ -1,21 +1,21 @@
 === Tags on Empty Scalars
-from: NimYAML tests
-tags: tag scalar
+--- from: NimYAML tests
+--- tags: tag scalar
 
-+++ in-yaml
+--- in-yaml
 - !!str
 -
   !!null : a
   b: !!str
 - !!str : !!null
 
-+++ out-yaml
+--- out-yaml
 - !!str
 - !!null : a
   b: !!str
 - !!str : !!null
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

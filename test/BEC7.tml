@@ -1,20 +1,20 @@
 === Spec Example 6.14. “YAML” directive
-from: http://www.yaml.org/spec/1.2/spec.html#id2781929
-tags: spec directive
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2781929
+--- tags: spec directive
 
-+++ in-yaml
-\%YAML 1.3 # Attempt parsing
-          # with a warning
----
+--- in-yaml(<)
+    %YAML 1.3 # Attempt parsing
+              # with a warning
+    ---
+    "foo"
+
+--- in-json
 "foo"
 
-+++ in-json
-"foo"
+--- out-yaml(<)
+    --- "foo"
 
-+++ out-yaml
---- "foo"
-
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL "foo

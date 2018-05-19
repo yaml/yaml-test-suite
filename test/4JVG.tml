@@ -1,19 +1,19 @@
 === Scalar value with two anchors
-from: @perlpunk
-tags: anchor error
+--- from: @perlpunk
+--- tags: anchor error
 
 This test shows a valid structure in the first pair but the second pair is
 invalid because it has two anchors for the scalar value.
 
-+++ in-yaml
+--- in-yaml
 top1: &node1
   &k1 key1: val1
 top2: &node2
   &v2 val2
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

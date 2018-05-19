@@ -1,16 +1,16 @@
 === Spec Example 6.19. Secondary Tag Handle
-from: http://www.yaml.org/spec/1.2/spec.html#id2782940
-tags: spec header tag
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2782940
+--- tags: spec header tag
 
-+++ in-yaml
-\%TAG !! tag:example.com,2000:app/
----
-!!int 1 - 3 # Interval, not integer
+--- in-yaml(<)
+    %TAG !! tag:example.com,2000:app/
+    ---
+    !!int 1 - 3 # Interval, not integer
 
-+++ out-yaml
---- !<tag:example.com,2000:app/int> 1 - 3
+--- out-yaml(<)
+    --- !<tag:example.com,2000:app/int> 1 - 3
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL <tag:example.com,2000:app/int> :1 - 3

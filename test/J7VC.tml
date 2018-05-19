@@ -1,24 +1,24 @@
 === Empty Lines Between Mapping Elements
-from: NimYAML tests
-tags: whitespace mapping
+--- from: NimYAML tests
+--- tags: whitespace mapping
 
-+++ in-yaml
+--- in-yaml
 1: 2
 
 
 3: 4
 
-+++ in-json
+--- in-json
 {
   "1": 2,
   "3": 4
 }
 
-+++ out-yaml
+--- out-yaml
 1: 2
 3: 4
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

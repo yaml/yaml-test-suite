@@ -1,16 +1,16 @@
 === Single Pair Block Mapping
-from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
-tags: simple mapping
+--- from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
+--- tags: simple mapping
 
-+++ in-yaml
+--- in-yaml
 foo: bar
 
-+++ in-json
+--- in-json
 {
   "foo": "bar"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

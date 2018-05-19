@@ -1,13 +1,13 @@
 === Spec Example 8.14. Block Sequence
-from: http://www.yaml.org/spec/1.2/spec.html#id2797596
-tags: spec sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2797596
+--- tags: spec sequence
 
-+++ in-yaml
+--- in-yaml
 block sequence:
   - one
   - two : three
 
-+++ in-json
+--- in-json
 {
   "block sequence": [
     "one",
@@ -17,12 +17,12 @@ block sequence:
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 block sequence:
 - one
 - two: three
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

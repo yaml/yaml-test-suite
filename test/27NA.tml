@@ -1,18 +1,18 @@
 === Spec Example 5.9. Directive Indicator
-from: http://www.yaml.org/spec/1.2/spec.html#id2774058
-tags: spec directive 1.3-err
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2774058
+--- tags: spec directive 1.3-err
 
-+++ in-yaml
-\%YAML 1.2
---- text
+--- in-yaml(<)
+    %YAML 1.2
+    --- text
 
-+++ in-json
+--- in-json
 "text"
 
-+++ out-yaml
---- text
+--- out-yaml(<)
+    --- text
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL :text

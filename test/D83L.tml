@@ -1,26 +1,26 @@
 === Block scalar indicator order
-from: @perlpunk
-tags: literal
+--- from: @perlpunk
+--- tags: literal
 
-+++ in-yaml
+--- in-yaml
 - |2-
   explicit indent and chomp
 - |-2
   chomp and explicit indent
 
-+++ in-json
+--- in-json
 [
   "explicit indent and chomp",
   "chomp and explicit indent"
 ]
 
-+++ out-yaml
+--- out-yaml
 - |-
   explicit indent and chomp
 - |-
   chomp and explicit indent
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

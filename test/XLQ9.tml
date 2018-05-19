@@ -1,20 +1,20 @@
 === Multiline scalar that looks like a YAML directive
-from: @perlpunk
-tags: directive scalar
+--- from: @perlpunk
+--- tags: directive scalar
 
-+++ in-yaml
----
-scalar
-\%YAML 1.2
+--- in-yaml(<)
+    ---
+    scalar
+    %YAML 1.2
 
-+++ in-json
+--- in-json
 "scalar %YAML 1.2"
 
-+++ out-yaml
---- scalar %YAML 1.2
-...
+--- out-yaml(<)
+    --- scalar %YAML 1.2
+    ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL :scalar %YAML 1.2

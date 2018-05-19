@@ -1,25 +1,25 @@
 === Block Mapping with Missing Values
-from: NimYAML tests
-tags: mapping
+--- from: NimYAML tests
+--- tags: mapping
 
-+++ in-yaml
+--- in-yaml
 ? a
 ? b
 c:
 
-+++ in-json
+--- in-json
 {
   "a": null,
   "b": null,
   "c": null
 }
 
-+++ out-yaml
+--- out-yaml
 a:
 b:
 c:
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

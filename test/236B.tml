@@ -1,15 +1,15 @@
 === Invalid value after mapping
-from: @perlpunk
-tags: error mapping
+--- from: @perlpunk
+--- tags: error mapping
 
-+++ in-yaml
+--- in-yaml
 foo:
   bar
 invalid
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

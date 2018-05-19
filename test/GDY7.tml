@@ -1,14 +1,14 @@
 === Comment that looks like a mapping key
-from: @perlpunk
-tags: comment error mapping
+--- from: @perlpunk
+--- tags: comment error mapping
 
-+++ in-yaml
+--- in-yaml
 key: value
 this is #not a: key
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

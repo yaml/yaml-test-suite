@@ -1,23 +1,23 @@
 === Mixed Block Mapping (implicit to explicit)
-from: NimYAML tests
-tags: mapping
+--- from: NimYAML tests
+--- tags: mapping
 
-+++ in-yaml
+--- in-yaml
 a: 4.2
 ? 23
 : d
 
-+++ in-json
+--- in-json
 {
   "23": "d",
   "a": 4.2
 }
 
-+++ out-yaml
+--- out-yaml
 a: 4.2
 23: d
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

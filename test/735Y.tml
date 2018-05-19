@@ -1,8 +1,8 @@
 === Spec Example 8.20. Block Node Types
-from: http://www.yaml.org/spec/1.2/spec.html#id2799426
-tags: spec folded
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2799426
+--- tags: spec folded
 
-+++ in-yaml
+--- in-yaml
 -
   "flow in block"
 - >
@@ -10,7 +10,7 @@ tags: spec folded
 - !!map # Block collection
   foo : bar
 
-+++ in-json
+--- in-json
 [
   "flow in block",
   "Block scalar\n",
@@ -19,14 +19,14 @@ tags: spec folded
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - "flow in block"
 - >
   Block scalar
 - !!map
   foo: bar
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

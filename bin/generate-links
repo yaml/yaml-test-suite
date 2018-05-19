@@ -1,30 +1,26 @@
-#!/usr/bin/env perl
+#!/usr/bin/env coffee
 
-use strict;
-use FindBin;
-use lib "$FindBin::Bin";
-use generate;
+require './generate'
 
-sub main::initial {
-  File::Path::rmtree "test/name";
-  File::Path::rmtree "test/tags";
-}
+mkdir "test/name"
+mkdir "test/tags"
 
-sub main::process {
-  my ($id, $label, $file, $output, $tags) = @_;
+for input_file in process.argv[2..]
+  id = input_file.replace /^test\/(.*)\.tml$/, '$1'
+  print "\r#{id}"
+  testml = read input_file
+  ast = (new TestMLCompiler.Compiler).compile(testml)
+  data = JSON.parse(ast).data[0]
+  {label, point} = data
+  tags = point.tags.split /\ +/
 
-  my $name = lc $label;
-  $name =~ s/[^-\w]+/-/g;
-  $name =~ s/^-?(.*?)-?$/$1/;
-  generate->_link("test/name/$name.tml", "../$id.tml");
+  name = _.lowerCase label
+  name = name.replace /[^-\w]+/g, '-'
+  name = name.replace /^-?(.*?)-?$/, '$1'
+  link "test/name/#{name}.tml", "../#{id}.tml"
 
-  for my $tag (@$tags) {
-    generate->_link("test/tags/$tag/$id.tml", "../../$id.tml");
-  }
-}
+  for tag in tags
+    mkdir "test/tags/#{tag}" unless exists "test/tags/#{tag}"
+    link "test/tags/#{tag}/#{id}.tml", "../../#{id}.tml"
 
-sub main::final {
-    system('git add -A -f test/');
-}
-
-generate->all;
+say '\rDone'

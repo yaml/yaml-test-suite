@@ -1,14 +1,14 @@
 === Flow Mapping Key on two lines
-from: @perlpunk
-tags: error flow mapping
+--- from: @perlpunk
+--- tags: error flow mapping
 
-+++ in-yaml
+--- in-yaml
 [23
 ]: 42
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

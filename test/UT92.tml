@@ -1,30 +1,30 @@
 === Spec Example 9.4. Explicit Documents
-from: http://www.yaml.org/spec/1.2/spec.html#id2801448
-tags: spec header footer comment
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2801448
+--- tags: spec header footer comment
 
-+++ in-yaml
----
-{ matches
-% : 20 }
-...
----
-\# Empty
-...
+--- in-yaml(<)
+    ---
+    { matches
+    % : 20 }
+    ...
+    ---
+    # Empty
+    ...
 
-+++ in-json
+--- in-json
 {
   "matches %": 20
 }
 null
 
-+++ out-yaml
----
-matches %: 20
-...
----
-...
+--- out-yaml(<)
+    ---
+    matches %: 20
+    ...
+    ---
+    ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

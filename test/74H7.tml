@@ -1,15 +1,15 @@
 === Tags in Implicit Mapping
-from: NimYAML tests
-tags: tag mapping
+--- from: NimYAML tests
+--- tags: tag mapping
 
-+++ in-yaml
+--- in-yaml
 !!str a: b
 c: !!int 42
 e: !!str f
 g: h
 !!int 23: !!bool false
 
-+++ in-json
+--- in-json
 {
   "23": false,
   "a": "b",
@@ -18,14 +18,14 @@ g: h
   "g": "h"
 }
 
-+++ out-yaml
+--- out-yaml
 !!str a: b
 c: !!int 42
 e: !!str f
 g: h
 !!int 23: !!bool false
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

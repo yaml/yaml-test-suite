@@ -1,22 +1,22 @@
 === Spec Example 2.13. In literals, newlines are preserved
-from: http://www.yaml.org/spec/1.2/spec.html#id2759963
-tags: spec scalar literal comment
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2759963
+--- tags: spec scalar literal comment
 
-+++ in-yaml
-\# ASCII Art
---- |
-  \//||\/||
-  // ||  ||__
+--- in-yaml(<)
+    # ASCII Art
+    --- |
+      \//||\/||
+      // ||  ||__
 
-+++ in-json
+--- in-json
 "\\//||\\/||\n// ||  ||__\n"
 
-+++ out-yaml
---- |
-  \//||\/||
-  // ||  ||__
+--- out-yaml(<)
+    --- |
+      \//||\/||
+      // ||  ||__
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL |\\//||\\/||\n// ||  ||__\n

@@ -1,8 +1,8 @@
 === Spec Example 7.14. Flow Sequence Entries
-from: http://www.yaml.org/spec/1.2/spec.html#id2790726
-tags: spec flow sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2790726
+--- tags: spec flow sequence
 
-+++ in-yaml
+--- in-yaml
 [
 "double
  quoted", 'single
@@ -12,7 +12,7 @@ plain
 single: pair,
 ]
 
-+++ in-json
+--- in-json
 [
   "double quoted",
   "single quoted",
@@ -25,14 +25,14 @@ single: pair,
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - "double quoted"
 - 'single quoted'
 - plain text
 - - nested
 - single: pair
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

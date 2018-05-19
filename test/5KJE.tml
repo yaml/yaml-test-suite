@@ -1,12 +1,12 @@
 === Spec Example 7.13. Flow Sequence
-from: http://www.yaml.org/spec/1.2/spec.html#id2790506
-tags: spec flow sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2790506
+--- tags: spec flow sequence
 
-+++ in-yaml
+--- in-yaml
 - [ one, two, ]
 - [three ,four]
 
-+++ in-json
+--- in-json
 [
   [
     "one",
@@ -18,13 +18,13 @@ tags: spec flow sequence
   ]
 ]
 
-+++ out-yaml
+--- out-yaml
 - - one
   - two
 - - three
   - four
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

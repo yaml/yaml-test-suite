@@ -1,15 +1,15 @@
 === Anchor before zero indented sequence
-from: @perlpunk
-tags: anchor sequence
+--- from: @perlpunk
+--- tags: anchor sequence
 
-+++ in-yaml
----
-seq:
- &anchor
-- a
-- b
+--- in-yaml(<)
+    ---
+    seq:
+     &anchor
+    - a
+    - b
 
-+++ in-json
+--- in-json
 {
   "seq": [
     "a",
@@ -17,13 +17,13 @@ seq:
   ]
 }
 
-+++ out-yaml
----
-seq: &anchor
-- a
-- b
+--- out-yaml(<)
+    ---
+    seq: &anchor
+    - a
+    - b
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

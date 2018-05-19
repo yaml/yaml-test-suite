@@ -1,14 +1,14 @@
 === Various trailing tabs
-from: @perlpunk
-tags: comment whitespace
+--- from: @perlpunk
+--- tags: comment whitespace
 
-+++ in-yaml
+--- in-yaml
 a: b<TAB>
 seq:<TAB>
  - a<TAB>
 c: d<TAB>#X
 
-+++ in-json
+--- in-json
 {
   "a": "b",
   "c": "d",
@@ -17,13 +17,13 @@ c: d<TAB>#X
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 a: b
 seq:
 - a
 c: d
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

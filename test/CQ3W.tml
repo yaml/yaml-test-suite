@@ -1,14 +1,14 @@
 === Double quoted string without closing quote
-from: @perlpunk
-tags: error double
+--- from: @perlpunk
+--- tags: error double
 
-+++ in-yaml
----
-key: "missing closing quote
+--- in-yaml(<)
+    ---
+    key: "missing closing quote
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

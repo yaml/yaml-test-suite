@@ -1,14 +1,14 @@
 === Block Mappings in Block Sequence
-from: NimYAML tests
-tags: mapping sequence
+--- from: NimYAML tests
+--- tags: mapping sequence
 
-+++ in-yaml
+--- in-yaml
  - key: value
    key2: value2
  -
    key3: value3
 
-+++ in-json
+--- in-json
 [
   {
     "key": "value",
@@ -19,12 +19,12 @@ tags: mapping sequence
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - key: value
   key2: value2
 - key3: value3
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ
