@@ -1,22 +1,22 @@
 === Spec Example 7.10. Plain Characters
-from: http://www.yaml.org/spec/1.2/spec.html#id2789510
-tags: spec flow sequence scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2789510
+--- tags: spec flow sequence scalar
 
-+++ in-yaml
-\# Outside flow collection:
-- ::vector
-- ": - ()"
-- Up, up, and away!
-- -123
-- http://example.com/foo#bar
-\# Inside flow collection:
-- [ ::vector,
-  ": - ()",
-  "Up, up and away!",
-  -123,
-  http://example.com/foo#bar ]
+--- in-yaml(<)
+    # Outside flow collection:
+    - ::vector
+    - ": - ()"
+    - Up, up, and away!
+    - -123
+    - http://example.com/foo#bar
+    # Inside flow collection:
+    - [ ::vector,
+      ": - ()",
+      "Up, up and away!",
+      -123,
+      http://example.com/foo#bar ]
 
-+++ in-json
+--- in-json
 [
   "::vector",
   ": - ()",
@@ -32,7 +32,7 @@ tags: spec flow sequence scalar
   ]
 ]
 
-+++ out-yaml
+--- out-yaml
 - ::vector
 - ": - ()"
 - Up, up, and away!
@@ -44,7 +44,7 @@ tags: spec flow sequence scalar
   - -123
   - http://example.com/foo#bar
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

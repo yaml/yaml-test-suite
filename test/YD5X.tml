@@ -1,13 +1,13 @@
 === Spec Example 2.5. Sequence of Sequences
-from: http://www.yaml.org/spec/1.2/spec.html#id2760351
-tags: spec sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760351
+--- tags: spec sequence
 
-+++ in-yaml
+--- in-yaml
 - [name        , hr, avg  ]
 - [Mark McGwire, 65, 0.278]
 - [Sammy Sosa  , 63, 0.288]
 
-+++ in-json
+--- in-json
 [
   [
     "name",
@@ -26,7 +26,7 @@ tags: spec sequence
   ]
 ]
 
-+++ out-yaml
+--- out-yaml
 - - name
   - hr
   - avg
@@ -37,7 +37,7 @@ tags: spec sequence
   - 63
   - 0.288
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

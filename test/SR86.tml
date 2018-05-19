@@ -1,16 +1,16 @@
 === Anchor plus Alias
-from: @perlpunk
-tags: alias error
+--- from: @perlpunk
+--- tags: alias error
 
 Showing that an alias cannot have an anchor.
 
-+++ in-yaml
+--- in-yaml
 key1: &a value
 key2: &b *a
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

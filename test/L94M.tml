@@ -1,24 +1,24 @@
 === Tags in Explicit Mapping
-from: NimYAML tests
-tags: tag mapping
+--- from: NimYAML tests
+--- tags: tag mapping
 
-+++ in-yaml
+--- in-yaml
 ? !!str a
 : !!int 47
 ? c
 : !!str d
 
-+++ in-json
+--- in-json
 {
   "a": 47,
   "c": "d"
 }
 
-+++ out-yaml
+--- out-yaml
 !!str a: !!int 47
 c: !!str d
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

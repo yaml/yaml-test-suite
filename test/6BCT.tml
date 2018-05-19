@@ -1,14 +1,14 @@
 === Spec Example 6.3. Separation Spaces
-from: http://www.yaml.org/spec/1.2/spec.html#id2778394
-tags: spec libyaml-err sequence whitespace upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2778394
+--- tags: spec libyaml-err sequence whitespace upto-1.2
 
-+++ in-yaml
+--- in-yaml
 # XXX Why are tabs allowed as indentation after dash?
 - foo:<TAB> bar
 - - baz
   -<TAB>baz
 
-+++ in-json
+--- in-json
 [
   {
     "foo": "bar"
@@ -19,12 +19,12 @@ tags: spec libyaml-err sequence whitespace upto-1.2
   ]
 ]
 
-+++ out-yaml
+--- out-yaml
 - foo: bar
 - - baz
   - baz
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

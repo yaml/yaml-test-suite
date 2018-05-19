@@ -1,25 +1,25 @@
 === Document start on last line
-from: @perlpunk
-tags: header
+--- from: @perlpunk
+--- tags: header
 
-+++ in-yaml
----
-a: b
----
+--- in-yaml(<)
+    ---
+    a: b
+    ---
 
-+++ in-json
+--- in-json
 {
   "a": "b"
 }
 null
 
-+++ out-yaml
----
-a: b
----
-...
+--- out-yaml(<)
+    ---
+    a: b
+    ---
+    ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

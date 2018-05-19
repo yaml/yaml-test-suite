@@ -1,18 +1,18 @@
 === Spec Example 5.8. Quoted Scalar Indicators
-from: http://www.yaml.org/spec/1.2/spec.html#id2773890
-tags: spec scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2773890
+--- tags: spec scalar
 
-+++ in-yaml
+--- in-yaml
 single: 'text'
 double: "text"
 
-+++ in-json
+--- in-json
 {
   "double": "text",
   "single": "text"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

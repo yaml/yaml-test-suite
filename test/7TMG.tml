@@ -1,25 +1,25 @@
 === Comment in flow sequence before comma
-from: @perlpunk
-tags: comment flow mapping
+--- from: @perlpunk
+--- tags: comment flow mapping
 
-+++ in-yaml
----
-[ word1
-\# comment
-, word2]
+--- in-yaml(<)
+    ---
+    [ word1
+    # comment
+    , word2]
 
-+++ in-json
+--- in-json
 [
   "word1",
   "word2"
 ]
 
-+++ out-yaml
----
-- word1
-- word2
+--- out-yaml(<)
+    ---
+    - word1
+    - word2
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ

@@ -1,23 +1,23 @@
 === Spec Example 7.19. Single Pair Flow Mappings
-from: http://www.yaml.org/spec/1.2/spec.html#id2792291
-tags: spec flow mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2792291
+--- tags: spec flow mapping
 
-+++ in-yaml
+--- in-yaml
 [
 foo: bar
 ]
 
-+++ in-json
+--- in-json
 [
   {
     "foo": "bar"
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - foo: bar
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

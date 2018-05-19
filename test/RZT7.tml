@@ -1,36 +1,36 @@
 === Spec Example 2.28. Log File
-from: http://www.yaml.org/spec/1.2/spec.html#id2761866
-tags: spec header literal mapping sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2761866
+--- tags: spec header literal mapping sequence
 
-+++ in-yaml
----
-Time: 2001-11-23 15:01:42 -5
-User: ed
-Warning:
-  This is an error message
-  for the log file
----
-Time: 2001-11-23 15:02:31 -5
-User: ed
-Warning:
-  A slightly different error
-  message.
----
-Date: 2001-11-23 15:03:17 -5
-User: ed
-Fatal:
-  Unknown variable "bar"
-Stack:
-  - file: TopClass.py
-    line: 23
-    code: |
-      x = MoreObject("345\n")
-  - file: MoreClass.py
-    line: 58
-    code: |-
-      foo = bar
+--- in-yaml(<)
+    ---
+    Time: 2001-11-23 15:01:42 -5
+    User: ed
+    Warning:
+      This is an error message
+      for the log file
+    ---
+    Time: 2001-11-23 15:02:31 -5
+    User: ed
+    Warning:
+      A slightly different error
+      message.
+    ---
+    Date: 2001-11-23 15:03:17 -5
+    User: ed
+    Fatal:
+      Unknown variable "bar"
+    Stack:
+      - file: TopClass.py
+        line: 23
+        code: |
+          x = MoreObject("345\n")
+      - file: MoreClass.py
+        line: 58
+        code: |-
+          foo = bar
 
-+++ in-json
+--- in-json
 {
   "Time": "2001-11-23 15:01:42 -5",
   "User": "ed",
@@ -59,30 +59,30 @@ Stack:
   "User": "ed"
 }
 
-+++ out-yaml
----
-Time: 2001-11-23 15:01:42 -5
-User: ed
-Warning: This is an error message for the log file
----
-Time: 2001-11-23 15:02:31 -5
-User: ed
-Warning: A slightly different error message.
----
-Date: 2001-11-23 15:03:17 -5
-User: ed
-Fatal: Unknown variable "bar"
-Stack:
-- file: TopClass.py
-  line: 23
-  code: |
-    x = MoreObject("345\n")
-- file: MoreClass.py
-  line: 58
-  code: |-
-    foo = bar
+--- out-yaml(<)
+    ---
+    Time: 2001-11-23 15:01:42 -5
+    User: ed
+    Warning: This is an error message for the log file
+    ---
+    Time: 2001-11-23 15:02:31 -5
+    User: ed
+    Warning: A slightly different error message.
+    ---
+    Date: 2001-11-23 15:03:17 -5
+    User: ed
+    Fatal: Unknown variable "bar"
+    Stack:
+    - file: TopClass.py
+      line: 23
+      code: |
+        x = MoreObject("345\n")
+    - file: MoreClass.py
+      line: 58
+      code: |-
+        foo = bar
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

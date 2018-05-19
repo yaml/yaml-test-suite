@@ -1,14 +1,14 @@
 === Anchor and alias as mapping key
-from: @perlpunk
-tags: error anchor alias mapping
+--- from: @perlpunk
+--- tags: error anchor alias mapping
 
-+++ in-yaml
+--- in-yaml
 key1: &alias value1
 &b *alias : value2
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

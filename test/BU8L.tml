@@ -1,28 +1,28 @@
 === Node Anchor and Tag on Seperate Lines
-from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
-tags: anchor indent 1.3-err
+--- from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
+--- tags: anchor indent 1.3-err
 
 This test is showing node properties spread over multiple lines.
 
 This is an error in 1.3 [[RFC 10]].
 
-+++ in-yaml
+--- in-yaml
 key: &anchor
  !!map
   a: b
 
-+++ in-json
+--- in-json
 {
   "key": {
     "a": "b"
   }
 }
 
-+++ out-yaml
+--- out-yaml
 key: &anchor !!map
   a: b
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

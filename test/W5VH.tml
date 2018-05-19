@@ -1,18 +1,18 @@
 === Allowed characters in alias
-from: @perlpunk
-tags: alias 1.3-err
+--- from: @perlpunk
+--- tags: alias 1.3-err
 
-+++ in-yaml
+--- in-yaml
 a: &:@*!$"<foo>: scalar a
 b: *:@*!$"<foo>:
 
-+++ in-json
+--- in-json
 {
   "a": "scalar a",
   "b": "scalar a"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

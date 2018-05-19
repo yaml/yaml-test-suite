@@ -1,21 +1,21 @@
 === Flow Mapping in Block Sequence
-from: NimYAML tests
-tags: mapping sequence flow
+--- from: NimYAML tests
+--- tags: mapping sequence flow
 
-+++ in-yaml
+--- in-yaml
 - {a: b}
 
-+++ in-json
+--- in-json
 [
   {
     "a": "b"
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - a: b
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

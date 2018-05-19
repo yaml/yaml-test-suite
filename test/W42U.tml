@@ -1,8 +1,8 @@
 === Spec Example 8.15. Block Sequence Entry Types
-from: http://www.yaml.org/spec/1.2/spec.html#id2797944
-tags: spec literal sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2797944
+--- tags: spec literal sequence
 
-+++ in-yaml
+--- in-yaml
 - # Empty
 - |
  block node
@@ -10,7 +10,7 @@ tags: spec literal sequence
   - two # sequence
 - one: two # Compact mapping
 
-+++ in-json
+--- in-json
 [
   null,
   "block node\n",
@@ -23,7 +23,7 @@ tags: spec literal sequence
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 -
 - |
   block node
@@ -31,7 +31,7 @@ tags: spec literal sequence
   - two
 - one: two
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

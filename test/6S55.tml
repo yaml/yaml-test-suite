@@ -1,16 +1,16 @@
 === Invalid scalar at the end of sequence
-from: @perlpunk
-tags: error mapping sequence
+--- from: @perlpunk
+--- tags: error mapping sequence
 
-+++ in-yaml
+--- in-yaml
 key:
  - bar
  - baz
  invalid
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

@@ -1,8 +1,8 @@
 === Spec Example 6.8. Flow Folding
-from: http://www.yaml.org/spec/1.2/spec.html#id2779950
-tags: spec whitespace scalar upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2779950
+--- tags: spec whitespace scalar upto-1.2
 
-+++ in-yaml
+--- in-yaml
 "
   foo<SPC>
 <SPC>
@@ -11,13 +11,13 @@ tags: spec whitespace scalar upto-1.2
   baz
 "
 
-+++ in-json
+--- in-json
 " foo\nbar\nbaz "
 
-+++ out-yaml
+--- out-yaml
 " foo\nbar\nbaz "
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL " foo\nbar\nbaz<SPC>

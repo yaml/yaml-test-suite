@@ -1,8 +1,8 @@
 === Whitespace After Scalars in Flow
-from: NimYAML tests
-tags: flow scalar whitespace
+--- from: NimYAML tests
+--- tags: flow scalar whitespace
 
-+++ in-yaml
+--- in-yaml
 - [a, b , c ]
 - { "a"  : b
    , c : 'd' ,
@@ -10,7 +10,7 @@ tags: flow scalar whitespace
   }
 - [      ]
 
-+++ in-json
+--- in-json
 [
   [
     "a",
@@ -25,7 +25,7 @@ tags: flow scalar whitespace
   []
 ]
 
-+++ out-yaml
+--- out-yaml
 - - a
   - b
   - c
@@ -34,7 +34,7 @@ tags: flow scalar whitespace
   e: "f"
 - []
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

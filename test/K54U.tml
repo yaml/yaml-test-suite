@@ -1,18 +1,18 @@
 === Tab after document header
-from: @perlpunk
-tags: header whitespace
+--- from: @perlpunk
+--- tags: header whitespace
 
-+++ in-yaml
----<TAB>scalar
+--- in-yaml(<)
+    ---<TAB>scalar
 
-+++ in-json
+--- in-json
 "scalar"
 
-+++ out-yaml
---- scalar
-...
+--- out-yaml(<)
+    --- scalar
+    ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL :scalar

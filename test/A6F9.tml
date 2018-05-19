@@ -1,8 +1,8 @@
 === Spec Example 8.4. Chomping Final Line Break
-from: http://www.yaml.org/spec/1.2/spec.html#id2795034
-tags: spec literal scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2795034
+--- tags: spec literal scalar
 
-+++ in-yaml
+--- in-yaml
 strip: |-
   text
 clip: |
@@ -10,14 +10,14 @@ clip: |
 keep: |+
   text
 
-+++ in-json
+--- in-json
 {
   "clip": "text\n",
   "keep": "text\n",
   "strip": "text"
 }
 
-+++ out-yaml
+--- out-yaml
 strip: |-
   text
 clip: |
@@ -25,7 +25,7 @@ clip: |
 keep: |
   text
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

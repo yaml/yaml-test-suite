@@ -1,8 +1,8 @@
 === Spec Example 2.16. Indentation determines scope
-from: http://www.yaml.org/spec/1.2/spec.html#id2761083
-tags: spec folded literal
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2761083
+--- tags: spec folded literal
 
-+++ in-yaml
+--- in-yaml
 name: Mark McGwire
 accomplishment: >
   Mark set a major league
@@ -11,14 +11,14 @@ stats: |
   65 Home Runs
   0.278 Batting Average
 
-+++ in-json
+--- in-json
 {
   "accomplishment": "Mark set a major league home run record in 1998.\n",
   "name": "Mark McGwire",
   "stats": "65 Home Runs\n0.278 Batting Average\n"
 }
 
-+++ out-yaml
+--- out-yaml
 name: Mark McGwire
 accomplishment: >
   Mark set a major league home run record in 1998.
@@ -26,7 +26,7 @@ stats: |
   65 Home Runs
   0.278 Batting Average
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

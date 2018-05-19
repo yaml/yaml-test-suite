@@ -1,17 +1,17 @@
 === Block scalar with wrong indented line after spaces only
-from: @perlpunk
-tags: error folded whitespace
+--- from: @perlpunk
+--- tags: error folded whitespace
 
-+++ in-yaml
+--- in-yaml
 block scalar: >
 <SPC>
 <SPC><SPC>
 <SPC><SPC><SPC>
  invalid
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

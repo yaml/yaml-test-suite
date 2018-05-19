@@ -1,8 +1,8 @@
 === Spec Example 8.22. Block Collection Nodes
-from: http://www.yaml.org/spec/1.2/spec.html#id2800008
-tags: sequence mapping tag
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2800008
+--- tags: sequence mapping tag
 
-+++ in-yaml
+--- in-yaml
 sequence: !!seq
 - entry
 - !!seq
@@ -10,7 +10,7 @@ sequence: !!seq
 mapping: !!map
  foo: bar
 
-+++ in-json
+--- in-json
 {
   "mapping": {
     "foo": "bar"
@@ -23,7 +23,7 @@ mapping: !!map
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 sequence: !!seq
 - entry
 - !!seq
@@ -31,7 +31,7 @@ sequence: !!seq
 mapping: !!map
   foo: bar
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

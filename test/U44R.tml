@@ -1,15 +1,15 @@
-=== Bad indentation in mapping
-from: @perlpunk
-tags: error mapping indent double
+=== Bad indentation in mapping (2)
+--- from: @perlpunk
+--- tags: error mapping indent double
 
-+++ in-yaml
+--- in-yaml
 map:
   key1: "quoted1"
    key2: "bad indentation"
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

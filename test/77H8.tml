@@ -1,36 +1,36 @@
 === Spec Example 2.23. Various Explicit Tags
-from: http://www.yaml.org/spec/spec.html#id2562166
-tags: spec tag
+--- from: http://www.yaml.org/spec/spec.html#id2562166
+--- tags: spec tag
 
-+++ in-yaml
----
-not-date: !!str 2002-04-28
+--- in-yaml(<)
+    ---
+    not-date: !!str 2002-04-28
 
-picture: !!binary |
- R0lGODlhDAAMAIQAAP//9/X
- 17unp5WZmZgAAAOfn515eXv
- Pz7Y6OjuDg4J+fn5OTk6enp
- 56enmleECcgggoBADs=
+    picture: !!binary |
+     R0lGODlhDAAMAIQAAP//9/X
+     17unp5WZmZgAAAOfn515eXv
+     Pz7Y6OjuDg4J+fn5OTk6enp
+     56enmleECcgggoBADs=
 
-application specific tag: !something |
- The semantics of the tag
- above may be different for
- different documents.
+    application specific tag: !something |
+     The semantics of the tag
+     above may be different for
+     different documents.
 
-+++ out-yaml
----
-not-date: !!str 2002-04-28
-picture: !!binary |
-  R0lGODlhDAAMAIQAAP//9/X
-  17unp5WZmZgAAAOfn515eXv
-  Pz7Y6OjuDg4J+fn5OTk6enp
-  56enmleECcgggoBADs=
-application specific tag: !something |
-  The semantics of the tag
-  above may be different for
-  different documents.
+--- out-yaml(<)
+    ---
+    not-date: !!str 2002-04-28
+    picture: !!binary |
+      R0lGODlhDAAMAIQAAP//9/X
+      17unp5WZmZgAAAOfn515eXv
+      Pz7Y6OjuDg4J+fn5OTk6enp
+      56enmleECcgggoBADs=
+    application specific tag: !something |
+      The semantics of the tag
+      above may be different for
+      different documents.
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

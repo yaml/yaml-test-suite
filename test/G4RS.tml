@@ -1,8 +1,8 @@
 === Spec Example 2.17. Quoted Scalars
-from: http://www.yaml.org/spec/1.2/spec.html#id2761245
-tags: spec scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2761245
+--- tags: spec scalar
 
-+++ in-yaml
+--- in-yaml
 unicode: "Sosa did fine.\u263A"
 control: "\b1998\t1999\t2000\n"
 hex esc: "\x0d\x0a is \r\n"
@@ -11,7 +11,7 @@ single: '"Howdy!" he cried.'
 quoted: ' # Not a ''comment''.'
 tie-fighter: '|\-*-/|'
 
-+++ in-json
+--- in-json
 {
   "control": "\b1998\t1999\t2000\n",
   "hex esc": "\r\n is \r\n",
@@ -21,7 +21,7 @@ tie-fighter: '|\-*-/|'
   "unicode": "Sosa did fine.☺"
 }
 
-+++ out-yaml
+--- out-yaml
 unicode: "Sosa did fine.\u263A"
 control: "\b1998\t1999\t2000\n"
 hex esc: "\r\n is \r\n"
@@ -29,7 +29,7 @@ single: '"Howdy!" he cried.'
 quoted: ' # Not a ''comment''.'
 tie-fighter: '|\-*-/|'
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

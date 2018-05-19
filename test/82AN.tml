@@ -1,18 +1,18 @@
 === Three dashes and content without space
-from: @perlpunk
-tags: scalar 1.3-err
+--- from: @perlpunk
+--- tags: scalar 1.3-err
 
-+++ in-yaml
----word1
-word2
+--- in-yaml(<)
+    ---word1
+    word2
 
-+++ in-json
+--- in-json
 "---word1 word2"
 
-+++ out-yaml
+--- out-yaml
 '---word1 word2'
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL :---word1 word2

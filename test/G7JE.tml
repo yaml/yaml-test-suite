@@ -1,15 +1,15 @@
 === Multiline implicit keys
-from: @perlpunk
-tags: error mapping
+--- from: @perlpunk
+--- tags: error mapping
 
-+++ in-yaml
+--- in-yaml
 a\nb: 1
 c
  d: 1
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

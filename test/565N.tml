@@ -1,8 +1,8 @@
 === Construct Binary
-from: https://github.com/yaml/pyyaml/blob/master/tests/data/construct-binary-py2.data
-tags: jayt
+--- from: https://github.com/yaml/pyyaml/blob/master/tests/data/construct-binary-py2.data
+--- tags: jayt
 
-+++ in-yaml
+--- in-yaml
 canonical: !!binary "\
  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\
  OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\
@@ -16,7 +16,7 @@ generic: !!binary |
 description:
  The binary value above is a tiny arrow encoded as a gif image.
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

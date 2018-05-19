@@ -1,21 +1,21 @@
 === Mapping, key and flow sequence item anchors
-from: @perlpunk
-tags: anchor flow mapping sequence
+--- from: @perlpunk
+--- tags: anchor flow mapping sequence
 
-+++ in-yaml
----
-&mapping
-&key [ &item a, b, c ]: value
+--- in-yaml(<)
+    ---
+    &mapping
+    &key [ &item a, b, c ]: value
 
-+++ out-yaml
---- &mapping
-? &key
-- &item a
-- b
-- c
-: value
+--- out-yaml(<)
+    --- &mapping
+    ? &key
+    - &item a
+    - b
+    - c
+    : value
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP &mapping

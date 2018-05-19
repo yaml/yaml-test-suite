@@ -1,13 +1,13 @@
 === Comment without whitespace after doublequoted scalar
-from: @perlpunk
-tags: comment error double whitespace
+--- from: @perlpunk
+--- tags: comment error double whitespace
 
-+++ in-yaml
+--- in-yaml
 key: "value"# invalid comment
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

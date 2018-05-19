@@ -1,23 +1,23 @@
 === Allowed characters in quoted mapping key
-from: @perlpunk
-tags: mapping single double
+--- from: @perlpunk
+--- tags: mapping single double
 
-+++ in-yaml
+--- in-yaml
 "foo\nbar:baz\tx \\$%^&*()x": 23
 'x\ny:z\tx $%^&*()x': 24
 
-+++ in-json
+--- in-json
 {
   "foo\nbar:baz\tx \\$%^&*()x": 23,
   "x\\ny:z\\tx $%^&*()x": 24
 }
 
-+++ out-yaml
+--- out-yaml
 ? "foo\nbar:baz\tx \\$%^&*()x"
 : 23
 'x\ny:z\tx $%^&*()x': 24
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

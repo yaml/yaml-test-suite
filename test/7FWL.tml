@@ -1,15 +1,15 @@
 === Spec Example 6.24. Verbatim Tags
-from: http://www.yaml.org/spec/1.2/spec.html#id2784370
-tags: spec tag
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2784370
+--- tags: spec tag
 
-+++ in-yaml
+--- in-yaml
 !<tag:yaml.org,2002:str> foo :
   !<!bar> baz
 
-+++ out-yaml
+--- out-yaml
 !!str foo: !bar baz
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

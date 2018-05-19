@@ -1,19 +1,19 @@
 === Flow mapping colon on line after key
-from: @ingydotnet
-tags: mapping
+--- from: @ingydotnet
+--- tags: mapping
 
 This is valid JSON but fails many existing parsers.
 
-+++ in-yaml
+--- in-yaml
 {"foo"
 : "bar"}
 
-+++ in-json
+--- in-json
 {
   "foo": "bar"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

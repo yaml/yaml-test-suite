@@ -1,8 +1,8 @@
 === Various location of anchors in flow sequence
-from: @perlpunk
-tags: anchor flow
+--- from: @perlpunk
+--- tags: anchor flow
 
-+++ in-yaml
+--- in-yaml
 &flowseq [
  a: b,
  &c c: d,
@@ -10,7 +10,7 @@ tags: anchor flow
  &g { g: h }
 ]
 
-+++ in-json
+--- in-json
 [
   {
     "a": "b"
@@ -26,7 +26,7 @@ tags: anchor flow
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 &flowseq
 - a: b
 - &c c: d
@@ -34,7 +34,7 @@ tags: anchor flow
 - &g
   g: h
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ &flowseq

@@ -1,14 +1,14 @@
 === Flow sequence with invalid comma at the beginning
-from: @perlpunk
-tags: error flow
+--- from: @perlpunk
+--- tags: error flow
 
-+++ in-yaml
----
-[ , a, b, c ]
+--- in-yaml(<)
+    ---
+    [ , a, b, c ]
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ

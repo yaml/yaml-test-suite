@@ -1,8 +1,8 @@
 === Spec Example 8.2. Block Indentation Indicator
-from: http://www.yaml.org/spec/1.2/spec.html#id2794311
-tags: spec literal folded scalar libyaml-err upto-1.2
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2794311
+--- tags: spec literal folded scalar libyaml-err upto-1.2
 
-+++ in-yaml
+--- in-yaml
 - |
  detected
 - >
@@ -15,7 +15,7 @@ tags: spec literal folded scalar libyaml-err upto-1.2
  <TAB>
  detected
 
-+++ in-json
+--- in-json
 [
   "detected\n",
   "\n\n# detected\n",
@@ -23,7 +23,7 @@ tags: spec literal folded scalar libyaml-err upto-1.2
   "\t\ndetected\n"
 ]
 
-+++ out-yaml
+--- out-yaml
 - |
   detected
 - >2
@@ -35,7 +35,7 @@ tags: spec literal folded scalar libyaml-err upto-1.2
 # XXX > becomes "?
 - "\t\ndetected\n"
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

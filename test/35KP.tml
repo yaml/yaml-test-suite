@@ -1,18 +1,18 @@
 === Tags for Root Objects
-from: NimYAML tests
-tags: tag
+--- from: NimYAML tests
+--- tags: tag
 
-+++ in-yaml
---- !!map
-? a
-: b
---- !!seq
-- !!str c
---- !!str
-d
-e
+--- in-yaml(<)
+    --- !!map
+    ? a
+    : b
+    --- !!seq
+    - !!str c
+    --- !!str
+    d
+    e
 
-+++ in-json
+--- in-json
 {
   "a": "b"
 }
@@ -21,14 +21,14 @@ e
 ]
 "d e"
 
-+++ out-yaml
---- !!map
-a: b
---- !!seq
-- !!str c
---- !!str d e
+--- out-yaml(<)
+    --- !!map
+    a: b
+    --- !!seq
+    - !!str c
+    --- !!str d e
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP <tag:yaml.org,2002:map>

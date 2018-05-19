@@ -1,19 +1,19 @@
 === Escaped slash in double quotes
-from: @perlpunk
-tags: double
+--- from: @perlpunk
+--- tags: double
 
-+++ in-yaml
+--- in-yaml
 escaped slash: "a\/b"
 
-+++ in-json
+--- in-json
 {
   "escaped slash": "a/b"
 }
 
-+++ out-yaml
+--- out-yaml
 escaped slash: "a/b"
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

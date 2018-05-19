@@ -1,8 +1,8 @@
 === Spec Example 2.3. Mapping Scalars to Sequences
-from: http://www.yaml.org/spec/1.2/spec.html#id2759963
-tags: spec mapping sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2759963
+--- tags: spec mapping sequence
 
-+++ in-yaml
+--- in-yaml
 american:
   - Boston Red Sox
   - Detroit Tigers
@@ -12,7 +12,7 @@ national:
   - Chicago Cubs
   - Atlanta Braves
 
-+++ in-json
+--- in-json
 {
   "american": [
     "Boston Red Sox",
@@ -26,7 +26,7 @@ national:
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 american:
 - Boston Red Sox
 - Detroit Tigers
@@ -36,7 +36,7 @@ national:
 - Chicago Cubs
 - Atlanta Braves
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

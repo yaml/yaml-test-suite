@@ -1,14 +1,14 @@
 === Invalid nested mapping
-from: @perlpunk
-tags: error mapping
+--- from: @perlpunk
+--- tags: error mapping
 
-+++ in-yaml
----
-a: 'b': c
+--- in-yaml(<)
+    ---
+    a: 'b': c
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

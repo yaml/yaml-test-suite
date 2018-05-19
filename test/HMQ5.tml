@@ -1,23 +1,23 @@
 === Spec Example 6.23. Node Properties
-from: http://www.yaml.org/spec/1.2/spec.html#id2783940
-tags: spec tag alias
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2783940
+--- tags: spec tag alias
 
-+++ in-yaml
+--- in-yaml
 !!str &a1 "foo":
   !!str bar
 &a2 baz : *a1
 
-+++ in-json
+--- in-json
 {
   "baz": "foo",
   "foo": "bar"
 }
 
-+++ out-yaml
+--- out-yaml
 &a1 !!str "foo": !!str bar
 &a2 baz: *a1
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

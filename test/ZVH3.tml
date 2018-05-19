@@ -1,14 +1,14 @@
 === Wrong indented sequence item
-from: @perlpunk
-tags: error sequence indent
+--- from: @perlpunk
+--- tags: error sequence indent
 
-+++ in-yaml
+--- in-yaml
 - key: value
  - item1
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

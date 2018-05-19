@@ -1,8 +1,8 @@
 === Various combinations of explicit block mappings
-from: @perlpunk
-tags: mapping sequence
+--- from: @perlpunk
+--- tags: mapping sequence
 
-+++ in-yaml
+--- in-yaml
 complex1:
   ? - a
 complex2:
@@ -20,7 +20,7 @@ complex5:
   ? - a
   : - b
 
-+++ out-yaml
+--- out-yaml
 complex1:
   ? - a
   :
@@ -39,7 +39,7 @@ complex5:
   ? - a
   : - b
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

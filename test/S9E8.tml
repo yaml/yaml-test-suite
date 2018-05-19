@@ -1,8 +1,8 @@
 === Spec Example 5.3. Block Structure Indicators
-from: http://www.yaml.org/spec/1.2/spec.html#id2772312
-tags: spec mapping sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2772312
+--- tags: spec mapping sequence
 
-+++ in-yaml
+--- in-yaml
 sequence:
 - one
 - two
@@ -11,7 +11,7 @@ mapping:
   : blue
   sea : green
 
-+++ in-json
+--- in-json
 {
   "mapping": {
     "sea": "green",
@@ -23,7 +23,7 @@ mapping:
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 sequence:
 - one
 - two
@@ -31,7 +31,7 @@ mapping:
   sky: blue
   sea: green
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

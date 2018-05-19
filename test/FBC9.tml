@@ -1,15 +1,15 @@
 === Allowed characters in plain scalars
-from: @perlpunk
-tags: scalar
+--- from: @perlpunk
+--- tags: scalar
 
-+++ in-yaml
+--- in-yaml
 safe: a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
      !"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
 safe question mark: ?foo
 safe colon: :foo
 safe dash: -foo
 
-+++ in-json
+--- in-json
 {
   "safe": "a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~ !\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~",
   "safe colon": ":foo",
@@ -17,13 +17,13 @@ safe dash: -foo
   "safe question mark": "?foo"
 }
 
-+++ out-yaml
+--- out-yaml
 safe: a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~ !"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
 safe question mark: ?foo
 safe colon: :foo
 safe dash: -foo
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

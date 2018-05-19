@@ -1,17 +1,17 @@
 === Document with footer
-from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/footer.tml
-tags: mapping footer
+--- from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/footer.tml
+--- tags: mapping footer
 
-+++ in-yaml
+--- in-yaml
 aaa: bbb
 ...
 
-+++ in-json
+--- in-json
 {
   "aaa": "bbb"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

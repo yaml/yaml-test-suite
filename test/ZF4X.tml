@@ -1,15 +1,15 @@
 === Spec Example 2.6. Mapping of Mappings
-from: http://www.yaml.org/spec/1.2/spec.html#id2760372
-tags: spec mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760372
+--- tags: spec mapping
 
-+++ in-yaml
+--- in-yaml
 Mark McGwire: {hr: 65, avg: 0.278}
 Sammy Sosa: {
     hr: 63,
     avg: 0.288
   }
 
-+++ in-json
+--- in-json
 {
   "Mark McGwire": {
     "avg": 0.278,
@@ -21,7 +21,7 @@ Sammy Sosa: {
   }
 }
 
-+++ out-yaml
+--- out-yaml
 Mark McGwire:
   hr: 65
   avg: 0.278
@@ -29,7 +29,7 @@ Sammy Sosa:
   hr: 63
   avg: 0.288
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

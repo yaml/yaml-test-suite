@@ -1,17 +1,17 @@
 === Literal block scalar with more spaces in first line
-from: @perlpunk
-tags: error literal whitespace
+--- from: @perlpunk
+--- tags: error literal whitespace
 
-+++ in-yaml
----
-block scalar: |
-<SPC><SPC><SPC><SPC><SPC>
-  more spaces at the beginning
-  are invalid
+--- in-yaml(<)
+    ---
+    block scalar: |
+    <SPC><SPC><SPC><SPC><SPC>
+      more spaces at the beginning
+      are invalid
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

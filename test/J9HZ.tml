@@ -1,18 +1,18 @@
 === Spec Example 2.9. Single Document with Two Comments
-from: http://www.yaml.org/spec/1.2/spec.html#id2760633
-tags: spec comment
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760633
+--- tags: spec comment
 
-+++ in-yaml
----
-hr: # 1998 hr ranking
-  - Mark McGwire
-  - Sammy Sosa
-rbi:
-  # 1998 rbi ranking
-  - Sammy Sosa
-  - Ken Griffey
+--- in-yaml(<)
+    ---
+    hr: # 1998 hr ranking
+      - Mark McGwire
+      - Sammy Sosa
+    rbi:
+      # 1998 rbi ranking
+      - Sammy Sosa
+      - Ken Griffey
 
-+++ in-json
+--- in-json
 {
   "hr": [
     "Mark McGwire",
@@ -24,16 +24,16 @@ rbi:
   ]
 }
 
-+++ out-yaml
----
-hr:
-- Mark McGwire
-- Sammy Sosa
-rbi:
-- Sammy Sosa
-- Ken Griffey
+--- out-yaml(<)
+    ---
+    hr:
+    - Mark McGwire
+    - Sammy Sosa
+    rbi:
+    - Sammy Sosa
+    - Ken Griffey
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

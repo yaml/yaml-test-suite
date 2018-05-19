@@ -1,22 +1,21 @@
 === Spec Example 8.9. Folded Scalar
-from: http://www.yaml.org/spec/1.2/spec.html#id2796371
-tags: spec folded scalar 1.3-err
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2796371
+--- tags: spec folded scalar 1.3-err
 
-+++ in-yaml
+--- in-yaml(+)
 >
  folded
  text
 
-\
 
-+++ in-json
+--- in-json
 "folded text\n"
 
-+++ out-yaml
+--- out-yaml
 >
   folded text
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL >folded text\n

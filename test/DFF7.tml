@@ -1,20 +1,20 @@
 === Spec Example 7.16. Flow Mapping Entries
-from: http://www.yaml.org/spec/1.2/spec.html#id2791260
-tags: spec flow mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2791260
+--- tags: spec flow mapping
 
-+++ in-yaml
+--- in-yaml
 {
 ? explicit: entry,
 implicit: entry,
 ?
 }
 
-+++ out-yaml
+--- out-yaml
 explicit: entry
 implicit: entry
 :
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

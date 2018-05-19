@@ -1,10 +1,10 @@
 === Anchors on Empty Scalars
-from: NimYAML tests
-tags: anchor empty missing
+--- from: NimYAML tests
+--- tags: anchor empty missing
 
 Test showing empty values and missing explicit components.
 
-+++ in-yaml
+--- in-yaml
 - &a
 - a
 -
@@ -16,7 +16,7 @@ Test showing empty values and missing explicit components.
   ? &e
   : &a
 
-+++ in-json
+--- in-json
 [
   null,
   "a",
@@ -29,7 +29,7 @@ Test showing empty values and missing explicit components.
   }
 ]
 
-+++ out-yaml
+--- out-yaml
 - &a
 - a
 - &a : a
@@ -38,7 +38,7 @@ Test showing empty values and missing explicit components.
 - &d :
   &e : &a
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

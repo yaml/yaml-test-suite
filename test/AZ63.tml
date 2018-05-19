@@ -1,14 +1,14 @@
 === Sequence With Same Indentation as Parent Mapping
-from: NimYAML tests
-tags: mapping sequence
+--- from: NimYAML tests
+--- tags: mapping sequence
 
-+++ in-yaml
+--- in-yaml
 1:
 - 2
 - 3
 4: 5
 
-+++ in-json
+--- in-json
 {
   "1": [
     2,
@@ -17,7 +17,7 @@ tags: mapping sequence
   "4": 5
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

@@ -1,14 +1,14 @@
 === Colon in Double Quoted String
-from: NimYAML tests
-tags: scalar 1.3-err
+--- from: NimYAML tests
+--- tags: scalar 1.3-err
 
-+++ in-yaml
+--- in-yaml
 "foo: bar\": baz"
 
-+++ in-json
+--- in-json
 "foo: bar\": baz"
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 =VAL "foo: bar": baz

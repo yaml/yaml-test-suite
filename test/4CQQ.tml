@@ -1,8 +1,8 @@
 === Spec Example 2.18. Multi-line Flow Scalars
-from: http://www.yaml.org/spec/1.2/spec.html#id2761268
-tags: spec scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2761268
+--- tags: spec scalar
 
-+++ in-yaml
+--- in-yaml
 plain:
   This unquoted scalar
   spans many lines.
@@ -10,17 +10,17 @@ plain:
 quoted: "So does this
   quoted scalar.\n"
 
-+++ in-json
+--- in-json
 {
   "plain": "This unquoted scalar spans many lines.",
   "quoted": "So does this quoted scalar.\n"
 }
 
-+++ out-yaml
+--- out-yaml
 plain: This unquoted scalar spans many lines.
 quoted: "So does this quoted scalar.\n"
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

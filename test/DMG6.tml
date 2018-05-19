@@ -1,15 +1,15 @@
 === Wrong indendation in Map
-from: @perlpunk
-tags: error mapping indent
+--- from: @perlpunk
+--- tags: error mapping indent
 
-+++ in-yaml
+--- in-yaml
 key:
   ok: 1
  wrong: 2
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

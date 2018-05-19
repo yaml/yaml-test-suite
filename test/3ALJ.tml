@@ -1,13 +1,13 @@
 === Block Sequence in Block Sequence
-from: NimYAML tests
-tags: sequence
+--- from: NimYAML tests
+--- tags: sequence
 
-+++ in-yaml
+--- in-yaml
 - - s1_i1
   - s1_i2
 - s2
 
-+++ in-json
+--- in-json
 [
   [
     "s1_i1",
@@ -16,7 +16,7 @@ tags: sequence
   "s2"
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

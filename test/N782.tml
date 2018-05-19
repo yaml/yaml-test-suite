@@ -1,16 +1,16 @@
 === Invalid document markers in flow style
-from: NimYAML tests
-tags: flow edge header footer error
+--- from: NimYAML tests
+--- tags: flow edge header footer error
 
-+++ in-yaml
-[
---- ,
-...
-]
+--- in-yaml(<)
+    [
+    --- ,
+    ...
+    ]
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

@@ -1,18 +1,18 @@
 === Spec Example 2.12. Compact Nested Mapping
-from: http://www.yaml.org/spec/1.2/spec.html#id2760821
-tags: spec mapping sequence
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760821
+--- tags: spec mapping sequence
 
-+++ in-yaml
----
-\# Products purchased
-- item    : Super Hoop
-  quantity: 1
-- item    : Basketball
-  quantity: 4
-- item    : Big Shoes
-  quantity: 1
+--- in-yaml(<)
+    ---
+    # Products purchased
+    - item    : Super Hoop
+      quantity: 1
+    - item    : Basketball
+      quantity: 4
+    - item    : Big Shoes
+      quantity: 1
 
-+++ in-json
+--- in-json
 [
   {
     "item": "Super Hoop",
@@ -28,16 +28,16 @@ tags: spec mapping sequence
   }
 ]
 
-+++ out-yaml
----
-- item: Super Hoop
-  quantity: 1
-- item: Basketball
-  quantity: 4
-- item: Big Shoes
-  quantity: 1
+--- out-yaml(<)
+    ---
+    - item: Super Hoop
+      quantity: 1
+    - item: Basketball
+      quantity: 4
+    - item: Big Shoes
+      quantity: 1
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ

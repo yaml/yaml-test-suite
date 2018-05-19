@@ -1,15 +1,15 @@
 === Invalid content after document end marker
-from: @perlpunk
-tags: error footer
+--- from: @perlpunk
+--- tags: error footer
 
-+++ in-yaml
----
-key: value
-... invalid
+--- in-yaml(<)
+    ---
+    key: value
+    ... invalid
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

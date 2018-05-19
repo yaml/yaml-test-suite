@@ -1,14 +1,14 @@
 === Tags in Block Sequence
-from: NimYAML tests
-tags: tag sequence
+--- from: NimYAML tests
+--- tags: tag sequence
 
-+++ in-yaml
+--- in-yaml
  - !!str a
  - b
  - !!int 42
  - d
 
-+++ in-json
+--- in-json
 [
   "a",
   "b",
@@ -16,13 +16,13 @@ tags: tag sequence
   "d"
 ]
 
-+++ out-yaml
+--- out-yaml
 - !!str a
 - b
 - !!int 42
 - d
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

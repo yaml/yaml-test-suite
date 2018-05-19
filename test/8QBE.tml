@@ -1,13 +1,13 @@
 === Block Sequence in Block Mapping
-from: NimYAML tests
-tags: mapping sequence
+--- from: NimYAML tests
+--- tags: mapping sequence
 
-+++ in-yaml
+--- in-yaml
 key:
  - item1
  - item2
 
-+++ in-json
+--- in-json
 {
   "key": [
     "item1",
@@ -15,12 +15,12 @@ key:
   ]
 }
 
-+++ out-yaml
+--- out-yaml
 key:
 - item1
 - item2
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

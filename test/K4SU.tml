@@ -1,20 +1,20 @@
 === Multiple Entry Block Sequence
-from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/sequence.tml
-tags: sequence
+--- from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/sequence.tml
+--- tags: sequence
 
-+++ in-yaml
+--- in-yaml
 - foo
 - bar
 - 42
 
-+++ in-json
+--- in-json
 [
   "foo",
   "bar",
   42
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

@@ -1,18 +1,18 @@
 === Spec Example 2.10. Node for “Sammy Sosa” appears twice in this document
-from: http://www.yaml.org/spec/1.2/spec.html#id2760658
-tags: spec alias
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760658
+--- tags: spec alias
 
-+++ in-yaml
----
-hr:
-  - Mark McGwire
-  # Following node labeled SS
-  - &SS Sammy Sosa
-rbi:
-  - *SS # Subsequent occurrence
-  - Ken Griffey
+--- in-yaml(<)
+    ---
+    hr:
+      - Mark McGwire
+      # Following node labeled SS
+      - &SS Sammy Sosa
+    rbi:
+      - *SS # Subsequent occurrence
+      - Ken Griffey
 
-+++ in-json
+--- in-json
 {
   "hr": [
     "Mark McGwire",
@@ -24,16 +24,16 @@ rbi:
   ]
 }
 
-+++ out-yaml
----
-hr:
-- Mark McGwire
-- &SS Sammy Sosa
-rbi:
-- *SS
-- Ken Griffey
+--- out-yaml(<)
+    ---
+    hr:
+    - Mark McGwire
+    - &SS Sammy Sosa
+    rbi:
+    - *SS
+    - Ken Griffey
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

@@ -1,15 +1,15 @@
 === Spec Example 7.24. Flow Nodes
-from: http://www.yaml.org/spec/1.2/spec.html#id2793490
-tags: spec flow tag alias
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2793490
+--- tags: spec flow tag alias
 
-+++ in-yaml
+--- in-yaml
 - !!str "a"
 - 'b'
 - &anchor "c"
 - *anchor
 - !!str
 
-+++ in-json
+--- in-json
 [
   "a",
   "b",
@@ -18,7 +18,7 @@ tags: spec flow tag alias
   ""
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

@@ -1,14 +1,14 @@
 === Spec Example 7.1. Alias Nodes
-from: http://www.yaml.org/spec/1.2/spec.html#id2786448
-tags: spec alias
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2786448
+--- tags: spec alias
 
-+++ in-yaml
+--- in-yaml
 First occurrence: &anchor Foo
 Second occurrence: *anchor
 Override anchor: &anchor Bar
 Reuse anchor: *anchor
 
-+++ in-json
+--- in-json
 {
   "First occurrence": "Foo",
   "Override anchor": "Bar",
@@ -16,7 +16,7 @@ Reuse anchor: *anchor
   "Second occurrence": "Foo"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

@@ -1,20 +1,20 @@
 === Spec Example 2.7. Two Documents in a Stream
-from: http://www.yaml.org/spec/1.2/spec.html#id2760493
-tags: spec header
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2760493
+--- tags: spec header
 
-+++ in-yaml
-\# Ranking of 1998 home runs
----
-- Mark McGwire
-- Sammy Sosa
-- Ken Griffey
+--- in-yaml(<)
+    # Ranking of 1998 home runs
+    ---
+    - Mark McGwire
+    - Sammy Sosa
+    - Ken Griffey
 
-\# Team ranking
----
-- Chicago Cubs
-- St Louis Cardinals
+    # Team ranking
+    ---
+    - Chicago Cubs
+    - St Louis Cardinals
 
-+++ in-json
+--- in-json
 [
   "Mark McGwire",
   "Sammy Sosa",
@@ -25,16 +25,16 @@ tags: spec header
   "St Louis Cardinals"
 ]
 
-+++ out-yaml
----
-- Mark McGwire
-- Sammy Sosa
-- Ken Griffey
----
-- Chicago Cubs
-- St Louis Cardinals
+--- out-yaml(<)
+    ---
+    - Mark McGwire
+    - Sammy Sosa
+    - Ken Griffey
+    ---
+    - Chicago Cubs
+    - St Louis Cardinals
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +SEQ

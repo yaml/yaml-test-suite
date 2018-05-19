@@ -7,7 +7,8 @@ help:
 
 update: doc
 	rm -fr test/name/ test/tags/
-	perl bin/generate-links
+	perl bin/generate-links test/*.tml
+	git add -A -f test/
 
 .PHONY: doc
 doc: ReadMe.pod
@@ -17,10 +18,11 @@ ReadMe.pod: doc/yaml-test-suite.swim
 
 #------------------------------------------------------------------------------
 data:
-	git clone $$(git config remote.origin.url) -b data $@
+	git worktree add -f $@ $@
 
-data-update: data
-	perl bin/generate-data
+data-update: data node_modules
+	rm -fr data/*
+	bin/generate-data test/*.tml
 
 data-status:
 	@(cd data; git add -Af .; git status --short)
@@ -36,6 +38,11 @@ data-push:
 	    git commit -m "Regenerated data from master $$COMMIT"; \
 	    git push origin data; \
 	}
+
+node_modules:
+	mkdir $@
+	npm install lodash testml-compiler
+	rm -f package*
 
 #------------------------------------------------------------------------------
 matrix:
@@ -75,6 +82,9 @@ gh-pages:
 #------------------------------------------------------------------------------
 clean:
 	rm -fr data matrix gh-pages
+	rm -fr node_modules
+	rm -f package*
+	git worktree prune
 
 .PHONY: test
 test:

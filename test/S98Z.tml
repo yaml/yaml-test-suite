@@ -1,23 +1,23 @@
 === Block scalar with spaces only
-from: @perlpunk
-tags: folded comment scalar whitespace
+--- from: @perlpunk
+--- tags: folded comment scalar whitespace
 
-+++ in-yaml
+--- in-yaml
 empty block scalar: >
 <SPC>
 <SPC><SPC>
 <SPC><SPC><SPC>
  # comment
 
-+++ in-json
+--- in-json
 {
   "empty block scalar": ""
 }
 
-+++ out-yaml
+--- out-yaml
 empty block scalar: ""
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

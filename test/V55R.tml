@@ -1,16 +1,16 @@
 === Aliases in Block Sequence
-from: NimYAML tests
-tags: alias sequence
+--- from: NimYAML tests
+--- tags: alias sequence
 
 Anchors and aliases in a block sequence.
 
-+++ in-yaml
+--- in-yaml
 - &a a
 - &b b
 - *a
 - *b
 
-+++ in-json
+--- in-json
 [
   "a",
   "b",
@@ -18,7 +18,7 @@ Anchors and aliases in a block sequence.
   "b"
 ]
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

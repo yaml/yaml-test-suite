@@ -1,8 +1,8 @@
 === Literal Block Scalar
-from: NimYAML tests
-tags: scalar
+--- from: NimYAML tests
+--- tags: scalar
 
-+++ in-yaml
+--- in-yaml
 a: |
  ab
 <SPC>
@@ -12,12 +12,12 @@ a: |
 
 ...
 
-+++ in-json
+--- in-json
 {
   "a": "ab\n\ncd\nef\n"
 }
 
-+++ out-yaml
+--- out-yaml
 a: |
   ab
 
@@ -25,7 +25,7 @@ a: |
   ef
 ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

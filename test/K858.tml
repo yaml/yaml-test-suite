@@ -1,31 +1,29 @@
 === Spec Example 8.6. Empty Scalar Chomping
-from: http://www.yaml.org/spec/1.2/spec.html#id2795596
-tags: spec folded literal whitespace
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2795596
+--- tags: spec folded literal whitespace
 
-+++ in-yaml
+--- in-yaml(+)
 strip: >-
 
 clip: >
 
 keep: |+
-\
 
-+++ in-json
+--- in-json
 {
   "clip": "",
   "keep": "\n",
   "strip": ""
 }
 
-+++ out-yaml
+--- out-yaml(+)
 # XXX empty string should emit as ''
 strip: ""
 clip: ""
 # XXX why is libyaml emitting 2 (or literal at all)
 keep: |2+
-\
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

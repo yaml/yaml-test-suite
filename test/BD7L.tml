@@ -1,15 +1,15 @@
 === Invalid mapping after sequence
-from: @perlpunk
-tags: error mapping sequence
+--- from: @perlpunk
+--- tags: error mapping sequence
 
-+++ in-yaml
+--- in-yaml
 - item1
 - item2
 invalid: x
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

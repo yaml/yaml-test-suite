@@ -1,13 +1,13 @@
 === Spec Example 8.19. Compact Block Mappings
-from: http://www.yaml.org/spec/1.2/spec.html#id2799091
-tags: spec mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2799091
+--- tags: spec mapping
 
-+++ in-yaml
+--- in-yaml
 - sun: yellow
 - ? earth: blue
   : moon: white
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

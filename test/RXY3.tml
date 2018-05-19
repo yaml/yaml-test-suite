@@ -1,15 +1,15 @@
 === Invalid document-end marker in single quoted string
-from: @perlpunk
-tags: footer single error
+--- from: @perlpunk
+--- tags: footer single error
 
-+++ in-yaml
----
-'
-...
-'
+--- in-yaml(<)
+    ---
+    '
+    ...
+    '
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---

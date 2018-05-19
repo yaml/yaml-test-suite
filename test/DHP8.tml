@@ -1,23 +1,23 @@
 === Flow Sequence
-from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/sequence.tml
-tags: flow sequence
+--- from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/sequence.tml
+--- tags: flow sequence
 
-+++ in-yaml
+--- in-yaml
 [foo, bar, 42]
 
-+++ in-json
+--- in-json
 [
   "foo",
   "bar",
   42
 ]
 
-+++ out-yaml
+--- out-yaml
 - foo
 - bar
 - 42
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

@@ -1,20 +1,20 @@
 === Sequence entry that looks like two with wrong indentation
-from: @perlpunk
-tags: sequence
+--- from: @perlpunk
+--- tags: sequence
 
-+++ in-yaml
+--- in-yaml
 - single multiline
  - sequence entry
 
-+++ in-json
+--- in-json
 [
   "single multiline - sequence entry"
 ]
 
-+++ out-yaml
+--- out-yaml
 - single multiline - sequence entry
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ

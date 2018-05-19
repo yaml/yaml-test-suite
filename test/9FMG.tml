@@ -1,8 +1,8 @@
 === Multi-level Mapping Indent
-from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
-tags: mapping indent
+--- from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/indent.tml
+--- tags: mapping indent
 
-+++ in-yaml
+--- in-yaml
 a:
   b:
     c: d
@@ -10,7 +10,7 @@ a:
     f: g
 h: i
 
-+++ in-json
+--- in-json
 {
   "a": {
     "b": {
@@ -23,7 +23,7 @@ h: i
   "h": "i"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

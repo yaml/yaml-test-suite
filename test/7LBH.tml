@@ -1,15 +1,15 @@
 === Multiline double quoted implicit keys
-from: @perlpunk
-tags: error
+--- from: @perlpunk
+--- tags: error
 
-+++ in-yaml
+--- in-yaml
 "a\nb": 1
 "c
  d": 1
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

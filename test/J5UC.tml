@@ -1,20 +1,20 @@
 === Multiple Pair Block Mapping
-from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
-tags: mapping
+--- from: https://github.com/ingydotnet/yaml-pegex-pm/blob/master/test/mapping.tml
+--- tags: mapping
 
-+++ in-yaml
+--- in-yaml
 foo: blue
 bar: arrr
 baz: jazz
 
-+++ in-json
+--- in-json
 {
   "bar": "arrr",
   "baz": "jazz",
   "foo": "blue"
 }
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

@@ -1,21 +1,21 @@
 === Literal unicode
-from: @perlpunk
-tags: mapping
+--- from: @perlpunk
+--- tags: mapping
 
-+++ in-yaml
----
-wanted: love ♥ and peace ☮
+--- in-yaml(<)
+    ---
+    wanted: love ♥ and peace ☮
 
-+++ in-json
+--- in-json
 {
   "wanted": "love ♥ and peace ☮"
 }
 
-+++ out-yaml
----
-wanted: "love \u2665 and peace \u262E"
+--- out-yaml(<)
+    ---
+    wanted: "love \u2665 and peace \u262E"
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 +MAP

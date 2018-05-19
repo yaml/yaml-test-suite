@@ -1,24 +1,24 @@
 === Spec Example 7.2. Empty Content
-from: http://www.yaml.org/spec/1.2/spec.html#id2786720
-tags: spec flow scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2786720
+--- tags: spec flow scalar
 
-+++ in-yaml
+--- in-yaml
 {
   foo : !!str,
   !!str : bar,
 }
 
-+++ in-json
+--- in-json
 {
   "": "bar",
   "foo": ""
 }
 
-+++ out-yaml
+--- out-yaml
 foo: !!str
 !!str : bar
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

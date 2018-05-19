@@ -1,22 +1,22 @@
 === Block Scalar Keep
-from: NimYAML tests
-tags: scalar
+--- from: NimYAML tests
+--- tags: scalar
 
-+++ in-yaml
---- |+
- ab
-<SPC>
-<SPC><SPC>
-...
+--- in-yaml(<)
+    --- |+
+     ab
+    <SPC>
+    <SPC><SPC>
+    ...
 
-+++ in-json
+--- in-json
 "ab\n\n \n"
 
-+++ out-yaml
+--- out-yaml
 "ab\n\n \n"
 ...
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL |ab\n\n \n

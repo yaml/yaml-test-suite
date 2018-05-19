@@ -1,23 +1,23 @@
 === Spec Example 8.16. Block Mappings
-from: http://www.yaml.org/spec/1.2/spec.html#id2798147
-tags: spec mapping
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2798147
+--- tags: spec mapping
 
-+++ in-yaml
+--- in-yaml
 block mapping:
  key: value
 
-+++ in-json
+--- in-json
 {
   "block mapping": {
     "key": "value"
   }
 }
 
-+++ out-yaml
+--- out-yaml
 block mapping:
   key: value
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

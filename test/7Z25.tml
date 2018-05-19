@@ -1,25 +1,25 @@
 === Bare document after document end marker
-from: @perlpunk
-tags: footer
+--- from: @perlpunk
+--- tags: footer
 
-+++ in-yaml
----
-scalar1
-...
-key: value
+--- in-yaml(<)
+    ---
+    scalar1
+    ...
+    key: value
 
-+++ in-json
+--- in-json
 "scalar1"
 {
   "key": "value"
 }
 
-+++ out-yaml
---- scalar1
-...
-key: value
+--- out-yaml(<)
+    --- scalar1
+    ...
+    key: value
 
-+++ test-event
+--- test-event
 +STR
 +DOC ---
 =VAL :scalar1

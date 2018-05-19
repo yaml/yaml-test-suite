@@ -1,8 +1,8 @@
 === Spec Example 5.7. Block Scalar Indicators
-from: http://www.yaml.org/spec/1.2/spec.html#id2773653
-tags: spec literal folded scalar
+--- from: http://www.yaml.org/spec/1.2/spec.html#id2773653
+--- tags: spec literal folded scalar
 
-+++ in-yaml
+--- in-yaml
 literal: |
   some
   text
@@ -10,20 +10,20 @@ folded: >
   some
   text
 
-+++ in-json
+--- in-json
 {
   "folded": "some text\n",
   "literal": "some\ntext\n"
 }
 
-+++ out-yaml
+--- out-yaml
 literal: |
   some
   text
 folded: >
   some text
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +MAP

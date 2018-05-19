@@ -1,15 +1,15 @@
 === Node anchor in sequence
-from: @perlpunk
-tags: anchor error sequence
+--- from: @perlpunk
+--- tags: anchor error sequence
 
-+++ in-yaml
+--- in-yaml
 - item1
 &node
 - item2
 
-+++ error
+--- error
 
-+++ test-event
+--- test-event
 +STR
 +DOC
 +SEQ
