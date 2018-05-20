@@ -23,8 +23,6 @@ data:
 	git worktree add -f $@ $@
 
 data-update: data node_modules
-	@echo $(PATH)
-	which coffee
 	rm -fr data/*
 	bin/generate-data test/*.tml
 
@@ -45,7 +43,7 @@ data-push:
 
 node_modules:
 	mkdir $@
-	npm install coffeescript lodash testml-compiler
+	npm install coffeescript js-yaml jyj lodash testml-compiler
 	rm -f package*
 
 #------------------------------------------------------------------------------
