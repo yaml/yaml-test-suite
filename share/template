@@ -1,9 +1,9 @@
 === 
-from: 
-tags: 
+--- from:
+--- tags:
 
-+++ in-yaml
+--- in-yaml
 
-+++ in-json
+--- in-json
 
-+++ test-event
+--- test-event
