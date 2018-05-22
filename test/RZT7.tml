@@ -43,20 +43,20 @@
 }
 {
   "Date": "2001-11-23 15:03:17 -5",
+  "User": "ed",
   "Fatal": "Unknown variable \"bar\"",
   "Stack": [
     {
-      "code": "x = MoreObject(\"345\\n\")\n",
       "file": "TopClass.py",
-      "line": 23
+      "line": 23,
+      "code": "x = MoreObject(\"345\\n\")\n"
     },
     {
-      "code": "foo = bar",
       "file": "MoreClass.py",
-      "line": 58
+      "line": 58,
+      "code": "foo = bar"
     }
-  ],
-  "User": "ed"
+  ]
 }
 
 --- out-yaml(<)

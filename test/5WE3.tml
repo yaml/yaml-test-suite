@@ -11,11 +11,11 @@
 
 --- in-json
 {
+  "explicit key": null,
   "block key\n": [
     "one",
     "two"
-  ],
-  "explicit key": null
+  ]
 }
 
 --- out-yaml

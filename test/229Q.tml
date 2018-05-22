@@ -15,14 +15,14 @@
 --- in-json
 [
   {
-    "avg": 0.278,
+    "name": "Mark McGwire",
     "hr": 65,
-    "name": "Mark McGwire"
+    "avg": 0.278
   },
   {
-    "avg": 0.288,
+    "name": "Sammy Sosa",
     "hr": 63,
-    "name": "Sammy Sosa"
+    "avg": 0.288
   }
 ]
 

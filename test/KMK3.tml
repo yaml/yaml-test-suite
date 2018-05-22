@@ -9,10 +9,10 @@ baz: 2
 
 --- in-json
 {
-  "baz": 2,
   "foo": {
     "bar": 1
-  }
+  },
+  "baz": 2
 }
 
 --- test-event

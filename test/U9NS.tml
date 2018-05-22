@@ -16,14 +16,14 @@
 
 --- in-json
 {
-  "action": "strike (miss)",
+  "time": "20:03:20",
   "player": "Sammy Sosa",
-  "time": "20:03:20"
+  "action": "strike (miss)"
 }
 {
-  "action": "grand slam",
+  "time": "20:03:47",
   "player": "Sammy Sosa",
-  "time": "20:03:47"
+  "action": "grand slam"
 }
 
 --- test-event

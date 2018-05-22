@@ -11,9 +11,9 @@ keep: |+
 
 --- in-json
 {
+  "strip": "",
   "clip": "",
-  "keep": "\n",
-  "strip": ""
+  "keep": "\n"
 }
 
 --- out-yaml(+)

@@ -12,8 +12,8 @@ folded: >
 
 --- in-json
 {
-  "folded": "some text\n",
-  "literal": "some\ntext\n"
+  "literal": "some\ntext\n",
+  "folded": "some text\n"
 }
 
 --- out-yaml

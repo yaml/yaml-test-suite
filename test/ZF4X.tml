@@ -12,12 +12,12 @@ Sammy Sosa: {
 --- in-json
 {
   "Mark McGwire": {
-    "avg": 0.278,
-    "hr": 65
+    "hr": 65,
+    "avg": 0.278
   },
   "Sammy Sosa": {
-    "avg": 0.288,
-    "hr": 63
+    "hr": 63,
+    "avg": 0.288
   }
 }
 

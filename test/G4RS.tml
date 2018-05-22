@@ -13,12 +13,12 @@ tie-fighter: '|\-*-/|'
 
 --- in-json
 {
+  "unicode": "Sosa did fine.☺",
   "control": "\b1998\t1999\t2000\n",
   "hex esc": "\r\n is \r\n",
-  "quoted": " # Not a 'comment'.",
   "single": "\"Howdy!\" he cried.",
-  "tie-fighter": "|\\-*-/|",
-  "unicode": "Sosa did fine.☺"
+  "quoted": " # Not a 'comment'.",
+  "tie-fighter": "|\\-*-/|"
 }
 
 --- out-yaml

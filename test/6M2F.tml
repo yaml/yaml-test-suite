@@ -14,8 +14,8 @@ It also is testing an alias to a scalar anchored in an explicit key.
 
 --- in-json
 {
-  "": "a",
-  "a": "b"
+  "a": "b",
+  "": "a"
 }
 
 --- out-yaml

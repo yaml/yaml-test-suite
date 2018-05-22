@@ -12,15 +12,15 @@ mapping: !!map
 
 --- in-json
 {
-  "mapping": {
-    "foo": "bar"
-  },
   "sequence": [
     "entry",
     [
       "nested"
     ]
-  ]
+  ],
+  "mapping": {
+    "foo": "bar"
+  }
 }
 
 --- out-yaml

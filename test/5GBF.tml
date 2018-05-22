@@ -13,8 +13,8 @@ Chomping: |
 
 --- in-json
 {
-  "Chomping": "Clipped empty lines\n",
-  "Folding": "Empty line\nas a line feed"
+  "Folding": "Empty line\nas a line feed",
+  "Chomping": "Clipped empty lines\n"
 }
 
 --- out-yaml

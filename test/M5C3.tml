@@ -12,8 +12,8 @@ folded:
 
 --- in-json
 {
-  "folded": "value\n",
-  "literal": "value\n"
+  "literal": "value\n",
+  "folded": "value\n"
 }
 
 --- out-yaml

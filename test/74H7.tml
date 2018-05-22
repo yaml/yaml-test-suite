@@ -11,11 +11,11 @@ g: h
 
 --- in-json
 {
-  "23": false,
   "a": "b",
   "c": 42,
   "e": "f",
-  "g": "h"
+  "g": "h",
+  "23": false
 }
 
 --- out-yaml

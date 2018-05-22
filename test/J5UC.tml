@@ -9,9 +9,9 @@ baz: jazz
 
 --- in-json
 {
+  "foo": "blue",
   "bar": "arrr",
-  "baz": "jazz",
-  "foo": "blue"
+  "baz": "jazz"
 }
 
 --- test-event

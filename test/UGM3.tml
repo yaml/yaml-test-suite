@@ -35,45 +35,45 @@
 
 --- in-json
 {
-  "bill-to": {
-    "address": {
-      "city": "Royal Oak",
-      "lines": "458 Walkman Dr.\nSuite #292\n",
-      "postal": 48046,
-      "state": "MI"
-    },
-    "family": "Dumars",
-    "given": "Chris"
-  },
-  "comments": "Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.",
-  "date": "2001-01-23",
   "invoice": 34843,
+  "date": "2001-01-23",
+  "bill-to": {
+    "given": "Chris",
+    "family": "Dumars",
+    "address": {
+      "lines": "458 Walkman Dr.\nSuite #292\n",
+      "city": "Royal Oak",
+      "state": "MI",
+      "postal": 48046
+    }
+  },
+  "ship-to": {
+    "given": "Chris",
+    "family": "Dumars",
+    "address": {
+      "lines": "458 Walkman Dr.\nSuite #292\n",
+      "city": "Royal Oak",
+      "state": "MI",
+      "postal": 48046
+    }
+  },
   "product": [
     {
-      "description": "Basketball",
-      "price": 450,
+      "sku": "BL394D",
       "quantity": 4,
-      "sku": "BL394D"
+      "description": "Basketball",
+      "price": 450
     },
     {
-      "description": "Super Hoop",
-      "price": 2392,
+      "sku": "BL4438H",
       "quantity": 1,
-      "sku": "BL4438H"
+      "description": "Super Hoop",
+      "price": 2392
     }
   ],
-  "ship-to": {
-    "address": {
-      "city": "Royal Oak",
-      "lines": "458 Walkman Dr.\nSuite #292\n",
-      "postal": 48046,
-      "state": "MI"
-    },
-    "family": "Dumars",
-    "given": "Chris"
-  },
   "tax": 251.42,
-  "total": 4443.52
+  "total": 4443.52,
+  "comments": "Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338."
 }
 
 --- out-yaml(<)

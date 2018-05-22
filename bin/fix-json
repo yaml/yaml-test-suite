@@ -1,0 +1,47 @@
+#!/bin/bash
+
+set -e
+
+rm -f temp error diff errors log
+git reset --hard
+
+make node_modules
+make data
+
+export PATH="node_modules/.bin:$PATH"
+
+(
+  for test in data/*/"in.json"; do
+    test=${test%/in.json}
+    id=${test#data/}
+    test="test/$id.tml"
+
+    [[ -e data/$id/in.yaml ]] || exit 9
+
+    jyj "data/$id/in.yaml" > temp 2> error || true
+
+    if [[ -s error ]]; then
+      echo "$test Error"
+      echo "$test Error" >> errors
+
+    else
+      diff -u "data/$id/in.json" temp > diff || true
+
+      if [[ ! -s diff ]]; then
+        echo "$test OK"
+
+      else
+        if ! grep -q '":' diff; then
+          echo "$test Unknwon"
+          echo "$test Unknwon" >> errors
+
+        else
+          echo "$test Fixed"
+          perl -p0i -e 's/^---\ in-json.*?(?=(?:^---|\z))/"--- in-json\n" . `cat temp` . "\n"/mse' "$test"
+        fi
+      fi
+    fi
+
+    rm -f temp error diff
+  done
+) | tee log

@@ -13,9 +13,9 @@ block: |
 
 --- in-json
 {
-  "block": "text\n \tlines\n",
   "plain": "text lines",
-  "quoted": "text lines"
+  "quoted": "text lines",
+  "block": "text\n \tlines\n"
 }
 
 --- out-yaml

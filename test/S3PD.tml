@@ -10,8 +10,8 @@ plain key: in-line value
 
 --- in-json
 {
-  "": null,
   "plain key": "in-line value",
+  "": null,
   "quoted key": [
     "entry"
   ]

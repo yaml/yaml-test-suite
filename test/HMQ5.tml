@@ -9,8 +9,8 @@
 
 --- in-json
 {
-  "baz": "foo",
-  "foo": "bar"
+  "foo": "bar",
+  "baz": "foo"
 }
 
 --- out-yaml

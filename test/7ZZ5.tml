@@ -20,8 +20,6 @@
 
 --- in-json
 {
-  "key1": [],
-  "key2": {},
   "nested sequences": [
     [
       [
@@ -33,7 +31,9 @@
         {}
       ]
     ]
-  ]
+  ],
+  "key1": [],
+  "key2": {}
 }
 
 --- test-event

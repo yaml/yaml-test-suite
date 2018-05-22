@@ -11,10 +11,10 @@ c: d<TAB>#X
 --- in-json
 {
   "a": "b",
-  "c": "d",
   "seq": [
     "a"
-  ]
+  ],
+  "c": "d"
 }
 
 --- out-yaml

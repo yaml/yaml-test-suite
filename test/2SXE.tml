@@ -13,8 +13,8 @@ foo:
 
 --- in-json
 {
-  "foo": "key",
-  "key": "value"
+  "key": "value",
+  "foo": "key"
 }
 
 --- out-yaml
