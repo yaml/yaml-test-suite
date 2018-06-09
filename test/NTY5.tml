@@ -1,0 +1,13 @@
+=== Missing space in YAML directive
+--- from: @hvr, @perlpunk
+--- tags: directive error
+
+--- in-yaml(<)
+    %YAML1.2
+    ---
+    key: value
+
+--- error
+
+--- test-event
++STR
