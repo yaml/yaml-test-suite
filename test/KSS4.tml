@@ -21,6 +21,10 @@ lines.
     --- &node foo
     ...
 
+--- emit-yaml(<)
+    --- "quoted string"
+    --- &node foo
+
 --- test-event
 +STR
 +DOC ---

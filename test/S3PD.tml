@@ -17,6 +17,12 @@ plain key: in-line value
   ]
 }
 
+--- emit-yaml
+plain key: in-line value
+:
+"quoted key":
+- entry
+
 --- test-event
 +STR
 +DOC

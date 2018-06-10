@@ -12,6 +12,9 @@
   "": null
 }
 
+--- emit-yaml
+:
+
 --- test-event
 +STR
 +DOC

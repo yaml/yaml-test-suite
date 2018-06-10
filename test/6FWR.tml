@@ -16,6 +16,13 @@
 "ab\n\n \n"
 ...
 
+--- emit-yaml(<)
+    --- |
+      ab
+
+    <SPC><SPC><SPC>
+    ...
+
 --- test-event
 +STR
 +DOC ---
