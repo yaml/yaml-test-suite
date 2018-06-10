@@ -12,7 +12,7 @@ Anchors and aliases in flow collections.
 - a
 - &b b
 : *b
-*a:
+*a :
 - c
 - *b
 - d
