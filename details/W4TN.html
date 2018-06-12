@@ -19,7 +19,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/W4TN.tml">&test-W
 --- |
 %!PS-Adobe-2.0
 ...
-%YAML1.2
+%YAML 1.2
 ---
 # Empty
 ...
@@ -37,7 +37,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/W4TN.tml">&test-W
 <pre>&quot;%!PS-Adobe-2.0\n&quot;<br>null<br></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_ok" id="nimyaml-event">
+   <div class="framework framework_box_ok" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
@@ -52,7 +57,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/W4TN.tml">&test-W
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="perl5-pp-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-yaml-json">
+<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -127,7 +137,7 @@ class="">+STR</span>
 <span
 class="">+DOC ---</span>
 <span
-class="diff_line">=VAL |%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n</span>
+class="diff_line">=VAL |%!PS-Adobe-2.0\n...\n%YAML 1.2\n---\n# Empty\n...\n</span>
 <span
 class="">-DOC</span>
 <span
@@ -140,7 +150,7 @@ class="">-STR</span>
  <hr style="clear: both;">    <div class="framework framework_box_json_diff" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n&quot;</span>
+class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML 1.2\n---\n# Empty\n...\n&quot;</span>
 </pre>
  </div>
 
@@ -148,7 +158,7 @@ class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n# Empty\n...\n&quot;
   <div class="framework framework_box_json_diff" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">&quot;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty ...&quot;</span>
+class="diff_line">&quot;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML 1.2 --- # Empty ...&quot;</span>
 </pre>
  </div>
 
@@ -156,24 +166,12 @@ class="diff_line">&quot;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty 
   <div class="framework framework_box_json_diff" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML1.2\n---\n...\n&quot;</span>
+class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML 1.2\n---\n...\n&quot;</span>
 </pre>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="hs-yaml-event">
-<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC ---
-=VAL |%!PS-Adobe-2.0\n
--DOC ...
-+DOC ---
-parsing error near byte offset 35
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="java-event">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="java-event">
 <h3><a href="#java-event">java-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while scanning a directive
  in &#39;reader&#39;, line 3, column 1:
@@ -426,7 +424,7 @@ undef
 
   <div class="framework framework_box_na" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML1.2 --- # Empty ...&#39;
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%YAML 1.2 --- | %!PS-Adobe-2.0 ... %YAML 1.2 --- # Empty ...&#39;
 </pre>
 
  </div>
@@ -436,7 +434,7 @@ undef
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>&#39;%!PS-Adobe-2.0
 ...
-%YAML1.2
+%YAML 1.2
 ---
 ...
 &#39;

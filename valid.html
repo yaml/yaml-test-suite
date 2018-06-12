@@ -58,6 +58,10 @@ checked="checked" onchange="toggle_framework('ruamel-event')">
 <input type="checkbox" name="type-json" value="1" id="type-json"
 checked="checked" onchange="toggle_type('json')">
 <label for="type-json" ><b>json</b></label><br>
+ <input type="checkbox" name="" value="1" id="fw-select-hs-yaml-json"
+class="selector-json selector-hs" data-fw="hs-yaml-json"
+checked="checked" onchange="toggle_framework('hs-yaml-json')">
+<label for="fw-select-hs-yaml-json" >hs yaml</label><br>
  <input type="checkbox" name="" value="1" id="fw-select-java-json"
 class="selector-json selector-java" data-fw="java-json"
 checked="checked" onchange="toggle_framework('java-json')">
@@ -151,6 +155,7 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result perl5-pp-event">perl5<br>pp<br>event</td>
  <td class="result pyyaml-event">python<br>pyyaml<br>event</td>
  <td class="result ruamel-event">python<br>ruamel<br>event</td>
+ <td class="result hs-yaml-json">hs<br>yaml<br>json</td>
  <td class="result java-json">java<br>snake<br>json</td>
  <td class="result js-yaml-json">js<br>yaml<br>json</td>
  <td class="result luajit-json">lua<br>yaml<br>json</td>
@@ -192,10 +197,10 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 <span class="status_box color_error">&nbsp;</span>3 <br>
 </td>
  <td class="result hs-yaml-event">
-<span class="status_box color_ok">&nbsp;</span>214  <br>
+<span class="status_box color_ok">&nbsp;</span>215  <br>
 <span class="status_box color_diff">&nbsp;</span>7  <br>
  <br>
-<span class="status_box color_error">&nbsp;</span>6 <br>
+<span class="status_box color_error">&nbsp;</span>5 <br>
 </td>
  <td class="result java-event">
 <span class="status_box color_ok">&nbsp;</span>197  <br>
@@ -232,6 +237,12 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
   <br>
  <br>
 <span class="status_box color_error">&nbsp;</span>26 <br>
+</td>
+ <td class="result hs-yaml-json">
+ <span class="status_box color_json_ok">&nbsp;</span>189 <br>
+ <span class="status_box color_json_diff">&nbsp;</span>5 <br>
+<span class="status_box color_na">&nbsp;</span>28 <br>
+<span class="status_box color_error">&nbsp;</span>5 <br>
 </td>
  <td class="result java-json">
  <span class="status_box color_json_ok">&nbsp;</span>159 <br>
@@ -367,6 +378,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/V55R.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/V55R.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/V55R.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/V55R.html#js-yaml-json">&nbsp;</a>
@@ -424,6 +437,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/6M2F.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/6M2F.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6M2F.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/6M2F.html#java-json">&nbsp;</a>
 </td>
@@ -483,6 +498,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/X38W.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_error "><a class="invisible" href="details/X38W.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/X38W.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/X38W.html#js-yaml-json">&nbsp;</a>
@@ -540,6 +557,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/E76Z.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/E76Z.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/E76Z.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/E76Z.html#java-json">&nbsp;</a>
 </td>
@@ -599,6 +618,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/W5VH.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/W5VH.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/W5VH.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/W5VH.html#js-yaml-json">&nbsp;</a>
@@ -656,6 +677,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/2EBW.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/2EBW.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_error "><a class="invisible" href="details/2EBW.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/2EBW.html#java-json">&nbsp;</a>
 </td>
@@ -715,6 +738,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/FBC9.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/FBC9.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/FBC9.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/FBC9.html#js-yaml-json">&nbsp;</a>
@@ -772,6 +797,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/6SLA.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6SLA.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6SLA.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6SLA.html#java-json">&nbsp;</a>
 </td>
@@ -831,6 +858,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/SKE5.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/SKE5.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/SKE5.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/SKE5.html#js-yaml-json">&nbsp;</a>
@@ -888,6 +917,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/8XYN.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/8XYN.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/8XYN.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/8XYN.html#java-json">&nbsp;</a>
 </td>
@@ -947,6 +978,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/2SXE.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/2SXE.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/2SXE.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/2SXE.html#js-yaml-json">&nbsp;</a>
@@ -1004,6 +1037,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/F2C7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/F2C7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/F2C7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/F2C7.html#java-json">&nbsp;</a>
 </td>
@@ -1063,6 +1098,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/ZH7C.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/ZH7C.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/ZH7C.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/ZH7C.html#js-yaml-json">&nbsp;</a>
@@ -1120,6 +1157,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/PW8X.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/PW8X.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/PW8X.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/PW8X.html#java-json">&nbsp;</a>
 </td>
@@ -1179,6 +1218,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6H3V.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6H3V.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6H3V.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/6H3V.html#js-yaml-json">&nbsp;</a>
@@ -1236,6 +1277,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/7Z25.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7Z25.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7Z25.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/7Z25.html#java-json">&nbsp;</a>
 </td>
@@ -1295,6 +1338,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/H2RW.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/H2RW.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/H2RW.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/H2RW.html#js-yaml-json">&nbsp;</a>
@@ -1352,6 +1397,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/2JQS.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/2JQS.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/2JQS.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/2JQS.html#java-json">&nbsp;</a>
 </td>
@@ -1411,6 +1458,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7W2P.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7W2P.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/7W2P.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/7W2P.html#js-yaml-json">&nbsp;</a>
@@ -1468,6 +1517,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/JTV5.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/JTV5.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/JTV5.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/JTV5.html#java-json">&nbsp;</a>
 </td>
@@ -1527,6 +1578,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/93JH.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/93JH.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/93JH.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/93JH.html#js-yaml-json">&nbsp;</a>
@@ -1584,6 +1637,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/6FWR.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6FWR.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6FWR.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6FWR.html#java-json">&nbsp;</a>
 </td>
@@ -1643,6 +1698,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/MYW6.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/MYW6.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/MYW6.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/MYW6.html#js-yaml-json">&nbsp;</a>
@@ -1700,6 +1757,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/753E.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/753E.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/753E.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/753E.html#java-json">&nbsp;</a>
 </td>
@@ -1759,6 +1818,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/8QBE.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/8QBE.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/8QBE.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/8QBE.html#js-yaml-json">&nbsp;</a>
@@ -1816,6 +1877,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/3ALJ.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/3ALJ.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/3ALJ.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/3ALJ.html#java-json">&nbsp;</a>
 </td>
@@ -1875,6 +1938,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/KMK3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/KMK3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/KMK3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/KMK3.html#js-yaml-json">&nbsp;</a>
@@ -1932,6 +1997,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/D83L.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/D83L.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/D83L.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/D83L.html#java-json">&nbsp;</a>
 </td>
@@ -1991,6 +2058,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/S98Z.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_diff "><a class="invisible" href="details/S98Z.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/S98Z.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/S98Z.html#js-yaml-json">&nbsp;</a>
@@ -2048,6 +2117,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/4UYU.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4UYU.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4UYU.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4UYU.html#java-json">&nbsp;</a>
 </td>
@@ -2107,6 +2178,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7TMG.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7TMG.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/7TMG.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/7TMG.html#js-yaml-json">&nbsp;</a>
@@ -2164,6 +2237,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/565N.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/565N.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/565N.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_na "><a class="invisible" href="details/565N.html#java-json">&nbsp;</a>
 </td>
@@ -2223,6 +2298,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/PUW8.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/PUW8.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/PUW8.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/PUW8.html#js-yaml-json">&nbsp;</a>
@@ -2280,6 +2357,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/S4T7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/S4T7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/S4T7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/S4T7.html#java-json">&nbsp;</a>
 </td>
@@ -2339,6 +2418,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/J7VC.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/J7VC.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/J7VC.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/J7VC.html#js-yaml-json">&nbsp;</a>
@@ -2396,6 +2477,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/NHX8.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/NHX8.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/NHX8.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/NHX8.html#java-json">&nbsp;</a>
 </td>
@@ -2455,6 +2538,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/AVM7.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/AVM7.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/AVM7.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/AVM7.html#js-yaml-json">&nbsp;</a>
@@ -2512,6 +2597,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/7ZZ5.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7ZZ5.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7ZZ5.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/7ZZ5.html#java-json">&nbsp;</a>
 </td>
@@ -2571,6 +2658,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/3UYS.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/3UYS.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/3UYS.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/3UYS.html#js-yaml-json">&nbsp;</a>
@@ -2628,6 +2717,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/8MK2.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/8MK2.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/8MK2.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/8MK2.html#java-json">&nbsp;</a>
 </td>
@@ -2687,6 +2778,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/52DL.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/52DL.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/52DL.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/52DL.html#js-yaml-json">&nbsp;</a>
@@ -2744,6 +2837,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/54T7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/54T7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/54T7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/54T7.html#java-json">&nbsp;</a>
 </td>
@@ -2803,6 +2898,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/MXS3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/MXS3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/MXS3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/MXS3.html#js-yaml-json">&nbsp;</a>
@@ -2860,6 +2957,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/DHP8.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/DHP8.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/DHP8.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/DHP8.html#java-json">&nbsp;</a>
 </td>
@@ -2919,6 +3018,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/D88J.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/D88J.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/D88J.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/D88J.html#js-yaml-json">&nbsp;</a>
@@ -2976,6 +3077,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/SBG9.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/SBG9.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/SBG9.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_na "><a class="invisible" href="details/SBG9.html#java-json">&nbsp;</a>
 </td>
@@ -3035,6 +3138,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/FUP4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/FUP4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/FUP4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/FUP4.html#js-yaml-json">&nbsp;</a>
@@ -3092,6 +3197,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/4MUZ.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/4MUZ.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4MUZ.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/4MUZ.html#java-json">&nbsp;</a>
 </td>
@@ -3151,6 +3258,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/TS54.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/TS54.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/TS54.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/TS54.html#js-yaml-json">&nbsp;</a>
@@ -3208,6 +3317,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/4Q9F.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4Q9F.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4Q9F.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4Q9F.html#java-json">&nbsp;</a>
 </td>
@@ -3267,6 +3378,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/LX3P.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/LX3P.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/LX3P.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/LX3P.html#js-yaml-json">&nbsp;</a>
@@ -3324,6 +3437,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/ZWK4.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/ZWK4.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/ZWK4.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/ZWK4.html#java-json">&nbsp;</a>
 </td>
@@ -3383,6 +3498,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/M29M.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/M29M.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/M29M.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/M29M.html#js-yaml-json">&nbsp;</a>
@@ -3440,6 +3557,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/H3Z8.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/H3Z8.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/H3Z8.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/H3Z8.html#java-json">&nbsp;</a>
 </td>
@@ -3499,6 +3618,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/AZW3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/AZW3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/AZW3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/AZW3.html#js-yaml-json">&nbsp;</a>
@@ -3556,6 +3677,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/CXX2.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/CXX2.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_error "><a class="invisible" href="details/CXX2.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/CXX2.html#java-json">&nbsp;</a>
 </td>
@@ -3615,6 +3738,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6BFJ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/6BFJ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/6BFJ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/6BFJ.html#js-yaml-json">&nbsp;</a>
@@ -3672,6 +3797,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/GH63.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/GH63.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/GH63.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/GH63.html#java-json">&nbsp;</a>
 </td>
@@ -3731,6 +3858,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/RR7F.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/RR7F.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/RR7F.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/RR7F.html#js-yaml-json">&nbsp;</a>
@@ -3788,6 +3917,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/9FMG.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9FMG.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9FMG.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9FMG.html#java-json">&nbsp;</a>
 </td>
@@ -3847,6 +3978,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9YRD.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9YRD.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9YRD.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/9YRD.html#js-yaml-json">&nbsp;</a>
@@ -3904,6 +4037,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/EX5H.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/EX5H.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/EX5H.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/EX5H.html#java-json">&nbsp;</a>
 </td>
@@ -3963,6 +4098,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/A984.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/A984.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/A984.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/A984.html#js-yaml-json">&nbsp;</a>
@@ -4020,6 +4157,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/36F6.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/36F6.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/36F6.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/36F6.html#java-json">&nbsp;</a>
 </td>
@@ -4079,6 +4218,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/XLQ9.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/XLQ9.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/XLQ9.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/XLQ9.html#js-yaml-json">&nbsp;</a>
@@ -4136,6 +4277,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/K4SU.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/K4SU.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/K4SU.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/K4SU.html#java-json">&nbsp;</a>
 </td>
@@ -4195,6 +4338,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/J5UC.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/J5UC.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/J5UC.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/J5UC.html#js-yaml-json">&nbsp;</a>
@@ -4252,6 +4397,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/M7NX.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/M7NX.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/M7NX.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/M7NX.html#java-json">&nbsp;</a>
 </td>
@@ -4311,6 +4458,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/F3CP.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/F3CP.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/F3CP.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/F3CP.html#js-yaml-json">&nbsp;</a>
@@ -4368,6 +4517,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/BU8L.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/BU8L.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/BU8L.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/BU8L.html#java-json">&nbsp;</a>
 </td>
@@ -4427,6 +4578,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/U3XV.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/U3XV.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/U3XV.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/U3XV.html#js-yaml-json">&nbsp;</a>
@@ -4484,6 +4637,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/7BMT.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7BMT.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7BMT.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/7BMT.html#java-json">&nbsp;</a>
 </td>
@@ -4543,6 +4698,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/MZX3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/MZX3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/MZX3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/MZX3.html#js-yaml-json">&nbsp;</a>
@@ -4600,6 +4757,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/3MYT.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/3MYT.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/3MYT.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/3MYT.html#java-json">&nbsp;</a>
 </td>
@@ -4659,6 +4818,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/JDH8.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/JDH8.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/JDH8.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/JDH8.html#js-yaml-json">&nbsp;</a>
@@ -4716,6 +4877,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/UDM2.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/UDM2.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/UDM2.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/UDM2.html#java-json">&nbsp;</a>
 </td>
@@ -4775,6 +4938,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/8CWC.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/8CWC.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/8CWC.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/8CWC.html#js-yaml-json">&nbsp;</a>
@@ -4832,6 +4997,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/4V8U.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4V8U.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4V8U.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4V8U.html#java-json">&nbsp;</a>
 </td>
@@ -4891,6 +5058,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/KSS4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/KSS4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/KSS4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/KSS4.html#js-yaml-json">&nbsp;</a>
@@ -4948,6 +5117,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/RLU9.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/RLU9.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/RLU9.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/RLU9.html#java-json">&nbsp;</a>
 </td>
@@ -5007,6 +5178,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/AZ63.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/AZ63.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/AZ63.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/AZ63.html#js-yaml-json">&nbsp;</a>
@@ -5064,6 +5237,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/AB8U.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/AB8U.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/AB8U.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/AB8U.html#java-json">&nbsp;</a>
 </td>
@@ -5123,6 +5298,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9J7A.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9J7A.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9J7A.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/9J7A.html#js-yaml-json">&nbsp;</a>
@@ -5180,6 +5357,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/65WH.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/65WH.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/65WH.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/65WH.html#java-json">&nbsp;</a>
 </td>
@@ -5239,6 +5418,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/D9TU.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/D9TU.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/D9TU.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/D9TU.html#js-yaml-json">&nbsp;</a>
@@ -5296,6 +5477,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/3R3P.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/3R3P.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/3R3P.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/3R3P.html#java-json">&nbsp;</a>
 </td>
@@ -5355,6 +5538,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/FTA2.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/FTA2.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/FTA2.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/FTA2.html#js-yaml-json">&nbsp;</a>
@@ -5412,6 +5597,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/FQ7F.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/FQ7F.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/FQ7F.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/FQ7F.html#java-json">&nbsp;</a>
 </td>
@@ -5471,6 +5658,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7BUB.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7BUB.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/7BUB.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/7BUB.html#js-yaml-json">&nbsp;</a>
@@ -5528,6 +5717,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/M5DY.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/M5DY.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/M5DY.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_na "><a class="invisible" href="details/M5DY.html#java-json">&nbsp;</a>
 </td>
@@ -5587,6 +5778,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9U5K.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9U5K.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9U5K.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/9U5K.html#js-yaml-json">&nbsp;</a>
@@ -5644,6 +5837,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/6JQW.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6JQW.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6JQW.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6JQW.html#java-json">&nbsp;</a>
 </td>
@@ -5703,6 +5898,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/96L6.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/96L6.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/96L6.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/96L6.html#js-yaml-json">&nbsp;</a>
@@ -5760,6 +5957,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/6VJK.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6VJK.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6VJK.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6VJK.html#java-json">&nbsp;</a>
 </td>
@@ -5819,6 +6018,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/HMK4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/HMK4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/HMK4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/HMK4.html#js-yaml-json">&nbsp;</a>
@@ -5876,6 +6077,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/G4RS.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/G4RS.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/G4RS.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/G4RS.html#java-json">&nbsp;</a>
 </td>
@@ -5935,6 +6138,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4CQQ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4CQQ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4CQQ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/4CQQ.html#js-yaml-json">&nbsp;</a>
@@ -5992,6 +6197,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/SYW4.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/SYW4.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/SYW4.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/SYW4.html#java-json">&nbsp;</a>
 </td>
@@ -6051,6 +6258,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/77H8.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/77H8.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/77H8.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/77H8.html#js-yaml-json">&nbsp;</a>
@@ -6108,6 +6317,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/C4HZ.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/C4HZ.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/C4HZ.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/C4HZ.html#java-json">&nbsp;</a>
 </td>
@@ -6167,6 +6378,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/2XXW.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/2XXW.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/2XXW.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/2XXW.html#js-yaml-json">&nbsp;</a>
@@ -6224,6 +6437,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/J7PZ.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/J7PZ.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/J7PZ.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/J7PZ.html#java-json">&nbsp;</a>
 </td>
@@ -6283,6 +6498,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/UGM3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/UGM3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/UGM3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/UGM3.html#js-yaml-json">&nbsp;</a>
@@ -6340,6 +6557,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/RZT7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/RZT7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/RZT7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/RZT7.html#java-json">&nbsp;</a>
 </td>
@@ -6399,6 +6618,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/PBJ2.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/PBJ2.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/PBJ2.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/PBJ2.html#js-yaml-json">&nbsp;</a>
@@ -6456,6 +6677,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/229Q.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/229Q.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/229Q.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/229Q.html#java-json">&nbsp;</a>
 </td>
@@ -6515,6 +6738,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/YD5X.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/YD5X.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/YD5X.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/YD5X.html#js-yaml-json">&nbsp;</a>
@@ -6572,6 +6797,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/ZF4X.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/ZF4X.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/ZF4X.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/ZF4X.html#java-json">&nbsp;</a>
 </td>
@@ -6631,6 +6858,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/JHB9.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/JHB9.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/JHB9.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/JHB9.html#js-yaml-json">&nbsp;</a>
@@ -6688,6 +6917,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/U9NS.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/U9NS.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/U9NS.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/U9NS.html#java-json">&nbsp;</a>
 </td>
@@ -6747,6 +6978,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/J9HZ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/J9HZ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/J9HZ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/J9HZ.html#js-yaml-json">&nbsp;</a>
@@ -6804,6 +7037,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/J3BT.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/J3BT.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/J3BT.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/J3BT.html#java-json">&nbsp;</a>
 </td>
@@ -6863,6 +7098,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/S9E8.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/S9E8.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/S9E8.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/S9E8.html#js-yaml-json">&nbsp;</a>
@@ -6920,6 +7157,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/UDR7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/UDR7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/UDR7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/UDR7.html#java-json">&nbsp;</a>
 </td>
@@ -6979,6 +7218,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/98YD.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/98YD.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/98YD.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/98YD.html#js-yaml-json">&nbsp;</a>
@@ -7036,6 +7277,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/CUP7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/CUP7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/CUP7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/CUP7.html#java-json">&nbsp;</a>
 </td>
@@ -7095,6 +7338,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5BVJ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/5BVJ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/5BVJ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/5BVJ.html#js-yaml-json">&nbsp;</a>
@@ -7152,6 +7397,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/9SHH.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9SHH.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9SHH.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9SHH.html#java-json">&nbsp;</a>
 </td>
@@ -7211,6 +7458,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/27NA.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/27NA.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/27NA.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/27NA.html#js-yaml-json">&nbsp;</a>
@@ -7268,6 +7517,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/6HB6.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/6HB6.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6HB6.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/6HB6.html#java-json">&nbsp;</a>
 </td>
@@ -7327,6 +7578,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/8G76.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/8G76.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/8G76.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/8G76.html#js-yaml-json">&nbsp;</a>
@@ -7384,6 +7637,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/P94K.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/P94K.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/P94K.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/P94K.html#java-json">&nbsp;</a>
 </td>
@@ -7443,6 +7698,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/Q9WF.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/Q9WF.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/Q9WF.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/Q9WF.html#js-yaml-json">&nbsp;</a>
@@ -7500,6 +7757,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/6LVF.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6LVF.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6LVF.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6LVF.html#java-json">&nbsp;</a>
 </td>
@@ -7559,6 +7818,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/2LFX.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/2LFX.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/2LFX.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/2LFX.html#js-yaml-json">&nbsp;</a>
@@ -7616,6 +7877,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/BEC7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/BEC7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/BEC7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/BEC7.html#java-json">&nbsp;</a>
 </td>
@@ -7675,6 +7938,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/U3C3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/U3C3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/U3C3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/U3C3.html#js-yaml-json">&nbsp;</a>
@@ -7732,6 +7997,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/9WXW.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9WXW.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/9WXW.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/9WXW.html#java-json">&nbsp;</a>
 </td>
@@ -7791,6 +8058,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6WLZ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/6WLZ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/6WLZ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/6WLZ.html#js-yaml-json">&nbsp;</a>
@@ -7848,6 +8117,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/P76L.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/P76L.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/P76L.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/P76L.html#java-json">&nbsp;</a>
 </td>
@@ -7907,6 +8178,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/A2M4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/A2M4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/A2M4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/A2M4.html#js-yaml-json">&nbsp;</a>
@@ -7964,6 +8237,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/CC74.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/CC74.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/CC74.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/CC74.html#java-json">&nbsp;</a>
 </td>
@@ -8023,6 +8298,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5TYM.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/5TYM.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/5TYM.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/5TYM.html#js-yaml-json">&nbsp;</a>
@@ -8080,6 +8357,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/Z9M4.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/Z9M4.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/Z9M4.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/Z9M4.html#java-json">&nbsp;</a>
 </td>
@@ -8139,6 +8418,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/HMQ5.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/HMQ5.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/HMQ5.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/HMQ5.html#js-yaml-json">&nbsp;</a>
@@ -8196,6 +8477,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/7FWL.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7FWL.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/7FWL.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/7FWL.html#java-json">&nbsp;</a>
 </td>
@@ -8255,6 +8538,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/6CK3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/6CK3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/6CK3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/6CK3.html#js-yaml-json">&nbsp;</a>
@@ -8312,6 +8597,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/S4JQ.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/S4JQ.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/S4JQ.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/S4JQ.html#java-json">&nbsp;</a>
 </td>
@@ -8371,6 +8658,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/JS2J.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/JS2J.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/JS2J.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/JS2J.html#js-yaml-json">&nbsp;</a>
@@ -8428,6 +8717,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/6BCT.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/6BCT.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6BCT.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/6BCT.html#java-json">&nbsp;</a>
 </td>
@@ -8487,6 +8778,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4ZYM.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4ZYM.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4ZYM.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/4ZYM.html#js-yaml-json">&nbsp;</a>
@@ -8544,6 +8837,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/5GBF.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5GBF.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/5GBF.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/5GBF.html#java-json">&nbsp;</a>
 </td>
@@ -8603,6 +8898,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/XV9V.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/XV9V.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/XV9V.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/XV9V.html#js-yaml-json">&nbsp;</a>
@@ -8660,6 +8957,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/K527.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/K527.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/K527.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/K527.html#java-json">&nbsp;</a>
 </td>
@@ -8719,6 +9018,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/93WF.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/93WF.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/93WF.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/93WF.html#js-yaml-json">&nbsp;</a>
@@ -8776,6 +9077,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/MJS9.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/MJS9.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/MJS9.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/MJS9.html#java-json">&nbsp;</a>
 </td>
@@ -8835,6 +9138,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/TL85.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/TL85.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/TL85.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/TL85.html#js-yaml-json">&nbsp;</a>
@@ -8892,6 +9197,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/6WPF.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6WPF.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6WPF.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6WPF.html#java-json">&nbsp;</a>
 </td>
@@ -8951,6 +9258,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5NYZ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/5NYZ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/5NYZ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/5NYZ.html#js-yaml-json">&nbsp;</a>
@@ -9008,6 +9317,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/3GZX.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/3GZX.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/3GZX.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/3GZX.html#java-json">&nbsp;</a>
 </td>
@@ -9067,6 +9378,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/DBG4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/DBG4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/DBG4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/DBG4.html#js-yaml-json">&nbsp;</a>
@@ -9124,6 +9437,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/L9U5.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/L9U5.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/L9U5.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/L9U5.html#java-json">&nbsp;</a>
 </td>
@@ -9183,6 +9498,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/HS5T.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/HS5T.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/HS5T.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/HS5T.html#js-yaml-json">&nbsp;</a>
@@ -9240,6 +9557,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/5KJE.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5KJE.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/5KJE.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/5KJE.html#java-json">&nbsp;</a>
 </td>
@@ -9299,6 +9618,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/8UDB.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/8UDB.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/8UDB.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/8UDB.html#js-yaml-json">&nbsp;</a>
@@ -9356,6 +9677,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/5C5M.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5C5M.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/5C5M.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/5C5M.html#java-json">&nbsp;</a>
 </td>
@@ -9415,6 +9738,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/DFF7.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/DFF7.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/DFF7.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/DFF7.html#js-yaml-json">&nbsp;</a>
@@ -9472,6 +9797,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/4ABK.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/4ABK.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/4ABK.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/4ABK.html#java-json">&nbsp;</a>
 </td>
@@ -9531,6 +9858,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/C2DT.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/C2DT.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/C2DT.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/C2DT.html#js-yaml-json">&nbsp;</a>
@@ -9588,6 +9917,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/QF4Y.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/QF4Y.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/QF4Y.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/QF4Y.html#java-json">&nbsp;</a>
 </td>
@@ -9647,6 +9978,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/WZ62.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/WZ62.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/WZ62.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/WZ62.html#js-yaml-json">&nbsp;</a>
@@ -9704,6 +10037,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/CT4Q.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/CT4Q.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/CT4Q.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/CT4Q.html#java-json">&nbsp;</a>
 </td>
@@ -9763,6 +10098,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/KZN9.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/KZN9.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/KZN9.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/KZN9.html#js-yaml-json">&nbsp;</a>
@@ -9820,6 +10157,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/9MMW.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/9MMW.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/9MMW.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/9MMW.html#java-json">&nbsp;</a>
 </td>
@@ -9879,6 +10218,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/Q88A.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/Q88A.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/Q88A.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/Q88A.html#js-yaml-json">&nbsp;</a>
@@ -9936,6 +10277,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/LE5A.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/LE5A.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/LE5A.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/LE5A.html#java-json">&nbsp;</a>
 </td>
@@ -9995,6 +10338,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/FRK4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/FRK4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/FRK4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/FRK4.html#js-yaml-json">&nbsp;</a>
@@ -10052,6 +10397,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/LQZ7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/LQZ7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/LQZ7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/LQZ7.html#java-json">&nbsp;</a>
 </td>
@@ -10111,6 +10458,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/NP9H.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/NP9H.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/NP9H.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/NP9H.html#js-yaml-json">&nbsp;</a>
@@ -10168,6 +10517,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/Q8AD.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/Q8AD.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/Q8AD.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/Q8AD.html#java-json">&nbsp;</a>
 </td>
@@ -10227,6 +10578,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7A4E.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7A4E.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/7A4E.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/7A4E.html#js-yaml-json">&nbsp;</a>
@@ -10284,6 +10637,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/9TFX.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9TFX.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9TFX.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9TFX.html#java-json">&nbsp;</a>
 </td>
@@ -10343,6 +10698,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4GC6.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/4GC6.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4GC6.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/4GC6.html#js-yaml-json">&nbsp;</a>
@@ -10400,6 +10757,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/SSW6.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/SSW6.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/SSW6.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/SSW6.html#java-json">&nbsp;</a>
 </td>
@@ -10459,6 +10818,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/87E4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/87E4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/87E4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/87E4.html#js-yaml-json">&nbsp;</a>
@@ -10516,6 +10877,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/PRH3.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/PRH3.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/PRH3.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/PRH3.html#java-json">&nbsp;</a>
 </td>
@@ -10575,6 +10938,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/T4YY.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/T4YY.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/T4YY.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/T4YY.html#js-yaml-json">&nbsp;</a>
@@ -10632,6 +10997,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/P2AD.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/P2AD.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/P2AD.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/P2AD.html#java-json">&nbsp;</a>
 </td>
@@ -10691,6 +11058,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/7T8X.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/7T8X.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/7T8X.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/7T8X.html#js-yaml-json">&nbsp;</a>
@@ -10748,6 +11117,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/JQ4R.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/JQ4R.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/JQ4R.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/JQ4R.html#java-json">&nbsp;</a>
 </td>
@@ -10807,6 +11178,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/W42U.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/W42U.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/W42U.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/W42U.html#js-yaml-json">&nbsp;</a>
@@ -10864,6 +11237,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/TE2A.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/TE2A.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/TE2A.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/TE2A.html#java-json">&nbsp;</a>
 </td>
@@ -10923,6 +11298,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/5WE3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/5WE3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_diff "><a class="invisible" href="details/5WE3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/5WE3.html#js-yaml-json">&nbsp;</a>
@@ -10980,6 +11357,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/S3PD.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/S3PD.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/S3PD.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/S3PD.html#java-json">&nbsp;</a>
 </td>
@@ -11039,6 +11418,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/V9D5.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/V9D5.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/V9D5.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/V9D5.html#js-yaml-json">&nbsp;</a>
@@ -11096,6 +11477,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/R4YG.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/R4YG.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_diff "><a class="invisible" href="details/R4YG.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/R4YG.html#java-json">&nbsp;</a>
 </td>
@@ -11155,6 +11538,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/4QFQ.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_diff "><a class="invisible" href="details/4QFQ.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/4QFQ.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/4QFQ.html#js-yaml-json">&nbsp;</a>
@@ -11212,6 +11597,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/735Y.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/735Y.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/735Y.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/735Y.html#java-json">&nbsp;</a>
 </td>
@@ -11271,6 +11658,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/M5C3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/M5C3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/M5C3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/M5C3.html#js-yaml-json">&nbsp;</a>
@@ -11328,6 +11717,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/Z67P.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/Z67P.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/Z67P.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/Z67P.html#java-json">&nbsp;</a>
 </td>
@@ -11387,6 +11778,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/57H4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/57H4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/57H4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/57H4.html#js-yaml-json">&nbsp;</a>
@@ -11444,6 +11837,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/A6F9.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/A6F9.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/A6F9.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/A6F9.html#java-json">&nbsp;</a>
 </td>
@@ -11503,6 +11898,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/F8F9.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/F8F9.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/F8F9.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/F8F9.html#js-yaml-json">&nbsp;</a>
@@ -11560,6 +11957,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/K858.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/K858.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/K858.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/K858.html#java-json">&nbsp;</a>
 </td>
@@ -11619,6 +12018,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/M9B4.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/M9B4.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/M9B4.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/M9B4.html#js-yaml-json">&nbsp;</a>
@@ -11676,6 +12077,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/T5N4.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/T5N4.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/T5N4.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/T5N4.html#java-json">&nbsp;</a>
 </td>
@@ -11735,6 +12138,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/DWX9.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_diff "><a class="invisible" href="details/DWX9.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/DWX9.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/DWX9.html#js-yaml-json">&nbsp;</a>
@@ -11792,6 +12197,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/T26H.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/T26H.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_diff "><a class="invisible" href="details/T26H.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/T26H.html#java-json">&nbsp;</a>
 </td>
@@ -11851,6 +12258,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/G992.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/G992.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/G992.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/G992.html#js-yaml-json">&nbsp;</a>
@@ -11908,6 +12317,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/B3HG.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/B3HG.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/B3HG.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/B3HG.html#java-json">&nbsp;</a>
 </td>
@@ -11967,6 +12378,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/RTP8.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/RTP8.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/RTP8.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/RTP8.html#js-yaml-json">&nbsp;</a>
@@ -12024,6 +12437,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/M7A3.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/M7A3.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/M7A3.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/M7A3.html#java-json">&nbsp;</a>
 </td>
@@ -12083,6 +12498,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/UT92.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/UT92.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/UT92.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/UT92.html#js-yaml-json">&nbsp;</a>
@@ -12127,7 +12544,7 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result cpp-event color_diff "><a class="invisible" href="details/W4TN.html#cpp-event">&nbsp;</a>
 </td>
- <td class="result hs-yaml-event color_error "><a class="invisible" href="details/W4TN.html#hs-yaml-event">&nbsp;</a>
+ <td class="result hs-yaml-event color_ok "><a class="invisible" href="details/W4TN.html#hs-yaml-event">&nbsp;</a>
 </td>
  <td class="result java-event color_error "><a class="invisible" href="details/W4TN.html#java-event">&nbsp;</a>
 </td>
@@ -12140,6 +12557,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/W4TN.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/W4TN.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/W4TN.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/W4TN.html#java-json">&nbsp;</a>
 </td>
@@ -12199,6 +12618,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6ZKB.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6ZKB.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6ZKB.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/6ZKB.html#js-yaml-json">&nbsp;</a>
@@ -12256,6 +12677,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/9DXL.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9DXL.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/9DXL.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9DXL.html#java-json">&nbsp;</a>
 </td>
@@ -12315,6 +12738,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/K54U.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/K54U.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/K54U.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/K54U.html#js-yaml-json">&nbsp;</a>
@@ -12372,6 +12797,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/Q5MG.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/Q5MG.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/Q5MG.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/Q5MG.html#java-json">&nbsp;</a>
 </td>
@@ -12431,6 +12858,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/6JWB.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/6JWB.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/6JWB.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/6JWB.html#js-yaml-json">&nbsp;</a>
@@ -12488,6 +12917,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/EHF6.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/EHF6.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/EHF6.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/EHF6.html#java-json">&nbsp;</a>
 </td>
@@ -12547,6 +12978,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/35KP.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/35KP.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/35KP.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/35KP.html#js-yaml-json">&nbsp;</a>
@@ -12604,6 +13037,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/2AUY.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/2AUY.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/2AUY.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/2AUY.html#java-json">&nbsp;</a>
 </td>
@@ -12663,6 +13098,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/L94M.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/L94M.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/L94M.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/L94M.html#js-yaml-json">&nbsp;</a>
@@ -12720,6 +13157,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/74H7.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/74H7.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/74H7.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/74H7.html#java-json">&nbsp;</a>
 </td>
@@ -12779,6 +13218,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/FH7J.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/FH7J.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/FH7J.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/FH7J.html#js-yaml-json">&nbsp;</a>
@@ -12836,6 +13277,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/82AN.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/82AN.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_error "><a class="invisible" href="details/82AN.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/82AN.html#java-json">&nbsp;</a>
 </td>
@@ -12895,6 +13338,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/EXG3.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/EXG3.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/EXG3.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/EXG3.html#js-yaml-json">&nbsp;</a>
@@ -12952,6 +13397,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/XW4D.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/XW4D.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/XW4D.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_na "><a class="invisible" href="details/XW4D.html#java-json">&nbsp;</a>
 </td>
@@ -13011,6 +13458,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/RZP5.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/RZP5.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_na "><a class="invisible" href="details/RZP5.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_na "><a class="invisible" href="details/RZP5.html#js-yaml-json">&nbsp;</a>
@@ -13068,6 +13517,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/KK5P.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/KK5P.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_na "><a class="invisible" href="details/KK5P.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_na "><a class="invisible" href="details/KK5P.html#java-json">&nbsp;</a>
 </td>
@@ -13127,6 +13578,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/9KAX.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_error "><a class="invisible" href="details/9KAX.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/9KAX.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/9KAX.html#js-yaml-json">&nbsp;</a>
@@ -13184,6 +13637,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/CN3R.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/CN3R.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/CN3R.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/CN3R.html#java-json">&nbsp;</a>
 </td>
@@ -13243,6 +13698,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_error "><a class="invisible" href="details/DC7X.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/DC7X.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/DC7X.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_ok "><a class="invisible" href="details/DC7X.html#js-yaml-json">&nbsp;</a>
@@ -13300,6 +13757,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_ok "><a class="invisible" href="details/LP6E.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/LP6E.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/LP6E.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/LP6E.html#java-json">&nbsp;</a>
 </td>
@@ -13359,6 +13818,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/26DV.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/26DV.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_json_ok "><a class="invisible" href="details/26DV.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_error "><a class="invisible" href="details/26DV.html#js-yaml-json">&nbsp;</a>
@@ -13417,6 +13878,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/FP8R.html#ruamel-event">&nbsp;</a>
 </td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/FP8R.html#hs-yaml-json">&nbsp;</a>
+</td>
  <td class="result java-json color_error "><a class="invisible" href="details/FP8R.html#java-json">&nbsp;</a>
 </td>
  <td class="result js-yaml-json color_json_diff "><a class="invisible" href="details/FP8R.html#js-yaml-json">&nbsp;</a>
@@ -13474,6 +13937,8 @@ href="frameworks.html">Frameworks</a><br>Tests</th>
  <td class="result pyyaml-event color_error "><a class="invisible" href="details/DK3J.html#pyyaml-event">&nbsp;</a>
 </td>
  <td class="result ruamel-event color_ok "><a class="invisible" href="details/DK3J.html#ruamel-event">&nbsp;</a>
+</td>
+ <td class="result hs-yaml-json color_json_ok "><a class="invisible" href="details/DK3J.html#hs-yaml-json">&nbsp;</a>
 </td>
  <td class="result java-json color_error "><a class="invisible" href="details/DK3J.html#java-json">&nbsp;</a>
 </td>
