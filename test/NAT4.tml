@@ -1,0 +1,80 @@
+=== Various empty or newline only quoted strings
+--- from: @perlpunk
+--- tags: double scalar single whitespace
+
+--- in-yaml(<)
+    ---
+    a: '
+      '
+    b: '<SPC><SPC>
+      '
+    c: "
+      "
+    d: "<SPC><SPC>
+      "
+    e: '
+
+      '
+    f: "
+
+      "
+    g: '
+
+
+      '
+    h: "
+
+
+      "
+
+--- emit-yaml(<)
+    ---
+    a: ' '
+    b: ' '
+    c: " "
+    d: " "
+    e: '
+
+      '
+    f: "\n"
+    g: '
+
+
+      '
+    h: "\n\n"
+
+--- in-json
+{
+  "a": " ",
+  "b": " ",
+  "c": " ",
+  "d": " ",
+  "e": "\n",
+  "f": "\n",
+  "g": "\n\n",
+  "h": "\n\n"
+}
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :a
+=VAL '<SPC>
+=VAL :b
+=VAL '<SPC>
+=VAL :c
+=VAL "<SPC>
+=VAL :d
+=VAL "<SPC>
+=VAL :e
+=VAL '\n
+=VAL :f
+=VAL "\n
+=VAL :g
+=VAL '\n\n
+=VAL :h
+=VAL "\n\n
+-MAP
+-DOC
+-STR

@@ -1,0 +1,43 @@
+=== More indented lines at the beginning of folded block scalars
+--- from: @perlpunk
+--- tags: folded whitespace
+
+--- in-yaml(<)
+    ---
+    a: >2
+       more indented
+      regular
+    b: >2
+
+
+       more indented
+      regular
+
+--- emit-yaml(<)
+    ---
+    a: >2
+       more indented
+      regular
+    b: >2
+
+
+       more indented
+      regular
+
+--- in-json
+{
+  "a": " more indented\nregular\n",
+  "b": "\n\n more indented\nregular\n"
+}
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :a
+=VAL > more indented\nregular\n
+=VAL :b
+=VAL >\n\n more indented\nregular\n
+-MAP
+-DOC
+-STR

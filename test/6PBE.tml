@@ -1,0 +1,35 @@
+=== Zero-indented sequences in explicit mapping keys
+--- from: @perlpunk
+--- tags: mapping sequence
+
+--- in-yaml(<)
+    ---
+    ?
+    - a
+    - b
+    :
+    - c
+    - d
+
+--- emit-yaml(<)
+    ---
+    ? - a
+      - b
+    : - c
+      - d
+
+--- test-event
++STR
++DOC ---
++MAP
++SEQ
+=VAL :a
+=VAL :b
+-SEQ
++SEQ
+=VAL :c
+=VAL :d
+-SEQ
+-MAP
+-DOC
+-STR
