@@ -1,25 +1,12 @@
 === Mapping with anchor on document start line
 --- from: @perlpunk
---- tags: anchor header mapping
+--- tags: anchor error header mapping
 
 --- in-yaml(<)
     --- &anchor a: b
 
---- in-json
-{
-  "a": "b"
-}
-
---- out-yaml(<)
-    ---
-    &anchor a: b
+--- error
 
 --- test-event
 +STR
 +DOC ---
-+MAP
-=VAL &anchor :a
-=VAL :b
--MAP
--DOC
--STR
