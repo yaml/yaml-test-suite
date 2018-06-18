@@ -104,33 +104,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/S98Z.tml">&test-S
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_diff" id="hs-yaml-event">
-<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
-<span class="status_box color_diff">&nbsp;</span>diff <br>
-
-  Got Events:
-<pre><span
-class="">+STR</span>
-<span
-class="">+DOC</span>
-<span
-class="">+MAP</span>
-<span
-class="">=VAL :empty block scalar</span>
-<span
-class="diff_line">=VAL &gt;\n \n  \n# comment\n</span>
-<span
-class="">-MAP</span>
-<span
-class="">-DOC</span>
-<span
-class="">-STR</span>
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_diff" id="nimyaml-event">
+ <hr style="clear: both;">    <div class="framework framework_box_diff" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
 <span class="status_box color_diff">&nbsp;</span>diff <br>
 
@@ -182,19 +156,7 @@ class="">-STR</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_diff" id="hs-yaml-json">
-<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="">{</span>
-<span
-class="diff_line">  &quot;empty block scalar&quot;: &quot;\n \n  \n# comment\n&quot;</span>
-<span
-class="">}</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="perl5-pm-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_diff" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">{</span>
@@ -218,7 +180,25 @@ class="">}</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="perl5-tiny-json">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="hs-yaml-event">
+<h3><a href="#hs-yaml-event">hs-yaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+parsing error near byte offset Pos {posByteOffset = 42, posCharOffset = 42, posLine = 6, posColumn = 0} (leading empty lines contain more spaces than the first non-empty line in scalar)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="hs-yaml-json">
+<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>hsyaml-parser: user error (:6:0: leading empty lines contain more spaces than the first non-empty line in scalar)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to find multi-line scalar content at /bin/perl5-tiny-json line 12.
 </pre>

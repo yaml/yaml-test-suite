@@ -103,6 +103,11 @@ alias: *anchor
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -195,20 +200,6 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: No anchor for alias &#39;anchor&#39; at /bin/perl5-xs-json line 12, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: No anchor for alias &#39;anchor&#39; at /bin/perl5-xs-pl line 14, &lt;&gt; line 1.
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
@@ -236,6 +227,17 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;alias&#39; =&gt; &#39;value&#39;,
   &#39;anchored&#39; =&gt; &#39;value&#39;
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;alias&#39; =&gt; &#39;value&#39;,
+  &#39;anchored&#39; =&gt; ${\$VAR1-&gt;{&#39;alias&#39;}}
 }
 </pre>
 

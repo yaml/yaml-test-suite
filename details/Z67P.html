@@ -100,6 +100,11 @@ folded: !foo &gt;1
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -151,21 +156,7 @@ class="">-STR</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_diff" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="">{</span>
-<span
-class="diff_line">  &quot;folded&quot;: null,</span>
-<span
-class="">  &quot;literal&quot;: &quot;value\n&quot;</span>
-<span
-class="">}</span>
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_error" id="java-json">
+ <hr style="clear: both;">       <div class="framework framework_box_error" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
  in &#39;reader&#39;, line 3, column 9:
@@ -284,8 +275,8 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;folded&#39; =&gt; bless( do{\(my $o = &#39;value
-&#39;)}, &#39;foo&#39; ),
+  &#39;folded&#39; =&gt; &#39;value
+&#39;,
   &#39;literal&#39; =&gt; &#39;value
 &#39;
 }
