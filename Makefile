@@ -71,10 +71,12 @@ matrix-copy: gh-pages
 	rm -fr gh-pages/css \
 	       gh-pages/js \
 	       gh-pages/*.html \
-	       gh-pages/details
+	       gh-pages/details \
+	       gh-pages/sheet
 	cp -r matrix/matrix/html/css \
 	      matrix/matrix/html/js \
 	      matrix/matrix/html/details \
+	      matrix/matrix/html/sheet/ \
 	      matrix/matrix/html/*.html \
 	      $<
 
