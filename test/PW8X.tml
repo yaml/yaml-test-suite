@@ -10,9 +10,11 @@ Test showing empty values and missing explicit components.
 -
   &a : a
   b: &b
+-
   &c : &a
 -
   ? &d
+-
   ? &e
   : &a
 
@@ -21,8 +23,14 @@ Test showing empty values and missing explicit components.
   null,
   "a",
   {
-    "": null,
+    "": "a",
     "b": null
+  },
+  {
+    "": null
+  },
+  {
+    "": null
   },
   {
     "": null
@@ -34,9 +42,9 @@ Test showing empty values and missing explicit components.
 - a
 - &a : a
   b: &b
-  &c : &a
+- &c : &a
 - &d :
-  &e : &a
+- &e : &a
 
 --- test-event
 +STR
@@ -49,12 +57,16 @@ Test showing empty values and missing explicit components.
 =VAL :a
 =VAL :b
 =VAL &b :
+-MAP
++MAP
 =VAL &c :
 =VAL &a :
 -MAP
 +MAP
 =VAL &d :
 =VAL :
+-MAP
++MAP
 =VAL &e :
 =VAL &a :
 -MAP
