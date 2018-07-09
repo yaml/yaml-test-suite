@@ -1,12 +1,17 @@
 === Block Mapping with Missing Keys
 --- from: NimYAML tests
---- tags: error mapping empty
+--- tags: mapping empty
 
 --- in-yaml
 : a
-: b
 
---- error
+--- in-json
+{
+  "": "a"
+}
+
+--- out-yaml
+: a
 
 --- test-event
 +STR
@@ -14,3 +19,6 @@
 +MAP
 =VAL :
 =VAL :a
+-MAP
+-DOC
+-STR
