@@ -5,11 +5,6 @@
 --- in-yaml
 : a
 
---- in-json
-{
-  "": "a"
-}
-
 --- out-yaml
 : a
 
