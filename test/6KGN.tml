@@ -1,0 +1,31 @@
+=== Anchor for empty node
+--- from: https://github.com/nodeca/js-yaml/issues/301
+--- tags: alias anchor
+
+--- in-yaml(<)
+    ---
+    a: &anchor
+    b: *anchor
+
+--- out-yaml(<)
+    ---
+    a: &anchor
+    b: *anchor
+
+--- in-json
+{
+  "a": null,
+  "b": null
+}
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :a
+=VAL &anchor :
+=VAL :b
+=ALI *anchor
+-MAP
+-DOC
+-STR

@@ -1,0 +1,17 @@
+=== Invalid tabs as indendation in a mapping
+--- from: https://github.com/nodeca/js-yaml/issues/80
+--- tags: error mapping whitespace
+
+--- in-yaml(<)
+    ---
+    a:
+    <TAB>b:
+    <TAB><TAB>c: value
+
+--- error
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :a
