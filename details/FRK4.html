@@ -92,8 +92,8 @@ expected the node content, but found &#39;:&#39;
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:711)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:110)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:118)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
  </div>
 
@@ -287,7 +287,7 @@ while scanning a plain scalar at line: 2, column: 5
 =VAL :foo
 =VAL :
 Traceback (most recent call last):
-  File &quot;/bin/pyyaml-event&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/pyyaml-event&quot;, line 10, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
     while loader.check_event():
@@ -384,7 +384,7 @@ expected the node content, but found &#39;:&#39;
 =VAL :foo :
 =VAL :
 Traceback (most recent call last):
-  File &quot;/bin/ruamel-event&quot;, line 7, in &lt;module&gt;
+  File &quot;/bin/ruamel-event&quot;, line 10, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
     while loader._parser.check_event():

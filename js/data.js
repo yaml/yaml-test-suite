@@ -504,6 +504,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n+SEQ <tag:yaml.org,2002:seq>\n=VAL <tag:yaml.org,2002:str> :a\n+MAP <tag:yaml.org,2002:map>\n=VAL :key\n=VAL <tag:yaml.org,2002:str> :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
+      "6KGN" : {
+         "id" : "6KGN",
+         "in_json" : "{\n  \"a\": null,\n  \"b\": null\n}\n",
+         "in_yaml" : "---\na: &anchor\nb: *anchor\n",
+         "tags" : [
+            "alias",
+            "anchor"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :a\n=VAL &anchor :\n=VAL :b\n=ALI *anchor\n-MAP\n-DOC\n-STR\n"
+      },
       "6LVF" : {
          "id" : "6LVF",
          "in_json" : "\"foo\"\n",
@@ -2415,6 +2425,15 @@ var data = {
             "comment"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL \"double quotes\n=VAL :b\n=VAL :plain value\n=VAL :c\n=VAL :d\n+SEQ\n=VAL :seq1\n-SEQ\n+SEQ\n=VAL :seq2\n-SEQ\n=VAL :e\n+SEQ &node\n+MAP\n=VAL :x\n=VAL :y\n-MAP\n-SEQ\n=VAL :block\n=VAL >abcde\\n\n-MAP\n-DOC\n-STR\n"
+      },
+      "Y2GN" : {
+         "id" : "Y2GN",
+         "in_json" : "{\n  \"key\": \"value\"\n}\n",
+         "in_yaml" : "---\nkey: &an:chor value\n",
+         "tags" : [
+            "anchor"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :key\n=VAL &an:chor :value\n-MAP\n-DOC\n-STR\n"
       },
       "YD5X" : {
          "id" : "YD5X",
