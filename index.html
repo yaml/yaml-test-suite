@@ -16,11 +16,11 @@
 </span>
 <span class="link">
 <a href="https://github.com/perlpunk/yaml-test-matrix">yaml-test-matrix</a><br>
-<span class="info">Code to run tests for all supported frameworks and create matrix HTML</span>
+<span class="info">Code to run tests for all supported processors and create matrix HTML</span>
 </span>
 <span class="link">
 <a href="https://github.com/ingydotnet/yaml-editor">yaml-editor</a><br>
-<span class="info">Code to create Docker image for all supported frameworks and
+<span class="info">Code to create Docker image for all supported processors and
 test them interactively in vim</span>
 </span>
 </div>
@@ -31,33 +31,45 @@ test them interactively in vim</span>
 <p>
 This Matrix combines all tests from <a
 href="https://github.com/yaml/yaml-test-suite">yaml-test-suite</a> and all
-frameworks from <a
+processors from <a
 href="https://github.com/ingydotnet/yaml-editor">yaml-editor</a>.
 </p>
 <p>
 The YAML Test Suite currently targets YAML Version 1.2.
 
-Note that this list is not meant as a "Best Of" list, as some frameworks
+Note that this list is not meant as a "Best Of" list, as some processors
 implement 1.1 or 1.0 only, and the test suite contains a lot of edge cases
 that don't play such an important role in real world examples.
 
-It is suited to identify which problems each framework has and what to avoid.
+It is suited to identify which problems each processors has and what to avoid.
 </p>
 <p>
-All test cases highlighted: <a href="sheet/valid.html">Valid tests</a><br>
-Valid test results for each framework: <a href="valid.html">Valid tests</a><br>
-Invalid test results for each framework: (no page available yet)<br>
+<table class="yaml">
+<tr>
+<th align="left">Test case sheet</th>
+<td><a href="sheet/valid.html">Valid</a></td>
+<td><a href="sheet/invalid.html">Invalid</a></td>
+</tr>
+<tr>
+<th align="left">Test results per processor</th>
+<td>
+<a href="valid.html">Valid</a>
+</td>
+<td>
+</td>
+</tr>
+</table>
 </p>
 
 <div id="framework-info">
-<table class="framework-list">
+<table class="yaml">
 <tr>
 <th></th>
 <th colspan="6"><a href="valid.html">Valid (231)</a></th>
 <th colspan="3">Invalid (60)</th>
 </tr>
 <tr>
-<th colspan="2"><a href="frameworks.html">Frameworks</a></th>
+<th colspan="2"><a href="processors.html">Processors</a></th>
 <th></th>
 <th>ok</th>
 <th>n/a</th>

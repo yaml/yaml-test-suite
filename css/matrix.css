@@ -252,29 +252,29 @@ div.selector {
     display: inline;
 }
 
-#framework-info table.framework-list {
+table.yaml {
     border: 1px solid #bbb;
     border-collapse: collapse;
     box-shadow: 2px 2px 4px 1px grey;
     margin: 5px;
 }
-#framework-info table.framework-list tr th,
-    #framework-info table.framework-list tr td {
+table.yaml tr th,
+    table.yaml tr td {
     border: 1px solid #ccc;
     background-color: white;
     padding: 2px 4px 2px 4px;
 }
-#framework-info table.framework-list tr th {
+table.yaml tr th {
     font-weight: bold;
     text-align: left;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
-#framework-info table.framework-list tr td.number {
+table.yaml tr td.number {
     text-align: right;
     font-family: monospace;
 }
-#framework-info table.framework-list tr:hover > td,
-    #framework-info table.framework-list tr:hover > th {
+table.yaml tr:hover > td,
+    table.yaml tr:hover > th {
     background-color: #ddd;
 }
 
