@@ -111,9 +111,61 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/C4HZ.tml">&test-C
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="java-json">
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  msg:      Parse document failed for some reason
+  line:     1
+  column:   1
+  context:  %TAG ! tag:clarkevans.com,2002:\n--- !shape\n  # Use
+            ^
+  position: 0 (0 pre-lookahead)
+ at /bin/perl5-pegex-event line 23.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-pm-pl">
+<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Use of uninitialized value in sprintf at /lib/perl5/YAML/Error.pm line 18, &lt;&gt; line 1.
+YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
+   Code: YAML_PARSE_ERR_BAD_INLINE_IMPLICIT
+   Line: 1
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 607.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!shape&#39; at /bin/perl5-tiny-pl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+
+    bad tag found for hash: &#39;tag:clarkevans.com,2002:circle&#39;
+
+was found at document: 1
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
+<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;center&quot;:{&quot;x&quot;:73,&quot;y&quot;:129},&quot;radius&quot;:7},{&quot;finish&quot;:{&quot;x&quot;:89,&quot;y&quot;:102},&quot;start&quot;:{&quot;x&quot;:73,&quot;y&quot;:129}},{&quot;color&quot;:16772795,&quot;start&quot;:{&quot;x&quot;:73,&quot;y&quot;:129},&quot;text&quot;:&quot;Pretty vector drawing.&quot;}]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for tag:clarkevans.com,2002:shape; exception=Invalid tag: tag:clarkevans.com,2002:shape
+<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for tag:clarkevans.com,2002:shape; exception=Invalid tag: tag:clarkevans.com,2002:shape
  in &#39;reader&#39;, line 2, column 5:
     --- !shape
         ^
@@ -133,12 +185,13 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
 	... 7 more
 </pre>
+
  </div>
 
 
-  <div class="framework framework_box_error" id="js-yaml-json">
+  <div class="framework framework_box_na" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:circle&gt; at line 8, column 1:
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:circle&gt; at line 8, column 1:
     - !line
     ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
@@ -165,87 +218,6 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.c
     at startup (node.js:136:18)
     at node.js:966:3
 </pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
-  msg:      Parse document failed for some reason
-  line:     1
-  column:   1
-  context:  %TAG ! tag:clarkevans.com,2002:\n--- !shape\n  # Use
-            ^
-  position: 0 (0 pre-lookahead)
- at /bin/perl5-pegex-event line 23.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Use of uninitialized value in sprintf at /lib/perl5/YAML/Error.pm line 18, &lt;&gt; line 1.
-YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
-   Code: YAML_PARSE_ERR_BAD_INLINE_IMPLICIT
-   Line: 1
-   Document: 1
- at /lib/perl5/YAML/Loader.pm line 607.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-pl">
-<h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Use of uninitialized value in sprintf at /lib/perl5/YAML/Error.pm line 18, &lt;&gt; line 1.
-YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
-   Code: YAML_PARSE_ERR_BAD_INLINE_IMPLICIT
-   Line: 1
-   Document: 1
- at /lib/perl5/YAML/Loader.pm line 607.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!shape&#39; at /bin/perl5-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!shape&#39; at /bin/perl5-tiny-pl line 15.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    bad tag found for hash: &#39;tag:clarkevans.com,2002:circle&#39;
-
-was found at document: 1
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    bad tag found for hash: &#39;tag:clarkevans.com,2002:circle&#39;
-
-was found at document: 1
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
-<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;center&quot;:{&quot;x&quot;:73,&quot;y&quot;:129},&quot;radius&quot;:7},{&quot;finish&quot;:{&quot;x&quot;:89,&quot;y&quot;:102},&quot;start&quot;:{&quot;x&quot;:73,&quot;y&quot;:129}},{&quot;color&quot;:16772795,&quot;start&quot;:{&quot;x&quot;:73,&quot;y&quot;:129},&quot;text&quot;:&quot;Pretty vector drawing.&quot;}]
-</pre>
 
  </div>
 
@@ -253,6 +225,19 @@ was found at document: 1
   <div class="framework framework_box_na" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;radius&quot;:7,&quot;center&quot;:{&quot;y&quot;:129,&quot;x&quot;:73}},{&quot;start&quot;:{&quot;y&quot;:129,&quot;x&quot;:73},&quot;finish&quot;:{&quot;y&quot;:102,&quot;x&quot;:89}},{&quot;text&quot;:&quot;Pretty vector drawing.&quot;,&quot;start&quot;:{&quot;y&quot;:129,&quot;x&quot;:73},&quot;color&quot;:0}]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Use of uninitialized value in sprintf at /lib/perl5/YAML/Error.pm line 18, &lt;&gt; line 1.
+YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
+   Code: YAML_PARSE_ERR_BAD_INLINE_IMPLICIT
+   Line: 1
+   Document: 1
+ at /lib/perl5/YAML/Loader.pm line 607.
 </pre>
 
  </div>
@@ -357,6 +342,26 @@ bless( [
                   &#39;text&#39; =&gt; &#39;Pretty vector drawing.&#39;
                 }, &#39;label&#39; )
        ], &#39;shape&#39; )
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;!shape&#39; at /bin/perl5-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS::Load Error: The problem:
+
+    bad tag found for hash: &#39;tag:clarkevans.com,2002:circle&#39;
+
+was found at document: 1
 </pre>
 
  </div>

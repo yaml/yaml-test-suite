@@ -120,80 +120,7 @@ class="">-STR</span>
  </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_error" id="java-json">
-<h3><a href="#java-json">java-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !local; exception=Invalid tag: !local
- in &#39;reader&#39;, line 3, column 3:
-    - !local foo
-      ^
-
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:314)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequenceStep2(BaseConstructor.java:364)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequence(BaseConstructor.java:348)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq.construct(SafeConstructor.java:499)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:159)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
-	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:300)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
-	... 12 more
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: unknown tag !&lt;!local&gt; at line 3, column 13:
-    - !local foo
-                ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
-    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:928:5)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
-    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
-    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
-    at Module._compile (module.js:410:26)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
-    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
-    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
-    at Module._compile (module.js:410:26)
-    at Object.Module._extensions..js (module.js:417:10)
-    at Module.load (module.js:344:32)
-    at Function.Module._load (module.js:301:12)
-    at Function.Module.runMain (module.js:442:10)
-    at startup (node.js:136:18)
-    at node.js:966:3
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
-   Document: 2
- at /lib/perl5/YAML/Loader.pm line 88.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-pl">
+ <hr style="clear: both;">       <div class="framework framework_box_error" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
@@ -204,23 +131,9 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-json line 12.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-pl line 15.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/tag!&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -244,44 +157,6 @@ Traceback (most recent call last):
     for event in ruamel.yaml.parse(sys.stdin.read()):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
     while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
-    self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
-    token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
-    self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 285, in fetch_more_tokens
-    return self.fetch_tag()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 673, in fetch_tag
-    self.tokens.append(self.scan_tag())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1051, in scan_tag
-    suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1548, in scan_tag_uri
-    chunks.append(self.scan_uri_escapes(name, start_mark))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1585, in scan_uri_escapes
-    value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
-TypeError: decoding Unicode is not supported
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
-    return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
-    node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 130, in compose_node
-    node = self.compose_sequence_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 162, in compose_sequence_node
-    while not self.parser.check_event(SequenceEndEvent):
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
     self.current_event = self.state()
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
@@ -349,9 +224,85 @@ TypeError: decoding Unicode is not supported
  </div>
 
 
+  <div class="framework framework_box_na" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !local; exception=Invalid tag: !local
+ in &#39;reader&#39;, line 3, column 3:
+    - !local foo
+      ^
+
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:314)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequenceStep2(BaseConstructor.java:364)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequence(BaseConstructor.java:348)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq.construct(SafeConstructor.java:499)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:193)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:159)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:127)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !local
+	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:112)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:300)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
+	... 12 more
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAMLException: unknown tag !&lt;!local&gt; at line 3, column 13:
+    - !local foo
+                ^
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1401:7)
+    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:928:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
+    at Module._compile (module.js:410:26)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="luajit-json">
 <h3><a href="#luajit-json">luajit-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[&quot;foo&quot;,&quot;bar&quot;,&quot;baz&quot;]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 88.
 </pre>
 
  </div>
@@ -397,6 +348,22 @@ TypeError: decoding Unicode is not supported
  </div>
 
 
+  <div class="framework framework_box_na" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;%TAG !e! tag:example.com,2000:app/&#39; at /bin/perl5-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/tag!&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="pyyaml-json">
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
@@ -414,6 +381,45 @@ TypeError: decoding Unicode is not supported
 <span class="status_box color_na">&nbsp;</span>na  <pre>[GenericScalar(tag=u&#39;!local&#39;, content=u&#39;foo&#39;),
  &#39;bar&#39;,
  GenericScalar(tag=u&#39;tag:example.com,2000:app/tag!&#39;, content=u&#39;baz&#39;)]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
+    return self.compose_document()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 130, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 162, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
+    token.move_comment(self.scanner.peek_token())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
+    self.fetch_more_tokens()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 285, in fetch_more_tokens
+    return self.fetch_tag()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 673, in fetch_tag
+    self.tokens.append(self.scan_tag())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1051, in scan_tag
+    suffix = self.scan_tag_uri(&#39;tag&#39;, start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1548, in scan_tag_uri
+    chunks.append(self.scan_uri_escapes(name, start_mark))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1585, in scan_uri_escapes
+    value = unicode(&#39;&#39;.join(code_bytes), &#39;utf-8&#39;)  # type: ignore
+TypeError: decoding Unicode is not supported
 </pre>
 
  </div>

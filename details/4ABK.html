@@ -112,34 +112,6 @@ expected the node content, but found &#39;:&#39;
  </div>
 
 
-  <div class="framework framework_box_error" id="java-json">
-<h3><a href="#java-json">java-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
- in &#39;reader&#39;, line 5, column 1:
-    : omitted key,
-    ^
-expected the node content, but found &#39;:&#39;
- in &#39;reader&#39;, line 5, column 1:
-    : omitted key,
-    ^
-
-	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
@@ -154,19 +126,6 @@ Parse error: found unexpected &#39;:&#39;
  </div>
 
 
-  <div class="framework framework_box_error" id="luajit-json">
-<h3><a href="#luajit-json">luajit-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>luajit: found unexpected &#39;:&#39; at document: 1, line: 3, column: 5
-while scanning a plain scalar at line: 3, column: 1
-
-stack traceback:
-	[C]: in function &#39;load&#39;
-	/bin/luajit-json:6: in main chunk
-	[C]: at 0x004044a0
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
@@ -177,17 +136,6 @@ stack traceback:
                           ^
   position: 39 (0 pre-lookahead)
  at /bin/perl5-pegex-event line 23.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
-   Document: 2
- at /lib/perl5/YAML/Loader.pm line 88.
 </pre>
  </div>
 
@@ -225,19 +173,6 @@ YAML      : &quot;:,\n&quot;
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-pp-json">
-<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 4
-Column    : 13
-Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
-Got       : Invalid plain scalar
-Where     : /lib/perl5/YAML/PP/Parser.pm line 490
-YAML      : &quot;:,\n&quot;
-  at /lib/perl5/YAML/PP/Loader.pm line 59.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 4
@@ -251,13 +186,6 @@ YAML      : &quot;:,\n&quot;
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-syck-json">
-<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 5, column 1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 5, column 1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
@@ -265,28 +193,9 @@ YAML      : &quot;:,\n&quot;
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 12.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-pl line 15.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    found unexpected &#39;:&#39;
-
-was found at document: 1, line: 3, column: 5
-while scanning a plain scalar at line: 3, column: 1
 </pre>
  </div>
 
@@ -319,40 +228,6 @@ Traceback (most recent call last):
     for event in yaml.parse(sys.stdin.read()):
   File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
     while loader.check_event():
-  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
-    self.current_event = self.state()
-  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
-    return self.parse_flow_node()
-  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
-    return self.parse_node()
-  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
-    token.start_mark)
-yaml.parser.ParserError: while parsing a flow node
-expected the node content, but found &#39;:&#39;
-  in &quot;&lt;string&gt;&quot;, line 5, column 1:
-    : omitted key,
-    ^
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="pyyaml-json">
-<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
-    yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
-    return self.compose_document()
-  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
-    node = self.compose_node(None, None)
-  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
-    node = self.compose_mapping_node(anchor)
-  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 127, in compose_mapping_node
-    while not self.check_event(MappingEndEvent):
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
@@ -437,40 +312,6 @@ expected the node content, but found &#39;:&#39;
  </div>
 
 
-  <div class="framework framework_box_error" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
-    return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
-    node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
-    node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 187, in compose_mapping_node
-    while not self.parser.check_event(MappingEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
-    self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 711, in parse_flow_mapping_key
-    return self.parse_flow_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 329, in parse_flow_node
-    return self.parse_node()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 470, in parse_node
-    token.start_mark)
-ruamel.yaml.parser.ParserError: while parsing a flow node
-expected the node content, but found &#39;:&#39;
-  in &quot;&lt;byte string&gt;&quot;, line 5, column 1:
-    : omitted key,
-    ^ (line: 5)
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
@@ -505,19 +346,38 @@ expected the node content, but found &#39;:&#39;
  </div>
 
 
-  <div class="framework framework_box_error" id="ruby-json">
-<h3><a href="#ruby-json">ruby-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found unexpected &#39;:&#39; while scanning a plain scalar at line 3 column 1 (Psych::SyntaxError)
-	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
-	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
-	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
 <h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;&quot;:&quot;omitted key&quot;,&quot;http://foo.com&quot;:null,&quot;omitted value:&quot;:null,&quot;unquoted&quot;:&quot;separate&quot;}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="java-json">
+<h3><a href="#java-json">java-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; while parsing a flow node
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
+    ^
+expected the node content, but found &#39;:&#39;
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
+    ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
 
  </div>
@@ -531,6 +391,156 @@ expected the node content, but found &#39;:&#39;
   &quot;omitted value&quot;: null,
   &quot;null&quot;: &quot;omitted key&quot;
 }
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="luajit-json">
+<h3><a href="#luajit-json">luajit-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>luajit: found unexpected &#39;:&#39; at document: 1, line: 3, column: 5
+while scanning a plain scalar at line: 3, column: 1
+
+stack traceback:
+	[C]: in function &#39;load&#39;
+	/bin/luajit-json:6: in main chunk
+	[C]: at 0x004044a0
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ at /lib/perl5/YAML/Loader.pm line 88.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-pp-json">
+<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Line      : 4
+Column    : 13
+Expected  : ALIAS DOUBLEQUOTE FLOWMAP_START FLOWSEQ_START PLAIN SINGLEQUOTE
+Got       : Invalid plain scalar
+Where     : /lib/perl5/YAML/PP/Parser.pm line 490
+YAML      : &quot;:,\n&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 59.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 5, column 1): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;{&#39; at /bin/perl5-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS::Load Error: The problem:
+
+    found unexpected &#39;:&#39;
+
+was found at document: 1, line: 3, column: 5
+while scanning a plain scalar at line: 3, column: 1
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read()):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    yield loader.get_data()
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
+    return self.parse_flow_node()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
+    return self.parse_node()
+  File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
+    token.start_mark)
+yaml.parser.ParserError: while parsing a flow node
+expected the node content, but found &#39;:&#39;
+  in &quot;&lt;string&gt;&quot;, line 5, column 1:
+    : omitted key,
+    ^
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
+    yield loader._constructor.get_data()  # type: ignore
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
+    return self.compose_document()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 187, in compose_mapping_node
+    while not self.parser.check_event(MappingEndEvent):
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+    self.current_event = self.state()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 711, in parse_flow_mapping_key
+    return self.parse_flow_node()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 329, in parse_flow_node
+    return self.parse_node()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 470, in parse_node
+    token.start_mark)
+ruamel.yaml.parser.ParserError: while parsing a flow node
+expected the node content, but found &#39;:&#39;
+  in &quot;&lt;byte string&gt;&quot;, line 5, column 1:
+    : omitted key,
+    ^ (line: 5)
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/2.3.0/psych.rb:380:in `parse&#39;: (&lt;unknown&gt;): found unexpected &#39;:&#39; while scanning a plain scalar at line 3 column 1 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.3.0/psych.rb:380:in `parse_stream&#39;
+	from /usr/lib/ruby/2.3.0/psych.rb:463:in `load_stream&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
 
  </div>

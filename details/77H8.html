@@ -91,9 +91,31 @@ application specific tag: !something |
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="java-json">
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /bin/perl5-tiny-pl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /bin/perl5-xs-pl line 16, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
+<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;application specific tag&quot;:&quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,&quot;not-date&quot;:&quot;2002-04-28&quot;,&quot;picture&quot;:&quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !something; exception=Invalid tag: !something
+<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !something; exception=Invalid tag: !something
  in &#39;reader&#39;, line 10, column 27:
     application specific tag: !something |
                               ^
@@ -119,12 +141,13 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
 	... 13 more
 </pre>
+
  </div>
 
 
-  <div class="framework framework_box_error" id="js-yaml-json">
+  <div class="framework framework_box_na" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>TypeError: this is not a typed array.
+<span class="status_box color_na">&nbsp;</span>na  <pre>TypeError: this is not a typed array.
     at Function.from (native)
     at Type.constructYamlBinary [as construct] (/node_modules/js-yaml/lib/js-yaml/type/binary.js:80:41)
     at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1395:29)
@@ -148,92 +171,6 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
     at Function.Module.runMain (module.js:442:10)
     at startup (node.js:136:18)
     at node.js:966:3
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /bin/perl5-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /bin/perl5-tiny-pl line 15.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-json">
-<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /bin/perl5-xs-pl line 16, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="pyyaml-json">
-<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;type &#39;exceptions.UnicodeDecodeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/bin/pyyaml-json&quot;, line 21, in &lt;module&gt;
-    print json.dumps(doc, sort_keys=True, skipkeys=True, indent=2)
-  File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
-    sort_keys=sort_keys, **kw).encode(obj)
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 209, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 434, in _iterencode
-    for chunk in _iterencode_dict(o, _current_indent_level):
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 390, in _iterencode_dict
-    yield _encoder(value)
-UnicodeDecodeError: &#39;utf8&#39; codec can&#39;t decode byte 0x84 in position 10: invalid start byte
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="ruamel-json">
-<h3><a href="#ruamel-json">ruamel-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;type &#39;exceptions.UnicodeDecodeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/bin/ruamel-json&quot;, line 21, in &lt;module&gt;
-    print json.dumps(doc, sort_keys=True, skipkeys=True, indent=2)
-  File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
-    sort_keys=sort_keys, **kw).encode(obj)
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 209, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 434, in _iterencode
-    for chunk in _iterencode_dict(o, _current_indent_level):
-  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 390, in _iterencode_dict
-    yield _encoder(value)
-UnicodeDecodeError: &#39;utf8&#39; codec can&#39;t decode byte 0x84 in position 10: invalid start byte
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="ruby-json">
-<h3><a href="#ruby-json">ruby-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/vendor_ruby/json/common.rb:223:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
-	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
-	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
-	from /usr/lib/ruby/vendor_ruby/json/common.rb:394:in `dump&#39;
-	from /bin/ruby-json:7:in `block in &lt;main&gt;&#39;
-	from /bin/ruby-json:6:in `each&#39;
-	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
-<h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;application specific tag&quot;:&quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,&quot;not-date&quot;:&quot;2002-04-28&quot;,&quot;picture&quot;:&quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;}
 </pre>
 
  </div>
@@ -336,6 +273,42 @@ different documents.
  </div>
 
 
+  <div class="framework framework_box_na" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /bin/perl5-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-json">
+<h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="pyyaml-json">
+<h3><a href="#pyyaml-json">pyyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;type &#39;exceptions.UnicodeDecodeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/bin/pyyaml-json&quot;, line 21, in &lt;module&gt;
+    print json.dumps(doc, sort_keys=True, skipkeys=True, indent=2)
+  File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 209, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 390, in _iterencode_dict
+    yield _encoder(value)
+UnicodeDecodeError: &#39;utf8&#39; codec can&#39;t decode byte 0x84 in position 10: invalid start byte
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;application specific tag&#39;: GenericScalar(tag=u&#39;!something&#39;, content=u&#39;The semantics of the tag\nabove may be different for\ndifferent documents.\n&#39;),
@@ -346,11 +319,45 @@ different documents.
  </div>
 
 
+  <div class="framework framework_box_na" id="ruamel-json">
+<h3><a href="#ruamel-json">ruamel-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;type &#39;exceptions.UnicodeDecodeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/bin/ruamel-json&quot;, line 21, in &lt;module&gt;
+    print json.dumps(doc, sort_keys=True, skipkeys=True, indent=2)
+  File &quot;/usr/lib/python2.7/json/__init__.py&quot;, line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 209, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File &quot;/usr/lib/python2.7/json/encoder.py&quot;, line 390, in _iterencode_dict
+    yield _encoder(value)
+UnicodeDecodeError: &#39;utf8&#39; codec can&#39;t decode byte 0x84 in position 10: invalid start byte
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;application specific tag&#39;: GenericScalar(tag=u&#39;!something&#39;, content=u&#39;The semantics of the tag\nabove may be different for\ndifferent documents.\n&#39;),
  &#39;not-date&#39;: &#39;2002-04-28&#39;,
  &#39;picture&#39;: &quot;GIF89a\x0c\x00\x0c\x00\x84\x00\x00\xff\xff\xf7\xf5\xf5\xee\xe9\xe9\xe5fff\x00\x00\x00\xe7\xe7\xe7^^^\xf3\xf3\xed\x8e\x8e\x8e\xe0\xe0\xe0\x9f\x9f\x9f\x93\x93\x93\xa7\xa7\xa7\x9e\x9e\x9ei^\x10&#39; \x82\n\x01\x00;&quot;}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruby-json">
+<h3><a href="#ruby-json">ruby-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/vendor_ruby/json/common.rb:223:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
+	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
+	from /usr/lib/ruby/vendor_ruby/json/common.rb:223:in `generate&#39;
+	from /usr/lib/ruby/vendor_ruby/json/common.rb:394:in `dump&#39;
+	from /bin/ruby-json:7:in `block in &lt;main&gt;&#39;
+	from /bin/ruby-json:6:in `each&#39;
+	from /bin/ruby-json:6:in `&lt;main&gt;&#39;
 </pre>
 
  </div>
