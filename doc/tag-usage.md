@@ -1,7 +1,7 @@
 Test Suite Tags
 ===============
 
-The .tml files under the test/ directory have a tags line that looks like this:
+The .tml files under the `test/` directory have a tags line that looks like this:
 ```
 tags: block sequence mapping spec
 ```
