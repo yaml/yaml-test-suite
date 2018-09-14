@@ -49,6 +49,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/S3PD.tml">&test-S
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="js-event">
+<h3><a href="#js-event">js-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -61,6 +66,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/S3PD.tml">&test-S
 
  <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-yaml-json">
 <h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-json">
+<h3><a href="#js-json">js-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -171,19 +181,20 @@ expected &lt;block end&gt;, but found &#39;:&#39;
     at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
-    at Module._compile (module.js:410:26)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
-    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
-    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
-    at Module._compile (module.js:410:26)
-    at Object.Module._extensions..js (module.js:417:10)
-    at Module.load (module.js:344:32)
-    at Function.Module._load (module.js:301:12)
-    at Function.Module.runMain (module.js:442:10)
-    at startup (node.js:136:18)
-    at node.js:966:3
+    at Module._compile (module.js:652:30)
+    at Object.exports.run (/usr/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/lib/node_modules/coffee-script/bin/coffee:15:45)
+    at Module._compile (module.js:652:30)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
 </pre>
  </div>
 
@@ -369,17 +380,17 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 10, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 880, in parse
     while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 141, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 561, in parse_block_mapping_key
-    token.start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 578, in parse_block_mapping_key
+    token.start_mark,
 ruamel.yaml.parser.ParserError: while parsing a block mapping
   in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
     plain key: in-line value
     ^ (line: 1)
-expected &lt;block end&gt;, but found &#39;:&#39;
+expected &lt;block end&gt;, but found u&#39;:&#39;
   in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
     : # Both empty
     ^ (line: 2)
@@ -392,27 +403,27 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 949, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 101, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 138, in compose_node
     node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 187, in compose_mapping_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 210, in compose_mapping_node
     while not self.parser.check_event(MappingEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 141, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 561, in parse_block_mapping_key
-    token.start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 578, in parse_block_mapping_key
+    token.start_mark,
 ruamel.yaml.parser.ParserError: while parsing a block mapping
   in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
     plain key: in-line value
     ^ (line: 1)
-expected &lt;block end&gt;, but found &#39;:&#39;
+expected &lt;block end&gt;, but found u&#39;:&#39;
   in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
     : # Both empty
     ^ (line: 2)
@@ -425,27 +436,27 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 949, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 101, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 132, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 138, in compose_node
     node = self.compose_mapping_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 187, in compose_mapping_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 210, in compose_mapping_node
     while not self.parser.check_event(MappingEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 141, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 561, in parse_block_mapping_key
-    token.start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 578, in parse_block_mapping_key
+    token.start_mark,
 ruamel.yaml.parser.ParserError: while parsing a block mapping
   in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
     plain key: in-line value
     ^ (line: 1)
-expected &lt;block end&gt;, but found &#39;:&#39;
+expected &lt;block end&gt;, but found u&#39;:&#39;
   in &quot;&lt;byte string&gt;&quot;, line 2, column 1:
     : # Both empty
     ^ (line: 2)

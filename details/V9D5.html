@@ -59,6 +59,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/V9D5.tml">&test-V
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="js-event">
+<h3><a href="#js-event">js-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -196,18 +201,18 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 949, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 101, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 114, in construct_document
-    for dummy in generator:
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 611, in construct_yaml_map
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 118, in construct_document
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 671, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 356, in construct_mapping
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 398, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 229, in construct_mapping
-    exc, key_node.start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 230, in construct_mapping
+    key_node.start_mark,
 ruamel.yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;byte string&gt;&quot;, line 2, column 3:
     - ? earth: blue
@@ -236,6 +241,23 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
   },
   {
     &quot;{earth\u003dblue}&quot;: {
+      &quot;moon&quot;: &quot;white&quot;
+    }
+  }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="js-json">
+<h3><a href="#js-json">js-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &quot;sun&quot;: &quot;yellow&quot;
+  },
+  {
+    &quot;{\&quot;earth\&quot;:\&quot;blue\&quot;}&quot;: {
       &quot;moon&quot;: &quot;white&quot;
     }
   }
@@ -361,7 +383,7 @@ stack traceback:
       &quot;sun&quot; : &quot;yellow&quot;
    },
    {
-      &quot;HASH(0x24898d0)&quot; : {
+      &quot;HASH(0xa8c8b8)&quot; : {
          &quot;moon&quot; : &quot;white&quot;
       }
    }
@@ -378,9 +400,9 @@ stack traceback:
     &#39;sun&#39; =&gt; &#39;yellow&#39;
   },
   {
-    &#39;HASH(0xcb64f0)&#39; =&gt; {
-                          &#39;moon&#39; =&gt; &#39;white&#39;
-                        }
+    &#39;HASH(0x18c84f0)&#39; =&gt; {
+                           &#39;moon&#39; =&gt; &#39;white&#39;
+                         }
   }
 ]
 </pre>
@@ -423,18 +445,18 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 949, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 101, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 114, in construct_document
-    for dummy in generator:
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 611, in construct_yaml_map
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 118, in construct_document
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 671, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 356, in construct_mapping
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 398, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 229, in construct_mapping
-    exc, key_node.start_mark)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 230, in construct_mapping
+    key_node.start_mark,
 ruamel.yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;byte string&gt;&quot;, line 2, column 3:
     - ? earth: blue

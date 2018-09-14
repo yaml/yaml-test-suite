@@ -40,6 +40,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/8XYN.tml">&test-8
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="js-event">
+<h3><a href="#js-event">js-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="nimyaml-event">
 <h3><a href="#nimyaml-event">nimyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -52,6 +57,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/8XYN.tml">&test-8
 
  <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-yaml-json">
 <h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-json">
+<h3><a href="#js-json">js-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -367,22 +377,22 @@ expected alphabetic or numeric character, but found &#39;\xf0\x9f\x98\x81&#39;
 Traceback (most recent call last):
   File &quot;/bin/ruamel-event&quot;, line 10, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 595, in parse
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 880, in parse
     while loader._parser.check_event():
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 141, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 482, in parse_block_sequence_first_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 498, in parse_block_sequence_first_entry
     return self.parse_block_sequence_entry()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 504, in parse_block_sequence_entry
     token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 182, in peek_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 281, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
     return self.fetch_anchor()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 664, in fetch_anchor
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 694, in fetch_anchor
     self.tokens.append(self.scan_anchor(AnchorToken))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1003, in scan_anchor
-    % utf8(ch), self.reader.get_mark())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1068, in scan_anchor
+    self.reader.get_mark(),
 ruamel.yaml.scanner.ScannerError: while scanning an anchor
   in &quot;&lt;byte string&gt;&quot;, line 2, column 3:
     - &amp;😁 unicode anchor
@@ -400,32 +410,32 @@ expected alphabetic or numeric character, but found &#39;\xf0\x9f\x98\x81&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 949, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 101, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 130, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 136, in compose_node
     node = self.compose_sequence_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 162, in compose_sequence_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 178, in compose_sequence_node
     while not self.parser.check_event(SequenceEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 141, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 482, in parse_block_sequence_first_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 498, in parse_block_sequence_first_entry
     return self.parse_block_sequence_entry()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 504, in parse_block_sequence_entry
     token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 182, in peek_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 281, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
     return self.fetch_anchor()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 664, in fetch_anchor
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 694, in fetch_anchor
     self.tokens.append(self.scan_anchor(AnchorToken))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1003, in scan_anchor
-    % utf8(ch), self.reader.get_mark())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1068, in scan_anchor
+    self.reader.get_mark(),
 ruamel.yaml.scanner.ScannerError: &lt;exception str() failed&gt;
 </pre>
  </div>
@@ -436,32 +446,32 @@ ruamel.yaml.scanner.ScannerError: &lt;exception str() failed&gt;
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 656, in load_all
-    yield loader._constructor.get_data()  # type: ignore
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 97, in get_data
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/main.py&quot;, line 949, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 101, in get_data
     return self.construct_document(self.composer.get_node())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 65, in get_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
     return self.compose_document()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 96, in compose_document
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
     node = self.compose_node(None, None)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 130, in compose_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 136, in compose_node
     node = self.compose_sequence_node(anchor)
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 162, in compose_sequence_node
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py&quot;, line 178, in compose_sequence_node
     while not self.parser.check_event(SequenceEndEvent):
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 144, in check_event
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 141, in check_event
     self.current_event = self.state()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 482, in parse_block_sequence_first_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 498, in parse_block_sequence_first_entry
     return self.parse_block_sequence_entry()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 488, in parse_block_sequence_entry
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/parser.py&quot;, line 504, in parse_block_sequence_entry
     token.move_comment(self.scanner.peek_token())
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 173, in peek_token
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 182, in peek_token
     self.fetch_more_tokens()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 281, in fetch_more_tokens
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 290, in fetch_more_tokens
     return self.fetch_anchor()
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 664, in fetch_anchor
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 694, in fetch_anchor
     self.tokens.append(self.scan_anchor(AnchorToken))
-  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1003, in scan_anchor
-    % utf8(ch), self.reader.get_mark())
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/scanner.py&quot;, line 1068, in scan_anchor
+    self.reader.get_mark(),
 ruamel.yaml.scanner.ScannerError: &lt;exception str() failed&gt;
 </pre>
  </div>

@@ -47,6 +47,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/LX3P.tml">&test-L
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="js-event">
+<h3><a href="#js-event">js-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -110,8 +115,8 @@ class="">-STR</span>
 +SEQ
 =VAL :flow
 -SEQ
-Use of uninitialized value $next_rule_name in hash element at /lib/perl5/YAML/PP/Parser.pm line 460, &lt;&gt; line 1.
-Unexpected at /lib/perl5/YAML/PP/Parser.pm line 528, &lt;&gt; line 1.
+Use of uninitialized value $next_rule_name in hash element at /lib/perl5/YAML/PP/Parser.pm line 485, &lt;&gt; line 1.
+Unexpected at /lib/perl5/YAML/PP/Parser.pm line 553, &lt;&gt; line 1.
  at /bin/perl5-pp-event line 19.
 </pre>
  </div>
@@ -119,8 +124,8 @@ Unexpected at /lib/perl5/YAML/PP/Parser.pm line 528, &lt;&gt; line 1.
 
   <div class="framework framework_box_error" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Use of uninitialized value $next_rule_name in hash element at /lib/perl5/YAML/PP/Parser.pm line 460, &lt;&gt; line 1.
-Unexpected at /lib/perl5/YAML/PP/Parser.pm line 528, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Use of uninitialized value $next_rule_name in hash element at /lib/perl5/YAML/PP/Parser.pm line 485, &lt;&gt; line 1.
+Unexpected at /lib/perl5/YAML/PP/Parser.pm line 553, &lt;&gt; line 1.
  at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
  </div>
@@ -177,6 +182,16 @@ found unacceptable key (unhashable type: &#39;list&#39;)
  </div>
 
 
+  <div class="framework framework_box_na" id="js-json">
+<h3><a href="#js-json">js-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;[\&quot;flow\&quot;]&quot;: &quot;block&quot;
+}
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
@@ -202,7 +217,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-pm-json">
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x120be50)&quot; : &quot;block&quot;
+   &quot;ARRAY(0xc7dec0)&quot; : &quot;block&quot;
 }
 </pre>
 
@@ -212,7 +227,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x165edd8)&#39; =&gt; &#39;block&#39;
+  &#39;ARRAY(0x241ede8)&#39; =&gt; &#39;block&#39;
 }
 </pre>
 
@@ -221,8 +236,8 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Use of uninitialized value $next_rule_name in hash element at /lib/perl5/YAML/PP/Parser.pm line 460, &lt;&gt; line 1.
-Unexpected at /lib/perl5/YAML/PP/Parser.pm line 528, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>Use of uninitialized value $next_rule_name in hash element at /lib/perl5/YAML/PP/Parser.pm line 485, &lt;&gt; line 1.
+Unexpected at /lib/perl5/YAML/PP/Parser.pm line 553, &lt;&gt; line 1.
  at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
 
@@ -260,7 +275,7 @@ Unexpected at /lib/perl5/YAML/PP/Parser.pm line 528, &lt;&gt; line 1.
   <div class="framework framework_box_na" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x1210930)&quot; : &quot;block&quot;
+   &quot;ARRAY(0x13f6930)&quot; : &quot;block&quot;
 }
 </pre>
 
@@ -270,7 +285,7 @@ Unexpected at /lib/perl5/YAML/PP/Parser.pm line 528, &lt;&gt; line 1.
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x152e5c8)&#39; =&gt; &#39;block&#39;
+  &#39;ARRAY(0x20105c8)&#39; =&gt; &#39;block&#39;
 }
 </pre>
 

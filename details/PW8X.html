@@ -187,7 +187,40 @@ class="">]</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="js-yaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="js-event">
+<h3><a href="#js-event">js-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
+=VAL &amp;a :
+=VAL :a
+undefined
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="js-json">
+<h3><a href="#js-json">js-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>/bin/js-json:8
+  if (doc.errors.length !== 0) throw doc.errors[0]
+                               ^
+
+YAMLSemanticError: Map keys must be unique; &quot;null&quot; is repeated
+    at Object.parseMap [as resolve] (/node_modules/yaml/dist/schema/parseMap.js:68:27)
+    at Schema.resolveNode (/node_modules/yaml/dist/schema/index.js:123:27)
+    at Schema.resolveNodeWithFallback (/node_modules/yaml/dist/schema/index.js:145:22)
+    at Document.resolveNode (/node_modules/yaml/dist/Document.js:380:22)
+    at resolveBlockSeqItems (/node_modules/yaml/dist/schema/parseSeq.js:55:24)
+    at Object.parseSeq [as resolve] (/node_modules/yaml/dist/schema/parseSeq.js:27:83)
+    at Schema.resolveNode (/node_modules/yaml/dist/schema/index.js:123:27)
+    at Schema.resolveNodeWithFallback (/node_modules/yaml/dist/schema/index.js:145:22)
+    at Document.resolveNode (/node_modules/yaml/dist/Document.js:380:22)
+    at contents.forEach.node (/node_modules/yaml/dist/Document.js:122:32)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: bad indentation of a sequence entry at line 4, column 6:
       &amp;a : a
@@ -201,19 +234,20 @@ class="">]</span>
     at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
-    at Module._compile (module.js:410:26)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
-    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
-    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
-    at Module._compile (module.js:410:26)
-    at Object.Module._extensions..js (module.js:417:10)
-    at Module.load (module.js:344:32)
-    at Function.Module._load (module.js:301:12)
-    at Function.Module.runMain (module.js:442:10)
-    at startup (node.js:136:18)
-    at node.js:966:3
+    at Module._compile (module.js:652:30)
+    at Object.exports.run (/usr/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/lib/node_modules/coffee-script/bin/coffee:15:45)
+    at Module._compile (module.js:652:30)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
 </pre>
  </div>
 
@@ -390,7 +424,7 @@ Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 16, &lt;
   <div class="framework framework_box_na" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[None, &#39;a&#39;, {None: None, &#39;b&#39;: None}, {None: None}]
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:125: ReusedAnchorWarning: 
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:131: ReusedAnchorWarning: 
 found duplicate anchor u&#39;a&#39;
 first occurrence   in &quot;&lt;byte string&gt;&quot;, line 1, column 3:
     - &amp;a
@@ -399,7 +433,7 @@ second occurrence   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
       &amp;a : a
       ^ (line: 4)
   warnings.warn(ws, ReusedAnchorWarning)
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:125: ReusedAnchorWarning: 
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:131: ReusedAnchorWarning: 
 found duplicate anchor u&#39;a&#39;
 first occurrence   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
       &amp;a : a
@@ -408,7 +442,7 @@ second occurrence   in &quot;&lt;byte string&gt;&quot;, line 6, column 8:
       &amp;c : &amp;a
            ^ (line: 6)
   warnings.warn(ws, ReusedAnchorWarning)
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:125: ReusedAnchorWarning: 
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/composer.py:131: ReusedAnchorWarning: 
 found duplicate anchor u&#39;a&#39;
 first occurrence   in &quot;&lt;byte string&gt;&quot;, line 6, column 8:
       &amp;c : &amp;a
@@ -417,7 +451,7 @@ second occurrence   in &quot;&lt;byte string&gt;&quot;, line 10, column 5:
       : &amp;a
         ^ (line: 10)
   warnings.warn(ws, ReusedAnchorWarning)
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:262: DuplicateKeyFutureWarning: while constructing a mapping
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:276: DuplicateKeyFutureWarning: while constructing a mapping
   in &quot;&lt;byte string&gt;&quot;, line 4, column 3:
       &amp;a : a
       ^ (line: 4)
@@ -429,11 +463,11 @@ found duplicate key &quot;None&quot; with value &quot;None&quot; (original value
 To suppress this check see:
     http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
 
-Duplicate keys will become and error in future releases, and are errors
+Duplicate keys will become an error in future releases, and are errors
 by default when using the new API.
 
   warnings.warn(DuplicateKeyFutureWarning(*args))
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:262: DuplicateKeyFutureWarning: while constructing a mapping
+/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:276: DuplicateKeyFutureWarning: while constructing a mapping
   in &quot;&lt;byte string&gt;&quot;, line 8, column 3:
       ? &amp;d
       ^ (line: 8)
@@ -445,7 +479,7 @@ found duplicate key &quot;None&quot; with value &quot;None&quot; (original value
 To suppress this check see:
     http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
 
-Duplicate keys will become and error in future releases, and are errors
+Duplicate keys will become an error in future releases, and are errors
 by default when using the new API.
 
   warnings.warn(DuplicateKeyFutureWarning(*args))

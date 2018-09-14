@@ -60,6 +60,11 @@ description:
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="js-event">
+<h3><a href="#js-event">js-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -361,32 +366,222 @@ class="">-STR</span>
  </div>
 
 
+  <div class="framework framework_box_na" id="js-json">
+<h3><a href="#js-json">js-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;canonical&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,
+  &quot;generic&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;,
+  &quot;description&quot;: &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;
+}
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>TypeError: this is not a typed array.
-    at Function.from (native)
-    at Type.constructYamlBinary [as construct] (/node_modules/js-yaml/lib/js-yaml/type/binary.js:80:41)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1395:29)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1062:11)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
-    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
-    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
-    at Module._compile (module.js:410:26)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
-    at compileScript (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
-    at compilePath (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
-    at Object.exports.run (/usr/local/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
-    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/coffee-script/bin/coffee:15:45)
-    at Module._compile (module.js:410:26)
-    at Object.Module._extensions..js (module.js:417:10)
-    at Module.load (module.js:344:32)
-    at Function.Module._load (module.js:301:12)
-    at Function.Module.runMain (module.js:442:10)
-    at startup (node.js:136:18)
-    at node.js:966:3
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;canonical&quot;: {
+    &quot;type&quot;: &quot;Buffer&quot;,
+    &quot;data&quot;: [
+      71,
+      73,
+      70,
+      56,
+      57,
+      97,
+      12,
+      0,
+      12,
+      0,
+      132,
+      0,
+      0,
+      255,
+      255,
+      247,
+      245,
+      245,
+      238,
+      233,
+      233,
+      229,
+      102,
+      102,
+      102,
+      0,
+      0,
+      0,
+      231,
+      231,
+      231,
+      94,
+      94,
+      94,
+      243,
+      243,
+      237,
+      142,
+      142,
+      142,
+      224,
+      224,
+      224,
+      159,
+      159,
+      159,
+      147,
+      147,
+      147,
+      167,
+      167,
+      167,
+      158,
+      158,
+      158,
+      105,
+      105,
+      105,
+      99,
+      99,
+      99,
+      163,
+      163,
+      163,
+      132,
+      132,
+      132,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      255,
+      254,
+      249,
+      33,
+      254,
+      14,
+      77,
+      97,
+      100,
+      101,
+      32,
+      119,
+      105,
+      116,
+      104,
+      32,
+      71,
+      73,
+      77,
+      80,
+      0,
+      44,
+      0,
+      0,
+      0,
+      0,
+      12,
+      0,
+      12,
+      0,
+      0,
+      5,
+      44,
+      32,
+      32,
+      142,
+      129,
+      48,
+      158,
+      227,
+      64,
+      20,
+      232,
+      105,
+      16,
+      196,
+      209,
+      138,
+      8,
+      28,
+      207,
+      128,
+      77,
+      36,
+      122,
+      239,
+      255,
+      48,
+      133,
+      112,
+      184,
+      176,
+      49,
+      102,
+      13,
+      27,
+      206,
+      1,
+      195,
+      1,
+      30,
+      16,
+      39,
+      32,
+      130,
+      10,
+      1,
+      0,
+      59
+    ]
+  },
+  &quot;generic&quot;: {
+    &quot;type&quot;: &quot;Buffer&quot;,
+    &quot;data&quot;: [
+      71,
+      73,
+      70,
+      56,
+      57,
+      97,
+      12,
+----- 8&lt; -----
 </pre>
 
  </div>
