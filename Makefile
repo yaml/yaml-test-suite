@@ -81,7 +81,7 @@ matrix-copy: gh-pages
 	      $<
 
 gh-pages:
-	git clone $$(git config remote.origin.url) -b $@ $@
+	git worktree add $@ $@
 
 #------------------------------------------------------------------------------
 clean:
