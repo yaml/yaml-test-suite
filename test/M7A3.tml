@@ -18,13 +18,11 @@
 "Bare document"
 "%!PS-Adobe-2.0 # Not the first line\n"
 
---- out-yaml(<)
+--- emit-yaml(<)
     Bare document
     ...
-# XXX Following line has trailing space (libyaml)
-    ---<SPC>
-    ...
-    --- "%!PS-Adobe-2.0 # Not the first line\n"
+    |
+      %!PS-Adobe-2.0 # Not the first line
 
 --- test-event
 +STR
