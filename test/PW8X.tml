@@ -18,25 +18,6 @@ Test showing empty values and missing explicit components.
   ? &e
   : &a
 
---- in-json
-[
-  null,
-  "a",
-  {
-    "": "a",
-    "b": null
-  },
-  {
-    "": null
-  },
-  {
-    "": null
-  },
-  {
-    "": null
-  }
-]
-
 --- out-yaml
 - &a
 - a
