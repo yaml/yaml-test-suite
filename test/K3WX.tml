@@ -1,0 +1,26 @@
+=== Colon and adjacent value after comment on next line
+--- from: <Source URL or description>
+--- tags: tag words
+
+--- in-yaml(<)
+    ---
+    { "foo" # comment
+      :bar }
+
+--- out-yaml(<)
+    "foo": bar
+
+--- in-json
+{
+  "foo": "bar"
+}
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL "foo
+=VAL :bar
+-MAP
+-DOC
+-STR
