@@ -1,0 +1,15 @@
+=== Comment and document-end marker
+--- from: @perlpunk
+--- tags: comment footer
+
+--- in-yaml(<)
+    # comment
+    ...
+
+--- out-yaml(<)
+
+--- in-json
+
+--- test-event
++STR
+-STR
