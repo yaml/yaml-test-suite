@@ -4,7 +4,9 @@
 
 --- in-yaml
 : a
-: b
+
+--- out-yaml
+: a
 
 --- test-event
 +STR
@@ -12,8 +14,6 @@
 +MAP
 =VAL :
 =VAL :a
-=VAL :
-=VAL :b
 -MAP
 -DOC
 -STR
