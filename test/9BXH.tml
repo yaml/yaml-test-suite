@@ -1,0 +1,48 @@
+=== Multiline doublequoted flow mapping key without value
+--- from: @perlpunk
+--- tags: double flow mapping
+
+--- in-yaml(<)
+    ---
+    - { "single line", a: b}
+    - { "multi
+      line", a: b}
+
+--- out-yaml(<)
+    ---
+    - "single line":<SPC>
+      a: b
+    - "multi line":<SPC>
+      a: b
+
+--- in-json
+[
+  {
+    "single line": null,
+    "a": "b"
+  },
+  {
+    "multi line": null,
+    "a": "b"
+  }
+]
+
+--- test-event
++STR
++DOC ---
++SEQ
++MAP
+=VAL "single line
+=VAL :
+=VAL :a
+=VAL :b
+-MAP
++MAP
+=VAL "multi line
+=VAL :
+=VAL :a
+=VAL :b
+-MAP
+-SEQ
+-DOC
+-STR
