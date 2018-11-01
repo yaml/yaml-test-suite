@@ -1,0 +1,30 @@
+=== Multiline plain value with tabs on empty lines
+--- from: @perlpunk
+--- tags: scalar whitespace
+
+--- in-yaml(<)
+    key:
+      value
+      with
+      <TAB>
+      tabs
+
+--- out-yaml(<)
+    key: 'value with
+
+      tabs'
+
+--- in-json
+{
+  "key": "value with\ntabs"
+}
+
+--- test-event
++STR
++DOC
++MAP
+=VAL :key
+=VAL :value with\ntabs
+-MAP
+-DOC
+-STR
