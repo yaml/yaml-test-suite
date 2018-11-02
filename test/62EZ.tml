@@ -1,0 +1,19 @@
+=== Invalid block mapping key on same line as previous key
+--- from: @perlpunk
+--- tags: error mapping
+
+--- in-yaml(<)
+    ---
+    x: { y: z }in: valid
+
+--- error
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :x
++MAP
+=VAL :y
+=VAL :z
+-MAP
