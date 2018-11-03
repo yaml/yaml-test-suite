@@ -36,9 +36,9 @@ error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/236B.tml">Source</a><br>
 <a href="../details/236B.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">foo:</span><span class="comment">
-</span><span class="default">  bar</span><span class="comment">
-</span><span class="default">invalid</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">foo:</span><span class="eol">
+</span><span class="default">  bar</span><span class="eol">
+</span><span class="default">invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-2CMS"><td class="title" colspan="4"><a href="#2CMS">#</a><a name="2CMS">&nbsp;</a>2CMS - Invalid mapping in plain multiline
@@ -49,9 +49,9 @@ error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/2CMS.tml">Source</a><br>
 <a href="../details/2CMS.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">this</span><span class="comment">
-</span><span class="default"> is</span><span class="comment">
-</span><span class="default">  invalid: x</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">this</span><span class="eol">
+</span><span class="default"> is</span><span class="eol">
+</span><span class="default">  invalid: x</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-3HFZ"><td class="title" colspan="4"><a href="#3HFZ">#</a><a name="3HFZ">&nbsp;</a>3HFZ - Invalid content after document end marker
@@ -62,9 +62,9 @@ error, footer<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/3HFZ.tml">Source</a><br>
 <a href="../details/3HFZ.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">key: value</span><span class="comment">
-</span><span class="default">... invalid</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">key: value</span><span class="eol">
+</span><span class="default">... invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-4EJS"><td class="title" colspan="4"><a href="#4EJS">#</a><a name="4EJS">&nbsp;</a>4EJS - Invalid tabs as indendation in a mapping
@@ -75,10 +75,10 @@ error, mapping, whitespace<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/4EJS.tml">Source</a><br>
 <a href="../details/4EJS.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">a:</span><span class="comment">
-</span><span class="default"></span><span class="tab">	</span><span class="default">b:</span><span class="comment">
-</span><span class="default"></span><span class="tab">		</span><span class="default">c: value</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">a:</span><span class="eol">
+</span><span class="default"></span><span class="tab">	</span><span class="default">b:</span><span class="eol">
+</span><span class="default"></span><span class="tab">		</span><span class="default">c: value</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-4H7K"><td class="title" colspan="4"><a href="#4H7K">#</a><a name="4H7K">&nbsp;</a>4H7K - Flow sequence with invalid extra closing bracket
@@ -89,8 +89,8 @@ error, flow<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/4H7K.tml">Source</a><br>
 <a href="../details/4H7K.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">[ a, b, c ] ]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ a, b, c ] ]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-4HVU"><td class="title" colspan="4"><a href="#4HVU">#</a><a name="4HVU">&nbsp;</a>4HVU - Wrong indendation in Sequence
@@ -101,10 +101,10 @@ error, indent, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/4HVU.tml">Source</a><br>
 <a href="../details/4HVU.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="comment">
-</span><span class="default">   - ok</span><span class="comment">
-</span><span class="default">   - also ok</span><span class="comment">
-</span><span class="default">  - wrong</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="eol">
+</span><span class="default">   - ok</span><span class="eol">
+</span><span class="default">   - also ok</span><span class="eol">
+</span><span class="default">  - wrong</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-4JVG"><td class="title" colspan="4"><a href="#4JVG">#</a><a name="4JVG">&nbsp;</a>4JVG - Scalar value with two anchors
@@ -115,10 +115,10 @@ anchor, error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/4JVG.tml">Source</a><br>
 <a href="../details/4JVG.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">top1: &amp;node1</span><span class="comment">
-</span><span class="default">  &amp;k1 key1: val1</span><span class="comment">
-</span><span class="default">top2: &amp;node2</span><span class="comment">
-</span><span class="default">  &amp;v2 val2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">top1: &amp;node1</span><span class="eol">
+</span><span class="default">  &amp;k1 key1: val1</span><span class="eol">
+</span><span class="default">top2: &amp;node2</span><span class="eol">
+</span><span class="default">  &amp;v2 val2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-55WF"><td class="title" colspan="4"><a href="#55WF">#</a><a name="55WF">&nbsp;</a>55WF - Invalid escape in double quoted string
@@ -129,8 +129,8 @@ double, error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/55WF.tml">Source</a><br>
 <a href="../details/55WF.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">&quot;\.&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">&quot;\.&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-5LLU"><td class="title" colspan="4"><a href="#5LLU">#</a><a name="5LLU">&nbsp;</a>5LLU - Block scalar with wrong indented line after spaces only
@@ -141,11 +141,11 @@ error, folded, whitespace<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/5LLU.tml">Source</a><br>
 <a href="../details/5LLU.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">block scalar: &gt;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">block scalar: &gt;</span><span class="eol">
 </span><span class="trailing_space"> 
 </span><span class="trailing_space">  
 </span><span class="trailing_space">   
-</span><span class="default"> invalid</span><span class="comment">
+</span><span class="default"> invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-5TRB"><td class="title" colspan="4"><a href="#5TRB">#</a><a name="5TRB">&nbsp;</a>5TRB - Invalid document-start marker in doublequoted tring
@@ -156,10 +156,10 @@ double, error, header<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/5TRB.tml">Source</a><br>
 <a href="../details/5TRB.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">&quot;</span><span class="comment">
-</span><span class="default">---</span><span class="comment">
-</span><span class="default">&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">&quot;</span><span class="eol">
+</span><span class="default">---</span><span class="eol">
+</span><span class="default">&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-5U3A"><td class="title" colspan="4"><a href="#5U3A">#</a><a name="5U3A">&nbsp;</a>5U3A - Sequence on same Line as Mapping Key
@@ -170,8 +170,20 @@ error, mapping, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/5U3A.tml">Source</a><br>
 <a href="../details/5U3A.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: - a</span><span class="comment">
-</span><span class="default">     - b</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: - a</span><span class="eol">
+</span><span class="default">     - b</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-62EZ"><td class="title" colspan="4"><a href="#62EZ">#</a><a name="62EZ">&nbsp;</a>62EZ - Invalid block mapping key on same line as previous key
+</td></tr>
+<tr id="tr-content-62EZ">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, mapping<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/62EZ.tml">Source</a><br>
+<a href="../details/62EZ.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="eol">
+</span><span class="default">x</span><span class="colon">:</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default"> </span><span class="default">y</span><span class="colon">:</span><span class="default"> </span><span class="default">z</span><span class="default"> </span><span class="flowmap_end">}</span><span class="default">in</span><span class="colon">:</span><span class="default"> </span><span class="default">valid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-6JTT"><td class="title" colspan="4"><a href="#6JTT">#</a><a name="6JTT">&nbsp;</a>6JTT - Flow sequence without closing bracket
@@ -182,8 +194,8 @@ error, flow<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/6JTT.tml">Source</a><br>
 <a href="../details/6JTT.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">[ [ a, b, c ]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ [ a, b, c ]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-6S55"><td class="title" colspan="4"><a href="#6S55">#</a><a name="6S55">&nbsp;</a>6S55 - Invalid scalar at the end of sequence
@@ -194,10 +206,10 @@ error, mapping, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/6S55.tml">Source</a><br>
 <a href="../details/6S55.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="comment">
-</span><span class="default"> - bar</span><span class="comment">
-</span><span class="default"> - baz</span><span class="comment">
-</span><span class="default"> invalid</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="eol">
+</span><span class="default"> - bar</span><span class="eol">
+</span><span class="default"> - baz</span><span class="eol">
+</span><span class="default"> invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-7LBH"><td class="title" colspan="4"><a href="#7LBH">#</a><a name="7LBH">&nbsp;</a>7LBH - Multiline double quoted implicit keys
@@ -208,9 +220,9 @@ error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/7LBH.tml">Source</a><br>
 <a href="../details/7LBH.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&quot;a\nb&quot;: 1</span><span class="comment">
-</span><span class="default">&quot;c</span><span class="comment">
-</span><span class="default"> d&quot;: 1</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&quot;a\nb&quot;: 1</span><span class="eol">
+</span><span class="default">&quot;c</span><span class="eol">
+</span><span class="default"> d&quot;: 1</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-7MNF"><td class="title" colspan="4"><a href="#7MNF">#</a><a name="7MNF">&nbsp;</a>7MNF - Missing colon
@@ -221,9 +233,9 @@ error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/7MNF.tml">Source</a><br>
 <a href="../details/7MNF.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">top1:</span><span class="comment">
-</span><span class="default">  key1: val1</span><span class="comment">
-</span><span class="default">top2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">top1:</span><span class="eol">
+</span><span class="default">  key1: val1</span><span class="eol">
+</span><span class="default">top2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-8XDJ"><td class="title" colspan="4"><a href="#8XDJ">#</a><a name="8XDJ">&nbsp;</a>8XDJ - Comment in plain multiline value
@@ -234,9 +246,9 @@ comment, error, scalar<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/8XDJ.tml">Source</a><br>
 <a href="../details/8XDJ.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: word1</span><span class="comment">
-</span><span class="default">#  xxx</span><span class="comment">
-</span><span class="default">  word2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: word1</span><span class="eol">
+</span><span class="default">#  xxx</span><span class="eol">
+</span><span class="default">  word2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-9C9N"><td class="title" colspan="4"><a href="#9C9N">#</a><a name="9C9N">&nbsp;</a>9C9N - Wrong indented flow sequence
@@ -247,10 +259,10 @@ error, flow, indent, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9C9N.tml">Source</a><br>
 <a href="../details/9C9N.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="comment">
-</span><span class="default">flow</span><span class="colon">:</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default">a</span><span class="flow_comma">,</span><span class="comment">
-</span><span class="default">b</span><span class="flow_comma">,</span><span class="comment">
-</span><span class="default">c</span><span class="flowseq_end">]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">flow: [a,</span><span class="eol">
+</span><span class="default">b,</span><span class="eol">
+</span><span class="default">c]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-9CWY"><td class="title" colspan="4"><a href="#9CWY">#</a><a name="9CWY">&nbsp;</a>9CWY - Invalid scalar at the end of mapping
@@ -261,10 +273,22 @@ error, mapping, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9CWY.tml">Source</a><br>
 <a href="../details/9CWY.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="comment">
-</span><span class="default"> - item1</span><span class="comment">
-</span><span class="default"> - item2</span><span class="comment">
-</span><span class="default">invalid</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="eol">
+</span><span class="default"> - item1</span><span class="eol">
+</span><span class="default"> - item2</span><span class="eol">
+</span><span class="default">invalid</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-9JBA"><td class="title" colspan="4"><a href="#9JBA">#</a><a name="9JBA">&nbsp;</a>9JBA - Invalid comment after end of flow sequence
+</td></tr>
+<tr id="tr-content-9JBA">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+comment, error, flow, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9JBA.tml">Source</a><br>
+<a href="../details/9JBA.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ a, b, c, ]#invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-9KBC"><td class="title" colspan="4"><a href="#9KBC">#</a><a name="9KBC">&nbsp;</a>9KBC - Mapping starting at --- line
@@ -275,8 +299,8 @@ error, header, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9KBC.tml">Source</a><br>
 <a href="../details/9KBC.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">--- key1: value1</span><span class="comment">
-</span><span class="default">    key2: value2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="default"> </span><span class="default">key1</span><span class="colon">:</span><span class="default"> </span><span class="default">value1</span><span class="eol">
+</span><span class="indent">    </span><span class="default">key2</span><span class="colon">:</span><span class="default"> </span><span class="default">value2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-9MAG"><td class="title" colspan="4"><a href="#9MAG">#</a><a name="9MAG">&nbsp;</a>9MAG - Flow sequence with invalid comma at the beginning
@@ -287,8 +311,8 @@ error, flow<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MAG.tml">Source</a><br>
 <a href="../details/9MAG.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">[ , a, b, c ]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ , a, b, c ]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-B63P"><td class="title" colspan="4"><a href="#B63P">#</a><a name="B63P">&nbsp;</a>B63P - Directive without document
@@ -299,8 +323,8 @@ directive, document, error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/B63P.tml">Source</a><br>
 <a href="../details/B63P.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%YAML 1.2</span><span class="comment">
-</span><span class="default">...</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%YAML 1.2</span><span class="eol">
+</span><span class="default">...</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-BD7L"><td class="title" colspan="4"><a href="#BD7L">#</a><a name="BD7L">&nbsp;</a>BD7L - Invalid mapping after sequence
@@ -311,9 +335,9 @@ error, mapping, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/BD7L.tml">Source</a><br>
 <a href="../details/BD7L.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- item1</span><span class="comment">
-</span><span class="default">- item2</span><span class="comment">
-</span><span class="default">invalid: x</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- item1</span><span class="eol">
+</span><span class="default">- item2</span><span class="eol">
+</span><span class="default">invalid: x</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-BF9H"><td class="title" colspan="4"><a href="#BF9H">#</a><a name="BF9H">&nbsp;</a>BF9H - Trailing comment in multiline plain scalar
@@ -324,10 +348,10 @@ comment, error, scalar<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/BF9H.tml">Source</a><br>
 <a href="../details/BF9H.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">plain: a</span><span class="comment">
-</span><span class="default">       b # end of scalar</span><span class="comment">
-</span><span class="default">       c</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">plain: a</span><span class="eol">
+</span><span class="default">       b # end of scalar</span><span class="eol">
+</span><span class="default">       c</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-BS4K"><td class="title" colspan="4"><a href="#BS4K">#</a><a name="BS4K">&nbsp;</a>BS4K - Comment between plain scalar lines
@@ -338,8 +362,8 @@ error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/BS4K.tml">Source</a><br>
 <a href="../details/BS4K.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">word1  # comment</span><span class="comment">
-</span><span class="default">word2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">word1  # comment</span><span class="eol">
+</span><span class="default">word2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-C2SP"><td class="title" colspan="4"><a href="#C2SP">#</a><a name="C2SP">&nbsp;</a>C2SP - Flow Mapping Key on two lines
@@ -350,8 +374,8 @@ error, flow, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/C2SP.tml">Source</a><br>
 <a href="../details/C2SP.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">[23</span><span class="comment">
-</span><span class="default">]: 42</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">[23</span><span class="eol">
+</span><span class="default">]: 42</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-CML9"><td class="title" colspan="4"><a href="#CML9">#</a><a name="CML9">&nbsp;</a>CML9 - Missing comma in flow
@@ -362,9 +386,9 @@ comment, error, flow<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/CML9.tml">Source</a><br>
 <a href="../details/CML9.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: [ word1</span><span class="comment">
-</span><span class="default">#  xxx</span><span class="comment">
-</span><span class="default">  word2 ]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: [ word1</span><span class="eol">
+</span><span class="default">#  xxx</span><span class="eol">
+</span><span class="default">  word2 ]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-CQ3W"><td class="title" colspan="4"><a href="#CQ3W">#</a><a name="CQ3W">&nbsp;</a>CQ3W - Double quoted string without closing quote
@@ -375,8 +399,8 @@ double, error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/CQ3W.tml">Source</a><br>
 <a href="../details/CQ3W.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">key: &quot;missing closing quote</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">key: &quot;missing closing quote</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-CTN5"><td class="title" colspan="4"><a href="#CTN5">#</a><a name="CTN5">&nbsp;</a>CTN5 - Flow sequence with invalid extra comma
@@ -387,8 +411,21 @@ error, flow<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/CTN5.tml">Source</a><br>
 <a href="../details/CTN5.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">[ a, b, c, , ]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ a, b, c, , ]</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-CVW2"><td class="title" colspan="4"><a href="#CVW2">#</a><a name="CVW2">&nbsp;</a>CVW2 - Invalid comment after comma
+</td></tr>
+<tr id="tr-content-CVW2">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+comment, error, flow, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/CVW2.tml">Source</a><br>
+<a href="../details/CVW2.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ a, b, c,#invalid</span><span class="eol">
+</span><span class="default">]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-CXX2"><td class="title" colspan="4"><a href="#CXX2">#</a><a name="CXX2">&nbsp;</a>CXX2 - Mapping with anchor on document start line
@@ -399,7 +436,7 @@ anchor, error, header, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/CXX2.tml">Source</a><br>
 <a href="../details/CXX2.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="default"> </span><span class="anchor">&amp;anchor</span><span class="default"> </span><span class="default">a</span><span class="colon">:</span><span class="default"> </span><span class="default">b</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="default"> </span><span class="anchor">&amp;anchor</span><span class="default"> </span><span class="default">a</span><span class="colon">:</span><span class="default"> </span><span class="default">b</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-D49Q"><td class="title" colspan="4"><a href="#D49Q">#</a><a name="D49Q">&nbsp;</a>D49Q - Multiline single quoted implicit keys
@@ -410,9 +447,9 @@ error, mapping, single<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/D49Q.tml">Source</a><br>
 <a href="../details/D49Q.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&#39;a\nb&#39;: 1</span><span class="comment">
-</span><span class="default">&#39;c</span><span class="comment">
-</span><span class="default"> d&#39;: 1</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&#39;a\nb&#39;: 1</span><span class="eol">
+</span><span class="default">&#39;c</span><span class="eol">
+</span><span class="default"> d&#39;: 1</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-DMG6"><td class="title" colspan="4"><a href="#DMG6">#</a><a name="DMG6">&nbsp;</a>DMG6 - Wrong indendation in Map
@@ -423,9 +460,9 @@ error, indent, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/DMG6.tml">Source</a><br>
 <a href="../details/DMG6.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="comment">
-</span><span class="default">  ok: 1</span><span class="comment">
-</span><span class="default"> wrong: 2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="eol">
+</span><span class="default">  ok: 1</span><span class="eol">
+</span><span class="default"> wrong: 2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-EB22"><td class="title" colspan="4"><a href="#EB22">#</a><a name="EB22">&nbsp;</a>EB22 - Missing document-end marker before directive
@@ -436,11 +473,11 @@ directive, error, footer<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/EB22.tml">Source</a><br>
 <a href="../details/EB22.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">scalar1 # comment</span><span class="comment">
-</span><span class="default">%YAML 1.2</span><span class="comment">
-</span><span class="default">---</span><span class="comment">
-</span><span class="default">scalar2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">scalar1 # comment</span><span class="eol">
+</span><span class="default">%YAML 1.2</span><span class="eol">
+</span><span class="default">---</span><span class="eol">
+</span><span class="default">scalar2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-EW3V"><td class="title" colspan="4"><a href="#EW3V">#</a><a name="EW3V">&nbsp;</a>EW3V - Wrong indendation in mapping
@@ -451,8 +488,8 @@ error, indent, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/EW3V.tml">Source</a><br>
 <a href="../details/EW3V.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">k1: v1</span><span class="comment">
-</span><span class="default"> k2: v2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">k1: v1</span><span class="eol">
+</span><span class="default"> k2: v2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-G7JE"><td class="title" colspan="4"><a href="#G7JE">#</a><a name="G7JE">&nbsp;</a>G7JE - Multiline implicit keys
@@ -463,9 +500,9 @@ error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/G7JE.tml">Source</a><br>
 <a href="../details/G7JE.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">a\nb: 1</span><span class="comment">
-</span><span class="default">c</span><span class="comment">
-</span><span class="default"> d: 1</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">a\nb: 1</span><span class="eol">
+</span><span class="default">c</span><span class="eol">
+</span><span class="default"> d: 1</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-G9HC"><td class="title" colspan="4"><a href="#G9HC">#</a><a name="G9HC">&nbsp;</a>G9HC - Invalid anchor in zero indented sequence
@@ -476,11 +513,11 @@ anchor, error, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/G9HC.tml">Source</a><br>
 <a href="../details/G9HC.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">seq:</span><span class="comment">
-</span><span class="default">&amp;anchor</span><span class="comment">
-</span><span class="default">- a</span><span class="comment">
-</span><span class="default">- b</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">seq:</span><span class="eol">
+</span><span class="default">&amp;anchor</span><span class="eol">
+</span><span class="default">- a</span><span class="eol">
+</span><span class="default">- b</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-GDY7"><td class="title" colspan="4"><a href="#GDY7">#</a><a name="GDY7">&nbsp;</a>GDY7 - Comment that looks like a mapping key
@@ -491,8 +528,8 @@ comment, error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/GDY7.tml">Source</a><br>
 <a href="../details/GDY7.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: value</span><span class="comment">
-</span><span class="default">this is #not a: key</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: value</span><span class="eol">
+</span><span class="default">this is #not a: key</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-GT5M"><td class="title" colspan="4"><a href="#GT5M">#</a><a name="GT5M">&nbsp;</a>GT5M - Node anchor in sequence
@@ -503,9 +540,9 @@ anchor, error, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/GT5M.tml">Source</a><br>
 <a href="../details/GT5M.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- item1</span><span class="comment">
-</span><span class="default">&amp;node</span><span class="comment">
-</span><span class="default">- item2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- item1</span><span class="eol">
+</span><span class="default">&amp;node</span><span class="eol">
+</span><span class="default">- item2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-H7J7"><td class="title" colspan="4"><a href="#H7J7">#</a><a name="H7J7">&nbsp;</a>H7J7 - Node anchor not indented
@@ -516,9 +553,9 @@ anchor, error, indent<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">Source</a><br>
 <a href="../details/H7J7.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: &amp;x</span><span class="comment">
-</span><span class="default">!!map</span><span class="comment">
-</span><span class="default">  a: b</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: &amp;x</span><span class="eol">
+</span><span class="default">!!map</span><span class="eol">
+</span><span class="default">  a: b</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-HRE5"><td class="title" colspan="4"><a href="#HRE5">#</a><a name="HRE5">&nbsp;</a>HRE5 - Double quoted scalar with escaped single quote
@@ -529,8 +566,8 @@ double, error, single<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/HRE5.tml">Source</a><br>
 <a href="../details/HRE5.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">double: &quot;quoted \&#39; scalar&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">double: &quot;quoted \&#39; scalar&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-HU3P"><td class="title" colspan="4"><a href="#HU3P">#</a><a name="HU3P">&nbsp;</a>HU3P - Invalid Mapping in plain scalar
@@ -541,9 +578,9 @@ error, mapping, scalar<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/HU3P.tml">Source</a><br>
 <a href="../details/HU3P.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="comment">
-</span><span class="default">  word1 word2</span><span class="comment">
-</span><span class="default">  no: key</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key:</span><span class="eol">
+</span><span class="default">  word1 word2</span><span class="eol">
+</span><span class="default">  no: key</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-JY7Z"><td class="title" colspan="4"><a href="#JY7Z">#</a><a name="JY7Z">&nbsp;</a>JY7Z - Trailing content that looks like a mapping
@@ -554,9 +591,9 @@ double, error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/JY7Z.tml">Source</a><br>
 <a href="../details/JY7Z.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &quot;quoted1&quot;</span><span class="comment">
-</span><span class="default">key2: &quot;quoted2&quot; no key: nor value</span><span class="comment">
-</span><span class="default">key3: &quot;quoted3&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &quot;quoted1&quot;</span><span class="eol">
+</span><span class="default">key2: &quot;quoted2&quot; no key: nor value</span><span class="eol">
+</span><span class="default">key3: &quot;quoted3&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-LHL4"><td class="title" colspan="4"><a href="#LHL4">#</a><a name="LHL4">&nbsp;</a>LHL4 - Invalid tag
@@ -567,8 +604,8 @@ error, tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/LHL4.tml">Source</a><br>
 <a href="../details/LHL4.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">!invalid{}tag scalar</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">!invalid{}tag scalar</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-N4JP"><td class="title" colspan="4"><a href="#N4JP">#</a><a name="N4JP">&nbsp;</a>N4JP - Bad indentation in mapping
@@ -579,9 +616,9 @@ double, error, indent, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/N4JP.tml">Source</a><br>
 <a href="../details/N4JP.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">map:</span><span class="comment">
-</span><span class="default">  key1: &quot;quoted1&quot;</span><span class="comment">
-</span><span class="default"> key2: &quot;bad indentation&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">map:</span><span class="eol">
+</span><span class="default">  key1: &quot;quoted1&quot;</span><span class="eol">
+</span><span class="default"> key2: &quot;bad indentation&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-N782"><td class="title" colspan="4"><a href="#N782">#</a><a name="N782">&nbsp;</a>N782 - Invalid document markers in flow style
@@ -592,10 +629,10 @@ edge, error, flow, footer, header<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/N782.tml">Source</a><br>
 <a href="../details/N782.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">[</span><span class="comment">
-</span><span class="default">--- ,</span><span class="comment">
-</span><span class="default">...</span><span class="comment">
-</span><span class="default">]</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">[</span><span class="eol">
+</span><span class="default">--- ,</span><span class="eol">
+</span><span class="default">...</span><span class="eol">
+</span><span class="default">]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-NTY5"><td class="title" colspan="4"><a href="#NTY5">#</a><a name="NTY5">&nbsp;</a>NTY5 - Missing space in YAML directive
@@ -606,9 +643,21 @@ directive, error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/NTY5.tml">Source</a><br>
 <a href="../details/NTY5.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="yaml_directive">%YAML1.2</span><span class="comment">
-</span><span class="doc_start">---</span><span class="comment">
-</span><span class="default">key</span><span class="colon">:</span><span class="default"> </span><span class="default">value</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%YAML1.2</span><span class="eol">
+</span><span class="default">---</span><span class="eol">
+</span><span class="default">key: value</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-P2EQ"><td class="title" colspan="4"><a href="#P2EQ">#</a><a name="P2EQ">&nbsp;</a>P2EQ - Invalid sequene item on same line as previous item
+</td></tr>
+<tr id="tr-content-P2EQ">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/P2EQ.tml">Source</a><br>
+<a href="../details/P2EQ.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default"> </span><span class="default">y</span><span class="colon">:</span><span class="default"> </span><span class="default">z</span><span class="default"> </span><span class="flowmap_end">}</span><span class="dash">-</span><span class="default"> </span><span class="default">invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-Q4CL"><td class="title" colspan="4"><a href="#Q4CL">#</a><a name="Q4CL">&nbsp;</a>Q4CL - Trailing content after quoted value
@@ -619,9 +668,9 @@ double, error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/Q4CL.tml">Source</a><br>
 <a href="../details/Q4CL.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &quot;quoted1&quot;</span><span class="comment">
-</span><span class="default">key2: &quot;quoted2&quot; trailing content</span><span class="comment">
-</span><span class="default">key3: &quot;quoted3&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &quot;quoted1&quot;</span><span class="eol">
+</span><span class="default">key2: &quot;quoted2&quot; trailing content</span><span class="eol">
+</span><span class="default">key3: &quot;quoted3&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-QB6E"><td class="title" colspan="4"><a href="#QB6E">#</a><a name="QB6E">&nbsp;</a>QB6E - Wrong indented multiline quoted scalar
@@ -632,10 +681,10 @@ double, error, indent<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/QB6E.tml">Source</a><br>
 <a href="../details/QB6E.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">quoted: &quot;a</span><span class="comment">
-</span><span class="default">b</span><span class="comment">
-</span><span class="default">c&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">quoted: &quot;a</span><span class="eol">
+</span><span class="default">b</span><span class="eol">
+</span><span class="default">c&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-QLJ7"><td class="title" colspan="4"><a href="#QLJ7">#</a><a name="QLJ7">&nbsp;</a>QLJ7 - Tag shorthand used in documents but only defined in the first
@@ -646,13 +695,13 @@ directive, error, tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/QLJ7.tml">Source</a><br>
 <a href="../details/QLJ7.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%TAG !prefix! tag:example.com,2011:</span><span class="comment">
-</span><span class="default">--- !prefix!A</span><span class="comment">
-</span><span class="default">a: b</span><span class="comment">
-</span><span class="default">--- !prefix!B</span><span class="comment">
-</span><span class="default">c: d</span><span class="comment">
-</span><span class="default">--- !prefix!C</span><span class="comment">
-</span><span class="default">e: f</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%TAG !prefix! tag:example.com,2011:</span><span class="eol">
+</span><span class="default">--- !prefix!A</span><span class="eol">
+</span><span class="default">a: b</span><span class="eol">
+</span><span class="default">--- !prefix!B</span><span class="eol">
+</span><span class="default">c: d</span><span class="eol">
+</span><span class="default">--- !prefix!C</span><span class="eol">
+</span><span class="default">e: f</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-RXY3"><td class="title" colspan="4"><a href="#RXY3">#</a><a name="RXY3">&nbsp;</a>RXY3 - Invalid document-end marker in single quoted string
@@ -663,10 +712,10 @@ error, footer, single<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/RXY3.tml">Source</a><br>
 <a href="../details/RXY3.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">&#39;</span><span class="comment">
-</span><span class="default">...</span><span class="comment">
-</span><span class="default">&#39;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">&#39;</span><span class="eol">
+</span><span class="default">...</span><span class="eol">
+</span><span class="default">&#39;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-SR86"><td class="title" colspan="4"><a href="#SR86">#</a><a name="SR86">&nbsp;</a>SR86 - Anchor plus Alias
@@ -677,8 +726,8 @@ alias, error<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/SR86.tml">Source</a><br>
 <a href="../details/SR86.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &amp;a value</span><span class="comment">
-</span><span class="default">key2: &amp;b *a</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &amp;a value</span><span class="eol">
+</span><span class="default">key2: &amp;b *a</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-SU5Z"><td class="title" colspan="4"><a href="#SU5Z">#</a><a name="SU5Z">&nbsp;</a>SU5Z - Comment without whitespace after doublequoted scalar
@@ -689,7 +738,7 @@ comment, double, error, whitespace<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/SU5Z.tml">Source</a><br>
 <a href="../details/SU5Z.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: &quot;value&quot;# invalid comment</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key: &quot;value&quot;# invalid comment</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-SU74"><td class="title" colspan="4"><a href="#SU74">#</a><a name="SU74">&nbsp;</a>SU74 - Anchor and alias as mapping key
@@ -700,8 +749,8 @@ alias, anchor, error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/SU74.tml">Source</a><br>
 <a href="../details/SU74.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &amp;alias value1</span><span class="comment">
-</span><span class="default">&amp;b *alias : value2</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">key1: &amp;alias value1</span><span class="eol">
+</span><span class="default">&amp;b *alias : value2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-SY6V"><td class="title" colspan="4"><a href="#SY6V">#</a><a name="SY6V">&nbsp;</a>SY6V - Anchor before sequence entry on same line
@@ -712,7 +761,7 @@ anchor, error, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/SY6V.tml">Source</a><br>
 <a href="../details/SY6V.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&amp;anchor - sequence entry</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&amp;anchor - sequence entry</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-TD5N"><td class="title" colspan="4"><a href="#TD5N">#</a><a name="TD5N">&nbsp;</a>TD5N - Invalid scalar after sequence
@@ -723,9 +772,9 @@ error, scalar, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/TD5N.tml">Source</a><br>
 <a href="../details/TD5N.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- item1</span><span class="comment">
-</span><span class="default">- item2</span><span class="comment">
-</span><span class="default">invalid</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- item1</span><span class="eol">
+</span><span class="default">- item2</span><span class="eol">
+</span><span class="default">invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-U44R"><td class="title" colspan="4"><a href="#U44R">#</a><a name="U44R">&nbsp;</a>U44R - Bad indentation in mapping (2)
@@ -736,9 +785,9 @@ double, error, indent, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/U44R.tml">Source</a><br>
 <a href="../details/U44R.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">map:</span><span class="comment">
-</span><span class="default">  key1: &quot;quoted1&quot;</span><span class="comment">
-</span><span class="default">   key2: &quot;bad indentation&quot;</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">map:</span><span class="eol">
+</span><span class="default">  key1: &quot;quoted1&quot;</span><span class="eol">
+</span><span class="default">   key2: &quot;bad indentation&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-W9L4"><td class="title" colspan="4"><a href="#W9L4">#</a><a name="W9L4">&nbsp;</a>W9L4 - Literal block scalar with more spaces in first line
@@ -749,11 +798,11 @@ error, literal, whitespace<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/W9L4.tml">Source</a><br>
 <a href="../details/W9L4.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">block scalar: |</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">block scalar: |</span><span class="eol">
 </span><span class="trailing_space">     
-</span><span class="default">  more spaces at the beginning</span><span class="comment">
-</span><span class="default">  are invalid</span><span class="comment">
+</span><span class="default">  more spaces at the beginning</span><span class="eol">
+</span><span class="default">  are invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-X4QW"><td class="title" colspan="4"><a href="#X4QW">#</a><a name="X4QW">&nbsp;</a>X4QW - Comment without whitespace after block scalar indicator
@@ -764,8 +813,8 @@ block, comment, error, whitespace<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/X4QW.tml">Source</a><br>
 <a href="../details/X4QW.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">block: &gt;# comment</span><span class="comment">
-</span><span class="default">  scalar</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">block: &gt;# comment</span><span class="eol">
+</span><span class="default">  scalar</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-ZCZ6"><td class="title" colspan="4"><a href="#ZCZ6">#</a><a name="ZCZ6">&nbsp;</a>ZCZ6 - Invalid mapping in plain single line value
@@ -776,7 +825,7 @@ error, mapping, scalar<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZCZ6.tml">Source</a><br>
 <a href="../details/ZCZ6.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">a: b: c: d</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">a: b: c: d</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-ZL4Z"><td class="title" colspan="4"><a href="#ZL4Z">#</a><a name="ZL4Z">&nbsp;</a>ZL4Z - Invalid nested mapping
@@ -787,8 +836,8 @@ error, mapping<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZL4Z.tml">Source</a><br>
 <a href="../details/ZL4Z.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="comment">
-</span><span class="default">a: &#39;b&#39;: c</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">a: &#39;b&#39;: c</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-ZVH3"><td class="title" colspan="4"><a href="#ZVH3">#</a><a name="ZVH3">&nbsp;</a>ZVH3 - Wrong indented sequence item
@@ -799,8 +848,8 @@ error, indent, sequence<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZVH3.tml">Source</a><br>
 <a href="../details/ZVH3.html">Test Results</a>
 </div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- key: value</span><span class="comment">
-</span><span class="default"> - item1</span><span class="comment">
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- key: value</span><span class="eol">
+</span><span class="default"> - item1</span><span class="eol">
 </span></pre></div></td>
   </tr>
  </table>

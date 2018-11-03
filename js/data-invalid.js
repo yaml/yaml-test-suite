@@ -29,7 +29,8 @@ var data = {
       "spec" : 1,
       "tag" : 1,
       "upto-1.2" : 1,
-      "whitespace" : 1
+      "whitespace" : 1,
+      "words" : 1
    },
    "tests" : {
       "236B" : {
@@ -125,6 +126,14 @@ var data = {
             "sequence"
          ]
       },
+      "62EZ" : {
+         "id" : "62EZ",
+         "in_yaml" : "---\nx: { y: z }in: valid\n",
+         "tags" : [
+            "error",
+            "mapping"
+         ]
+      },
       "6JTT" : {
          "id" : "6JTT",
          "in_yaml" : "---\n[ [ a, b, c ]\n",
@@ -182,6 +191,16 @@ var data = {
          "tags" : [
             "error",
             "mapping",
+            "sequence"
+         ]
+      },
+      "9JBA" : {
+         "id" : "9JBA",
+         "in_yaml" : "---\n[ a, b, c, ]#invalid\n",
+         "tags" : [
+            "comment",
+            "error",
+            "flow",
             "sequence"
          ]
       },
@@ -268,6 +287,16 @@ var data = {
          "tags" : [
             "error",
             "flow"
+         ]
+      },
+      "CVW2" : {
+         "id" : "CVW2",
+         "in_yaml" : "---\n[ a, b, c,#invalid\n]\n",
+         "tags" : [
+            "comment",
+            "error",
+            "flow",
+            "sequence"
          ]
       },
       "CXX2" : {
@@ -422,6 +451,14 @@ var data = {
          "tags" : [
             "directive",
             "error"
+         ]
+      },
+      "P2EQ" : {
+         "id" : "P2EQ",
+         "in_yaml" : "---\n- { y: z }- invalid\n",
+         "tags" : [
+            "error",
+            "sequence"
          ]
       },
       "Q4CL" : {

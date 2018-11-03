@@ -29,7 +29,8 @@ var data = {
       "spec" : 1,
       "tag" : 1,
       "upto-1.2" : 1,
-      "whitespace" : 1
+      "whitespace" : 1,
+      "words" : 1
    },
    "tests" : {
       "229Q" : {
@@ -375,6 +376,17 @@ var data = {
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n=VAL :one\n=VAL :two\n-SEQ\n+SEQ\n=VAL :three\n=VAL :four\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+      },
+      "5MUD" : {
+         "id" : "5MUD",
+         "in_json" : "{\n  \"foo\": \"bar\"\n}\n",
+         "in_yaml" : "---\n{ \"foo\"\n  :bar }\n",
+         "tags" : [
+            "double",
+            "flow",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
       "5NYZ" : {
          "id" : "5NYZ",
@@ -784,6 +796,16 @@ var data = {
          ],
          "test_event" : "+STR\n-STR\n"
       },
+      "8KB6" : {
+         "id" : "8KB6",
+         "in_json" : "[\n  {\n    \"single line\": null,\n    \"a\": \"b\"\n  },\n  {\n    \"multi line\": null,\n    \"a\": \"b\"\n  }\n]\n",
+         "in_yaml" : "---\n- { single line, a: b}\n- { multi\n  line, a: b}\n",
+         "tags" : [
+            "flow",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL :single line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL :multi line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
       "8MK2" : {
          "id" : "8MK2",
          "in_json" : "\"a\"\n",
@@ -868,6 +890,17 @@ var data = {
          ],
          "test_event" : "+STR\n-STR\n"
       },
+      "9BXH" : {
+         "id" : "9BXH",
+         "in_json" : "[\n  {\n    \"single line\": null,\n    \"a\": \"b\"\n  },\n  {\n    \"multi line\": null,\n    \"a\": \"b\"\n  }\n]\n",
+         "in_yaml" : "---\n- { \"single line\", a: b}\n- { \"multi\n  line\", a: b}\n",
+         "tags" : [
+            "double",
+            "flow",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL \"single line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL \"multi line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
       "9DXL" : {
          "id" : "9DXL",
          "in_json" : "{\n  \"Mapping\": \"Document\"\n}\nnull\n{\n  \"matches %\": 20\n}\n",
@@ -922,6 +955,17 @@ var data = {
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :empty key entry\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL \"JSON like\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+      },
+      "9SA2" : {
+         "id" : "9SA2",
+         "in_json" : "[\n  {\n    \"single line\": \"value\"\n  },\n  {\n    \"multi line\": \"value\"\n  }\n]\n",
+         "in_yaml" : "---\n- { \"single line\": value}\n- { \"multi\n  line\": value}\n",
+         "tags" : [
+            "double",
+            "flow",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL \"single line\n=VAL :value\n-MAP\n+MAP\n=VAL \"multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "9SHH" : {
          "id" : "9SHH",
@@ -1483,6 +1527,15 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n=VAL :1st non-empty\\n2nd non-empty 3rd non-empty\n-DOC\n-STR\n"
       },
+      "HWV9" : {
+         "id" : "HWV9",
+         "in_json" : "",
+         "in_yaml" : "...\n",
+         "tags" : [
+            "footer"
+         ],
+         "test_event" : "+STR\n-STR\n"
+      },
       "J3BT" : {
          "id" : "J3BT",
          "in_json" : "{\n  \"quoted\": \"Quoted \\t\",\n  \"block\": \"void main() {\\n\\tprintf(\\\"Hello, world!\\\\n\\\");\\n}\\n\"\n}\n",
@@ -1582,6 +1635,16 @@ var data = {
             "scalar"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a true\n=VAL :null d\n=VAL :e 42\n=VAL :\n-MAP\n-DOC\n-STR\n"
+      },
+      "K3WX" : {
+         "id" : "K3WX",
+         "in_json" : "{\n  \"foo\": \"bar\"\n}\n",
+         "in_yaml" : "---\n{ \"foo\" # comment\n  :bar }\n",
+         "tags" : [
+            "tag",
+            "words"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
       "K4SU" : {
          "id" : "K4SU",
@@ -1857,6 +1920,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :a\n=VAL ' \n=VAL :b\n=VAL ' \n=VAL :c\n=VAL \" \n=VAL :d\n=VAL \" \n=VAL :e\n=VAL '\\n\n=VAL :f\n=VAL \"\\n\n=VAL :g\n=VAL '\\n\\n\n=VAL :h\n=VAL \"\\n\\n\n-MAP\n-DOC\n-STR\n"
       },
+      "NB6Z" : {
+         "id" : "NB6Z",
+         "in_json" : "{\n  \"key\": \"value with\\ntabs\"\n}\n",
+         "in_yaml" : "key:\n  value\n  with\n  \t\n  tabs\n",
+         "tags" : [
+            "scalar",
+            "whitespace"
+         ],
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :key\n=VAL :value with\\ntabs\n-MAP\n-DOC\n-STR\n"
+      },
       "NHX8" : {
          "id" : "NHX8",
          "in_json" : "{\n  \"\": null\n}\n",
@@ -1865,6 +1938,16 @@ var data = {
             "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
+      },
+      "NJ66" : {
+         "id" : "NJ66",
+         "in_json" : "[\n  {\n    \"single line\": \"value\"\n  },\n  {\n    \"multi line\": \"value\"\n  }\n]\n",
+         "in_yaml" : "---\n- { single line: value}\n- { multi\n  line: value}\n",
+         "tags" : [
+            "flow",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL :single line\n=VAL :value\n-MAP\n+MAP\n=VAL :multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "NP9H" : {
          "id" : "NP9H",
@@ -1944,14 +2027,14 @@ var data = {
       },
       "PW8X" : {
          "id" : "PW8X",
-         "in_json" : "[\n  null,\n  \"a\",\n  {\n    \"\": null,\n    \"b\": null\n  },\n  {\n    \"\": null\n  }\n]\n",
-         "in_yaml" : "- &a\n- a\n-\n  &a : a\n  b: &b\n  &c : &a\n-\n  ? &d\n  ? &e\n  : &a\n",
+         "in_json" : null,
+         "in_yaml" : "- &a\n- a\n-\n  &a : a\n  b: &b\n-\n  &c : &a\n-\n  ? &d\n-\n  ? &e\n  : &a\n",
          "tags" : [
             "anchor",
             "empty",
             "missing"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL &a :\n=VAL :a\n+MAP\n=VAL &a :\n=VAL :a\n=VAL :b\n=VAL &b :\n=VAL &c :\n=VAL &a :\n-MAP\n+MAP\n=VAL &d :\n=VAL :\n=VAL &e :\n=VAL &a :\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL &a :\n=VAL :a\n+MAP\n=VAL &a :\n=VAL :a\n=VAL :b\n=VAL &b :\n-MAP\n+MAP\n=VAL &c :\n=VAL &a :\n-MAP\n+MAP\n=VAL &d :\n=VAL :\n-MAP\n+MAP\n=VAL &e :\n=VAL &a :\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "Q5MG" : {
          "id" : "Q5MG",
@@ -2009,6 +2092,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL :foo\n=VAL :bar\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
+      "QT73" : {
+         "id" : "QT73",
+         "in_json" : "",
+         "in_yaml" : "# comment\n...\n",
+         "tags" : [
+            "comment",
+            "footer"
+         ],
+         "test_event" : "+STR\n-STR\n"
+      },
       "R4YG" : {
          "id" : "R4YG",
          "in_json" : "[\n  \"detected\\n\",\n  \"\\n\\n# detected\\n\",\n  \" explicit\\n\",\n  \"\\t\\ndetected\\n\"\n]\n",
@@ -2022,6 +2115,17 @@ var data = {
             "upto-1.2"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL |detected\\n\n=VAL >\\n\\n# detected\\n\n=VAL | explicit\\n\n=VAL >\\t\\ndetected\\n\n-SEQ\n-DOC\n-STR\n"
+      },
+      "R52L" : {
+         "id" : "R52L",
+         "in_json" : "{\n  \"top1\": [\n    \"item1\",\n    {\n      \"key2\": \"value2\"\n    },\n    \"item3\"\n  ],\n  \"top2\": \"value2\"\n}\n",
+         "in_yaml" : "---\n{ top1: [item1, {key2: value2}, item3], top2: value2 }\n",
+         "tags" : [
+            "flow",
+            "mapping",
+            "sequence"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :top1\n+SEQ\n=VAL :item1\n+MAP\n=VAL :key2\n=VAL :value2\n-MAP\n=VAL :item3\n-SEQ\n=VAL :top2\n=VAL :value2\n-MAP\n-DOC\n-STR\n"
       },
       "RLU9" : {
          "id" : "RLU9",
