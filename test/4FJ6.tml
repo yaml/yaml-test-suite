@@ -1,0 +1,44 @@
+=== Nested implicit complex keys
+--- from: @perlpunk
+--- tags: flow mapping sequence
+
+--- in-yaml(<)
+    ---
+    [
+      [ a, [ [[b,c]]: d, e]]: 23
+    ]
+
+--- out-yaml(<)
+    ---
+    - ? - a
+        - - ? - - b
+                - c
+            : d
+          - e
+      : 23
+
+--- test-event
++STR
++DOC ---
++SEQ
++MAP
++SEQ
+=VAL :a
++SEQ
++MAP
++SEQ
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ
+=VAL :d
+-MAP
+=VAL :e
+-SEQ
+-SEQ
+=VAL :23
+-MAP
+-SEQ
+-DOC
+-STR

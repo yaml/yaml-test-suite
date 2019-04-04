@@ -1,0 +1,25 @@
+=== Colon followed by comma
+--- from: @perlpunk
+--- tags: scalar
+
+--- in-yaml(<)
+    ---
+    - :,
+
+--- out-yaml(<)
+    ---
+    - :,
+
+--- in-json
+[
+  ":,"
+]
+
+--- test-event
++STR
++DOC ---
++SEQ
+=VAL ::,
+-SEQ
+-DOC
+-STR

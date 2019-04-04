@@ -1,0 +1,40 @@
+=== Nested top level flow mapping
+--- from: @perlpunk
+--- tags: flow indent mapping sequence
+
+--- in-yaml(<)
+    { key: [[[
+      value
+     ]]]
+    }
+
+--- out-yaml(<)
+    key:
+    - - - value
+
+--- in-json
+{
+  "key": [
+    [
+      [
+        "value"
+      ]
+    ]
+  ]
+}
+
+--- test-event
++STR
++DOC
++MAP
+=VAL :key
++SEQ
++SEQ
++SEQ
+=VAL :value
+-SEQ
+-SEQ
+-SEQ
+-MAP
+-DOC
+-STR

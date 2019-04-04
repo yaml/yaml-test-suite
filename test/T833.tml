@@ -1,0 +1,17 @@
+=== Flow mapping missing a separating comma
+--- from: @perlpunk
+--- tags: error flow mapping
+
+--- in-yaml(<)
+    ---
+    {
+     foo: 1
+     bar: 2 }
+
+--- error
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :foo

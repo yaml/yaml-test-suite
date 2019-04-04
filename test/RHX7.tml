@@ -1,0 +1,18 @@
+=== YAML directive without document end marker
+--- from: @perlpunk
+--- tags: directive error
+
+--- in-yaml(<)
+    ---
+    key: value
+    %YAML 1.2
+    ---
+
+--- error
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :key
+=VAL :value

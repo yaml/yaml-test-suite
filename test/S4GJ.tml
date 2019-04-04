@@ -1,0 +1,16 @@
+=== Invalid text after block scalar indicator
+--- from: @perlpunk
+--- tags: error folded
+
+--- in-yaml(<)
+    ---
+    folded: > first line
+      second line
+
+--- error
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :folded

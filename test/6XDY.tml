@@ -1,0 +1,25 @@
+=== Two document start markers
+--- from: @perlpunk
+--- tags: header
+
+--- in-yaml(<)
+    ---
+    ---
+
+--- out-yaml(<)
+    ---
+    ---
+
+--- in-json
+null
+null
+
+--- test-event
++STR
++DOC ---
+=VAL :
+-DOC
++DOC ---
+=VAL :
+-DOC
+-STR

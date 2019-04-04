@@ -1,0 +1,15 @@
+=== Implicit key followed by newline and adjacent value
+--- from: @perlpunk
+--- tags: error flow mapping sequence
+
+--- in-yaml(<)
+    [ "key"
+      :value ]
+
+--- error
+
+--- test-event
++STR
++DOC
++SEQ
+=VAL "key

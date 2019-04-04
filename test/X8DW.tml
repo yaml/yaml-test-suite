@@ -1,0 +1,28 @@
+=== Explicit key and value seperated by comment
+--- from: @perlpunk
+--- tags: comment mapping
+
+--- in-yaml(<)
+    ---
+    ? key
+    # comment
+    : value
+
+--- out-yaml(<)
+    ---
+    key: value
+
+--- in-json
+{
+  "key": "value"
+}
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+-MAP
+-DOC
+-STR

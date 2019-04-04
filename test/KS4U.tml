@@ -1,0 +1,19 @@
+=== Invalid item after end of flow sequence
+--- from: @perlpunk
+--- tags: error flow sequence
+
+--- in-yaml(<)
+    ---
+    [
+    sequence item
+    ]
+    invalid item
+
+--- error
+
+--- test-event
++STR
++DOC ---
++SEQ
+=VAL :sequence item
+-SEQ
