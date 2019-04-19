@@ -138,7 +138,7 @@ Line      : 1
 Column    : 10
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /lib/perl5/YAML/PP/Parser.pm line 522
+Where     : /lib/perl5/YAML/PP/Parser.pm line 367
 YAML      : &quot;: separate ]\n&quot;
   at /bin/perl5-pp-event line 19.
 </pre>
@@ -151,7 +151,7 @@ YAML      : &quot;: separate ]\n&quot;
 Column    : 10
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /lib/perl5/YAML/PP/Parser.pm line 522
+Where     : /lib/perl5/YAML/PP/Parser.pm line 367
 YAML      : &quot;: separate ]\n&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
@@ -199,7 +199,7 @@ while parsing a flow node at line: 2, column: 5
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 10, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
     while loader.check_event():
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
@@ -224,10 +224,10 @@ expected the node content, but found &#39;:&#39;
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
   File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -456,7 +456,7 @@ stack traceback:
 Column    : 10
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /lib/perl5/YAML/PP/Parser.pm line 522
+Where     : /lib/perl5/YAML/PP/Parser.pm line 367
 YAML      : &quot;: separate ]\n&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
@@ -497,10 +497,10 @@ while parsing a flow node at line: 2, column: 5
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
   File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()

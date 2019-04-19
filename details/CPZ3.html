@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#3MYT - Plain Scalar looking like key, comment, anchor and tag - YAML Test Matrix</title>
+<title>#CPZ3 - Doublequoted scalar starting with a tab - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -11,21 +11,24 @@
 
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
-href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3MYT</a><br>
-&nbsp;&nbsp;Title: Plain Scalar looking like key, comment, anchor and tag</br>
-&nbsp;&nbsp;Tags: [ 1.3-err, scalar ]</tt></h2>
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/CPZ3.tml">&test-CPZ3</a><br>
+&nbsp;&nbsp;Title: Doublequoted scalar starting with a tab</br>
+&nbsp;&nbsp;Tags: [ double, scalar ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>k:#foo
- &amp;a !t s
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+tab: &quot;\tstring&quot;
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC
-=VAL :k:#foo &amp;a !t s
++DOC ---
++MAP
+=VAL :tab
+=VAL &quot;\tstring
+-MAP
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>&quot;k:#foo &amp;a !t s&quot;<br></pre>
+<pre>{<br>  &quot;tab&quot;: &quot;\tstring&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="cpp-event">
@@ -50,6 +53,16 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3
 
   <div class="framework framework_box_ok" id="libyaml-event">
 <h3><a href="#libyaml-event">libyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
@@ -93,6 +106,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -100,6 +118,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3
 
   <div class="framework framework_box_json_ok" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -123,84 +146,21 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_diff" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
-<span class="status_box color_diff">&nbsp;</span>diff <br>
-
-  Got Events:
-<pre><span
-class="">+STR</span>
-<span
-class="">+DOC</span>
-<span
-class="diff_line">=VAL :k:#foo</span>
-<span
-class="">-DOC</span>
-<span
-class="">+DOC</span>
-<span
-class="">=VAL &amp;a &lt;!t&gt; : &amp;a !t s</span>
-<span
-class="">-DOC</span>
-<span
-class="">-STR</span>
-</pre>
-
- </div>
-
-
- <hr style="clear: both;">       <div class="framework framework_box_error" id="nimyaml-event">
-<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-=VAL :k:#fooa
-Traceback (most recent call last)
-nimyaml_event.nim(8)     nimyaml_event
-stream.nim(223)          finished
-Error: unhandled exception: Unexpected token (expected document end): ltAnchor [YamlStreamError]
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
-   Document: 2
- at /lib/perl5/YAML/Loader.pm line 88.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-pm-pl">
+ <hr style="clear: both;">             <div class="framework framework_box_na" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
-   Document: 2
- at /lib/perl5/YAML/Loader.pm line 88.
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;tab&#39; =&gt; &#39;	string&#39;
+}
 </pre>
+
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;k:#foo&#39; at /bin/perl5-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;k:#foo&#39; at /bin/perl5-tiny-pl line 15.
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_na" id="perl5-pp-pl">
+  <div class="framework framework_box_na" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;k:#foo &amp;a !t s&#39;
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;tab&#39; =&gt; &#39;	string&#39;
+}
 </pre>
 
  </div>
@@ -208,7 +168,19 @@ Error: unhandled exception: Unexpected token (expected document end): ltAnchor [
 
   <div class="framework framework_box_na" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;k:#foo &amp;a !t s&#39;
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;tab&#39; =&gt; &#39;	string&#39;
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;tab&#39; =&gt; &#39;	string&#39;
+}
 </pre>
 
  </div>
@@ -216,7 +188,9 @@ Error: unhandled exception: Unexpected token (expected document end): ltAnchor [
 
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;k:#foo &amp;a !t s&#39;
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;tab&#39; =&gt; &#39;	string&#39;
+}
 </pre>
 
  </div>
@@ -224,7 +198,7 @@ Error: unhandled exception: Unexpected token (expected document end): ltAnchor [
 
   <div class="framework framework_box_na" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;k:#foo &amp;a !t s&#39;
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;tab&#39;: &#39;\tstring&#39;}
 </pre>
 
  </div>
@@ -232,7 +206,7 @@ Error: unhandled exception: Unexpected token (expected document end): ltAnchor [
 
   <div class="framework framework_box_na" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;k:#foo &amp;a !t s&#39;
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;tab&#39;: &#39;\tstring&#39;}
 </pre>
 
  </div>

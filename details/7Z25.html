@@ -236,7 +236,7 @@ was found at document: 2, line: 4, column: 1
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 10, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
     while loader.check_event():
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
@@ -255,10 +255,10 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 <span class="status_box color_error">&nbsp;</span>error <pre>&quot;scalar1&quot;
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 89, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 129, in load_all
     while loader.check_data():
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 28, in check_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 34, in check_data
     return self.check_node()
   File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 18, in check_node
     if self.check_event(StreamStartEvent):
@@ -279,10 +279,10 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 <span class="status_box color_error">&nbsp;</span>error <pre>&#39;scalar1&#39;
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 89, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 129, in load_all
     while loader.check_data():
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 28, in check_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 34, in check_data
     return self.check_node()
   File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 18, in check_node
     if self.check_event(StreamStartEvent):

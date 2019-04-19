@@ -132,7 +132,7 @@ while parsing a block mapping at line: 1, column: 1
 Traceback (most recent call last):
   File &quot;/bin/pyyaml-event&quot;, line 10, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 36, in parse
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
     while loader.check_event():
   File &quot;/lib/python2.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
@@ -153,10 +153,10 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
   File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -280,16 +280,16 @@ expected &lt;block end&gt;, but found &#39;:&#39;
                                ^
 
 YAMLSemanticError: Map keys must be unique; &quot;null&quot; is repeated
-    at Object.parseMap [as resolve] (/node_modules/yaml/dist/schema/parseMap.js:68:27)
-    at Schema.resolveNode (/node_modules/yaml/dist/schema/index.js:123:27)
-    at Schema.resolveNodeWithFallback (/node_modules/yaml/dist/schema/index.js:145:22)
-    at Document.resolveNode (/node_modules/yaml/dist/Document.js:380:22)
-    at contents.forEach.node (/node_modules/yaml/dist/Document.js:122:32)
+    at Object.parseMap [as resolve] (/node_modules/yaml/dist/schema/parseMap.js:74:27)
+    at Schema.resolveNode (/node_modules/yaml/dist/schema/index.js:178:27)
+    at Schema.resolveNodeWithFallback (/node_modules/yaml/dist/schema/index.js:200:22)
+    at Document.resolveNode (/node_modules/yaml/dist/Document.js:463:22)
+    at contents.forEach.node (/node_modules/yaml/dist/Document.js:180:26)
     at Array.forEach (&lt;anonymous&gt;)
-    at Document.parse (/node_modules/yaml/dist/Document.js:115:14)
-    at map.cstDoc (/node_modules/yaml/dist/index.js:33:71)
+    at Document.parse (/node_modules/yaml/dist/Document.js:173:14)
+    at map.cstDoc (/node_modules/yaml/dist/index.js:51:71)
     at Array.map (&lt;anonymous&gt;)
-    at Object.parseAllDocuments (/node_modules/yaml/dist/index.js:33:35)
+    at Object.parseAllDocuments (/node_modules/yaml/dist/index.js:51:35)
 </pre>
 
  </div>
@@ -300,13 +300,13 @@ YAMLSemanticError: Map keys must be unique; &quot;null&quot; is repeated
 <span class="status_box color_na">&nbsp;</span>na  <pre>YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 1:
     : a
     ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1000:9)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1027:9)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:652:30)
@@ -415,10 +415,10 @@ while parsing a block mapping at line: 1, column: 1
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
   File &quot;/lib/python2.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()

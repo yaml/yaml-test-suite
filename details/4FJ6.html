@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#Q9WF - Spec Example 6.12. Separation Spaces - YAML Test Matrix</title>
+<title>#4FJ6 - Nested implicit complex keys - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -11,33 +11,37 @@
 
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
-href="https://github.com/yaml/yaml-test-suite/blob/master/test/Q9WF.tml">&test-Q9WF</a><br>
-&nbsp;&nbsp;Title: Spec Example 6.12. Separation Spaces</br>
-&nbsp;&nbsp;Tags: [ 1.3-err, comment, spec, whitespace ]</tt></h2>
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/4FJ6.tml">&test-4FJ6</a><br>
+&nbsp;&nbsp;Title: Nested implicit complex keys</br>
+&nbsp;&nbsp;Tags: [ flow, mapping, sequence ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>{ first: Sammy, last: Sosa }:
-# Statistics:
-  hr:  # Home runs
-     65
-  avg: # Average
-   0.278
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+[
+  [ a, [ [[b,c]]: d, e]]: 23
+]
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC
++DOC ---
++SEQ
 +MAP
++SEQ
+=VAL :a
++SEQ
 +MAP
-=VAL :first
-=VAL :Sammy
-=VAL :last
-=VAL :Sosa
++SEQ
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ
+=VAL :d
 -MAP
-+MAP
-=VAL :hr
-=VAL :65
-=VAL :avg
-=VAL :0.278
+=VAL :e
+-SEQ
+-SEQ
+=VAL :23
 -MAP
--MAP
+-SEQ
 -DOC
 -STR
 </pre></div>
@@ -85,65 +89,25 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/Q9WF.tml">&test-Q
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_diff" id="perl5-pegex-event">
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="perl5-pegex-event">
 <h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
-<span class="status_box color_diff">&nbsp;</span>diff <br>
-
-  Got Events:
-<pre><span
-class="">+STR</span>
-<span
-class="">+DOC</span>
-<span
-class="">+MAP</span>
-<span
-class="diff_line">=VAL :first</span>
-<span
-class="">=VAL :Sammy</span>
-<span
-class="">=VAL :last</span>
-<span
-class="">=VAL :Sosa</span>
-<span
-class="">-MAP</span>
-<span
-class="">-DOC</span>
-<span
-class="">+DOC</span>
-<span
-class="">+MAP</span>
-<span
-class="">=VAL :</span>
-<span
-class="">+MAP</span>
-<span
-class="">=VAL :hr</span>
-<span
-class="">=VAL :     65</span>
-<span
-class="">-MAP</span>
-<span
-class="">+MAP</span>
-<span
-class="">=VAL :avg</span>
-<span
-class="">=VAL :   0.278</span>
-<span
-class="">-MAP</span>
-<span
-class="">-DOC</span>
-<span
-class="">-STR</span>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
+  msg:      Parse document failed for some reason
+  line:     3
+  column:   17
+  context:    [ a, [ [[b,c]]: d, e]]: 23\n]\n
+                            ^
+  position: 22 (0 pre-lookahead)
+ at /bin/perl5-pegex-event line 23.
 </pre>
-
  </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_error" id="perl5-pm-pl">
+  <div class="framework framework_box_error" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 4
+   Line: 2
    Document: 2
  at /lib/perl5/YAML/Loader.pm line 88.
 </pre>
@@ -153,19 +117,23 @@ class="">-STR</span>
   <div class="framework framework_box_error" id="perl5-pp-event">
 <h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-+MAP
-=VAL :first
-=VAL :Sammy
-=VAL :last
-=VAL :Sosa
--MAP
-Line      : 1
-Column    : 29
-Expected  : DOC_END DOC_START EOL
++DOC ---
++SEQ
++SEQ
+=VAL :a
++SEQ
++SEQ
++SEQ
+=VAL :b
+=VAL :c
+-SEQ
+-SEQ
+Line      : 3
+Column    : 17
+Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
 Where     : /lib/perl5/YAML/PP/Parser.pm line 367
-YAML      : &quot;:&quot;
+YAML      : &quot;: d, e]]: 23\n&quot;
   at /bin/perl5-pp-event line 19.
 </pre>
  </div>
@@ -173,27 +141,20 @@ YAML      : &quot;:&quot;
 
   <div class="framework framework_box_error" id="perl5-pp-pl">
 <h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
-Column    : 29
-Expected  : DOC_END DOC_START EOL
+<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 3
+Column    : 17
+Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
 Where     : /lib/perl5/YAML/PP/Parser.pm line 367
-YAML      : &quot;:&quot;
+YAML      : &quot;: d, e]]: 23\n&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 59.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl5-syck-pl">
-<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 29): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
 </pre>
  </div>
 
 
   <div class="framework framework_box_error" id="perl5-tiny-pl">
 <h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;Sammy, last: Sosa }:&#39; at /bin/perl5-tiny-pl line 15.
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;[&#39; at /bin/perl5-tiny-pl line 15.
 </pre>
  </div>
 
@@ -216,10 +177,10 @@ YAML      : &quot;:&quot;
   File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
-found unacceptable key (unhashable type: &#39;dict&#39;)
-  in &quot;&lt;string&gt;&quot;, line 1, column 1:
-    { first: Sammy, last: Sosa }:
-    ^
+found unacceptable key (unhashable type: &#39;list&#39;)
+  in &quot;&lt;string&gt;&quot;, line 3, column 3:
+      [ a, [ [[b,c]]: d, e]]: 23
+      ^
 </pre>
  </div>
 
@@ -239,20 +200,40 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
     value = self.construct_mapping(node)
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 398, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 217, in construct_mapping
+    key = self.construct_object(key_node, deep=True)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 170, in construct_object
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 665, in construct_yaml_seq
+    data.extend(self.construct_sequence(node))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 197, in construct_sequence
+    return [self.construct_object(child, deep=deep) for child in node.value]
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 170, in construct_object
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 665, in construct_yaml_seq
+    data.extend(self.construct_sequence(node))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 197, in construct_sequence
+    return [self.construct_object(child, deep=deep) for child in node.value]
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 170, in construct_object
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 671, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 398, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 230, in construct_mapping
     key_node.start_mark,
 ruamel.yaml.constructor.ConstructorError: while constructing a mapping
-found unacceptable key (unhashable type: &#39;dict&#39;)
-  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
-    { first: Sammy, last: Sosa }:
-    ^ (line: 1)
+found unacceptable key (unhashable type: &#39;list&#39;)
+  in &quot;&lt;byte string&gt;&quot;, line 3, column 10:
+      [ a, [ [[b,c]]: d, e]]: 23
+             ^ (line: 3)
 </pre>
  </div>
 
 
  <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
 <h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;{\&quot;first\&quot;:\&quot;Sammy\&quot;,\&quot;last\&quot;:\&quot;Sosa\&quot;}&quot;:{&quot;avg&quot;:0.278,&quot;hr&quot;:65}}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;[\&quot;a\&quot;,[{\&quot;[[\\\&quot;b\\\&quot;,\\\&quot;c\\\&quot;]]\&quot;:\&quot;d\&quot;},\&quot;e\&quot;]]&quot;:23}]
 </pre>
 
  </div>
@@ -260,12 +241,11 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
 
   <div class="framework framework_box_na" id="java-json">
 <h3><a href="#java-json">java-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;{first\u003dSammy, last\u003dSosa}&quot;: {
-    &quot;hr&quot;: 65,
-    &quot;avg&quot;: 0.278
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &quot;[a, [{[[b, c]]\u003dd}, e]]&quot;: 23
   }
-}
+]
 </pre>
 
  </div>
@@ -273,12 +253,11 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
 
   <div class="framework framework_box_na" id="js-json">
 <h3><a href="#js-json">js-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;{ first: Sammy, last: Sosa }&quot;: {
-    &quot;hr&quot;: 65,
-    &quot;avg&quot;: 0.278
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &quot;[\n  a,\n  [\n      ? [ [ b, c ] ]\n        : d,\n      e\n    ]\n]&quot;: 23
   }
-}
+]
 </pre>
 
  </div>
@@ -286,12 +265,39 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
 
   <div class="framework framework_box_na" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;[object Object]&quot;: {
-    &quot;hr&quot;: 65,
-    &quot;avg&quot;: 0.278
-  }
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAMLException: nested arrays are not supported inside keys at line 3, column 20:
+      [ a, [ [[b,c]]: d, e]]: 23
+                       ^
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at storeMappingPair (/node_modules/js-yaml/lib/js-yaml/loader.js:298:9)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:753:20)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:735:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:735:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1036:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
+    at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
+    at Module._compile (module.js:652:30)
+    at Object.exports.run (/usr/lib/node_modules/coffee-script/lib/coffee-script/coffee-script.js:173:23)
+    at compileScript (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:224:29)
+    at compilePath (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:174:14)
+    at Object.exports.run (/usr/lib/node_modules/coffee-script/lib/coffee-script/command.js:98:20)
+    at Object.&lt;anonymous&gt; (/usr/lib/node_modules/coffee-script/bin/coffee:15:45)
+    at Module._compile (module.js:652:30)
+    at Object.Module._extensions..js (module.js:663:10)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Function.Module.runMain (module.js:693:10)
+    at startup (bootstrap_node.js:191:16)
+    at bootstrap_node.js:612:3
 </pre>
 
  </div>
@@ -313,7 +319,7 @@ stack traceback:
 <h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 4
+   Line: 2
    Document: 2
  at /lib/perl5/YAML/Loader.pm line 88.
 </pre>
@@ -323,12 +329,12 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl5-pp-json">
 <h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Line      : 1
-Column    : 29
-Expected  : DOC_END DOC_START EOL
+<span class="status_box color_na">&nbsp;</span>na  <pre>Line      : 3
+Column    : 17
+Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
 Where     : /lib/perl5/YAML/PP/Parser.pm line 367
-YAML      : &quot;:&quot;
+YAML      : &quot;: d, e]]: 23\n&quot;
   at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
 
@@ -337,7 +343,23 @@ YAML      : &quot;:&quot;
 
   <div class="framework framework_box_na" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 1, column 29): syntax error at /lib/perl5/x86_64-linux-gnu-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+   {
+      &quot;ARRAY(0x1931850)&quot; : 23
+   }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-syck-pl">
+<h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &#39;ARRAY(0xb55700)&#39; =&gt; 23
+  }
+]
 </pre>
 
  </div>
@@ -345,7 +367,7 @@ YAML      : &quot;:&quot;
 
   <div class="framework framework_box_na" id="perl5-tiny-json">
 <h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny found illegal characters in plain scalar: &#39;Sammy, last: Sosa }:&#39; at /bin/perl5-tiny-json line 12.
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;[&#39; at /bin/perl5-tiny-json line 12.
 </pre>
 
  </div>
@@ -353,12 +375,11 @@ YAML      : &quot;:&quot;
 
   <div class="framework framework_box_na" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;HASH(0x102d888)&quot; : {
-      &quot;avg&quot; : 0.278,
-      &quot;hr&quot; : 65
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+   {
+      &quot;ARRAY(0x206bcb8)&quot; : 23
    }
-}
+]
 </pre>
 
  </div>
@@ -366,12 +387,11 @@ YAML      : &quot;:&quot;
 
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;HASH(0x17805c8)&#39; =&gt; {
-                         &#39;avg&#39; =&gt; &#39;0.278&#39;,
-                         &#39;hr&#39; =&gt; 65
-                       }
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &#39;ARRAY(0x123e5b0)&#39; =&gt; 23
+  }
+]
 </pre>
 
  </div>
@@ -395,10 +415,10 @@ YAML      : &quot;:&quot;
   File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
-found unacceptable key (unhashable type: &#39;dict&#39;)
-  in &quot;&lt;string&gt;&quot;, line 1, column 1:
-    { first: Sammy, last: Sosa }:
-    ^
+found unacceptable key (unhashable type: &#39;list&#39;)
+  in &quot;&lt;string&gt;&quot;, line 3, column 3:
+      [ a, [ [[b,c]]: d, e]]: 23
+      ^
 </pre>
 
  </div>
@@ -419,13 +439,33 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
     value = self.construct_mapping(node)
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 398, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 217, in construct_mapping
+    key = self.construct_object(key_node, deep=True)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 170, in construct_object
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 665, in construct_yaml_seq
+    data.extend(self.construct_sequence(node))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 197, in construct_sequence
+    return [self.construct_object(child, deep=deep) for child in node.value]
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 170, in construct_object
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 665, in construct_yaml_seq
+    data.extend(self.construct_sequence(node))
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 197, in construct_sequence
+    return [self.construct_object(child, deep=deep) for child in node.value]
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 170, in construct_object
+    for _dummy in generator:
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 671, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 398, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
   File &quot;/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py&quot;, line 230, in construct_mapping
     key_node.start_mark,
 ruamel.yaml.constructor.ConstructorError: while constructing a mapping
-found unacceptable key (unhashable type: &#39;dict&#39;)
-  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
-    { first: Sammy, last: Sosa }:
-    ^ (line: 1)
+found unacceptable key (unhashable type: &#39;list&#39;)
+  in &quot;&lt;byte string&gt;&quot;, line 3, column 10:
+      [ a, [ [[b,c]]: d, e]]: 23
+             ^ (line: 3)
 </pre>
 
  </div>
@@ -433,7 +473,7 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
 
   <div class="framework framework_box_na" id="ruby-json">
 <h3><a href="#ruby-json">ruby-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;{\&quot;first\&quot;=&gt;\&quot;Sammy\&quot;, \&quot;last\&quot;=&gt;\&quot;Sosa\&quot;}&quot;:{&quot;hr&quot;:65,&quot;avg&quot;:0.278}}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;[\&quot;a\&quot;, [{[[\&quot;b\&quot;, \&quot;c\&quot;]]=&gt;\&quot;d\&quot;}, \&quot;e\&quot;]]&quot;:23}]
 </pre>
 
  </div>

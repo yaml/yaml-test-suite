@@ -154,13 +154,6 @@ class="">-STR</span>
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-xs-pl">
-<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:null&#39; at /bin/perl5-xs-pl line 16, &lt;&gt; line 1.
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="hs-yaml-json">
 <h3><a href="#hs-yaml-json">hs-yaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[&quot;&quot;,{&quot;&quot;:&quot;a&quot;,&quot;b&quot;:&quot;&quot;},{&quot;&quot;:null}]
@@ -206,13 +199,13 @@ class="">-STR</span>
 <span class="status_box color_na">&nbsp;</span>na  <pre>YAMLException: bad indentation of a sequence entry at line 3, column 10:
       !!null : a
              ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:935:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:962:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1358:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:652:30)
@@ -324,7 +317,35 @@ class="">-STR</span>
 
   <div class="framework framework_box_na" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:null&#39; at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+   &quot;&quot;,
+   {
+      &quot;&quot; : &quot;a&quot;,
+      &quot;b&quot; : &quot;&quot;
+   },
+   {
+      &quot;&quot; : null
+   }
+]
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-json line 14, &lt;&gt; line 1.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-xs-pl">
+<h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  &#39;&#39;,
+  {
+    &#39;&#39; =&gt; &#39;a&#39;,
+    &#39;b&#39; =&gt; &#39;&#39;
+  },
+  {
+    &#39;&#39; =&gt; undef
+  }
+]
+Use of uninitialized value in subroutine entry at /bin/perl5-xs-pl line 16, &lt;&gt; line 1.
 </pre>
 
  </div>

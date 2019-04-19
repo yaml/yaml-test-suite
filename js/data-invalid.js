@@ -318,6 +318,16 @@ var data = {
             "single"
          ]
       },
+      "DK4H" : {
+         "id" : "DK4H",
+         "in_yaml" : "---\n[ key\n  : value ]\n",
+         "tags" : [
+            "error",
+            "flow",
+            "mapping",
+            "sequence"
+         ]
+      },
       "DMG6" : {
          "id" : "DMG6",
          "in_yaml" : "key:\n  ok: 1\n wrong: 2\n",
@@ -416,6 +426,15 @@ var data = {
             "mapping"
          ]
       },
+      "KS4U" : {
+         "id" : "KS4U",
+         "in_yaml" : "---\n[\nsequence item\n]\ninvalid item\n",
+         "tags" : [
+            "error",
+            "flow",
+            "sequence"
+         ]
+      },
       "LHL4" : {
          "id" : "LHL4",
          "in_yaml" : "---\n!invalid{}tag scalar\n",
@@ -488,6 +507,14 @@ var data = {
             "tag"
          ]
       },
+      "RHX7" : {
+         "id" : "RHX7",
+         "in_yaml" : "---\nkey: value\n%YAML 1.2\n---\n",
+         "tags" : [
+            "directive",
+            "error"
+         ]
+      },
       "RXY3" : {
          "id" : "RXY3",
          "in_yaml" : "---\n'\n...\n'\n",
@@ -495,6 +522,22 @@ var data = {
             "error",
             "footer",
             "single"
+         ]
+      },
+      "S4GJ" : {
+         "id" : "S4GJ",
+         "in_yaml" : "---\nfolded: > first line\n  second line\n",
+         "tags" : [
+            "error",
+            "folded"
+         ]
+      },
+      "SF5V" : {
+         "id" : "SF5V",
+         "in_yaml" : "%YAML 1.2\n%YAML 1.2\n---\n",
+         "tags" : [
+            "directive",
+            "error"
          ]
       },
       "SR86" : {
@@ -532,6 +575,15 @@ var data = {
             "anchor",
             "error",
             "sequence"
+         ]
+      },
+      "T833" : {
+         "id" : "T833",
+         "in_yaml" : "---\n{\n foo: 1\n bar: 2 }\n",
+         "tags" : [
+            "error",
+            "flow",
+            "mapping"
          ]
       },
       "TD5N" : {
@@ -595,6 +647,16 @@ var data = {
          "tags" : [
             "error",
             "indent",
+            "sequence"
+         ]
+      },
+      "ZXT5" : {
+         "id" : "ZXT5",
+         "in_yaml" : "[ \"key\"\n  :value ]\n",
+         "tags" : [
+            "error",
+            "flow",
+            "mapping",
             "sequence"
          ]
       }

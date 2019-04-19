@@ -216,6 +216,17 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :plain\n=VAL :This unquoted scalar spans many lines.\n=VAL :quoted\n=VAL \"So does this quoted scalar.\\n\n-MAP\n-DOC\n-STR\n"
       },
+      "4FJ6" : {
+         "id" : "4FJ6",
+         "in_json" : null,
+         "in_yaml" : "---\n[\n  [ a, [ [[b,c]]: d, e]]: 23\n]\n",
+         "tags" : [
+            "flow",
+            "mapping",
+            "sequence"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n+SEQ\n=VAL :a\n+SEQ\n+MAP\n+SEQ\n+SEQ\n=VAL :b\n=VAL :c\n-SEQ\n-SEQ\n=VAL :d\n-MAP\n=VAL :e\n-SEQ\n-SEQ\n=VAL :23\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
       "4GC6" : {
          "id" : "4GC6",
          "in_json" : "\"here's to \\\"quotes\\\"\"\n",
@@ -605,6 +616,15 @@ var data = {
             "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL \" foo\\nbar\\nbaz \n-DOC\n-STR\n"
+      },
+      "6XDY" : {
+         "id" : "6XDY",
+         "in_json" : "null\nnull\n",
+         "in_yaml" : "---\n---\n",
+         "tags" : [
+            "header"
+         ],
+         "test_event" : "+STR\n+DOC ---\n=VAL :\n-DOC\n+DOC ---\n=VAL :\n-DOC\n-STR\n"
       },
       "6ZKB" : {
          "id" : "6ZKB",
@@ -1169,6 +1189,16 @@ var data = {
             "flow"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ &flowseq\n+MAP\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL &c :c\n=VAL :d\n-MAP\n+MAP\n=VAL &e :e\n=VAL :f\n-MAP\n+MAP &g\n=VAL :g\n=VAL :h\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
+      "CPZ3" : {
+         "id" : "CPZ3",
+         "in_json" : "{\n  \"tab\": \"\\tstring\"\n}\n",
+         "in_yaml" : "---\ntab: \"\\tstring\"\n",
+         "tags" : [
+            "double",
+            "scalar"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :tab\n=VAL \"\\tstring\n-MAP\n-DOC\n-STR\n"
       },
       "CT4Q" : {
          "id" : "CT4Q",
@@ -2210,6 +2240,15 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :aaa\n=VAL :bbb\n-MAP\n-DOC ...\n-STR\n"
       },
+      "S7BG" : {
+         "id" : "S7BG",
+         "in_json" : "[\n  \":,\"\n]\n",
+         "in_yaml" : "---\n- :,\n",
+         "tags" : [
+            "scalar"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n=VAL ::,\n-SEQ\n-DOC\n-STR\n"
+      },
       "S98Z" : {
          "id" : "S98Z",
          "in_json" : "{\n  \"empty block scalar\": \"\"\n}\n",
@@ -2499,6 +2538,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n+SEQ &a\n=VAL :a\n=VAL &b :b\n-SEQ\n=ALI *b\n=ALI *a\n+SEQ\n=VAL :c\n=ALI *b\n=VAL :d\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
+      "X8DW" : {
+         "id" : "X8DW",
+         "in_json" : "{\n  \"key\": \"value\"\n}\n",
+         "in_yaml" : "---\n? key\n# comment\n: value\n",
+         "tags" : [
+            "comment",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n-MAP\n-DOC\n-STR\n"
+      },
       "XLQ9" : {
          "id" : "XLQ9",
          "in_json" : "\"scalar %YAML 1.2\"\n",
@@ -2590,6 +2639,18 @@ var data = {
             "jayt"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL &a :a\n=VAL :b\n=VAL :c\n=VAL &d :d\n-MAP\n-DOC\n-STR\n"
+      },
+      "ZK9H" : {
+         "id" : "ZK9H",
+         "in_json" : "{\n  \"key\": [\n    [\n      [\n        \"value\"\n      ]\n    ]\n  ]\n}\n",
+         "in_yaml" : "{ key: [[[\n  value\n ]]]\n}\n",
+         "tags" : [
+            "flow",
+            "indent",
+            "mapping",
+            "sequence"
+         ],
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :key\n+SEQ\n+SEQ\n+SEQ\n=VAL :value\n-SEQ\n-SEQ\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "ZWK4" : {
          "id" : "ZWK4",

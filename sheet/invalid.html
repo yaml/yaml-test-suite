@@ -300,7 +300,7 @@ error, header, mapping<br>
 <a href="../details/9KBC.html">Test Results</a>
 </div></td>
 <td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="default"> </span><span class="default">key1</span><span class="colon">:</span><span class="default"> </span><span class="default">value1</span><span class="eol">
-</span><span class="indent">    </span><span class="default">key2</span><span class="colon">:</span><span class="default"> </span><span class="default">value2</span><span class="eol">
+</span><span class="default">    </span><span class="default">key2</span><span class="colon">:</span><span class="default"> </span><span class="default">value2</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-9MAG"><td class="title" colspan="4"><a href="#9MAG">#</a><a name="9MAG">&nbsp;</a>9MAG - Flow sequence with invalid comma at the beginning
@@ -452,6 +452,19 @@ error, mapping, single<br>
 </span><span class="default"> d&#39;: 1</span><span class="eol">
 </span></pre></div></td>
   </tr>
+ <tr id="tr-title-DK4H"><td class="title" colspan="4"><a href="#DK4H">#</a><a name="DK4H">&nbsp;</a>DK4H - Implicit key followed by newline
+</td></tr>
+<tr id="tr-content-DK4H">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, flow, mapping, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/DK4H.tml">Source</a><br>
+<a href="../details/DK4H.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[ key</span><span class="eol">
+</span><span class="default">  : value ]</span><span class="eol">
+</span></pre></div></td>
+  </tr>
  <tr id="tr-title-DMG6"><td class="title" colspan="4"><a href="#DMG6">#</a><a name="DMG6">&nbsp;</a>DMG6 - Wrong indendation in Map
 </td></tr>
 <tr id="tr-content-DMG6">
@@ -596,6 +609,21 @@ double, error, mapping<br>
 </span><span class="default">key3: &quot;quoted3&quot;</span><span class="eol">
 </span></pre></div></td>
   </tr>
+ <tr id="tr-title-KS4U"><td class="title" colspan="4"><a href="#KS4U">#</a><a name="KS4U">&nbsp;</a>KS4U - Invalid item after end of flow sequence
+</td></tr>
+<tr id="tr-content-KS4U">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, flow, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/KS4U.tml">Source</a><br>
+<a href="../details/KS4U.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">[</span><span class="eol">
+</span><span class="default">sequence item</span><span class="eol">
+</span><span class="default">]</span><span class="eol">
+</span><span class="default">invalid item</span><span class="eol">
+</span></pre></div></td>
+  </tr>
  <tr id="tr-title-LHL4"><td class="title" colspan="4"><a href="#LHL4">#</a><a name="LHL4">&nbsp;</a>LHL4 - Invalid tag
 </td></tr>
 <tr id="tr-content-LHL4">
@@ -704,6 +732,20 @@ directive, error, tag<br>
 </span><span class="default">e: f</span><span class="eol">
 </span></pre></div></td>
   </tr>
+ <tr id="tr-title-RHX7"><td class="title" colspan="4"><a href="#RHX7">#</a><a name="RHX7">&nbsp;</a>RHX7 - YAML directive without document end marker
+</td></tr>
+<tr id="tr-content-RHX7">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+directive, error<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/RHX7.tml">Source</a><br>
+<a href="../details/RHX7.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">key: value</span><span class="eol">
+</span><span class="default">%YAML 1.2</span><span class="eol">
+</span><span class="default">---</span><span class="eol">
+</span></pre></div></td>
+  </tr>
  <tr id="tr-title-RXY3"><td class="title" colspan="4"><a href="#RXY3">#</a><a name="RXY3">&nbsp;</a>RXY3 - Invalid document-end marker in single quoted string
 </td></tr>
 <tr id="tr-content-RXY3">
@@ -716,6 +758,32 @@ error, footer, single<br>
 </span><span class="default">&#39;</span><span class="eol">
 </span><span class="default">...</span><span class="eol">
 </span><span class="default">&#39;</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-S4GJ"><td class="title" colspan="4"><a href="#S4GJ">#</a><a name="S4GJ">&nbsp;</a>S4GJ - Invalid text after block scalar indicator
+</td></tr>
+<tr id="tr-content-S4GJ">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, folded<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/S4GJ.tml">Source</a><br>
+<a href="../details/S4GJ.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">folded: &gt; first line</span><span class="eol">
+</span><span class="default">  second line</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-SF5V"><td class="title" colspan="4"><a href="#SF5V">#</a><a name="SF5V">&nbsp;</a>SF5V - Duplicate YAML directive
+</td></tr>
+<tr id="tr-content-SF5V">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+directive, error<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">Source</a><br>
+<a href="../details/SF5V.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%YAML 1.2</span><span class="eol">
+</span><span class="default">%YAML 1.2</span><span class="eol">
+</span><span class="default">---</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-SR86"><td class="title" colspan="4"><a href="#SR86">#</a><a name="SR86">&nbsp;</a>SR86 - Anchor plus Alias
@@ -762,6 +830,20 @@ anchor, error, sequence<br>
 <a href="../details/SY6V.html">Test Results</a>
 </div></td>
 <td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">&amp;anchor - sequence entry</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-T833"><td class="title" colspan="4"><a href="#T833">#</a><a name="T833">&nbsp;</a>T833 - Flow mapping missing a separating comma
+</td></tr>
+<tr id="tr-content-T833">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, flow, mapping<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/T833.tml">Source</a><br>
+<a href="../details/T833.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="eol">
+</span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default"> </span><span class="default">foo</span><span class="colon">:</span><span class="default"> </span><span class="default">1</span><span class="eol">
+</span><span class="indent"> </span><span class="default">bar</span><span class="colon">:</span><span class="default"> </span><span class="default">2</span><span class="default"> </span><span class="flowmap_end">}</span><span class="eol">
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-TD5N"><td class="title" colspan="4"><a href="#TD5N">#</a><a name="TD5N">&nbsp;</a>TD5N - Invalid scalar after sequence
@@ -850,6 +932,18 @@ error, indent, sequence<br>
 </div></td>
 <td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">- key: value</span><span class="eol">
 </span><span class="default"> - item1</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-ZXT5"><td class="title" colspan="4"><a href="#ZXT5">#</a><a name="ZXT5">&nbsp;</a>ZXT5 - Implicit key followed by newline and adjacent value
+</td></tr>
+<tr id="tr-content-ZXT5">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+error, flow, mapping, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZXT5.tml">Source</a><br>
+<a href="../details/ZXT5.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">[ &quot;key&quot;</span><span class="eol">
+</span><span class="default">  :value ]</span><span class="eol">
 </span></pre></div></td>
   </tr>
  </table>

@@ -138,18 +138,18 @@ block: &gt; # lala
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 54, in construct_document
     for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 214, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;string&gt;&quot;, line 1, column 1:
@@ -198,7 +198,7 @@ found unacceptable key (unhashable type: &#39;list&#39;)
   &quot;a&quot;: &quot;double quotes&quot;,
   &quot;b&quot;: &quot;plain value&quot;,
   &quot;c&quot;: &quot;d&quot;,
-  &quot;[\&quot;seq1\&quot;]&quot;: [
+  &quot;[ seq1 ]&quot;: [
     &quot;seq2&quot;
   ],
   &quot;e&quot;: [
@@ -304,7 +304,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x16a3848)&quot; : [
+   &quot;ARRAY(0x22118f0)&quot; : [
       &quot;seq2&quot;
    ],
    &quot;a&quot; : &quot;double quotes&quot;,
@@ -325,9 +325,9 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0xbd98d0)&#39; =&gt; [
-                         &#39;seq2&#39;
-                       ],
+  &#39;ARRAY(0x24ce8d0)&#39; =&gt; [
+                          &#39;seq2&#39;
+                        ],
   &#39;a&#39; =&gt; &#39;double quotes&#39;,
   &#39;b&#39; =&gt; &#39;plain value&#39;,
   &#39;block&#39; =&gt; &#39;abcde
@@ -355,7 +355,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0xab88d0)&quot; : [
+   &quot;ARRAY(0xb3e8d0)&quot; : [
       &quot;seq2&quot;
    ],
    &quot;a&quot; : &quot;double quotes&quot;,
@@ -376,7 +376,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x12554f0)&#39; =&gt; [
+  &#39;ARRAY(0x1f924f0)&#39; =&gt; [
                           &#39;seq2&#39;
                         ],
   &#39;a&#39; =&gt; &#39;double quotes&#39;,
@@ -399,18 +399,18 @@ stack traceback:
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 54, in construct_document
     for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 214, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;string&gt;&quot;, line 1, column 1:

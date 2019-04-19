@@ -119,18 +119,18 @@ parsing error near byte offset Pos {posByteOffset = 5, posCharOffset = 5, posLin
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 54, in construct_document
     for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 214, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;string&gt;&quot;, line 1, column 1:
@@ -169,7 +169,8 @@ found unacceptable key (unhashable type: &#39;list&#39;)
   <div class="framework framework_box_na" id="js-json">
 <h3><a href="#js-json">js-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;[\&quot;a\&quot;,\&quot;b\&quot;]&quot;: [
+  &quot;[ a, &amp;b b ]&quot;: &quot;b&quot;,
+  &quot;*a&quot;: [
     &quot;c&quot;,
     &quot;b&quot;,
     &quot;d&quot;
@@ -185,16 +186,16 @@ found unacceptable key (unhashable type: &#39;list&#39;)
 <span class="status_box color_na">&nbsp;</span>na  <pre>YAMLException: duplicated mapping key at line 1, column 36:
     { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
                                        ^
-    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:165:10)
-    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:171:9)
-    at storeMappingPair (/node_modules/js-yaml/lib/js-yaml/loader.js:308:7)
-    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:724:7)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1333:11)
-    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1009:16)
-    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1332:12)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1492:3)
-    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1548:5)
-    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1556:19)
+    at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at storeMappingPair (/node_modules/js-yaml/lib/js-yaml/loader.js:335:7)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:751:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1036:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:3:1)
     at Module._compile (module.js:652:30)
@@ -271,7 +272,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-syck-json">
 <h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x14048b0)&quot; : [
+   &quot;ARRAY(0x20c4898)&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
@@ -285,11 +286,11 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x9afcd0)&#39; =&gt; [
-                         &#39;c&#39;,
-                         &#39;b&#39;,
-                         &#39;d&#39;
-                       ]
+  &#39;ARRAY(0x1d33b98)&#39; =&gt; [
+                          &#39;c&#39;,
+                          &#39;b&#39;,
+                          &#39;d&#39;
+                        ]
 }
 </pre>
 
@@ -307,7 +308,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-xs-json">
 <h3><a href="#perl5-xs-json">perl5-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0xa67930)&quot; : [
+   &quot;ARRAY(0x1855888)&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
@@ -321,7 +322,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x224c5c8)&#39; =&gt; [
+  &#39;ARRAY(0x1f855c8)&#39; =&gt; [
                           &#39;c&#39;,
                           &#39;b&#39;,
                           &#39;d&#39;
@@ -336,18 +337,18 @@ stack traceback:
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 54, in construct_document
     for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 214, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;string&gt;&quot;, line 1, column 1:

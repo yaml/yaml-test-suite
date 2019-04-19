@@ -171,18 +171,18 @@ class="">-STR</span>
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 54, in construct_document
     for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 214, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;string&gt;&quot;, line 2, column 3:
@@ -257,7 +257,7 @@ found unacceptable key (unhashable type: &#39;dict&#39;)
     &quot;sun&quot;: &quot;yellow&quot;
   },
   {
-    &quot;{\&quot;earth\&quot;:\&quot;blue\&quot;}&quot;: {
+    &quot;{ earth: blue }&quot;: {
       &quot;moon&quot;: &quot;white&quot;
     }
   }
@@ -383,7 +383,7 @@ stack traceback:
       &quot;sun&quot; : &quot;yellow&quot;
    },
    {
-      &quot;HASH(0xc4a8d0)&quot; : {
+      &quot;HASH(0xf2f8b8)&quot; : {
          &quot;moon&quot; : &quot;white&quot;
       }
    }
@@ -400,9 +400,9 @@ stack traceback:
     &#39;sun&#39; =&gt; &#39;yellow&#39;
   },
   {
-    &#39;HASH(0x15054f0)&#39; =&gt; {
-                           &#39;moon&#39; =&gt; &#39;white&#39;
-                         }
+    &#39;HASH(0xfb74f0)&#39; =&gt; {
+                          &#39;moon&#39; =&gt; &#39;white&#39;
+                        }
   }
 ]
 </pre>
@@ -414,18 +414,18 @@ stack traceback:
 <h3><a href="#pyyaml-json">pyyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/bin/pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read()):
-  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 90, in load_all
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/lib/python2.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 33, in get_data
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 39, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 48, in construct_document
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 54, in construct_document
     for dummy in generator:
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 398, in construct_yaml_map
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 208, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 214, in construct_mapping
     return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 132, in construct_mapping
+  File &quot;/lib/python2.7/site-packages/yaml/constructor.py&quot;, line 138, in construct_mapping
     &quot;found unacceptable key (%s)&quot; % exc, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;string&gt;&quot;, line 2, column 3:
