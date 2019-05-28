@@ -45,3 +45,18 @@ make data-update    # Updates the data branch (under ./data/)
 ```
 
 You will need Bash, NodeJS and Perl for these things.
+
+= Libaries using this test suite
+
+* C
+  * "libyaml"[https://github.com/yaml/libyaml]
+* Haskell
+  * "HsYAML"[https://github.com/haskell-hvr/HsYAML]
+* Javascript
+  * "yaml"[https://github.com/eemeli/yaml]
+* Nim
+  * "NimYAML"[https://github.com/flyx/NimYAML]
+* Perl 5
+  * "YAML::PP"[https://github.com/perlpunk/YAML-PP-p5]
+
+If your library is using the test suite, drop us a line and we can add it here.

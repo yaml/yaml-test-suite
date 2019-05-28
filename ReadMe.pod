@@ -69,4 +69,53 @@ the data branch (under ./data/) >C<>
 
 You will need Bash, NodeJS and Perl for these things.
 
+=head1 Libaries using this test suite
+
+=over
+
+=item * C
+
+=over
+
+=item * L<libyaml|https://github.com/yaml/libyaml>
+
+=back
+
+=item * Haskell
+
+=over
+
+=item * L<HsYAML|https://github.com/haskell-hvr/HsYAML>
+
+=back
+
+=item * Javascript
+
+=over
+
+=item * L<yaml|https://github.com/eemeli/yaml>
+
+=back
+
+=item * Nim
+
+=over
+
+=item * L<NimYAML|https://github.com/flyx/NimYAML>
+
+=back
+
+=item * Perl 5
+
+=over
+
+=item * L<YAML::PP|https://github.com/perlpunk/YAML-PP-p5>
+
+=back
+
+=back
+
+If your library is using the test suite, drop us a line and we can add it
+here.
+
 =cut
