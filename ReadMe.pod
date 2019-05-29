@@ -81,6 +81,14 @@ You will need Bash, NodeJS and Perl for these things.
 
 =back
 
+=item * D
+
+=over
+
+=item * L<dyaml|https://github.com/dlang-community/D-YAML>
+
+=back
+
 =item * Haskell
 
 =over
