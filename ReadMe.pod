@@ -81,6 +81,15 @@ You will need Bash, NodeJS and Perl for these things.
 
 =back
 
+=item * C#
+
+=over
+
+=item * L<YamlDotNet|https://github.com/aaubry/YamlDotNet>
+
+=back
+
+
 =item * D
 
 =over
