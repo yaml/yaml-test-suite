@@ -97,6 +97,14 @@ You will need Bash, NodeJS and Perl for these things.
 
 =back
 
+=item * Delphi
+
+=over
+
+=item * L<Neslib.Yaml|https://github.com/neslib/Neslib.Yaml>
+
+=back
+
 =item * Haskell
 
 =over
@@ -132,6 +140,6 @@ You will need Bash, NodeJS and Perl for these things.
 =back
 
 If your library is using the test suite, drop us a line and we can add it
-here.
+here. It would also be nice if you could add a link back to this test suite.
 
 =cut

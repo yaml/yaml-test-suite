@@ -54,6 +54,8 @@ You will need Bash, NodeJS and Perl for these things.
   * "YamlDotNet"[https://github.com/aaubry/YamlDotNet]
 * D
   * "dyaml"[https://github.com/dlang-community/D-YAML]
+* Delphi
+  * "Neslib.Yaml"[https://github.com/neslib/Neslib.Yaml]
 * Haskell
   * "HsYAML"[https://github.com/haskell-hvr/HsYAML]
 * Javascript
@@ -64,3 +66,4 @@ You will need Bash, NodeJS and Perl for these things.
   * "YAML::PP"[https://github.com/perlpunk/YAML-PP-p5]
 
 If your library is using the test suite, drop us a line and we can add it here.
+It would also be nice if you could add a link back to this test suite.
