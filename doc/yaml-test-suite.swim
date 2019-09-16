@@ -50,6 +50,7 @@ You will need Bash, NodeJS and Perl for these things.
 
 * C
   * "libyaml"[https://github.com/yaml/libyaml]
+  * "libfyaml"[https://github.com/pantoniou/libfyaml]
 * C#
   * "YamlDotNet"[https://github.com/aaubry/YamlDotNet]
 * D

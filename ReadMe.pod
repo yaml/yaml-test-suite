@@ -79,6 +79,8 @@ You will need Bash, NodeJS and Perl for these things.
 
 =item * L<libyaml|https://github.com/yaml/libyaml>
 
+=item * L<libfyaml|https://github.com/pantoniou/libfyaml>
+
 =back
 
 =item * C#
