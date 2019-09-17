@@ -26,23 +26,35 @@ Not every test dir will have the same elements. Since the tests are just data,
 it is up to the framework using the tests to decide which tests to use and how
 to use them.
 
-The tests are currently written in TestML under the `test` directory on the
-`master` branch. The test data is split into the separate files structure, and
-kept on the `data` branch. This makes tests easier to groom.
-
 To get a quick overview of the tests you can have a look at the "YAML Test
 Matrix"[http://matrix.yaml.io/]
 - [https://github.com/perlpunk/yaml-test-matrix].
+
+== Usage
+
+The tests are currently written in
+"TestML"[https://github.com/testml-lang/testml/] under the `test` directory on
+the `master` branch.
+
+If your language has a TestML processor, you can use these files directly.
+It's recommended to use the latest release `vYYYY-MM-DD` instead of master.
+
+Otherwise you can use the raw data files. For that, use the latest release under
+"https://github.com/yaml/yaml-test-suite/releases"[https://github.com/yaml/yaml-test-suite/releases]:
+
+    git clone https://github.com/yaml/yaml-test-suite -b data-YYYY-MM-DD
+
+The releases are made from the `data` branch, which is made from the data in
+the TestML in the `master` branch. You shouldn't use the data branch directly
+as the branch is squashed and force pushed from time to time.
 
 == Updating Things
 
 When test files change you need to update various artifacts. To do this, run
 the following commands:
 
-```
-make update         # Updates tags and name artifacts
-make data-update    # Updates the data branch (under ./data/)
-```
+    make update         # Updates tags and name artifacts
+    make data-update    # Updates the data branch (under ./data/)
 
 You will need Bash, NodeJS and Perl for these things.
 
