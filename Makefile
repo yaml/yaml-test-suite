@@ -20,6 +20,7 @@ ReadMe.pod: doc/yaml-test-suite.swim
 
 #------------------------------------------------------------------------------
 data:
+	git rev-parse 2>/dev/null --verify $@ || git branch --track $@ origin/$@
 	git worktree add -f $@ $@
 
 data-update: data node_modules
@@ -81,6 +82,7 @@ matrix-copy: gh-pages
 	      $<
 
 gh-pages:
+	git rev-parse 2>/dev/null --verify $@ || git branch --track $@ origin/$@
 	git worktree add $@ $@
 
 #------------------------------------------------------------------------------
