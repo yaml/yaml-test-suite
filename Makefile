@@ -47,6 +47,10 @@ node_modules:
 	npm install coffeescript js-yaml jyj lodash testml-compiler
 	rm -f package*
 
+docker-data: Dockerfile.data
+	docker build -t yaml-test-suite.data -f $^ ./
+	docker run --rm --entrypoint cat yaml-test-suite data.tar.bz2 | tar -xjf -
+
 #------------------------------------------------------------------------------
 matrix:
 	git clone $(MATRIX_REPO) $@
@@ -90,6 +94,7 @@ clean:
 	rm -fr data matrix gh-pages
 	rm -fr node_modules
 	rm -f package*
+	rm -f data.tar.bz2 gh-pages.tar.bz2
 	git worktree prune
 
 .PHONY: test

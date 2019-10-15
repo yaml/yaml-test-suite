@@ -1,0 +1,10 @@
+ARG IMAGE=node:12
+FROM ${IMAGE}
+RUN apt-get update -qq
+RUN apt-get install --no-install-recommends -y git make
+COPY . /build
+WORKDIR /build
+RUN make clean
+RUN make update
+RUN make data-update
+RUN tar jcvf data.tar.bz2 data/
