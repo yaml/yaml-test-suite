@@ -1,6 +1,10 @@
+SHELL := bash
+
 export PATH := $(PWD)/node_modules/.bin:$(PATH)
 
 MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
+
+DOCKER_IMAGE := yaml-test-suite-builder
 
 default: help
 
@@ -20,6 +24,7 @@ ReadMe.pod: doc/yaml-test-suite.swim
 
 #------------------------------------------------------------------------------
 data:
+	git branch --track $@ origin/$@ 2>/dev/null || true
 	git worktree add -f $@ $@
 
 data-update: data node_modules
@@ -45,6 +50,17 @@ node_modules:
 	mkdir $@
 	npm install coffeescript js-yaml jyj lodash testml-compiler
 	rm -f package*
+
+docker-data: docker-build
+	docker run --rm \
+	    --user "$$(id -u):$$(id -g)" \
+	    --volume $(PWD):/build \
+	    --workdir /build \
+	    $(DOCKER_IMAGE) \
+		make clean update data-update
+
+docker-build: Dockerfile
+	docker build -t $(DOCKER_IMAGE) .
 
 #------------------------------------------------------------------------------
 matrix:
@@ -81,6 +97,7 @@ matrix-copy: gh-pages
 	      $<
 
 gh-pages:
+	git branch --track $@ origin/$@ 2>/dev/null || true
 	git worktree add $@ $@
 
 #------------------------------------------------------------------------------
