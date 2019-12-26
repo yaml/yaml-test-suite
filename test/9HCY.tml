@@ -1,0 +1,9 @@
+=== Need document footer before directives
+--- from: @ingydotnet
+--- tags: error
+--- error
+--- in-yaml(<)
+    !foo "bar"
+    %TAG ! tag:example.com,2000:app/
+    ---
+    !foo "bar"
