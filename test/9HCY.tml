@@ -1,6 +1,6 @@
 === Need document footer before directives
 --- from: @ingydotnet
---- tags: error
+--- tags: directive error footer
 --- error
 --- in-yaml(<)
     !foo "bar"
