@@ -1,0 +1,32 @@
+=== Plain dashes in flow sequence
+--- from: @ingydotnet
+--- tags: flow sequence
+
+--- in-yaml(<)
+    ---
+    - [-, -]
+
+--- out-yaml(<)
+    ---
+    - - '-'
+      - '-'
+
+--- in-json
+[
+  [
+    "-",
+    "-"
+  ]
+]
+
+--- test-event
++STR
++DOC ---
++SEQ
++SEQ
+=VAL :-
+=VAL :-
+-SEQ
+-SEQ
+-DOC
+-STR
