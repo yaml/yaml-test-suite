@@ -30,13 +30,15 @@ keep: |+
   "keep": "# text\n\n"
 }
 
---- out-yaml(+)
+--- out-yaml
 strip: |-
   # text
 clip: |
   # text
 keep: |+
   # text
+
+...
 
 --- test-event
 +STR
