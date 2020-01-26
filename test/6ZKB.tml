@@ -18,6 +18,14 @@ null
   "matches %": 20
 }
 
+--- out-yaml(<)
+    Document
+    ---
+    ...
+    %YAML 1.2
+    ---
+    matches %: 20
+
 --- test-event
 +STR
 +DOC
