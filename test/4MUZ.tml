@@ -8,6 +8,9 @@ This is valid JSON but fails many existing parsers.
 {"foo"
 : "bar"}
 
+--- emit-yaml
+"foo": "bar"
+
 --- in-json
 {
   "foo": "bar"
