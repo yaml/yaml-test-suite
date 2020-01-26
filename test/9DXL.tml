@@ -20,7 +20,7 @@ null
   "matches %": 20
 }
 
---- out-yaml(<)
+--- emit-yaml(<)
     Mapping: Document
     ---
     ...
