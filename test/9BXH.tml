@@ -10,9 +10,9 @@
 
 --- out-yaml(<)
     ---
-    - "single line":<SPC>
+    - "single line":
       a: b
-    - "multi line":<SPC>
+    - "multi line":
       a: b
 
 --- in-json
