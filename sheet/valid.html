@@ -385,6 +385,38 @@ mapping, spec<br>
 </span></span></pre></div>
 </td>
   </tr>
+ <tr id="tr-title-33X3"><td class="title" colspan="4"><a href="#33X3">#</a><a name="33X3">&nbsp;</a>33X3 - Three explicit integers in a block sequence
+</td></tr>
+<tr id="tr-content-33X3">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+sequence, tag<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/33X3.tml">Source</a><br>
+<a href="../details/33X3.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="doc_start">---</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="tag">!!int</span><span class="default"> </span><span class="default">1</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="tag">!!int</span><span class="default"> </span><span class="default">-2</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="tag">!!int</span><span class="default"> </span><span class="default">33</span><span class="eol">
+</span></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="default">1</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="default">-2</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="default">33</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
+<td valign="top" class="events" style="">
+<div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">=VAL &lt;tag:yaml.org,2002:int&gt; :1</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">=VAL &lt;tag:yaml.org,2002:int&gt; :-2</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">=VAL &lt;tag:yaml.org,2002:int&gt; :33</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">-DOC</span><span class="eol">
+</span></span><span style="padding-left: -0.5em;"><span class="default">-STR</span><span class="eol">
+</span></span></pre></div>
+</td>
+  </tr>
  <tr id="tr-title-35KP"><td class="title" colspan="4"><a href="#35KP">#</a><a name="35KP">&nbsp;</a>35KP - Tags for Root Objects
 </td></tr>
 <tr id="tr-content-35KP">
@@ -4779,6 +4811,38 @@ scalar, spec<br>
 </span></span></pre></div>
 </td>
   </tr>
+ <tr id="tr-title-G5U8"><td class="title" colspan="4"><a href="#G5U8">#</a><a name="G5U8">&nbsp;</a>G5U8 - Plain dashes in flow sequence
+</td></tr>
+<tr id="tr-content-G5U8">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+flow, sequence<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/G5U8.tml">Source</a><br>
+<a href="../details/G5U8.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
+</span><span class="default">- [-, -]</span><span class="eol">
+</span></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">-</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">-</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
+<td valign="top" class="events" style="">
+<div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :-</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :-</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">-DOC</span><span class="eol">
+</span></span><span style="padding-left: -0.5em;"><span class="default">-STR</span><span class="eol">
+</span></span></pre></div>
+</td>
+  </tr>
  <tr id="tr-title-G992"><td class="title" colspan="4"><a href="#G992">#</a><a name="G992">&nbsp;</a>G992 - Spec Example 8.9. Folded Scalar
 </td></tr>
 <tr id="tr-content-G992">
@@ -7370,36 +7434,6 @@ scalar<br>
 </span></span><span style="padding-left: 0.5em;"><span class="default">+SEQ</span><span class="eol">
 </span></span><span style="padding-left: 1em;"><span class="default">=VAL ::,</span><span class="eol">
 </span></span><span style="padding-left: 0.5em;"><span class="default">-SEQ</span><span class="eol">
-</span></span><span style="padding-left: 0em;"><span class="default">-DOC</span><span class="eol">
-</span></span><span style="padding-left: -0.5em;"><span class="default">-STR</span><span class="eol">
-</span></span></pre></div>
-</td>
-  </tr>
- <tr id="tr-title-S98Z"><td class="title" colspan="4"><a href="#S98Z">#</a><a name="S98Z">&nbsp;</a>S98Z - Block scalar with spaces only
-</td></tr>
-<tr id="tr-content-S98Z">
-<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-comment, folded, scalar, whitespace<br>
-<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/S98Z.tml">Source</a><br>
-<a href="../details/S98Z.html">Test Results</a>
-</div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">empty block scalar</span><span class="colon">:</span><span class="default"> </span><span class="folded">&gt;</span><span class="eol">
-</span><span class="indent"> </span><span class="eol">
-</span><span class="indent">  </span><span class="eol">
-</span><span class="indent">   </span><span class="eol">
-</span><span class="eol"> # comment
-</span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowmap_start">{</span><span class="eol">
-</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">empty block scalar</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequote">&quot;</span><span class="eol">
-</span><span class="flowmap_end">}</span><span class="eol">
-</span></pre></div></td>
-<td valign="top" class="events" style="">
-<div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
-</span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
-</span></span><span style="padding-left: 0.5em;"><span class="default">+MAP</span><span class="eol">
-</span></span><span style="padding-left: 1em;"><span class="default">=VAL :empty block scalar</span><span class="eol">
-</span></span><span style="padding-left: 1em;"><span class="default">=VAL &gt;</span><span class="eol">
-</span></span><span style="padding-left: 0.5em;"><span class="default">-MAP</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">-DOC</span><span class="eol">
 </span></span><span style="padding-left: -0.5em;"><span class="default">-STR</span><span class="eol">
 </span></span></pre></div>

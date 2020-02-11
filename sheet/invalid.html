@@ -279,6 +279,20 @@ error, mapping, sequence<br>
 </span><span class="default">invalid</span><span class="eol">
 </span></pre></div></td>
   </tr>
+ <tr id="tr-title-9HCY"><td class="title" colspan="4"><a href="#9HCY">#</a><a name="9HCY">&nbsp;</a>9HCY - Need document footer before directives
+</td></tr>
+<tr id="tr-content-9HCY">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+directive, error, footer<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9HCY.tml">Source</a><br>
+<a href="../details/9HCY.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">!foo &quot;bar&quot;</span><span class="eol">
+</span><span class="default">%TAG ! tag:example.com,2000:app/</span><span class="eol">
+</span><span class="default">---</span><span class="eol">
+</span><span class="default">!foo &quot;bar&quot;</span><span class="eol">
+</span></pre></div></td>
+  </tr>
  <tr id="tr-title-9JBA"><td class="title" colspan="4"><a href="#9JBA">#</a><a name="9JBA">&nbsp;</a>9JBA - Invalid comment after end of flow sequence
 </td></tr>
 <tr id="tr-content-9JBA">
@@ -663,19 +677,6 @@ edge, error, flow, footer, header<br>
 </span><span class="default">]</span><span class="eol">
 </span></pre></div></td>
   </tr>
- <tr id="tr-title-NTY5"><td class="title" colspan="4"><a href="#NTY5">#</a><a name="NTY5">&nbsp;</a>NTY5 - Missing space in YAML directive
-</td></tr>
-<tr id="tr-content-NTY5">
-<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-directive, error<br>
-<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/NTY5.tml">Source</a><br>
-<a href="../details/NTY5.html">Test Results</a>
-</div></td>
-<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">%YAML1.2</span><span class="eol">
-</span><span class="default">---</span><span class="eol">
-</span><span class="default">key: value</span><span class="eol">
-</span></pre></div></td>
-  </tr>
  <tr id="tr-title-P2EQ"><td class="title" colspan="4"><a href="#P2EQ">#</a><a name="P2EQ">&nbsp;</a>P2EQ - Invalid sequene item on same line as previous item
 </td></tr>
 <tr id="tr-content-P2EQ">
@@ -771,6 +772,21 @@ error, folded<br>
 <td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">---</span><span class="eol">
 </span><span class="default">folded: &gt; first line</span><span class="eol">
 </span><span class="default">  second line</span><span class="eol">
+</span></pre></div></td>
+  </tr>
+ <tr id="tr-title-S98Z"><td class="title" colspan="4"><a href="#S98Z">#</a><a name="S98Z">&nbsp;</a>S98Z - Block scalar with more spaces than first content line
+</td></tr>
+<tr id="tr-content-S98Z">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+comment, error, folded, scalar, whitespace<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/S98Z.tml">Source</a><br>
+<a href="../details/S98Z.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="default">empty block scalar</span><span class="colon">:</span><span class="default"> </span><span class="folded">&gt;</span><span class="eol">
+</span><span class="indent"> </span><span class="eol">
+</span><span class="indent">  </span><span class="eol">
+</span><span class="indent">   </span><span class="eol">
+</span><span class="eol"> # comment
 </span></pre></div></td>
   </tr>
  <tr id="tr-title-SF5V"><td class="title" colspan="4"><a href="#SF5V">#</a><a name="SF5V">&nbsp;</a>SF5V - Duplicate YAML directive

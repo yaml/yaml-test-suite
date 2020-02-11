@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#E76Z - Aliases in Implicit Block Mapping - YAML Test Matrix</title>
+<title>#G5U8 - Plain dashes in flow sequence - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -11,26 +11,26 @@
 
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
-href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E76Z</a><br>
-&nbsp;&nbsp;Title: Aliases in Implicit Block Mapping</br>
-&nbsp;&nbsp;Tags: [ alias, mapping ]</tt></h2>
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/G5U8.tml">&test-G5U8</a><br>
+&nbsp;&nbsp;Title: Plain dashes in flow sequence</br>
+&nbsp;&nbsp;Tags: [ flow, sequence ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&amp;a a: &amp;b b
-*a : *b
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+- [-, -]
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC
-+MAP
-=VAL &amp;a :a
-=VAL &amp;b :b
-=ALI *a
-=ALI *b
--MAP
++DOC ---
++SEQ
++SEQ
+=VAL :-
+=VAL :-
+-SEQ
+-SEQ
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>  &quot;a&quot;: &quot;b&quot;<br>}<br></pre>
+<pre>[<br>  [<br>    &quot;-&quot;,<br>    &quot;-&quot;<br>  ]<br>]<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="cpp-event">
@@ -58,13 +58,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
-  <div class="framework framework_box_ok" id="nimyaml-event">
-<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
-<span class="status_box color_ok">&nbsp;</span>ok   </div>
-
-
-  <div class="framework framework_box_ok" id="perl5-pp-event">
-<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+  <div class="framework framework_box_ok" id="perl5-pegex-event">
+<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
@@ -98,13 +93,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
-  <div class="framework framework_box_json_ok" id="perl5-pm-json">
-<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
-  <div class="framework framework_box_json_ok" id="perl5-pp-json">
-<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
+  <div class="framework framework_box_json_ok" id="perl5-syck-json">
+<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -128,28 +118,50 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl5-syck-json">
-<h3><a href="#perl5-syck-json">perl5-syck-json</a></h3>
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl5-pm-json">
+<h3><a href="#perl5-pm-json">perl5-pm-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="">{</span>
+class="">[</span>
 <span
-class="diff_line">  &quot;YAML::Syck::BadAlias=HASH(0x1ad5170)&quot;: &quot;b&quot;,</span>
+class="">  [</span>
 <span
-class="">  &quot;a&quot;: &quot;b&quot;</span>
+class="diff_line">    0,</span>
 <span
-class="">}</span>
+class="">    0</span>
+<span
+class="">  ]</span>
+<span
+class="">]</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="perl5-tiny-json">
+<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">[</span>
+<span
+class="diff_line">  &quot;[-, -]&quot;</span>
+<span
+class="">]</span>
 </pre>
  </div>
 
 
  <hr style="clear: both;">    <div class="framework framework_box_error" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: end of the stream or a document separator is expected at line 1, column 5:
-    &amp;a a: &amp;b b
-        ^
+<span class="status_box color_error">&nbsp;</span>error <pre>YAMLException: missed comma between flow collection entries at line 2, column 4:
+    - [-, -]
+       ^
     at generateError (/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
     at throwError (/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1539:5)
+    at readFlowCollection (/node_modules/js-yaml/lib/js-yaml/loader.js:718:7)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
+    at readBlockMapping (/node_modules/js-yaml/lib/js-yaml/loader.js:1036:16)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readBlockSequence (/node_modules/js-yaml/lib/js-yaml/loader.js:955:5)
+    at composeNode (/node_modules/js-yaml/lib/js-yaml/loader.js:1358:12)
+    at readDocument (/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
     at loadDocuments (/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
     at Object.loadAll (/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
     at Object.&lt;anonymous&gt; (/bin/js-yaml-json:6:6)
@@ -172,49 +184,70 @@ class="">}</span>
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-pegex-event">
-<h3><a href="#perl5-pegex-event">perl5-pegex-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error parsing Pegex document:
-  msg:      Parse document failed for some reason
-  line:     2
-  column:   1
-  context:  *a : *b\n
-            ^
-  position: 11 (0 pre-lookahead)
- at /bin/perl5-pegex-event line 23.
+  <div class="framework framework_box_error" id="nimyaml-event">
+<h3><a href="#nimyaml-event">nimyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC ---
++SEQ
++SEQ
+Traceback (most recent call last)
+nimyaml_event.nim(8)     nimyaml_event
+stream.nim(223)          finished
+Error: unhandled exception: Unexpected toked: ltSeqItemInd [YamlStreamError]
 </pre>
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-tiny-json">
-<h3><a href="#perl5-tiny-json">perl5-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;b b&#39; at /bin/perl5-tiny-json line 12.
+  <div class="framework framework_box_error" id="perl5-pp-event">
+<h3><a href="#perl5-pp-event">perl5-pp-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC ---
++SEQ
++SEQ
+Line      : 2
+Column    : 4
+Message   : Invalid plain scalar
+Where     : /lib/perl5/YAML/PP/Lexer.pm line 361
+YAML      : &quot;-, -]&quot;
+  at /bin/perl5-pp-event line 19.
 </pre>
  </div>
 
 
-  <div class="framework framework_box_error" id="perl5-tiny-pl">
-<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;b b&#39; at /bin/perl5-tiny-pl line 15.
+  <div class="framework framework_box_error" id="perl5-pp-json">
+<h3><a href="#perl5-pp-json">perl5-pp-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
+Column    : 4
+Message   : Invalid plain scalar
+Where     : /lib/perl5/YAML/PP/Lexer.pm line 361
+YAML      : &quot;-, -]&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 59.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl5-pp-pl">
+<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
+Column    : 4
+Message   : Invalid plain scalar
+Where     : /lib/perl5/YAML/PP/Lexer.pm line 361
+YAML      : &quot;-, -]&quot;
+  at /lib/perl5/YAML/PP/Loader.pm line 59.
 </pre>
  </div>
 
 
  <hr style="clear: both;">    <div class="framework framework_box_na" id="perl5-pm-pl">
 <h3><a href="#perl5-pm-pl">perl5-pm-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl5-pp-pl">
-<h3><a href="#perl5-pp-pl">perl5-pp-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  [
+    &#39;0&#39;,
+    &#39;0&#39;
+  ]
+]
+Argument &quot;-&quot; isn&#39;t numeric in addition (+) at /lib/perl5/YAML/Loader.pm line 491, &lt;&gt; line 1.
+Argument &quot;-&quot; isn&#39;t numeric in addition (+) at /lib/perl5/YAML/Loader.pm line 491, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -222,10 +255,22 @@ class="">}</span>
 
   <div class="framework framework_box_na" id="perl5-syck-pl">
 <h3><a href="#perl5-syck-pl">perl5-syck-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;YAML::Syck::BadAlias=HASH(0xb8dca0)&#39; =&gt; &#39;b&#39;,
-  &#39;a&#39; =&gt; &#39;b&#39;
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  [
+    &#39;-&#39;,
+    &#39;-&#39;
+  ]
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl5-tiny-pl">
+<h3><a href="#perl5-tiny-pl">perl5-tiny-pl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  &#39;[-, -]&#39;
+]
 </pre>
 
  </div>
@@ -233,9 +278,12 @@ class="">}</span>
 
   <div class="framework framework_box_na" id="perl5-xs-pl">
 <h3><a href="#perl5-xs-pl">perl5-xs-pl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  [
+    &#39;-&#39;,
+    &#39;-&#39;
+  ]
+]
 </pre>
 
  </div>
@@ -243,7 +291,7 @@ class="">}</span>
 
   <div class="framework framework_box_na" id="pyyaml-py">
 <h3><a href="#pyyaml-py">pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: &#39;b&#39;}
+<span class="status_box color_na">&nbsp;</span>na  <pre>[[&#39;-&#39;, &#39;-&#39;]]
 </pre>
 
  </div>
@@ -251,20 +299,7 @@ class="">}</span>
 
   <div class="framework framework_box_na" id="ruamel-py">
 <h3><a href="#ruamel-py">ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: &#39;b&#39;}
-/usr/local/lib/python2.7/dist-packages/ruamel/yaml/constructor.py:276: DuplicateKeyFutureWarning: while constructing a mapping
-found duplicate key &quot;a&quot; with value &quot;b&quot; (original value: &quot;b&quot;)
-  in &quot;&lt;byte string&gt;&quot;, line 1, column 1:
-    &amp;a a: &amp;b b
-    ^ (line: 1)
-
-To suppress this check see:
-    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
-
-Duplicate keys will become an error in future releases, and are errors
-by default when using the new API.
-
-  warnings.warn(DuplicateKeyFutureWarning(*args))
+<span class="status_box color_na">&nbsp;</span>na  <pre>[[&#39;-&#39;, &#39;-&#39;]]
 </pre>
 
  </div>

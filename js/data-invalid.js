@@ -194,6 +194,15 @@ var data = {
             "sequence"
          ]
       },
+      "9HCY" : {
+         "id" : "9HCY",
+         "in_yaml" : "!foo \"bar\"\n%TAG ! tag:example.com,2000:app/\n---\n!foo \"bar\"\n",
+         "tags" : [
+            "directive",
+            "error",
+            "footer"
+         ]
+      },
       "9JBA" : {
          "id" : "9JBA",
          "in_yaml" : "---\n[ a, b, c, ]#invalid\n",
@@ -464,14 +473,6 @@ var data = {
             "header"
          ]
       },
-      "NTY5" : {
-         "id" : "NTY5",
-         "in_yaml" : "%YAML1.2\n---\nkey: value\n",
-         "tags" : [
-            "directive",
-            "error"
-         ]
-      },
       "P2EQ" : {
          "id" : "P2EQ",
          "in_yaml" : "---\n- { y: z }- invalid\n",
@@ -530,6 +531,17 @@ var data = {
          "tags" : [
             "error",
             "folded"
+         ]
+      },
+      "S98Z" : {
+         "id" : "S98Z",
+         "in_yaml" : "empty block scalar: >\n \n  \n   \n # comment\n",
+         "tags" : [
+            "comment",
+            "error",
+            "folded",
+            "scalar",
+            "whitespace"
          ]
       },
       "SF5V" : {

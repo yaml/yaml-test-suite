@@ -129,6 +129,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP <tag:yaml.org,2002:set>\n=VAL :Mark McGwire\n=VAL :\n=VAL :Sammy Sosa\n=VAL :\n=VAL :Ken Griff\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
+      "33X3" : {
+         "id" : "33X3",
+         "in_json" : "[\n  1,\n  -2,\n  33\n]\n",
+         "in_yaml" : "---\n- !!int 1\n- !!int -2\n- !!int 33\n",
+         "tags" : [
+            "sequence",
+            "tag"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n=VAL <tag:yaml.org,2002:int> :1\n=VAL <tag:yaml.org,2002:int> :-2\n=VAL <tag:yaml.org,2002:int> :33\n-SEQ\n-DOC\n-STR\n"
+      },
       "35KP" : {
          "id" : "35KP",
          "in_json" : "{\n  \"a\": \"b\"\n}\n[\n  \"c\"\n]\n\"d e\"\n",
@@ -1484,6 +1494,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :unicode\n=VAL \"Sosa did fine.\u263a\n=VAL :control\n=VAL \"\\b1998\\t1999\\t2000\\n\n=VAL :hex esc\n=VAL \"\\r\\n is \\r\\n\n=VAL :single\n=VAL '\"Howdy!\" he cried.\n=VAL :quoted\n=VAL ' # Not a 'comment'.\n=VAL :tie-fighter\n=VAL '|\\\\-*-/|\n-MAP\n-DOC\n-STR\n"
       },
+      "G5U8" : {
+         "id" : "G5U8",
+         "in_json" : "[\n  [\n    \"-\",\n    \"-\"\n  ]\n]\n",
+         "in_yaml" : "---\n- [-, -]\n",
+         "tags" : [
+            "flow",
+            "sequence"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+SEQ\n=VAL :-\n=VAL :-\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+      },
       "G992" : {
          "id" : "G992",
          "in_json" : "\"folded text\\n\"\n",
@@ -2248,18 +2268,6 @@ var data = {
             "scalar"
          ],
          "test_event" : "+STR\n+DOC ---\n+SEQ\n=VAL ::,\n-SEQ\n-DOC\n-STR\n"
-      },
-      "S98Z" : {
-         "id" : "S98Z",
-         "in_json" : "{\n  \"empty block scalar\": \"\"\n}\n",
-         "in_yaml" : "empty block scalar: >\n \n  \n   \n # comment\n",
-         "tags" : [
-            "comment",
-            "folded",
-            "scalar",
-            "whitespace"
-         ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :empty block scalar\n=VAL >\n-MAP\n-DOC\n-STR\n"
       },
       "S9E8" : {
          "id" : "S9E8",
