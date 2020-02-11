@@ -7,8 +7,8 @@
     ---word1
     word2
 
---- emit-yaml
---- '---word1 word2'
+--- emit-yaml(<)
+    --- '---word1 word2'
 
 --- in-json
 "---word1 word2"
