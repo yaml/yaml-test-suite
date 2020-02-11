@@ -6,4 +6,5 @@
   # detected
 - |2
    explicit
-- "detected\n"
+- >
+  detected
