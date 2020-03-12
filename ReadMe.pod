@@ -57,8 +57,8 @@ L<https://github.com/perlpunk/yaml-test-matrix>.
 
 =head2 Usage
 
-The tests are currently written in L<TestML|https://github.com/testml-
-lang/testml/> under the C<test> directory on the C<master> branch.
+The tests are currently written in L<TestML|https://github.com/testml-lang/testml/>
+under the C<test> directory on the C<master> branch.
 
 If your language has a TestML processor, you can use these files directly.
 It's recommended to use the latest release C<vYYYY-MM-DD> instead of master.
