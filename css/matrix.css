@@ -188,13 +188,13 @@ div.framework:target, div.framework:hover {
 }
 div.framework_box_ok {
     min-width: 5em;
-    max-width: 13em;
+    max-width: 15em;
     min-height: 3em;
     max-height: 3em;
 }
 div.framework_box_json_ok {
     min-width: 5em;
-    max-width: 13em;
+    max-width: 15em;
     min-height: 3em;
     max-height: 3em;
 }
@@ -268,6 +268,10 @@ table.yaml tr th {
     font-weight: bold;
     text-align: left;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+table.yaml tr th.sub {
+    background-color: #ddd;
+	text-align: center;
 }
 table.yaml tr td.number {
     text-align: right;
