@@ -113,7 +113,7 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:195)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:712)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -133,9 +133,9 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:195)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:72)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:114)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:543)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:82)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:489)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -151,7 +151,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x563090c11f97
+	[C]: at 0x55fd0a1c0f97
 </pre>
  </div>
 
@@ -159,9 +159,9 @@ stack traceback:
   <div class="framework framework_box_error" id="nim-nimyaml-event">
 <h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>/buildutils/nimyaml_event.nim(5) nimyaml_event
-/tmp/NimYAML-0.12.0/yaml/parser.nim(1087) parse
-/tmp/NimYAML-0.12.0/yaml/parser.nim(1071) init
-/tmp/NimYAML-0.12.0/yaml/parser.nim(212) advance
+/tmp/NimYAML-0.13.1/yaml/parser.nim(1087) parse
+/tmp/NimYAML-0.13.1/yaml/parser.nim(1071) init
+/tmp/NimYAML-0.13.1/yaml/parser.nim(212) advance
 Error: unhandled exception: Unexpected character (expected line end): &quot;{&quot; [YamlParserError]
 </pre>
  </div>
@@ -349,7 +349,7 @@ found character &#39;\t&#39; that cannot start any token
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 905, in parse
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 907, in parse
     while loader._parser.check_event():
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
     self.current_event = self.state()
@@ -373,7 +373,7 @@ found character &#39;\t&#39; that cannot start any token
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 973, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 975, in load_all
     while loader._constructor.check_data():
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 100, in check_data
     return self.composer.check_node()
@@ -401,7 +401,7 @@ found character &#39;\t&#39; that cannot start any token
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 973, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 975, in load_all
     while loader._constructor.check_data():
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 100, in check_data
     return self.composer.check_node()

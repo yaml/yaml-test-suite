@@ -157,7 +157,27 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/LE5A.tml">&test-L
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">[</span>
+<span
+class="">  &quot;a&quot;,</span>
+<span
+class="">  &quot;b&quot;,</span>
+<span
+class="">  &quot;c&quot;,</span>
+<span
+class="">  &quot;c&quot;,</span>
+<span
+class="diff_line">  null</span>
+<span
+class="">]</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">[</span>
@@ -197,16 +217,7 @@ class="">]</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:4:4: error: aliases not allowed in JSON emit mode
-- *anchor
-   ^~~~~~
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!str &quot;a&quot;&#39; at /yaml/bin/perl-tiny-json line 12.
 </pre>

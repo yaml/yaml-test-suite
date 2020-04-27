@@ -94,13 +94,23 @@ b: *anchor
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
   <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -175,37 +185,7 @@ class="">}</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:3:5: error: aliases not allowed in JSON emit mode
-b: *anchor
-    ^~~~~~
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>/node/node_modules/yaml/dist/schema/Alias.js:83
-      if (this.cstNode) throw new _errors.YAMLReferenceError(this.cstNode, msg);else throw new ReferenceError(msg);
-                                                                                     ^
-
-ReferenceError: This should not happen: Alias anchor was not resolved?
-    at Alias.toJSON (/node/node_modules/yaml/dist/schema/Alias.js:83:92)
-    at toJSON (/node/node_modules/yaml/dist/toJSON.js:17:23)
-    at Pair.addToJSMap (/node/node_modules/yaml/dist/schema/Pair.js:61:44)
-    at YAMLMap.toJSON (/node/node_modules/yaml/dist/schema/Map.js:71:41)
-    at toJSON (/node/node_modules/yaml/dist/toJSON.js:17:23)
-    at Document.toJSON (/node/node_modules/yaml/dist/Document.js:591:32)
-    at YAML.parseAllDocuments.map.doc (/yaml/bin/js-yaml-json:9:29)
-    at Array.map (&lt;anonymous&gt;)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:42)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;anchor&#39; at /yaml/bin/perl-tiny-json line 12.
 </pre>

@@ -140,7 +140,7 @@ complex5:
 
  <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column -1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column -1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -170,15 +170,15 @@ complex5:
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 3:
@@ -304,7 +304,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55dd7dc0bf97
+	[C]: at 0x5574752dcf97
 </pre>
 
  </div>
@@ -420,7 +420,7 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 3, column -1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 3, column -1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -438,19 +438,19 @@ stack traceback:
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
    &quot;complex1&quot; : {
-      &quot;ARRAY(0x5627c8011950)&quot; : null
+      &quot;ARRAY(0x5566e666c980)&quot; : null
    },
    &quot;complex2&quot; : {
-      &quot;ARRAY(0x5627c8005118)&quot; : &quot;b&quot;
+      &quot;ARRAY(0x5566e6660118)&quot; : &quot;b&quot;
    },
    &quot;complex3&quot; : {
-      &quot;ARRAY(0x5627c8011b18)&quot; : &quot;b\n&quot;
+      &quot;ARRAY(0x5566e666cb18)&quot; : &quot;b\n&quot;
    },
    &quot;complex4&quot; : {
       &quot;a\n&quot; : null
    },
    &quot;complex5&quot; : {
-      &quot;ARRAY(0x5627c80119c8)&quot; : [
+      &quot;ARRAY(0x5566e666c9f8)&quot; : [
          &quot;b&quot;
       ]
    }
@@ -464,13 +464,13 @@ stack traceback:
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;complex1&#39; =&gt; {
-                  &#39;ARRAY(0x557a3c535c00)&#39; =&gt; undef
+                  &#39;ARRAY(0x5573d4a90be0)&#39; =&gt; undef
                 },
   &#39;complex2&#39; =&gt; {
-                  &#39;ARRAY(0x557a3c535a98)&#39; =&gt; &#39;b&#39;
+                  &#39;ARRAY(0x5573d4a90a78)&#39; =&gt; &#39;b&#39;
                 },
   &#39;complex3&#39; =&gt; {
-                  &#39;ARRAY(0x557a3c70fa40)&#39; =&gt; &#39;b
+                  &#39;ARRAY(0x5573d4c6ab00)&#39; =&gt; &#39;b
 &#39;
                 },
   &#39;complex4&#39; =&gt; {
@@ -478,7 +478,7 @@ stack traceback:
 &#39; =&gt; undef
                 },
   &#39;complex5&#39; =&gt; {
-                  &#39;ARRAY(0x557a3c7acc90)&#39; =&gt; [
+                  &#39;ARRAY(0x5573d4d07cd0)&#39; =&gt; [
                                                &#39;b&#39;
                                              ]
                 }
@@ -507,15 +507,15 @@ stack traceback:
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 3:

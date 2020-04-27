@@ -154,19 +154,19 @@ Aborted (core dumped)
     !e!foo &quot;bar&quot;
     ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:314)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:216)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:205)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:164)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:129)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:example.com,2000:app/foo
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:300)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 7 more
 </pre>
 

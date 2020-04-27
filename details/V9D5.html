@@ -106,7 +106,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/V9D5.tml">&test-V
 
  <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 9): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -125,15 +125,15 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/V9D5.tml">&test-V
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 3:
@@ -152,7 +152,7 @@ found unhashable key
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())
@@ -259,7 +259,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x56254442cf97
+	[C]: at 0x56517dcb5f97
 </pre>
 
  </div>
@@ -335,7 +335,7 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 3, column 9): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 3, column 9): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -356,7 +356,7 @@ stack traceback:
       &quot;sun&quot; : &quot;yellow&quot;
    },
    {
-      &quot;HASH(0x564372f248f0)&quot; : {
+      &quot;HASH(0x5593a03b58f0)&quot; : {
          &quot;moon&quot; : &quot;white&quot;
       }
    }
@@ -373,7 +373,7 @@ stack traceback:
     &#39;sun&#39; =&gt; &#39;yellow&#39;
   },
   {
-    &#39;HASH(0x55743625b1b0)&#39; =&gt; {
+    &#39;HASH(0x55dd2392f1b0)&#39; =&gt; {
                                 &#39;moon&#39; =&gt; &#39;white&#39;
                               }
   }
@@ -420,15 +420,15 @@ stack traceback:
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 3:
@@ -448,7 +448,7 @@ found unhashable key
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())

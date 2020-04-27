@@ -94,7 +94,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/HMQ5.tml">&test-H
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -149,16 +154,25 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/HMQ5.tml">&test-H
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:3:12: error: aliases not allowed in JSON emit mode
-&amp;a2 baz : *a1
-           ^~
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">{</span>
+<span
+class="diff_line">  &quot;baz&quot;: {</span>
+<span
+class="">    &quot;name&quot;: &quot;a1&quot;</span>
+<span
+class="">  },</span>
+<span
+class="">  &quot;foo&quot;: &quot;bar&quot;</span>
+<span
+class="">}</span>
 </pre>
  </div>
 
 
-  <div class="framework framework_box_error" id="js-jsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>
 /node/node_modules/js-yaml/lib/js-yaml/loader.js:173
@@ -177,13 +191,6 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>json text or perl structure exceeds maximum nesting level (max_depth set too low?) at /yaml/bin/perl-syck-json line 15.
 </pre>
  </div>
 
@@ -249,7 +256,9 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;baz&#39; =&gt; $VAR1,
+  &#39;baz&#39; =&gt; {
+             &#39;name&#39; =&gt; &#39;a1&#39;
+           },
   &#39;foo&#39; =&gt; &#39;bar&#39;
 }
 </pre>

@@ -192,7 +192,7 @@ Aborted (core dumped)
 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:712)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -210,9 +210,9 @@ Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:114)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:543)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:78)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:489)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -228,7 +228,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x559f9046cf97
+	[C]: at 0x564aa3bb6f97
 </pre>
  </div>
 
@@ -405,7 +405,7 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 905, in parse
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 907, in parse
     while loader._parser.check_event():
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
     self.current_event = self.state()
@@ -428,7 +428,7 @@ expected the node content, but found &#39;&lt;document end&gt;&#39;
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())
@@ -459,7 +459,7 @@ expected the node content, but found &#39;&lt;document end&gt;&#39;
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())

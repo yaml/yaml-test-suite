@@ -121,7 +121,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/PW8X.tml">&test-P
 
  <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 4, column 6): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 4, column 6): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -152,7 +152,7 @@ YAML Error: Invalid element in map
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -309,7 +309,7 @@ YAMLException: bad indentation of a sequence entry at line 4, column 6:
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55fee70a2f97
+	[C]: at 0x560c36d1af97
 </pre>
 
  </div>
@@ -413,7 +413,7 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 4, column 6): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 4, column 6): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -503,7 +503,7 @@ YAML Error: Invalid element in map
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()

@@ -99,7 +99,12 @@ Reuse anchor: *anchor
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -164,16 +169,7 @@ Reuse anchor: *anchor
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:2:21: error: aliases not allowed in JSON emit mode
-Second occurrence: *anchor
-                    ^~~~~~
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;anchor Foo&#39; at /yaml/bin/perl-tiny-json line 12.
 </pre>
@@ -194,7 +190,7 @@ Second occurrence: *anchor
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -225,7 +221,7 @@ second occurrence
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()

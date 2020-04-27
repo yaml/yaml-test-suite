@@ -149,15 +149,15 @@ block: &gt; # lala
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
@@ -266,7 +266,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55b12fb7ef97
+	[C]: at 0x55dd40a7bf97
 </pre>
 
  </div>
@@ -361,7 +361,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x565434eb9b28)&quot; : [
+   &quot;ARRAY(0x557c46fcbb28)&quot; : [
       &quot;seq2&quot;
    ],
    &quot;a&quot; : &quot;double quotes&quot;,
@@ -382,7 +382,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x564ba1690940)&#39; =&gt; [
+  &#39;ARRAY(0x55e412ad5940)&#39; =&gt; [
                                &#39;seq2&#39;
                              ],
   &#39;a&#39; =&gt; &#39;double quotes&#39;,
@@ -412,7 +412,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x5598362828f0)&quot; : [
+   &quot;ARRAY(0x555b4edef8b0)&quot; : [
       &quot;seq2&quot;
    ],
    &quot;a&quot; : &quot;double quotes&quot;,
@@ -433,7 +433,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x55f2433bc1b0)&#39; =&gt; [
+  &#39;ARRAY(0x564e95ab91b0)&#39; =&gt; [
                                &#39;seq2&#39;
                              ],
   &#39;a&#39; =&gt; &#39;double quotes&#39;,
@@ -471,15 +471,15 @@ stack traceback:
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:

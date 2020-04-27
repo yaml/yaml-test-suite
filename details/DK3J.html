@@ -193,7 +193,7 @@ Parse error: did not find expected &lt;document start&gt;
 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:712)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -211,9 +211,9 @@ Exception in thread &quot;main&quot; expected &#39;&lt;document start&gt;&#39;, 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:114)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:543)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:78)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:489)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -229,7 +229,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55c550d81f97
+	[C]: at 0x55bbe21ebf97
 </pre>
  </div>
 

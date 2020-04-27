@@ -163,9 +163,33 @@ YAML Error: Can&#39;t parse inline implicit value &#39;&#39;
 
  <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>stdin:9:11: error: aliases not allowed in JSON emit mode
-  start: *ORIGIN
-          ^~~~~~
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &quot;center&quot;: {
+      &quot;x&quot;: 73,
+      &quot;y&quot;: 129
+    },
+    &quot;radius&quot;: 7
+  },
+  {
+    &quot;start&quot;: {
+      &quot;x&quot;: 73,
+      &quot;y&quot;: 129
+    },
+    &quot;finish&quot;: {
+      &quot;x&quot;: 89,
+      &quot;y&quot;: 102
+    }
+  },
+  {
+    &quot;start&quot;: {
+      &quot;x&quot;: 73,
+      &quot;y&quot;: 129
+    },
+    &quot;color&quot;: &quot;0xFFEEBB&quot;,
+    &quot;text&quot;: &quot;Pretty vector drawing.&quot;
+  }
+]
 </pre>
 
  </div>
@@ -203,19 +227,19 @@ Aborted (core dumped)
     --- !shape
         ^
 
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:314)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:216)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:205)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:164)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:129)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: tag:clarkevans.com,2002:shape
 	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:637)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:300)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:309)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 7 more
 </pre>
 
@@ -417,7 +441,33 @@ YAMLException: unknown tag !&lt;tag:clarkevans.com,2002:circle&gt; at line 8, co
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
    &quot;%TAG ! tag:clarkevans.com,2002&quot; : null
 }
-null
+[
+   {
+      &quot;center&quot; : {
+         &quot;1&quot; : 129,
+         &quot;x&quot; : 73
+      },
+      &quot;radius&quot; : 7
+   },
+   {
+      &quot;finish&quot; : {
+         &quot;1&quot; : 102,
+         &quot;x&quot; : 89
+      },
+      &quot;start&quot; : {
+         &quot;1&quot; : 129,
+         &quot;x&quot; : 73
+      }
+   },
+   {
+      &quot;color&quot; : 16772795,
+      &quot;start&quot; : {
+         &quot;1&quot; : 129,
+         &quot;x&quot; : 73
+      },
+      &quot;text&quot; : &quot;Pretty vector drawing.&quot;
+   }
+]
 </pre>
 
  </div>
@@ -428,27 +478,27 @@ null
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;%TAG ! tag:clarkevans.com,2002&#39; =&gt; undef
 }
-bless( [
-         bless( {
-                  &#39;center&#39; =&gt; {
-                                &#39;1&#39; =&gt; 129,
-                                &#39;x&#39; =&gt; 73
-                              },
-                  &#39;radius&#39; =&gt; 7
-                }, &#39;circle&#39; ),
-         bless( {
-                  &#39;finish&#39; =&gt; {
-                                &#39;1&#39; =&gt; 102,
-                                &#39;x&#39; =&gt; 89
-                              },
-                  &#39;start&#39; =&gt; $VAR2-&gt;[0]{&#39;center&#39;}
-                }, &#39;line&#39; ),
-         bless( {
-                  &#39;color&#39; =&gt; 16772795,
-                  &#39;start&#39; =&gt; $VAR2-&gt;[0]{&#39;center&#39;},
-                  &#39;text&#39; =&gt; &#39;Pretty vector drawing.&#39;
-                }, &#39;label&#39; )
-       ], &#39;shape&#39; )
+[
+  {
+    &#39;center&#39; =&gt; {
+                  &#39;1&#39; =&gt; 129,
+                  &#39;x&#39; =&gt; 73
+                },
+    &#39;radius&#39; =&gt; 7
+  },
+  {
+    &#39;finish&#39; =&gt; {
+                  &#39;1&#39; =&gt; 102,
+                  &#39;x&#39; =&gt; 89
+                },
+    &#39;start&#39; =&gt; $VAR2-&gt;[0]{&#39;center&#39;}
+  },
+  {
+    &#39;color&#39; =&gt; 16772795,
+    &#39;start&#39; =&gt; $VAR2-&gt;[0]{&#39;center&#39;},
+    &#39;text&#39; =&gt; &#39;Pretty vector drawing.&#39;
+  }
+]
 </pre>
 
  </div>

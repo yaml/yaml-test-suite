@@ -153,7 +153,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">{</span>
 <span
-class="diff_line">  &quot;YAML::Syck::BadAlias=HASH(0x561a4fc7d120)&quot;: &quot;b&quot;,</span>
+class="diff_line">  &quot;HASH(0x564966193120)&quot;: &quot;b&quot;,</span>
 <span
 class="">  &quot;a&quot;: &quot;b&quot;</span>
 <span
@@ -164,9 +164,10 @@ class="">}</span>
 
  <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:2:2: error: aliases not allowed in JSON emit mode
-*a : *b
- ^
+<span class="status_box color_error">&nbsp;</span>error <pre>stdin:1:1: error: duplicate key after resolving
+&amp;a a: &amp;b b
+^
+[ERR]: fy_document_resolve() failed
 </pre>
  </div>
 
@@ -213,7 +214,7 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())
@@ -247,7 +248,7 @@ by default when using the new API.
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())
@@ -299,7 +300,7 @@ by default when using the new API.
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;YAML::Syck::BadAlias=HASH(0x55d8e79f6108)&#39; =&gt; &#39;b&#39;,
+  &#39;HASH(0x5623355430d8)&#39; =&gt; &#39;b&#39;,
   &#39;a&#39; =&gt; &#39;b&#39;
 }
 </pre>

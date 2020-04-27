@@ -73,7 +73,12 @@ b: *:@*!$&quot;&lt;foo&gt;:
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -103,16 +108,7 @@ b: *:@*!$&quot;&lt;foo&gt;:
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:2:5: error: aliases not allowed in JSON emit mode
-b: *:@*!$&quot;&lt;foo&gt;:
-    ^~~~~~~~~~~~
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="c-libyaml-event">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
@@ -129,18 +125,18 @@ Parse error: did not find expected alphabetic or numeric character
  in &#39;reader&#39;, line 1, column 4:
     a: &amp;:@*!$&quot;&lt;foo&gt;: scalar a
        ^
-expected alphabetic or numeric character, but found :(58)
+unexpected character found :(58)
  in &#39;reader&#39;, line 1, column 5:
     a: &amp;:@*!$&quot;&lt;foo&gt;: scalar a
         ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1444)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1433)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:937)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:368)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:712)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -153,26 +149,26 @@ expected alphabetic or numeric character, but found :(58)
  in &#39;reader&#39;, line 1, column 4:
     a: &amp;:@*!$&quot;&lt;foo&gt;: scalar a
        ^
-expected alphabetic or numeric character, but found :(58)
+unexpected character found :(58)
  in &#39;reader&#39;, line 1, column 5:
     a: &amp;:@*!$&quot;&lt;foo&gt;: scalar a
         ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1444)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1433)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:937)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:368)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:124)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -190,7 +186,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55a099c0cf97
+	[C]: at 0x5573c44d8f97
 </pre>
  </div>
 
@@ -233,14 +229,14 @@ while scanning an anchor at line: 1, column: 4
 
   <div class="framework framework_box_error" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 16): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 16): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
 
   <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 16): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 16): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -347,7 +343,7 @@ expected alphabetic or numeric character, but found &#39;:&#39;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -390,7 +386,7 @@ expected alphabetic or numeric character, but found &#39;:&#39;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()

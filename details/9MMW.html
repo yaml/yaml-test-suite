@@ -112,7 +112,7 @@ expected the node content, but found &#39;:&#39;
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:648)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:712)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -130,7 +130,7 @@ Line      : 1
 Column    : 10
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 377
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: separate ]\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 </pre>
@@ -143,9 +143,9 @@ YAML      : &quot;: separate ]\n&quot;
 Column    : 10
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 377
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: separate ]\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 83.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
 </pre>
  </div>
 
@@ -176,7 +176,7 @@ while parsing a flow node at line: 2, column: 5
 
   <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 2, column 5): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 2, column 5): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -254,7 +254,7 @@ expected the node content, but found &#39;:&#39;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -302,7 +302,7 @@ expected the node content, but found &#39;:&#39;
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-event&quot;, line 7, in &lt;module&gt;
     for event in ruamel.yaml.parse(sys.stdin.read()):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 905, in parse
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 907, in parse
     while loader._parser.check_event():
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
     self.current_event = self.state()
@@ -328,7 +328,7 @@ expected the node content, but found &#39;:&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())
@@ -444,13 +444,13 @@ expected the node content, but found &#39;:&#39;
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:190)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)
-	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:191)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:208)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:209)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -502,7 +502,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5652c54dbf97
+	[C]: at 0x55ab5f095f97
 </pre>
 
  </div>
@@ -514,9 +514,9 @@ stack traceback:
 Column    : 10
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 377
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: separate ]\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 83.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
 </pre>
 
  </div>
@@ -537,7 +537,7 @@ while parsing a flow node at line: 2, column: 5
 
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 2, column 5): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 75, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 2, column 5): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -583,7 +583,7 @@ while parsing a flow node at line: 2, column: 5
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -622,7 +622,7 @@ expected the node content, but found &#39;:&#39;
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())

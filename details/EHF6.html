@@ -136,6 +136,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/EHF6.tml">&test-E
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -156,15 +161,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/EHF6.tml">&test-E
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">null</span>
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 2, Col: 6, Idx: 13) - (Line: 3, Col: 3, Idx: 21): Encountered an unresolved tag &#39;tag:yaml.org,2002:seq&#39;
    at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
@@ -249,12 +246,12 @@ Aborted (core dumped)
 
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>bless( {
-         &#39;k&#39; =&gt; bless( [
-                         &#39;a&#39;,
-                         &#39;b&#39;
-                       ], &#39;seq&#39; )
-       }, &#39;map&#39; )
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &#39;k&#39; =&gt; [
+           &#39;a&#39;,
+           &#39;b&#39;
+         ]
+}
 </pre>
 
  </div>

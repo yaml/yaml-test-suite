@@ -122,7 +122,7 @@ Line      : 3
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 377
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: d, e]]: 23\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 </pre>
@@ -135,9 +135,9 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 377
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: d, e]]: 23\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 83.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
 </pre>
  </div>
 
@@ -167,15 +167,15 @@ YAML      : &quot;: d, e]]: 23\n&quot;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
 found unhashable key
@@ -191,7 +191,7 @@ found unhashable key
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())
@@ -335,7 +335,7 @@ YAMLException: nested arrays are not supported inside keys at line 3, column 20:
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55a5b5a87f97
+	[C]: at 0x5572cdb83f97
 </pre>
 
  </div>
@@ -347,9 +347,9 @@ stack traceback:
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 377
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: d, e]]: 23\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 83.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
 </pre>
 
  </div>
@@ -383,7 +383,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x55b61315ba98)&quot; : 23
+      &quot;ARRAY(0x556610c47a80)&quot; : 23
    }
 ]
 </pre>
@@ -395,7 +395,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x562d6fb921c8)&#39; =&gt; 23
+    &#39;ARRAY(0x559f44e390d8)&#39; =&gt; 23
   }
 ]
 </pre>
@@ -415,7 +415,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x55e0930bf228)&quot; : 23
+      &quot;ARRAY(0x556090039248)&quot; : 23
    }
 ]
 </pre>
@@ -427,7 +427,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x55f3ee73fb18)&#39; =&gt; 23
+    &#39;ARRAY(0x556623dccb38)&#39; =&gt; 23
   }
 ]
 </pre>
@@ -454,15 +454,15 @@ YAML      : &quot;: d, e]]: 23\n&quot;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 52, in construct_document
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 60, in construct_document
     for dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 404, in construct_yaml_map
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 413, in construct_yaml_map
     value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 210, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 218, in construct_mapping
     return super().construct_mapping(node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 134, in construct_mapping
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 142, in construct_mapping
     &quot;found unhashable key&quot;, key_node.start_mark)
 yaml.constructor.ConstructorError: while constructing a mapping
 found unhashable key
@@ -479,7 +479,7 @@ found unhashable key
 <span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
   File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
     for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 974, in load_all
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
     yield loader._constructor.get_data()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
     return self.construct_document(self.composer.get_node())

@@ -179,7 +179,9 @@ class="diff_line">&quot;%!PS-Adobe-2.0\n...\n%YAML 1.2\n---\n...\n&quot;</span>
  <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-Parse error: found incompatible YAML document
++DOC ---
+=VAL |
+Parse error: could not find expected directive name
 </pre>
  </div>
 
@@ -215,7 +217,7 @@ expected alphabetic or numeric character, but found !(33)
 	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:250)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:253)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:712)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -241,9 +243,9 @@ expected alphabetic or numeric character, but found !(33)
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:253)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:168)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:87)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:97)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -259,7 +261,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55aaa1a32f97
+	[C]: at 0x55de63eeaf97
 </pre>
  </div>
 
@@ -384,7 +386,7 @@ expected alphabetic or numeric character, but found &#39;!&#39;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
@@ -423,7 +425,7 @@ expected alphabetic or numeric character, but found &#39;!&#39;
     for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
     yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 37, in get_data
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
     return self.construct_document(self.get_node())
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
     return self.compose_document()
