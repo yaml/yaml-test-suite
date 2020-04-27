@@ -10,12 +10,6 @@ folded:
   >1
  value
 
---- in-json
-{
-  "literal": "value\n",
-  "folded": "value\n"
-}
-
 --- out-yaml
 literal: |
   value

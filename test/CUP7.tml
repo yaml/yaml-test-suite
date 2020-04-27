@@ -6,12 +6,6 @@
 anchored: !local &anchor value
 alias: *anchor
 
---- in-json
-{
-  "anchored": "value",
-  "alias": "value"
-}
-
 --- out-yaml
 anchored: &anchor !local value
 alias: *anchor

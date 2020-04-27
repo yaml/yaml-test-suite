@@ -8,12 +8,6 @@ literal: |2
 folded: !foo >1
  value
 
---- in-json
-{
-  "literal": "value\n",
-  "folded": "value\n"
-}
-
 --- out-yaml
 literal: |
   value

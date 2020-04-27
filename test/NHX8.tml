@@ -5,13 +5,6 @@
 --- in-yaml(+)
 :
 
-
-
---- in-json
-{
-  "": null
-}
-
 --- emit-yaml
 :
 

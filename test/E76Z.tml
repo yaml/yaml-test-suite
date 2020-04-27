@@ -4,16 +4,17 @@
 
 --- in-yaml
 &a a: &b b
-*a : *b
+*b : *a
 
 --- in-json
 {
-  "a": "b"
+  "a": "b",
+  "b": "a"
 }
 
 --- out-yaml
 &a a: &b b
-*a : *b
+*b : *a
 
 --- test-event
 +STR
@@ -21,8 +22,8 @@
 +MAP
 =VAL &a :a
 =VAL &b :b
-=ALI *a
 =ALI *b
+=ALI *a
 -MAP
 -DOC
 -STR

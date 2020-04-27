@@ -4,18 +4,18 @@
 
 --- in-yaml
 a: 4.2
-? 23
-: d
+? d
+: 23
 
 --- in-json
 {
-  "23": "d",
+  "d": 23,
   "a": 4.2
 }
 
 --- out-yaml
 a: 4.2
-23: d
+d: 23
 
 --- test-event
 +STR
@@ -23,8 +23,8 @@ a: 4.2
 +MAP
 =VAL :a
 =VAL :4.2
-=VAL :23
 =VAL :d
+=VAL :23
 -MAP
 -DOC
 -STR
