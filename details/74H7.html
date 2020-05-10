@@ -19,7 +19,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/74H7.tml">&test-7
 c: !!int 42
 e: !!str f
 g: h
-!!int 23: !!bool false
+!!str 23: !!bool false
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
@@ -32,7 +32,7 @@ g: h
 =VAL &lt;tag:yaml.org,2002:str&gt; :f
 =VAL :g
 =VAL :h
-=VAL &lt;tag:yaml.org,2002:int&gt; :23
+=VAL &lt;tag:yaml.org,2002:str&gt; :23
 =VAL &lt;tag:yaml.org,2002:bool&gt; :false
 -MAP
 -DOC
@@ -102,7 +102,12 @@ g: h
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -132,6 +137,16 @@ g: h
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="ruby-psych-json">
 <h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -141,14 +156,6 @@ g: h
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="diff_line">parse error: Object keys must be strings at line 6, column 5</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">parse error: Object keys must be strings at line 1, column 43</span>
 </pre>
  </div>
 
@@ -230,44 +237,6 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
  </div>
 
 
-  <div class="framework framework_box_error" id="py-pyyaml-json">
-<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 353, in _iterencode_dict
-    items = sorted(dct.items(), key=lambda kv: kv[0])
-TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 353, in _iterencode_dict
-    items = sorted(dct.items(), key=lambda kv: kv[0])
-TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
@@ -342,7 +311,7 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &
 
   <div class="framework framework_box_na" id="py-pyyaml-py">
 <h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{23: False, &#39;a&#39;: &#39;b&#39;, &#39;c&#39;: 42, &#39;e&#39;: &#39;f&#39;, &#39;g&#39;: &#39;h&#39;}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;23&#39;: False, &#39;a&#39;: &#39;b&#39;, &#39;c&#39;: 42, &#39;e&#39;: &#39;f&#39;, &#39;g&#39;: &#39;h&#39;}
 </pre>
 
  </div>
@@ -350,7 +319,7 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &
 
   <div class="framework framework_box_na" id="py-ruamel-py">
 <h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{23: False, &#39;a&#39;: &#39;b&#39;, &#39;c&#39;: 42, &#39;e&#39;: &#39;f&#39;, &#39;g&#39;: &#39;h&#39;}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;23&#39;: False, &#39;a&#39;: &#39;b&#39;, &#39;c&#39;: 42, &#39;e&#39;: &#39;f&#39;, &#39;g&#39;: &#39;h&#39;}
 </pre>
 
  </div>

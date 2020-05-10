@@ -16,21 +16,21 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 &nbsp;&nbsp;Tags: [ alias, mapping ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&amp;a a: &amp;b b
-*a : *b
+*b : *a
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +MAP
 =VAL &amp;a :a
 =VAL &amp;b :b
-=ALI *a
 =ALI *b
+=ALI *a
 -MAP
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>  &quot;a&quot;: &quot;b&quot;<br>}<br></pre>
+<pre>{<br>  &quot;a&quot;: &quot;b&quot;,<br>  &quot;b&quot;: &quot;a&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="c-libfyaml-event">
@@ -93,7 +93,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -143,6 +148,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="ruby-psych-json">
 <h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -153,26 +163,20 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/E76Z.tml">&test-E
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">{</span>
 <span
-class="diff_line">  &quot;HASH(0x5628c954e120)&quot;: &quot;b&quot;,</span>
+class="">  &quot;a&quot;: &quot;b&quot;,</span>
 <span
-class="">  &quot;a&quot;: &quot;b&quot;</span>
+class="diff_line">  &quot;b&quot;: {</span>
+<span
+class="">    &quot;name&quot;: &quot;a&quot;</span>
+<span
+class="">  }</span>
 <span
 class="">}</span>
 </pre>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:1:1: error: duplicate key after resolving
-&amp;a a: &amp;b b
-^
-[ERR]: fy_document_resolve() failed
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="js-jsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>
 /node/node_modules/js-yaml/lib/js-yaml/loader.js:173
@@ -195,78 +199,11 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
  </div>
 
 
-  <div class="framework framework_box_error" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 123, in construct_document
-    for _dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 723, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 440, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 257, in construct_mapping
-    if self.check_mapping_key(node, key_node, mapping, key, value):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 295, in check_mapping_key
-    raise DuplicateKeyError(*args)
-ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
-found duplicate key &quot;a&quot; with value &quot;b&quot; (original value: &quot;b&quot;)
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    &amp;a a: &amp;b b
-    ^ (line: 1)
-
-To suppress this check see:
-    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
-
-Duplicate keys will become an error in future releases, and are errors
-by default when using the new API.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="py-ruamel-py">
-<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 123, in construct_document
-    for _dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 723, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 440, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 257, in construct_mapping
-    if self.check_mapping_key(node, key_node, mapping, key, value):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 295, in check_mapping_key
-    raise DuplicateKeyError(*args)
-ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
-found duplicate key &quot;a&quot; with value &quot;b&quot; (original value: &quot;b&quot;)
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    &amp;a a: &amp;b b
-    ^ (line: 1)
-
-To suppress this check see:
-    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
-
-Duplicate keys will become an error in future releases, and are errors
-by default when using the new API.
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;b&#39; =&gt; &#39;a&#39;
 }
 </pre>
 
@@ -276,7 +213,8 @@ by default when using the new API.
   <div class="framework framework_box_na" id="perl-pplibyaml-perl">
 <h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;b&#39; =&gt; &#39;a&#39;
 }
 </pre>
 
@@ -286,8 +224,10 @@ by default when using the new API.
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;HASH(0x55e574b8e108)&#39; =&gt; &#39;b&#39;,
-  &#39;a&#39; =&gt; &#39;b&#39;
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;b&#39; =&gt; {
+           &#39;name&#39; =&gt; &#39;a&#39;
+         }
 }
 </pre>
 
@@ -313,7 +253,8 @@ by default when using the new API.
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;b&#39; =&gt; &#39;a&#39;
 }
 </pre>
 
@@ -323,7 +264,8 @@ by default when using the new API.
   <div class="framework framework_box_na" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;a&#39; =&gt; &#39;b&#39;
+  &#39;a&#39; =&gt; &#39;b&#39;,
+  &#39;b&#39; =&gt; &#39;a&#39;
 }
 </pre>
 
@@ -332,7 +274,15 @@ by default when using the new API.
 
   <div class="framework framework_box_na" id="py-pyyaml-py">
 <h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: &#39;b&#39;}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: &#39;b&#39;, &#39;b&#39;: &#39;a&#39;}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: &#39;b&#39;, &#39;b&#39;: &#39;a&#39;}
 </pre>
 
  </div>

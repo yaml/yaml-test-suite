@@ -660,12 +660,12 @@ var data = {
       "74H7" : {
          "id" : "74H7",
          "in_json" : "{\n  \"a\": \"b\",\n  \"c\": 42,\n  \"e\": \"f\",\n  \"g\": \"h\",\n  \"23\": false\n}\n",
-         "in_yaml" : "!!str a: b\nc: !!int 42\ne: !!str f\ng: h\n!!int 23: !!bool false\n",
+         "in_yaml" : "!!str a: b\nc: !!int 42\ne: !!str f\ng: h\n!!str 23: !!bool false\n",
          "tags" : [
             "mapping",
             "tag"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL <tag:yaml.org,2002:str> :a\n=VAL :b\n=VAL :c\n=VAL <tag:yaml.org,2002:int> :42\n=VAL :e\n=VAL <tag:yaml.org,2002:str> :f\n=VAL :g\n=VAL :h\n=VAL <tag:yaml.org,2002:int> :23\n=VAL <tag:yaml.org,2002:bool> :false\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL <tag:yaml.org,2002:str> :a\n=VAL :b\n=VAL :c\n=VAL <tag:yaml.org,2002:int> :42\n=VAL :e\n=VAL <tag:yaml.org,2002:str> :f\n=VAL :g\n=VAL :h\n=VAL <tag:yaml.org,2002:str> :23\n=VAL <tag:yaml.org,2002:bool> :false\n-MAP\n-DOC\n-STR\n"
       },
       "753E" : {
          "id" : "753E",
@@ -1105,13 +1105,13 @@ var data = {
       },
       "AZ63" : {
          "id" : "AZ63",
-         "in_json" : "{\n  \"1\": [\n    2,\n    3\n  ],\n  \"4\": 5\n}\n",
-         "in_yaml" : "1:\n- 2\n- 3\n4: 5\n",
+         "in_json" : "{\n  \"one\": [\n    2,\n    3\n  ],\n  \"four\": 5\n}\n",
+         "in_yaml" : "one:\n- 2\n- 3\nfour: 5\n",
          "tags" : [
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :1\n+SEQ\n=VAL :2\n=VAL :3\n-SEQ\n=VAL :4\n=VAL :5\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :one\n+SEQ\n=VAL :2\n=VAL :3\n-SEQ\n=VAL :four\n=VAL :5\n-MAP\n-DOC\n-STR\n"
       },
       "AZW3" : {
          "id" : "AZW3",
@@ -1331,13 +1331,13 @@ var data = {
       },
       "E76Z" : {
          "id" : "E76Z",
-         "in_json" : "{\n  \"a\": \"b\"\n}\n",
-         "in_yaml" : "&a a: &b b\n*a : *b\n",
+         "in_json" : "{\n  \"a\": \"b\",\n  \"b\": \"a\"\n}\n",
+         "in_yaml" : "&a a: &b b\n*b : *a\n",
          "tags" : [
             "alias",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL &a :a\n=VAL &b :b\n=ALI *a\n=ALI *b\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL &a :a\n=VAL &b :b\n=ALI *b\n=ALI *a\n-MAP\n-DOC\n-STR\n"
       },
       "EHF6" : {
          "id" : "EHF6",
@@ -1518,12 +1518,12 @@ var data = {
       },
       "GH63" : {
          "id" : "GH63",
-         "in_json" : "{\n  \"a\": 13,\n  \"1.5\": \"d\"\n}\n",
-         "in_yaml" : "? a\n: 13\n1.5: d\n",
+         "in_json" : "{\n  \"a\": 1.3,\n  \"fifteen\": \"d\"\n}\n",
+         "in_yaml" : "? a\n: 1.3\nfifteen: d\n",
          "tags" : [
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :13\n=VAL :1.5\n=VAL :d\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :1.3\n=VAL :fifteen\n=VAL :d\n-MAP\n-DOC\n-STR\n"
       },
       "H2RW" : {
          "id" : "H2RW",
@@ -1618,13 +1618,13 @@ var data = {
       },
       "J7VC" : {
          "id" : "J7VC",
-         "in_json" : "{\n  \"1\": 2,\n  \"3\": 4\n}\n",
-         "in_yaml" : "1: 2\n\n\n3: 4\n",
+         "in_json" : "{\n  \"one\": 2,\n  \"three\": 4\n}\n",
+         "in_yaml" : "one: 2\n\n\nthree: 4\n",
          "tags" : [
             "mapping",
             "whitespace"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :1\n=VAL :2\n=VAL :3\n=VAL :4\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :one\n=VAL :2\n=VAL :three\n=VAL :4\n-MAP\n-DOC\n-STR\n"
       },
       "J9HZ" : {
          "id" : "J9HZ",
@@ -1982,8 +1982,8 @@ var data = {
       },
       "NHX8" : {
          "id" : "NHX8",
-         "in_json" : "{\n  \"\": null\n}\n",
-         "in_yaml" : ":\n\n\n\n",
+         "in_json" : null,
+         "in_yaml" : ":\n\n\n",
          "tags" : [
             "whitespace"
          ],
@@ -2189,12 +2189,12 @@ var data = {
       },
       "RR7F" : {
          "id" : "RR7F",
-         "in_json" : "{\n  \"23\": \"d\",\n  \"a\": 4.2\n}\n",
-         "in_yaml" : "a: 4.2\n? 23\n: d\n",
+         "in_json" : "{\n  \"d\": 23,\n  \"a\": 4.2\n}\n",
+         "in_yaml" : "a: 4.2\n? d\n: 23\n",
          "tags" : [
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :4.2\n=VAL :23\n=VAL :d\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :4.2\n=VAL :d\n=VAL :23\n-MAP\n-DOC\n-STR\n"
       },
       "RTP8" : {
          "id" : "RTP8",
@@ -2232,7 +2232,7 @@ var data = {
       },
       "S3PD" : {
          "id" : "S3PD",
-         "in_json" : "{\n  \"plain key\": \"in-line value\",\n  \"\": null,\n  \"quoted key\": [\n    \"entry\"\n  ]\n}\n",
+         "in_json" : null,
          "in_yaml" : "plain key: in-line value\n: # Both empty\n\"quoted key\":\n- entry\n",
          "tags" : [
             "mapping",

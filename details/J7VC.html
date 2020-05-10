@@ -15,24 +15,24 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/J7VC.tml">&test-J
 &nbsp;&nbsp;Title: Empty Lines Between Mapping Elements</br>
 &nbsp;&nbsp;Tags: [ mapping, whitespace ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>1: 2
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>one: 2
 
 
-3: 4
+three: 4
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +MAP
-=VAL :1
+=VAL :one
 =VAL :2
-=VAL :3
+=VAL :three
 =VAL :4
 -MAP
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>  &quot;1&quot;: 2,<br>  &quot;3&quot;: 4<br>}<br></pre>
+<pre>{<br>  &quot;one&quot;: 2,<br>  &quot;three&quot;: 4<br>}<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="c-libfyaml-event">
@@ -95,7 +95,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/J7VC.tml">&test-J
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -112,6 +117,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/J7VC.tml">&test-J
 
   <div class="framework framework_box_json_ok" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -155,40 +165,16 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/J7VC.tml">&test-J
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">parse error: Object keys must be strings at line 2, column 4</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">{</span>
 <span
-class="diff_line">  &quot;1&quot;: &quot;2&quot;,</span>
+class="diff_line">  &quot;one&quot;: &quot;2&quot;,</span>
 <span
-class="">  &quot;3&quot;: &quot;4&quot;</span>
+class="">  &quot;three&quot;: &quot;4&quot;</span>
 <span
 class="">}</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="lua-lyaml-json">
-<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">[</span>
-<span
-class="">  2,</span>
-<span
-class="">  null,</span>
-<span
-class="">  4</span>
-<span
-class="">]</span>
 </pre>
  </div>
 
@@ -198,9 +184,9 @@ class="">]</span>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">{</span>
 <span
-class="diff_line">  &quot;1&quot;: &quot;2&quot;,</span>
+class="diff_line">  &quot;one&quot;: &quot;2&quot;,</span>
 <span
-class="">  &quot;3&quot;: &quot;4&quot;</span>
+class="">  &quot;three&quot;: &quot;4&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -210,8 +196,8 @@ class="">}</span>
  <hr style="clear: both;">       <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1&#39; =&gt; 2,
-  &#39;3&#39; =&gt; 4
+  &#39;one&#39; =&gt; 2,
+  &#39;three&#39; =&gt; 4
 }
 </pre>
 
@@ -221,8 +207,8 @@ class="">}</span>
   <div class="framework framework_box_na" id="perl-pplibyaml-perl">
 <h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1&#39; =&gt; 2,
-  &#39;3&#39; =&gt; 4
+  &#39;one&#39; =&gt; 2,
+  &#39;three&#39; =&gt; 4
 }
 </pre>
 
@@ -232,8 +218,8 @@ class="">}</span>
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1&#39; =&gt; 2,
-  &#39;3&#39; =&gt; 4
+  &#39;one&#39; =&gt; 2,
+  &#39;three&#39; =&gt; 4
 }
 </pre>
 
@@ -243,8 +229,8 @@ class="">}</span>
   <div class="framework framework_box_na" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1&#39; =&gt; &#39;2&#39;,
-  &#39;3&#39; =&gt; &#39;4&#39;
+  &#39;one&#39; =&gt; &#39;2&#39;,
+  &#39;three&#39; =&gt; &#39;4&#39;
 }
 </pre>
 
@@ -254,8 +240,8 @@ class="">}</span>
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1&#39; =&gt; 2,
-  &#39;3&#39; =&gt; 4
+  &#39;one&#39; =&gt; 2,
+  &#39;three&#39; =&gt; 4
 }
 </pre>
 
@@ -265,8 +251,8 @@ class="">}</span>
   <div class="framework framework_box_na" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1&#39; =&gt; 2,
-  &#39;3&#39; =&gt; 4
+  &#39;one&#39; =&gt; 2,
+  &#39;three&#39; =&gt; 4
 }
 </pre>
 
@@ -275,7 +261,7 @@ class="">}</span>
 
   <div class="framework framework_box_na" id="py-pyyaml-py">
 <h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{1: 2, 3: 4}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;one&#39;: 2, &#39;three&#39;: 4}
 </pre>
 
  </div>
@@ -283,7 +269,7 @@ class="">}</span>
 
   <div class="framework framework_box_na" id="py-ruamel-py">
 <h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{1: 2, 3: 4}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;one&#39;: 2, &#39;three&#39;: 4}
 </pre>
 
  </div>

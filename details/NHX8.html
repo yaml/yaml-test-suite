@@ -18,7 +18,6 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/NHX8.tml">&test-N
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>:
 
 
-
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
@@ -73,72 +72,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/NHX8.tml">&test-N
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
-<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
-  <div class="framework framework_box_json_ok" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
-  <div class="framework framework_box_json_ok" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
-  <div class="framework framework_box_json_ok" id="perl-yaml-json">
-<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">parse error: Object keys must be strings at line 2, column 7</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="">{</span>
-<span
-class="diff_line">  &quot;null&quot;: null</span>
-<span
-class="">}</span>
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libyaml-event">
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +MAP
 Parse error: did not find expected key
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 1, Col: 1, Idx: 0) - (Line: 1, Col: 1, Idx: 0): Exception during deserialization
- ---&gt; System.ArgumentNullException: Value cannot be null. (Parameter &#39;key&#39;)
-   at System.Collections.Generic.Dictionary`2.System.Collections.IDictionary.set_Item(Object key, Object value)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   --- End of inner exception stack trace ---
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
-   at Program.Main(String[] commandLineArguments)
-Aborted (core dumped)
 </pre>
  </div>
 
@@ -164,85 +103,8 @@ expected &lt;block end&gt;, but found &#39;:&#39;
  </div>
 
 
-  <div class="framework framework_box_error" id="java-snakeyaml-json">
-<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a block mapping
- in &#39;reader&#39;, line 1, column 1:
-    :
-    ^
-expected &lt;block end&gt;, but found &#39;:&#39;
- in &#39;reader&#39;, line 1, column 1:
-    :
-    ^
-
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey.produce(ParserImpl.java:552)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:235)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="js-jsyaml-json">
-<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
-  throw generateError(state, message);
-  ^
-YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 1:
-    :
-    ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1027:9)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="lua-lyaml-json">
-<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>luajit: 1:1: did not find expected key
-stack traceback:
-	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
-	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55edc8b37f97
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl-pplibyaml-event">
 <h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
-
-    did not find expected key
-
-was found at 
-while parsing a block mapping at line: 1, column: 1
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-pplibyaml-json">
-<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
 
     did not find expected key
@@ -265,13 +127,6 @@ while parsing a block mapping at line: 1, column: 1
  </div>
 
 
-  <div class="framework framework_box_error" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
@@ -279,28 +134,9 @@ while parsing a block mapping at line: 1, column: 1
  </div>
 
 
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;:&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;:&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-xs-json">
-<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    did not find expected key
-
-was found at document: 1
-while parsing a block mapping at line: 1, column: 1
 </pre>
  </div>
 
@@ -327,38 +163,6 @@ Traceback (most recent call last):
     for event in yaml.parse(sys.stdin.read()):
   File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
     while loader.check_event():
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
-    self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 425, in parse_block_mapping_first_key
-    return self.parse_block_mapping_key()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 439, in parse_block_mapping_key
-    &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
-yaml.parser.ParserError: while parsing a block mapping
-expected &lt;block end&gt;, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    :
-    ^
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="py-pyyaml-json">
-<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 19, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
-  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
-    yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
-    return self.compose_document()
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
-    node = self.compose_node(None, None)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
-    node = self.compose_mapping_node(anchor)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 127, in compose_mapping_node
-    while not self.check_event(MappingEndEvent):
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 425, in parse_block_mapping_first_key
@@ -406,20 +210,189 @@ expected &lt;block end&gt;, but found &#39;:&#39;
  </div>
 
 
-  <div class="framework framework_box_error" id="ruby-psych-json">
-<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected key while parsing a block mapping at line 1 column 1 (Psych::SyntaxError)
-	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
-	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
-	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  null: null
+}
 </pre>
+
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
+  <div class="framework framework_box_na" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 1, Col: 1, Idx: 0) - (Line: 1, Col: 1, Idx: 0): Exception during deserialization
+ ---&gt; System.ArgumentNullException: Value cannot be null. (Parameter &#39;key&#39;)
+   at System.Collections.Generic.Dictionary`2.System.Collections.IDictionary.set_Item(Object key, Object value)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   --- End of inner exception stack trace ---
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;&quot;:null}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; while parsing a block mapping
+ in &#39;reader&#39;, line 1, column 1:
+    :
+    ^
+expected &lt;block end&gt;, but found &#39;:&#39;
+ in &#39;reader&#39;, line 1, column 1:
+    :
+    ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey.produce(ParserImpl.java:552)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:235)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>
+/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+  throw generateError(state, message);
+  ^
+YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 1:
+    :
+    ^
+    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1027:9)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;&quot;: null
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>luajit: 1:1: did not find expected key
+stack traceback:
+	[C]: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/yaml/bin/lua-lyaml-json:6: in main chunk
+	[C]: at 0x556dbd79ef97
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+   &quot;&quot; : null
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;&#39; =&gt; undef
+}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected key
+
+was found at 
+while parsing a block mapping at line: 1, column: 1
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 1, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;:&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected key
+
+was found at document: 1
+while parsing a block mapping at line: 1, column: 1
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+   &quot;&quot; : null
 }
 </pre>
 
@@ -436,9 +409,63 @@ expected &lt;block end&gt;, but found &#39;:&#39;
  </div>
 
 
+  <div class="framework framework_box_na" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 19, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 425, in parse_block_mapping_first_key
+    return self.parse_block_mapping_key()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 439, in parse_block_mapping_key
+    &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a block mapping
+expected &lt;block end&gt;, but found &#39;:&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    :
+    ^
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;null&quot;: null
+}
+</pre>
+
+ </div>
+
+
   <div class="framework framework_box_na" id="py-ruamel-py">
 <h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{None: None}
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected key while parsing a block mapping at line 1 column 1 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
+	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
+	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
 </pre>
 
  </div>

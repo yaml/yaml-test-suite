@@ -16,22 +16,22 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/GH63.tml">&test-G
 &nbsp;&nbsp;Tags: [ mapping ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>? a
-: 13
-1.5: d
+: 1.3
+fifteen: d
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +MAP
 =VAL :a
-=VAL :13
-=VAL :1.5
+=VAL :1.3
+=VAL :fifteen
 =VAL :d
 -MAP
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>{<br>  &quot;1.5&quot;: &quot;d&quot;,<br>  &quot;a&quot;: 13<br>}<br></pre>
+<pre>{<br>  &quot;a&quot;: 1.3,<br>  &quot;fifteen&quot;: &quot;d&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="c-libfyaml-event">
@@ -94,7 +94,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/GH63.tml">&test-G
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -144,27 +149,29 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/GH63.tml">&test-G
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="ruby-psych-json">
 <h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">parse error: Object keys must be strings at line 3, column 6</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">{</span>
 <span
-class="">  &quot;1.5&quot;: &quot;d&quot;,</span>
+class="diff_line">  &quot;a&quot;: &quot;1.3&quot;,</span>
 <span
-class="diff_line">  &quot;a&quot;: &quot;13&quot;</span>
+class="">  &quot;fifteen&quot;: &quot;d&quot;</span>
 <span
 class="">}</span>
 </pre>
@@ -185,49 +192,11 @@ class="">}</span>
  </div>
 
 
-  <div class="framework framework_box_error" id="py-pyyaml-json">
-<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 353, in _iterencode_dict
-    items = sorted(dct.items(), key=lambda kv: kv[0])
-TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and &#39;str&#39;
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 353, in _iterencode_dict
-    items = sorted(dct.items(), key=lambda kv: kv[0])
-TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and &#39;str&#39;
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1.5&#39; =&gt; &#39;d&#39;,
-  &#39;a&#39; =&gt; 13
+  &#39;a&#39; =&gt; &#39;1.3&#39;,
+  &#39;fifteen&#39; =&gt; &#39;d&#39;
 }
 </pre>
 
@@ -237,8 +206,8 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and
   <div class="framework framework_box_na" id="perl-pplibyaml-perl">
 <h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1.5&#39; =&gt; &#39;d&#39;,
-  &#39;a&#39; =&gt; 13
+  &#39;a&#39; =&gt; &#39;1.3&#39;,
+  &#39;fifteen&#39; =&gt; &#39;d&#39;
 }
 </pre>
 
@@ -248,8 +217,8 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1.5&#39; =&gt; &#39;d&#39;,
-  &#39;a&#39; =&gt; 13
+  &#39;a&#39; =&gt; &#39;1.3&#39;,
+  &#39;fifteen&#39; =&gt; &#39;d&#39;
 }
 </pre>
 
@@ -259,8 +228,8 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1.5&#39; =&gt; &#39;d&#39;,
-  &#39;a&#39; =&gt; 13
+  &#39;a&#39; =&gt; &#39;1.3&#39;,
+  &#39;fifteen&#39; =&gt; &#39;d&#39;
 }
 </pre>
 
@@ -270,8 +239,8 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and
   <div class="framework framework_box_na" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;1.5&#39; =&gt; &#39;d&#39;,
-  &#39;a&#39; =&gt; 13
+  &#39;a&#39; =&gt; &#39;1.3&#39;,
+  &#39;fifteen&#39; =&gt; &#39;d&#39;
 }
 </pre>
 
@@ -280,7 +249,7 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and
 
   <div class="framework framework_box_na" id="py-pyyaml-py">
 <h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{1.5: &#39;d&#39;, &#39;a&#39;: 13}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: 1.3, &#39;fifteen&#39;: &#39;d&#39;}
 </pre>
 
  </div>
@@ -288,7 +257,7 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;float&#39; and
 
   <div class="framework framework_box_na" id="py-ruamel-py">
 <h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{1.5: &#39;d&#39;, &#39;a&#39;: 13}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;a&#39;: 1.3, &#39;fifteen&#39;: &#39;d&#39;}
 </pre>
 
  </div>
