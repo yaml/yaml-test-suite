@@ -6,12 +6,6 @@
 :
 
 
-
---- in-json
-{
-  "": null
-}
-
 --- emit-yaml
 :
 
