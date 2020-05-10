@@ -3,8 +3,8 @@
 +MAP
 =VAL &a :a
 =VAL &b :b
-=ALI *a
 =ALI *b
+=ALI *a
 -MAP
 -DOC
 -STR

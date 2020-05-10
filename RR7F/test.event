@@ -3,8 +3,8 @@
 +MAP
 =VAL :a
 =VAL :4.2
-=VAL :23
 =VAL :d
+=VAL :23
 -MAP
 -DOC
 -STR

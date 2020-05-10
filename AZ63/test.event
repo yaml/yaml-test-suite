@@ -1,12 +1,12 @@
 +STR
 +DOC
 +MAP
-=VAL :1
+=VAL :one
 +SEQ
 =VAL :2
 =VAL :3
 -SEQ
-=VAL :4
+=VAL :four
 =VAL :5
 -MAP
 -DOC
