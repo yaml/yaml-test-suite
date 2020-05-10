@@ -148,7 +148,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5610d63a2f97
+	[C]: at 0x560366c4af97
 </pre>
  </div>
 
@@ -185,20 +185,6 @@ while scanning an anchor at line: 2, column: 3
 
 was found at , line: 2, column: 4
 while scanning an anchor at line: 2, column: 3
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -396,6 +382,22 @@ expected alphabetic or numeric character, but found &#39;😁&#39;
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   &quot;&amp;\x{1f601} unicode anchor&quot;
 ]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;&amp;😁 unicode anchor&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
 
  </div>

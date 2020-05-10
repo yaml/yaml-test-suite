@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#ZVH3 - Wrong indented sequence item - YAML Test Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZVH3.tml">&test-ZVH3</a><br>
+&nbsp;&nbsp;Title: Wrong indented sequence item</br>
+&nbsp;&nbsp;Tags: [ error, indent, sequence ]</tt></h2>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- key: value
+ - item1
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++SEQ
++MAP
+=VAL :key
+=VAL :value
+-MAP
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+      <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:2: error: wrongly indented sequence item
+ - item1
+ ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:2: error: wrongly indented sequence item
+ - item1
+ ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &#39;-&#39; indicator
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
+yaml-cpp: error at line 2, column 2: end of sequence not found
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 2, Idx: 14) - (Line: 2, Col: 2, Idx: 14): While parsing a block collection, did not find expected &#39;-&#39; indicator.
+   at YamlDotNet.Core.Parser.ParseBlockSequenceEntry(Boolean isFirst)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 2, Idx: 14) - (Line: 2, Col: 2, Idx: 14): While parsing a block collection, did not find expected &#39;-&#39; indicator.
+   at YamlDotNet.Core.Parser.ParseBlockSequenceEntry(Boolean isFirst)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.Expect[T](IParser parser)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.DeserializeHelper(Type tItem, IParser parser, Func`3 nestedObjectDeserializer, IList result, Boolean canUpdate)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
+<h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 13, posCharOffset = 13, posLine = 2, posColumn = 0} (Unexpected &#39; &#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (Unexpected &#39; &#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; while parsing a block collection
+ in &#39;reader&#39;, line 1, column 1:
+    - key: value
+    ^
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+ in &#39;reader&#39;, line 2, column 2:
+     - item1
+     ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:516)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; while parsing a block collection
+ in &#39;reader&#39;, line 1, column 1:
+    - key: value
+    ^
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+ in &#39;reader&#39;, line 2, column 2:
+     - item1
+     ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:516)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:208)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
+/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+  throw generateError(state, message);
+  ^
+YAMLException: bad indentation of a sequence entry at line 2, column 2:
+     - item1
+     ^
+    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at readBlockSequence (/node/node_modules/js-yaml/lib/js-yaml/loader.js:962:7)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1358:12)
+    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/yaml/bin/js-yaml-json:8
+  if (doc.errors.length !== 0) throw doc.errors[0]
+                               ^
+
+YAMLSyntaxError: Document is not valid YAML (bad indentation?)
+    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:219:28)
+    at Array.forEach (&lt;anonymous&gt;)
+    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
+    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 2:2: did not find expected &#39;-&#39; indicator
+stack traceback:
+	[C]: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/yaml/bin/lua-lyaml-json:6: in main chunk
+	[C]: at 0x55a237d16f97
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="nim-nimyaml-event">
+<h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
+/tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
+Error: unhandled exception: Illegal sequence item in map [YamlStreamError]
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 2
+Message   : Expected SEQ
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 237
+YAML      : &quot;- item1\n&quot;
+  at /yaml/bin/perl-pp-event line 25.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 2
+Message   : Expected SEQ
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 237
+YAML      : &quot;- item1\n&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 2
+Message   : Expected SEQ
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 237
+YAML      : &quot;- item1\n&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected &#39;-&#39; indicator
+
+was found at , line: 2, column: 2
+while parsing a block collection at line: 1, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected &#39;-&#39; indicator
+
+was found at , line: 2, column: 2
+while parsing a block collection at line: 1, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected &#39;-&#39; indicator
+
+was found at , line: 2, column: 2
+while parsing a block collection at line: 1, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Syck parser (line 2, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Syck parser (line 2, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny found bad indenting in line &#39; - item1&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny found bad indenting in line &#39; - item1&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected &#39;-&#39; indicator
+
+was found at document: 1, line: 2, column: 2
+while parsing a block collection at line: 1, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected &#39;-&#39; indicator
+
+was found at document: 1, line: 2, column: 2
+while parsing a block collection at line: 1, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 804.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 804.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
+    for event in yaml.parse(sys.stdin.read()):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
+    while loader.check_event():
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 393, in parse_block_sequence_entry
+    &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a block collection
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    - key: value
+    ^
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 2:
+     - item1
+     ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 19, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 393, in parse_block_sequence_entry
+    &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a block collection
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    - key: value
+    ^
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 2:
+     - item1
+     ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 393, in parse_block_sequence_entry
+    &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a block collection
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    - key: value
+    ^
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 2:
+     - item1
+     ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-ruamel-event">
+<h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 907, in parse
+    while loader._parser.check_event():
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 525, in parse_block_sequence_entry
+    token.start_mark,
+ruamel.yaml.parser.ParserError: while parsing a block collection
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    - key: value
+    ^ (line: 1)
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 2:
+     - item1
+     ^ (line: 2)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 136, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 179, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 525, in parse_block_sequence_entry
+    token.start_mark,
+ruamel.yaml.parser.ParserError: while parsing a block collection
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    - key: value
+    ^ (line: 1)
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 2:
+     - item1
+     ^ (line: 2)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 136, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 179, in compose_sequence_node
+    while not self.parser.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 525, in parse_block_sequence_entry
+    token.start_mark,
+ruamel.yaml.parser.ParserError: while parsing a block collection
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
+    - key: value
+    ^ (line: 1)
+expected &lt;block end&gt;, but found &#39;&lt;block sequence start&gt;&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 2:
+     - item1
+     ^ (line: 2)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected &#39;-&#39; indicator while parsing a block collection at line 1 column 1 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
+	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
+	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">  </body>
+</html>
+

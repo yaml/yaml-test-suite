@@ -209,23 +209,19 @@ class="">]</span>
  <hr style="clear: both;">    <div class="framework framework_box_error" id="cpp-yamlcpp-event">
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-terminate called after throwing an instance of &#39;YAML::ParserException&#39;
-  what():  yaml-cpp: error at line 3, column 5: end of map flow not found
-Aborted (core dumped)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;{ &quot;single line&quot;, a: b}&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;{ &quot;single line&quot;, a: b}&#39; at /yaml/bin/perl-tiny-perl line 15.
++DOC
++SEQ
++MAP
+=VAL :single line
+=VAL :
+=VAL :a
+=VAL :b
+-MAP
++MAP
+=VAL :
+=VAL :
+Exception:
+yaml-cpp: error at line 3, column 5: end of map flow not found
 </pre>
  </div>
 
@@ -298,6 +294,22 @@ Aborted (core dumped)
     &#39;multi line&#39; =&gt; undef
   }
 ]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny found illegal characters in plain scalar: &#39;{ &quot;single line&quot;, a: b}&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny found illegal characters in plain scalar: &#39;{ &quot;single line&quot;, a: b}&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
 
  </div>

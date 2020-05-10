@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#9HCY - Need document footer before directives - YAML Test Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/9HCY.tml">&test-9HCY</a><br>
+&nbsp;&nbsp;Title: Need document footer before directives</br>
+&nbsp;&nbsp;Tags: [ directive, error, footer ]</tt></h2>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>!foo &quot;bar&quot;
+%TAG ! tag:example.com,2000:app/
+---
+!foo &quot;bar&quot;
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
+=VAL &lt;!foo&gt; &quot;bar
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+   <div class="framework framework_box_invalid_incorrect" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
+=VAL &lt;!foo&gt; &quot;bar
+-DOC
++DOC ---
+=VAL &lt;tag:example.com,2000:app/foo&gt; &quot;bar
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
+=VAL &lt;!foo&gt; :bar
+-DOC
++DOC
+=VAL &lt;tag:example.com,2000:app/foo&gt; :bar
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
+=VAL &lt;!foo&gt; &quot;bar
+-DOC
++DOC ---
+=VAL &lt;tag:example.com,2000:app/foo&gt; &quot;bar
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;bar&quot;
+&quot;bar&quot;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
+=VAL &lt;!foo&gt; &quot;bar
+-DOC
++DOC ---
+=VAL &lt;tag:example.com,2000:app/foo&gt; &quot;bar
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;bar&quot;
+&quot;bar&quot;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&#39;bar&#39;
+&#39;bar&#39;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
+=VAL &lt;!foo&gt; &quot;bar
+-DOC
++DOC ---
+=VAL &lt;tag:example.com,2000:app/foo&gt; &quot;bar
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;bar&quot;
+&quot;bar&quot;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>GenericScalar(tag=&#39;!foo&#39;, content=&#39;bar&#39;)
+GenericScalar(tag=&#39;tag:example.com,2000:app/foo&#39;, content=&#39;bar&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-event">
+<h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
+=VAL &lt;!foo&gt; &quot;bar
+-DOC
++DOC ---
+=VAL &lt;tag:example.com,2000:app/foo&gt; &quot;bar
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;bar&quot;
+&quot;bar&quot;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>GenericScalar(tag=&#39;!foo&#39;, content=&#39;bar&#39;)
+GenericScalar(tag=&#39;tag:example.com,2000:app/foo&#39;, content=&#39;bar&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;bar&quot;
+&quot;bar&quot;
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:6: error: missing explicit document end marker before directive(s)
+%TAG ! tag:example.com,2000:app/
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:6: error: missing explicit document end marker before directive(s)
+%TAG ! tag:example.com,2000:app/
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 11) - (Line: 2, Col: 1, Idx: 11): Did not find expected &lt;document end&gt;.
+   at YamlDotNet.Core.Parser.ParseDocumentEnd()
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 1, Col: 1, Idx: 0) - (Line: 1, Col: 11, Idx: 10): Encountered an unresolved tag &#39;!foo&#39;
+   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
+<h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 11, posCharOffset = 11, posLine = 2, posColumn = 0} (Unexpected &#39;%&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (Unexpected &#39;%&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
+ in &#39;reader&#39;, line 1, column 1:
+    !foo &quot;bar&quot;
+    ^
+
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
+	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
+	... 7 more
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
+/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+  throw generateError(state, message);
+  ^
+YAMLException: unknown tag !&lt;!foo&gt; at line 1, column 11:
+    !foo &quot;bar&quot;
+              ^
+    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1428:7)
+    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/yaml/bin/js-yaml-json:8
+  if (doc.errors.length !== 0) throw doc.errors[0]
+                               ^
+
+YAMLSyntaxError: Document is not valid YAML (bad indentation?)
+    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:219:28)
+    at Array.forEach (&lt;anonymous&gt;)
+    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
+    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="nim-nimyaml-event">
+<h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
+/tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
+Error: unhandled exception: Unexpected token (expected document end): ltScalarPart [YamlStreamError]
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 1
+Expected  : DOC_END DOC_START EOL
+Got       : TAG_DIRECTIVE
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+YAML      : &quot;%TAG ! tag:example.com,2000:app/&quot;
+  at /yaml/bin/perl-pp-event line 25.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 1
+Expected  : DOC_END DOC_START EOL
+Got       : TAG_DIRECTIVE
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+YAML      : &quot;%TAG ! tag:example.com,2000:app/&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 1
+Expected  : DOC_END DOC_START EOL
+Got       : TAG_DIRECTIVE
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+YAML      : &quot;%TAG ! tag:example.com,2000:app/&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Syck parser (line 5, column -1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Syck parser (line 5, column -1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ at /perl5/lib/perl5/YAML/Loader.pm line 88.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 1
+   Document: 2
+ at /perl5/lib/perl5/YAML/Loader.pm line 88.
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">  </body>
+</html>
+

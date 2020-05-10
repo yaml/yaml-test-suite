@@ -104,9 +104,12 @@ Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
   <div class="framework framework_box_error" id="cpp-yamlcpp-event">
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-terminate called after throwing an instance of &#39;YAML::ParserException&#39;
-  what():  yaml-cpp: error at line 2, column 3: end of map flow not found
-Aborted (core dumped)
++DOC
++MAP
+=VAL :
+=VAL :
+Exception:
+yaml-cpp: error at line 2, column 3: end of map flow not found
 </pre>
  </div>
 
@@ -203,7 +206,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55c52baaff97
+	[C]: at 0x561ce67abf97
 </pre>
  </div>
 

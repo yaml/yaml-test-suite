@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#S98Z - Block scalar with spaces only - YAML Test Matrix</title>
+<title>#S98Z - Block scalar with more spaces than first content line - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -12,7 +12,7 @@
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/S98Z.tml">&test-S98Z</a><br>
-&nbsp;&nbsp;Title: Block scalar with spaces only</br>
+&nbsp;&nbsp;Title: Block scalar with more spaces than first content line</br>
 &nbsp;&nbsp;Tags: [ comment, error, folded, scalar, whitespace ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>empty block scalar: &gt;
@@ -27,14 +27,383 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/S98Z.tml">&test-S
 =VAL :empty block scalar
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>  &quot;empty block scalar&quot;: &quot;&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
-      <div class="framework framework_box_json_ok" id="dotnet-yamldotnet.json">
-<h3><a href="#dotnet-yamldotnet.json">dotnet-yamldotnet.json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+   <div class="framework framework_box_invalid_incorrect" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
 
 
- <hr style="clear: both;">                    </body>
+  <div class="framework framework_box_invalid_incorrect" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL :
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;empty block scalar&quot;: &quot;&quot;}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;empty block scalar&quot;: &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;empty block scalar&quot;:&quot;&quot;}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;empty block scalar&quot;: &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;empty block scalar&quot;:&quot;&quot;}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="nim-nimyaml-event">
+<h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;\n\n\n# comment\n
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;empty block scalar&quot; : &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;empty block scalar&#39; =&gt; &#39;&#39;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;empty block scalar&quot; : &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;empty block scalar&#39; =&gt; &#39;&#39;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;empty block scalar&quot; : &quot;\n\n\n# comment\n&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;empty block scalar&#39; =&gt; &#39;
+
+
+# comment
+&#39;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;empty block scalar&quot; : &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;empty block scalar&#39; =&gt; &#39;&#39;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;empty block scalar&quot; : &quot;\n \n  \n# comment\n&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;empty block scalar&#39; =&gt; &#39;
+ 
+  
+# comment
+&#39;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;empty block scalar&quot;: &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&#39;empty block scalar&#39;: &#39;&#39;}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-event">
+<h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :empty block scalar
+=VAL &gt;
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;empty block scalar&quot;: &quot;&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&#39;empty block scalar&#39;: &#39;&#39;}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;empty block scalar&quot;:&quot;&quot;}
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: empty block scalar with wrongly indented comment line after spaces only
+ 
+^
+  
+~~
+   
+~~~
+ # comment
+~
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: empty block scalar with wrongly indented comment line after spaces only
+ 
+^
+  
+~~
+   
+~~~
+ # comment
+~
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
+<h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 42, posCharOffset = 42, posLine = 6, posColumn = 0} (leading empty lines contain more spaces than the first non-empty line in scalar: &quot;\n \n  \n# comment\n&quot;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (leading empty lines contain more spaces than the first non-empty line in scalar: &quot;\n \n  \n# comment\n&quot;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to find multi-line scalar content at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to find multi-line scalar content at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">  </body>
 </html>
 

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#9C9N - Wrong indented flow sequence - YAML Test Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/9C9N.tml">&test-9C9N</a><br>
+&nbsp;&nbsp;Title: Wrong indented flow sequence</br>
+&nbsp;&nbsp;Tags: [ error, flow, indent, sequence ]</tt></h2>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+flow: [a,
+b,
+c]
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+   <div class="framework framework_box_invalid_incorrect" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;flow&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;flow&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;,
+    &quot;c&quot;
+  ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;flow&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;flow&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="nim-nimyaml-event">
+<h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;flow&quot; : [
+      &quot;a&quot;,
+      &quot;b&quot;,
+      &quot;c&quot;
+   ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;flow&#39; =&gt; [
+              &#39;a&#39;,
+              &#39;b&#39;,
+              &#39;c&#39;
+            ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;flow&quot; : [
+      &quot;a&quot;,
+      &quot;b&quot;,
+      &quot;c&quot;
+   ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;flow&#39; =&gt; [
+              &#39;a&#39;,
+              &#39;b&#39;,
+              &#39;c&#39;
+            ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;flow&quot; : [
+      &quot;a&quot;,
+      &quot;b&quot;,
+      &quot;c&quot;
+   ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;flow&#39; =&gt; [
+              &#39;a&#39;,
+              &#39;b&#39;,
+              &#39;c&#39;
+            ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;flow&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;,
+    &quot;c&quot;
+  ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&#39;flow&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-event">
+<h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
+-SEQ
+-MAP
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &quot;flow&quot;: [
+    &quot;a&quot;,
+    &quot;b&quot;,
+    &quot;c&quot;
+  ]
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&#39;flow&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;flow&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]}
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:3:1: error: wrongly indented flow sequence
+b,
+^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:3:1: error: wrongly indented flow sequence
+b,
+^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
+<h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 13, posCharOffset = 13, posLine = 2, posColumn = 9} (Unexpected &#39;
+&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (Unexpected &#39;
+&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/yaml/bin/js-yaml-json:8
+  if (doc.errors.length !== 0) throw doc.errors[0]
+                               ^
+
+YAMLSemanticError: Insufficient indentation in flow collection
+    at FlowCollection.parse (/node/node_modules/yaml/dist/cst/FlowCollection.js:78:30)
+    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:132:25)
+    at CollectionItem.parse (/node/node_modules/yaml/dist/cst/CollectionItem.js:77:19)
+    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:132:25)
+    at Collection.parse (/node/node_modules/yaml/dist/cst/Collection.js:194:20)
+    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:151:29)
+    at Document.parseContents (/node/node_modules/yaml/dist/cst/Document.js:176:26)
+    at Document.parse (/node/node_modules/yaml/dist/cst/Document.js:239:19)
+    at parse (/node/node_modules/yaml/dist/cst/parse.js:28:18)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:97:41)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 3
+Column    : 1
+Message   : Bad indendation in FLOWSEQ
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 197
+YAML      : &quot;b,\n&quot;
+  at /yaml/bin/perl-pp-event line 25.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 3
+Column    : 1
+Message   : Bad indendation in FLOWSEQ
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 197
+YAML      : &quot;b,\n&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 3
+Column    : 1
+Message   : Bad indendation in FLOWSEQ
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 197
+YAML      : &quot;b,\n&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to classify line &#39;b,&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to classify line &#39;b,&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Can&#39;t parse inline sequence
+   Code: YAML_PARSE_ERR_INLINE_SEQUENCE
+   Line: 3
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 551.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Can&#39;t parse inline sequence
+   Code: YAML_PARSE_ERR_INLINE_SEQUENCE
+   Line: 3
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 551.
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">  </body>
+</html>
+

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#S4GJ - Invalid text after block scalar indicator - YAML Test Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/S4GJ.tml">&test-S4GJ</a><br>
+&nbsp;&nbsp;Title: Invalid text after block scalar indicator</br>
+&nbsp;&nbsp;Tags: [ error, folded ]</tt></h2>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+folded: &gt; first line
+  second line
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC ---
++MAP
+=VAL :folded
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre></pre>
+</div>
+<hr style="clear: both;">
+   <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;folded&quot; : &quot;first linesecond line\n&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;folded&#39; =&gt; &#39;first linesecond line
+&#39;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;folded&quot; : &quot;second line\n&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;folded&#39; =&gt; &#39;second line
+&#39;
+}
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: block scalar no linebreak found
+folded: &gt; first line
+          ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: block scalar no linebreak found
+folded: &gt; first line
+          ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected comment or line break
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
+yaml-cpp: error at line 2, column 11: unexpected character in block scalar
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SyntaxErrorException: (Line: 2, Col: 9, Idx: 12) - (Line: 2, Col: 11, Idx: 14): While scanning a block scalar, did not find expected comment or line break.
+   at YamlDotNet.Core.Scanner.ScanBlockScalar(Boolean isLiteral)
+   at YamlDotNet.Core.Scanner.FetchBlockScalar(Boolean isLiteral)
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
+   at YamlDotNet.Core.Parser.ParseBlockMappingValue()
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SyntaxErrorException: (Line: 2, Col: 9, Idx: 12) - (Line: 2, Col: 11, Idx: 14): While scanning a block scalar, did not find expected comment or line break.
+   at YamlDotNet.Core.Scanner.ScanBlockScalar(Boolean isLiteral)
+   at YamlDotNet.Core.Scanner.FetchBlockScalar(Boolean isLiteral)
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
+   at YamlDotNet.Core.Parser.ParseBlockMappingValue()
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
+<h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 14, posCharOffset = 14, posLine = 2, posColumn = 10} (Unexpected &#39;f&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (Unexpected &#39;f&#39;)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; while scanning a block scalar
+ in &#39;reader&#39;, line 2, column 9:
+    folded: &gt; first line
+            ^
+expected a comment or a line break, but found f(102)
+ in &#39;reader&#39;, line 2, column 11:
+    folded: &gt; first line
+              ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalarIgnoredLine(ScannerImpl.java:1730)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalar(ScannerImpl.java:1568)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchBlockScalar(ScannerImpl.java:994)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFolded(ScannerImpl.java:976)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:384)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; while scanning a block scalar
+ in &#39;reader&#39;, line 2, column 9:
+    folded: &gt; first line
+            ^
+expected a comment or a line break, but found f(102)
+ in &#39;reader&#39;, line 2, column 11:
+    folded: &gt; first line
+              ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalarIgnoredLine(ScannerImpl.java:1730)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalar(ScannerImpl.java:1568)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchBlockScalar(ScannerImpl.java:994)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFolded(ScannerImpl.java:976)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:384)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
+/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+  throw generateError(state, message);
+  ^
+YAMLException: a line break is expected at line 2, column 11:
+    folded: &gt; first line
+              ^
+    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at readLineBreak (/node/node_modules/js-yaml/lib/js-yaml/loader.js:357:5)
+    at readBlockScalar (/node/node_modules/js-yaml/lib/js-yaml/loader.js:834:5)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1363:35)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1089:11)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/yaml/bin/js-yaml-json:8
+  if (doc.errors.length !== 0) throw doc.errors[0]
+                               ^
+
+YAMLSyntaxError: Document is not valid YAML (bad indentation?)
+    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:219:28)
+    at Array.forEach (&lt;anonymous&gt;)
+    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
+    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 2:1: did not find expected comment or line break
+stack traceback:
+	[C]: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/yaml/bin/lua-lyaml-json:6: in main chunk
+	[C]: at 0x55d500dcaf97
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="nim-nimyaml-event">
+<h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
+/tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
+Error: unhandled exception: Unexpected character (expected line end): &quot;f&quot; [YamlStreamError]
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 10
+Message   : Invalid block scalar
+Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
+YAML      : &quot; first line&quot;
+  at /yaml/bin/perl-pp-event line 25.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 10
+Message   : Invalid block scalar
+Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
+YAML      : &quot; first line&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 10
+Message   : Invalid block scalar
+Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
+YAML      : &quot; first line&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected comment or line break
+
+was found at , line: 2, column: 11
+while scanning a block scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected comment or line break
+
+was found at , line: 2, column: 11
+while scanning a block scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected comment or line break
+
+was found at , line: 2, column: 11
+while scanning a block scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected comment or line break
+
+was found at document: 1, line: 2, column: 11
+while scanning a block scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected comment or line break
+
+was found at document: 1, line: 2, column: 11
+while scanning a block scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 3
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 804.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 3
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 804.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
+    for event in yaml.parse(sys.stdin.read()):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
+    while loader.check_event():
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 449, in parse_block_mapping_value
+    if not self.check_token(KeyToken, ValueToken, BlockEndToken):
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 243, in fetch_more_tokens
+    return self.fetch_folded()
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 638, in fetch_folded
+    self.fetch_block_scalar(style=&#39;&gt;&#39;)
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 649, in fetch_block_scalar
+    self.tokens.append(self.scan_block_scalar(style))
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 990, in scan_block_scalar
+    self.scan_block_scalar_ignored_line(start_mark)
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 1103, in scan_block_scalar_ignored_line
+    self.get_mark())
+yaml.scanner.ScannerError: while scanning a block scalar
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 9:
+    folded: &gt; first line
+            ^
+expected a comment or a line break, but found &#39;f&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    folded: &gt; first line
+              ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 19, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 64, in compose_node
+    if self.check_event(AliasEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 449, in parse_block_mapping_value
+    if not self.check_token(KeyToken, ValueToken, BlockEndToken):
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 243, in fetch_more_tokens
+    return self.fetch_folded()
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 638, in fetch_folded
+    self.fetch_block_scalar(style=&#39;&gt;&#39;)
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 649, in fetch_block_scalar
+    self.tokens.append(self.scan_block_scalar(style))
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 990, in scan_block_scalar
+    self.scan_block_scalar_ignored_line(start_mark)
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 1103, in scan_block_scalar_ignored_line
+    self.get_mark())
+yaml.scanner.ScannerError: while scanning a block scalar
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 9:
+    folded: &gt; first line
+            ^
+expected a comment or a line break, but found &#39;f&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    folded: &gt; first line
+              ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 64, in compose_node
+    if self.check_event(AliasEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 449, in parse_block_mapping_value
+    if not self.check_token(KeyToken, ValueToken, BlockEndToken):
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 116, in check_token
+    self.fetch_more_tokens()
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 243, in fetch_more_tokens
+    return self.fetch_folded()
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 638, in fetch_folded
+    self.fetch_block_scalar(style=&#39;&gt;&#39;)
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 649, in fetch_block_scalar
+    self.tokens.append(self.scan_block_scalar(style))
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 990, in scan_block_scalar
+    self.scan_block_scalar_ignored_line(start_mark)
+  File &quot;/python/lib/python3.7/site-packages/yaml/scanner.py&quot;, line 1103, in scan_block_scalar_ignored_line
+    self.get_mark())
+yaml.scanner.ScannerError: while scanning a block scalar
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 9:
+    folded: &gt; first line
+            ^
+expected a comment or a line break, but found &#39;f&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    folded: &gt; first line
+              ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-ruamel-event">
+<h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-event&quot;, line 7, in &lt;module&gt;
+    for event in ruamel.yaml.parse(sys.stdin.read()):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 907, in parse
+    while loader._parser.check_event():
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 170, in check_token
+    self.fetch_more_tokens()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 303, in fetch_more_tokens
+    return self.fetch_folded()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 712, in fetch_folded
+    self.fetch_block_scalar(style=&#39;&gt;&#39;)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 721, in fetch_block_scalar
+    self.tokens.append(self.scan_block_scalar(style))
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 1156, in scan_block_scalar
+    block_scalar_comment = self.scan_block_scalar_ignored_line(start_mark)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 1324, in scan_block_scalar_ignored_line
+    self.reader.get_mark(),
+ruamel.yaml.scanner.ScannerError: while scanning a block scalar
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 9:
+    folded: &gt; first line
+            ^ (line: 2)
+expected a comment or a line break, but found &#39;f&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    folded: &gt; first line
+              ^ (line: 2)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 138, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 218, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 111, in compose_node
+    if self.parser.check_event(AliasEvent):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 170, in check_token
+    self.fetch_more_tokens()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 303, in fetch_more_tokens
+    return self.fetch_folded()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 712, in fetch_folded
+    self.fetch_block_scalar(style=&#39;&gt;&#39;)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 721, in fetch_block_scalar
+    self.tokens.append(self.scan_block_scalar(style))
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 1156, in scan_block_scalar
+    block_scalar_comment = self.scan_block_scalar_ignored_line(start_mark)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 1324, in scan_block_scalar_ignored_line
+    self.reader.get_mark(),
+ruamel.yaml.scanner.ScannerError: while scanning a block scalar
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 9:
+    folded: &gt; first line
+            ^ (line: 2)
+expected a comment or a line break, but found &#39;f&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    folded: &gt; first line
+              ^ (line: 2)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
+    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
+    yield loader._constructor.get_data()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
+    return self.construct_document(self.composer.get_node())
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 68, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 101, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 138, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 218, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/composer.py&quot;, line 111, in compose_node
+    if self.parser.check_event(AliasEvent):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 140, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 170, in check_token
+    self.fetch_more_tokens()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 303, in fetch_more_tokens
+    return self.fetch_folded()
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 712, in fetch_folded
+    self.fetch_block_scalar(style=&#39;&gt;&#39;)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 721, in fetch_block_scalar
+    self.tokens.append(self.scan_block_scalar(style))
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 1156, in scan_block_scalar
+    block_scalar_comment = self.scan_block_scalar_ignored_line(start_mark)
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/scanner.py&quot;, line 1324, in scan_block_scalar_ignored_line
+    self.reader.get_mark(),
+ruamel.yaml.scanner.ScannerError: while scanning a block scalar
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 9:
+    folded: &gt; first line
+            ^ (line: 2)
+expected a comment or a line break, but found &#39;f&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    folded: &gt; first line
+              ^ (line: 2)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected comment or line break while scanning a block scalar at line 2 column 9 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
+	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
+	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">  </body>
+</html>
+

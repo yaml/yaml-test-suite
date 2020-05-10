@@ -5,7 +5,7 @@ table.matrix td.hide, table.matrix th.hide {
     display: none;
 }
 table.matrix {
-    border: 1px solid #bbb;
+    border: 1px solid #a8a8a8;
     border-collapse: collapse;
     box-shadow: 2px 2px 4px 1px grey;
     margin-left: 3px;
@@ -22,7 +22,7 @@ table.matrix tbody {
     overflow-y: scroll;
 }
 table.matrix tr th, table.matrix tr td {
-    border: 1px solid #bbb;
+    border: 1px solid #a8a8a8;
     background-color: white;
     padding: 1px 2px 1px 2px;
 
@@ -103,8 +103,16 @@ table.matrix thead tr.overview td {
     background-color: #ff5858;
     color: #ff5858;
 }
+.color_error, table.matrix tbody td.color_invalid_correct {
+    background-color: #99ccff;
+    color: #0099dd;
+}
+.color_error, table.matrix tbody td.color_invalid_incorrect {
+    background-color: #ff5858;
+    color: #ff5858;
+}
 .color_invalid_correct {
-    background-color: #88aaff;
+    background-color: #99ccff;
     color: #0099dd;
 }
 .color_invalid_incorrect {
@@ -215,6 +223,18 @@ div.framework_box_error {
     max-width: 20em;
     min-height: 20em;
     max-height: 20em;
+}
+div.framework_box_invalid_correct {
+    min-width: 20em;
+    max-width: 20em;
+    min-height: 20em;
+    max-height: 20em;
+}
+div.framework_box_invalid_correct {
+    min-width: 20em;
+    max-width: 30em;
+    min-height: 10em;
+    max-height: 10em;
 }
 div.framework_box_na {
     min-width: 20em;
