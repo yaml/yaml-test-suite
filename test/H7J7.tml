@@ -1,6 +1,6 @@
 === Node anchor not indented
 --- from: https://gist.github.com/anonymous/f192e7dab6da31831f264dbf1947cb83 via @ingydotnet
---- tags: anchor error indent
+--- tags: anchor error indent tag
 
 This is an error because the property that is on its own line is not properly indented.
 

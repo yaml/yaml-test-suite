@@ -1,6 +1,6 @@
 === Scalar value with two anchors
 --- from: @perlpunk
---- tags: anchor error
+--- tags: anchor error mapping
 
 This test shows a valid structure in the first pair but the second pair is
 invalid because it has two anchors for the scalar value.

@@ -1,6 +1,6 @@
 === Tags in Explicit Mapping
 --- from: NimYAML tests
---- tags: tag mapping
+--- tags: explicit-key tag mapping
 
 --- in-yaml
 ? !!str a

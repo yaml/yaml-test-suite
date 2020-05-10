@@ -1,6 +1,6 @@
 === Spec Example 2.11. Mapping between Sequences
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2760799
---- tags: spec mapping sequence
+--- tags: complex-key explicit-key spec mapping sequence
 
 --- in-yaml
 ? - Detroit Tigers

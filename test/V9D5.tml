@@ -1,6 +1,6 @@
 === Spec Example 8.19. Compact Block Mappings
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2799091
---- tags: spec mapping
+--- tags: complex-key explicit-key spec mapping
 
 --- in-yaml
 - sun: yellow

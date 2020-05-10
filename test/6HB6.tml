@@ -1,6 +1,6 @@
 === Spec Example 6.1. Indentation Spaces
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2777865
---- tags: spec indent upto-1.2
+--- tags: comment flow spec indent upto-1.2 whitespace
 
 --- in-yaml
   # Leading comment line spaces are

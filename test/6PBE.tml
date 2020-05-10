@@ -1,6 +1,6 @@
 === Zero-indented sequences in explicit mapping keys
 --- from: @perlpunk
---- tags: mapping sequence
+--- tags: explicit-key mapping sequence
 
 --- in-yaml(<)
     ---

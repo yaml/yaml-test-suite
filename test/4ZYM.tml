@@ -1,6 +1,6 @@
 === Spec Example 6.4. Line Prefixes
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2778720
---- tags: spec scalar literal double upto-1.2
+--- tags: spec scalar literal double upto-1.2 whitespace
 
 --- in-yaml
 plain: text

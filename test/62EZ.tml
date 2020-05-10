@@ -1,6 +1,6 @@
 === Invalid block mapping key on same line as previous key
 --- from: @perlpunk
---- tags: error mapping
+--- tags: error flow mapping
 
 --- in-yaml(<)
     ---

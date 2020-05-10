@@ -1,6 +1,6 @@
 === Colon and adjacent value after comment on next line
 --- from: <Source URL or description>
---- tags: tag words
+--- tags: comment flow mapping
 
 --- in-yaml(<)
     ---

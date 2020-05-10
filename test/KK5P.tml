@@ -1,6 +1,6 @@
 === Various combinations of explicit block mappings
 --- from: @perlpunk
---- tags: mapping sequence
+--- tags: explicit-key mapping sequence
 
 --- in-yaml
 complex1:

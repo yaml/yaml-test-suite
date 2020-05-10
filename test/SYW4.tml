@@ -1,6 +1,6 @@
 === Spec Example 2.2. Mapping Scalars to Scalars
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2759963
---- tags: spec scalar literal comment
+--- tags: spec scalar comment
 
 --- in-yaml
 hr:  65    # Home runs

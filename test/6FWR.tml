@@ -1,6 +1,6 @@
 === Block Scalar Keep
 --- from: NimYAML tests
---- tags: scalar
+--- tags: literal scalar whitespace
 
 --- in-yaml(<)
     --- |+

@@ -1,6 +1,6 @@
 === Spec Example 2.24. Global Tags
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2761719
---- tags: spec tag alias directive
+--- tags: spec tag alias directive local-tag
 
 --- in-yaml(<)
     %TAG ! tag:clarkevans.com,2002:

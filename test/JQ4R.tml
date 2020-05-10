@@ -1,6 +1,6 @@
 === Spec Example 8.14. Block Sequence
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2797596
---- tags: spec sequence
+--- tags: mapping spec sequence
 
 --- in-yaml
 block sequence:

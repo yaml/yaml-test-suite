@@ -1,6 +1,6 @@
 === Anchors in Mapping
 --- from: NimYAML tests
---- tags: jayt
+--- tags: jayt anchor mapping
 
 This came from an edge case in NimYAML development.
 

@@ -1,6 +1,6 @@
 === Spec Example 7.5. Double Quoted Line Breaks
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2787745
---- tags: spec scalar upto-1.2
+--- tags: double spec scalar whitespace upto-1.2
 
 --- in-yaml
 "folded<SPC>

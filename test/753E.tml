@@ -1,6 +1,6 @@
 === Block Scalar Strip [1.3]
 --- from: MYW6, modified for YAML 1.3
---- tags: scalar 1.3-mod
+--- tags: literal scalar 1.3-mod whitespace
 
 --- in-yaml(<)
     --- |-

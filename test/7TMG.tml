@@ -1,6 +1,6 @@
 === Comment in flow sequence before comma
 --- from: @perlpunk
---- tags: comment flow mapping
+--- tags: comment flow sequence
 
 --- in-yaml(<)
     ---

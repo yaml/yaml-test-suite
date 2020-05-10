@@ -1,6 +1,6 @@
 === Key with anchor after missing explicit mapping value
 --- from: @perlpunk
---- tags: anchor mapping
+--- tags: anchor explicit-key mapping
 
 --- in-yaml(<)
     ---

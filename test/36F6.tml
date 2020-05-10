@@ -1,6 +1,6 @@
 === Multiline plain scalar with empty line
 --- from: @perlpunk
---- tags: scalar
+--- tags: mapping scalar
 
 --- in-yaml(<)
     ---

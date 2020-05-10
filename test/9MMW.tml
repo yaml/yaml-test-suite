@@ -1,6 +1,6 @@
 === Spec Example 7.21. Single Pair Implicit Entries [1.3
 --- from: KZN9, modified for YAML 1.3
---- tags: spec flow mapping 1.3-mod
+--- tags: empty-key spec flow mapping 1.3-mod
 
 --- in-yaml
 - [ YAML : separate ]

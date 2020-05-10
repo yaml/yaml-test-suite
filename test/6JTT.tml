@@ -1,6 +1,6 @@
 === Flow sequence without closing bracket
 --- from: @perlpunk
---- tags: error flow
+--- tags: error flow sequence
 
 --- in-yaml(<)
     ---

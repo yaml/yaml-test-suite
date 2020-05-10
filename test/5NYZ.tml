@@ -1,6 +1,6 @@
 === Spec Example 6.9. Separated Comment
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2780342
---- tags: spec comment
+--- tags: mapping spec comment
 
 --- in-yaml
 key:    # Comment

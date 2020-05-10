@@ -1,6 +1,6 @@
 === Tags for Root Objects
 --- from: NimYAML tests
---- tags: tag
+--- tags: explicit-key header mapping tag
 
 --- in-yaml(<)
     --- !!map

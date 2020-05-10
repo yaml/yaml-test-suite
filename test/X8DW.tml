@@ -1,6 +1,6 @@
 === Explicit key and value seperated by comment
 --- from: @perlpunk
---- tags: comment mapping
+--- tags: comment explicit-key mapping
 
 --- in-yaml(<)
     ---

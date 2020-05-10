@@ -1,6 +1,6 @@
 === Spec Example 8.2. Block Indentation Indicator [1.3]
 --- from: R4YG, modified for YAML 1.3
---- tags: spec literal folded scalar libyaml-err 1.3-mod
+--- tags: spec literal folded scalar libyaml-err 1.3-mod whitespace
 
 --- in-yaml
 - |

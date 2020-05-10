@@ -1,6 +1,6 @@
 === Nested implicit complex keys
 --- from: @perlpunk
---- tags: flow mapping sequence
+--- tags: complex-key flow mapping sequence
 
 --- in-yaml(<)
     ---

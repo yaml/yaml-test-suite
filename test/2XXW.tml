@@ -1,6 +1,6 @@
 === Spec Example 2.25. Unordered Sets
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2761758
---- tags: spec mapping
+--- tags: spec mapping unknown-tag explicit-key
 
 --- in-yaml(<)
     # Sets are represented as a

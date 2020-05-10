@@ -1,6 +1,6 @@
 === Aliases in Flow Objects
 --- from: NimYAML tests
---- tags: alias flow
+--- tags: alias complex-key flow
 
 Anchors and aliases in flow collections.
 

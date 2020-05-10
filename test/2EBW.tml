@@ -1,6 +1,6 @@
 === Allowed characters in keys
 --- from: @perlpunk
---- tags: mapping
+--- tags: mapping scalar
 
 --- in-yaml
 a!"#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~: safe

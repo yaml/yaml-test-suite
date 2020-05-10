@@ -1,6 +1,6 @@
 === Flow Sequence in Flow Mapping
 --- from: NimYAML tests
---- tags: sequence mapping flow
+--- tags: complex-key sequence mapping flow
 
 --- in-yaml
 {a: [b, c], [d, e]: f}

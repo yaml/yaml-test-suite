@@ -1,6 +1,6 @@
 === Spec Example 6.8. Flow Folding
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2779950
---- tags: spec whitespace scalar upto-1.2
+--- tags: double spec whitespace scalar upto-1.2
 
 --- in-yaml
 "

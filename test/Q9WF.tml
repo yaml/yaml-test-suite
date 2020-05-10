@@ -1,6 +1,6 @@
 === Spec Example 6.12. Separation Spaces
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2780989
---- tags: spec comment whitespace 1.3-err
+--- tags: complex-key flow spec comment whitespace 1.3-err
 
 --- in-yaml(<)
     { first: Sammy, last: Sosa }:

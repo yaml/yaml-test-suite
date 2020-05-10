@@ -1,6 +1,6 @@
 === Spec Example 8.7. Literal Scalar
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2795789
---- tags: spec literal scalar 1.3-err
+--- tags: spec literal scalar whitespace 1.3-err
 
 --- in-yaml(+)
 |

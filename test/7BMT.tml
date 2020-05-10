@@ -1,6 +1,6 @@
 === Node and Mapping Key Anchors [1.3]
 --- from: U3XV, modified for YAML 1.3
---- tags: anchor comment 1.3-mod
+--- tags: anchor comment mapping 1.3-mod
 
 Testing anchors in many permutations with other tokens like comments.
 

@@ -1,6 +1,6 @@
 === Empty Lines at End of Document
 --- from: NimYAML tests
---- tags: whitespace
+--- tags: empty-key whitespace
 
 --- in-yaml(+)
 :

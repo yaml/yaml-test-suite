@@ -1,6 +1,6 @@
 === Comment without whitespace after block scalar indicator
 --- from: @perlpunk
---- tags: block comment error whitespace
+--- tags: folded comment error whitespace
 
 --- in-yaml
 block: ># comment

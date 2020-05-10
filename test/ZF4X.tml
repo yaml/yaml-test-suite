@@ -1,6 +1,6 @@
 === Spec Example 2.6. Mapping of Mappings
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2760372
---- tags: spec mapping
+--- tags: flow spec mapping
 
 --- in-yaml
 Mark McGwire: {hr: 65, avg: 0.278}

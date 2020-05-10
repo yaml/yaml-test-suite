@@ -1,6 +1,6 @@
 === More indented lines at the beginning of folded block scalars
 --- from: @perlpunk
---- tags: folded whitespace
+--- tags: folded indent
 
 --- in-yaml(<)
     ---

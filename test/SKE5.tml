@@ -1,6 +1,6 @@
 === Anchor before zero indented sequence
 --- from: @perlpunk
---- tags: anchor sequence
+--- tags: anchor indent sequence
 
 --- in-yaml(<)
     ---

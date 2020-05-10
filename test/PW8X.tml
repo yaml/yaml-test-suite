@@ -1,6 +1,6 @@
 === Anchors on Empty Scalars
 --- from: NimYAML tests
---- tags: anchor empty missing
+--- tags: anchor empty-key explicit-key
 
 Test showing empty values and missing explicit components.
 

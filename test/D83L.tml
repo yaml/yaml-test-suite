@@ -1,6 +1,6 @@
 === Block scalar indicator order
 --- from: @perlpunk
---- tags: literal
+--- tags: indent literal
 
 --- in-yaml
 - |2-

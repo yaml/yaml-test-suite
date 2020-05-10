@@ -1,6 +1,6 @@
 === Spec Example 2.9. Single Document with Two Comments
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2760633
---- tags: spec comment
+--- tags: mapping sequence spec comment
 
 --- in-yaml(<)
     ---
