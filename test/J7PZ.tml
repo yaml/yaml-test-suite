@@ -1,8 +1,12 @@
 === Spec Example 2.26. Ordered Mappings
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2761780
---- tags: spec mapping
+--- tags: spec mapping tag unknown-tag
 
 --- in-yaml(<)
+    # The !!omap tag is one of the optional types
+    # introduced for YAML 1.1. In 1.2, it is not
+    # part of the standard tags and should not be
+    # enabled by default.
     # Ordered maps are represented as
     # A sequence of mappings, with
     # each mapping having one key
