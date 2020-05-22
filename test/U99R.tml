@@ -1,0 +1,13 @@
+=== Invalid comma in tag
+--- from: @perlpunk
+--- tags: error tag
+
+--- in-yaml(<)
+    - !!str, xxx
+
+--- error
+
+--- test-event
++STR
++DOC
++SEQ

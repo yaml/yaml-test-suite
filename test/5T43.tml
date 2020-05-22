@@ -1,0 +1,41 @@
+=== Colon at the beginning of adjacent flow scalar
+--- from: @perlpunk
+--- tags: flow mapping scalar
+
+--- in-yaml(<)
+    - { "key":value }
+    - { "key"::value }
+
+--- emit-yaml(<)
+    - "key": value
+    - "key": :value
+
+--- out-yaml(<)
+    - key: value
+    - key: :value
+
+--- in-json
+[
+  {
+    "key": "value"
+  },
+  {
+    "key": ":value"
+  }
+]
+
+--- test-event
++STR
++DOC
++SEQ
++MAP
+=VAL "key
+=VAL :value
+-MAP
++MAP
+=VAL "key
+=VAL ::value
+-MAP
+-SEQ
+-DOC
+-STR
