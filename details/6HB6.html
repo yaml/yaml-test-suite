@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/6HB6.tml">&test-6HB6</a><br>
 &nbsp;&nbsp;Title: Spec Example 6.1. Indentation Spaces</br>
-&nbsp;&nbsp;Tags: [ indent, spec, upto-1.2 ]</tt></h2>
+&nbsp;&nbsp;Tags: [ comment, flow, indent, spec, upto-1.2, whitespace ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>  # Leading comment line spaces are
    # neither content nor indentation.
@@ -197,20 +197,6 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;   By two,        # in flow style&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found bad indenting in line &#39;   By two,        # in flow style&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -548,6 +534,20 @@ found character &#39;\t&#39; that cannot start any token
 }
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny found bad indenting in line &#39;   By two,        # in flow style&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny found bad indenting in line &#39;   By two,        # in flow style&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

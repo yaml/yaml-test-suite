@@ -51,6 +51,11 @@ invalid
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:3:1: error: invalid scalar at the end of block sequence
 invalid
 ^~~~~~~
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 
@@ -67,6 +72,11 @@ invalid
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: could not find expected &#39;:&#39;
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 
@@ -84,6 +94,11 @@ invalid
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 
@@ -119,6 +134,13 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 16, posCharOffset = 16, posLine = 3, posColumn = 0} (Unexpected &#39;i&#39;)
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
+-SEQ
+-DOC
 </pre>
  </div>
 
@@ -206,7 +228,15 @@ YAMLException: end of the stream or a document separator is expected at line 3, 
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Document contains trailing content not separated by a ... or --- line
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
+-SEQ
+-DOC
+-STR
 </pre>
  </div>
 
@@ -217,17 +247,17 @@ YAMLException: end of the stream or a document separator is expected at line 3, 
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: Document is not valid YAML (bad indentation?)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:219:28)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+YAMLSyntaxError: Document contains trailing content not separated by a ... or --- line
+    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:353:25)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
 </pre>
  </div>
 
@@ -243,7 +273,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x558f7bc94f97
+	[C]: at 0x561691ac0f97
 </pre>
  </div>
 
@@ -253,6 +283,11 @@ stack traceback:
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
 /tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
 Error: unhandled exception: Unexpected token (expected block sequence indicator) [YamlStreamError]
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 
@@ -266,6 +301,11 @@ Got       : PLAIN
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;invalid&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 
@@ -431,6 +471,11 @@ could not find expected &#39;:&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 1:
     
     ^
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 
@@ -538,6 +583,11 @@ could not find expected &#39;:&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 1:
     
     ^ (line: 4)
++STR
++DOC
++SEQ
+=VAL :item1
+=VAL :item2
 </pre>
  </div>
 

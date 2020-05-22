@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/77H8.tml">&test-77H8</a><br>
 &nbsp;&nbsp;Title: Spec Example 2.23. Various Explicit Tags</br>
-&nbsp;&nbsp;Tags: [ spec, tag ]</tt></h2>
+&nbsp;&nbsp;Tags: [ spec, tag, unknown-tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 not-date: !!str 2002-04-28
@@ -328,14 +328,6 @@ different documents.
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
@@ -460,6 +452,13 @@ TypeError: Object of type bytes is not JSON serializable
 	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

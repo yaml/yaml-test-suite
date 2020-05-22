@@ -4,14 +4,17 @@ var data = {
       "1.3-mod" : 1,
       "alias" : 1,
       "anchor" : 1,
-      "block" : 1,
       "comment" : 1,
+      "complex-key" : 1,
       "directive" : 1,
       "document" : 1,
       "double" : 1,
+      "duplicate-key" : 1,
       "edge" : 1,
       "empty" : 1,
+      "empty-key" : 1,
       "error" : 1,
+      "explicit-key" : 1,
       "flow" : 1,
       "folded" : 1,
       "footer" : 1,
@@ -20,17 +23,18 @@ var data = {
       "jayt" : 1,
       "libyaml-err" : 1,
       "literal" : 1,
+      "local-tag" : 1,
       "mapping" : 1,
-      "missing" : 1,
       "scalar" : 1,
       "sequence" : 1,
       "simple" : 1,
       "single" : 1,
       "spec" : 1,
       "tag" : 1,
+      "unknown-tag" : 1,
       "upto-1.2" : 1,
       "whitespace" : 1,
-      "words" : 1
+      "whitspace" : 1
    },
    "tests" : {
       "229Q" : {
@@ -81,7 +85,8 @@ var data = {
          "in_json" : "{\n  \"a!\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~\": \"safe\",\n  \"?foo\": \"safe question mark\",\n  \":foo\": \"safe colon\",\n  \"-foo\": \"safe dash\",\n  \"this is#not\": \"a comment\"\n}\n",
          "in_yaml" : "a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~: safe\n?foo: safe question mark\n:foo: safe colon\n-foo: safe dash\nthis is#not: a comment\n",
          "tags" : [
-            "mapping"
+            "mapping",
+            "scalar"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a!\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~\n=VAL :safe\n=VAL :?foo\n=VAL :safe question mark\n=VAL ::foo\n=VAL :safe colon\n=VAL :-foo\n=VAL :safe dash\n=VAL :this is#not\n=VAL :a comment\n-MAP\n-DOC\n-STR\n"
       },
@@ -90,7 +95,8 @@ var data = {
          "in_json" : null,
          "in_yaml" : ": a\n: b\n",
          "tags" : [
-            "empty",
+            "duplicate-key",
+            "empty-key",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :\n=VAL :a\n=VAL :\n=VAL :b\n-MAP\n-DOC\n-STR\n"
@@ -115,7 +121,8 @@ var data = {
          "tags" : [
             "1.3-err",
             "alias",
-            "edge"
+            "edge",
+            "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL &a: :key\n=VAL &a :value\n=VAL :foo\n=ALI *a:\n-MAP\n-DOC\n-STR\n"
       },
@@ -124,8 +131,10 @@ var data = {
          "in_json" : null,
          "in_yaml" : "# Sets are represented as a\n# Mapping where each key is\n# associated with a null value\n--- !!set\n? Mark McGwire\n? Sammy Sosa\n? Ken Griff\n",
          "tags" : [
+            "explicit-key",
             "mapping",
-            "spec"
+            "spec",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP <tag:yaml.org,2002:set>\n=VAL :Mark McGwire\n=VAL :\n=VAL :Sammy Sosa\n=VAL :\n=VAL :Ken Griff\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
@@ -144,6 +153,9 @@ var data = {
          "in_json" : "{\n  \"a\": \"b\"\n}\n[\n  \"c\"\n]\n\"d e\"\n",
          "in_yaml" : "--- !!map\n? a\n: b\n--- !!seq\n- !!str c\n--- !!str\nd\ne\n",
          "tags" : [
+            "explicit-key",
+            "header",
+            "mapping",
             "tag"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP <tag:yaml.org,2002:map>\n=VAL :a\n=VAL :b\n-MAP\n-DOC\n+DOC ---\n+SEQ <tag:yaml.org,2002:seq>\n=VAL <tag:yaml.org,2002:str> :c\n-SEQ\n-DOC\n+DOC ---\n=VAL <tag:yaml.org,2002:str> :d e\n-DOC\n-STR\n"
@@ -153,6 +165,7 @@ var data = {
          "in_json" : "{\n  \"plain\": \"a b\\nc\"\n}\n",
          "in_yaml" : "---\nplain: a\n b\n\n c\n",
          "tags" : [
+            "mapping",
             "scalar"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :plain\n=VAL :a b\\nc\n-MAP\n-DOC\n-STR\n"
@@ -172,6 +185,7 @@ var data = {
          "in_yaml" : "First occurrence: &anchor Foo\nSecond occurrence: *anchor\nOverride anchor: &anchor Bar\nReuse anchor: *anchor\n",
          "tags" : [
             "alias",
+            "mapping",
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :First occurrence\n=VAL &anchor :Foo\n=VAL :Second occurrence\n=ALI *anchor\n=VAL :Override anchor\n=VAL &anchor :Bar\n=VAL :Reuse anchor\n=ALI *anchor\n-MAP\n-DOC\n-STR\n"
@@ -210,6 +224,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "{\nunquoted : \"separate\",\nhttp://foo.com,\nomitted value:,\n: omitted key,\n}\n",
          "tags" : [
+            "empty-key",
             "flow",
             "mapping",
             "spec"
@@ -231,6 +246,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "---\n[\n  [ a, [ [[b,c]]: d, e]]: 23\n]\n",
          "tags" : [
+            "complex-key",
             "flow",
             "mapping",
             "sequence"
@@ -253,6 +269,7 @@ var data = {
          "in_json" : "{\n  \"foo\": \"bar\"\n}\n",
          "in_yaml" : "{\"foo\"\n: \"bar\"}\n",
          "tags" : [
+            "flow",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL \"foo\n=VAL \"bar\n-MAP\n-DOC\n-STR\n"
@@ -263,7 +280,9 @@ var data = {
          "in_yaml" : "--- >\n ab\n cd\n \n ef\n\n\n gh\n",
          "tags" : [
             "1.3-mod",
-            "scalar"
+            "folded",
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL >ab cd\\nef\\n\\ngh\\n\n-DOC\n-STR\n"
       },
@@ -277,7 +296,8 @@ var data = {
             "libyaml-err",
             "literal",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL |detected\\n\n=VAL >\\n\\n# detected\\n\n=VAL | explicit\\n\n=VAL >detected\\n\n-SEQ\n-DOC\n-STR\n"
       },
@@ -287,6 +307,7 @@ var data = {
          "in_yaml" : "\"foo: bar\\\": baz\"\n",
          "tags" : [
             "1.3-err",
+            "mapping",
             "scalar"
          ],
          "test_event" : "+STR\n+DOC\n=VAL \"foo: bar\": baz\n-DOC\n-STR\n"
@@ -309,7 +330,8 @@ var data = {
             "literal",
             "scalar",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :plain\n=VAL :text lines\n=VAL :quoted\n=VAL \"text lines\n=VAL :block\n=VAL |text\\n \\tlines\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -338,7 +360,9 @@ var data = {
          "in_json" : null,
          "in_yaml" : "canonical: !!binary \"\\\n R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\\n OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\\\n +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\\\n AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\"\ngeneric: !!binary |\n R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\n OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\n AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\ndescription:\n The binary value above is a tiny arrow encoded as a gif image.\n",
          "tags" : [
-            "jayt"
+            "jayt",
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :canonical\n=VAL <tag:yaml.org,2002:binary> \"R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n=VAL :generic\n=VAL <tag:yaml.org,2002:binary> |R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\\n\n=VAL :description\n=VAL :The binary value above is a tiny arrow encoded as a gif image.\n-MAP\n-DOC\n-STR\n"
       },
@@ -381,9 +405,12 @@ var data = {
          "in_json" : "{\n  \"Folding\": \"Empty line\\nas a line feed\",\n  \"Chomping\": \"Clipped empty lines\\n\"\n}\n",
          "in_yaml" : "Folding:\n  \"Empty line\n   \t\n  as a line feed\"\nChomping: |\n  Clipped empty lines\n \n\n",
          "tags" : [
+            "double",
+            "literal",
             "scalar",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :Folding\n=VAL \"Empty line\\nas a line feed\n=VAL :Chomping\n=VAL |Clipped empty lines\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -415,6 +442,7 @@ var data = {
          "in_yaml" : "key:    # Comment\n  value\n",
          "tags" : [
             "comment",
+            "mapping",
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :key\n=VAL :value\n-MAP\n-DOC\n-STR\n"
@@ -436,8 +464,10 @@ var data = {
          "in_yaml" : "? explicit key # Empty value\n? |\n  block key\n: - one # Explicit compact\n  - two # block value\n",
          "tags" : [
             "comment",
+            "explicit-key",
             "literal",
             "mapping",
+            "sequence",
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :explicit key\n=VAL :\n=VAL |block key\\n\n+SEQ\n=VAL :one\n=VAL :two\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -470,6 +500,7 @@ var data = {
          "in_yaml" : "---\n&mapping\n&key [ &item a, b, c ]: value\n",
          "tags" : [
             "anchor",
+            "complex-key",
             "flow",
             "mapping",
             "sequence"
@@ -481,6 +512,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "%TAG !e! tag:example.com,2000:app/\n---\n- !local foo\n- !!str bar\n- !e!tag%21 baz\n",
          "tags" : [
+            "local-tag",
             "spec",
             "tag"
          ],
@@ -491,7 +523,9 @@ var data = {
          "in_json" : "\"ab\\n\\n \\n\"\n",
          "in_yaml" : "--- |+\n ab\n \n  \n...\n",
          "tags" : [
-            "scalar"
+            "literal",
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL |ab\\n\\n \\n\n-DOC ...\n-STR\n"
       },
@@ -510,9 +544,12 @@ var data = {
          "in_json" : "{\n  \"Not indented\": {\n    \"By one space\": \"By four\\n  spaces\\n\",\n    \"Flow style\": [\n      \"By two\",\n      \"Also by two\",\n      \"Still by two\"\n    ]\n  }\n}\n",
          "in_yaml" : "  # Leading comment line spaces are\n   # neither content nor indentation.\n    \nNot indented:\n By one space: |\n    By four\n      spaces\n Flow style: [    # Leading spaces\n   By two,        # in flow style\n  Also by two,    # are neither\n  \tStill by two   # content nor\n    ]             # indentation.\n",
          "tags" : [
+            "comment",
+            "flow",
             "indent",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :Not indented\n+MAP\n=VAL :By one space\n=VAL |By four\\n  spaces\\n\n=VAL :Flow style\n+SEQ\n=VAL :By two\n=VAL :Also by two\n=VAL :Still by two\n-SEQ\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
@@ -533,6 +570,8 @@ var data = {
          "in_json" : "{\n  \"foo\": [\n    \"a\",\n    {\n      \"key\": \"value\"\n    }\n  ]\n}\n",
          "in_yaml" : "foo: !!seq\n  - !!str a\n  - !!map\n    key: !!str value\n",
          "tags" : [
+            "mapping",
+            "sequence",
             "tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n+SEQ <tag:yaml.org,2002:seq>\n=VAL <tag:yaml.org,2002:str> :a\n+MAP <tag:yaml.org,2002:map>\n=VAL :key\n=VAL <tag:yaml.org,2002:str> :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -566,7 +605,8 @@ var data = {
          "in_yaml" : "? &a a\n: &b b\n: *a\n",
          "tags" : [
             "alias",
-            "missing"
+            "empty-key",
+            "explicit-key"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL &a :a\n=VAL &b :b\n=VAL :\n=ALI *a\n-MAP\n-DOC\n-STR\n"
       },
@@ -575,6 +615,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "---\n?\n- a\n- b\n:\n- c\n- d\n",
          "tags" : [
+            "explicit-key",
             "mapping",
             "sequence"
          ],
@@ -610,6 +651,7 @@ var data = {
          "tags" : [
             "1.3-mod",
             "directive",
+            "local-tag",
             "spec",
             "tag"
          ],
@@ -621,6 +663,7 @@ var data = {
          "in_yaml" : "---\n\"\n  foo \n \n    bar\n\n  baz\n\"\n",
          "tags" : [
             "1.3-mod",
+            "double",
             "scalar",
             "spec",
             "whitespace"
@@ -652,8 +695,11 @@ var data = {
          "in_json" : "[\n  \"flow in block\",\n  \"Block scalar\\n\",\n  {\n    \"foo\": \"bar\"\n  }\n]\n",
          "in_yaml" : "-\n  \"flow in block\"\n- >\n Block scalar\n- !!map # Block collection\n  foo : bar\n",
          "tags" : [
+            "comment",
+            "double",
             "folded",
-            "spec"
+            "spec",
+            "tag"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL \"flow in block\n=VAL >Block scalar\\n\n+MAP <tag:yaml.org,2002:map>\n=VAL :foo\n=VAL :bar\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
@@ -673,7 +719,9 @@ var data = {
          "in_yaml" : "--- |-\n ab\n \n \n...\n",
          "tags" : [
             "1.3-mod",
-            "scalar"
+            "literal",
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL |ab\n-DOC ...\n-STR\n"
       },
@@ -683,7 +731,8 @@ var data = {
          "in_yaml" : "---\nnot-date: !!str 2002-04-28\n\npicture: !!binary |\n R0lGODlhDAAMAIQAAP//9/X\n 17unp5WZmZgAAAOfn515eXv\n Pz7Y6OjuDg4J+fn5OTk6enp\n 56enmleECcgggoBADs=\n\napplication specific tag: !something |\n The semantics of the tag\n above may be different for\n different documents.\n",
          "tags" : [
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :not-date\n=VAL <tag:yaml.org,2002:str> :2002-04-28\n=VAL :picture\n=VAL <tag:yaml.org,2002:binary> |R0lGODlhDAAMAIQAAP//9/X\\n17unp5WZmZgAAAOfn515eXv\\nPz7Y6OjuDg4J+fn5OTk6enp\\n56enmleECcgggoBADs=\\n\n=VAL :application specific tag\n=VAL <!something> |The semantics of the tag\\nabove may be different for\\ndifferent documents.\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -694,7 +743,8 @@ var data = {
          "tags" : [
             "scalar",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL \" 1st non-empty\\n2nd non-empty 3rd non-empty \n-DOC\n-STR\n"
       },
@@ -705,7 +755,8 @@ var data = {
          "tags" : [
             "1.3-mod",
             "anchor",
-            "comment"
+            "comment",
+            "mapping"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :top1\n+MAP &node1\n=VAL &k1 :key1\n=VAL :one\n-MAP\n=VAL :top2\n+MAP &node2\n=VAL :key2\n=VAL :two\n-MAP\n=VAL :top3\n+MAP\n=VAL &k3 :key3\n=VAL :three\n-MAP\n=VAL :top4\n+MAP &node4\n=VAL &k4 :key4\n=VAL :four\n-MAP\n=VAL :top5\n+MAP &node5\n=VAL :key5\n=VAL :five\n-MAP\n=VAL :top6\n=VAL &val6 :six\n=VAL :top7\n=VAL &val7 :seven\n-MAP\n-DOC\n-STR\n"
       },
@@ -715,6 +766,8 @@ var data = {
          "in_yaml" : "---\nhr:\n  - Mark McGwire\n  # Following node labeled SS\n  - &SS Sammy Sosa\nrbi:\n  - *SS # Subsequent occurrence\n  - Ken Griffey\n",
          "tags" : [
             "alias",
+            "mapping",
+            "sequence",
             "spec"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :hr\n+SEQ\n=VAL :Mark McGwire\n=VAL &SS :Sammy Sosa\n-SEQ\n=VAL :rbi\n+SEQ\n=ALI *SS\n=VAL :Ken Griffey\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -724,8 +777,10 @@ var data = {
          "in_json" : null,
          "in_yaml" : "!<tag:yaml.org,2002:str> foo :\n  !<!bar> baz\n",
          "tags" : [
+            "mapping",
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL <tag:yaml.org,2002:str> :foo\n=VAL <!bar> :baz\n-MAP\n-DOC\n-STR\n"
       },
@@ -749,7 +804,7 @@ var data = {
          "tags" : [
             "comment",
             "flow",
-            "mapping"
+            "sequence"
          ],
          "test_event" : "+STR\n+DOC ---\n+SEQ\n=VAL :word1\n=VAL :word2\n-SEQ\n-DOC\n-STR\n"
       },
@@ -758,6 +813,7 @@ var data = {
          "in_json" : "{\n  \"a\": null,\n  \"b\": null,\n  \"c\": null\n}\n",
          "in_yaml" : "? a\n? b\nc:\n",
          "tags" : [
+            "explicit-key",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :\n=VAL :b\n=VAL :\n=VAL :c\n=VAL :\n-MAP\n-DOC\n-STR\n"
@@ -822,7 +878,8 @@ var data = {
             "comment",
             "empty",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n-STR\n"
       },
@@ -892,6 +949,7 @@ var data = {
          "in_yaml" : "--- >-\n  trimmed\n  \n \n\n  as\n  space\n",
          "tags" : [
             "1.3-mod",
+            "folded",
             "scalar",
             "spec",
             "whitespace"
@@ -970,7 +1028,8 @@ var data = {
          "tags" : [
             "1.3-err",
             "anchor",
-            "mapping"
+            "mapping",
+            "tag"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL &a1 <tag:yaml.org,2002:str> :scalar1\n-DOC\n+DOC ---\n=VAL &a2 <tag:yaml.org,2002:str> :scalar2\n-DOC\n+DOC ---\n=VAL &a3 <tag:yaml.org,2002:str> :scalar3\n-DOC\n+DOC ---\n+MAP &a4 <tag:yaml.org,2002:map>\n=VAL &a5 <tag:yaml.org,2002:str> :key5\n=VAL :value4\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :a6\n=VAL :1\n=VAL &anchor6 :b6\n=VAL :2\n-MAP\n-DOC\n+DOC ---\n+MAP <tag:yaml.org,2002:map>\n=VAL &a8 <tag:yaml.org,2002:str> :key8\n=VAL :value7\n-MAP\n-DOC\n+DOC ---\n+MAP <tag:yaml.org,2002:map>\n=VAL &a10 <tag:yaml.org,2002:str> :key10\n=VAL :value9\n-MAP\n-DOC\n+DOC ---\n=VAL &a11 <tag:yaml.org,2002:str> :value11\n-DOC\n-STR\n"
       },
@@ -980,6 +1039,7 @@ var data = {
          "in_yaml" : "- [ YAML : separate ]\n- [ : empty key entry ]\n- [ \"JSON like\":adjacent ]\n",
          "tags" : [
             "1.3-mod",
+            "empty-key",
             "flow",
             "mapping",
             "spec"
@@ -1013,8 +1073,10 @@ var data = {
          "in_yaml" : "---\n\" 1st non-empty\n\n 2nd non-empty \n 3rd non-empty \"\n",
          "tags" : [
             "1.3-mod",
+            "double",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL \" 1st non-empty\\n2nd non-empty 3rd non-empty \n-DOC\n-STR\n"
       },
@@ -1037,7 +1099,8 @@ var data = {
             "1.3-err",
             "directive",
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC\n=VAL <!foo> \"bar\n-DOC ...\n+DOC ---\n=VAL <tag:example.com,2000:app/foo> \"bar\n-DOC\n-STR\n"
       },
@@ -1047,7 +1110,8 @@ var data = {
          "in_yaml" : "a\nb  \n  c\nd\n\ne\n",
          "tags" : [
             "1.3-err",
-            "scalar"
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL :a b c d\\ne\n-DOC\n-STR\n"
       },
@@ -1056,6 +1120,7 @@ var data = {
          "in_json" : "{\n  \"a\": [\n    \"b\",\n    [\n      \"c\",\n      \"d\"\n    ]\n  ]\n}\n",
          "in_yaml" : "? a\n: -\tb\n  -  -\tc\n     - d\n",
          "tags" : [
+            "explicit-key",
             "indent",
             "libyaml-err",
             "sequence",
@@ -1090,6 +1155,7 @@ var data = {
          "in_json" : "[\n  \"single multiline - sequence entry\"\n]\n",
          "in_yaml" : "- single multiline\n - sequence entry\n",
          "tags" : [
+            "scalar",
             "sequence"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :single multiline - sequence entry\n-SEQ\n-DOC\n-STR\n"
@@ -1108,6 +1174,7 @@ var data = {
          "in_json" : "{\n  \"one\": [\n    2,\n    3\n  ],\n  \"four\": 5\n}\n",
          "in_yaml" : "one:\n- 2\n- 3\nfour: 5\n",
          "tags" : [
+            "indent",
             "mapping",
             "sequence"
          ],
@@ -1152,7 +1219,8 @@ var data = {
          "tags" : [
             "1.3-err",
             "anchor",
-            "indent"
+            "indent",
+            "tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :key\n+MAP &anchor <tag:yaml.org,2002:map>\n=VAL :a\n=VAL :b\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
@@ -1174,6 +1242,7 @@ var data = {
          "tags" : [
             "alias",
             "directive",
+            "local-tag",
             "spec",
             "tag"
          ],
@@ -1196,7 +1265,9 @@ var data = {
          "in_yaml" : "&flowseq [\n a: b,\n &c c: d,\n { &e e: f },\n &g { g: h }\n]\n",
          "tags" : [
             "anchor",
-            "flow"
+            "flow",
+            "mapping",
+            "sequence"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ &flowseq\n+MAP\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL &c :c\n=VAL :d\n-MAP\n+MAP\n=VAL &e :e\n=VAL :f\n-MAP\n+MAP &g\n=VAL :g\n=VAL :h\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
@@ -1215,6 +1286,7 @@ var data = {
          "in_json" : "[\n  {\n    \"foo bar\": \"baz\"\n  }\n]\n",
          "in_yaml" : "[\n? foo\n bar : baz\n]\n",
          "tags" : [
+            "explicit-key",
             "flow",
             "mapping",
             "spec"
@@ -1227,6 +1299,7 @@ var data = {
          "in_yaml" : "anchored: !local &anchor value\nalias: *anchor\n",
          "tags" : [
             "alias",
+            "local-tag",
             "spec",
             "tag"
          ],
@@ -1237,6 +1310,7 @@ var data = {
          "in_json" : "[\n  \"explicit indent and chomp\",\n  \"chomp and explicit indent\"\n]\n",
          "in_yaml" : "- |2-\n  explicit indent and chomp\n- |-2\n  chomp and explicit indent\n",
          "tags" : [
+            "indent",
             "literal"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL |explicit indent and chomp\n=VAL |chomp and explicit indent\n-SEQ\n-DOC\n-STR\n"
@@ -1289,6 +1363,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "{\n? explicit: entry,\nimplicit: entry,\n?\n}\n",
          "tags" : [
+            "explicit-key",
             "flow",
             "mapping",
             "spec"
@@ -1325,7 +1400,8 @@ var data = {
             "comment",
             "literal",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL |\\n\\nliteral\\n \\n\\ntext\\n\n-DOC\n-STR\n"
       },
@@ -1345,6 +1421,8 @@ var data = {
          "in_yaml" : "!!map {\n  k: !!seq\n  [ a, !!str b]\n}\n",
          "tags" : [
             "flow",
+            "mapping",
+            "sequence",
             "tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP <tag:yaml.org,2002:map>\n=VAL :k\n+SEQ <tag:yaml.org,2002:seq>\n=VAL :a\n=VAL <tag:yaml.org,2002:str> :b\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -1355,7 +1433,8 @@ var data = {
          "in_yaml" : "---\na\nb  \n  c\nd\n\ne\n",
          "tags" : [
             "1.3-mod",
-            "scalar"
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL :a b c d\\ne\n-DOC\n-STR\n"
       },
@@ -1396,7 +1475,7 @@ var data = {
          "in_yaml" : "---\na: >2\n   more indented\n  regular\nb: >2\n\n\n   more indented\n  regular\n",
          "tags" : [
             "folded",
-            "whitespace"
+            "indent"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :a\n=VAL > more indented\\nregular\\n\n=VAL :b\n=VAL >\\n\\n more indented\\nregular\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -1457,8 +1536,10 @@ var data = {
          "in_json" : null,
          "in_yaml" : "{\n  ? foo :,\n  : bar,\n}\n",
          "tags" : [
+            "empty-key",
+            "explicit-key",
             "flow",
-            "scalar",
+            "mapping",
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n=VAL :\n=VAL :\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
@@ -1521,6 +1602,7 @@ var data = {
          "in_json" : "{\n  \"a\": 1.3,\n  \"fifteen\": \"d\"\n}\n",
          "in_yaml" : "? a\n: 1.3\nfifteen: d\n",
          "tags" : [
+            "explicit-key",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :1.3\n=VAL :fifteen\n=VAL :d\n-MAP\n-DOC\n-STR\n"
@@ -1531,7 +1613,9 @@ var data = {
          "in_yaml" : "foo: 1\n\nbar: 2\n    \ntext: |\n  a\n    \n  b\n\n  c\n \n  d\n",
          "tags" : [
             "comment",
-            "scalar"
+            "literal",
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n=VAL :1\n=VAL :bar\n=VAL :2\n=VAL :text\n=VAL |a\\n  \\nb\\n\\nc\\n\\nd\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -1540,7 +1624,7 @@ var data = {
          "in_json" : "{\n  \"wanted\": \"love \u2665 and peace \u262e\"\n}\n",
          "in_yaml" : "---\nwanted: love \u2665 and peace \u262e\n",
          "tags" : [
-            "mapping"
+            "scalar"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :wanted\n=VAL :love \u2665 and peace \u262e\n-MAP\n-DOC\n-STR\n"
       },
@@ -1573,7 +1657,8 @@ var data = {
          "tags" : [
             "scalar",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL :1st non-empty\\n2nd non-empty 3rd non-empty\n-DOC\n-STR\n"
       },
@@ -1609,10 +1694,12 @@ var data = {
       "J7PZ" : {
          "id" : "J7PZ",
          "in_json" : "[\n  {\n    \"Mark McGwire\": 65\n  },\n  {\n    \"Sammy Sosa\": 63\n  },\n  {\n    \"Ken Griffy\": 58\n  }\n]\n",
-         "in_yaml" : "# Ordered maps are represented as\n# A sequence of mappings, with\n# each mapping having one key\n--- !!omap\n- Mark McGwire: 65\n- Sammy Sosa: 63\n- Ken Griffy: 58\n",
+         "in_yaml" : "# The !!omap tag is one of the optional types\n# introduced for YAML 1.1. In 1.2, it is not\n# part of the standard tags and should not be\n# enabled by default.\n# Ordered maps are represented as\n# A sequence of mappings, with\n# each mapping having one key\n--- !!omap\n- Mark McGwire: 65\n- Sammy Sosa: 63\n- Ken Griffy: 58\n",
          "tags" : [
             "mapping",
-            "spec"
+            "spec",
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n+SEQ <tag:yaml.org,2002:omap>\n+MAP\n=VAL :Mark McGwire\n=VAL :65\n-MAP\n+MAP\n=VAL :Sammy Sosa\n=VAL :63\n-MAP\n+MAP\n=VAL :Ken Griffy\n=VAL :58\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
@@ -1632,6 +1719,8 @@ var data = {
          "in_yaml" : "---\nhr: # 1998 hr ranking\n  - Mark McGwire\n  - Sammy Sosa\nrbi:\n  # 1998 rbi ranking\n  - Sammy Sosa\n  - Ken Griffey\n",
          "tags" : [
             "comment",
+            "mapping",
+            "sequence",
             "spec"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :hr\n+SEQ\n=VAL :Mark McGwire\n=VAL :Sammy Sosa\n-SEQ\n=VAL :rbi\n+SEQ\n=VAL :Sammy Sosa\n=VAL :Ken Griffey\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -1661,6 +1750,7 @@ var data = {
          "in_json" : "{\n  \"block sequence\": [\n    \"one\",\n    {\n      \"two\": \"three\"\n    }\n  ]\n}\n",
          "in_yaml" : "block sequence:\n  - one\n  - two : three\n",
          "tags" : [
+            "mapping",
             "sequence",
             "spec"
          ],
@@ -1681,6 +1771,7 @@ var data = {
          "in_json" : "{\n  \"a true\": \"null d\",\n  \"e 42\": null\n}\n",
          "in_yaml" : "? a\n  true\n: null\n  d\n? e\n  42\n",
          "tags" : [
+            "explicit-key",
             "mapping",
             "scalar"
          ],
@@ -1691,8 +1782,9 @@ var data = {
          "in_json" : "{\n  \"foo\": \"bar\"\n}\n",
          "in_yaml" : "---\n{ \"foo\" # comment\n  :bar }\n",
          "tags" : [
-            "tag",
-            "words"
+            "comment",
+            "flow",
+            "mapping"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
@@ -1711,6 +1803,7 @@ var data = {
          "in_yaml" : ">-\n  trimmed\n  \n \n\n  as\n  space\n",
          "tags" : [
             "1.3-err",
+            "folded",
             "scalar",
             "spec",
             "whitespace"
@@ -1744,6 +1837,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "complex1:\n  ? - a\ncomplex2:\n  ? - a\n  : b\ncomplex3:\n  ? - a\n  : >\n    b\ncomplex4:\n  ? >\n    a\n  :\ncomplex5:\n  ? - a\n  : - b\n",
          "tags" : [
+            "explicit-key",
             "mapping",
             "sequence"
          ],
@@ -1776,8 +1870,11 @@ var data = {
          "in_yaml" : "- [ YAML : separate ]\n- [ : empty key entry ]\n- [ {JSON: like}:adjacent ]\n",
          "tags" : [
             "1.3-err",
+            "complex-key",
+            "empty-key",
             "flow",
             "mapping",
+            "sequence",
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :empty key entry\n-MAP\n-SEQ\n+SEQ\n+MAP\n+MAP\n=VAL :JSON\n=VAL :like\n-MAP\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
@@ -1787,6 +1884,7 @@ var data = {
          "in_json" : "{\n  \"a\": 47,\n  \"c\": \"d\"\n}\n",
          "in_yaml" : "? !!str a\n: !!int 47\n? c\n: !!str d\n",
          "tags" : [
+            "explicit-key",
             "mapping",
             "tag"
          ],
@@ -1843,6 +1941,7 @@ var data = {
          "in_yaml" : "[flow]: block\n",
          "tags" : [
             "1.3-err",
+            "complex-key",
             "flow",
             "mapping",
             "sequence"
@@ -1854,7 +1953,9 @@ var data = {
          "in_json" : "{\n  \"a\": \"ab\\n\\ncd\\nef\\n\"\n}\n",
          "in_yaml" : "a: |\n ab\n \n cd\n ef\n \n\n...\n",
          "tags" : [
-            "scalar"
+            "literal",
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL |ab\\n\\ncd\\nef\\n\n-MAP\n-DOC ...\n-STR\n"
       },
@@ -1865,8 +1966,11 @@ var data = {
          "tags" : [
             "1.3-err",
             "folded",
+            "indent",
             "literal",
-            "spec"
+            "local-tag",
+            "spec",
+            "tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :literal\n=VAL |value\\n\n=VAL :folded\n=VAL <!foo> >value\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -1875,6 +1979,8 @@ var data = {
          "in_json" : null,
          "in_yaml" : "? - Detroit Tigers\n  - Chicago cubs\n:\n  - 2001-07-23\n\n? [ New York Yankees,\n    Atlanta Braves ]\n: [ 2001-07-02, 2001-08-12,\n    2001-08-14 ]\n",
          "tags" : [
+            "complex-key",
+            "explicit-key",
             "mapping",
             "sequence",
             "spec"
@@ -1911,7 +2017,8 @@ var data = {
             "1.3-err",
             "literal",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL |literal\\n\\ttext\\n\n-DOC\n-STR\n"
       },
@@ -1921,6 +2028,7 @@ var data = {
          "in_yaml" : ">\n  foo \n \n  \t bar\n\n  baz\n",
          "tags" : [
             "1.3-err",
+            "folded",
             "scalar",
             "spec",
             "whitespace"
@@ -1944,7 +2052,9 @@ var data = {
          "in_yaml" : "|-\n ab\n \n \n...\n",
          "tags" : [
             "1.3-err",
-            "scalar"
+            "literal",
+            "scalar",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL |ab\n-DOC ...\n-STR\n"
       },
@@ -1953,8 +2063,8 @@ var data = {
          "in_json" : "[\n  \"plain\",\n  \"double quoted\",\n  \"single quoted\",\n  \"block\\n\",\n  \"plain again\"\n]\n",
          "in_yaml" : "- plain\n- \"double quoted\"\n- 'single quoted'\n- >\n  block\n- plain again\n",
          "tags" : [
-            "scalar",
-            "tag"
+            "folded",
+            "scalar"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :plain\n=VAL \"double quoted\n=VAL 'single quoted\n=VAL >block\\n\n=VAL :plain again\n-SEQ\n-DOC\n-STR\n"
       },
@@ -1985,6 +2095,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : ":\n\n\n",
          "tags" : [
+            "empty-key",
             "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
@@ -2004,9 +2115,11 @@ var data = {
          "in_json" : "\"folded to a space,\\nto a line feed, or \\t \\tnon-content\"\n",
          "in_yaml" : "\"folded \nto a space,\t\n \nto a line feed, or \t\\\n \\ \tnon-content\"\n",
          "tags" : [
+            "double",
             "scalar",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL \"folded to a space,\\nto a line feed, or \\t \\tnon-content\n-DOC\n-STR\n"
       },
@@ -2061,8 +2174,10 @@ var data = {
          "in_yaml" : "' 1st non-empty\n\n 2nd non-empty \n\t3rd non-empty '\n",
          "tags" : [
             "scalar",
+            "single",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitspace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL ' 1st non-empty\\n2nd non-empty 3rd non-empty \n-DOC\n-STR\n"
       },
@@ -2081,8 +2196,8 @@ var data = {
          "in_yaml" : "- &a\n- a\n-\n  &a : a\n  b: &b\n-\n  &c : &a\n-\n  ? &d\n-\n  ? &e\n  : &a\n",
          "tags" : [
             "anchor",
-            "empty",
-            "missing"
+            "empty-key",
+            "explicit-key"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL &a :\n=VAL :a\n+MAP\n=VAL &a :\n=VAL :a\n=VAL :b\n=VAL &b :\n-MAP\n+MAP\n=VAL &c :\n=VAL &a :\n-MAP\n+MAP\n=VAL &d :\n=VAL :\n-MAP\n+MAP\n=VAL &e :\n=VAL &a :\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
@@ -2114,8 +2229,10 @@ var data = {
          "in_yaml" : "---\n\"folded \nto a space,\n \nto a line feed, or \t\\\n \\ \tnon-content\"\n",
          "tags" : [
             "1.3-mod",
+            "double",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL \"folded to a space,\\nto a line feed, or \\t \\tnon-content\n-DOC\n-STR\n"
       },
@@ -2126,6 +2243,8 @@ var data = {
          "tags" : [
             "1.3-err",
             "comment",
+            "complex-key",
+            "flow",
             "spec",
             "whitespace"
          ],
@@ -2162,7 +2281,8 @@ var data = {
             "literal",
             "scalar",
             "spec",
-            "upto-1.2"
+            "upto-1.2",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL |detected\\n\n=VAL >\\n\\n# detected\\n\n=VAL | explicit\\n\n=VAL >\\t\\ndetected\\n\n-SEQ\n-DOC\n-STR\n"
       },
@@ -2192,6 +2312,7 @@ var data = {
          "in_json" : "{\n  \"d\": 23,\n  \"a\": 4.2\n}\n",
          "in_yaml" : "a: 4.2\n? d\n: 23\n",
          "tags" : [
+            "explicit-key",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL :4.2\n=VAL :d\n=VAL :23\n-MAP\n-DOC\n-STR\n"
@@ -2213,7 +2334,10 @@ var data = {
          "in_yaml" : "a: \"double\n  quotes\" # lala\nb: plain\n value  # lala\nc  : #lala\n  d\n? # lala\n - seq1\n: # lala\n - #lala\n  seq2\ne: &node # lala\n - x: y\nblock: > # lala\n  abcde\n",
          "tags" : [
             "1.3-mod",
-            "comment"
+            "anchor",
+            "comment",
+            "folded",
+            "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL \"double quotes\n=VAL :b\n=VAL :plain value\n=VAL :c\n=VAL :d\n+SEQ\n=VAL :seq1\n-SEQ\n+SEQ\n=VAL :seq2\n-SEQ\n=VAL :e\n+SEQ &node\n+MAP\n=VAL :x\n=VAL :y\n-MAP\n-SEQ\n=VAL :block\n=VAL >abcde\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -2235,6 +2359,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "plain key: in-line value\n: # Both empty\n\"quoted key\":\n- entry\n",
          "tags" : [
+            "empty-key",
             "mapping",
             "spec"
          ],
@@ -2274,6 +2399,7 @@ var data = {
          "in_json" : "{\n  \"sequence\": [\n    \"one\",\n    \"two\"\n  ],\n  \"mapping\": {\n    \"sky\": \"blue\",\n    \"sea\": \"green\"\n  }\n}\n",
          "in_yaml" : "sequence:\n- one\n- two\nmapping:\n  ? sky\n  : blue\n  sea : green\n",
          "tags" : [
+            "explicit-key",
             "mapping",
             "sequence",
             "spec"
@@ -2285,6 +2411,7 @@ var data = {
          "in_json" : null,
          "in_yaml" : "{a: [b, c], [d, e]: f}\n",
          "tags" : [
+            "complex-key",
             "flow",
             "mapping",
             "sequence"
@@ -2297,6 +2424,7 @@ var data = {
          "in_yaml" : "---\nseq:\n &anchor\n- a\n- b\n",
          "tags" : [
             "anchor",
+            "indent",
             "sequence"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :seq\n+SEQ &anchor\n=VAL :a\n=VAL :b\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -2308,6 +2436,7 @@ var data = {
          "tags" : [
             "1.3-mod",
             "scalar",
+            "single",
             "spec"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL 'here's to \"quotes\"\n-DOC\n-STR\n"
@@ -2318,7 +2447,6 @@ var data = {
          "in_yaml" : "hr:  65    # Home runs\navg: 0.278 # Batting average\nrbi: 147   # Runs Batted In\n",
          "tags" : [
             "comment",
-            "literal",
             "scalar",
             "spec"
          ],
@@ -2333,7 +2461,8 @@ var data = {
             "comment",
             "literal",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL |\\n\\nliteral\\n \\n\\ntext\\n\n-DOC\n-STR\n"
       },
@@ -2344,7 +2473,9 @@ var data = {
          "tags" : [
             "1.3-mod",
             "scalar",
-            "spec"
+            "single",
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL ' 1st non-empty\\n2nd non-empty 3rd non-empty \n-DOC\n-STR\n"
       },
@@ -2356,7 +2487,8 @@ var data = {
             "1.3-mod",
             "literal",
             "scalar",
-            "spec"
+            "spec",
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL |literal\\n\\ttext\\n\n-DOC\n-STR\n"
       },
@@ -2375,6 +2507,7 @@ var data = {
          "in_json" : "\" foo\\nbar\\nbaz \"\n",
          "in_yaml" : "\"\n  foo \n \n  \t bar\n\n  baz\n\"\n",
          "tags" : [
+            "double",
             "scalar",
             "spec",
             "upto-1.2",
@@ -2388,6 +2521,7 @@ var data = {
          "in_yaml" : ">\n ab\n cd\n \n ef\n\n\n gh\n",
          "tags" : [
             "1.3-err",
+            "folded",
             "scalar"
          ],
          "test_event" : "+STR\n+DOC\n=VAL >ab cd\\nef\\n\\ngh\\n\n-DOC\n-STR\n"
@@ -2456,7 +2590,8 @@ var data = {
             "mapping",
             "sequence",
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP <tag:clarkevans.com,2002:invoice>\n=VAL :invoice\n=VAL :34843\n=VAL :date\n=VAL :2001-01-23\n=VAL :bill-to\n+MAP &id001\n=VAL :given\n=VAL :Chris\n=VAL :family\n=VAL :Dumars\n=VAL :address\n+MAP\n=VAL :lines\n=VAL |458 Walkman Dr.\\nSuite #292\\n\n=VAL :city\n=VAL :Royal Oak\n=VAL :state\n=VAL :MI\n=VAL :postal\n=VAL :48046\n-MAP\n-MAP\n=VAL :ship-to\n=ALI *id001\n=VAL :product\n+SEQ\n+MAP\n=VAL :sku\n=VAL :BL394D\n=VAL :quantity\n=VAL :4\n=VAL :description\n=VAL :Basketball\n=VAL :price\n=VAL :450.00\n-MAP\n+MAP\n=VAL :sku\n=VAL :BL4438H\n=VAL :quantity\n=VAL :1\n=VAL :description\n=VAL :Super Hoop\n=VAL :price\n=VAL :2392.00\n-MAP\n-SEQ\n=VAL :tax\n=VAL :251.42\n=VAL :total\n=VAL :4443.52\n=VAL :comments\n=VAL :Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.\n-MAP\n-DOC\n-STR\n"
       },
@@ -2466,6 +2601,7 @@ var data = {
          "in_yaml" : "---\n{ matches\n% : 20 }\n...\n---\n# Empty\n...\n",
          "tags" : [
             "comment",
+            "flow",
             "footer",
             "header",
             "spec"
@@ -2487,6 +2623,8 @@ var data = {
          "in_json" : null,
          "in_yaml" : "- sun: yellow\n- ? earth: blue\n  : moon: white\n",
          "tags" : [
+            "complex-key",
+            "explicit-key",
             "mapping",
             "spec"
          ],
@@ -2497,6 +2635,7 @@ var data = {
          "in_json" : "[\n  null,\n  \"block node\\n\",\n  [\n    \"one\",\n    \"two\"\n  ],\n  {\n    \"one\": \"two\"\n  }\n]\n",
          "in_yaml" : "- # Empty\n- |\n block node\n- - one # Compact\n  - two # sequence\n- one: two # Compact mapping\n",
          "tags" : [
+            "comment",
             "literal",
             "sequence",
             "spec"
@@ -2532,7 +2671,8 @@ var data = {
          "tags" : [
             "flow",
             "scalar",
-            "spec"
+            "spec",
+            "tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n=VAL <tag:yaml.org,2002:str> :\n=VAL <tag:yaml.org,2002:str> :\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
@@ -2542,6 +2682,7 @@ var data = {
          "in_yaml" : "{ &a [a, &b b]: *b, *a : [c, *b, d]}\n",
          "tags" : [
             "alias",
+            "complex-key",
             "flow"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n+SEQ &a\n=VAL :a\n=VAL &b :b\n-SEQ\n=ALI *b\n=ALI *a\n+SEQ\n=VAL :c\n=ALI *b\n=VAL :d\n-SEQ\n-MAP\n-DOC\n-STR\n"
@@ -2552,6 +2693,7 @@ var data = {
          "in_yaml" : "---\n? key\n# comment\n: value\n",
          "tags" : [
             "comment",
+            "explicit-key",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n-MAP\n-DOC\n-STR\n"
@@ -2572,6 +2714,7 @@ var data = {
          "in_yaml" : "Folding:\n  \"Empty line\n\n  as a line feed\"\nChomping: |\n  Clipped empty lines\n \n\n",
          "tags" : [
             "1.3-mod",
+            "literal",
             "scalar",
             "spec"
          ],
@@ -2583,7 +2726,9 @@ var data = {
          "in_yaml" : "a: \"double\n  quotes\" # lala\nb: plain\n value  # lala\nc  : #lala\n  d\n? # lala\n - seq1\n: # lala\n - #lala\n  seq2\ne:\n &node # lala\n - x: y\nblock: > # lala\n  abcde\n",
          "tags" : [
             "1.3-err",
-            "comment"
+            "comment",
+            "explicit-key",
+            "folded"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n=VAL \"double quotes\n=VAL :b\n=VAL :plain value\n=VAL :c\n=VAL :d\n+SEQ\n=VAL :seq1\n-SEQ\n+SEQ\n=VAL :seq2\n-SEQ\n=VAL :e\n+SEQ &node\n+MAP\n=VAL :x\n=VAL :y\n-MAP\n-SEQ\n=VAL :block\n=VAL >abcde\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -2613,8 +2758,11 @@ var data = {
          "tags" : [
             "1.3-mod",
             "folded",
+            "indent",
             "literal",
-            "spec"
+            "local-tag",
+            "spec",
+            "tag"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :literal\n=VAL |value\\n\n=VAL :folded\n=VAL <!foo> >value\\n\n-MAP\n-DOC\n-STR\n"
       },
@@ -2634,6 +2782,7 @@ var data = {
          "in_json" : "{\n  \"Mark McGwire\": {\n    \"hr\": 65,\n    \"avg\": 0.278\n  },\n  \"Sammy Sosa\": {\n    \"hr\": 63,\n    \"avg\": 0.288\n  }\n}\n",
          "in_yaml" : "Mark McGwire: {hr: 65, avg: 0.278}\nSammy Sosa: {\n    hr: 63,\n    avg: 0.288\n  }\n",
          "tags" : [
+            "flow",
             "mapping",
             "spec"
          ],
@@ -2644,7 +2793,9 @@ var data = {
          "in_json" : "{\n  \"a\": \"b\",\n  \"c\": \"d\"\n}\n",
          "in_yaml" : "&a a: b\nc: &d d\n",
          "tags" : [
-            "jayt"
+            "anchor",
+            "jayt",
+            "mapping"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL &a :a\n=VAL :b\n=VAL :c\n=VAL &d :d\n-MAP\n-DOC\n-STR\n"
       },
@@ -2666,6 +2817,7 @@ var data = {
          "in_yaml" : "---\na: 1\n? b\n&anchor c: 3\n",
          "tags" : [
             "anchor",
+            "explicit-key",
             "mapping"
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :a\n=VAL :1\n=VAL :b\n=VAL :\n=VAL &anchor :c\n=VAL :3\n-MAP\n-DOC\n-STR\n"

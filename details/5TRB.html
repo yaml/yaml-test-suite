@@ -57,6 +57,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5TRB.tml">&test-5
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:3:1: error: invalid document-start marker in double-quoted scalar
 ---
 ^~~
++STR
++DOC ---
 </pre>
  </div>
 
@@ -73,6 +75,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5TRB.tml">&test-5
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: found unexpected document indicator
++STR
++DOC ---
 </pre>
  </div>
 
@@ -81,6 +85,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5TRB.tml">&test-5
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 3, column 1: illegal document indicator in scalar
++STR
++DOC
 </pre>
  </div>
 
@@ -100,6 +106,8 @@ yaml-cpp: error at line 3, column 1: illegal document indicator in scalar
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC ---
 </pre>
  </div>
 
@@ -129,6 +137,9 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 4, posCharOffset = 4, posLine = 2, posColumn = 0} (Lexical error near &quot;\&quot;&quot;)
++STR
++DOC ---
+=VAL :
 </pre>
  </div>
 
@@ -223,7 +234,9 @@ YAMLException: unexpected end of the document within a double quoted scalar at l
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Document boundary indicators are not allowed within string values
++STR
++DOC ---
 </pre>
  </div>
 
@@ -235,16 +248,16 @@ YAMLException: unexpected end of the document within a double quoted scalar at l
                                ^
 
 YAMLSemanticError: Document boundary indicators are not allowed within string values
-    at QuoteDouble.get strValue [as strValue] (/node/node_modules/yaml/dist/cst/QuoteDouble.js:47:68)
-    at Object.resolveString [as resolve] (/node/node_modules/yaml/dist/tags/failsafe/string.js:11:20)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:222:26)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at QuoteDouble.get strValue [as strValue] (/node/node_modules/yaml/dist/parse-cst.js:1207:73)
+    at Object.resolveString [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1282:20)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
 </pre>
  </div>
 
@@ -259,7 +272,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5624ca530f97
+	[C]: at 0x56038c95bf97
 </pre>
  </div>
 
@@ -272,6 +285,8 @@ Message   : Missing closing quote &lt;&quot;&gt; or invalid document marker
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 639
 YAML      : &quot;---&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
 </pre>
  </div>
 
@@ -429,6 +444,8 @@ found unexpected document separator
   in &quot;&lt;unicode string&gt;&quot;, line 3, column 1:
     ---
     ^
++STR
++DOC ---
 </pre>
  </div>
 
@@ -556,6 +573,8 @@ found unexpected document separator
   in &quot;&lt;unicode string&gt;&quot;, line 3, column 1:
     ---
     ^ (line: 3)
++STR
++DOC ---
 </pre>
  </div>
 

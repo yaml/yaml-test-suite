@@ -107,6 +107,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CXX2.tml">&test-C
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:1:14: error: invalid mapping in plain multiline
 --- &amp;anchor a: b
              ^
++STR
++DOC ---
+=VAL &amp;anchor :a
+-DOC
 </pre>
  </div>
 
@@ -116,6 +120,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CXX2.tml">&test-C
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:1:14: error: invalid mapping in plain multiline
 --- &amp;anchor a: b
              ^
+&quot;a&quot;
 </pre>
  </div>
 
@@ -123,6 +128,9 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CXX2.tml">&test-C
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: mapping values are not allowed in this context
++STR
++DOC ---
+=VAL &amp;anchor :a
 </pre>
  </div>
 
@@ -131,6 +139,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CXX2.tml">&test-C
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 1, column 14: illegal map value
++STR
++DOC
+=VAL &amp;1 :a
+-DOC
 </pre>
  </div>
 
@@ -149,6 +161,9 @@ yaml-cpp: error at line 1, column 14: illegal map value
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC ---
+=VAL &amp;anchor :a
 </pre>
  </div>
 
@@ -180,6 +195,9 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 3, posCharOffset = 3, posLine = 1, posColumn = 3} (Lexical error near &quot; &amp;anchor a: b&quot;)
++STR
++DOC ---
+=VAL :
 </pre>
  </div>
 
@@ -257,7 +275,10 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Block collection must not have preceding content here (e.g. directives-end indicator)
++STR
++DOC ---
++MAP
 </pre>
  </div>
 
@@ -269,11 +290,11 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
                                ^
 
 YAMLSyntaxError: Block collection must not have preceding content here (e.g. directives-end indicator)
-    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:147:24)
-    at Document.parseContents (/node/node_modules/yaml/dist/cst/Document.js:176:26)
-    at Document.parse (/node/node_modules/yaml/dist/cst/Document.js:239:19)
-    at parse (/node/node_modules/yaml/dist/cst/parse.js:28:18)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:97:41)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1601:24)
+    at Document.parseContents (/node/node_modules/yaml/dist/parse-cst.js:622:26)
+    at Document.parse (/node/node_modules/yaml/dist/parse-cst.js:685:19)
+    at Object.parse (/node/node_modules/yaml/dist/parse-cst.js:1723:18)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:32:33)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
@@ -292,7 +313,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:487: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55c7acf2ef97
+	[C]: at 0x5638e2e27f97
 </pre>
  </div>
 
@@ -387,6 +408,9 @@ yaml.scanner.ScannerError: mapping values are not allowed here
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 14:
     --- &amp;anchor a: b
                  ^
++STR
++DOC ---
+=VAL &amp;anchor :a
 </pre>
  </div>
 
@@ -474,6 +498,9 @@ ruamel.yaml.scanner.ScannerError: mapping values are not allowed here
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 14:
     --- &amp;anchor a: b
                  ^ (line: 1)
++STR
++DOC ---
+=VAL &amp;anchor :a
 </pre>
  </div>
 

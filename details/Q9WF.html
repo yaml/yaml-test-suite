@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/Q9WF.tml">&test-Q9WF</a><br>
 &nbsp;&nbsp;Title: Spec Example 6.12. Separation Spaces</br>
-&nbsp;&nbsp;Tags: [ 1.3-err, comment, spec, whitespace ]</tt></h2>
+&nbsp;&nbsp;Tags: [ 1.3-err, comment, complex-key, flow, spec, whitespace ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>{ first: Sammy, last: Sosa }:
 # Statistics:
@@ -141,13 +141,6 @@ YAML      : &quot;:&quot;
  </div>
 
 
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;Sammy, last: Sosa }:&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
@@ -214,14 +207,9 @@ found unhashable key
  <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  ? {
-    &quot;first&quot;: &quot;Sammy&quot;,
-    &quot;last&quot;: &quot;Sosa&quot;
-  } : {
-    &quot;hr&quot;: 65,
-    &quot;avg&quot;: 0.278
-  }
-}
+stdin:1:1: error: Non scalar keys are not allowed in JSON emit mode
+{ first: Sammy, last: Sosa }:
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </pre>
 
  </div>
@@ -283,7 +271,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x561b3b6a0f97
+	[C]: at 0x555c8d287f97
 </pre>
 
  </div>
@@ -348,7 +336,7 @@ YAML      : &quot;:&quot;
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;HASH(0x56161e948968)&quot; : {
+   &quot;HASH(0x563d57b22950)&quot; : {
       &quot;avg&quot; : 0.278,
       &quot;hr&quot; : 65
    }
@@ -361,7 +349,7 @@ YAML      : &quot;:&quot;
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;HASH(0x560b8ea71b10)&#39; =&gt; {
+  &#39;HASH(0x5563aa00db50)&#39; =&gt; {
                               &#39;avg&#39; =&gt; &#39;0.278&#39;,
                               &#39;hr&#39; =&gt; 65
                             }
@@ -442,6 +430,13 @@ found unhashable key
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;{\&quot;first\&quot;=&gt;\&quot;Sammy\&quot;, \&quot;last\&quot;=&gt;\&quot;Sosa\&quot;}&quot;:{&quot;hr&quot;:65,&quot;avg&quot;:0.278}}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny found illegal characters in plain scalar: &#39;Sammy, last: Sosa }:&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

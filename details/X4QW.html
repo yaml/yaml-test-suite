@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/X4QW.tml">&test-X4QW</a><br>
 &nbsp;&nbsp;Title: Comment without whitespace after block scalar indicator</br>
-&nbsp;&nbsp;Tags: [ block, comment, error, whitespace ]</tt></h2>
+&nbsp;&nbsp;Tags: [ comment, error, folded, whitespace ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>block: &gt;# comment
   scalar
@@ -184,6 +184,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/X4QW.tml">&test-X
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:1:9: error: invalid comment without whitespace after block scalar indicator
 block: &gt;# comment
         ^
++STR
++DOC
++MAP
+=VAL :block
 </pre>
  </div>
 
@@ -200,6 +204,11 @@ block: &gt;# comment
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 8, posCharOffset = 8, posLine = 1, posColumn = 8} (Unexpected &#39;#&#39;)
++STR
++DOC
++MAP
+=VAL :block
+=VAL &gt;
 </pre>
  </div>
 
@@ -296,7 +305,11 @@ YAMLException: a line break is expected at line 1, column 9:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Comments must be separated from other tokens by white space characters
++STR
++DOC
++MAP
+=VAL :block
 </pre>
  </div>
 
@@ -308,16 +321,16 @@ YAMLException: a line break is expected at line 1, column 9:
                                ^
 
 YAMLSemanticError: Comments must be separated from other tokens by white space characters
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:420:27)
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/schema/parseMap.js:198:48)
-    at Object.parseMap [as resolve] (/node/node_modules/yaml/dist/schema/parseMap.js:33:79)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:222:26)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
+    at resolveNodeProps (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1469:25)
+    at resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1561:7)
+    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1777:38)
+    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
 </pre>
  </div>
 
@@ -327,6 +340,10 @@ YAMLSemanticError: Comments must be separated from other tokens by white space c
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
 /tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
 Error: unhandled exception: Illegal character in block scalar header: &#39;&quot;#&quot;&#39; [YamlStreamError]
++STR
++DOC
++MAP
+=VAL :block
 </pre>
  </div>
 
@@ -339,6 +356,10 @@ Message   : Invalid block scalar
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
 YAML      : &quot;# comment&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC
++MAP
+=VAL :block
 </pre>
  </div>
 
@@ -420,6 +441,10 @@ expected chomping or indentation indicators, but found &#39;#&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 9:
     block: &gt;# comment
             ^
++STR
++DOC
++MAP
+=VAL :block
 </pre>
  </div>
 
@@ -549,6 +574,10 @@ expected chomping or indentation indicators, but found &#39;#&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 9:
     block: &gt;# comment
             ^ (line: 1)
++STR
++DOC
++MAP
+=VAL :block
 </pre>
  </div>
 

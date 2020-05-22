@@ -261,7 +261,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5606f74e7f97
+	[C]: at 0x563034837f97
 </pre>
  </div>
 
@@ -270,9 +270,10 @@ stack traceback:
 <h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
 
-    found incompatible YAML document
+    could not find expected directive name
 
-was found at 
+was found at , line: 3, column: 2
+while scanning a directive at line: 3, column: 1
 </pre>
  </div>
 
@@ -281,9 +282,10 @@ was found at
 <h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
 
-    found incompatible YAML document
+    could not find expected directive name
 
-was found at 
+was found at , line: 3, column: 2
+while scanning a directive at line: 3, column: 1
 </pre>
  </div>
 
@@ -303,9 +305,10 @@ was found at
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
 
-    found incompatible YAML document
+    could not find expected directive name
 
-was found at document: 1
+was found at document: 1, line: 3, column: 2
+while scanning a directive at line: 3, column: 1
 </pre>
  </div>
 
@@ -507,6 +510,6 @@ None
  </div>
 
 
- <hr style="clear: both;">        </body>
+ <hr style="clear: both;">           </body>
 </html>
 

@@ -13,9 +13,13 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/J7PZ.tml">&test-J7PZ</a><br>
 &nbsp;&nbsp;Title: Spec Example 2.26. Ordered Mappings</br>
-&nbsp;&nbsp;Tags: [ mapping, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ mapping, spec, tag, unknown-tag ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># Ordered maps are represented as
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># The !!omap tag is one of the optional types
+# introduced for YAML 1.1. In 1.2, it is not
+# part of the standard tags and should not be
+# enabled by default.
+# Ordered maps are represented as
 # A sequence of mappings, with
 # each mapping having one key
 --- !!omap
@@ -235,7 +239,7 @@ class="">}</span>
 
  <hr style="clear: both;">    <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 4, Col: 5, Idx: 99) - (Line: 5, Col: 1, Idx: 106): Encountered an unresolved tag &#39;tag:yaml.org,2002:omap&#39;
+<span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 8, Col: 5, Idx: 258) - (Line: 9, Col: 1, Idx: 265): Encountered an unresolved tag &#39;tag:yaml.org,2002:omap&#39;
    at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
@@ -245,20 +249,6 @@ class="">}</span>
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!omap&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;!!omap&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -370,6 +360,20 @@ was found at document: 1
 <span class="status_box color_na">&nbsp;</span>na  <pre>ordereddict([(&#39;Mark McGwire&#39;, 65), (&#39;Sammy Sosa&#39;, 63), (&#39;Ken Griffy&#39;, 58)])
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!omap&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!omap&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

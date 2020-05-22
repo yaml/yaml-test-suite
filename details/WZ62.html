@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/WZ62.tml">&test-WZ62</a><br>
 &nbsp;&nbsp;Title: Spec Example 7.2. Empty Content</br>
-&nbsp;&nbsp;Tags: [ flow, scalar, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ flow, scalar, spec, tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>{
   foo : !!str,
@@ -70,7 +70,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/WZ62.tml">&test-W
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -85,15 +90,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/WZ62.tml">&test-W
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">parse error: Object keys must be strings at line 3, column 7</span>
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libyaml-event">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
@@ -204,7 +201,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55e7384d8f97
+	[C]: at 0x55576696af97
 </pre>
  </div>
 
@@ -504,19 +501,17 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;&lt;tag&gt;&#39;
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-tiny-json">
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-json line 12.
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-json line 12.
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-tiny-perl">
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-perl line 15.
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
-
  </div>
 
 

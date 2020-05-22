@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/CTN5.tml">&test-CTN5</a><br>
 &nbsp;&nbsp;Title: Flow sequence with invalid extra comma</br>
-&nbsp;&nbsp;Tags: [ error, flow ]</tt></h2>
+&nbsp;&nbsp;Tags: [ error, flow, sequence ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 [ a, b, c, , ]
@@ -73,6 +73,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CTN5.tml">&test-C
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:12: error: flow sequence with invalid extra comma
 [ a, b, c, , ]
            ^
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
 </pre>
  </div>
 
@@ -89,6 +95,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CTN5.tml">&test-C
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected node content
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
 </pre>
  </div>
 
@@ -103,6 +115,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CTN5.tml">&test-C
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
 </pre>
  </div>
 
@@ -135,6 +153,9 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 4, posCharOffset = 4, posLine = 2, posColumn = 0} (Lexical error near &quot;[ a, b, c, , ]&quot;)
++STR
++DOC ---
+=VAL :
 </pre>
  </div>
 
@@ -199,7 +220,9 @@ expected the node content, but found &#39;,&#39;
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Flow sequence contains an unexpected ,
++STR
++DOC ---
 </pre>
  </div>
 
@@ -211,16 +234,16 @@ expected the node content, but found &#39;,&#39;
                                ^
 
 YAMLSyntaxError: Flow sequence contains an unexpected ,
-    at resolveFlowSeqItems (/node/node_modules/yaml/dist/schema/parseSeq.js:136:21)
-    at Object.parseSeq [as resolve] (/node/node_modules/yaml/dist/schema/parseSeq.js:27:47)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:222:26)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at resolveFlowSeqItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:2050:21)
+    at Object.resolveSeq [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1929:47)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
 </pre>
  </div>
 
@@ -236,7 +259,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5618f46a0f97
+	[C]: at 0x55575805bf97
 </pre>
  </div>
 
@@ -250,6 +273,12 @@ Got       : FLOW_COMMA
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;, ]&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
 </pre>
  </div>
 
@@ -410,6 +439,12 @@ expected the node content, but found &#39;,&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 12:
     [ a, b, c, , ]
                ^
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
 </pre>
  </div>
 
@@ -502,6 +537,12 @@ expected the node content, but found &#39;,&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 12:
     [ a, b, c, , ]
                ^ (line: 2)
++STR
++DOC ---
++SEQ
+=VAL :a
+=VAL :b
+=VAL :c
 </pre>
  </div>
 

@@ -71,6 +71,10 @@ folded: &gt; first line
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: block scalar no linebreak found
 folded: &gt; first line
           ^
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -87,6 +91,10 @@ folded: &gt; first line
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected comment or line break
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -95,6 +103,10 @@ folded: &gt; first line
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 2, column 11: unexpected character in block scalar
++STR
++DOC
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -114,6 +126,10 @@ yaml-cpp: error at line 2, column 11: unexpected character in block scalar
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -151,6 +167,11 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 14, posCharOffset = 14, posLine = 2, posColumn = 10} (Unexpected &#39;f&#39;)
++STR
++DOC ---
++MAP
+=VAL :folded
+=VAL &gt;
 </pre>
  </div>
 
@@ -247,7 +268,9 @@ YAMLException: a line break is expected at line 2, column 11:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>All collection items must start at the same column
++STR
++DOC ---
 </pre>
  </div>
 
@@ -258,17 +281,17 @@ YAMLException: a line break is expected at line 2, column 11:
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: Document is not valid YAML (bad indentation?)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:219:28)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+YAMLSyntaxError: All collection items must start at the same column
+    at Collection.parse (/node/node_modules/yaml/dist/parse-cst.js:331:24)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1605:29)
+    at Document.parseContents (/node/node_modules/yaml/dist/parse-cst.js:622:26)
+    at Document.parse (/node/node_modules/yaml/dist/parse-cst.js:685:19)
+    at Object.parse (/node/node_modules/yaml/dist/parse-cst.js:1723:18)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:32:33)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
 </pre>
  </div>
 
@@ -284,7 +307,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55b1cb9b1f97
+	[C]: at 0x56307fd9af97
 </pre>
  </div>
 
@@ -294,6 +317,10 @@ stack traceback:
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
 /tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
 Error: unhandled exception: Unexpected character (expected line end): &quot;f&quot; [YamlStreamError]
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -306,6 +333,10 @@ Message   : Invalid block scalar
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
 YAML      : &quot; first line&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -447,6 +478,10 @@ expected a comment or a line break, but found &#39;f&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
     folded: &gt; first line
               ^
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 
@@ -576,6 +611,10 @@ expected a comment or a line break, but found &#39;f&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
     folded: &gt; first line
               ^ (line: 2)
++STR
++DOC ---
++MAP
+=VAL :folded
 </pre>
  </div>
 

@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/KK5P.tml">&test-KK5P</a><br>
 &nbsp;&nbsp;Title: Various combinations of explicit block mappings</br>
-&nbsp;&nbsp;Tags: [ mapping, sequence ]</tt></h2>
+&nbsp;&nbsp;Tags: [ explicit-key, mapping, sequence ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>complex1:
   ? - a
@@ -145,13 +145,6 @@ complex5:
  </div>
 
 
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? - a&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Unrecognized implicit value &#39;- a&#39;
@@ -195,32 +188,32 @@ found unhashable key
  <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;complex1&quot;: {
-    ? [
-      &quot;a&quot;
-    ] : null
-  },
-  &quot;complex2&quot;: {
-    ? [
-      &quot;a&quot;
-    ] : &quot;b&quot;
-  },
-  &quot;complex3&quot;: {
-    ? [
-      &quot;a&quot;
-    ] : &quot;b\n&quot;
-  },
+  &quot;complex1&quot;: {,
+  &quot;complex2&quot;: {,
+  &quot;complex3&quot;: {,
   &quot;complex4&quot;: {
-    ? &quot;a\n&quot; : null
+    &quot;a\n&quot;: null
   },
   &quot;complex5&quot;: {
-    ? [
-      &quot;a&quot;
-    ] : [
-      &quot;b&quot;
-    ]
-  }
 }
+stdin:2:5: error: Non scalar keys are not allowed in JSON emit mode
+  ? - a
+    ^~~
+stdin:4:5: error: Non scalar keys are not allowed in JSON emit mode
+  ? - a
+    ^~~
+  : b
+~~
+stdin:7:5: error: Non scalar keys are not allowed in JSON emit mode
+  ? - a
+    ^~~
+  : &gt;
+~~
+stdin:15:5: error: Non scalar keys are not allowed in JSON emit mode
+  ? - a
+    ^~~
+  : - b
+~~
 </pre>
 
  </div>
@@ -304,7 +297,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x5608fb3fbf97
+	[C]: at 0x55e73fd92f97
 </pre>
 
  </div>
@@ -438,19 +431,19 @@ stack traceback:
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
    &quot;complex1&quot; : {
-      &quot;ARRAY(0x565203ddd950)&quot; : null
+      &quot;ARRAY(0x55b3700e1950)&quot; : null
    },
    &quot;complex2&quot; : {
-      &quot;ARRAY(0x565203dd1100)&quot; : &quot;b&quot;
+      &quot;ARRAY(0x55b3700d5100)&quot; : &quot;b&quot;
    },
    &quot;complex3&quot; : {
-      &quot;ARRAY(0x565203dddae8)&quot; : &quot;b\n&quot;
+      &quot;ARRAY(0x55b3700e1ae8)&quot; : &quot;b\n&quot;
    },
    &quot;complex4&quot; : {
       &quot;a\n&quot; : null
    },
    &quot;complex5&quot; : {
-      &quot;ARRAY(0x565203ddd9c8)&quot; : [
+      &quot;ARRAY(0x55b3700e19c8)&quot; : [
          &quot;b&quot;
       ]
    }
@@ -464,13 +457,13 @@ stack traceback:
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;complex1&#39; =&gt; {
-                  &#39;ARRAY(0x556fdd2fdb60)&#39; =&gt; undef
+                  &#39;ARRAY(0x55aaa0851be0)&#39; =&gt; undef
                 },
   &#39;complex2&#39; =&gt; {
-                  &#39;ARRAY(0x556fdd2fd9f8)&#39; =&gt; &#39;b&#39;
+                  &#39;ARRAY(0x55aaa0851a78)&#39; =&gt; &#39;b&#39;
                 },
   &#39;complex3&#39; =&gt; {
-                  &#39;ARRAY(0x556fdd4d7a40)&#39; =&gt; &#39;b
+                  &#39;ARRAY(0x55aaa0a2bb80)&#39; =&gt; &#39;b
 &#39;
                 },
   &#39;complex4&#39; =&gt; {
@@ -478,7 +471,7 @@ stack traceback:
 &#39; =&gt; undef
                 },
   &#39;complex5&#39; =&gt; {
-                  &#39;ARRAY(0x556fdd574c50)&#39; =&gt; [
+                  &#39;ARRAY(0x55aaa0ac8cd0)&#39; =&gt; [
                                                &#39;b&#39;
                                              ]
                 }
@@ -571,6 +564,13 @@ found unhashable key
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;complex1&quot;:{&quot;[\&quot;a\&quot;]&quot;:null},&quot;complex2&quot;:{&quot;[\&quot;a\&quot;]&quot;:&quot;b&quot;},&quot;complex3&quot;:{&quot;[\&quot;a\&quot;]&quot;:&quot;b\n&quot;},&quot;complex4&quot;:{&quot;a\n&quot;:null},&quot;complex5&quot;:{&quot;[\&quot;a\&quot;]&quot;:[&quot;b&quot;]}}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;  ? - a&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

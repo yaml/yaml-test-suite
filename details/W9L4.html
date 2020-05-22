@@ -113,6 +113,10 @@ are invalid
 ^~~~~
   more spaces at the beginning
 ~~
++STR
++DOC ---
++MAP
+=VAL :block scalar
 </pre>
  </div>
 
@@ -131,6 +135,11 @@ are invalid
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected key
++STR
++DOC ---
++MAP
+=VAL :block scalar
+=VAL |
 </pre>
  </div>
 
@@ -139,6 +148,11 @@ are invalid
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 4, column 3: end of map not found
++STR
++DOC
++MAP
+=VAL :block scalar
+=VAL :
 </pre>
  </div>
 
@@ -152,6 +166,11 @@ yaml-cpp: error at line 4, column 3: end of map not found
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC ---
++MAP
+=VAL :block scalar
+=VAL |
 </pre>
  </div>
 
@@ -183,6 +202,10 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 71, posCharOffset = 71, posLine = 6, posColumn = 0} (leading empty lines contain more spaces than the first non-empty line in scalar: &quot;   \nmore spaces at the beginning\nare invalid\n&quot;)
++STR
++DOC ---
++MAP
+=VAL :block scalar
 </pre>
  </div>
 
@@ -264,7 +287,11 @@ YAMLException: bad indentation of a mapping entry at line 4, column 3:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Block scalars with more-indented leading empty lines must use an explicit indentation indicator
++STR
++DOC ---
++MAP
+=VAL :block scalar
 </pre>
  </div>
 
@@ -275,17 +302,17 @@ YAMLException: bad indentation of a mapping entry at line 4, column 3:
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: Document is not valid YAML (bad indentation?)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:219:28)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
-    at Module.load (internal/modules/cjs/loader.js:653:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+YAMLSemanticError: Block scalars with more-indented leading empty lines must use an explicit indentation indicator
+    at BlockValue.parseBlockValue (/node/node_modules/yaml/dist/parse-cst.js:905:26)
+    at BlockValue.parse (/node/node_modules/yaml/dist/parse-cst.js:967:19)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1586:25)
+    at CollectionItem.parse (/node/node_modules/yaml/dist/parse-cst.js:92:19)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1586:25)
+    at Collection.parse (/node/node_modules/yaml/dist/parse-cst.js:350:20)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1605:29)
+    at Document.parseContents (/node/node_modules/yaml/dist/parse-cst.js:622:26)
+    at Document.parse (/node/node_modules/yaml/dist/parse-cst.js:685:19)
+    at Object.parse (/node/node_modules/yaml/dist/parse-cst.js:1723:18)
 </pre>
  </div>
 
@@ -301,7 +328,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x565118dc0f97
+	[C]: at 0x55791b5fbf97
 </pre>
  </div>
 
@@ -314,6 +341,11 @@ Message   : Bad indendation in MAP
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 202
 YAML      : &quot;more spaces at the beginning\n&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
++MAP
+=VAL :block scalar
+=VAL |
 </pre>
  </div>
 
@@ -421,6 +453,11 @@ expected &lt;block end&gt;, but found &#39;&lt;scalar&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
       more spaces at the beginning
       ^
++STR
++DOC ---
++MAP
+=VAL :block scalar
+=VAL |
 </pre>
  </div>
 
@@ -510,6 +547,11 @@ expected &lt;block end&gt;, but found &#39;&lt;scalar&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
       more spaces at the beginning
       ^ (line: 4)
++STR
++DOC ---
++MAP
+=VAL :block scalar
+=VAL |
 </pre>
  </div>
 

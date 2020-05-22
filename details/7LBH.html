@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/7LBH.tml">&test-7LBH</a><br>
 &nbsp;&nbsp;Title: Multiline double quoted implicit keys</br>
-&nbsp;&nbsp;Tags: [ error ]</tt></h2>
+&nbsp;&nbsp;Tags: [ double, error ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>&quot;a\nb&quot;: 1
 &quot;c
@@ -71,6 +71,11 @@ b&#39; =&gt; 1,
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: invalid multiline double-quoted scalar used as key
 &quot;c
 ^
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -87,6 +92,11 @@ b&#39; =&gt; 1,
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: could not find expected &#39;:&#39;
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -95,6 +105,11 @@ b&#39; =&gt; 1,
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 3, column 4: illegal map value
++STR
++DOC
++MAP
+=VAL :a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -112,6 +127,11 @@ yaml-cpp: error at line 3, column 4: illegal map value
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -147,6 +167,13 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 10, posCharOffset = 10, posLine = 2, posColumn = 0} (Unexpected &#39;&quot;&#39;)
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
+-MAP
+-DOC
 </pre>
  </div>
 
@@ -234,7 +261,12 @@ YAMLException: can not read a block mapping entry; a multiline key may not be an
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Implicit map keys need to be on a single line
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -246,16 +278,16 @@ YAMLException: can not read a block mapping entry; a multiline key may not be an
                                ^
 
 YAMLSemanticError: Implicit map keys need to be on a single line
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/schema/parseMap.js:232:27)
-    at Object.parseMap [as resolve] (/node/node_modules/yaml/dist/schema/parseMap.js:33:79)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:222:26)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1818:27)
+    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
 </pre>
  </div>
 
@@ -271,7 +303,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5576ec21cf97
+	[C]: at 0x5637fbe77f97
 </pre>
  </div>
 
@@ -285,6 +317,11 @@ Got       : QUOTED_MULTILINE
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;c d: 1\n&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -436,6 +473,11 @@ could not find expected &#39;:&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 3, column 4:
      d&quot;: 1
        ^
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 
@@ -543,6 +585,11 @@ could not find expected &#39;:&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 3, column 4:
      d&quot;: 1
        ^ (line: 3)
++STR
++DOC
++MAP
+=VAL &quot;a\nb
+=VAL :1
 </pre>
  </div>
 

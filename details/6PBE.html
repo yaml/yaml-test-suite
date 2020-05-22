@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/6PBE.tml">&test-6PBE</a><br>
 &nbsp;&nbsp;Title: Zero-indented sequences in explicit mapping keys</br>
-&nbsp;&nbsp;Tags: [ mapping, sequence ]</tt></h2>
+&nbsp;&nbsp;Tags: [ explicit-key, mapping, sequence ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 ?
@@ -109,13 +109,6 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/6PBE.tml">&test-6
  </div>
 
 
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;?&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Use of uninitialized value $key in string at /perl5/lib/perl5/YAML/Loader.pm line 341, &lt;&gt; line 1.
@@ -160,14 +153,11 @@ found unhashable key
  <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  ? [
-    &quot;a&quot;,
-    &quot;b&quot;
-  ] : [
-    &quot;c&quot;,
-    &quot;d&quot;
-  ]
-}
+stdin:3:1: error: Non scalar keys are not allowed in JSON emit mode
+- a
+^~~
+- b
+~~~
 </pre>
 
  </div>
@@ -229,7 +219,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x559693f58f97
+	[C]: at 0x556217e25f97
 </pre>
 
  </div>
@@ -306,7 +296,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x55d4aa004968)&quot; : [
+   &quot;ARRAY(0x558ba4edd950)&quot; : [
       &quot;c&quot;,
       &quot;d&quot;
    ]
@@ -319,7 +309,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x556fb295cad0)&#39; =&gt; [
+  &#39;ARRAY(0x55d907d6ab70)&#39; =&gt; [
                                &#39;c&#39;,
                                &#39;d&#39;
                              ]
@@ -395,6 +385,13 @@ found unhashable key
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;[\&quot;a\&quot;, \&quot;b\&quot;]&quot;:[&quot;c&quot;,&quot;d&quot;]}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;?&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

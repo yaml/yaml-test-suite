@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/4ABK.tml">&test-4ABK</a><br>
 &nbsp;&nbsp;Title: Spec Example 7.17. Flow Mapping Separate Values</br>
-&nbsp;&nbsp;Tags: [ flow, mapping, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ empty-key, flow, mapping, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>{
 unquoted : &quot;separate&quot;,
@@ -114,82 +114,9 @@ class="">-STR</span>
  </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_error" id="c-libyaml-event">
-<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-+MAP
-=VAL :unquoted
-=VAL &quot;separate
-=VAL :http://foo.com
-=VAL :
-Parse error: found unexpected &#39;:&#39;
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="java-snakeyaml-event">
-<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
- in &#39;reader&#39;, line 5, column 1:
-    : omitted key,
-    ^
-expected the node content, but found &#39;:&#39;
- in &#39;reader&#39;, line 5, column 1:
-    : omitted key,
-    ^
-
-	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-pplibyaml-event">
-<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
-
-    found unexpected &#39;:&#39;
-
-was found at , line: 4, column: 14
-while scanning a plain scalar at line: 4, column: 1
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-pplibyaml-perl">
-<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
-
-    found unexpected &#39;:&#39;
-
-was found at , line: 4, column: 14
-while scanning a plain scalar at line: 4, column: 1
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-syck-perl">
+ <hr style="clear: both;">       <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 5, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-xs-perl">
-<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
-
-    found unexpected &#39;:&#39;
-
-was found at document: 1, line: 4, column: 14
-while scanning a plain scalar at line: 4, column: 1
 </pre>
  </div>
 
@@ -205,80 +132,13 @@ while scanning a plain scalar at line: 4, column: 1
  </div>
 
 
-  <div class="framework framework_box_error" id="py-pyyaml-event">
-<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-+MAP
-=VAL :unquoted
-=VAL &quot;separate
-=VAL :http://foo.com
-=VAL :
-=VAL :omitted value
-=VAL :
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
-    for event in yaml.parse(sys.stdin.read()):
-  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
-    while loader.check_event():
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
-    self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
-    return self.parse_flow_node()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
-    return self.parse_node()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
-    token.start_mark)
-yaml.parser.ParserError: while parsing a flow node
-expected the node content, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 5, column 1:
-    : omitted key,
-    ^
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="py-pyyaml-py">
-<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
-  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
-    yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
-    return self.compose_document()
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
-    node = self.compose_node(None, None)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
-    node = self.compose_mapping_node(anchor)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 127, in compose_mapping_node
-    while not self.check_event(MappingEndEvent):
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
-    self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
-    return self.parse_flow_node()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
-    return self.parse_node()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
-    token.start_mark)
-yaml.parser.ParserError: while parsing a flow node
-expected the node content, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 5, column 1:
-    : omitted key,
-    ^
-</pre>
- </div>
-
-
  <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &quot;unquoted&quot;: &quot;separate&quot;,
   &quot;http://foo.com&quot;: null,
   &quot;omitted value&quot;: null,
-  null: &quot;omitted key&quot;
+  &quot;&quot;: &quot;omitted key&quot;
 }
 </pre>
 
@@ -375,7 +235,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x561e313b8f97
+	[C]: at 0x55d62101cf97
 </pre>
 
  </div>
@@ -431,14 +291,6 @@ while scanning a plain scalar at line: 4, column: 1
   <div class="framework framework_box_na" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
 
  </div>
@@ -543,6 +395,153 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;NoneType&#39; 
 	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
++DOC
++MAP
+=VAL :unquoted
+=VAL &quot;separate
+=VAL :http://foo.com
+=VAL :
+Parse error: found unexpected &#39;:&#39;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Exception in thread &quot;main&quot; while parsing a flow node
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
+    ^
+expected the node content, but found &#39;:&#39;
+ in &#39;reader&#39;, line 5, column 1:
+    : omitted key,
+    ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:747)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::PP::LibYAML Error: The problem:
+
+    found unexpected &#39;:&#39;
+
+was found at , line: 4, column: 14
+while scanning a plain scalar at line: 4, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::PP::LibYAML Error: The problem:
+
+    found unexpected &#39;:&#39;
+
+was found at , line: 4, column: 14
+while scanning a plain scalar at line: 4, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;{&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS::Load Error: The problem:
+
+    found unexpected &#39;:&#39;
+
+was found at document: 1, line: 4, column: 14
+while scanning a plain scalar at line: 4, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
++DOC
++MAP
+=VAL :unquoted
+=VAL &quot;separate
+=VAL :http://foo.com
+=VAL :
+=VAL :omitted value
+=VAL :
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
+    for event in yaml.parse(sys.stdin.read()):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
+    while loader.check_event():
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
+    return self.parse_flow_node()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
+    return self.parse_node()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
+    token.start_mark)
+yaml.parser.ParserError: while parsing a flow node
+expected the node content, but found &#39;:&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 5, column 1:
+    : omitted key,
+    ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 562, in parse_flow_mapping_key
+    return self.parse_flow_node()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
+    return self.parse_node()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 371, in parse_node
+    token.start_mark)
+yaml.parser.ParserError: while parsing a flow node
+expected the node content, but found &#39;:&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 5, column 1:
+    : omitted key,
+    ^
+</pre>
  </div>
 
 

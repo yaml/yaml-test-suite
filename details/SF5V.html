@@ -55,6 +55,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:7: error: duplicate version directive
 %YAML 1.2
       ^~~
++STR
 </pre>
  </div>
 
@@ -71,6 +72,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: found duplicate %YAML directive
++STR
 </pre>
  </div>
 
@@ -79,6 +81,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 2, column 1: repeated YAML directive
++STR
 </pre>
  </div>
 
@@ -93,6 +96,7 @@ yaml-cpp: error at line 2, column 1: repeated YAML directive
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
 </pre>
  </div>
 
@@ -117,6 +121,7 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 10, posCharOffset = 10, posLine = 2, posColumn = 0} (Multiple %YAML directives)
++STR
 </pre>
  </div>
 
@@ -194,7 +199,8 @@ YAMLException: duplication of %YAML directive at line 3, column 1:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>The %YAML directive must only be given at most once per document.
++STR
 </pre>
  </div>
 
@@ -206,16 +212,16 @@ YAMLException: duplication of %YAML directive at line 3, column 1:
                                ^
 
 YAMLSemanticError: The %YAML directive must only be given at most once per document.
-    at Document.resolveYamlDirective (/node/node_modules/yaml/dist/Document.js:305:24)
-    at directives.forEach.directive (/node/node_modules/yaml/dist/Document.js:177:16)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseDirectives (/node/node_modules/yaml/dist/Document.js:163:16)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:143:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at parseDirectives (/node/node_modules/yaml/dist/Document-2cf6b08c.js:459:27)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:610:5)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
 </pre>
  </div>
 
@@ -229,7 +235,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55b055869f97
+	[C]: at 0x55f44d4d8f97
 </pre>
  </div>
 
@@ -238,6 +244,7 @@ stack traceback:
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /yaml/bin/perl-pp-event line 25.
  at /yaml/bin/perl-pp-event line 25.
++STR
 </pre>
  </div>
 
@@ -262,9 +269,9 @@ stack traceback:
 <h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
 
-    found incompatible YAML document
+    found duplicate %YAML directive
 
-was found at 
+was found at , line: 2, column: 1
 </pre>
  </div>
 
@@ -273,9 +280,9 @@ was found at
 <h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
 
-    found incompatible YAML document
+    found duplicate %YAML directive
 
-was found at 
+was found at , line: 2, column: 1
 </pre>
  </div>
 
@@ -309,9 +316,9 @@ was found at
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
 
-    found incompatible YAML document
+    found duplicate %YAML directive
 
-was found at document: 1
+was found at document: 1, line: 2, column: 1
 </pre>
  </div>
 
@@ -368,6 +375,7 @@ yaml.parser.ParserError: found duplicate YAML directive
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
     %YAML 1.2
     ^
++STR
 </pre>
  </div>
 
@@ -445,6 +453,7 @@ ruamel.yaml.parser.ParserError: found duplicate YAML directive
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
     %YAML 1.2
     ^ (line: 2)
++STR
 </pre>
  </div>
 

@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/UT92.tml">&test-UT92</a><br>
 &nbsp;&nbsp;Title: Spec Example 9.4. Explicit Documents</br>
-&nbsp;&nbsp;Tags: [ comment, footer, header, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ comment, flow, footer, header, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 { matches
@@ -206,7 +206,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55c098b96f97
+	[C]: at 0x5625f6128f97
 </pre>
  </div>
 
@@ -257,20 +257,6 @@ while parsing a flow mapping at line: 2, column: 1
   <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{ matches&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;{ matches&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -527,6 +513,20 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;:&#39;
 undef
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;{ matches&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;{ matches&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

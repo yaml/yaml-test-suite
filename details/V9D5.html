@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/V9D5.tml">&test-V9D5</a><br>
 &nbsp;&nbsp;Title: Spec Example 8.19. Compact Block Mappings</br>
-&nbsp;&nbsp;Tags: [ mapping, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ complex-key, explicit-key, mapping, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- sun: yellow
 - ? earth: blue
@@ -111,13 +111,6 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/V9D5.tml">&test-V
  </div>
 
 
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny found illegal characters in plain scalar: &#39;? earth: blue&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
   <div class="framework framework_box_error" id="py-pyyaml-py">
 <h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
@@ -183,13 +176,12 @@ found unhashable key
     &quot;sun&quot;: &quot;yellow&quot;
   },
   {
-    ? {
-      &quot;earth&quot;: &quot;blue&quot;
-    } : {
-      &quot;moon&quot;: &quot;white&quot;
-    }
-  }
 ]
+stdin:2:5: error: Non scalar keys are not allowed in JSON emit mode
+- ? earth: blue
+    ^~~~~~~~~~~
+  : moon: white
+~~
 </pre>
 
  </div>
@@ -259,7 +251,7 @@ found unhashable key
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x56421bc1ef97
+	[C]: at 0x564ff9ad1f97
 </pre>
 
  </div>
@@ -356,7 +348,7 @@ stack traceback:
       &quot;sun&quot; : &quot;yellow&quot;
    },
    {
-      &quot;HASH(0x555e63fb5938)&quot; : {
+      &quot;HASH(0x55fecb9e1938)&quot; : {
          &quot;moon&quot; : &quot;white&quot;
       }
    }
@@ -373,7 +365,7 @@ stack traceback:
     &#39;sun&#39; =&gt; &#39;yellow&#39;
   },
   {
-    &#39;HASH(0x55d5ff12d1b0)&#39; =&gt; {
+    &#39;HASH(0x555c705941b0)&#39; =&gt; {
                                 &#39;moon&#39; =&gt; &#39;white&#39;
                               }
   }
@@ -478,6 +470,13 @@ found unhashable key
 <span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;sun&quot;:&quot;yellow&quot;},{&quot;{\&quot;earth\&quot;=&gt;\&quot;blue\&quot;}&quot;:{&quot;moon&quot;:&quot;white&quot;}}]
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny found illegal characters in plain scalar: &#39;? earth: blue&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

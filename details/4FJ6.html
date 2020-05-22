@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/4FJ6.tml">&test-4FJ6</a><br>
 &nbsp;&nbsp;Title: Nested implicit complex keys</br>
-&nbsp;&nbsp;Tags: [ flow, mapping, sequence ]</tt></h2>
+&nbsp;&nbsp;Tags: [ complex-key, flow, mapping, sequence ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 [
@@ -237,22 +237,10 @@ TypeError: unhashable type: &#39;list&#39;
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    ? [
-      &quot;a&quot;,
-      [
-        {
-          ? [
-            [
-              &quot;b&quot;,
-              &quot;c&quot;
-            ]
-          ] : &quot;d&quot;
-        },
-        &quot;e&quot;
-      ]
-    ] : 23
-  }
 ]
+stdin:3:3: error: Non scalar keys are not allowed in JSON emit mode
+  [ a, [ [[b,c]]: d, e]]: 23
+  ^~~~~~~~~~~~~~~~~~~~~~
 </pre>
 
  </div>
@@ -328,7 +316,7 @@ YAMLException: nested arrays are not supported inside keys at line 3, column 20:
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x559b6e6e2f97
+	[C]: at 0x55709df74f97
 </pre>
 
  </div>
@@ -376,7 +364,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x5598802c1a98)&quot; : 23
+      &quot;ARRAY(0x55e8463c1a80)&quot; : 23
    }
 ]
 </pre>
@@ -388,7 +376,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x55f20e32f1c8)&#39; =&gt; 23
+    &#39;ARRAY(0x561e876d11c8)&#39; =&gt; 23
   }
 ]
 </pre>
@@ -404,19 +392,11 @@ YAML      : &quot;: d, e]]: 23\n&quot;
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;[&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x560ed134e170)&quot; : 23
+      &quot;ARRAY(0x559cd1c39118)&quot; : 23
    }
 ]
 </pre>
@@ -428,7 +408,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x562493431b18)&#39; =&gt; 23
+    &#39;ARRAY(0x56097e103b18)&#39; =&gt; 23
   }
 ]
 </pre>
@@ -535,6 +515,13 @@ TypeError: unhashable type: &#39;list&#39;
 <span class="status_box color_na">&nbsp;</span>na  <pre>[{&quot;[\&quot;a\&quot;, [{[[\&quot;b\&quot;, \&quot;c\&quot;]]=&gt;\&quot;d\&quot;}, \&quot;e\&quot;]]&quot;:23}]
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;[&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

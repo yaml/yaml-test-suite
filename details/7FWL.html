@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/7FWL.tml">&test-7FWL</a><br>
 &nbsp;&nbsp;Title: Spec Example 6.24. Verbatim Tags</br>
-&nbsp;&nbsp;Tags: [ spec, tag ]</tt></h2>
+&nbsp;&nbsp;Tags: [ mapping, spec, tag, unknown-tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>!&lt;tag:yaml.org,2002:str&gt; foo :
   !&lt;!bar&gt; baz
@@ -284,14 +284,6 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
@@ -365,6 +357,13 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;foo&quot;:&quot;baz&quot;}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;  !&lt;!bar&gt; baz&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

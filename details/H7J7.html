@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H7J7</a><br>
 &nbsp;&nbsp;Title: Node anchor not indented</br>
-&nbsp;&nbsp;Tags: [ anchor, error, indent ]</tt></h2>
+&nbsp;&nbsp;Tags: [ anchor, error, indent, tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>key: &amp;x
 !!map
@@ -77,6 +77,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: invalid tag indent for mapping
 !!map
 ^~~~~
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -93,6 +97,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: could not find expected &#39;:&#39;
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -112,6 +120,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -149,6 +161,13 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 8, posCharOffset = 8, posLine = 2, posColumn = 0} (Unexpected &#39;!&#39;)
++STR
++DOC
++MAP
+=VAL :key
+=VAL &amp;x :
+-MAP
+-DOC
 </pre>
  </div>
 
@@ -222,7 +241,12 @@ could not find expected &#39;:&#39;
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>A PLAIN node cannot be resolved as a mapping
++STR
++DOC
++MAP
+=VAL :key
+=VAL &amp;x :
 </pre>
  </div>
 
@@ -234,16 +258,16 @@ could not find expected &#39;:&#39;
                                ^
 
 YAMLSyntaxError: A PLAIN node cannot be resolved as a mapping
-    at Object.parseMap [as resolve] (/node/node_modules/yaml/dist/schema/parseMap.js:26:21)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/schema/parseMap.js:209:19)
-    at Object.parseMap [as resolve] (/node/node_modules/yaml/dist/schema/parseMap.js:33:79)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:222:26)
+    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1605:21)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+    at resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1792:15)
+    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
 </pre>
  </div>
 
@@ -259,7 +283,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55f6f302bf97
+	[C]: at 0x558a51a9bf97
 </pre>
  </div>
 
@@ -273,6 +297,11 @@ Got       : EOL
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC
++MAP
+=VAL :key
+=VAL &amp;x :
 </pre>
  </div>
 
@@ -442,6 +471,10 @@ could not find expected &#39;:&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 3, column 3:
       a: b
       ^
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -565,6 +598,10 @@ could not find expected &#39;:&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 3, column 3:
       a: b
       ^ (line: 3)
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 

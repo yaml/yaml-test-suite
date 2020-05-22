@@ -4,14 +4,17 @@ var data = {
       "1.3-mod" : 1,
       "alias" : 1,
       "anchor" : 1,
-      "block" : 1,
       "comment" : 1,
+      "complex-key" : 1,
       "directive" : 1,
       "document" : 1,
       "double" : 1,
+      "duplicate-key" : 1,
       "edge" : 1,
       "empty" : 1,
+      "empty-key" : 1,
       "error" : 1,
+      "explicit-key" : 1,
       "flow" : 1,
       "folded" : 1,
       "footer" : 1,
@@ -20,17 +23,18 @@ var data = {
       "jayt" : 1,
       "libyaml-err" : 1,
       "literal" : 1,
+      "local-tag" : 1,
       "mapping" : 1,
-      "missing" : 1,
       "scalar" : 1,
       "sequence" : 1,
       "simple" : 1,
       "single" : 1,
       "spec" : 1,
       "tag" : 1,
+      "unknown-tag" : 1,
       "upto-1.2" : 1,
       "whitespace" : 1,
-      "words" : 1
+      "whitspace" : 1
    },
    "tests" : {
       "236B" : {
@@ -71,7 +75,8 @@ var data = {
          "in_yaml" : "---\n[ a, b, c ] ]\n",
          "tags" : [
             "error",
-            "flow"
+            "flow",
+            "sequence"
          ]
       },
       "4HVU" : {
@@ -88,7 +93,8 @@ var data = {
          "in_yaml" : "top1: &node1\n  &k1 key1: val1\ntop2: &node2\n  &v2 val2\n",
          "tags" : [
             "anchor",
-            "error"
+            "error",
+            "mapping"
          ]
       },
       "55WF" : {
@@ -131,6 +137,7 @@ var data = {
          "in_yaml" : "---\nx: { y: z }in: valid\n",
          "tags" : [
             "error",
+            "flow",
             "mapping"
          ]
       },
@@ -139,7 +146,8 @@ var data = {
          "in_yaml" : "---\n[ [ a, b, c ]\n",
          "tags" : [
             "error",
-            "flow"
+            "flow",
+            "sequence"
          ]
       },
       "6S55" : {
@@ -155,6 +163,7 @@ var data = {
          "id" : "7LBH",
          "in_yaml" : "\"a\\nb\": 1\n\"c\n d\": 1\n",
          "tags" : [
+            "double",
             "error"
          ]
       },
@@ -200,7 +209,9 @@ var data = {
          "tags" : [
             "directive",
             "error",
-            "footer"
+            "footer",
+            "tag",
+            "unknown-tag"
          ]
       },
       "9JBA" : {
@@ -227,7 +238,8 @@ var data = {
          "in_yaml" : "---\n[ , a, b, c ]\n",
          "tags" : [
             "error",
-            "flow"
+            "flow",
+            "sequence"
          ]
       },
       "B63P" : {
@@ -261,7 +273,8 @@ var data = {
          "id" : "BS4K",
          "in_yaml" : "word1  # comment\nword2\n",
          "tags" : [
-            "error"
+            "error",
+            "scalar"
          ]
       },
       "C2SP" : {
@@ -295,7 +308,8 @@ var data = {
          "in_yaml" : "---\n[ a, b, c, , ]\n",
          "tags" : [
             "error",
-            "flow"
+            "flow",
+            "sequence"
          ]
       },
       "CVW2" : {
@@ -405,7 +419,8 @@ var data = {
          "tags" : [
             "anchor",
             "error",
-            "indent"
+            "indent",
+            "tag"
          ]
       },
       "HRE5" : {
@@ -478,6 +493,8 @@ var data = {
          "in_yaml" : "---\n- { y: z }- invalid\n",
          "tags" : [
             "error",
+            "flow",
+            "mapping",
             "sequence"
          ]
       },
@@ -630,9 +647,9 @@ var data = {
          "id" : "X4QW",
          "in_yaml" : "block: ># comment\n  scalar\n",
          "tags" : [
-            "block",
             "comment",
             "error",
+            "folded",
             "whitespace"
          ]
       },

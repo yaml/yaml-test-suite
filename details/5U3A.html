@@ -56,6 +56,10 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5U3A.tml">&test-5
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:1:6: error: block sequence on the same line as a mapping key
 key: - a
      ^
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -72,6 +76,10 @@ key: - a
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: block sequence entries are not allowed in this context
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -80,6 +88,10 @@ key: - a
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
 yaml-cpp: error at line 1, column 6: illegal block entry
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -98,6 +110,10 @@ yaml-cpp: error at line 1, column 6: illegal block entry
    at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -134,6 +150,11 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 4, posCharOffset = 4, posLine = 1, posColumn = 4} (Lexical error near &quot; - a&quot;)
++STR
++DOC
++MAP
+=VAL :key
+=VAL :
 </pre>
  </div>
 
@@ -216,7 +237,12 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Sequence items must not have preceding content on the same line
++STR
++DOC
++MAP
+=VAL :key
++SEQ
 </pre>
  </div>
 
@@ -228,16 +254,16 @@ YAMLException: end of the stream or a document separator is expected at line 1, 
                                ^
 
 YAMLSemanticError: Sequence items must not have preceding content on the same line
-    at CollectionItem.parse (/node/node_modules/yaml/dist/cst/CollectionItem.js:41:78)
-    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:132:25)
-    at CollectionItem.parse (/node/node_modules/yaml/dist/cst/CollectionItem.js:77:19)
-    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:132:25)
-    at Collection.parse (/node/node_modules/yaml/dist/cst/Collection.js:194:20)
-    at ParseContext._defineProperty (/node/node_modules/yaml/dist/cst/ParseContext.js:151:29)
-    at Document.parseContents (/node/node_modules/yaml/dist/cst/Document.js:176:26)
-    at Document.parse (/node/node_modules/yaml/dist/cst/Document.js:239:19)
-    at parse (/node/node_modules/yaml/dist/cst/parse.js:28:18)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:97:41)
+    at CollectionItem.parse (/node/node_modules/yaml/dist/parse-cst.js:60:78)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1586:25)
+    at CollectionItem.parse (/node/node_modules/yaml/dist/parse-cst.js:92:19)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1586:25)
+    at Collection.parse (/node/node_modules/yaml/dist/parse-cst.js:350:20)
+    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1605:29)
+    at Document.parseContents (/node/node_modules/yaml/dist/parse-cst.js:622:26)
+    at Document.parse (/node/node_modules/yaml/dist/parse-cst.js:685:19)
+    at Object.parse (/node/node_modules/yaml/dist/parse-cst.js:1723:18)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:32:33)
 </pre>
  </div>
 
@@ -253,7 +279,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5588bed63f97
+	[C]: at 0x55aa7a6fef97
 </pre>
  </div>
 
@@ -263,6 +289,12 @@ stack traceback:
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
 /tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
 Error: unhandled exception: Illegal token (expected &#39;:&#39;, comment or line end): ltSeqItemInd [YamlStreamError]
++STR
++DOC
++MAP
+=VAL :key
++SEQ
+=VAL :a
 </pre>
  </div>
 
@@ -276,6 +308,10 @@ Got       : DASH
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;- a\n&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -418,6 +454,10 @@ yaml.scanner.ScannerError: sequence entries are not allowed here
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 6:
     key: - a
          ^
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 
@@ -517,6 +557,10 @@ ruamel.yaml.scanner.ScannerError: sequence entries are not allowed here
   in &quot;&lt;unicode string&gt;&quot;, line 1, column 6:
     key: - a
          ^ (line: 1)
++STR
++DOC
++MAP
+=VAL :key
 </pre>
  </div>
 

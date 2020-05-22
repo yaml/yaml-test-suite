@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/M5C3.tml">&test-M5C3</a><br>
 &nbsp;&nbsp;Title: Spec Example 8.21. Block Scalar Nodes</br>
-&nbsp;&nbsp;Tags: [ 1.3-err, folded, literal, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ 1.3-err, folded, indent, literal, local-tag, spec, tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>literal: |2
   value
@@ -152,59 +152,7 @@ folded:
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 4, Col: 4, Idx: 31) - (Line: 7, Col: 1, Idx: 48): Encountered an unresolved tag &#39;!foo&#39;
-   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
-   at Program.Main(String[] commandLineArguments)
-Aborted (core dumped)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="java-snakeyaml-json">
-<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
- in &#39;reader&#39;, line 4, column 4:
-       !foo
-       ^
-
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:479)
-	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:190)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:460)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:556)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
-	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
-	... 13 more
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-syck-json">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 5, column 2): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
@@ -214,20 +162,6 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
   <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 5, column 2): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -306,6 +240,72 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;folded&#39;: GenericScalar(tag=&#39;!foo&#39;, content=&#39;value\n&#39;), &#39;literal&#39;: &#39;value\n&#39;}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 4, Col: 4, Idx: 31) - (Line: 7, Col: 1, Idx: 48): Encountered an unresolved tag &#39;!foo&#39;
+   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
+ in &#39;reader&#39;, line 4, column 4:
+       !foo
+       ^
+
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:479)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:190)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:460)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:556)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
+	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
+	... 13 more
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;   !foo&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

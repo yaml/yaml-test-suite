@@ -99,6 +99,10 @@ table.matrix thead tr.overview td {
     background-color: #dadada;
     color: #dadada;
 }
+.color_ni, table.matrix tbody td.color_ni {
+    background-color: #999;
+    color: #999;
+}
 .color_error, table.matrix tbody td.color_error {
     background-color: #ff5858;
     color: #ff5858;
@@ -242,6 +246,12 @@ div.framework_box_na {
     min-height: 20em;
     max-height: 20em;
 }
+div.framework_box_ni {
+    min-width: 20em;
+    max-width: 20em;
+    min-height: 20em;
+    max-height: 20em;
+}
 span.diff_line {
     background-color: #ff9922;
 }
@@ -307,4 +317,32 @@ div.content {
     margin: 5px;
     padding: 5px;
     border: 1px solid #eee;
+}
+
+#legend {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #a8a8a8;
+    border-radius: 3px 0px 0px 3px;
+    background-color: #e8e8e8;
+    float: left;
+}
+#legend-columns, #legend-tags, #ni {
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid #a8a8a8;
+    background-color: #fff;
+    float: left;
+    width: 35em;
+}
+#legend-tags table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+#legend-tags table tr td {
+    border: 1px solid #ccc;
+    vertical-align: top;
+}
+#legend-tags pre span.focus {
+    background-color: yellow;
 }

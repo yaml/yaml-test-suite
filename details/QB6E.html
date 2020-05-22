@@ -271,6 +271,10 @@ quoted: &quot;a
         ^~
 b
 ~
++STR
++DOC ---
++MAP
+=VAL :quoted
 </pre>
  </div>
 
@@ -290,6 +294,11 @@ b
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 14, posCharOffset = 14, posLine = 2, posColumn = 10} (Unexpected &#39;
 &#39;)
++STR
++DOC ---
++MAP
+=VAL :quoted
+=VAL &quot;a
 </pre>
  </div>
 
@@ -304,7 +313,11 @@ b
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Multi-line double-quoted string needs to be sufficiently indented
++STR
++DOC ---
++MAP
+=VAL :quoted
 </pre>
  </div>
 
@@ -316,16 +329,16 @@ b
                                ^
 
 YAMLSemanticError: Multi-line double-quoted string needs to be sufficiently indented
-    at QuoteDouble.get strValue [as strValue] (/node/node_modules/yaml/dist/cst/QuoteDouble.js:57:32)
-    at Object.resolveString [as resolve] (/node/node_modules/yaml/dist/tags/failsafe/string.js:11:20)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/schema/parseMap.js:198:48)
-    at Object.parseMap [as resolve] (/node/node_modules/yaml/dist/schema/parseMap.js:33:79)
-    at Schema.resolveNode (/node/node_modules/yaml/dist/schema/index.js:177:27)
-    at Schema.resolveNodeWithFallback (/node/node_modules/yaml/dist/schema/index.js:200:22)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:494:22)
+    at QuoteDouble.get strValue [as strValue] (/node/node_modules/yaml/dist/parse-cst.js:1215:32)
+    at Object.resolveString [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1282:20)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+    at resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1777:38)
+    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
+    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
+    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
 </pre>
  </div>
 
@@ -338,6 +351,10 @@ Message   : Wrong indendation or missing closing quote &lt;&quot;&gt;
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 649
 YAML      : &quot;b&quot;
   at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
++MAP
+=VAL :quoted
 </pre>
  </div>
 

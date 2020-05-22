@@ -155,6 +155,14 @@ e: f
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:4:5: error: undefined tag prefix
 --- !prefix!B
     ^~~~~~~~~
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
@@ -164,6 +172,9 @@ e: f
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:4:5: error: undefined tag prefix
 --- !prefix!B
     ^~~~~~~~~
+{
+  &quot;a&quot;: &quot;b&quot;
+}
 </pre>
  </div>
 
@@ -171,6 +182,14 @@ e: f
   <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: found undefined tag handle
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
@@ -194,6 +213,14 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 59, posCharOffset = 59, posLine = 4, posColumn = 4} (Parse failure near BeginHandle token)
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
@@ -255,7 +282,15 @@ YAMLException: unknown tag !&lt;tag:example.com,2011:A&gt; at line 4, column 1:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>undefined
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>The !prefix! tag handle is non-default and was not declared.
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
@@ -267,13 +302,13 @@ YAMLException: unknown tag !&lt;tag:example.com,2011:A&gt; at line 4, column 1:
                                ^
 
 YAMLSemanticError: The !prefix! tag handle is non-default and was not declared.
-    at Document.resolveTagName (/node/node_modules/yaml/dist/Document.js:368:28)
-    at Document.resolveNode (/node/node_modules/yaml/dist/Document.js:491:28)
-    at contents.forEach.node (/node/node_modules/yaml/dist/Document.js:222:26)
-    at Array.forEach (&lt;anonymous&gt;)
-    at Document.parseContents (/node/node_modules/yaml/dist/Document.js:215:14)
-    at Document.parse (/node/node_modules/yaml/dist/Document.js:148:10)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:99:9)
+    at resolveTagHandle (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1302:24)
+    at resolveTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1345:16)
+    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1534:19)
+    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
+    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
+    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
@@ -291,7 +326,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5647b8d81f97
+	[C]: at 0x562c0a717f97
 </pre>
  </div>
 
@@ -301,21 +336,37 @@ stack traceback:
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/buildutils/nimyaml_event.nim(8) nimyaml_event
 /tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
 Error: unhandled exception: Undefined tag shorthand: !prefix! [YamlStreamError]
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="perl-pp-event">
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found undefined tag handle &#39;!prefix!&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 950, &lt;STDIN&gt; line 1.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found undefined tag handle &#39;!prefix!&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 955, &lt;STDIN&gt; line 1.
  at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="perl-pp-json">
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found undefined tag handle &#39;!prefix!&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 950, &lt;&gt; line 1.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found undefined tag handle &#39;!prefix!&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 955, &lt;&gt; line 1.
  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
 </pre>
  </div>
@@ -323,7 +374,7 @@ Error: unhandled exception: Undefined tag shorthand: !prefix! [YamlStreamError]
 
   <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found undefined tag handle &#39;!prefix!&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 950, &lt;&gt; line 1.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found undefined tag handle &#39;!prefix!&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 955, &lt;&gt; line 1.
  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
 </pre>
  </div>
@@ -445,6 +496,14 @@ found undefined tag handle &#39;!prefix!&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
     --- !prefix!B
         ^
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
@@ -477,6 +536,9 @@ found undefined tag handle &#39;!prefix!&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
     --- !prefix!B
         ^
+{
+  &quot;a&quot;: &quot;b&quot;
+}
 </pre>
  </div>
 
@@ -509,6 +571,7 @@ found undefined tag handle &#39;!prefix!&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
     --- !prefix!B
         ^
+GenericMapping(tag=&#39;tag:example.com,2011:A&#39;, content={&#39;a&#39;: &#39;b&#39;})
 </pre>
  </div>
 
@@ -533,6 +596,14 @@ found undefined tag handle &#39;!prefix!&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
     --- !prefix!B
         ^ (line: 4)
++STR
++DOC ---
++MAP &lt;tag:example.com,2011:A&gt;
+=VAL :a
+=VAL :b
+-MAP
+-DOC
++DOC ---
 </pre>
  </div>
 
@@ -565,6 +636,9 @@ found undefined tag handle &#39;!prefix!&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
     --- !prefix!B
         ^ (line: 4)
+{
+  &quot;a&quot;: &quot;b&quot;
+}
 </pre>
  </div>
 
@@ -597,6 +671,7 @@ found undefined tag handle &#39;!prefix!&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
     --- !prefix!B
         ^ (line: 4)
+GenericMapping(tag=&#39;tag:example.com,2011:A&#39;, content={&#39;a&#39;: &#39;b&#39;})
 </pre>
  </div>
 

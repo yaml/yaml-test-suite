@@ -5,6 +5,7 @@
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="css/yaml.css">
 <link rel="stylesheet" type="text/css" href="css/matrix.css">
+<link rel="stylesheet" type="text/css" href="css/yaml-tokens.css">
 <link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
 </head>
 <body>
@@ -65,21 +66,22 @@ It is suited to identify which problems each processors has and what to avoid.
 <table class="yaml">
 <tr>
 <th></th>
-<th colspan="6"><a href="valid.html">Valid (248)</a></th>
+<th colspan="7"><a href="valid.html">Valid (248)</a></th>
 <th colspan="3"><a href="invalid.html">Invalid (72)</a></th>
 </tr>
 <tr>
 <th colspan="2"><a href="processors.html">Processors</a></th>
 <th></th>
-<th>ok</th>
-<th>n/a</th>
-<th>diff</th>
-<th>error</th>
+<th><a href="#legend-columns" title="Parse ok">ok</a></th>
+<th><a href="#legend-columns" title="Not implemented">n/i</a></th>
+<th><a href="#legend-columns" title="Parse diff">diff</a></th>
+<th><a href="#legend-columns" title="Parse error">error</a></th>
+<th><a href="#legend-columns" title="Not applicable">n/a</a></th>
 <th></th>
-<th>correct</th>
-<th>incorrect</th>
+<th><a href="#legend-columns" title="Correctly identified as invalid">correct</a></th>
+<th><a href="#legend-columns" title="Parsed incorrectly as valid">incorrect</a></th>
 </tr>
-  <tr><th colspan="10" class="sub">event - Compare parsing events</th></tr>
+  <tr><th colspan="11" class="sub">event - Compare parsing events</th></tr>
  <tr>
 <th>c-libfyaml-event</th>
 <td>C libfyaml</td>
@@ -88,6 +90,10 @@ It is suited to identify which problems each processors has and what to avoid.
     class="overview_status color_ok bar_left"
     style="min-width: 421.6px; max-width: 421.6px;"
     title="100.00%"
+>&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 0px; max-width: 0px;"
@@ -98,6 +104,7 @@ It is suited to identify which problems each processors has and what to avoid.
     title="0.00%"
 >&nbsp;</span> </td>
 <td>248</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -123,18 +130,23 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 363.8px; max-width: 363.8px;"
     title="86.29%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 13.6px; max-width: 13.6px;"
+    title="3.23%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_error bar_right"
-    style="min-width: 56.1px; max-width: 56.1px;"
-    title="13.31%"
+    style="min-width: 42.5px; max-width: 42.5px;"
+    title="10.08%"
 >&nbsp;</span> </td>
 <td>214</td>
-<td></td>
+<td>8</td>
 <td>1</td>
-<td>33</td>
+<td>25</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -157,6 +169,10 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 389.3px; max-width: 389.3px;"
     title="92.34%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 18.7px; max-width: 18.7px;"
     title="4.44%"
@@ -169,6 +185,7 @@ It is suited to identify which problems each processors has and what to avoid.
 <td></td>
 <td>11</td>
 <td>8</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -191,6 +208,10 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 421.6px; max-width: 421.6px;"
     title="100.00%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
@@ -200,6 +221,7 @@ It is suited to identify which problems each processors has and what to avoid.
     title="0.00%"
 >&nbsp;</span> </td>
 <td>248</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -225,6 +247,10 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 418.2px; max-width: 418.2px;"
     title="99.19%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
@@ -237,6 +263,7 @@ It is suited to identify which problems each processors has and what to avoid.
 <td></td>
 <td></td>
 <td>2</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -259,18 +286,23 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 360.4px; max-width: 360.4px;"
     title="85.48%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 13.6px; max-width: 13.6px;"
+    title="3.23%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_error bar_right"
-    style="min-width: 59.5px; max-width: 59.5px;"
-    title="14.11%"
+    style="min-width: 45.9px; max-width: 45.9px;"
+    title="10.89%"
 >&nbsp;</span> </td>
 <td>212</td>
-<td></td>
+<td>8</td>
 <td>1</td>
-<td>35</td>
+<td>27</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -293,30 +325,35 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 419.9px; max-width: 419.9px;"
     title="99.60%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 1.7px; max-width: 1.7px;"
+    title="0.40%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_error bar_right"
-    style="min-width: 1.7px; max-width: 1.7px;"
-    title="0.40%"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span> </td>
 <td>247</td>
-<td></td>
-<td></td>
 <td>1</td>
+<td></td>
+<td></td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
-    style="min-width: 113.9px; max-width: 113.9px;"
-    title="93.06%"
+    style="min-width: 122.4px; max-width: 122.4px;"
+    title="100.00%"
 ></span><span
     class="overview_status color_invalid_incorrect bar_right"
-    style="min-width: 8.5px; max-width: 8.5px;"
-    title="6.94%"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 ></span> </td>
-<td>67</td>
-<td>5</td>
+<td>72</td>
+<td></td>
 </tr>
  <tr>
 <th>nim-nimyaml-event</th>
@@ -326,6 +363,10 @@ It is suited to identify which problems each processors has and what to avoid.
     class="overview_status color_ok bar_left"
     style="min-width: 409.7px; max-width: 409.7px;"
     title="97.18%"
+>&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
@@ -339,6 +380,7 @@ It is suited to identify which problems each processors has and what to avoid.
 <td></td>
 <td>1</td>
 <td>6</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -361,6 +403,10 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 394.4px; max-width: 394.4px;"
     title="93.55%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
@@ -373,6 +419,7 @@ It is suited to identify which problems each processors has and what to avoid.
 <td></td>
 <td>1</td>
 <td>15</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -392,33 +439,38 @@ It is suited to identify which problems each processors has and what to avoid.
 <td class="percentage" style="min-width: 431.6px;">
 <span
     class="overview_status color_ok bar_left"
-    style="min-width: 357px; max-width: 357px;"
-    title="84.68%"
+    style="min-width: 363.8px; max-width: 363.8px;"
+    title="86.29%"
+>&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 13.6px; max-width: 13.6px;"
+    title="3.23%"
 >&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_error bar_right"
-    style="min-width: 62.9px; max-width: 62.9px;"
-    title="14.92%"
+    style="min-width: 42.5px; max-width: 42.5px;"
+    title="10.08%"
 >&nbsp;</span> </td>
-<td>210</td>
-<td></td>
+<td>214</td>
+<td>8</td>
 <td>1</td>
-<td>37</td>
+<td>25</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
-    style="min-width: 108.8px; max-width: 108.8px;"
-    title="88.89%"
+    style="min-width: 105.4px; max-width: 105.4px;"
+    title="86.11%"
 ></span><span
     class="overview_status color_invalid_incorrect bar_right"
-    style="min-width: 13.6px; max-width: 13.6px;"
-    title="11.11%"
+    style="min-width: 17px; max-width: 17px;"
+    title="13.89%"
 ></span> </td>
-<td>64</td>
-<td>8</td>
+<td>62</td>
+<td>10</td>
 </tr>
  <tr>
 <th>py-pyyaml-event</th>
@@ -429,18 +481,23 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 360.4px; max-width: 360.4px;"
     title="85.48%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 13.6px; max-width: 13.6px;"
+    title="3.23%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_error bar_right"
-    style="min-width: 59.5px; max-width: 59.5px;"
-    title="14.11%"
+    style="min-width: 45.9px; max-width: 45.9px;"
+    title="10.89%"
 >&nbsp;</span> </td>
 <td>212</td>
-<td></td>
+<td>8</td>
 <td>1</td>
-<td>35</td>
+<td>27</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -463,6 +520,10 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 382.5px; max-width: 382.5px;"
     title="90.73%"
 >&nbsp;</span><span
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
     class="overview_status color_diff bar_middle"
     style="min-width: 3.4px; max-width: 3.4px;"
     title="0.81%"
@@ -475,6 +536,7 @@ It is suited to identify which problems each processors has and what to avoid.
 <td></td>
 <td>2</td>
 <td>21</td>
+<td></td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -488,32 +550,37 @@ It is suited to identify which problems each processors has and what to avoid.
 <td>60</td>
 <td>12</td>
 </tr>
-   <tr><th colspan="10" class="sub">json - Compare loaded data with JSON</th></tr>
+   <tr><th colspan="11" class="sub">json - Compare loaded data with JSON</th></tr>
  <tr>
 <th>c-libfyaml-json</th>
 <td>C libfyaml</td>
 <td class="percentage" style="min-width: 431.6px;">
 <span
     class="overview_status color_json_ok bar_left"
-    style="min-width: 350.2px; max-width: 350.2px;"
-    title="83.06%"
+    style="min-width: 363.8px; max-width: 363.8px;"
+    title="86.29%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
->&nbsp;</span><span
-    class="overview_status color_json_diff bar_middle"
-    style="min-width: 13.6px; max-width: 13.6px;"
-    title="3.23%"
->&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_ni bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
+>&nbsp;</span><span
+    class="overview_status color_json_diff bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
+    class="overview_status color_error bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
-<td>206</td>
-<td>34</td>
-<td>8</td>
+<td>214</td>
 <td></td>
+<td></td>
+<td></td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -536,22 +603,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 260.1px; max-width: 260.1px;"
     title="61.69%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 5.1px; max-width: 5.1px;"
+    title="1.21%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 57.8px; max-width: 57.8px;"
     title="13.71%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 45.9px; max-width: 45.9px;"
-    title="10.89%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 40.8px; max-width: 40.8px;"
+    title="9.68%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>153</td>
+<td>3</td>
 <td>34</td>
+<td>24</td>
 <td>34</td>
-<td>27</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -574,22 +646,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 360.4px; max-width: 360.4px;"
     title="85.48%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 3.4px; max-width: 3.4px;"
     title="0.81%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>212</td>
-<td>34</td>
+<td></td>
 <td></td>
 <td>2</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -612,22 +689,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 287.3px; max-width: 287.3px;"
     title="68.15%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 6.8px; max-width: 6.8px;"
+    title="1.61%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 22.1px; max-width: 22.1px;"
     title="5.24%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 54.4px; max-width: 54.4px;"
-    title="12.90%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 47.6px; max-width: 47.6px;"
+    title="11.29%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>169</td>
-<td>34</td>
+<td>4</td>
 <td>13</td>
-<td>32</td>
+<td>28</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -650,22 +732,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 292.4px; max-width: 292.4px;"
     title="69.35%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 3.4px; max-width: 3.4px;"
+    title="0.81%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 35.7px; max-width: 35.7px;"
     title="8.47%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 35.7px; max-width: 35.7px;"
-    title="8.47%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 32.3px; max-width: 32.3px;"
+    title="7.66%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>172</td>
+<td>2</td>
+<td>21</td>
+<td>19</td>
 <td>34</td>
-<td>21</td>
-<td>21</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -688,34 +775,39 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 353.6px; max-width: 353.6px;"
     title="83.87%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 10.2px; max-width: 10.2px;"
     title="2.42%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>208</td>
-<td>34</td>
+<td></td>
 <td>6</td>
 <td></td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
-    style="min-width: 113.9px; max-width: 113.9px;"
-    title="93.06%"
+    style="min-width: 122.4px; max-width: 122.4px;"
+    title="100.00%"
 ></span><span
     class="overview_status color_invalid_incorrect bar_right"
-    style="min-width: 8.5px; max-width: 8.5px;"
-    title="6.94%"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 ></span> </td>
-<td>67</td>
-<td>5</td>
+<td>72</td>
+<td></td>
 </tr>
  <tr>
 <th>lua-lyaml-json</th>
@@ -726,22 +818,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 285.6px; max-width: 285.6px;"
     title="67.74%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 27.2px; max-width: 27.2px;"
     title="6.45%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 51px; max-width: 51px;"
     title="12.10%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>168</td>
-<td>34</td>
+<td></td>
 <td>16</td>
 <td>30</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -764,22 +861,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 348.5px; max-width: 348.5px;"
     title="82.66%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 0px; max-width: 0px;"
     title="0.00%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 15.3px; max-width: 15.3px;"
     title="3.63%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>205</td>
-<td>34</td>
+<td></td>
 <td></td>
 <td>9</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -799,37 +901,42 @@ It is suited to identify which problems each processors has and what to avoid.
 <td class="percentage" style="min-width: 431.6px;">
 <span
     class="overview_status color_json_ok bar_left"
-    style="min-width: 311.1px; max-width: 311.1px;"
-    title="73.79%"
+    style="min-width: 317.9px; max-width: 317.9px;"
+    title="75.40%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 1.7px; max-width: 1.7px;"
+    title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 51px; max-width: 51px;"
-    title="12.10%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 42.5px; max-width: 42.5px;"
+    title="10.08%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
-<td>183</td>
-<td>34</td>
+<td>187</td>
 <td>1</td>
-<td>30</td>
+<td>1</td>
+<td>25</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
-    style="min-width: 108.8px; max-width: 108.8px;"
-    title="88.89%"
+    style="min-width: 105.4px; max-width: 105.4px;"
+    title="86.11%"
 ></span><span
     class="overview_status color_invalid_incorrect bar_right"
-    style="min-width: 13.6px; max-width: 13.6px;"
-    title="11.11%"
+    style="min-width: 17px; max-width: 17px;"
+    title="13.89%"
 ></span> </td>
-<td>64</td>
-<td>8</td>
+<td>62</td>
+<td>10</td>
 </tr>
  <tr>
 <th>perl-syck-json</th>
@@ -840,22 +947,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 239.7px; max-width: 239.7px;"
     title="56.85%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 69.7px; max-width: 69.7px;"
     title="16.53%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 54.4px; max-width: 54.4px;"
     title="12.90%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>141</td>
-<td>34</td>
+<td></td>
 <td>41</td>
 <td>32</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -878,22 +990,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 66.3px; max-width: 66.3px;"
     title="15.73%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 175.1px; max-width: 175.1px;"
-    title="41.53%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 146.2px; max-width: 146.2px;"
+    title="34.68%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 51px; max-width: 51px;"
     title="12.10%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 129.2px; max-width: 129.2px;"
-    title="30.65%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 100.3px; max-width: 100.3px;"
+    title="23.79%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>39</td>
-<td>103</td>
+<td>86</td>
 <td>30</td>
-<td>76</td>
+<td>59</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -913,37 +1030,42 @@ It is suited to identify which problems each processors has and what to avoid.
 <td class="percentage" style="min-width: 431.6px;">
 <span
     class="overview_status color_json_ok bar_left"
-    style="min-width: 306px; max-width: 306px;"
-    title="72.58%"
+    style="min-width: 312.8px; max-width: 312.8px;"
+    title="74.19%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 1.7px; max-width: 1.7px;"
+    title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 1.7px; max-width: 1.7px;"
     title="0.40%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 56.1px; max-width: 56.1px;"
-    title="13.31%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 47.6px; max-width: 47.6px;"
+    title="11.29%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
-<td>180</td>
-<td>34</td>
+<td>184</td>
 <td>1</td>
-<td>33</td>
+<td>1</td>
+<td>28</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
-    style="min-width: 110.5px; max-width: 110.5px;"
-    title="90.28%"
+    style="min-width: 107.1px; max-width: 107.1px;"
+    title="87.50%"
 ></span><span
     class="overview_status color_invalid_incorrect bar_right"
-    style="min-width: 11.9px; max-width: 11.9px;"
-    title="9.72%"
+    style="min-width: 15.3px; max-width: 15.3px;"
+    title="12.50%"
 ></span> </td>
-<td>65</td>
-<td>7</td>
+<td>63</td>
+<td>9</td>
 </tr>
  <tr>
 <th>perl-yaml-json</th>
@@ -954,22 +1076,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 139.4px; max-width: 139.4px;"
     title="33.06%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 23.8px; max-width: 23.8px;"
     title="5.65%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 200.6px; max-width: 200.6px;"
     title="47.58%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>82</td>
-<td>34</td>
+<td></td>
 <td>14</td>
 <td>118</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -992,22 +1119,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 304.3px; max-width: 304.3px;"
     title="72.18%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 1.7px; max-width: 1.7px;"
+    title="0.40%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 6.8px; max-width: 6.8px;"
     title="1.61%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
-    style="min-width: 52.7px; max-width: 52.7px;"
-    title="12.50%"
+    class="overview_status color_error bar_middle"
+    style="min-width: 51px; max-width: 51px;"
+    title="12.10%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>179</td>
-<td>34</td>
+<td>1</td>
 <td>4</td>
-<td>31</td>
+<td>30</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -1030,22 +1162,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 323px; max-width: 323px;"
     title="76.61%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 3.4px; max-width: 3.4px;"
     title="0.81%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 37.4px; max-width: 37.4px;"
     title="8.87%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>190</td>
-<td>34</td>
+<td></td>
 <td>2</td>
 <td>22</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -1068,22 +1205,27 @@ It is suited to identify which problems each processors has and what to avoid.
     style="min-width: 299.2px; max-width: 299.2px;"
     title="70.97%"
 >&nbsp;</span><span
-    class="overview_status color_na bar_middle"
-    style="min-width: 57.8px; max-width: 57.8px;"
-    title="13.71%"
+    class="overview_status color_ni bar_middle"
+    style="min-width: 0px; max-width: 0px;"
+    title="0.00%"
 >&nbsp;</span><span
     class="overview_status color_json_diff bar_middle"
     style="min-width: 13.6px; max-width: 13.6px;"
     title="3.23%"
 >&nbsp;</span><span
-    class="overview_status color_error bar_right"
+    class="overview_status color_error bar_middle"
     style="min-width: 51px; max-width: 51px;"
     title="12.10%"
+>&nbsp;</span><span
+    class="overview_status color_na bar_right"
+    style="min-width: 57.8px; max-width: 57.8px;"
+    title="13.71%"
 >&nbsp;</span> </td>
 <td>176</td>
-<td>34</td>
+<td></td>
 <td>8</td>
 <td>30</td>
+<td>34</td>
 <td class="percentage" style="min-width: 132.4px;">
 <span
     class="overview_status color_invalid_correct bar_left"
@@ -1098,11 +1240,127 @@ It is suited to identify which problems each processors has and what to avoid.
 <td>8</td>
 </tr>
   </table>
-</div>
 
 Generated with <a
 href="https://github.com/yaml/yaml-test-suite">yaml-test-suite</a>/data
-Commit <a href="https://github.com/yaml/yaml-test-suite/commit/b99ea40">b99ea40 2020-05-10 Regenerated data from master d0aaf4e</a>
+Commit <a href="https://github.com/yaml/yaml-test-suite/commit/b78c567">b78c567 2020-05-17 Regenerated data from master 6d3921b</a>
+</div>
+
+<div id="legend">
+<h3>Legend</h3>
+
+
+<div id="legend-columns">
+<h4>Columns</h4>
+<table>
+<tr><th colspan="2">events</td></tr>
+<tr><td><span class="status_box color_ok"               >&nbsp;</span>ok</td><td>Events matched</td></tr>
+<tr><td><span class="status_box color_ni"               >&nbsp;</span>n/i</td><td>This feature is not implemented in this library</td></tr>
+<tr><td><span class="status_box color_diff"             >&nbsp;</span>diff</td><td>Event output differs</td></tr>
+<tr><td><span class="status_box color_error"            >&nbsp;</span>error</td><td>Parsing was aborted with an error</td></tr>
+<tr><td><span class="status_box color_na"               >&nbsp;</span>n/a</td><td>No data to compare for this test</td></tr>
+<tr><td><span class="status_box color_invalid_correct"  >&nbsp;</span>invalid_correct</td><td>Input was correctly detected as invalid</td></tr>
+<tr><td><span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect</td><td>Input was accepted although it is invalid</td></tr>
+<tr><th colspan="2">json</td></tr>
+<tr><td><span class="status_box color_json_ok"          >&nbsp;</span>ok</td><td>Loaded data is equal to JSON</td></tr>
+<tr><td><span class="status_box color_ni"               >&nbsp;</span>n/i</td><td>This feature is not implemented in this library</td></tr>
+<tr><td><span class="status_box color_json_diff"        >&nbsp;</span>diff</td><td>Loaded data differs</td></tr>
+<tr><td><span class="status_box color_error"            >&nbsp;</span>error</td><td>Parsing/Loading was aborted with an error</td></tr>
+<tr><td><span class="status_box color_na"               >&nbsp;</span>n/a</td><td>No data to compare for this test</td></tr>
+<tr><td><span class="status_box color_invalid_correct"  >&nbsp;</span>invalid_correct</td><td>Input was correctly detected as invalid</td></tr>
+<tr><td><span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect</td><td>Input was accepted although it is invalid</td></tr>
+</table>
+</div>
+
+<div id="ni">
+<h4>Which processors don't implement which features?</h4>
+<br><br><br>
+<pre>
+<span class="doc_start">---</span><span class="eol">
+</span><span class="default">c-libyaml.event</span><span class="colon">:</span><span class="default">        </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">dotnet-yamldotnet.json</span><span class="colon">:</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">local-tag</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">java-snakeyaml.event</span><span class="colon">:</span><span class="default">   </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">java-snakeyaml.json</span><span class="colon">:</span><span class="default">    </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">local-tag</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">js-jsyaml.json</span><span class="colon">:</span><span class="default">         </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">local-tag</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">js-yaml.event</span><span class="colon">:</span><span class="default">          </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">duplicate-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">perl-pplibyaml.event</span><span class="colon">:</span><span class="default">   </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">perl-pplibyaml.json</span><span class="colon">:</span><span class="default">    </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">perl-pplibyaml.perl</span><span class="colon">:</span><span class="default">    </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">perl-tiny.json</span><span class="colon">:</span><span class="default">         </span><span class="anchor">&amp;tiny</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">alias</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">anchor</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">complex-key</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">empty-key</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">                          </span><span class="default">explicit-key</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">flow</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">tag</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">perl-tiny.perl</span><span class="colon">:</span><span class="default">         </span><span class="alias">*tiny</span><span class="eol">
+</span><span class="default">perl-xs.json</span><span class="colon">:</span><span class="default">           </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">perl-xs.perl</span><span class="colon">:</span><span class="default">           </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">py-pyyaml.event</span><span class="colon">:</span><span class="default">        </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">py-pyyaml.json</span><span class="colon">:</span><span class="default">         </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">py-pyyaml.py</span><span class="colon">:</span><span class="default">           </span><span class="flowseq_start">[</span><span class="default"> </span><span class="default">empty-key</span><span class="default"> </span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="eol">
+</span> </pre>
+</div>
+
+
+
+<div id="legend-tags">
+<h4>n/i - Not implemented</h4>
+<br>
+<table>
+<tr><td><b>complex-key</b>:<br> The test uses non-scalar keys, for example
+a mapping or a sequence.
+</td><td>
+<pre>---
+? <span class="focus">key: value</span>
+: value
+---
+<span class="focus">[a, list]</span>: value</pre>
+</td></tr>
+<tr><td><b>duplicate-key</b>:<br> The test has a duplicate key, which is valid YAML
+<i>syntax</i>, so the parser should accept it, but it should be an error when
+loaded.
+</td><td>
+<pre><span class="focus">a</span>: 1
+<span class="focus">a</span>: 2</pre>
+</td></tr>
+<tr><td><b>empty-key</b>:<br> The test uses an empty node as a key. For example
+n libyaml/PyYAML this wasn't implemented deliberately, although it was already
+part of YAML 1.1. And many implementations used or ported from those libraries.
+</td><td>
+<pre>key: 1
+<span class="focus">:</span> 2</pre>
+</td></tr>
+<tr><td><b>explicit-key</b>:<br> The test uses '?' to mark a key as explicit:
+</td><td>
+<pre>---
+<span class="focus">?</span> |
+  some multiline
+  key
+: value
+---
+<span class="focus">?</span> a: mapping
+: as a key</pre>
+</td></tr>
+<tr><td><b>flow</b>:<br> The test uses flow style collections.
+</td><td>
+<pre>---
+mapping: <span class="focus">{</span> a: 1, b: 2 <span class="focus">}</span>
+sequence: <span class="focus">[</span> a, b, c <span class="focus">]</span></pre>
+</td></tr>
+<tr><td><b>local-tag</b>:<br> The test uses a local tag with one exclamation mark.
+This is accepted by most parsers, but some libraries cannot load it into an
+object, or have no option to ignore such tags:
+</td><td>
+<pre>---
+some: <span class="focus">!local</span> tag</pre>
+</td></tr>
+<tr><td><b>unknown-tag</b>:<br> The test uses a tag with the standard namespace '!!',
+but it is not part of the YAML 1.2 Core schema. A library should ideally be
+able to optionally ignore them or abort loading. Parsing should pass without an error.
+</td><td>
+<pre>---
+some: <span class="focus">!!nonsense</span> tag</pre>
+</td></tr>
+
+</table>
+</div>
 
 </div>
 

@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/5WE3.tml">&test-5WE3</a><br>
 &nbsp;&nbsp;Title: Spec Example 8.17. Explicit Block Mapping Entries</br>
-&nbsp;&nbsp;Tags: [ comment, literal, mapping, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ comment, explicit-key, literal, mapping, sequence, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>? explicit key # Empty value
 ? |
@@ -99,7 +99,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5WE3.tml">&test-5
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -144,15 +149,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5WE3.tml">&test-5
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
-class="diff_line">parse error: Invalid numeric literal at line 3, column 4</span>
-</pre>
- </div>
-
-
-  <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="diff_line">parse error: Invalid numeric literal at line 1, column 25</span>
@@ -208,20 +205,6 @@ class="">}</span>
   <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 2, column 2): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? explicit key # Empty value&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;? explicit key # Empty value&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -306,6 +289,20 @@ class="">}</span>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;block key\n&#39;: [&#39;one&#39;, &#39;two&#39;], &#39;explicit key&#39;: None}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;? explicit key # Empty value&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;? explicit key # Empty value&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 

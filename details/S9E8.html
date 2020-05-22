@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/S9E8.tml">&test-S9E8</a><br>
 &nbsp;&nbsp;Title: Spec Example 5.3. Block Structure Indicators</br>
-&nbsp;&nbsp;Tags: [ mapping, sequence, spec ]</tt></h2>
+&nbsp;&nbsp;Tags: [ explicit-key, mapping, sequence, spec ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>sequence:
 - one
@@ -181,21 +181,7 @@ mapping:
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? sky&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::Tiny does not support a feature in line &#39;  ? sky&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
+ <hr style="clear: both;">             <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;mapping&#39; =&gt; {
@@ -293,6 +279,20 @@ mapping:
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;mapping&#39;: {&#39;sea&#39;: &#39;green&#39;, &#39;sky&#39;: &#39;blue&#39;}, &#39;sequence&#39;: [&#39;one&#39;, &#39;two&#39;]}
 </pre>
 
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;  ? sky&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;  ? sky&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
  </div>
 
 
