@@ -1,6 +1,6 @@
 === Spec Example 6.21. Local Tag Prefix
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2783499
---- tags: spec directive tag
+--- tags: local-tag spec directive tag
 
 --- in-yaml(<)
     %TAG !m! !my-

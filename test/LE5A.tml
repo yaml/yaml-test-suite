@@ -1,6 +1,6 @@
 === Spec Example 7.24. Flow Nodes
 --- from: http://www.yaml.org/spec/1.2/spec.html#id2793490
---- tags: spec flow tag alias
+--- tags: spec tag alias
 
 --- in-yaml
 - !!str "a"
