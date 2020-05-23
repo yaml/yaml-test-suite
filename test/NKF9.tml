@@ -1,0 +1,62 @@
+=== Empty keys in block and flow mapping
+--- from: @perlpunk
+--- tags: empty-key mapping
+
+--- in-yaml(<)
+    ---
+    key: value
+    : empty key
+    ---
+    {
+     key: value, : empty key
+    }
+    ---
+    # empty key and value
+    :
+    ---
+    # empty key and value
+    { : }
+
+--- emit-yaml(<)
+    ---
+    key: value
+    : empty key
+    ---
+    key: value
+    : empty key
+    ---
+    :
+    ---
+    :
+
+--- test-event
++STR
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+=VAL :
+=VAL :empty key
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+=VAL :
+=VAL :empty key
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :
+=VAL :
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :
+=VAL :
+-MAP
+-DOC
+-STR
