@@ -10,6 +10,9 @@
 --- out-yaml(<)
     --- !<tag:example.com,2000:app/int> 1 - 3
 
+--- in-json(<)
+    "1 - 3"
+
 --- test-event
 +STR
 +DOC ---

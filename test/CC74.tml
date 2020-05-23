@@ -10,6 +10,9 @@
 --- out-yaml(<)
     --- !<tag:example.com,2000:app/foo> "bar"
 
+--- in-json(<)
+    "bar"
+
 --- test-event
 +STR
 +DOC ---

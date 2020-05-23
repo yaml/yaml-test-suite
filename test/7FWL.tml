@@ -9,6 +9,11 @@
 --- out-yaml
 !!str foo: !bar baz
 
+--- in-json(<)
+    {
+      "foo": "baz"
+    }
+
 --- test-event
 +STR
 +DOC

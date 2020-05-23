@@ -17,6 +17,13 @@
     Sammy Sosa:
     Ken Griff:
 
+--- in-json(<)
+    {
+      "Mark McGwire": null,
+      "Sammy Sosa": null,
+      "Ken Griff": null
+    }
+
 --- test-event
 +STR
 +DOC ---

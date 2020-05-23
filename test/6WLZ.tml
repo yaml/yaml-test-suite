@@ -24,6 +24,10 @@
     ...
     --- !<tag:example.com,2000:app/foo> "bar"
 
+--- in-json(<)
+    "bar"
+    "bar"
+
 --- test-event
 +STR
 +DOC ---

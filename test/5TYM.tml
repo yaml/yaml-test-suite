@@ -11,6 +11,10 @@
     --- # Color here
     !m!light green
 
+--- in-json(<)
+    "fluorescent"
+    "green"
+
 --- test-event
 +STR
 +DOC ---

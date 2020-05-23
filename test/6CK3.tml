@@ -9,6 +9,13 @@
     - !!str bar
     - !e!tag%21 baz
 
+--- in-json(<)
+    [
+      "foo",
+      "bar",
+      "baz"
+    ]
+
 --- test-event
 +STR
 +DOC ---
