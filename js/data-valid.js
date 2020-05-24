@@ -33,8 +33,7 @@ var data = {
       "tag" : 1,
       "unknown-tag" : 1,
       "upto-1.2" : 1,
-      "whitespace" : 1,
-      "whitspace" : 1
+      "whitespace" : 1
    },
    "tests" : {
       "229Q" : {
@@ -128,7 +127,7 @@ var data = {
       },
       "2XXW" : {
          "id" : "2XXW",
-         "in_json" : null,
+         "in_json" : "{\n  \"Mark McGwire\": null,\n  \"Sammy Sosa\": null,\n  \"Ken Griff\": null\n}\n",
          "in_yaml" : "# Sets are represented as a\n# Mapping where each key is\n# associated with a null value\n--- !!set\n? Mark McGwire\n? Sammy Sosa\n? Ken Griff\n",
          "tags" : [
             "explicit-key",
@@ -357,7 +356,7 @@ var data = {
       },
       "565N" : {
          "id" : "565N",
-         "in_json" : null,
+         "in_json" : "{\n  \"canonical\": \"R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\",\n  \"generic\": \"R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\\n\",\n  \"description\": \"The binary value above is a tiny arrow encoded as a gif image.\"\n}\n",
          "in_yaml" : "canonical: !!binary \"\\\n R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\\n OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\\\n +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\\\n AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\"\ngeneric: !!binary |\n R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\n OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\n AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\ndescription:\n The binary value above is a tiny arrow encoded as a gif image.\n",
          "tags" : [
             "jayt",
@@ -447,12 +446,24 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :key\n=VAL :value\n-MAP\n-DOC\n-STR\n"
       },
+      "5T43" : {
+         "id" : "5T43",
+         "in_json" : "[\n  {\n    \"key\": \"value\"\n  },\n  {\n    \"key\": \":value\"\n  }\n]\n",
+         "in_yaml" : "- { \"key\":value }\n- { \"key\"::value }\n",
+         "tags" : [
+            "flow",
+            "mapping",
+            "scalar"
+         ],
+         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL \"key\n=VAL :value\n-MAP\n+MAP\n=VAL \"key\n=VAL ::value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
       "5TYM" : {
          "id" : "5TYM",
-         "in_json" : null,
+         "in_json" : "\"fluorescent\"\n\"green\"\n",
          "in_yaml" : "%TAG !m! !my-\n--- # Bulb here\n!m!light fluorescent\n...\n%TAG !m! !my-\n--- # Color here\n!m!light green\n",
          "tags" : [
             "directive",
+            "local-tag",
             "spec",
             "tag"
          ],
@@ -509,7 +520,7 @@ var data = {
       },
       "6CK3" : {
          "id" : "6CK3",
-         "in_json" : null,
+         "in_json" : "[\n  \"foo\",\n  \"bar\",\n  \"baz\"\n]\n",
          "in_yaml" : "%TAG !e! tag:example.com,2000:app/\n---\n- !local foo\n- !!str bar\n- !e!tag%21 baz\n",
          "tags" : [
             "local-tag",
@@ -601,7 +612,7 @@ var data = {
       },
       "6M2F" : {
          "id" : "6M2F",
-         "in_json" : "{\n  \"a\": \"b\",\n  \"\": \"a\"\n}\n",
+         "in_json" : null,
          "in_yaml" : "? &a a\n: &b b\n: *a\n",
          "tags" : [
             "alias",
@@ -646,7 +657,7 @@ var data = {
       },
       "6WLZ" : {
          "id" : "6WLZ",
-         "in_json" : null,
+         "in_json" : "\"bar\"\n\"bar\"\n",
          "in_yaml" : "# Private\n---\n!foo \"bar\"\n...\n# Global\n%TAG ! tag:example.com,2000:app/\n---\n!foo \"bar\"\n",
          "tags" : [
             "1.3-mod",
@@ -727,9 +738,10 @@ var data = {
       },
       "77H8" : {
          "id" : "77H8",
-         "in_json" : null,
+         "in_json" : "{\n  \"not-date\": \"2002-04-28\",\n  \"picture\": \"R0lGODlhDAAMAIQAAP//9/X\\n17unp5WZmZgAAAOfn515eXv\\nPz7Y6OjuDg4J+fn5OTk6enp\\n56enmleECcgggoBADs=\\n\",\n  \"application specific tag\": \"The semantics of the tag\\nabove may be different for\\ndifferent documents.\\n\"\n}\n",
          "in_yaml" : "---\nnot-date: !!str 2002-04-28\n\npicture: !!binary |\n R0lGODlhDAAMAIQAAP//9/X\n 17unp5WZmZgAAAOfn515eXv\n Pz7Y6OjuDg4J+fn5OTk6enp\n 56enmleECcgggoBADs=\n\napplication specific tag: !something |\n The semantics of the tag\n above may be different for\n different documents.\n",
          "tags" : [
+            "local-tag",
             "spec",
             "tag",
             "unknown-tag"
@@ -774,7 +786,7 @@ var data = {
       },
       "7FWL" : {
          "id" : "7FWL",
-         "in_json" : null,
+         "in_json" : "{\n  \"foo\": \"baz\"\n}\n",
          "in_yaml" : "!<tag:yaml.org,2002:str> foo :\n  !<!bar> baz\n",
          "tags" : [
             "mapping",
@@ -1093,11 +1105,12 @@ var data = {
       },
       "9WXW" : {
          "id" : "9WXW",
-         "in_json" : null,
+         "in_json" : "\"bar\"\n\"bar\"\n",
          "in_yaml" : "# Private\n!foo \"bar\"\n...\n# Global\n%TAG ! tag:example.com,2000:app/\n---\n!foo \"bar\"\n",
          "tags" : [
             "1.3-err",
             "directive",
+            "local-tag",
             "spec",
             "tag",
             "unknown-tag"
@@ -1237,7 +1250,7 @@ var data = {
       },
       "C4HZ" : {
          "id" : "C4HZ",
-         "in_json" : null,
+         "in_json" : "[\n  {\n    \"center\": {\n      \"x\": 73,\n      \"y\": 129\n    },\n    \"radius\": 7\n  },\n  {\n    \"start\": {\n      \"x\": 73,\n      \"y\": 129\n    },\n    \"finish\": {\n      \"x\": 89,\n      \"y\": 102\n    }\n  },\n  {\n    \"start\": {\n      \"x\": 73,\n      \"y\": 129\n    },\n    \"color\": 16772795,\n    \"text\": \"Pretty vector drawing.\"\n  }\n]\n",
          "in_yaml" : "%TAG ! tag:clarkevans.com,2002:\n--- !shape\n  # Use the ! handle for presenting\n  # tag:clarkevans.com,2002:circle\n- !circle\n  center: &ORIGIN {x: 73, y: 129}\n  radius: 7\n- !line\n  start: *ORIGIN\n  finish: { x: 89, y: 102 }\n- !label\n  start: *ORIGIN\n  color: 0xFFEEBB\n  text: Pretty vector drawing.\n",
          "tags" : [
             "alias",
@@ -1250,12 +1263,13 @@ var data = {
       },
       "CC74" : {
          "id" : "CC74",
-         "in_json" : null,
+         "in_json" : "\"bar\"\n",
          "in_yaml" : "%TAG !e! tag:example.com,2000:app/\n---\n!e!foo \"bar\"\n",
          "tags" : [
             "directive",
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL <tag:example.com,2000:app/foo> \"bar\n-DOC\n-STR\n"
       },
@@ -1756,6 +1770,16 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :block sequence\n+SEQ\n=VAL :one\n+MAP\n=VAL :two\n=VAL :three\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
+      "JR7V" : {
+         "id" : "JR7V",
+         "in_json" : "[\n  \"a?string\",\n  \"another ? string\",\n  {\n    \"key\": \"value?\"\n  },\n  [\n    \"a?string\"\n  ],\n  [\n    \"another ? string\"\n  ],\n  {\n    \"key\": \"value?\"\n  },\n  {\n    \"key\": \"value?\"\n  },\n  {\n    \"key?\": \"value\"\n  }\n]\n",
+         "in_yaml" : "- a?string\n- another ? string\n- key: value?\n- [a?string]\n- [another ? string]\n- {key: value? }\n- {key: value?}\n- {key?: value }\n",
+         "tags" : [
+            "flow",
+            "scalar"
+         ],
+         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :a?string\n=VAL :another ? string\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+SEQ\n=VAL :a?string\n-SEQ\n+SEQ\n=VAL :another ? string\n-SEQ\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+MAP\n=VAL :key?\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
       "JS2J" : {
          "id" : "JS2J",
          "in_json" : "{\n  \"First occurrence\": \"Value\",\n  \"Second occurrence\": \"Value\"\n}\n",
@@ -1907,7 +1931,6 @@ var data = {
          "in_yaml" : "- !!str \"a\"\n- 'b'\n- &anchor \"c\"\n- *anchor\n- !!str\n",
          "tags" : [
             "alias",
-            "flow",
             "spec",
             "tag"
          ],
@@ -2138,12 +2161,13 @@ var data = {
       },
       "P76L" : {
          "id" : "P76L",
-         "in_json" : null,
+         "in_json" : "\"1 - 3\"\n",
          "in_yaml" : "%TAG !! tag:example.com,2000:app/\n---\n!!int 1 - 3 # Interval, not integer\n",
          "tags" : [
             "header",
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL <tag:example.com,2000:app/int> :1 - 3\n-DOC\n-STR\n"
       },
@@ -2177,7 +2201,7 @@ var data = {
             "single",
             "spec",
             "upto-1.2",
-            "whitspace"
+            "whitespace"
          ],
          "test_event" : "+STR\n+DOC\n=VAL ' 1st non-empty\\n2nd non-empty 3rd non-empty \n-DOC\n-STR\n"
       },
@@ -2196,7 +2220,6 @@ var data = {
          "in_yaml" : "- &a\n- a\n-\n  &a : a\n  b: &b\n-\n  &c : &a\n-\n  ? &d\n-\n  ? &e\n  : &a\n",
          "tags" : [
             "anchor",
-            "empty-key",
             "explicit-key"
          ],
          "test_event" : "+STR\n+DOC\n+SEQ\n=VAL &a :\n=VAL :a\n+MAP\n=VAL &a :\n=VAL :a\n=VAL :b\n=VAL &b :\n-MAP\n+MAP\n=VAL &c :\n=VAL &a :\n-MAP\n+MAP\n=VAL &d :\n=VAL :\n-MAP\n+MAP\n=VAL &e :\n=VAL &a :\n-MAP\n-SEQ\n-DOC\n-STR\n"
@@ -2768,12 +2791,13 @@ var data = {
       },
       "Z9M4" : {
          "id" : "Z9M4",
-         "in_json" : null,
+         "in_json" : "[\n  \"bar\"\n]\n",
          "in_yaml" : "%TAG !e! tag:example.com,2000:app/\n---\n- !e!foo \"bar\"\n",
          "tags" : [
             "header",
             "spec",
-            "tag"
+            "tag",
+            "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n+SEQ\n=VAL <tag:example.com,2000:app/foo> \"bar\n-SEQ\n-DOC\n-STR\n"
       },

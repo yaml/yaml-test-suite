@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#DBG4 - Spec Example 7.10. Plain Characters - YAML Test Matrix</title>
+<title>#5T43 - Colon at the beginning of adjacent flow scalar - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -11,58 +11,34 @@
 
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
-href="https://github.com/yaml/yaml-test-suite/blob/master/test/DBG4.tml">&test-DBG4</a><br>
-&nbsp;&nbsp;Title: Spec Example 7.10. Plain Characters</br>
-&nbsp;&nbsp;Tags: [ flow, scalar, sequence, spec ]</tt></h2>
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">&test-5T43</a><br>
+&nbsp;&nbsp;Title: Colon at the beginning of adjacent flow scalar</br>
+&nbsp;&nbsp;Tags: [ flow, mapping, scalar ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># Outside flow collection:
-- ::vector
-- &quot;: - ()&quot;
-- Up, up, and away!
-- -123
-- http://example.com/foo#bar
-# Inside flow collection:
-- [ ::vector,
-  &quot;: - ()&quot;,
-  &quot;Up, up and away!&quot;,
-  -123,
-  http://example.com/foo#bar ]
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- { &quot;key&quot;:value }
+- { &quot;key&quot;::value }
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +SEQ
-=VAL :::vector
-=VAL &quot;: - ()
-=VAL :Up, up, and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
-+SEQ
-=VAL :::vector
-=VAL &quot;: - ()
-=VAL &quot;Up, up and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
--SEQ
++MAP
+=VAL &quot;key
+=VAL :value
+-MAP
++MAP
+=VAL &quot;key
+=VAL ::value
+-MAP
 -SEQ
 -DOC
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre>[<br>  &quot;::vector&quot;,<br>  &quot;: - ()&quot;,<br>  &quot;Up, up, and away!&quot;,<br>  -123,<br>  &quot;http://example.com/foo#bar&quot;,<br>  [<br>    &quot;::vector&quot;,<br>    &quot;: - ()&quot;,<br>    &quot;Up, up and away!&quot;,<br>    -123,<br>    &quot;http://example.com/foo#bar&quot;<br>  ]<br>]<br></pre>
+<pre>[<br>  {<br>    &quot;key&quot;: &quot;value&quot;<br>  },<br>  {<br>    &quot;key&quot;: &quot;:value&quot;<br>  }<br>]<br></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_ok" id="c-libfyaml-event">
-<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
-<span class="status_box color_ok">&nbsp;</span>ok   </div>
-
-
-  <div class="framework framework_box_ok" id="cpp-yamlcpp-event">
+   <div class="framework framework_box_ok" id="cpp-yamlcpp-event">
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
-<span class="status_box color_ok">&nbsp;</span>ok   </div>
-
-
-  <div class="framework framework_box_ok" id="dotnet-yamldotnet-event">
-<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
@@ -91,12 +67,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/DBG4.tml">&test-D
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
-  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
@@ -116,62 +87,117 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/DBG4.tml">&test-D
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
-  <div class="framework framework_box_json_ok" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
   <div class="framework framework_box_json_ok" id="py-ruamel-json">
 <h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">[</span>
 <span
-class="">  &quot;::vector&quot;,</span>
+class="diff_line">  &quot;{ \&quot;key\&quot;:value }&quot;,</span>
 <span
-class="">  &quot;: - ()&quot;,</span>
-<span
-class="">  &quot;Up, up, and away!&quot;,</span>
-<span
-class="diff_line">  &quot;-123&quot;,</span>
-<span
-class="">  &quot;http://example.com/foo#bar&quot;,</span>
-<span
-class="">  [</span>
-<span
-class="">    &quot;::vector&quot;,</span>
-<span
-class="">    &quot;: - ()&quot;,</span>
-<span
-class="">    &quot;Up, up and away!&quot;,</span>
-<span
-class="">    &quot;-123&quot;,</span>
-<span
-class="">    &quot;http://example.com/foo#bar&quot;</span>
-<span
-class="">  ]</span>
+class="">  &quot;{ \&quot;key\&quot;::value }&quot;</span>
 <span
 class="">]</span>
 </pre>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libyaml-event">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
++MAP
+=VAL &quot;key
+=VAL :value
+-MAP
++MAP
+=VAL &quot;key
+stdin:2:11: error: did not find expected node content
+- { &quot;key&quot;::value }
+          ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>stdin:2:11: error: did not find expected node content
+- { &quot;key&quot;::value }
+          ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
-=VAL :::vector
-=VAL &quot;: - ()
-=VAL :Up, up, and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
-+SEQ
++MAP
+=VAL &quot;key
+=VAL :value
+-MAP
++MAP
+=VAL &quot;key
 Parse error: did not find expected node content
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
++MAP
+=VAL &quot;key
+=VAL :value
+-MAP
++MAP
+=VAL &quot;key
+Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 11, Idx: 28) - (Line: 2, Col: 12, Idx: 29): While parsing a node, did not find expected node content.
+   at YamlDotNet.Core.Parser.ParseNode(Boolean isBlock, Boolean isIndentlessSequence)
+   at YamlDotNet.Core.Parser.ParseFlowMappingValue(Boolean isEmpty)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 11, Idx: 28) - (Line: 2, Col: 12, Idx: 29): While parsing a node, did not find expected node content.
+   at YamlDotNet.Core.Parser.ParseNode(Boolean isBlock, Boolean isIndentlessSequence)
+   at YamlDotNet.Core.Parser.ParseFlowMappingValue(Boolean isEmpty)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.DeserializeHelper(Type tItem, IParser parser, Func`3 nestedObjectDeserializer, IList result, Boolean canUpdate)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
 </pre>
  </div>
 
@@ -179,19 +205,18 @@ Parse error: did not find expected node content
   <div class="framework framework_box_error" id="java-snakeyaml-event">
 <h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
- in &#39;reader&#39;, line 8, column 5:
-    - [ ::vector,
-        ^
+ in &#39;reader&#39;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 expected the node content, but found &#39;:&#39;
- in &#39;reader&#39;, line 8, column 5:
-    - [ ::vector,
-        ^
+ in &#39;reader&#39;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 
 	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
 	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
 	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:648)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue.produce(ParserImpl.java:764)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
@@ -203,23 +228,25 @@ expected the node content, but found &#39;:&#39;
   <div class="framework framework_box_error" id="java-snakeyaml-json">
 <h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow node
- in &#39;reader&#39;, line 8, column 5:
-    - [ ::vector,
-        ^
+ in &#39;reader&#39;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 expected the node content, but found &#39;:&#39;
- in &#39;reader&#39;, line 8, column 5:
-    - [ ::vector,
-        ^
+ in &#39;reader&#39;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 
 	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
 	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
 	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:648)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue.produce(ParserImpl.java:764)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:208)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
 	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:209)
 	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
 	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
@@ -233,17 +260,17 @@ expected the node content, but found &#39;:&#39;
 
   <div class="framework framework_box_error" id="lua-lyaml-json">
 <h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>luajit: 8:3: did not find expected node content
+<span class="status_box color_error">&nbsp;</span>error <pre>luajit: 2:5: did not find expected node content
 stack traceback:
 	[C]: in function &#39;error&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x560da6a18f97
+	[C]: at 0x55baa4823f97
 </pre>
  </div>
 
@@ -254,8 +281,8 @@ stack traceback:
 
     did not find expected node content
 
-was found at , line: 8, column: 5
-while parsing a flow node at line: 8, column: 5
+was found at , line: 2, column: 11
+while parsing a flow node at line: 2, column: 11
 </pre>
  </div>
 
@@ -266,8 +293,8 @@ while parsing a flow node at line: 8, column: 5
 
     did not find expected node content
 
-was found at , line: 8, column: 5
-while parsing a flow node at line: 8, column: 5
+was found at , line: 2, column: 11
+while parsing a flow node at line: 2, column: 11
 </pre>
  </div>
 
@@ -278,8 +305,22 @@ while parsing a flow node at line: 8, column: 5
 
     did not find expected node content
 
-was found at , line: 8, column: 5
-while parsing a flow node at line: 8, column: 5
+was found at , line: 2, column: 11
+while parsing a flow node at line: 2, column: 11
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 15): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 15): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -290,8 +331,8 @@ while parsing a flow node at line: 8, column: 5
 
     did not find expected node content
 
-was found at document: 1, line: 8, column: 5
-while parsing a flow node at line: 8, column: 5
+was found at document: 1, line: 2, column: 11
+while parsing a flow node at line: 2, column: 11
 </pre>
  </div>
 
@@ -302,30 +343,30 @@ while parsing a flow node at line: 8, column: 5
 
     did not find expected node content
 
-was found at document: 1, line: 8, column: 5
-while parsing a flow node at line: 8, column: 5
+was found at document: 1, line: 2, column: 11
+while parsing a flow node at line: 2, column: 11
 </pre>
  </div>
 
 
   <div class="framework framework_box_error" id="perl-yaml-json">
 <h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
-   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
-   Line: 9
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Can&#39;t parse inline map
+   Code: YAML_PARSE_ERR_INLINE_MAP
+   Line: 2
    Document: 1
- at /perl5/lib/perl5/YAML/Loader.pm line 804.
+ at /perl5/lib/perl5/YAML/Loader.pm line 522.
 </pre>
  </div>
 
 
   <div class="framework framework_box_error" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
-   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
-   Line: 9
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Can&#39;t parse inline map
+   Code: YAML_PARSE_ERR_INLINE_MAP
+   Line: 2
    Document: 1
- at /perl5/lib/perl5/YAML/Loader.pm line 804.
+ at /perl5/lib/perl5/YAML/Loader.pm line 522.
 </pre>
  </div>
 
@@ -335,12 +376,12 @@ while parsing a flow node at line: 8, column: 5
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
-=VAL :::vector
-=VAL &quot;: - ()
-=VAL :Up, up, and away!
-=VAL :-123
-=VAL :http://example.com/foo#bar
-+SEQ
++MAP
+=VAL &quot;key
+=VAL :value
+-MAP
++MAP
+=VAL &quot;key
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -348,9 +389,7 @@ Traceback (most recent call last):
     while loader.check_event():
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 474, in parse_flow_sequence_first_entry
-    return self.parse_flow_sequence_entry(first=True)
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 495, in parse_flow_sequence_entry
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 574, in parse_flow_mapping_value
     return self.parse_flow_node()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
     return self.parse_node()
@@ -358,9 +397,9 @@ Traceback (most recent call last):
     token.start_mark)
 yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 8, column 5:
-    - [ ::vector,
-        ^
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 </pre>
  </div>
 
@@ -382,15 +421,15 @@ expected the node content, but found &#39;:&#39;
     node = self.compose_sequence_node(anchor)
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 111, in compose_sequence_node
     node.value.append(self.compose_node(node, index))
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
-    node = self.compose_sequence_node(anchor)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
-    while not self.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 64, in compose_node
+    if self.check_event(AliasEvent):
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 474, in parse_flow_sequence_first_entry
-    return self.parse_flow_sequence_entry(first=True)
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 495, in parse_flow_sequence_entry
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 574, in parse_flow_mapping_value
     return self.parse_flow_node()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
     return self.parse_node()
@@ -398,9 +437,9 @@ expected the node content, but found &#39;:&#39;
     token.start_mark)
 yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 8, column 5:
-    - [ ::vector,
-        ^
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 </pre>
  </div>
 
@@ -422,15 +461,15 @@ expected the node content, but found &#39;:&#39;
     node = self.compose_sequence_node(anchor)
   File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 111, in compose_sequence_node
     node.value.append(self.compose_node(node, index))
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
-    node = self.compose_sequence_node(anchor)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
-    while not self.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 64, in compose_node
+    if self.check_event(AliasEvent):
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 474, in parse_flow_sequence_first_entry
-    return self.parse_flow_sequence_entry(first=True)
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 495, in parse_flow_sequence_entry
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 574, in parse_flow_mapping_value
     return self.parse_flow_node()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 268, in parse_flow_node
     return self.parse_node()
@@ -438,16 +477,16 @@ expected the node content, but found &#39;:&#39;
     token.start_mark)
 yaml.parser.ParserError: while parsing a flow node
 expected the node content, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 8, column 5:
-    - [ ::vector,
-        ^
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 11:
+    - { &quot;key&quot;::value }
+              ^
 </pre>
  </div>
 
 
   <div class="framework framework_box_error" id="ruby-psych-json">
 <h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected node content while parsing a flow node at line 8 column 5 (Psych::SyntaxError)
+<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected node content while parsing a flow node at line 2 column 11 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
 	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
 	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
@@ -458,39 +497,23 @@ expected the node content, but found &#39;:&#39;
  <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
-  &#39;::vector&#39;,
-  &#39;: - ()&#39;,
-  &#39;Up, up, and away!&#39;,
-  -123,
-  &#39;http://example.com/foo#bar&#39;,
-  [
-    &#39;::vector&#39;,
-    &#39;: - ()&#39;,
-    &#39;Up, up and away!&#39;,
-    -123,
-    &#39;http://example.com/foo#bar&#39;
-  ]
+  {
+    &#39;key&#39; =&gt; &#39;value&#39;
+  },
+  {
+    &#39;key&#39; =&gt; &#39;:value&#39;
+  }
 ]
 </pre>
 
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-syck-perl">
-<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+  <div class="framework framework_box_na" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
-  &#39;::vector&#39;,
-  &#39;: - ()&#39;,
-  &#39;Up, up, and away!&#39;,
-  -123,
-  &#39;http://example.com/foo#bar&#39;,
-  [
-    &#39;::vector&#39;,
-    &#39;: - ()&#39;,
-    &#39;Up, up and away!&#39;,
-    -123,
-    &#39;http://example.com/foo#bar&#39;
-  ]
+  &#39;{ &quot;key&quot;:value }&#39;,
+  &#39;{ &quot;key&quot;::value }&#39;
 ]
 </pre>
 
@@ -499,31 +522,12 @@ expected the node content, but found &#39;:&#39;
 
   <div class="framework framework_box_na" id="py-ruamel-py">
 <h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>[&#39;::vector&#39;,
- &#39;: - ()&#39;,
- &#39;Up, up, and away!&#39;,
- -123,
- &#39;http://example.com/foo#bar&#39;,
- [&#39;::vector&#39;, &#39;: - ()&#39;, &#39;Up, up and away!&#39;, -123, &#39;http://example.com/foo#bar&#39;]]
+<span class="status_box color_na">&nbsp;</span>na  <pre>[{&#39;key&#39;: &#39;value&#39;}, {&#39;key&#39;: &#39;:value&#39;}]
 </pre>
 
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny found bad indenting in line &#39;  &quot;: - ()&quot;,&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_ni" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny found bad indenting in line &#39;  &quot;: - ()&quot;,&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
- <hr style="clear: both;">        </body>
+ <hr style="clear: both;">           </body>
 </html>
 

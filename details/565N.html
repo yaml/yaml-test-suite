@@ -42,7 +42,7 @@ description:
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>  &quot;canonical&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,<br>  &quot;description&quot;: &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,<br>  &quot;generic&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="c-libfyaml-event">
@@ -105,9 +105,839 @@ description:
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-xs-perl">
-<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="diff_line">parse error: Invalid numeric literal at line 202, column 6</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">{</span>
+<span
+class="diff_line">  &quot;canonical&quot;: {</span>
+<span
+class="">    &quot;data&quot;: [</span>
+<span
+class="">      71,</span>
+<span
+class="">      73,</span>
+<span
+class="">      70,</span>
+<span
+class="">      56,</span>
+<span
+class="">      57,</span>
+<span
+class="">      97,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      132,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      255,</span>
+<span
+class="">      255,</span>
+<span
+class="">      247,</span>
+<span
+class="">      245,</span>
+<span
+class="">      245,</span>
+<span
+class="">      238,</span>
+<span
+class="">      233,</span>
+<span
+class="">      233,</span>
+<span
+class="">      229,</span>
+<span
+class="">      102,</span>
+<span
+class="">      102,</span>
+<span
+class="">      102,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      231,</span>
+<span
+class="">      231,</span>
+<span
+class="">      231,</span>
+<span
+class="">      94,</span>
+<span
+class="">      94,</span>
+<span
+class="">      94,</span>
+<span
+class="">      243,</span>
+<span
+class="">      243,</span>
+<span
+class="">      237,</span>
+<span
+class="">      142,</span>
+<span
+class="">      142,</span>
+<span
+class="">      142,</span>
+<span
+class="">      224,</span>
+<span
+class="">      224,</span>
+<span
+class="">      224,</span>
+<span
+class="">      159,</span>
+<span
+class="">      159,</span>
+<span
+class="">      159,</span>
+<span
+class="">      147,</span>
+<span
+class="">      147,</span>
+<span
+class="">      147,</span>
+<span
+class="">      167,</span>
+<span
+class="">      167,</span>
+<span
+class="">      167,</span>
+<span
+class="">      158,</span>
+<span
+class="">      158,</span>
+<span
+class="">      158,</span>
+<span
+class="">      105,</span>
+<span
+class="">      105,</span>
+<span
+class="">      105,</span>
+<span
+class="">      99,</span>
+<span
+class="">      99,</span>
+<span
+class="">      99,</span>
+<span
+class="">      163,</span>
+<span
+class="">      163,</span>
+<span
+class="">      163,</span>
+<span
+class="">      132,</span>
+<span
+class="">      132,</span>
+<span
+class="">      132,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      33,</span>
+<span
+class="">      254,</span>
+<span
+class="">      14,</span>
+<span
+class="">      77,</span>
+<span
+class="">      97,</span>
+<span
+class="">      100,</span>
+<span
+class="">      101,</span>
+<span
+class="">      32,</span>
+<span
+class="">      119,</span>
+<span
+class="">      105,</span>
+<span
+class="">      116,</span>
+<span
+class="">      104,</span>
+<span
+class="">      32,</span>
+<span
+class="">      71,</span>
+<span
+class="">      73,</span>
+<span
+class="">      77,</span>
+<span
+class="">      80,</span>
+<span
+class="">      0,</span>
+<span
+class="">      44,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      5,</span>
+<span
+class="">      44,</span>
+<span
+class="">      32,</span>
+<span
+class="">      32,</span>
+<span
+class="">      142,</span>
+<span
+class="">      129,</span>
+<span
+class="">      48,</span>
+<span
+class="">      158,</span>
+<span
+class="">      227,</span>
+<span
+class="">      64,</span>
+<span
+class="">      20,</span>
+<span
+class="">      232,</span>
+<span
+class="">      105,</span>
+<span
+class="">      16,</span>
+<span
+class="">      196,</span>
+<span
+class="">      209,</span>
+<span
+class="">      138,</span>
+<span
+class="">      8,</span>
+<span
+class="">      28,</span>
+<span
+class="">      207,</span>
+<span
+class="">      128,</span>
+<span
+class="">      77,</span>
+<span
+class="">      36,</span>
+<span
+class="">      122,</span>
+<span
+class="">      239,</span>
+<span
+class="">      255,</span>
+<span
+class="">      48,</span>
+<span
+class="">      133,</span>
+<span
+class="">      112,</span>
+<span
+class="">      184,</span>
+<span
+class="">      176,</span>
+<span
+class="">      49,</span>
+<span
+class="">      102,</span>
+<span
+class="">      13,</span>
+<span
+class="">      27,</span>
+<span
+class="">      206,</span>
+<span
+class="">      1,</span>
+<span
+class="">      195,</span>
+<span
+class="">      1,</span>
+<span
+class="">      30,</span>
+<span
+class="">      16,</span>
+<span
+class="">      39,</span>
+<span
+class="">      32,</span>
+<span
+class="">      130,</span>
+<span
+class="">      10,</span>
+<span
+class="">      1,</span>
+<span
+class="">      0,</span>
+<span
+class="">      59</span>
+<span
+class="">    ],</span>
+<span
+class="">    &quot;type&quot;: &quot;Buffer&quot;</span>
+<span
+class="">  },</span>
+<span
+class="">  &quot;description&quot;: &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,</span>
+<span
+class="">  &quot;generic&quot;: {</span>
+<span
+class="">    &quot;data&quot;: [</span>
+<span
+class="">      71,</span>
+<span
+class="">      73,</span>
+<span
+class="">      70,</span>
+<span
+class="">      56,</span>
+<span
+class="">      57,</span>
+<span
+class="">      97,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      132,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      255,</span>
+<span
+class="">      255,</span>
+<span
+class="">      247,</span>
+<span
+class="">      245,</span>
+<span
+class="">      245,</span>
+<span
+class="">      238,</span>
+<span
+class="">      233,</span>
+<span
+class="">      233,</span>
+<span
+class="">      229,</span>
+<span
+class="">      102,</span>
+<span
+class="">      102,</span>
+<span
+class="">      102,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      231,</span>
+<span
+class="">      231,</span>
+<span
+class="">      231,</span>
+<span
+class="">      94,</span>
+<span
+class="">      94,</span>
+<span
+class="">      94,</span>
+<span
+class="">      243,</span>
+<span
+class="">      243,</span>
+<span
+class="">      237,</span>
+<span
+class="">      142,</span>
+<span
+class="">      142,</span>
+<span
+class="">      142,</span>
+<span
+class="">      224,</span>
+<span
+class="">      224,</span>
+<span
+class="">      224,</span>
+<span
+class="">      159,</span>
+<span
+class="">      159,</span>
+<span
+class="">      159,</span>
+<span
+class="">      147,</span>
+<span
+class="">      147,</span>
+<span
+class="">      147,</span>
+<span
+class="">      167,</span>
+<span
+class="">      167,</span>
+<span
+class="">      167,</span>
+<span
+class="">      158,</span>
+<span
+class="">      158,</span>
+<span
+class="">      158,</span>
+<span
+class="">      105,</span>
+<span
+class="">      105,</span>
+<span
+class="">      105,</span>
+<span
+class="">      99,</span>
+<span
+class="">      99,</span>
+<span
+class="">      99,</span>
+<span
+class="">      163,</span>
+<span
+class="">      163,</span>
+<span
+class="">      163,</span>
+<span
+class="">      132,</span>
+<span
+class="">      132,</span>
+<span
+class="">      132,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      255,</span>
+<span
+class="">      254,</span>
+<span
+class="">      249,</span>
+<span
+class="">      33,</span>
+<span
+class="">      254,</span>
+<span
+class="">      14,</span>
+<span
+class="">      77,</span>
+<span
+class="">      97,</span>
+<span
+class="">      100,</span>
+<span
+class="">      101,</span>
+<span
+class="">      32,</span>
+<span
+class="">      119,</span>
+<span
+class="">      105,</span>
+<span
+class="">      116,</span>
+<span
+class="">      104,</span>
+<span
+class="">      32,</span>
+<span
+class="">      71,</span>
+<span
+class="">      73,</span>
+<span
+class="">      77,</span>
+<span
+class="">      80,</span>
+<span
+class="">      0,</span>
+<span
+class="">      44,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      12,</span>
+<span
+class="">      0,</span>
+<span
+class="">      0,</span>
+<span
+class="">      5,</span>
+<span
+class="">      44,</span>
+<span
+class="">      32,</span>
+<span
+class="">      32,</span>
+<span
+class="">      142,</span>
+<span
+class="">      129,</span>
+<span
+class="">      48,</span>
+<span
+class="">      158,</span>
+<span
+class="">      227,</span>
+<span
+class="">      64,</span>
+<span
+class="">      20,</span>
+<span
+class="">      232,</span>
+<span
+class="">      105,</span>
+<span
+class="">      16,</span>
+<span
+class="">      196,</span>
+<span
+class="">      209,</span>
+<span
+class="">      138,</span>
+<span
+class="">      8,</span>
+<span
+class="">      28,</span>
+<span
+class="">      207,</span>
+<span
+class="">      128,</span>
+<span
+class="">      77,</span>
+<span
+class="">      36,</span>
+<span
+class="">      122,</span>
+<span
+class="">      239,</span>
+<span
+class="">      255,</span>
+<span
+class="">      48,</span>
+<span
+class="">      133,</span>
+<span
+class="">      112,</span>
+<span
+class="">      184,</span>
+<span
+class="">      176,</span>
+<span
+class="">      49,</span>
+<span
+class="">      102,</span>
+<span
+class="">      13,</span>
+<span
+class="">      27,</span>
+<span
+class="">      206,</span>
+<span
+class="">      1,</span>
+<span
+class="">      195,</span>
+<span
+class="">      1,</span>
+<span
+class="">      30,</span>
+<span
+class="">      16,</span>
+<span
+class="">      39,</span>
+<span
+class="">      32,</span>
+<span
+class="">      130,</span>
+<span
+class="">      10,</span>
+<span
+class="">      1,</span>
+<span
+class="">      0,</span>
+<span
+class="">      59</span>
+<span
+class="">    ],</span>
+<span
+class="">    &quot;type&quot;: &quot;Buffer&quot;</span>
+<span
+class="">  }</span>
+<span
+class="">}</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">{</span>
+<span
+class="diff_line">  &quot;canonical&quot;: &quot;GIF89a\f\u0000\f\u0000\u0000\u0000ÿÿ÷õõîééåfff\u0000\u0000\u0000ççç^^^óóíààà§§§iiiccc£££ÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþùÿþù!þ\u000eMade with GIMP\u0000,\u0000\u0000\u0000\u0000\f\u0000\f\u0000\u0000\u0005,  0ã@\u0014èi\u0010ÄÑ\b\u001cÏM$zïÿ0p¸°1f\r\u001bÎ\u0001Ã\u0001\u001e\u0010&#39; \n\u0001\u0000;&quot;,</span>
+<span
+class="">  &quot;description&quot;: &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,</span>
+<span
+class="">  &quot;generic&quot;: &quot;GIF89a\f\u0000\f\u0000\u0000\u0000ÿÿ÷õõîééåfff\u0000\u0000\u0000ççç^^^óóíààà&quot;</span>
+<span
+class="">}</span>
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 2
+   Document: 1
+ at /perl5/lib/perl5/YAML/Loader.pm line 804.
 </pre>
  </div>
 
@@ -123,298 +953,66 @@ description:
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;canonical&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,
-  &quot;generic&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;,
-  &quot;description&quot;: &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;
-}
+  <div class="framework framework_box_error" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 21, in &lt;module&gt;
+    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
+    **kw).encode(obj)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
+    yield from chunks
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
+    o = _default(o)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
+    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
+TypeError: Object of type bytes is not JSON serializable
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 1, Col: 12, Idx: 11) - (Line: 5, Col: 65, Idx: 282): Encountered an unresolved tag &#39;tag:yaml.org,2002:binary&#39;
-   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
-   at Program.Main(String[] commandLineArguments)
-Aborted (core dumped)
+  <div class="framework framework_box_error" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
+    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
+    **kw).encode(obj)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
+    yield from chunks
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
+    o = _default(o)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
+    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
+TypeError: Object of type bytes is not JSON serializable
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="hs-hsyaml-json">
-<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;canonical&quot;:&quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,&quot;description&quot;:&quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,&quot;generic&quot;:&quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;}
+  <div class="framework framework_box_error" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.5.0/json/common.rb:224:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
+	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
+	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
+	from /usr/lib/ruby/2.5.0/json/common.rb:394:in `dump&#39;
+	from /yaml/bin/ruby-psych-json:7:in `block in &lt;main&gt;&#39;
+	from /yaml/bin/ruby-psych-json:6:in `each&#39;
+	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="java-snakeyaml-json">
-<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;canonical&quot;: [
-    71,
-    73,
-    70,
-    56,
-    57,
-    97,
-    12,
-    0,
-    12,
-    0,
-    -124,
-    0,
-    0,
-    -1,
-    -1,
-    -9,
-    -11,
-    -11,
-    -18,
-    -23,
-    -23,
-    -27,
-    102,
-    102,
-    102,
-    0,
-    0,
-    0,
-    -25,
-    -25,
-    -25,
-    94,
-    94,
-    94,
-    -13,
-    -13,
-    -19,
-    -114,
-    -114,
-    -114,
-    -32,
-    -32,
-    -32,
-    -97,
-    -97,
-    -97,
-    -109,
-    -109,
-    -109,
-    -89,
-    -89,
-    -89,
-    -98,
-    -98,
-    -98,
-    105,
-    105,
-    105,
-    99,
-    99,
-    99,
-    -93,
-    -93,
-    -93,
-    -124,
-    -124,
-    -124,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    -1,
-    -2,
-    -7,
-    33,
-    -2,
-    14,
-    77,
-    97,
-    100,
-    101,
-    32,
-    119,
-    105,
-    116,
-    104,
-    32,
-    71,
-    73,
-    77,
-    80,
-    0,
-    44,
-    0,
-    0,
-    0,
-    0,
-    12,
-    0,
-    12,
-    0,
-    0,
-    5,
-    44,
-    32,
-    32,
-    -114,
-    -127,
-    48,
-    -98,
-    -29,
-    64,
-    20,
-    -24,
-    105,
-    16,
-    -60,
-    -47,
-    -118,
-    8,
-    28,
-    -49,
-    -128,
-    77,
-    36,
-    122,
-    -17,
-    -1,
-    48,
-    -123,
-    112,
-    -72,
-    -80,
-    49,
-    102,
-    13,
-    27,
-    -50,
-    1,
-    -61,
-    1,
-    30,
-    16,
-    39,
-    32,
-    -126,
-    10,
-    1,
-    0,
-    59
-  ],
-  &quot;generic&quot;: [
-    71,
-    73,
-    70,
-    56,
-    57,
-    97,
-    12,
-    0,
-    12,
-    0,
-    -124,
-    0,
------ 8&lt; -----
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="js-jsyaml-json">
-<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;canonical&quot;:{&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[71,73,70,56,57,97,12,0,12,0,132,0,0,255,255,247,245,245,238,233,233,229,102,102,102,0,0,0,231,231,231,94,94,94,243,243,237,142,142,142,224,224,224,159,159,159,147,147,147,167,167,167,158,158,158,105,105,105,99,99,99,163,163,163,132,132,132,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,33,254,14,77,97,100,101,32,119,105,116,104,32,71,73,77,80,0,44,0,0,0,0,12,0,12,0,0,5,44,32,32,142,129,48,158,227,64,20,232,105,16,196,209,138,8,28,207,128,77,36,122,239,255,48,133,112,184,176,49,102,13,27,206,1,195,1,30,16,39,32,130,10,1,0,59]},&quot;generic&quot;:{&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[71,73,70,56,57,97,12,0,12,0,132,0,0,255,255,247,245,245,238,233,233,229,102,102,102,0,0,0,231,231,231,94,94,94,243,243,237,142,142,142,224,224,224,159,159,159,147,147,147,167,167,167,158,158,158,105,105,105,99,99,99,163,163,163,132,132,132,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,255,254,249,33,254,14,77,97,100,101,32,119,105,116,104,32,71,73,77,80,0,44,0,0,0,0,12,0,12,0,0,5,44,32,32,142,129,48,158,227,64,20,232,105,16,196,209,138,8,28,207,128,77,36,122,239,255,48,133,112,184,176,49,102,13,27,206,1,195,1,30,16,39,32,130,10,1,0,59]},&quot;description&quot;:&quot;The binary value above is a tiny arrow encoded as a gif image.&quot;}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;canonical&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,
-  &quot;generic&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;,
-  &quot;description&quot;: &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="lua-lyaml-json">
-<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;canonical&quot;:&quot;R0lGODlhDAAMAIQAAP\/\/9\/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv\/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,&quot;generic&quot;:&quot;R0lGODlhDAAMAIQAAP\/\/9\/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/++f\/+\n+f\/++f\/++f\/++f\/++f\/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv\/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;,&quot;description&quot;:&quot;The binary value above is a tiny arrow encoded as a gif image.&quot;}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;canonical&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,
-   &quot;description&quot; : &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,
-   &quot;generic&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pp-perl">
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;canonical&#39; =&gt; &#39;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&#39;,
@@ -424,18 +1022,6 @@ OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
 +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
 AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
 &#39;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pplibyaml-json">
-<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;canonical&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=&quot;,
-   &quot;description&quot; : &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,
-   &quot;generic&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n&quot;
 }
 </pre>
 
@@ -458,18 +1044,6 @@ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;canonical&quot; : &quot;GIF89a\f\u0000\f\u0000\u0084\u0000\u0000\u00ff\u00ff\u00f7\u00f5\u00f5\u00ee\u00e9\u00e9\u00e5fff\u0000\u0000\u0000\u00e7\u00e7\u00e7^^^\u00f3\u00f3\u00ed\u008e\u008e\u008e\u00e0\u00e0\u00e0\u009f\u009f\u009f\u0093\u0093\u0093\u00a7\u00a7\u00a7\u009e\u009e\u009eiiiccc\u00a3\u00a3\u00a3\u0084\u0084\u0084\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9\u00ff\u00fe\u00f9!\u00fe\u000eMade with GIMP\u0000,\u0000\u0000\u0000\u0000\f\u0000\f\u0000\u0000\u0005,  \u008e\u00810\u009e\u00e3@\u0014\u00e8i\u0010\u00c4\u00d1\u008a\b\u001c\u00cf\u0080M$z\u00ef\u00ff0\u0085p\u00b8\u00b01f\r\u001b\u00ce\u0001\u00c3\u0001\u001e\u0010&#39; \u0082\n\u0001\u0000;&quot;,
-   &quot;description&quot; : &quot;The binary value above is a tiny arrow encoded as a gif image.&quot;,
-   &quot;generic&quot; : &quot;GIF89a\f\u0000\f\u0000\u0084\u0000\u0000\u00ff\u00ff\u00f7\u00f5\u00f5\u00ee\u00e9\u00e9\u00e5fff\u0000\u0000\u0000\u00e7\u00e7\u00e7^^^\u00f3\u00f3\u00ed\u008e\u008e\u008e\u00e0\u00e0\u00e0\u009f\u009f&quot;
-}
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
@@ -478,58 +1052,6 @@ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
   &#39;description&#39; =&gt; &#39;The binary value above is a tiny arrow encoded as a gif image.&#39;,
   &#39;generic&#39; =&gt; &#39;GIF89a  �  ���������fff   ���^^^��펎������&#39;
 }
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;!!binary &quot;\&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-xs-json">
-<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-yaml-json">
-<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML Error: Inconsistent indentation level
-   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
-   Line: 2
-   Document: 1
- at /perl5/lib/perl5/YAML/Loader.pm line 804.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="py-pyyaml-json">
-<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
-    yield from chunks
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
-    o = _default(o)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
-    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
-TypeError: Object of type bytes is not JSON serializable
 </pre>
 
  </div>
@@ -565,30 +1087,6 @@ TypeError: Object of type bytes is not JSON serializable
  </div>
 
 
-  <div class="framework framework_box_na" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
-    yield from chunks
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
-    o = _default(o)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
-    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
-TypeError: Object of type bytes is not JSON serializable
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="py-ruamel-py">
 <h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;canonical&#39;: b&#39;GIF89a\x0c\x00\x0c\x00\x84\x00\x00\xff\xff\xf7\xf5\xf5\xee\xe9&#39;
@@ -619,23 +1117,51 @@ TypeError: Object of type bytes is not JSON serializable
  </div>
 
 
-  <div class="framework framework_box_na" id="ruby-psych-json">
-<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/2.5.0/json/common.rb:224:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
-	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
-	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
-	from /usr/lib/ruby/2.5.0/json/common.rb:394:in `dump&#39;
-	from /yaml/bin/ruby-psych-json:7:in `block in &lt;main&gt;&#39;
-	from /yaml/bin/ruby-psych-json:6:in `each&#39;
-	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 1, Col: 12, Idx: 11) - (Line: 5, Col: 65, Idx: 282): Encountered an unresolved tag &#39;tag:yaml.org,2002:binary&#39;
+   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
 </pre>
-
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+  <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!binary &quot;\&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!binary &quot;\&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
 </pre>
  </div>
 

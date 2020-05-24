@@ -368,7 +368,12 @@ explicit-key, mapping, spec, unknown-tag<br>
 </span><span class="question">?</span><span class="default"> </span><span class="default">Sammy Sosa</span><span class="eol">
 </span><span class="question">?</span><span class="default"> </span><span class="default">Ken Griff</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">Mark McGwire</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">null</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">Sammy Sosa</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">null</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">Ken Griff</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">null</span><span class="eol">
+</span><span class="flowmap_end">}</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -1018,7 +1023,12 @@ jayt, tag, unknown-tag<br>
 </span><span class="default">description</span><span class="colon">:</span><span class="eol">
 </span><span class="default"> </span><span class="default">The binary value above is a tiny arrow encoded as a gif image.</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">canonical</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">generic</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\nOTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n+f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\nAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\n</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">description</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">The binary value above is a tiny arrow encoded as a gif image.</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="flowmap_end">}</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
@@ -1293,11 +1303,49 @@ comment, mapping, spec<br>
 </span></span></pre></div>
 </td>
   </tr>
+ <tr id="tr-title-5T43"><td class="title" colspan="4"><a href="#5T43">#</a><a name="5T43">&nbsp;</a>5T43 - Colon at the beginning of adjacent flow scalar
+</td></tr>
+<tr id="tr-content-5T43">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+flow, mapping, scalar<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">Source</a><br>
+<a href="../details/5T43.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="dash">-</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default">value</span><span class="default"> </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default">:value</span><span class="default"> </span><span class="flowmap_end">}</span><span class="eol">
+</span></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">value</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">:value</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
+<td valign="top" class="events" style="">
+<div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+MAP</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL &quot;key</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :value</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-MAP</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+MAP</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL &quot;key</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL ::value</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-MAP</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">-DOC</span><span class="eol">
+</span></span><span style="padding-left: -0.5em;"><span class="default">-STR</span><span class="eol">
+</span></span></pre></div>
+</td>
+  </tr>
  <tr id="tr-title-5TYM"><td class="title" colspan="4"><a href="#5TYM">#</a><a name="5TYM">&nbsp;</a>5TYM - Spec Example 6.21. Local Tag Prefix
 </td></tr>
 <tr id="tr-content-5TYM">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-directive, spec, tag<br>
+directive, local-tag, spec, tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/5TYM.tml">Source</a><br>
 <a href="../details/5TYM.html">Test Results</a>
 </div></td>
@@ -1309,7 +1357,9 @@ directive, spec, tag<br>
 </span><span class="doc_start">---</span><span class="eol"> # Color here
 </span><span class="tag">!m!light</span><span class="default"> </span><span class="default">green</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="doublequote">&quot;</span><span class="doublequoted">fluorescent</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="doublequote">&quot;</span><span class="doublequoted">green</span><span class="doublequote">&quot;</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -1469,7 +1519,12 @@ local-tag, spec, tag<br>
 </span><span class="dash">-</span><span class="default"> </span><span class="tag">!!str</span><span class="default"> </span><span class="default">bar</span><span class="eol">
 </span><span class="dash">-</span><span class="default"> </span><span class="tag">!e!tag%21</span><span class="default"> </span><span class="default">baz</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">foo</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">baz</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -1717,11 +1772,7 @@ alias, empty-key, explicit-key<br>
 </span><span class="colon">:</span><span class="default"> </span><span class="anchor">&amp;b</span><span class="default"> </span><span class="default">b</span><span class="eol">
 </span><span class="colon">:</span><span class="default"> </span><span class="alias">*a</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowmap_start">{</span><span class="eol">
-</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">a</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">b</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
-</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">a</span><span class="doublequote">&quot;</span><span class="eol">
-</span><span class="flowmap_end">}</span><span class="eol">
-</span></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
@@ -1846,7 +1897,9 @@ double, mapping, single<br>
 </span><span class="doc_start">---</span><span class="eol">
 </span><span class="tag">!foo</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -2063,7 +2116,7 @@ mapping, tag<br>
 </td></tr>
 <tr id="tr-content-77H8">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-spec, tag, unknown-tag<br>
+local-tag, spec, tag, unknown-tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/77H8.tml">Source</a><br>
 <a href="../details/77H8.html">Test Results</a>
 </div></td>
@@ -2081,7 +2134,12 @@ spec, tag, unknown-tag<br>
 </span><span class="indent"> </span><span class="block_scalar_content">above may be different for</span><span class="eol">
 </span><span class="indent"> </span><span class="block_scalar_content">different documents.</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">not-date</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">2002-04-28</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">picture</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">application specific tag</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">The semantics of the tag\nabove may be different for\ndifferent documents.\n</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="flowmap_end">}</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -2264,7 +2322,10 @@ mapping, spec, tag, unknown-tag<br>
 <td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="tag">!&lt;tag:yaml.org,2002:str&gt;</span><span class="default"> </span><span class="default">foo</span><span class="default"> </span><span class="colon">:</span><span class="eol">
 </span><span class="default">  </span><span class="tag">!&lt;!bar&gt;</span><span class="default"> </span><span class="default">baz</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">foo</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">baz</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="flowmap_end">}</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
@@ -3338,7 +3399,7 @@ mapping, sequence, spec<br>
 </td></tr>
 <tr id="tr-content-9WXW">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-1.3-err, directive, spec, tag, unknown-tag<br>
+1.3-err, directive, local-tag, spec, tag, unknown-tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/9WXW.tml">Source</a><br>
 <a href="../details/9WXW.html">Test Results</a>
 </div></td>
@@ -3350,7 +3411,9 @@ mapping, sequence, spec<br>
 </span><span class="doc_start">---</span><span class="eol">
 </span><span class="tag">!foo</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
@@ -3759,7 +3822,34 @@ alias, directive, local-tag, spec, tag<br>
 </span><span class="default">  </span><span class="default">color</span><span class="colon">:</span><span class="default"> </span><span class="default">0xFFEEBB</span><span class="eol">
 </span><span class="default">  </span><span class="default">text</span><span class="colon">:</span><span class="default"> </span><span class="default">Pretty vector drawing.</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">center</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">x</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">73</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">y</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">129</span><span class="eol">
+</span><span class="default">    </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">radius</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">7</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">start</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">x</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">73</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">y</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">129</span><span class="eol">
+</span><span class="default">    </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">finish</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">x</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">89</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">y</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">102</span><span class="eol">
+</span><span class="default">    </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">start</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">x</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">73</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">      </span><span class="doublequote">&quot;</span><span class="doublequoted">y</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">129</span><span class="eol">
+</span><span class="default">    </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">color</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">16772795</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">text</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">Pretty vector drawing.</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -3804,7 +3894,7 @@ alias, directive, local-tag, spec, tag<br>
 </td></tr>
 <tr id="tr-content-CC74">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-directive, spec, tag<br>
+directive, spec, tag, unknown-tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/CC74.tml">Source</a><br>
 <a href="../details/CC74.html">Test Results</a>
 </div></td>
@@ -3812,7 +3902,8 @@ directive, spec, tag<br>
 </span><span class="doc_start">---</span><span class="eol">
 </span><span class="tag">!e!foo</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -5392,6 +5483,80 @@ mapping, sequence, spec<br>
 </span></span></pre></div>
 </td>
   </tr>
+ <tr id="tr-title-JR7V"><td class="title" colspan="4"><a href="#JR7V">#</a><a name="JR7V">&nbsp;</a>JR7V - Question marks in scalars
+</td></tr>
+<tr id="tr-content-JR7V">
+<td valign="top" class="info"><div class="info"><b>Tags:</b><br>
+flow, scalar<br>
+<a href="https://github.com/yaml/yaml-test-suite/blob/master/test/JR7V.tml">Source</a><br>
+<a href="../details/JR7V.html">Test Results</a>
+</div></td>
+<td valign="top" class="yaml"><div class="yaml"><pre class="box"><span class="dash">-</span><span class="default"> </span><span class="default">a?string</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="default">another ? string</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="default">key</span><span class="colon">:</span><span class="default"> </span><span class="default">value?</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default">a?string</span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default">another ? string</span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default">key</span><span class="colon">:</span><span class="default"> </span><span class="default">value?</span><span class="default"> </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default">key</span><span class="colon">:</span><span class="default"> </span><span class="default">value?</span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="flowmap_start">{</span><span class="default">key?</span><span class="colon">:</span><span class="default"> </span><span class="default">value</span><span class="default"> </span><span class="flowmap_end">}</span><span class="eol">
+</span></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">a?string</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">another ? string</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">value?</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">a?string</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowseq_end">]</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">another ? string</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowseq_end">]</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">value?</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">key</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">value?</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">key?</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">value</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
+<td valign="top" class="events" style="">
+<div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">+DOC</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">=VAL :a?string</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">=VAL :another ? string</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+MAP</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :key</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :value?</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-MAP</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :a?string</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :another ? string</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+MAP</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :key</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :value?</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-MAP</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+MAP</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :key</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :value?</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-MAP</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">+MAP</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :key?</span><span class="eol">
+</span></span><span style="padding-left: 1.5em;"><span class="default">=VAL :value</span><span class="eol">
+</span></span><span style="padding-left: 1em;"><span class="default">-MAP</span><span class="eol">
+</span></span><span style="padding-left: 0.5em;"><span class="default">-SEQ</span><span class="eol">
+</span></span><span style="padding-left: 0em;"><span class="default">-DOC</span><span class="eol">
+</span></span><span style="padding-left: -0.5em;"><span class="default">-STR</span><span class="eol">
+</span></span></pre></div>
+</td>
+  </tr>
  <tr id="tr-title-JS2J"><td class="title" colspan="4"><a href="#JS2J">#</a><a name="JS2J">&nbsp;</a>JS2J - Spec Example 6.29. Node Anchors
 </td></tr>
 <tr id="tr-content-JS2J">
@@ -5851,7 +6016,7 @@ flow, mapping, spec<br>
 </td></tr>
 <tr id="tr-content-LE5A">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-alias, flow, spec, tag<br>
+alias, spec, tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/LE5A.tml">Source</a><br>
 <a href="../details/LE5A.html">Test Results</a>
 </div></td>
@@ -6571,7 +6736,7 @@ comment, folded, literal, scalar, spec<br>
 </td></tr>
 <tr id="tr-content-P76L">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-header, spec, tag<br>
+header, spec, tag, unknown-tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/P76L.tml">Source</a><br>
 <a href="../details/P76L.html">Test Results</a>
 </div></td>
@@ -6579,7 +6744,8 @@ header, spec, tag<br>
 </span><span class="doc_start">---</span><span class="eol">
 </span><span class="tag">!!int</span><span class="default"> </span><span class="default">1 - 3</span><span class="eol"> # Interval, not integer
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="doublequote">&quot;</span><span class="doublequoted">1 - 3</span><span class="doublequote">&quot;</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">
@@ -6675,7 +6841,7 @@ mapping, sequence, spec<br>
 </td></tr>
 <tr id="tr-content-PRH3">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-scalar, single, spec, upto-1.2, whitspace<br>
+scalar, single, spec, upto-1.2, whitespace<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/PRH3.tml">Source</a><br>
 <a href="../details/PRH3.html">Test Results</a>
 </div></td>
@@ -6731,7 +6897,7 @@ header<br>
 </td></tr>
 <tr id="tr-content-PW8X">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-anchor, empty-key, explicit-key<br>
+anchor, explicit-key<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/PW8X.tml">Source</a><br>
 <a href="../details/PW8X.html">Test Results</a>
 </div></td>
@@ -8695,7 +8861,7 @@ sequence, spec<br>
 </td></tr>
 <tr id="tr-content-Z9M4">
 <td valign="top" class="info"><div class="info"><b>Tags:</b><br>
-header, spec, tag<br>
+header, spec, tag, unknown-tag<br>
 <a href="https://github.com/yaml/yaml-test-suite/blob/master/test/Z9M4.tml">Source</a><br>
 <a href="../details/Z9M4.html">Test Results</a>
 </div></td>
@@ -8703,7 +8869,10 @@ header, spec, tag<br>
 </span><span class="doc_start">---</span><span class="eol">
 </span><span class="dash">-</span><span class="default"> </span><span class="tag">!e!foo</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
 </span></pre></div></td>
- <td valign="top" class="json"><div class="json"><pre class="box"></pre></div></td>
+ <td valign="top" class="json"><div class="json"><pre class="box"><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="doublequote">&quot;</span><span class="doublequoted">bar</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></pre></div></td>
 <td valign="top" class="events" style="">
 <div class="events"><pre class="box"><div class="events"><span style="padding-left: -0.5em;"><span class="default">+STR</span><span class="eol">
 </span></span><span style="padding-left: 0em;"><span class="default">+DOC ---</span><span class="eol">

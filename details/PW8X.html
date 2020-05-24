@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/PW8X.tml">&test-PW8X</a><br>
 &nbsp;&nbsp;Title: Anchors on Empty Scalars</br>
-&nbsp;&nbsp;Tags: [ anchor, empty-key, explicit-key ]</tt></h2>
+&nbsp;&nbsp;Tags: [ anchor, explicit-key ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- &amp;a
 - a
@@ -134,6 +134,41 @@ YAML Error: Invalid element in map
    Line: 10
    Document: 1
  at /perl5/lib/perl5/YAML/Loader.pm line 360.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 129, in compose_mapping_node
+    item_key = self.compose_node(node, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 77, in compose_node
+    &quot;second occurrence&quot;, event.start_mark)
+yaml.composer.ComposerError: found duplicate anchor &#39;a&#39;; first occurrence
+  in &quot;&lt;unicode string&gt;&quot;, line 1, column 3:
+    - &amp;a
+      ^
+second occurrence
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
+      &amp;a : a
+      ^
 </pre>
  </div>
 
@@ -267,7 +302,7 @@ YAMLException: bad indentation of a sequence entry at line 4, column 6:
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55aaea3c4f97
+	[C]: at 0x55a178a51f97
 </pre>
 
  </div>
@@ -585,41 +620,6 @@ second occurrence   in &quot;&lt;unicode string&gt;&quot;, line 12, column 5:
  <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;&amp;a&#39; at /yaml/bin/perl-tiny-perl line 15.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_ni" id="py-pyyaml-py">
-<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_ni">&nbsp;</span>ni <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
-    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
-  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
-    yield loader.get_data()
-  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
-    return self.construct_document(self.get_node())
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
-    return self.compose_document()
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
-    node = self.compose_node(None, None)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
-    node = self.compose_sequence_node(anchor)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 111, in compose_sequence_node
-    node.value.append(self.compose_node(node, index))
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 84, in compose_node
-    node = self.compose_mapping_node(anchor)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 129, in compose_mapping_node
-    item_key = self.compose_node(node, None)
-  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 77, in compose_node
-    &quot;second occurrence&quot;, event.start_mark)
-yaml.composer.ComposerError: found duplicate anchor &#39;a&#39;; first occurrence
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 3:
-    - &amp;a
-      ^
-second occurrence
-  in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
-      &amp;a : a
-      ^
 </pre>
  </div>
 

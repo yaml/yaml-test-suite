@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/77H8.tml">&test-77H8</a><br>
 &nbsp;&nbsp;Title: Spec Example 2.23. Various Explicit Tags</br>
-&nbsp;&nbsp;Tags: [ spec, tag, unknown-tag ]</tt></h2>
+&nbsp;&nbsp;Tags: [ local-tag, spec, tag, unknown-tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
 not-date: !!str 2002-04-28
@@ -43,7 +43,7 @@ application specific tag: !something |
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>{<br>  &quot;application specific tag&quot;: &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,<br>  &quot;not-date&quot;: &quot;2002-04-28&quot;,<br>  &quot;picture&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;<br>}<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="c-libfyaml-event">
@@ -106,144 +106,117 @@ application specific tag: !something |
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-xs-perl">
-<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;not-date&quot;: &quot;2002-04-28&quot;,
-  &quot;picture&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;,
-  &quot;application specific tag&quot;: &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;
-}
-</pre>
-
- </div>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
-  <div class="framework framework_box_na" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 4, Col: 10, Idx: 41) - (Line: 10, Col: 1, Idx: 149): Encountered an unresolved tag &#39;tag:yaml.org,2002:binary&#39;
-   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
-   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
-   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
-   at Program.Main(String[] commandLineArguments)
-Aborted (core dumped)
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="hs-hsyaml-json">
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;application specific tag&quot;:&quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,&quot;not-date&quot;:&quot;2002-04-28&quot;,&quot;picture&quot;:&quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;}
-</pre>
-
- </div>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
-  <div class="framework framework_box_na" id="java-snakeyaml-json">
-<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !something; exception=Invalid tag: !something
- in &#39;reader&#39;, line 10, column 27:
-    application specific tag: !something |
-                              ^
-
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:479)
-	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:190)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:460)
-	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:556)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
-Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
-	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
-	... 13 more
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="js-jsyaml-json">
-<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
-  throw generateError(state, message);
-  ^
-YAMLException: unknown tag !&lt;!something&gt; at line 14, column 1:
-    
-    ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1428:7)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1089:11)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="js-yaml-json">
+  <div class="framework framework_box_json_ok" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &quot;not-date&quot;: &quot;2002-04-28&quot;,
-  &quot;picture&quot;: &quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;,
-  &quot;application specific tag&quot;: &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;
-}
-</pre>
-
- </div>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
-  <div class="framework framework_box_na" id="lua-lyaml-json">
+  <div class="framework framework_box_json_ok" id="lua-lyaml-json">
 <h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;picture&quot;:&quot;R0lGODlhDAAMAIQAAP\/\/9\/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;,&quot;not-date&quot;:&quot;2002-04-28&quot;,&quot;application specific tag&quot;:&quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;}
-</pre>
-
- </div>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
-  <div class="framework framework_box_na" id="perl-pp-json">
+  <div class="framework framework_box_json_ok" id="perl-pp-json">
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;application specific tag&quot; : &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,
-   &quot;not-date&quot; : &quot;2002-04-28&quot;,
-   &quot;picture&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;
-}
-</pre>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
+
+  <div class="framework framework_box_json_ok" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">{</span>
+<span
+class="">  &quot;application specific tag&quot;: &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,</span>
+<span
+class="">  &quot;not-date&quot;: &quot;2002-04-28&quot;,</span>
+<span
+class="diff_line">  &quot;picture&quot;: &quot;GIF89a\f\u0000\f\u0000\u0000\u0000ÿÿ&quot;</span>
+<span
+class="">}</span>
+</pre>
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-pp-perl">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 21, in &lt;module&gt;
+    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
+    **kw).encode(obj)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
+    yield from chunks
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
+    o = _default(o)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
+    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
+TypeError: Object of type bytes is not JSON serializable
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
+    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
+    **kw).encode(obj)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
+    yield from chunks
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
+    o = _default(o)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
+    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
+TypeError: Object of type bytes is not JSON serializable
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.5.0/json/common.rb:224:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
+	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
+	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
+	from /usr/lib/ruby/2.5.0/json/common.rb:394:in `dump&#39;
+	from /yaml/bin/ruby-psych-json:7:in `block in &lt;main&gt;&#39;
+	from /yaml/bin/ruby-psych-json:6:in `each&#39;
+	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
   &#39;application specific tag&#39; =&gt; &#39;The semantics of the tag
@@ -256,18 +229,6 @@ different documents.
 Pz7Y6OjuDg4J+fn5OTk6enp
 56enmleECcgggoBADs=
 &#39;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pplibyaml-json">
-<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;application specific tag&quot; : &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,
-   &quot;not-date&quot; : &quot;2002-04-28&quot;,
-   &quot;picture&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;
 }
 </pre>
 
@@ -293,18 +254,6 @@ Pz7Y6OjuDg4J+fn5OTk6enp
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;application specific tag&quot; : &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,
-   &quot;not-date&quot; : &quot;2002-04-28&quot;,
-   &quot;picture&quot; : &quot;GIF89a\f\u0000\f\u0000\u0084\u0000\u0000\u00ff\u00ff&quot;
-}
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
@@ -314,34 +263,6 @@ different documents.
 &#39;,
   &#39;not-date&#39; =&gt; &#39;2002-04-28&#39;,
   &#39;picture&#39; =&gt; &#39;GIF89a  �  ��&#39;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-xs-json">
-<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-yaml-json">
-<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;application specific tag&quot; : &quot;The semantics of the tag\nabove may be different for\ndifferent documents.\n&quot;,
-   &quot;not-date&quot; : &quot;2002-04-28&quot;,
-   &quot;picture&quot; : &quot;R0lGODlhDAAMAIQAAP//9/X\n17unp5WZmZgAAAOfn515eXv\nPz7Y6OjuDg4J+fn5OTk6enp\n56enmleECcgggoBADs=\n&quot;
 }
 </pre>
 
@@ -367,30 +288,6 @@ Pz7Y6OjuDg4J+fn5OTk6enp
  </div>
 
 
-  <div class="framework framework_box_na" id="py-pyyaml-json">
-<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
-    yield from chunks
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
-    o = _default(o)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
-    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
-TypeError: Object of type bytes is not JSON serializable
-</pre>
-
- </div>
-
-
   <div class="framework framework_box_na" id="py-pyyaml-py">
 <h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{&#39;application specific tag&#39;: GenericScalar(tag=&#39;!something&#39;, content=&#39;The semantics of the tag\nabove may be different for\ndifferent documents.\n&#39;),
@@ -399,30 +296,6 @@ TypeError: Object of type bytes is not JSON serializable
             b&#39;\xe9\xe5fff\x00\x00\x00\xe7\xe7\xe7^^^\xf3\xf3\xed\x8e\x8e\x8e&#39;
             b&#39;\xe0\xe0\xe0\x9f\x9f\x9f\x93\x93\x93\xa7\xa7\xa7\x9e\x9e\x9ei&#39;
             b&quot;^\x10&#39; \x82\n\x01\x00;&quot;}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
-Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
-    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
-  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
-    **kw).encode(obj)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
-    chunks = list(chunks)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 405, in _iterencode_dict
-    yield from chunks
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 438, in _iterencode
-    o = _default(o)
-  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 179, in default
-    raise TypeError(f&#39;Object of type {o.__class__.__name__} &#39;
-TypeError: Object of type bytes is not JSON serializable
 </pre>
 
  </div>
@@ -441,23 +314,105 @@ TypeError: Object of type bytes is not JSON serializable
  </div>
 
 
-  <div class="framework framework_box_na" id="ruby-psych-json">
-<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/2.5.0/json/common.rb:224:in `encode&#39;: &quot;\x84&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
-	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
-	from /usr/lib/ruby/2.5.0/json/common.rb:224:in `generate&#39;
-	from /usr/lib/ruby/2.5.0/json/common.rb:394:in `dump&#39;
-	from /yaml/bin/ruby-psych-json:7:in `block in &lt;main&gt;&#39;
-	from /yaml/bin/ruby-psych-json:6:in `each&#39;
-	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 4, Col: 10, Idx: 41) - (Line: 10, Col: 1, Idx: 149): Encountered an unresolved tag &#39;tag:yaml.org,2002:binary&#39;
+   at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
 </pre>
-
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+  <div class="framework framework_box_ni" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !something; exception=Invalid tag: !something
+ in &#39;reader&#39;, line 10, column 27:
+    application specific tag: !something |
+                              ^
+
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping2ndStep(BaseConstructor.java:479)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:190)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:460)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:556)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !something
+	at org.yaml.snakeyaml.nodes.Tag.getClassName(Tag.java:122)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:659)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
+	... 13 more
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>
+/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+  throw generateError(state, message);
+  ^
+YAMLException: unknown tag !&lt;!something&gt; at line 14, column 1:
+    
+    ^
+    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1428:7)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1089:11)
+    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+    at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /yaml/bin/perl-tiny-json line 12.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny does not support a feature in line &#39;!!str 2002-04-28&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:yaml.org,2002:binary&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
 </pre>
  </div>
 

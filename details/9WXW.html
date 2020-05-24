@@ -13,7 +13,7 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/9WXW.tml">&test-9WXW</a><br>
 &nbsp;&nbsp;Title: Spec Example 6.18. Primary Tag Handle</br>
-&nbsp;&nbsp;Tags: [ 1.3-err, directive, spec, tag, unknown-tag ]</tt></h2>
+&nbsp;&nbsp;Tags: [ 1.3-err, directive, local-tag, spec, tag, unknown-tag ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre># Private
 !foo &quot;bar&quot;
@@ -33,7 +33,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9WXW.tml">&test-9
 -STR
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
-<pre></pre>
+<pre>&quot;bar&quot;<br>&quot;bar&quot;<br></pre>
 </div>
 <hr style="clear: both;">
    <div class="framework framework_box_ok" id="c-libfyaml-event">
@@ -96,9 +96,68 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9WXW.tml">&test-9
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-xs-perl">
-<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">&quot;bar&quot;</span>
+<span
+class="diff_line">&quot;%TAG ! tag:example.com,2000:app/ --- !foo \&quot;bar\&quot;&quot;</span>
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 2
+   Document: 2
+ at /perl5/lib/perl5/YAML/Loader.pm line 88.
 </pre>
  </div>
 
@@ -114,18 +173,54 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9WXW.tml">&test-9
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
+&#39;bar&#39;
 </pre>
 
  </div>
 
 
-  <div class="framework framework_box_na" id="dotnet-yamldotnet-json">
+  <div class="framework framework_box_na" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
+&#39;bar&#39;
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
+&#39;%TAG ! tag:example.com,2000:app/ --- !foo &quot;bar&quot;&#39;
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>GenericScalar(tag=&#39;!foo&#39;, content=&#39;bar&#39;)
+GenericScalar(tag=&#39;tag:example.com,2000:app/foo&#39;, content=&#39;bar&#39;)
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>GenericScalar(tag=&#39;!foo&#39;, content=&#39;bar&#39;)
+GenericScalar(tag=&#39;tag:example.com,2000:app/foo&#39;, content=&#39;bar&#39;)
+</pre>
+
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_ni" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 11, Idx: 20): Encountered an unresolved tag &#39;!foo&#39;
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 11, Idx: 20): Encountered an unresolved tag &#39;!foo&#39;
    at YamlDotNet.Serialization.NodeTypeResolvers.PreventUnknownTagsNodeTypeResolver.YamlDotNet.Serialization.INodeTypeResolver.Resolve(NodeEvent nodeEvent, Type&amp; currentType)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.GetTypeFromEvent(NodeEvent nodeEvent, Type currentType)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
@@ -136,22 +231,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9WXW.tml">&test-9
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="hs-hsyaml-json">
-<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="java-snakeyaml-json">
+  <div class="framework framework_box_ni" id="java-snakeyaml-json">
 <h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
+<span class="status_box color_ni">&nbsp;</span>ni <pre>Exception in thread &quot;main&quot; Can&#39;t construct a java object for !foo; exception=Invalid tag: !foo
  in &#39;reader&#39;, line 2, column 1:
     !foo &quot;bar&quot;
     ^
@@ -171,13 +256,12 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Invalid tag: !foo
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 7 more
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="js-jsyaml-json">
+  <div class="framework framework_box_ni" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>
 /node/node_modules/js-yaml/lib/js-yaml/loader.js:173
   throw generateError(state, message);
   ^
@@ -195,158 +279,33 @@ YAMLException: unknown tag !&lt;!foo&gt; at line 2, column 11:
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="lua-lyaml-json">
-<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
-&#39;bar&#39;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pplibyaml-json">
-<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pplibyaml-perl">
-<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
-&#39;bar&#39;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;%TAG ! tag:example.com,2000:app/ --- !foo \&quot;bar\&quot;&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-syck-perl">
-<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&#39;bar&#39;
-&#39;%TAG ! tag:example.com,2000:app/ --- !foo &quot;bar&quot;&#39;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-tiny-json">
+  <div class="framework framework_box_ni" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /yaml/bin/perl-tiny-json line 12.
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /yaml/bin/perl-tiny-json line 12.
 </pre>
-
  </div>
 
 
-  <div class="framework framework_box_na" id="perl-xs-json">
-<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-yaml-json">
-<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML Error: Expected separator &#39;---&#39;
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 2
-   Document: 2
- at /perl5/lib/perl5/YAML/Loader.pm line 88.
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="py-pyyaml-json">
-<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="py-pyyaml-py">
-<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>GenericScalar(tag=&#39;!foo&#39;, content=&#39;bar&#39;)
-GenericScalar(tag=&#39;tag:example.com,2000:app/foo&#39;, content=&#39;bar&#39;)
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="py-ruamel-json">
-<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="py-ruamel-py">
-<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>GenericScalar(tag=&#39;!foo&#39;, content=&#39;bar&#39;)
-GenericScalar(tag=&#39;tag:example.com,2000:app/foo&#39;, content=&#39;bar&#39;)
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="ruby-psych-json">
-<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>&quot;bar&quot;
-&quot;bar&quot;
-</pre>
-
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_ni" id="perl-tiny-perl">
+  <div class="framework framework_box_ni" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;!foo &quot;bar&quot;&#39; at /yaml/bin/perl-tiny-perl line 15.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /yaml/bin/perl-xs-json line 14, &lt;&gt; line 1.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_ni" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::XS Error: bad tag found for scalar: &#39;tag:example.com,2000:app/foo&#39; at /yaml/bin/perl-xs-perl line 16, &lt;&gt; line 1.
 </pre>
  </div>
 

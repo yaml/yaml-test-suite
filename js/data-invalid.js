@@ -33,8 +33,7 @@ var data = {
       "tag" : 1,
       "unknown-tag" : 1,
       "upto-1.2" : 1,
-      "whitespace" : 1,
-      "whitspace" : 1
+      "whitespace" : 1
    },
    "tests" : {
       "236B" : {
@@ -632,6 +631,14 @@ var data = {
             "error",
             "indent",
             "mapping"
+         ]
+      },
+      "U99R" : {
+         "id" : "U99R",
+         "in_yaml" : "- !!str, xxx\n",
+         "tags" : [
+            "error",
+            "tag"
          ]
       },
       "W9L4" : {

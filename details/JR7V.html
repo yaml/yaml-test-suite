@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#JR7V - Question marks in scalars - YAML Test Matrix</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" type="text/css" href="../css/yaml.css">
+<link rel="stylesheet" type="text/css" href="../css/matrix.css">
+<link rel="icon" type="image/x-icon" href="http://www.yaml.io/favicon.ico">
+</head>
+<body>
+
+<h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
+<h2><tt>--- <a
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/JR7V.tml">&test-JR7V</a><br>
+&nbsp;&nbsp;Title: Question marks in scalars</br>
+&nbsp;&nbsp;Tags: [ flow, scalar ]</tt></h2>
+
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>- a?string
+- another ? string
+- key: value?
+- [a?string]
+- [another ? string]
+- {key: value? }
+- {key: value?}
+- {key?: value }
+</pre></div>
+<div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
++DOC
++SEQ
+=VAL :a?string
+=VAL :another ? string
++MAP
+=VAL :key
+=VAL :value?
+-MAP
++SEQ
+=VAL :a?string
+-SEQ
++SEQ
+=VAL :another ? string
+-SEQ
++MAP
+=VAL :key
+=VAL :value?
+-MAP
++MAP
+=VAL :key
+=VAL :value?
+-MAP
++MAP
+=VAL :key?
+=VAL :value
+-MAP
+-SEQ
+-DOC
+-STR
+</pre></div>
+<div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
+<pre>[<br>  &quot;a?string&quot;,<br>  &quot;another ? string&quot;,<br>  {<br>    &quot;key&quot;: &quot;value?&quot;<br>  },<br>  [<br>    &quot;a?string&quot;<br>  ],<br>  [<br>    &quot;another ? string&quot;<br>  ],<br>  {<br>    &quot;key&quot;: &quot;value?&quot;<br>  },<br>  {<br>    &quot;key&quot;: &quot;value?&quot;<br>  },<br>  {<br>    &quot;key?&quot;: &quot;value&quot;<br>  }<br>]<br></pre>
+</div>
+<hr style="clear: both;">
+   <div class="framework framework_box_ok" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="hs-hsyaml-event">
+<h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="nim-nimyaml-event">
+<h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="py-ruamel-event">
+<h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+<h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-jsyaml-json">
+<h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="perl-yaml-json">
+<h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="py-ruamel-json">
+<h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+ <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">[</span>
+<span
+class="">  &quot;a?string&quot;,</span>
+<span
+class="">  &quot;another ? string&quot;,</span>
+<span
+class="">  {</span>
+<span
+class="">    &quot;key&quot;: &quot;value?&quot;</span>
+<span
+class="">  },</span>
+<span
+class="diff_line">  &quot;[a?string]&quot;,</span>
+<span
+class="">  &quot;[another ? string]&quot;,</span>
+<span
+class="">  {</span>
+<span
+class="">    &quot;{key&quot;: &quot;value? }&quot;</span>
+<span
+class="">  },</span>
+<span
+class="">  {</span>
+<span
+class="">    &quot;{key&quot;: &quot;value?}&quot;</span>
+<span
+class="">  },</span>
+<span
+class="">  {</span>
+<span
+class="">    &quot;{key?&quot;: &quot;value }&quot;</span>
+<span
+class="">  }</span>
+<span
+class="">]</span>
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
+=VAL :a?string
+=VAL :another ? string
++MAP
+=VAL :key
+=VAL :value?
+-MAP
++SEQ
+=VAL :a
+Parse error: did not find expected &#39;,&#39; or &#39;]&#39;
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
+=VAL :a?string
+=VAL :another ? string
++MAP
+=VAL :key
+=VAL :value?
+-MAP
+Exception:
+yaml-cpp: error at line 4, column 5: unknown token
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
+=VAL :a?string
+=VAL :another ? string
++MAP
+=VAL :key
+=VAL :value?
+-MAP
++SEQ
+=VAL :a
+Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 4, Col: 5, Idx: 48) - (Line: 4, Col: 6, Idx: 49): While parsing a flow sequence, did not find expected &#39;,&#39; or &#39;]&#39;.
+   at YamlDotNet.Core.Parser.ParseFlowSequenceEntry(Boolean isFirst)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 4, Col: 5, Idx: 48) - (Line: 4, Col: 6, Idx: 49): While parsing a flow sequence, did not find expected &#39;,&#39; or &#39;]&#39;.
+   at YamlDotNet.Core.Parser.ParseFlowSequenceEntry(Boolean isFirst)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.DeserializeHelper(Type tItem, IParser parser, Func`3 nestedObjectDeserializer, IList result, Boolean canUpdate)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.DeserializeHelper(Type tItem, IParser parser, Func`3 nestedObjectDeserializer, IList result, Boolean canUpdate)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow sequence
+ in &#39;reader&#39;, line 4, column 3:
+    - [a?string]
+      ^
+expected &#39;,&#39; or &#39;]&#39;, but got ?
+ in &#39;reader&#39;, line 4, column 5:
+    - [a?string]
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:637)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
+	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Exception in thread &quot;main&quot; while parsing a flow sequence
+ in &#39;reader&#39;, line 4, column 3:
+    - [a?string]
+      ^
+expected &#39;,&#39; or &#39;]&#39;, but got ?
+ in &#39;reader&#39;, line 4, column 5:
+    - [a?string]
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:637)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:208)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:209)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
+	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="lua-lyaml-json">
+<h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>luajit: 4:4: did not find expected &#39;,&#39; or &#39;]&#39;
+stack traceback:
+	[C]: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/yaml/bin/lua-lyaml-json:6: in main chunk
+	[C]: at 0x562f2752bf97
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected &#39;,&#39; or &#39;]&#39;
+
+was found at , line: 4, column: 5
+while parsing a flow sequence at line: 4, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected &#39;,&#39; or &#39;]&#39;
+
+was found at , line: 4, column: 5
+while parsing a flow sequence at line: 4, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected &#39;,&#39; or &#39;]&#39;
+
+was found at , line: 4, column: 5
+while parsing a flow sequence at line: 4, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-xs-json">
+<h3><a href="#perl-xs-json">perl-xs-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected &#39;,&#39; or &#39;]&#39;
+
+was found at document: 1, line: 4, column: 5
+while parsing a flow sequence at line: 4, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-xs-perl">
+<h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML::XS::Load Error: The problem:
+
+    did not find expected &#39;,&#39; or &#39;]&#39;
+
+was found at document: 1, line: 4, column: 5
+while parsing a flow sequence at line: 4, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="py-pyyaml-event">
+<h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC
++SEQ
+=VAL :a?string
+=VAL :another ? string
++MAP
+=VAL :key
+=VAL :value?
+-MAP
++SEQ
+=VAL :a
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
+    for event in yaml.parse(sys.stdin.read()):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 75, in parse
+    while loader.check_event():
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 484, in parse_flow_sequence_entry
+    &quot;expected &#39;,&#39; or &#39;]&#39;, but got %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a flow sequence
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
+    - [a?string]
+      ^
+expected &#39;,&#39; or &#39;]&#39;, but got &#39;?&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
+    - [a?string]
+        ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="py-pyyaml-json">
+<h3><a href="#py-pyyaml-json">py-pyyaml-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-json&quot;, line 19, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 484, in parse_flow_sequence_entry
+    &quot;expected &#39;,&#39; or &#39;]&#39;, but got %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a flow sequence
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
+    - [a?string]
+      ^
+expected &#39;,&#39; or &#39;]&#39;, but got &#39;?&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
+    - [a?string]
+        ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="py-pyyaml-py">
+<h3><a href="#py-pyyaml-py">py-pyyaml-py</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
+  File &quot;/yaml/bin/py-pyyaml-py&quot;, line 36, in &lt;module&gt;
+    for doc in yaml.load_all(sys.stdin.read(), Loader=yaml.FullLoader):
+  File &quot;/python/lib/python3.7/site-packages/yaml/__init__.py&quot;, line 130, in load_all
+    yield loader.get_data()
+  File &quot;/python/lib/python3.7/site-packages/yaml/constructor.py&quot;, line 45, in get_data
+    return self.construct_document(self.get_node())
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 27, in get_node
+    return self.compose_document()
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 55, in compose_document
+    node = self.compose_node(None, None)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File &quot;/python/lib/python3.7/site-packages/yaml/composer.py&quot;, line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
+    self.current_event = self.state()
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 484, in parse_flow_sequence_entry
+    &quot;expected &#39;,&#39; or &#39;]&#39;, but got %r&quot; % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a flow sequence
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 3:
+    - [a?string]
+      ^
+expected &#39;,&#39; or &#39;]&#39;, but got &#39;?&#39;
+  in &quot;&lt;unicode string&gt;&quot;, line 4, column 5:
+    - [a?string]
+        ^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="ruby-psych-json">
+<h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected &#39;,&#39; or &#39;]&#39; while parsing a flow sequence at line 4 column 3 (Psych::SyntaxError)
+	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
+	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
+	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  &#39;a?string&#39;,
+  &#39;another ? string&#39;,
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  [
+    &#39;a?string&#39;
+  ],
+  [
+    &#39;another ? string&#39;
+  ],
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  {
+    &#39;key?&#39; =&gt; &#39;value&#39;
+  }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  &#39;a?string&#39;,
+  &#39;another ? string&#39;,
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  [
+    &#39;a?string&#39;
+  ],
+  [
+    &#39;another ? string&#39;
+  ],
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  {
+    &#39;key?&#39; =&gt; &#39;value&#39;
+  }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  &#39;a?string&#39;,
+  &#39;another ? string&#39;,
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  &#39;[a?string]&#39;,
+  &#39;[another ? string]&#39;,
+  {
+    &#39;{key&#39; =&gt; &#39;value? }&#39;
+  },
+  {
+    &#39;{key&#39; =&gt; &#39;value?}&#39;
+  },
+  {
+    &#39;{key?&#39; =&gt; &#39;value }&#39;
+  }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  &#39;a?string&#39;,
+  &#39;another ? string&#39;,
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  [
+    &#39;a?string&#39;
+  ],
+  [
+    &#39;another ? string&#39;
+  ],
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  {
+    &#39;key&#39; =&gt; &#39;value?&#39;
+  },
+  {
+    &#39;key?&#39; =&gt; &#39;value&#39;
+  }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[&#39;a?string&#39;,
+ &#39;another ? string&#39;,
+ {&#39;key&#39;: &#39;value?&#39;},
+ [&#39;a?string&#39;],
+ [&#39;another ? string&#39;],
+ {&#39;key&#39;: &#39;value?&#39;},
+ {&#39;key&#39;: &#39;value?&#39;},
+ {&#39;key?&#39;: &#39;value&#39;}]
+</pre>
+
+ </div>
+
+
+ <hr style="clear: both;">           </body>
+</html>
+
