@@ -9,13 +9,16 @@
 -SEQ
 +SEQ
 +MAP
-=VAL :
-=VAL :empty key entry
+=VAL "JSON like
+=VAL :adjacent
 -MAP
 -SEQ
 +SEQ
 +MAP
-=VAL "JSON like
++MAP
+=VAL :JSON
+=VAL :like
+-MAP
 =VAL :adjacent
 -MAP
 -SEQ
