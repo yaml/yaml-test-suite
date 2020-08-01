@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#2JQS - Block Mapping with Missing Keys - YAML Test Matrix</title>
+<title>#NKF9 - Empty keys in block and flow mapping - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -11,20 +11,51 @@
 
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
-href="https://github.com/yaml/yaml-test-suite/blob/master/test/2JQS.tml">&test-2JQS</a><br>
-&nbsp;&nbsp;Title: Block Mapping with Missing Keys</br>
-&nbsp;&nbsp;Tags: [ duplicate-key, empty-key, mapping ]</tt></h2>
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/NKF9.tml">&test-NKF9</a><br>
+&nbsp;&nbsp;Title: Empty keys in block and flow mapping</br>
+&nbsp;&nbsp;Tags: [ empty-key, mapping ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>: a
-: b
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+key: value
+: empty key
+---
+{
+ key: value, : empty key
+}
+---
+# empty key and value
+:
+---
+# empty key and value
+{ : }
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+=VAL :
+=VAL :empty key
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+=VAL :
+=VAL :empty key
+-MAP
+-DOC
++DOC ---
 +MAP
 =VAL :
-=VAL :a
 =VAL :
-=VAL :b
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :
+=VAL :
 -MAP
 -DOC
 -STR
@@ -68,53 +99,66 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/2JQS.tml">&test-2
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-syck-perl">
-<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>+STR
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+=VAL :
+=VAL :empty key
+-MAP
+-DOC
++DOC ---
++MAP
+=VAL :key
+=VAL :value
+=VAL :
+=VAL :empty key
+-MAP
+-DOC
++DOC ---
++MAP
+Error: Unexpected node type undefined
 </pre>
  </div>
 
 
-  <div class="framework framework_box_error" id="py-ruamel-py">
-<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-py&quot;, line 36, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 123, in construct_document
-    for _dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 723, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 440, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 257, in construct_mapping
-    if self.check_mapping_key(node, key_node, mapping, key, value):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 295, in check_mapping_key
-    raise DuplicateKeyError(*args)
-ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    : a
-    ^ (line: 1)
-found duplicate key &quot;None&quot; with value &quot;b&quot; (original value: &quot;a&quot;)
-  in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    : b
-    ^ (line: 2)
+  <div class="framework framework_box_error" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 3, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+</pre>
+ </div>
 
-To suppress this check see:
-    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
 
-Duplicate keys will become an error in future releases, and are errors
-by default when using the new API.
+  <div class="framework framework_box_error" id="perl-yaml-perl">
+<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 5
+   Document: 3
+ at /perl5/lib/perl5/YAML/Loader.pm line 88.
 </pre>
  </div>
 
 
  <hr style="clear: both;">    <div class="framework framework_box_na" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>[ERR]: fy_parse_document_load_node() failed
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;key&quot;: &quot;value&quot;,
+  &quot;&quot;: &quot;empty key&quot;
+}
+{
+  &quot;key&quot;: &quot;value&quot;,
+  &quot;&quot;: &quot;empty key&quot;
+}
+{
+  &quot;&quot;: null
+}
+{
+  &quot;&quot;: null
+}
 </pre>
 
  </div>
@@ -122,7 +166,7 @@ by default when using the new API.
 
   <div class="framework framework_box_na" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 1, Col: 1, Idx: 0) - (Line: 1, Col: 1, Idx: 0): Exception during deserialization
+<span class="status_box color_na">&nbsp;</span>na  <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 2, Col: 1, Idx: 4) - (Line: 2, Col: 1, Idx: 4): Exception during deserialization
  ---&gt; System.ArgumentNullException: Value cannot be null. (Parameter &#39;key&#39;)
    at System.Collections.Generic.Dictionary`2.System.Collections.IDictionary.set_Item(Object key, Object value)
    at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
@@ -143,7 +187,10 @@ Aborted (core dumped)
 
   <div class="framework framework_box_na" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;&quot;:&quot;b&quot;}
+<span class="status_box color_na">&nbsp;</span>na  <pre>{&quot;&quot;:&quot;empty key&quot;,&quot;key&quot;:&quot;value&quot;}
+{&quot;&quot;:&quot;empty key&quot;,&quot;key&quot;:&quot;value&quot;}
+{&quot;&quot;:null}
+{&quot;&quot;:null}
 </pre>
 
  </div>
@@ -152,16 +199,15 @@ Aborted (core dumped)
   <div class="framework framework_box_na" id="java-snakeyaml-json">
 <h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>Exception in thread &quot;main&quot; while parsing a block mapping
- in &#39;reader&#39;, line 1, column 1:
-    : a
+ in &#39;reader&#39;, line 2, column 1:
+    key: value
     ^
 expected &lt;block end&gt;, but found &#39;:&#39;
- in &#39;reader&#39;, line 1, column 1:
-    : a
+ in &#39;reader&#39;, line 3, column 1:
+    : empty key
     ^
 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey.produce(ParserImpl.java:552)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
 	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:235)
@@ -182,8 +228,8 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 /node/node_modules/js-yaml/lib/js-yaml/loader.js:173
   throw generateError(state, message);
   ^
-YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 1:
-    : a
+YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 3, column 1:
+    : empty key
     ^
     at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
     at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
@@ -202,21 +248,20 @@ YAMLException: incomplete explicit mapping pair; a key node is missed; or follow
 
   <div class="framework framework_box_na" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>/yaml/bin/js-yaml-json:8
-  if (doc.errors.length !== 0) throw doc.errors[0]
-                               ^
-
-YAMLSemanticError: Map keys must be unique; &quot;null&quot; is repeated
-    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1650:27)
-    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
-    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
-    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
-    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
-    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
-    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
+<span class="status_box color_na">&nbsp;</span>na  <pre>{
+  &quot;key&quot;: &quot;value&quot;,
+  &quot;&quot;: &quot;empty key&quot;
+}
+{
+  &quot;key&quot;: &quot;value&quot;,
+  &quot;&quot;: &quot;empty key&quot;
+}
+{
+  &quot;&quot;: null
+}
+{
+  &quot;&quot;: null
+}
 </pre>
 
  </div>
@@ -224,7 +269,7 @@ YAMLSemanticError: Map keys must be unique; &quot;null&quot; is repeated
 
   <div class="framework framework_box_na" id="lua-lyaml-json">
 <h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>luajit: 1:1: did not find expected key
+<span class="status_box color_na">&nbsp;</span>na  <pre>luajit: 2:6: did not find expected key
 stack traceback:
 	[C]: in function &#39;error&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
@@ -233,7 +278,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55983e44df97
+	[C]: at 0x556048c10f97
 </pre>
 
  </div>
@@ -242,7 +287,18 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-pp-json">
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;&quot; : &quot;b&quot;
+   &quot;&quot; : &quot;empty key&quot;,
+   &quot;key&quot; : &quot;value&quot;
+}
+{
+   &quot;&quot; : &quot;empty key&quot;,
+   &quot;key&quot; : &quot;value&quot;
+}
+{
+   &quot;&quot; : null
+}
+{
+   &quot;&quot; : null
 }
 </pre>
 
@@ -252,7 +308,18 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;&#39; =&gt; &#39;b&#39;
+  &#39;&#39; =&gt; &#39;empty key&#39;,
+  &#39;key&#39; =&gt; &#39;value&#39;
+}
+{
+  &#39;&#39; =&gt; &#39;empty key&#39;,
+  &#39;key&#39; =&gt; &#39;value&#39;
+}
+{
+  &#39;&#39; =&gt; undef
+}
+{
+  &#39;&#39; =&gt; undef
 }
 </pre>
 
@@ -265,8 +332,8 @@ stack traceback:
 
     did not find expected key
 
-was found at 
-while parsing a block mapping at line: 1, column: 1
+was found at , line: 3, column: 1
+while parsing a block mapping at line: 2, column: 1
 </pre>
 
  </div>
@@ -274,7 +341,7 @@ while parsing a block mapping at line: 1, column: 1
 
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 1, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
+<span class="status_box color_na">&nbsp;</span>na  <pre>Syck parser (line 3, column 1): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
 
  </div>
@@ -282,7 +349,7 @@ while parsing a block mapping at line: 1, column: 1
 
   <div class="framework framework_box_na" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;: a&#39; at /yaml/bin/perl-tiny-json line 12.
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML::Tiny failed to classify line &#39;: empty key&#39; at /yaml/bin/perl-tiny-json line 12.
 </pre>
 
  </div>
@@ -294,8 +361,8 @@ while parsing a block mapping at line: 1, column: 1
 
     did not find expected key
 
-was found at document: 1
-while parsing a block mapping at line: 1, column: 1
+was found at document: 1, line: 3, column: 1
+while parsing a block mapping at line: 2, column: 1
 </pre>
 
  </div>
@@ -303,19 +370,11 @@ while parsing a block mapping at line: 1, column: 1
 
   <div class="framework framework_box_na" id="perl-yaml-json">
 <h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;&quot; : &quot;a&quot;
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-yaml-perl">
-<h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;&#39; =&gt; &#39;a&#39;
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>YAML Error: Expected separator &#39;---&#39;
+   Code: YAML_PARSE_ERR_NO_SEPARATOR
+   Line: 5
+   Document: 3
+ at /perl5/lib/perl5/YAML/Loader.pm line 88.
 </pre>
 
  </div>
@@ -340,14 +399,15 @@ while parsing a block mapping at line: 1, column: 1
     while not self.check_event(MappingEndEvent):
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 425, in parse_block_mapping_first_key
-    return self.parse_block_mapping_key()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 439, in parse_block_mapping_key
     &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
 yaml.parser.ParserError: while parsing a block mapping
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
+    key: value
+    ^
 expected &lt;block end&gt;, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    : a
+  in &quot;&lt;unicode string&gt;&quot;, line 3, column 1:
+    : empty key
     ^
 </pre>
 
@@ -356,37 +416,30 @@ expected &lt;block end&gt;, but found &#39;:&#39;
 
   <div class="framework framework_box_na" id="py-ruamel-json">
 <h3><a href="#py-ruamel-json">py-ruamel-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>Traceback (most recent call last):
-  File &quot;/yaml/bin/py-ruamel-json&quot;, line 19, in &lt;module&gt;
-    for doc in ruamel.yaml.load_all(sys.stdin.read(), Loader=ruamel.yaml.Loader):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/main.py&quot;, line 976, in load_all
-    yield loader._constructor.get_data()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 106, in get_data
-    return self.construct_document(self.composer.get_node())
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 123, in construct_document
-    for _dummy in generator:
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 723, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 440, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 257, in construct_mapping
-    if self.check_mapping_key(node, key_node, mapping, key, value):
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/constructor.py&quot;, line 295, in check_mapping_key
-    raise DuplicateKeyError(*args)
-ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    : a
-    ^ (line: 1)
-found duplicate key &quot;None&quot; with value &quot;b&quot; (original value: &quot;a&quot;)
-  in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    : b
-    ^ (line: 2)
+<span class="status_box color_na">&nbsp;</span>na  <pre>Error json.dumps: &lt;class &#39;TypeError&#39;&gt;
+Traceback (most recent call last):
+  File &quot;/yaml/bin/py-ruamel-json&quot;, line 21, in &lt;module&gt;
+    print(json.dumps(doc, sort_keys=True, skipkeys=True, indent=2))
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 238, in dumps
+    **kw).encode(obj)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 201, in encode
+    chunks = list(chunks)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File &quot;/usr/lib/python3.7/json/encoder.py&quot;, line 353, in _iterencode_dict
+    items = sorted(dct.items(), key=lambda kv: kv[0])
+TypeError: &#39;&lt;&#39; not supported between instances of &#39;NoneType&#39; and &#39;str&#39;
+</pre>
 
-To suppress this check see:
-    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+ </div>
 
-Duplicate keys will become an error in future releases, and are errors
-by default when using the new API.
+
+  <div class="framework framework_box_na" id="py-ruamel-py">
+<h3><a href="#py-ruamel-py">py-ruamel-py</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>{None: &#39;empty key&#39;, &#39;key&#39;: &#39;value&#39;}
+{None: &#39;empty key&#39;, &#39;key&#39;: &#39;value&#39;}
+{None: None}
+{None: None}
 </pre>
 
  </div>
@@ -394,7 +447,7 @@ by default when using the new API.
 
   <div class="framework framework_box_na" id="ruby-psych-json">
 <h3><a href="#ruby-psych-json">ruby-psych-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected key while parsing a block mapping at line 1 column 1 (Psych::SyntaxError)
+<span class="status_box color_na">&nbsp;</span>na  <pre>/usr/lib/ruby/2.5.0/psych.rb:405:in `parse&#39;: (&lt;unknown&gt;): did not find expected key while parsing a block mapping at line 2 column 1 (Psych::SyntaxError)
 	from /usr/lib/ruby/2.5.0/psych.rb:405:in `parse_stream&#39;
 	from /usr/lib/ruby/2.5.0/psych.rb:488:in `load_stream&#39;
 	from /yaml/bin/ruby-psych-json:6:in `&lt;main&gt;&#39;
@@ -406,8 +459,10 @@ by default when using the new API.
  <hr style="clear: both;">    <div class="framework framework_box_ni" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
-+DOC
++DOC ---
 +MAP
+=VAL :key
+=VAL :value
 Parse error: did not find expected key
 </pre>
  </div>
@@ -416,29 +471,19 @@ Parse error: did not find expected key
   <div class="framework framework_box_ni" id="java-snakeyaml-event">
 <h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>Exception in thread &quot;main&quot; while parsing a block mapping
- in &#39;reader&#39;, line 1, column 1:
-    : a
+ in &#39;reader&#39;, line 2, column 1:
+    key: value
     ^
 expected &lt;block end&gt;, but found &#39;:&#39;
- in &#39;reader&#39;, line 1, column 1:
-    : a
+ in &#39;reader&#39;, line 3, column 1:
+    : empty key
     ^
 
 	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey.produce(ParserImpl.java:552)
 	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
 	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_ni" id="js-yaml-event">
-<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
-+DOC
-Map keys must be unique; &quot;null&quot; is repeated
 </pre>
  </div>
 
@@ -449,8 +494,8 @@ Map keys must be unique; &quot;null&quot; is repeated
 
     did not find expected key
 
-was found at 
-while parsing a block mapping at line: 1, column: 1
+was found at , line: 3, column: 1
+while parsing a block mapping at line: 2, column: 1
 </pre>
  </div>
 
@@ -461,15 +506,15 @@ while parsing a block mapping at line: 1, column: 1
 
     did not find expected key
 
-was found at 
-while parsing a block mapping at line: 1, column: 1
+was found at , line: 3, column: 1
+while parsing a block mapping at line: 2, column: 1
 </pre>
  </div>
 
 
   <div class="framework framework_box_ni" id="perl-tiny-perl">
 <h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;: a&#39; at /yaml/bin/perl-tiny-perl line 15.
+<span class="status_box color_ni">&nbsp;</span>ni <pre>YAML::Tiny failed to classify line &#39;: empty key&#39; at /yaml/bin/perl-tiny-perl line 15.
 </pre>
  </div>
 
@@ -480,8 +525,8 @@ while parsing a block mapping at line: 1, column: 1
 
     did not find expected key
 
-was found at document: 1
-while parsing a block mapping at line: 1, column: 1
+was found at document: 1, line: 3, column: 1
+while parsing a block mapping at line: 2, column: 1
 </pre>
  </div>
 
@@ -489,8 +534,10 @@ while parsing a block mapping at line: 1, column: 1
   <div class="framework framework_box_ni" id="py-pyyaml-event">
 <h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
-+DOC
++DOC ---
 +MAP
+=VAL :key
+=VAL :value
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):
@@ -498,14 +545,15 @@ Traceback (most recent call last):
     while loader.check_event():
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 425, in parse_block_mapping_first_key
-    return self.parse_block_mapping_key()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 439, in parse_block_mapping_key
     &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
 yaml.parser.ParserError: while parsing a block mapping
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
+    key: value
+    ^
 expected &lt;block end&gt;, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    : a
+  in &quot;&lt;unicode string&gt;&quot;, line 3, column 1:
+    : empty key
     ^
 </pre>
  </div>
@@ -530,14 +578,15 @@ expected &lt;block end&gt;, but found &#39;:&#39;
     while not self.check_event(MappingEndEvent):
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 98, in check_event
     self.current_event = self.state()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 425, in parse_block_mapping_first_key
-    return self.parse_block_mapping_key()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 439, in parse_block_mapping_key
     &quot;expected &lt;block end&gt;, but found %r&quot; % token.id, token.start_mark)
 yaml.parser.ParserError: while parsing a block mapping
+  in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
+    key: value
+    ^
 expected &lt;block end&gt;, but found &#39;:&#39;
-  in &quot;&lt;unicode string&gt;&quot;, line 1, column 1:
-    : a
+  in &quot;&lt;unicode string&gt;&quot;, line 3, column 1:
+    : empty key
     ^
 </pre>
  </div>

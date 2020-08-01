@@ -13,13 +13,14 @@
 <h2><tt>--- <a
 href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3MYT</a><br>
 &nbsp;&nbsp;Title: Plain Scalar looking like key, comment, anchor and tag</br>
-&nbsp;&nbsp;Tags: [ 1.3-err, scalar ]</tt></h2>
+&nbsp;&nbsp;Tags: [ scalar ]</tt></h2>
 
-<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>k:#foo
+<div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>---
+k:#foo
  &amp;a !t s
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
-+DOC
++DOC ---
 =VAL :k:#foo &amp;a !t s
 -DOC
 -STR
@@ -156,7 +157,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/3MYT.tml">&test-3
  <hr style="clear: both;">          <div class="framework framework_box_error" id="nim-nimyaml-event">
 <h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
++DOC ---
 =VAL :k:#fooa
 /buildutils/nimyaml_event.nim(8) nimyaml_event
 /tmp/NimYAML-0.13.1/yaml/stream.nim(223) finished
@@ -183,7 +184,7 @@ Error: unhandled exception: Unexpected token (expected document end): ltAnchor [
 <h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
+   Line: 2
    Document: 2
  at /perl5/lib/perl5/YAML/Loader.pm line 88.
 </pre>
@@ -194,7 +195,7 @@ Error: unhandled exception: Unexpected token (expected document end): ltAnchor [
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
+   Line: 2
    Document: 2
  at /perl5/lib/perl5/YAML/Loader.pm line 88.
 </pre>

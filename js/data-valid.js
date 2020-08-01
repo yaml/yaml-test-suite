@@ -192,12 +192,11 @@ var data = {
       "3MYT" : {
          "id" : "3MYT",
          "in_json" : "\"k:#foo &a !t s\"\n",
-         "in_yaml" : "k:#foo\n &a !t s\n",
+         "in_yaml" : "---\nk:#foo\n &a !t s\n",
          "tags" : [
-            "1.3-err",
             "scalar"
          ],
-         "test_event" : "+STR\n+DOC\n=VAL :k:#foo &a !t s\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n=VAL :k:#foo &a !t s\n-DOC\n-STR\n"
       },
       "3R3P" : {
          "id" : "3R3P",
@@ -221,14 +220,12 @@ var data = {
       "4ABK" : {
          "id" : "4ABK",
          "in_json" : null,
-         "in_yaml" : "{\nunquoted : \"separate\",\nhttp://foo.com,\nomitted value:,\n: omitted key,\n}\n",
+         "in_yaml" : "{\nunquoted : \"separate\",\nhttp://foo.com,\nomitted value:,\n}\n",
          "tags" : [
-            "empty-key",
             "flow",
-            "mapping",
-            "spec"
+            "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :unquoted\n=VAL \"separate\n=VAL :http://foo.com\n=VAL :\n=VAL :omitted value\n=VAL :\n=VAL :\n=VAL :omitted key\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :unquoted\n=VAL \"separate\n=VAL :http://foo.com\n=VAL :\n=VAL :omitted value\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
       "4CQQ" : {
          "id" : "4CQQ",
@@ -736,18 +733,6 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL |ab\n-DOC ...\n-STR\n"
       },
-      "77H8" : {
-         "id" : "77H8",
-         "in_json" : "{\n  \"not-date\": \"2002-04-28\",\n  \"picture\": \"R0lGODlhDAAMAIQAAP//9/X\\n17unp5WZmZgAAAOfn515eXv\\nPz7Y6OjuDg4J+fn5OTk6enp\\n56enmleECcgggoBADs=\\n\",\n  \"application specific tag\": \"The semantics of the tag\\nabove may be different for\\ndifferent documents.\\n\"\n}\n",
-         "in_yaml" : "---\nnot-date: !!str 2002-04-28\n\npicture: !!binary |\n R0lGODlhDAAMAIQAAP//9/X\n 17unp5WZmZgAAAOfn515eXv\n Pz7Y6OjuDg4J+fn5OTk6enp\n 56enmleECcgggoBADs=\n\napplication specific tag: !something |\n The semantics of the tag\n above may be different for\n different documents.\n",
-         "tags" : [
-            "local-tag",
-            "spec",
-            "tag",
-            "unknown-tag"
-         ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :not-date\n=VAL <tag:yaml.org,2002:str> :2002-04-28\n=VAL :picture\n=VAL <tag:yaml.org,2002:binary> |R0lGODlhDAAMAIQAAP//9/X\\n17unp5WZmZgAAAOfn515eXv\\nPz7Y6OjuDg4J+fn5OTk6enp\\n56enmleECcgggoBADs=\\n\n=VAL :application specific tag\n=VAL <!something> |The semantics of the tag\\nabove may be different for\\ndifferent documents.\\n\n-MAP\n-DOC\n-STR\n"
-      },
       "7A4E" : {
          "id" : "7A4E",
          "in_json" : "\" 1st non-empty\\n2nd non-empty 3rd non-empty \"\n",
@@ -1048,15 +1033,13 @@ var data = {
       "9MMW" : {
          "id" : "9MMW",
          "in_json" : null,
-         "in_yaml" : "- [ YAML : separate ]\n- [ : empty key entry ]\n- [ \"JSON like\":adjacent ]\n",
+         "in_yaml" : "- [ YAML : separate ]\n- [ \"JSON like\":adjacent ]\n- [ {JSON: like}:adjacent ]\n",
          "tags" : [
-            "1.3-mod",
-            "empty-key",
             "flow",
             "mapping",
-            "spec"
+            "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :empty key entry\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL \"JSON like\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL \"JSON like\n=VAL :adjacent\n-MAP\n-SEQ\n+SEQ\n+MAP\n+MAP\n=VAL :JSON\n=VAL :like\n-MAP\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "9SA2" : {
          "id" : "9SA2",
@@ -1272,6 +1255,17 @@ var data = {
             "unknown-tag"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL <tag:example.com,2000:app/foo> \"bar\n-DOC\n-STR\n"
+      },
+      "CFD4" : {
+         "id" : "CFD4",
+         "in_json" : null,
+         "in_yaml" : "- [ : empty key ]\n- [: another empty key]\n",
+         "tags" : [
+            "empty-key",
+            "flow",
+            "sequence"
+         ],
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :empty key\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :another empty key\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "CN3R" : {
          "id" : "CN3R",
@@ -1739,16 +1733,6 @@ var data = {
          ],
          "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :hr\n+SEQ\n=VAL :Mark McGwire\n=VAL :Sammy Sosa\n-SEQ\n=VAL :rbi\n+SEQ\n=VAL :Sammy Sosa\n=VAL :Ken Griffey\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
-      "JDH8" : {
-         "id" : "JDH8",
-         "in_json" : "\"k:#foo &a !t s\"\n",
-         "in_yaml" : "---\nk:#foo\n &a !t s\n",
-         "tags" : [
-            "1.3-mod",
-            "scalar"
-         ],
-         "test_event" : "+STR\n+DOC ---\n=VAL :k:#foo &a !t s\n-DOC\n-STR\n"
-      },
       "JHB9" : {
          "id" : "JHB9",
          "in_json" : "[\n  \"Mark McGwire\",\n  \"Sammy Sosa\",\n  \"Ken Griffey\"\n]\n[\n  \"Chicago Cubs\",\n  \"St Louis Cardinals\"\n]\n",
@@ -1887,21 +1871,6 @@ var data = {
             "scalar"
          ],
          "test_event" : "+STR\n+DOC ---\n=VAL \"quoted string\n-DOC\n+DOC ---\n=VAL &node :foo\n-DOC\n-STR\n"
-      },
-      "KZN9" : {
-         "id" : "KZN9",
-         "in_json" : null,
-         "in_yaml" : "- [ YAML : separate ]\n- [ : empty key entry ]\n- [ {JSON: like}:adjacent ]\n",
-         "tags" : [
-            "1.3-err",
-            "complex-key",
-            "empty-key",
-            "flow",
-            "mapping",
-            "sequence",
-            "spec"
-         ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :empty key entry\n-MAP\n-SEQ\n+SEQ\n+MAP\n+MAP\n=VAL :JSON\n=VAL :like\n-MAP\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "L94M" : {
          "id" : "L94M",
@@ -2132,6 +2101,16 @@ var data = {
             "mapping"
          ],
          "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL :single line\n=VAL :value\n-MAP\n+MAP\n=VAL :multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+      },
+      "NKF9" : {
+         "id" : "NKF9",
+         "in_json" : null,
+         "in_yaml" : "---\nkey: value\n: empty key\n---\n{\n key: value, : empty key\n}\n---\n# empty key and value\n:\n---\n# empty key and value\n{ : }\n",
+         "tags" : [
+            "empty-key",
+            "mapping"
+         ],
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n=VAL :\n=VAL :empty key\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n=VAL :\n=VAL :empty key\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
       "NP9H" : {
          "id" : "NP9H",
