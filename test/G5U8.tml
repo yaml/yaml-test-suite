@@ -2,7 +2,7 @@
 --- from: @ingydotnet
 --- tags: flow sequence
 
---- in-yaml(<)
+--- in-yaml-xxx(<)
     ---
     - [-, -]
 
