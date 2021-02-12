@@ -129,6 +129,14 @@ You will need Bash, NodeJS and Perl for these things.
 
 =back
 
+=item * Java
+
+=over
+
+=item * L<SnakeYAML Engine|https://bitbucket.org/asomov/snakeyaml-engine>
+
+=back
+
 =item * Javascript
 
 =over
