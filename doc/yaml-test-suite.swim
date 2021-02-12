@@ -71,6 +71,8 @@ You will need Bash, NodeJS and Perl for these things.
   * "Neslib.Yaml"[https://github.com/neslib/Neslib.Yaml]
 * Haskell
   * "HsYAML"[https://github.com/haskell-hvr/HsYAML]
+* Java
+  * "SnakeYAML Engine"[https://bitbucket.org/asomov/snakeyaml-engine]
 * Javascript
   * "yaml"[https://github.com/eemeli/yaml]
 * Nim
