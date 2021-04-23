@@ -1,0 +1,8 @@
+=== Directive by itself with no document
+--- from: @ingydotnet
+--- tags: directive
+
+--- in-yaml(<)
+    %YAML 1.2
+
+--- error
