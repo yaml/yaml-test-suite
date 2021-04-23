@@ -1,0 +1,33 @@
+=== Recommended allowed characters in aliases
+--- from: @perlpunk
+--- tags: anchor
+
+--- in-yaml(<)
+    ---
+    - &abcDEF123 alphanumeric
+    - &a_b underscore
+    - &a-b dash
+    - &a.b dot
+    - &a/b slash
+
+--- in-json
+[
+  "alphanumeric",
+  "underscore",
+  "dash",
+  "dot",
+  "slash"
+]
+
+--- test-event
++STR
++DOC ---
++SEQ
+=VAL &abcDEF123 :alphanumeric
+=VAL &a_b :underscore
+=VAL &a-b :dash
+=VAL &a.b :dot
+=VAL &a/b :slash
+-SEQ
+-DOC
+-STR
