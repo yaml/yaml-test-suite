@@ -4,8 +4,6 @@ export PATH := $(PWD)/node_modules/.bin:$(PATH)
 
 MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
 
-DOCKER_IMAGE := yaml-test-suite-builder
-
 default: help
 
 help:
@@ -51,16 +49,8 @@ node_modules:
 	npm install coffeescript js-yaml jyj lodash testml-compiler
 	rm -f package*
 
-docker-data: docker-build
-	docker run --rm \
-	    --user "$$(id -u):$$(id -g)" \
-	    --volume $(PWD):/build \
-	    --workdir /build \
-	    $(DOCKER_IMAGE) \
-		make clean update data-update
-
-docker-build: Dockerfile
-	docker build -t $(DOCKER_IMAGE) .
+docker-data:
+	make -C docker/data data
 
 #------------------------------------------------------------------------------
 matrix:
