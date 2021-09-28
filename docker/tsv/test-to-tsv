@@ -54,6 +54,11 @@ main() (
     add-test-result py-pyyaml-event
     add-test-result c-libyaml-event
     add-test-result c-libfyaml-event
+    add-test-result hs-hsyaml-event
+    add-test-result java-snakeyaml-event
+    add-test-result dotnet-yamldotnet-event
+    add-test-result nim-nimyaml-event
+    add-test-result py-ruamel-event
 
     base64=$(base64 -w0 <<<"$input")
     base64=${base64//+/-}
@@ -81,6 +86,7 @@ add-test-result() {
         -e 's{(\ +)$}{"<SPC>" x length($1)}e;' \
         -e 's{^\+MAP\ \{\}}{+MAP};' \
         -e 's{^\+SEQ\ \[\]}{+SEQ};' \
+        -e '$_ = "" if /^=COMMENT\ /;' \
         -e ''
   ) || rc=$?
 
@@ -96,6 +102,12 @@ add-test-result() {
     else
       diff=$(diff -u <(echo "$want") <(echo "$got") || true)
       [[ $diff ]] && ok='"X"' || ok='""'
+#       if [[ $parser == hs-hsyaml-event ]]; then
+#         if [[ $diff ]]; then
+#           echo "$diff"
+#           # exit 123
+#         fi
+#       fi
     fi
   fi
   json+=", $ok"
