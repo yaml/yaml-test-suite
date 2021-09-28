@@ -52,6 +52,9 @@ node_modules:
 docker-data:
 	make -C docker/data data
 
+docker-tsv:
+	make -C docker/tsv tsv
+
 #------------------------------------------------------------------------------
 matrix:
 	git clone $(MATRIX_REPO) $@
@@ -95,6 +98,7 @@ clean:
 	rm -fr data matrix gh-pages
 	rm -fr node_modules
 	rm -f package*
+	rm -f out.tsv
 	git worktree prune
 
 .PHONY: test

@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+
+set -e -u -o pipefail
+
+main() (
+  i=0 m=3 out=out.tsv
+
+  rm -f "$out"
+  for test in $*; do
+    : $(( i++ ))
+    id=${test#test/}
+    id=${id%.tml}
+    lingy=$(compile < "$test")
+
+    # [[ $id == 4EJS ]] || continue
+
+    printf "\r%s" "$id" >&2
+
+    error=$(jq '.data[0].point.error' <<<"$lingy")
+    [[ $error == null ]] && error=false || error=true
+
+    in_yaml=$(
+      jq '.data[0].point."in-yaml"' <<<"$lingy" |
+      perl -p0e '
+        s/\\n"/"/;
+      '
+    )
+
+    if $error; then
+      test_event='"ERROR"'
+    else
+      test_event=$(
+        jq '.data[0].point."test-event"' <<<"$lingy" |
+        perl -p0e '
+          s/^"\+STR\\n(.+)-STR\\n"$/"$1"/;
+          s/^"\+DOC\\n(.+)-DOC\\n"$/"$1"/;
+          s/(?:-(?:DOC|MAP|SEQ)\\n)+"$/"/;
+          s/\\n"/"/;
+        '
+      )
+    fi
+
+    input=$(jq -r '.data[0].point."in-yaml"' <<<"$lingy")
+    input=${input//<SPC>/ }
+    input=${input//<TAB>/$'\t'}
+    want=$(jq -r '.data[0].point."test-event"' <<<"$lingy")
+
+    json="[ \"$id\", $in_yaml, $test_event"
+
+    add-test-result perl-refparser-event
+    add-test-result hs-reference-yeast
+    add-test-result js-yaml-event
+    add-test-result perl-pp-event
+    add-test-result py-pyyaml-event
+    add-test-result c-libyaml-event
+    add-test-result c-libfyaml-event
+
+    base64=$(base64 -w0 <<<"$input")
+    base64=${base64//+/-}
+    base64=${base64//\//_}
+    playground_url="https://spec.yaml.io/main/playground/parser?id=$id&input=$base64"
+    github_url=https://github.com/yaml/yaml-test-suite/blob/master/test/$id.tml
+
+    json+=", \"$playground_url\", \"$github_url\" ]"
+
+    jq -r '.|@tsv' <<<"$json" >> "$out" || true
+
+    # (( i >= m )) && break
+    # [[ $id == 2EBW ]] && break
+  done
+
+  printf "\r" >&2
+)
+
+add-test-result() {
+  parser=$1
+  rc=0
+  got=$(
+    echo "$input" | "$parser" 2>/dev/null |
+      perl -p \
+        -e 's{(\ +)$}{"<SPC>" x length($1)}e;' \
+        -e 's{^\+MAP\ \{\}}{+MAP};' \
+        -e 's{^\+SEQ\ \[\]}{+SEQ};' \
+        -e ''
+  ) || rc=$?
+
+  if [[ $parser == hs-reference-yeast ]]; then
+    if $error; then
+      [[ $got == *=ERR* || $got == *=REST* ]] && ok='""' || ok='"X"'
+    else
+      [[ $got == *=ERR* || $got == *=REST* ]] && ok='"X"' || ok='""'
+    fi
+  else
+    if $error; then
+      [[ $rc -eq 0 ]] && ok='"X"' || ok='""'
+    else
+      diff=$(diff -u <(echo "$want") <(echo "$got") || true)
+      [[ $diff ]] && ok='"X"' || ok='""'
+    fi
+  fi
+  json+=", $ok"
+}
+
+compile() (
+  compiler=$(mktemp)
+  cat <<'...' > "$compiler"
+require('ingy-prelude');
+compiler = require('testml-compiler/lib/testml-compiler/compiler');
+input = file_read('-');
+lingy = (new TestMLCompiler.Compiler).compile(input);
+say(lingy);
+...
+
+  node "$compiler"
+
+  rm -f "$compiler"
+)
+
+die() ( echo "$*"; exit 1 )
+
+main "$@"
