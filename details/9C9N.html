@@ -67,31 +67,6 @@ c]
  </div>
 
 
-  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-event">
-<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC ---
-+MAP
-=VAL :flow
-+SEQ
-=VAL :a
-=VAL :b
-=VAL :c
--SEQ
--MAP
--DOC
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;flow&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]}
-</pre>
- </div>
-
-
   <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-event">
 <h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
@@ -339,6 +314,9 @@ c]
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:3:1: error: wrongly indented flow sequence
 b,
 ^
+[NOT]: fy_fetch_plain_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 +STR
 +DOC ---
 +MAP
@@ -354,6 +332,72 @@ b,
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:3:1: error: wrongly indented flow sequence
 b,
 ^
+[NOT]: fy_fetch_plain_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. System.Exception: Exception of type &#39;System.Exception&#39; was thrown.
+   at YamlDotNet.Core.Scanner.ScanPlainScalar(Boolean&amp; isMultiline)
+   at YamlDotNet.Core.Scanner.FetchPlainScalar()
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
+   at YamlDotNet.Core.Parser.ParseFlowSequenceEntry(Boolean isFirst)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
++STR
++DOC ---
++MAP
+=VAL :flow
++SEQ
+=VAL :a
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 2, Col: 8, Idx: 11) - (Line: 2, Col: 9, Idx: 12): Exception during deserialization
+ ---&gt; System.Exception: Exception of type &#39;System.Exception&#39; was thrown.
+   at YamlDotNet.Core.Scanner.ScanPlainScalar(Boolean&amp; isMultiline)
+   at YamlDotNet.Core.Scanner.FetchPlainScalar()
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
+   at YamlDotNet.Core.Parser.ParseFlowSequenceEntry(Boolean isFirst)
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
+   at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   --- End of inner exception stack trace ---
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.DeserializeHelper(Type tItem, IParser parser, Func`3 nestedObjectDeserializer, IList result, Boolean canUpdate)
+   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
 </pre>
  </div>
 
@@ -383,11 +427,17 @@ b,
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Insufficient indentation in flow collection
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Expected flow sequence to end with ] at line 2, column 10:
+
+flow: [a,
+         ^
 +STR
 +DOC ---
 +MAP
 =VAL :flow
++SEQ
+=VAL :a
+-SEQ
 </pre>
  </div>
 
@@ -398,17 +448,21 @@ b,
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSemanticError: Insufficient indentation in flow collection
-    at FlowCollection.parse (/node/node_modules/yaml/dist/parse-cst.js:1036:30)
-    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1586:25)
-    at CollectionItem.parse (/node/node_modules/yaml/dist/parse-cst.js:92:19)
-    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1586:25)
-    at Collection.parse (/node/node_modules/yaml/dist/parse-cst.js:350:20)
-    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1605:29)
-    at Document.parseContents (/node/node_modules/yaml/dist/parse-cst.js:622:26)
-    at Document.parse (/node/node_modules/yaml/dist/parse-cst.js:685:19)
-    at Object.parse (/node/node_modules/yaml/dist/parse-cst.js:1723:18)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:32:33)
+YAMLParseError: Expected flow sequence to end with ] at line 2, column 10:
+
+flow: [a,
+         ^
+
+    at Composer.onError (/node/node_modules/yaml/dist/compose/composer.js:71:34)
+    at Object.resolveFlowCollection (/node/node_modules/yaml/dist/compose/resolve-flow-collection.js:171:9)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:21:42)
+    at composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.resolveBlockMap (/node/node_modules/yaml/dist/compose/resolve-block-map.js:73:19)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:13:36)
+    at Object.composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.composeDoc (/node/node_modules/yaml/dist/compose/compose-doc.js:31:23)
+    at Composer.next (/node/node_modules/yaml/dist/compose/composer.js:152:40)
+    at next (&lt;anonymous&gt;)
 </pre>
  </div>
 
@@ -438,7 +492,7 @@ Column    : 1
 Message   : Bad indendation in FLOWSEQ
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 197
 YAML      : &quot;b,\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -450,7 +504,14 @@ Column    : 1
 Message   : Bad indendation in FLOWSEQ
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 197
 YAML      : &quot;b,\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

@@ -71,6 +71,9 @@ folded: &gt; first line
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: block scalar no linebreak found
 folded: &gt; first line
           ^
+[NOT]: fy_fetch_block_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 +STR
 +DOC ---
 +MAP
@@ -84,6 +87,9 @@ folded: &gt; first line
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: block scalar no linebreak found
 folded: &gt; first line
           ^
+[NOT]: fy_fetch_block_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 </pre>
  </div>
 
@@ -123,7 +129,7 @@ yaml-cpp: error at line 2, column 11: unexpected character in block scalar
    at YamlDotNet.Core.Parser.ParseBlockMappingValue()
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 +STR
@@ -146,7 +152,7 @@ Aborted (core dumped)
    at YamlDotNet.Core.Parser.ParseBlockMappingValue()
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
    at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
    at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
@@ -194,15 +200,15 @@ expected a comment or a line break, but found f(102)
     folded: &gt; first line
               ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalarIgnoredLine(ScannerImpl.java:1730)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalar(ScannerImpl.java:1568)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchBlockScalar(ScannerImpl.java:994)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFolded(ScannerImpl.java:976)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:384)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalarIgnoredLine(ScannerImpl.java:1800)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalar(ScannerImpl.java:1636)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchBlockScalar(ScannerImpl.java:1015)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFolded(ScannerImpl.java:997)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:405)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:665)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -220,23 +226,27 @@ expected a comment or a line break, but found f(102)
     folded: &gt; first line
               ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalarIgnoredLine(ScannerImpl.java:1730)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalar(ScannerImpl.java:1568)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchBlockScalar(ScannerImpl.java:994)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFolded(ScannerImpl.java:976)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:384)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalarIgnoredLine(ScannerImpl.java:1800)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanBlockScalar(ScannerImpl.java:1636)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchBlockScalar(ScannerImpl.java:1015)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFolded(ScannerImpl.java:997)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:405)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:665)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:184)
+	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:310)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:301)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -246,31 +256,43 @@ expected a comment or a line break, but found f(102)
   <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: a line break is expected at line 2, column 11:
-    folded: &gt; first line
-              ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readLineBreak (/node/node_modules/js-yaml/lib/js-yaml/loader.js:357:5)
-    at readBlockScalar (/node/node_modules/js-yaml/lib/js-yaml/loader.js:834:5)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1363:35)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1089:11)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: a line break is expected (2:11)
+
+ 1 | ---
+ 2 | folded: &gt; first line
+---------------^
+ 3 |   second line
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at readLineBreak (/node/node_modules/js-yaml/lib/loader.js:391:5)
+    at readBlockScalar (/node/node_modules/js-yaml/lib/loader.js:879:5)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1445:35)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/loader.js:1164:11)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>All collection items must start at the same column
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Not a YAML token: first line at line 2, column 11:
+
+folded: &gt; first line
+          ^^^^^^^^^^
 +STR
 +DOC ---
++MAP
+=VAL :folded
+=VAL &gt;second line\n
+-MAP
+-DOC
+-STR
 </pre>
  </div>
 
@@ -281,17 +303,21 @@ YAMLException: a line break is expected at line 2, column 11:
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: All collection items must start at the same column
-    at Collection.parse (/node/node_modules/yaml/dist/parse-cst.js:331:24)
-    at ParseContext.PlainValue._defineProperty (/node/node_modules/yaml/dist/parse-cst.js:1605:29)
-    at Document.parseContents (/node/node_modules/yaml/dist/parse-cst.js:622:26)
-    at Document.parse (/node/node_modules/yaml/dist/parse-cst.js:685:19)
-    at Object.parse (/node/node_modules/yaml/dist/parse-cst.js:1723:18)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:32:33)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
-    at Module.load (internal/modules/cjs/loader.js:653:32)
+YAMLParseError: Not a YAML token: first line at line 2, column 11:
+
+folded: &gt; first line
+          ^^^^^^^^^^
+
+    at Composer.onError (/node/node_modules/yaml/dist/compose/composer.js:71:34)
+    at parseBlockScalarHeader (/node/node_modules/yaml/dist/compose/resolve-block-scalar.js:160:17)
+    at Object.resolveBlockScalar (/node/node_modules/yaml/dist/compose/resolve-block-scalar.js:7:20)
+    at Object.composeScalar (/node/node_modules/yaml/dist/compose/compose-scalar.js:10:30)
+    at composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:23:34)
+    at Object.resolveBlockMap (/node/node_modules/yaml/dist/compose/resolve-block-map.js:73:19)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:13:36)
+    at Object.composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.composeDoc (/node/node_modules/yaml/dist/compose/compose-doc.js:31:23)
+    at Composer.next (/node/node_modules/yaml/dist/compose/composer.js:152:40)
 </pre>
  </div>
 
@@ -301,13 +327,13 @@ YAMLSyntaxError: All collection items must start at the same column
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 2:1: did not find expected comment or line break
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:443: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x560fc1963f97
+	[C]: at 0x5582088def97
 </pre>
  </div>
 
@@ -348,7 +374,7 @@ Column    : 10
 Message   : Invalid block scalar
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
 YAML      : &quot; first line&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -360,7 +386,7 @@ Column    : 10
 Message   : Invalid block scalar
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 538
 YAML      : &quot; first line&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -397,6 +423,13 @@ while scanning a block scalar at line: 2, column: 9
 
 was found at , line: 2, column: 11
 while scanning a block scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

@@ -25,20 +25,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/U99R.tml">&test-U
 <pre></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_invalid_incorrect" id="c-libyaml-event">
-<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str,&gt; :xxx
--SEQ
--DOC
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-event">
+   <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-event">
 <h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
 +DOC
@@ -64,62 +51,9 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/U99R.tml">&test-U
  </div>
 
 
-  <div class="framework framework_box_invalid_incorrect" id="js-yaml-event">
-<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str&gt; :, xxx
--SEQ
--DOC
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>[
-  &quot;, xxx&quot;
-]
-</pre>
- </div>
-
-
   <div class="framework framework_box_invalid_incorrect" id="lua-lyaml-json">
 <h3><a href="#lua-lyaml-json">lua-lyaml-json</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>[&quot;xxx&quot;]
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-event">
-<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC
-+SEQ
-=VAL &lt;tag:yaml.org,2002:str,&gt; :xxx
--SEQ
--DOC
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-json">
-<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>[
-   &quot;xxx&quot;
-]
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pplibyaml-perl">
-<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>[
-  &#39;xxx&#39;
-]
 </pre>
  </div>
 
@@ -247,6 +181,16 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/U99R.tml">&test-U
  </div>
 
 
+  <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
+<h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected whitespace or line break
++STR
++DOC
++SEQ
+</pre>
+ </div>
+
+
   <div class="framework framework_box_invalid_correct" id="cpp-yamlcpp-event">
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
@@ -307,21 +251,21 @@ Aborted (core dumped)
 
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:336)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequenceStep2(BaseConstructor.java:390)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequence(BaseConstructor.java:374)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:220)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequenceStep2(BaseConstructor.java:391)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructSequence(BaseConstructor.java:375)
 	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq.construct(SafeConstructor.java:534)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:230)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:219)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:173)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:138)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:220)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:174)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:139)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 Caused by: org.yaml.snakeyaml.error.YAMLException: Class not found: str,
-	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:664)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:322)
-	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
+	at org.yaml.snakeyaml.constructor.Constructor.getClassForNode(Constructor.java:669)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.getConstructor(Constructor.java:323)
+	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:332)
 	... 12 more
 </pre>
  </div>
@@ -330,22 +274,61 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Class not found: str,
   <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: tag suffix cannot contain flow indicator characters at line 1, column 9:
-    - !!str, xxx
-            ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readTagProperty (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1200:7)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1325:12)
-    at readBlockSequence (/node/node_modules/js-yaml/lib/js-yaml/loader.js:955:5)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1358:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: tag suffix cannot contain flow indicator characters (1:9)
+
+ 1 | - !!str, xxx
+-------------^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at readTagProperty (/node/node_modules/js-yaml/lib/loader.js:1275:7)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1407:12)
+    at readBlockSequence (/node/node_modules/js-yaml/lib/loader.js:1008:5)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1440:12)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Tags and anchors must be separated from the next token by white space at line 1, column 8:
+
+- !!str, xxx
+       ^
++STR
++DOC
++SEQ
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/yaml/bin/js-yaml-json:8
+  if (doc.errors.length !== 0) throw doc.errors[0]
+                               ^
+
+YAMLParseError: Tags and anchors must be separated from the next token by white space at line 1, column 8:
+
+- !!str, xxx
+       ^
+
+    at Composer.onError (/node/node_modules/yaml/dist/compose/composer.js:71:34)
+    at Object.resolveProps (/node/node_modules/yaml/dist/compose/resolve-props.js:114:9)
+    at Object.resolveBlockSeq (/node/node_modules/yaml/dist/compose/resolve-block-seq.js:10:36)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:17:36)
+    at Object.composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.composeDoc (/node/node_modules/yaml/dist/compose/compose-doc.js:31:23)
+    at Composer.next (/node/node_modules/yaml/dist/compose/composer.js:152:40)
+    at next (&lt;anonymous&gt;)
+    at Composer.compose (/node/node_modules/yaml/dist/compose/composer.js:134:25)
+    at compose.next (&lt;anonymous&gt;)
 </pre>
  </div>
 
@@ -386,7 +369,7 @@ Expected  : EOL WS
 Got       : FLOW_COMMA
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;, xxx\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -399,7 +382,50 @@ Expected  : EOL WS
 Got       : FLOW_COMMA
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;, xxx\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-event">
+<h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected whitespace or line break
+
+was found at , line: 1, column: 8
+while scanning a tag at line: 1, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-json">
+<h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected whitespace or line break
+
+was found at , line: 1, column: 8
+while scanning a tag at line: 1, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
+
+    did not find expected whitespace or line break
+
+was found at , line: 1, column: 8
+while scanning a tag at line: 1, column: 3
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

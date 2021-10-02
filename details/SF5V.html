@@ -25,7 +25,25 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 <pre></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_invalid_incorrect" id="nim-nimyaml-event">
+   <div class="framework framework_box_invalid_incorrect" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
++DOC ---
+=VAL :
+-DOC
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>null
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="nim-nimyaml-event">
 <h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
 +DOC ---
@@ -55,6 +73,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:7: error: duplicate version directive
 %YAML 1.2
       ^~~
+[NOT]: failed to fy_parse_version_directive()
 +STR
 </pre>
  </div>
@@ -65,6 +84,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:7: error: duplicate version directive
 %YAML 1.2
       ^~~
+[NOT]: failed to fy_parse_version_directive()
 </pre>
  </div>
 
@@ -88,12 +108,18 @@ yaml-cpp: error at line 2, column 1: repeated YAML directive
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
 <h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 1, Idx: 10): Found duplicate %YAML directive.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 6, Idx: 15): While scanning a version directive, did not find preceding &lt;document end&gt;.
+   at YamlDotNet.Core.Scanner.ScanDirective()
+   at YamlDotNet.Core.Scanner.FetchDirective()
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
    at YamlDotNet.Core.Parser.ProcessDirectives(TagDirectiveCollection tags)
    at YamlDotNet.Core.Parser.ParseDocumentStart(Boolean isImplicit)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 +STR
@@ -103,12 +129,18 @@ Aborted (core dumped)
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 1, Idx: 10): Found duplicate %YAML directive.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 6, Idx: 15): While scanning a version directive, did not find preceding &lt;document end&gt;.
+   at YamlDotNet.Core.Scanner.ScanDirective()
+   at YamlDotNet.Core.Scanner.FetchDirective()
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
    at YamlDotNet.Core.Parser.ProcessDirectives(TagDirectiveCollection tags)
    at YamlDotNet.Core.Parser.ParseDocumentStart(Boolean isImplicit)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
    at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
@@ -140,12 +172,12 @@ Aborted (core dumped)
     %YAML 1.2
     ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl.processDirectives(ParserImpl.java:294)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$900(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:223)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:207)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.parser.ParserImpl.processDirectives(ParserImpl.java:329)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$1000(ParserImpl.java:120)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:249)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -159,15 +191,15 @@ Aborted (core dumped)
     %YAML 1.2
     ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl.processDirectives(ParserImpl.java:294)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$900(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:223)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:207)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:82)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:123)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:489)
+	at org.yaml.snakeyaml.parser.ParserImpl.processDirectives(ParserImpl.java:329)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$1000(ParserImpl.java:120)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:249)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:155)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:93)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:124)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:509)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -177,51 +209,25 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: duplication of %YAML directive at line 3, column 1:
-    ---
-    ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at Object.handleYamlDirective [as YAML] (/node/node_modules/js-yaml/lib/js-yaml/loader.js:190:7)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1500:39)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: duplication of %YAML directive (3:1)
+
+ 1 | %YAML 1.2
+ 2 | %YAML 1.2
+ 3 | ---
+-----^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at Object.handleYamlDirective [as YAML] (/node/node_modules/js-yaml/lib/loader.js:204:7)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1606:39)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="js-yaml-event">
-<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>The %YAML directive must only be given at most once per document.
-+STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>/yaml/bin/js-yaml-json:8
-  if (doc.errors.length !== 0) throw doc.errors[0]
-                               ^
-
-YAMLSemanticError: The %YAML directive must only be given at most once per document.
-    at parseDirectives (/node/node_modules/yaml/dist/Document-2cf6b08c.js:459:27)
-    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:610:5)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
-    at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
-    at Module._compile (internal/modules/cjs/loader.js:778:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
-    at Module.load (internal/modules/cjs/loader.js:653:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
-    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
-    at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
 </pre>
  </div>
 
@@ -231,11 +237,11 @@ YAMLSemanticError: The %YAML directive must only be given at most once per docum
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 1:1: found incompatible YAML document
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:496: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5601429a8f97
+	[C]: at 0x5630a1f58f97
 </pre>
  </div>
 
@@ -251,16 +257,16 @@ stack traceback:
 
   <div class="framework framework_box_invalid_correct" id="perl-pp-json">
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
- at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+ at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
- at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+ at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -294,6 +300,13 @@ was found at , line: 2, column: 1
     found duplicate %YAML directive
 
 was found at , line: 2, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Multiple %YAML directives not allowed at /perl5/lib/perl5/YAML/Parser.pm line 4848, &lt;&gt; line 1.
 </pre>
  </div>
 

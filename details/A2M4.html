@@ -74,6 +74,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/A2M4.tml">&test-A
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
  <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
 <h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -136,12 +141,13 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
     : -	b
        ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:419)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:504)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceFirstEntry.produce(ParserImpl.java:496)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:439)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryValue.produce(ParserImpl.java:569)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryKey.produce(ParserImpl.java:545)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceFirstEntry.produce(ParserImpl.java:534)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -156,21 +162,22 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
     : -	b
        ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:419)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:504)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceFirstEntry.produce(ParserImpl.java:496)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:208)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:439)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryValue.produce(ParserImpl.java:569)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryKey.produce(ParserImpl.java:545)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceFirstEntry.produce(ParserImpl.java:534)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:240)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:186)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:314)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:305)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -182,14 +189,14 @@ found character &#39;\t(TAB)&#39; that cannot start any token. (Do not use \t(TA
 <span class="status_box color_error">&nbsp;</span>error <pre>luajit: 2:3: found character that cannot start any token
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:443: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5645ac83ff97
+	[C]: at 0x5565177f3f97
 </pre>
  </div>
 

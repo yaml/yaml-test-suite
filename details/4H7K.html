@@ -36,6 +36,9 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/4H7K.tml">&test-4
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:13: error: flow sequence with invalid extra closing bracket
 [ a, b, c ] ]
             ^
+[NOT]: fy_fetch_flow_collection_mark_end() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 +STR
 +DOC ---
 </pre>
@@ -47,6 +50,9 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/4H7K.tml">&test-4
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:13: error: flow sequence with invalid extra closing bracket
 [ a, b, c ] ]
             ^
+[NOT]: fy_fetch_flow_collection_mark_end() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 </pre>
  </div>
 
@@ -78,11 +84,11 @@ yaml-cpp: error at line 2, column 13: illegal flow end
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
 <h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 13, Idx: 16) - (Line: 2, Col: 13, Idx: 16): Did not find expected &lt;document end&gt;.
-   at YamlDotNet.Core.Parser.ParseDocumentEnd()
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 13, Idx: 16) - (Line: 2, Col: 13, Idx: 16): Did not find expected &lt;document start&gt;.
+   at YamlDotNet.Core.Parser.ParseDocumentStart(Boolean isImplicit)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 +STR
@@ -92,22 +98,18 @@ Aborted (core dumped)
 =VAL :b
 =VAL :c
 -SEQ
+-DOC
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 13, Idx: 16) - (Line: 2, Col: 13, Idx: 16): Did not find expected &lt;document end&gt;.
-   at YamlDotNet.Core.Parser.ParseDocumentEnd()
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 13, Idx: 16) - (Line: 2, Col: 13, Idx: 16): Did not find expected &lt;document start&gt;.
+   at YamlDotNet.Core.Parser.ParseDocumentStart(Boolean isImplicit)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
-   at YamlDotNet.Core.ParserExtensions.Expect[T](IParser parser)
-   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.DeserializeHelper(Type tItem, IParser parser, Func`3 nestedObjectDeserializer, IList result, Boolean canUpdate)
-   at YamlDotNet.Serialization.NodeDeserializers.CollectionNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
-   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
-   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Core.ParserExtensions.Consume[T](IParser parser)
    at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
@@ -141,9 +143,9 @@ Aborted (core dumped)
     [ a, b, c ] ]
                 ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:256)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -157,12 +159,12 @@ Aborted (core dumped)
     [ a, b, c ] ]
                 ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:78)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:123)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:489)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:256)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:155)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:89)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:124)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:509)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 [
@@ -177,17 +179,19 @@ Aborted (core dumped)
   <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: end of the stream or a document separator is expected at line 2, column 13:
-    [ a, b, c ] ]
-                ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1539:5)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: end of the stream or a document separator is expected (2:13)
+
+ 1 | ---
+ 2 | [ a, b, c ] ]
+-----------------^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1645:5)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
@@ -199,7 +203,10 @@ YAMLException: end of the stream or a document separator is expected at line 2, 
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Document contains trailing content not separated by a ... or --- line
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unexpected flow-seq-end token in YAML stream: &quot;]&quot; at line 2, column 13:
+
+[ a, b, c ] ]
+            ^
 +STR
 +DOC ---
 +SEQ
@@ -219,17 +226,21 @@ YAMLException: end of the stream or a document separator is expected at line 2, 
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: Document contains trailing content not separated by a ... or --- line
-    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:353:25)
-    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
+YAMLParseError: Unexpected flow-seq-end token in YAML stream: &quot;]&quot; at line 2, column 13:
+
+[ a, b, c ] ]
+            ^
+
+    at Composer.next (/node/node_modules/yaml/dist/compose/composer.js:173:31)
+    at next (&lt;anonymous&gt;)
+    at Composer.compose (/node/node_modules/yaml/dist/compose/composer.js:134:25)
+    at compose.next (&lt;anonymous&gt;)
+    at Function.from (&lt;anonymous&gt;)
+    at Object.parseAllDocuments (/node/node_modules/yaml/dist/public-api.js:30:24)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-yaml-json:7:19)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
-    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
-    at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
 </pre>
  </div>
 
@@ -239,11 +250,11 @@ YAMLSyntaxError: Document contains trailing content not separated by a ... or --
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 2:13: did not find expected &lt;document start&gt;
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:496: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5606088b2f97
+	[C]: at 0x563743002f97
 </pre>
  </div>
 
@@ -292,7 +303,7 @@ Expected  : DOC_END DOC_START EOL
 Got       : WS
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot; ]&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -305,7 +316,7 @@ Expected  : DOC_END DOC_START EOL
 Got       : WS
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot; ]&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -339,6 +350,13 @@ was found at , line: 2, column: 13
     did not find expected &lt;document start&gt;
 
 was found at , line: 2, column: 13
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

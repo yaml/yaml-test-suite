@@ -132,6 +132,11 @@ value11
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="py-pyyaml-event">
 <h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -195,7 +200,8 @@ value11
  <hr style="clear: both;">          <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 5, Col: 1, Idx: 22) - (Line: 5, Col: 4, Idx: 25): Expected &#39;StreamEnd&#39;, got &#39;DocumentStart&#39; (at Line: 5, Col: 1, Idx: 22).
-   at YamlDotNet.Core.ParserExtensions.Expect[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.Require[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.Consume[T](IParser parser)
    at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
@@ -248,19 +254,25 @@ Parsing error near byte offset Pos {posByteOffset = 132, posCharOffset = 132, po
   <div class="framework framework_box_error" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: duplication of an anchor property at line 14, column 1:
-    &amp;a5 !!str key5: value4
-    ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readAnchorProperty (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1236:5)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1325:38)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: duplication of an anchor property (14:1)
+
+ 11 | !!str scalar3
+ 12 | ---
+ 13 | &amp;a4 !!map
+ 14 | &amp;a5 !!str key5: value4
+------^
+ 15 | ---
+ 16 | a6: 1
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at readAnchorProperty (/node/node_modules/js-yaml/lib/loader.js:1317:5)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1407:38)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)

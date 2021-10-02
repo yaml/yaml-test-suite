@@ -67,6 +67,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/W4TN.tml">&test-W
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="py-ruamel-event">
 <h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -189,7 +194,8 @@ Parse error: could not find expected directive name
   <div class="framework framework_box_error" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Unhandled exception. YamlDotNet.Core.YamlException: (Line: 5, Col: 1, Idx: 35) - (Line: 6, Col: 4, Idx: 48): Expected &#39;StreamEnd&#39;, got &#39;DocumentStart&#39; (at Line: 5, Col: 1, Idx: 35).
-   at YamlDotNet.Core.ParserExtensions.Expect[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.Require[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.Consume[T](IParser parser)
    at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
    at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
@@ -210,14 +216,14 @@ expected alphabetic or numeric character, but found !(33)
     %!PS-Adobe-2.0
      ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirectiveName(ScannerImpl.java:1268)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirective(ScannerImpl.java:1224)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDirective(ScannerImpl.java:617)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:304)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:250)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:253)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirectiveName(ScannerImpl.java:1319)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirective(ScannerImpl.java:1276)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDirective(ScannerImpl.java:638)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:325)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:271)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:286)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -235,17 +241,22 @@ expected alphabetic or numeric character, but found !(33)
     %!PS-Adobe-2.0
      ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirectiveName(ScannerImpl.java:1268)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirective(ScannerImpl.java:1224)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDirective(ScannerImpl.java:617)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:304)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:250)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:253)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:168)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:97)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirectiveName(ScannerImpl.java:1319)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanDirective(ScannerImpl.java:1276)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDirective(ScannerImpl.java:638)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:325)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.peekToken(ScannerImpl.java:271)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd.produce(ParserImpl.java:286)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:184)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -257,11 +268,11 @@ expected alphabetic or numeric character, but found !(33)
 <span class="status_box color_error">&nbsp;</span>error <pre>luajit: 1:1: found incompatible YAML document
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:481: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:496: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55a8804e2f97
+	[C]: at 0x5555f39fcf97
 </pre>
  </div>
 

@@ -37,18 +37,18 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">&test-5
 <pre>[<br>  {<br>    &quot;key&quot;: &quot;value&quot;<br>  },<br>  {<br>    &quot;key&quot;: &quot;:value&quot;<br>  }<br>]<br></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_ok" id="cpp-yamlcpp-event">
+   <div class="framework framework_box_ok" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="cpp-yamlcpp-event">
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
   <div class="framework framework_box_ok" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
-<span class="status_box color_ok">&nbsp;</span>ok   </div>
-
-
-  <div class="framework framework_box_ok" id="js-yaml-event">
-<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
@@ -62,23 +62,28 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">&test-5
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="py-ruamel-event">
 <h3><a href="#py-ruamel-event">py-ruamel-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
+ <hr style="clear: both;">    <div class="framework framework_box_json_ok" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
+  <div class="framework framework_box_json_ok" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
   <div class="framework framework_box_json_ok" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
-<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
-
-
-  <div class="framework framework_box_json_ok" id="js-yaml-json">
-<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
@@ -92,7 +97,67 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">&test-5
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_json_diff" id="perl-tiny-json">
+ <hr style="clear: both;">    <div class="framework framework_box_diff" id="js-yaml-event">
+<h3><a href="#js-yaml-event">js-yaml-event</a></h3>
+<span class="status_box color_diff">&nbsp;</span>diff <br>
+
+  Got Events:
+<pre><span
+class="">+STR</span>
+<span
+class="">+DOC</span>
+<span
+class="">+SEQ</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL &quot;key</span>
+<span
+class="">=VAL :value</span>
+<span
+class="">-MAP</span>
+<span
+class="">+MAP</span>
+<span
+class="">=VAL &quot;key</span>
+<span
+class="diff_line">=VAL :value</span>
+<span
+class="">-MAP</span>
+<span
+class="">-SEQ</span>
+<span
+class="">-DOC</span>
+<span
+class="">-STR</span>
+</pre>
+
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_json_diff" id="js-yaml-json">
+<h3><a href="#js-yaml-json">js-yaml-json</a></h3>
+<span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
+class="">[</span>
+<span
+class="">  {</span>
+<span
+class="">    &quot;key&quot;: &quot;value&quot;</span>
+<span
+class="">  },</span>
+<span
+class="">  {</span>
+<span
+class="diff_line">    &quot;key&quot;: &quot;value&quot;</span>
+<span
+class="">  }</span>
+<span
+class="">]</span>
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_json_diff" id="perl-tiny-json">
 <h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
 <span class="status_box color_json_diff">&nbsp;</span>json_diff  <pre><span
 class="">[</span>
@@ -106,34 +171,7 @@ class="">]</span>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libfyaml-event">
-<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-+SEQ
-+MAP
-=VAL &quot;key
-=VAL :value
--MAP
-+MAP
-=VAL &quot;key
-stdin:2:11: error: did not find expected node content
-- { &quot;key&quot;::value }
-          ^
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>stdin:2:11: error: did not find expected node content
-- { &quot;key&quot;::value }
-          ^
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="c-libyaml-event">
+ <hr style="clear: both;">    <div class="framework framework_box_error" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
@@ -165,7 +203,7 @@ Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 11, 
    at YamlDotNet.Core.Parser.ParseFlowMappingValue(Boolean isEmpty)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 </pre>
@@ -179,7 +217,7 @@ Aborted (core dumped)
    at YamlDotNet.Core.Parser.ParseFlowMappingValue(Boolean isEmpty)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
    at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
    at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
@@ -213,12 +251,12 @@ expected the node content, but found &#39;:&#39;
     - { &quot;key&quot;::value }
               ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue.produce(ParserImpl.java:764)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:518)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:400)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2600(ParserImpl.java:120)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue.produce(ParserImpl.java:881)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -236,22 +274,26 @@ expected the node content, but found &#39;:&#39;
     - { &quot;key&quot;::value }
               ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:482)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:364)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$2400(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue.produce(ParserImpl.java:764)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:209)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:518)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseFlowNode(ParserImpl.java:400)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2600(ParserImpl.java:120)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue.produce(ParserImpl.java:881)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:184)
+	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:310)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:301)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:245)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:186)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -263,14 +305,14 @@ expected the node content, but found &#39;:&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>luajit: 2:5: did not find expected node content
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:443: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55b538ea4f97
+	[C]: at 0x55936235cf97
 </pre>
  </div>
 

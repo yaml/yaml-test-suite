@@ -94,6 +94,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/4FJ6.tml">&test-4
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="py-pyyaml-event">
 <h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -137,7 +142,7 @@ Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: d, e]]: 23\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -277,22 +282,26 @@ stdin:3:3: error: Non scalar keys are not allowed in JSON emit mode
   <div class="framework framework_box_na" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: nested arrays are not supported inside keys at line 3, column 20:
-      [ a, [ [[b,c]]: d, e]]: 23
-                       ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at storeMappingPair (/node/node_modules/js-yaml/lib/js-yaml/loader.js:298:9)
-    at readFlowCollection (/node/node_modules/js-yaml/lib/js-yaml/loader.js:753:20)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
-    at readFlowCollection (/node/node_modules/js-yaml/lib/js-yaml/loader.js:735:5)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
-    at readFlowCollection (/node/node_modules/js-yaml/lib/js-yaml/loader.js:735:5)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1036:16)
+YAMLException: nested arrays are not supported inside keys (3:20)
+
+ 1 | ---
+ 2 | [
+ 3 |   [ a, [ [[b,c]]: d, e]]: 23
+------------------------^
+ 4 | ]
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at storeMappingPair (/node/node_modules/js-yaml/lib/loader.js:320:9)
+    at readFlowCollection (/node/node_modules/js-yaml/lib/loader.js:798:20)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readFlowCollection (/node/node_modules/js-yaml/lib/loader.js:780:5)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readFlowCollection (/node/node_modules/js-yaml/lib/loader.js:780:5)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/loader.js:1104:12)
 </pre>
 
  </div>
@@ -302,9 +311,10 @@ YAMLException: nested arrays are not supported inside keys at line 3, column 20:
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &quot;[\n  a,\n  [\n      ? [ [ b, c ] ]\n        : d,\n      e\n    ]\n]&quot;: 23
+    &quot;[\n  a,\n  [\n      {\n          ? [ [ b, c ] ]\n          : d\n        },\n      e\n    ]\n]&quot;: 23
   }
 ]
+(node:256) Warning: Keys with collection values will be stringified due to JS Object restrictions: &quot;[ [ b, c ] ]&quot;. Set mapAsMap: true to use object keys.
 </pre>
 
  </div>
@@ -316,7 +326,7 @@ YAMLException: nested arrays are not supported inside keys at line 3, column 20:
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55c595e1cf97
+	[C]: at 0x55850c38cf97
 </pre>
 
  </div>
@@ -330,7 +340,7 @@ Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;: d, e]]: 23\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
 
  </div>
@@ -364,7 +374,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x564d35fb1a80)&quot; : 23
+      &quot;ARRAY(0x56050fcafa98)&quot; : 23
    }
 ]
 </pre>
@@ -376,7 +386,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x559fb83110d8)&#39; =&gt; 23
+    &#39;ARRAY(0x563b3c97a1c8)&#39; =&gt; 23
   }
 ]
 </pre>
@@ -396,7 +406,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x56382e25c0b8)&quot; : 23
+      &quot;ARRAY(0x55c38bcde210)&quot; : 23
    }
 ]
 </pre>
@@ -408,7 +418,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x55d31936ab58)&#39; =&gt; 23
+    &#39;ARRAY(0x565500da1b58)&#39; =&gt; 23
   }
 ]
 </pre>

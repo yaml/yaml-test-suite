@@ -77,6 +77,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: invalid tag indent for mapping
 !!map
 ^~~~~
+[NOT]: fy_purge_stale_simple_keys() failed
+[NOT]: fy_save_simple_key_mark() failed
+[NOT]: fy_fetch_plain_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
+[NOT]: fy_parse_node() failed
 +STR
 +DOC
 +MAP
@@ -90,6 +96,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: invalid tag indent for mapping
 !!map
 ^~~~~
+[NOT]: fy_purge_stale_simple_keys() failed
+[NOT]: fy_save_simple_key_mark() failed
+[NOT]: fy_fetch_plain_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
+[NOT]: fy_parse_node() failed
 </pre>
  </div>
 
@@ -107,40 +119,29 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/H7J7.tml">&test-H
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
 <h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SyntaxErrorException: (Line: 3, Col: 3, Idx: 16) - (Line: 3, Col: 3, Idx: 16): While scanning a simple key, could not find expected &#39;:&#39;.
-   at YamlDotNet.Core.Scanner.StaleSimpleKeys()
-   at YamlDotNet.Core.Scanner.FetchNextToken()
-   at YamlDotNet.Core.Scanner.FetchMoreTokens()
-   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
-   at YamlDotNet.Core.Parser.GetCurrentToken()
-   at YamlDotNet.Core.Parser.ParseNode(Boolean isBlock, Boolean isIndentlessSequence)
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 3, Col: 3, Idx: 16) - (Line: 3, Col: 3, Idx: 16): While scanning a simple key, could not find expected &#39;:&#39;.
    at YamlDotNet.Core.Parser.ParseBlockMappingValue()
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 +STR
 +DOC
 +MAP
 =VAL :key
+=VAL &amp;x :
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SyntaxErrorException: (Line: 3, Col: 3, Idx: 16) - (Line: 3, Col: 3, Idx: 16): While scanning a simple key, could not find expected &#39;:&#39;.
-   at YamlDotNet.Core.Scanner.StaleSimpleKeys()
-   at YamlDotNet.Core.Scanner.FetchNextToken()
-   at YamlDotNet.Core.Scanner.FetchMoreTokens()
-   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
-   at YamlDotNet.Core.Parser.GetCurrentToken()
-   at YamlDotNet.Core.Parser.ParseNode(Boolean isBlock, Boolean isIndentlessSequence)
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 3, Col: 3, Idx: 16) - (Line: 3, Col: 3, Idx: 16): While scanning a simple key, could not find expected &#39;:&#39;.
    at YamlDotNet.Core.Parser.ParseBlockMappingValue()
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
    at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
    at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
@@ -190,15 +191,15 @@ could not find expected &#39;:&#39;
       a: b
       ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:464)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:289)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:388)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseBlockNodeOrIndentlessSequence(ParserImpl.java:368)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$2200(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:588)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:484)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:310)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:424)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseBlockNodeOrIndentlessSequence(ParserImpl.java:404)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2300(ParserImpl.java:120)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:670)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -216,23 +217,27 @@ could not find expected &#39;:&#39;
       a: b
       ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:464)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:289)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:388)
-	at org.yaml.snakeyaml.parser.ParserImpl.parseBlockNodeOrIndentlessSequence(ParserImpl.java:368)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$2200(ParserImpl.java:117)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:588)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:484)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:310)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseNode(ParserImpl.java:424)
+	at org.yaml.snakeyaml.parser.ParserImpl.parseBlockNodeOrIndentlessSequence(ParserImpl.java:404)
+	at org.yaml.snakeyaml.parser.ParserImpl.access$2300(ParserImpl.java:120)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:670)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:184)
+	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:310)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:301)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -241,12 +246,14 @@ could not find expected &#39;:&#39;
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>A PLAIN node cannot be resolved as a mapping
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>All mapping items must start at the same column at line 1, column 8:
+
+key: &amp;x
+       ^
 +STR
 +DOC
 +MAP
 =VAL :key
-=VAL &amp;x :
 </pre>
  </div>
 
@@ -257,17 +264,21 @@ could not find expected &#39;:&#39;
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: A PLAIN node cannot be resolved as a mapping
-    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1605:21)
-    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
-    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
-    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
-    at resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1792:15)
-    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
-    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
-    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
-    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
+YAMLParseError: All mapping items must start at the same column at line 1, column 8:
+
+key: &amp;x
+       ^
+
+    at Composer.onError (/node/node_modules/yaml/dist/compose/composer.js:71:34)
+    at Object.resolveBlockMap (/node/node_modules/yaml/dist/compose/resolve-block-map.js:29:21)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:13:36)
+    at Object.composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.composeDoc (/node/node_modules/yaml/dist/compose/compose-doc.js:31:23)
+    at Composer.next (/node/node_modules/yaml/dist/compose/composer.js:152:40)
+    at next (&lt;anonymous&gt;)
+    at Composer.compose (/node/node_modules/yaml/dist/compose/composer.js:134:25)
+    at compose.next (&lt;anonymous&gt;)
+    at Function.from (&lt;anonymous&gt;)
 </pre>
  </div>
 
@@ -277,13 +288,13 @@ YAMLSyntaxError: A PLAIN node cannot be resolved as a mapping
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 1:1: could not find expected &#39;:&#39;
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:443: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x56015d99af97
+	[C]: at 0x561121b9af97
 </pre>
  </div>
 
@@ -314,7 +325,7 @@ Expected  : WS
 Got       : EOL
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -327,7 +338,7 @@ Expected  : WS
 Got       : EOL
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
 YAML      : &quot;&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -364,6 +375,13 @@ while scanning a simple key at line: 2, column: 1
 
 was found at , line: 3, column: 3
 while scanning a simple key at line: 2, column: 1
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

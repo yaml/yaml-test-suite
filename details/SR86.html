@@ -29,11 +29,32 @@ key2: &amp;b *a
 <pre></pre>
 </div>
 <hr style="clear: both;">
-      <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+   <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
+<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+   &quot;key1&quot; : &quot;value&quot;,
+   &quot;key2&quot; : &quot;value&quot;
+}
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-syck-perl">
+<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
+  &#39;key1&#39; =&gt; &#39;value&#39;,
+  &#39;key2&#39; =&gt; &#39;value&#39;
+}
+</pre>
+ </div>
+
+
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
 <h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: unexpected alias
 key2: &amp;b *a
           ^
+[NOT]: fy_parse_node() failed
 +STR
 +DOC
 +MAP
@@ -49,6 +70,7 @@ key2: &amp;b *a
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:11: error: unexpected alias
 key2: &amp;b *a
           ^
+[NOT]: fy_parse_node() failed
 </pre>
  </div>
 
@@ -89,7 +111,7 @@ yaml-cpp: error at line 2, column 10: end of map not found
    at YamlDotNet.Core.Parser.ParseBlockMappingValue()
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at Program.ConvertToLibYamlStyleAnnotatedEventStream(TextReader textReader, TextWriter textWriter)
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
    at Program.Main(String[] commandLineArguments)
 Aborted (core dumped)
 +STR
@@ -109,7 +131,7 @@ Aborted (core dumped)
    at YamlDotNet.Core.Parser.ParseBlockMappingValue()
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
-   at YamlDotNet.Core.ParserExtensions.Allow[T](IParser parser)
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
    at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
    at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
    at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
@@ -159,9 +181,9 @@ expected &lt;block end&gt;, but found &#39;&lt;alias&gt;&#39;
     key2: &amp;b *a
              ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -179,14 +201,21 @@ expected &lt;block end&gt;, but found &#39;&lt;alias&gt;&#39;
     key2: &amp;b *a
              ^
 
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:235)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:184)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:314)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:305)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -196,20 +225,23 @@ expected &lt;block end&gt;, but found &#39;&lt;alias&gt;&#39;
   <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: alias node should not have any properties at line 3, column 1:
-    
-    ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1372:13)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1089:11)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: alias node should not have any properties (3:1)
+
+ 1 | key1: &amp;a value
+ 2 | key2: &amp;b *a
+ 3 | 
+-----^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1454:13)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/loader.js:1164:11)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
 </pre>
@@ -218,7 +250,10 @@ YAMLException: alias node should not have any properties at line 3, column 1:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>An alias node must not specify any properties
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>An alias node must not specify any properties at line 2, column 10:
+
+key2: &amp;b *a
+         ^^
 +STR
 +DOC
 +MAP
@@ -235,17 +270,21 @@ YAMLException: alias node should not have any properties at line 3, column 1:
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSemanticError: An alias node must not specify any properties
-    at resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1580:21)
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1777:38)
-    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
-    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
-    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
-    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
-    at Object.resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
-    at parseContents (/node/node_modules/yaml/dist/Document-2cf6b08c.js:357:30)
-    at Document.parse (/node/node_modules/yaml/dist/Document-2cf6b08c.js:615:5)
-    at Object.parseAllDocuments (/node/node_modules/yaml/dist/index.js:34:9)
+YAMLParseError: An alias node must not specify any properties at line 2, column 10:
+
+key2: &amp;b *a
+         ^^
+
+    at Composer.onError (/node/node_modules/yaml/dist/compose/composer.js:71:34)
+    at composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:17:17)
+    at Object.resolveBlockMap (/node/node_modules/yaml/dist/compose/resolve-block-map.js:73:19)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:13:36)
+    at Object.composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.composeDoc (/node/node_modules/yaml/dist/compose/compose-doc.js:31:23)
+    at Composer.next (/node/node_modules/yaml/dist/compose/composer.js:152:40)
+    at next (&lt;anonymous&gt;)
+    at Composer.compose (/node/node_modules/yaml/dist/compose/composer.js:134:25)
+    at compose.next (&lt;anonymous&gt;)
 </pre>
  </div>
 
@@ -255,13 +294,13 @@ YAMLSemanticError: An alias node must not specify any properties
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 2:7: did not find expected key
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:443: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:340: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5654e1d11f97
+	[C]: at 0x560b9f574f97
 </pre>
  </div>
 
@@ -306,7 +345,7 @@ Column    : 12
 Message   : Parse error: Alias not allowed in this context
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 705
 YAML      : &quot;&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -318,7 +357,7 @@ Column    : 12
 Message   : Parse error: Alias not allowed in this context
 Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 705
 YAML      : &quot;&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -359,16 +398,9 @@ while parsing a block mapping at line: 1, column: 1
  </div>
 
 
-  <div class="framework framework_box_invalid_correct" id="perl-syck-json">
-<h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Segmentation fault (core dumped)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="perl-syck-perl">
-<h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Segmentation fault (core dumped)
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

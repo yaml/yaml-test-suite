@@ -89,6 +89,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/X38W.tml">&test-X
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
+  <div class="framework framework_box_ok" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
   <div class="framework framework_box_ok" id="py-pyyaml-event">
 <h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
@@ -99,7 +104,22 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/X38W.tml">&test-X
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
- <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-yaml-perl">
+ <hr style="clear: both;">             <div class="framework framework_box_error" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Duplicate key &#39;[&#39;a&#39;,&#39;b&#39;]&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 61.
+ at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-pplibyaml-perl">
+<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Duplicate key &#39;[&#39;a&#39;,&#39;b&#39;]&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 61.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Invalid element in map
    Code: YAML_LOAD_ERR_BAD_MAP_ELEMENT
@@ -181,7 +201,6 @@ by default when using the new API.
 <span class="status_box color_na">&nbsp;</span>na  <pre>stdin:1:1: error: duplicate key after resolving
 { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
 ^
-[ERR]: fy_document_resolve() failed
 </pre>
 
  </div>
@@ -220,22 +239,23 @@ by default when using the new API.
   <div class="framework framework_box_na" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: duplicated mapping key at line 1, column 36:
-    { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
-                                       ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at storeMappingPair (/node/node_modules/js-yaml/lib/js-yaml/loader.js:335:7)
-    at readFlowCollection (/node/node_modules/js-yaml/lib/js-yaml/loader.js:751:7)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1036:16)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: duplicated mapping key (1:21)
+
+ 1 | { &amp;a [a, &amp;b b]: *b, *a : [c, *b, d]}
+-------------------------^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at storeMappingPair (/node/node_modules/js-yaml/lib/loader.js:358:7)
+    at readFlowCollection (/node/node_modules/js-yaml/lib/loader.js:796:7)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/loader.js:1104:12)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
 </pre>
 
  </div>
@@ -251,6 +271,7 @@ YAMLException: duplicated mapping key at line 1, column 36:
     &quot;d&quot;
   ]
 }
+(node:3284) Warning: Keys with collection values will be stringified due to JS Object restrictions: &quot;[ a, &amp;b b ]&quot;. Set mapAsMap: true to use object keys.
 </pre>
 
  </div>
@@ -262,7 +283,7 @@ YAMLException: duplicated mapping key at line 1, column 36:
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x5557807f0f97
+	[C]: at 0x5650184b7f97
 </pre>
 
  </div>
@@ -270,27 +291,8 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl-pp-json">
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;[&#39;a&#39;,&#39;b&#39;]&quot; : [
-      &quot;c&quot;,
-      &quot;b&quot;,
-      &quot;d&quot;
-   ]
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;[\&#39;a\&#39;,\&#39;b\&#39;]&#39; =&gt; [
-                       &#39;c&#39;,
-                       &#39;b&#39;,
-                       &#39;d&#39;
-                     ]
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>Duplicate key &#39;[&#39;a&#39;,&#39;b&#39;]&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 61.
+ at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
 
  </div>
@@ -298,27 +300,7 @@ stack traceback:
 
   <div class="framework framework_box_na" id="perl-pplibyaml-json">
 <h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;[&#39;a&#39;,&#39;b&#39;]&quot; : [
-      &quot;c&quot;,
-      &quot;b&quot;,
-      &quot;d&quot;
-   ]
-}
-</pre>
-
- </div>
-
-
-  <div class="framework framework_box_na" id="perl-pplibyaml-perl">
-<h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
-<span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;[\&#39;a\&#39;,\&#39;b\&#39;]&#39; =&gt; [
-                       &#39;c&#39;,
-                       &#39;b&#39;,
-                       &#39;d&#39;
-                     ]
-}
+<span class="status_box color_na">&nbsp;</span>na  <pre>Duplicate key &#39;[&#39;a&#39;,&#39;b&#39;]&#39; at /perl5/lib/perl5/YAML/PP/Parser.pm line 61.
 </pre>
 
  </div>
@@ -327,7 +309,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x558170ac60f0)&quot; : [
+   &quot;ARRAY(0x5596cb532228)&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
@@ -341,7 +323,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x55c717d9c158)&#39; =&gt; [
+  &#39;ARRAY(0x55a142827158)&#39; =&gt; [
                                &#39;c&#39;,
                                &#39;b&#39;,
                                &#39;d&#39;
@@ -363,7 +345,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x559daf024950)&quot; : [
+   &quot;ARRAY(0x5622b0e52968)&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
@@ -377,7 +359,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x563bb09c2b70)&#39; =&gt; [
+  &#39;ARRAY(0x55c3ccfc6b90)&#39; =&gt; [
                                &#39;c&#39;,
                                &#39;b&#39;,
                                &#39;d&#39;

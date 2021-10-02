@@ -41,27 +41,6 @@ double: &quot;quoted \&#39; scalar&quot;
  </div>
 
 
-  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-event">
-<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC ---
-+MAP
-=VAL :double
-=VAL &quot;quoted &#39; scalar
--MAP
--DOC
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="dotnet-yamldotnet-json">
-<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{&quot;double&quot;: &quot;quoted &#39; scalar&quot;}
-</pre>
- </div>
-
-
   <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
@@ -121,6 +100,9 @@ double: &quot;quoted \&#39; scalar&quot;
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:17: error: invalid escape &#39;\&#39;&#39; in double-quoted string
 double: &quot;quoted \&#39; scalar&quot;
                 ^~
+[NOT]: fy_fetch_flow_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 +STR
 +DOC ---
 +MAP
@@ -134,6 +116,9 @@ double: &quot;quoted \&#39; scalar&quot;
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:17: error: invalid escape &#39;\&#39;&#39; in double-quoted string
 double: &quot;quoted \&#39; scalar&quot;
                 ^~
+[NOT]: fy_fetch_flow_scalar() failed
+[NOT]: fy_fetch_tokens() failed
+[NOT]: failed to peek token
 </pre>
  </div>
 
@@ -145,6 +130,59 @@ double: &quot;quoted \&#39; scalar&quot;
 +DOC ---
 +MAP
 =VAL :double
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
+<h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SyntaxErrorException: (Line: 2, Col: 9, Idx: 12) - (Line: 2, Col: 17, Idx: 20): While scanning a quoted scalar, found unknown escape character.
+   at YamlDotNet.Core.Scanner.ScanFlowScalar(Boolean isSingleQuoted)
+   at YamlDotNet.Core.Scanner.FetchFlowScalar(Boolean isSingleQuoted)
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
+   at YamlDotNet.Core.Parser.ParseBlockMappingValue()
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.RepresentationModel.LibYamlEventStream.WriteTo(TextWriter textWriter)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
++STR
++DOC ---
++MAP
+=VAL :double
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
+<h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SyntaxErrorException: (Line: 2, Col: 9, Idx: 12) - (Line: 2, Col: 17, Idx: 20): While scanning a quoted scalar, found unknown escape character.
+   at YamlDotNet.Core.Scanner.ScanFlowScalar(Boolean isSingleQuoted)
+   at YamlDotNet.Core.Scanner.FetchFlowScalar(Boolean isSingleQuoted)
+   at YamlDotNet.Core.Scanner.FetchNextToken()
+   at YamlDotNet.Core.Scanner.FetchMoreTokens()
+   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
+   at YamlDotNet.Core.Parser.GetCurrentToken()
+   at YamlDotNet.Core.Parser.ParseBlockMappingValue()
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.TryConsume[T](IParser parser, T&amp; event)
+   at YamlDotNet.Serialization.NodeDeserializers.ScalarNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.&lt;&gt;c__DisplayClass3_0.&lt;DeserializeValue&gt;b__0(IParser r, Type t)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.DeserializeHelper(Type tKey, Type tValue, IParser parser, Func`3 nestedObjectDeserializer, IDictionary result)
+   at YamlDotNet.Serialization.NodeDeserializers.DictionaryNodeDeserializer.YamlDotNet.Serialization.INodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object&amp; value)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(TextReader input)
+   at Program.Main(String[] commandLineArguments)
+Aborted (core dumped)
 </pre>
  </div>
 
@@ -179,15 +217,15 @@ found unknown escape character &#39;(39)
     double: &quot;quoted \&#39; scalar&quot;
                      ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1895)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1832)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1027)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1009)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:394)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:654)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1965)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1904)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1048)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1030)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:415)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:665)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
 	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
 	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
 </pre>
@@ -205,23 +243,27 @@ found unknown escape character &#39;(39)
     double: &quot;quoted \&#39; scalar&quot;
                      ^
 
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1895)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1832)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1027)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1009)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:394)
-	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:136)
-	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:257)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:248)
-	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:236)
-	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:162)
-	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:95)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:134)
-	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:494)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalarNonSpaces(ScannerImpl.java:1965)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanFlowScalar(ScannerImpl.java:1904)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchFlowScalar(ScannerImpl.java:1048)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchDouble(ScannerImpl.java:1030)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:415)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:248)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:665)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:184)
+	at org.yaml.snakeyaml.composer.Composer.composeKeyNode(Composer.java:310)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:301)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
 	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
 	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
 </pre>
@@ -231,21 +273,23 @@ found unknown escape character &#39;(39)
   <div class="framework framework_box_invalid_correct" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: unknown escape sequence at line 2, column 18:
-    double: &quot;quoted \&#39; scalar&quot;
-                     ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readDoubleQuotedScalar (/node/node_modules/js-yaml/lib/js-yaml/loader.js:646:9)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1365:13)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1089:11)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
-    at Object.loadAll (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1583:19)
+YAMLException: unknown escape sequence (2:18)
+
+ 1 | ---
+ 2 | double: &quot;quoted \&#39; scalar&quot;
+----------------------^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at readDoubleQuotedScalar (/node/node_modules/js-yaml/lib/loader.js:684:9)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1447:13)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/loader.js:1164:11)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
 </pre>
  </div>
@@ -253,11 +297,18 @@ YAMLException: unknown escape sequence at line 2, column 18:
 
   <div class="framework framework_box_invalid_correct" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Invalid escape sequence \&#39;
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Invalid escape sequence \&#39; at line 2, column 17:
+
+double: &quot;quoted \&#39; scalar&quot;
+                ^
 +STR
 +DOC ---
 +MAP
 =VAL :double
+=VAL &quot;quoted \\&#39; scalar
+-MAP
+-DOC
+-STR
 </pre>
  </div>
 
@@ -268,17 +319,21 @@ YAMLException: unknown escape sequence at line 2, column 18:
   if (doc.errors.length !== 0) throw doc.errors[0]
                                ^
 
-YAMLSyntaxError: Invalid escape sequence \&#39;
-    at QuoteDouble.get strValue [as strValue] (/node/node_modules/yaml/dist/parse-cst.js:1327:25)
-    at Object.resolveString [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1282:20)
-    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
-    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
-    at resolveNodeValue (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1535:23)
-    at resolveNode (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1583:15)
-    at resolveBlockMapItems (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1777:38)
-    at Object.resolveMap [as resolve] (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1612:79)
-    at resolveByTagName (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1384:25)
-    at resolveTag (/node/node_modules/yaml/dist/resolveSeq-4a68b39b.js:1414:17)
+YAMLParseError: Invalid escape sequence \&#39; at line 2, column 17:
+
+double: &quot;quoted \&#39; scalar&quot;
+                ^
+
+    at Composer.onError (/node/node_modules/yaml/dist/compose/composer.js:71:34)
+    at _onError (/node/node_modules/yaml/dist/compose/resolve-flow-scalar.js:10:42)
+    at doubleQuotedValue (/node/node_modules/yaml/dist/compose/resolve-flow-scalar.js:153:17)
+    at Object.resolveFlowScalar (/node/node_modules/yaml/dist/compose/resolve-flow-scalar.js:22:21)
+    at Object.composeScalar (/node/node_modules/yaml/dist/compose/compose-scalar.js:11:29)
+    at composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:23:34)
+    at Object.resolveBlockMap (/node/node_modules/yaml/dist/compose/resolve-block-map.js:73:19)
+    at Object.composeCollection (/node/node_modules/yaml/dist/compose/compose-collection.js:13:36)
+    at Object.composeNode (/node/node_modules/yaml/dist/compose/compose-node.js:30:38)
+    at Object.composeDoc (/node/node_modules/yaml/dist/compose/compose-doc.js:31:23)
 </pre>
  </div>
 
@@ -288,13 +343,13 @@ YAMLSyntaxError: Invalid escape sequence \&#39;
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>luajit: 2:1: found unknown escape character
 stack traceback:
 	[C]: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:291: in function &#39;error&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:310: in function &#39;parse&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:428: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:363: in function &#39;load_node&#39;
-	/usr/local/share/lua/5.1/lyaml/init.lua:482: in function &#39;load&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:306: in function &#39;error&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:443: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
+	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55aee8602f97
+	[C]: at 0x557fb665ef97
 </pre>
  </div>
 
@@ -335,7 +390,7 @@ Column    : 17
 Message   : Invalid quoted &lt;&quot;&gt; string
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 732
 YAML      : &quot;\\&#39; scalar\&quot;&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -347,7 +402,7 @@ Column    : 17
 Message   : Invalid quoted &lt;&quot;&gt; string
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 732
 YAML      : &quot;\\&#39; scalar\&quot;&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -384,6 +439,13 @@ while parsing a quoted scalar at line: 2, column: 9
 
 was found at , line: 2, column: 17
 while parsing a quoted scalar at line: 2, column: 9
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 

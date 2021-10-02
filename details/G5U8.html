@@ -185,22 +185,24 @@ Parsing error near byte offset Pos {posByteOffset = 7, posCharOffset = 7, posLin
   <div class="framework framework_box_error" id="js-jsyaml-json">
 <h3><a href="#js-jsyaml-json">js-jsyaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>
-/node/node_modules/js-yaml/lib/js-yaml/loader.js:173
+/node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: missed comma between flow collection entries at line 2, column 4:
-    - [-, -]
-       ^
-    at generateError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
-    at throwError (/node/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
-    at readFlowCollection (/node/node_modules/js-yaml/lib/js-yaml/loader.js:718:7)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1360:11)
-    at readBlockMapping (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1036:16)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
-    at readBlockSequence (/node/node_modules/js-yaml/lib/js-yaml/loader.js:955:5)
-    at composeNode (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1358:12)
-    at readDocument (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
-    at loadDocuments (/node/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+YAMLException: missed comma between flow collection entries (2:4)
+
+ 1 | ---
+ 2 | - [-, -]
+--------^
+    at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
+    at readFlowCollection (/node/node_modules/js-yaml/lib/loader.js:758:7)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readBlockMapping (/node/node_modules/js-yaml/lib/loader.js:1104:12)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readBlockSequence (/node/node_modules/js-yaml/lib/loader.js:1008:5)
+    at composeNode (/node/node_modules/js-yaml/lib/loader.js:1440:12)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
 </pre>
  </div>
 
@@ -241,7 +243,7 @@ Column    : 4
 Message   : Invalid plain scalar
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 361
 YAML      : &quot;-, -]&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 
@@ -253,7 +255,14 @@ Column    : 4
 Message   : Invalid plain scalar
 Where     : /perl5/lib/perl5/YAML/PP/Lexer.pm line 361
 YAML      : &quot;-, -]&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 92.
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_error" id="perl-refparser-event">
+<h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
+<span class="status_box color_error">&nbsp;</span>error <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 
