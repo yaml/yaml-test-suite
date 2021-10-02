@@ -1,6 +1,6 @@
 === Directive by itself with no document
 --- from: @ingydotnet
---- tags: error, directive
+--- tags: error directive
 
 --- in-yaml(<)
     %YAML 1.2
