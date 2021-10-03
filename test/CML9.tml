@@ -14,5 +14,5 @@
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1

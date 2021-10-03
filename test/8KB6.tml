@@ -31,13 +31,13 @@
 +STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL :single line
 =VAL :
 =VAL :a
 =VAL :b
 -MAP
-+MAP
++MAP {}
 =VAL :multi line
 =VAL :
 =VAL :a

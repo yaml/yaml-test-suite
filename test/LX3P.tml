@@ -13,7 +13,7 @@
 +STR
 +DOC
 +MAP
-+SEQ
++SEQ []
 =VAL :flow
 -SEQ
 =VAL :block

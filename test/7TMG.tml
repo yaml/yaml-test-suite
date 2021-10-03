@@ -22,7 +22,7 @@
 --- test-event
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :word1
 =VAL :word2
 -SEQ

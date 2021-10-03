@@ -18,7 +18,7 @@ bar: far
 --- test-event
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL :foo
 =VAL :you
 =VAL :bar

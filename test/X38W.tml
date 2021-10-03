@@ -20,14 +20,14 @@ Anchors and aliases in flow collections.
 --- test-event
 +STR
 +DOC
-+MAP
-+SEQ &a
++MAP {}
++SEQ [] &a
 =VAL :a
 =VAL &b :b
 -SEQ
 =ALI *b
 =ALI *a
-+SEQ
++SEQ []
 =VAL :c
 =ALI *b
 =VAL :d

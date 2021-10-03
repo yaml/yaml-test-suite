@@ -20,7 +20,7 @@
 --- test-event
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :foo
 =VAL :bar
 =VAL :42

@@ -21,7 +21,7 @@ foo: !!str
 --- test-event
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL :foo
 =VAL <tag:yaml.org,2002:str> :
 =VAL <tag:yaml.org,2002:str> :

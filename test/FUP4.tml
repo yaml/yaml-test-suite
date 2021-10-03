@@ -22,9 +22,9 @@
 --- test-event
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :a
-+SEQ
++SEQ []
 =VAL :b
 =VAL :c
 -SEQ

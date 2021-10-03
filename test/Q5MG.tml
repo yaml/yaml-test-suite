@@ -14,7 +14,7 @@
 --- test-event
 +STR
 +DOC
-+MAP
++MAP {}
 -MAP
 -DOC
 -STR

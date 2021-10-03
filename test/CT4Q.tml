@@ -21,8 +21,8 @@
 --- test-event
 +STR
 +DOC
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :foo bar
 =VAL :baz
 -MAP

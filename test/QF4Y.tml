@@ -20,8 +20,8 @@ foo: bar
 --- test-event
 +STR
 +DOC
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :foo
 =VAL :bar
 -MAP

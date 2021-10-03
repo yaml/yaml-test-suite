@@ -26,11 +26,11 @@
 --- test-event
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL :key
-+SEQ
-+SEQ
-+SEQ
++SEQ []
++SEQ []
++SEQ []
 =VAL :value
 -SEQ
 -SEQ

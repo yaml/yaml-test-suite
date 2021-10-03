@@ -23,7 +23,7 @@ a:
 +DOC
 +MAP
 =VAL :a
-+SEQ
++SEQ []
 =VAL :b
 =VAL :c
 -SEQ

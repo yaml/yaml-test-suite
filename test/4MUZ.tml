@@ -19,7 +19,7 @@ This is valid JSON but fails many existing parsers.
 --- test-event
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL "foo
 =VAL "bar
 -MAP

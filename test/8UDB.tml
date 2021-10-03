@@ -35,14 +35,14 @@ single: pair,
 --- test-event
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL "double quoted
 =VAL 'single quoted
 =VAL :plain text
-+SEQ
++SEQ []
 =VAL :nested
 -SEQ
-+MAP
++MAP {}
 =VAL :single
 =VAL :pair
 -MAP

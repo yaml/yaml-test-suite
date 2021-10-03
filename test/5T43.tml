@@ -28,11 +28,11 @@
 +STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL "key
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL "key
 =VAL ::value
 -MAP

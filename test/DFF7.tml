@@ -17,7 +17,7 @@ implicit: entry
 --- test-event
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL :explicit
 =VAL :entry
 =VAL :implicit

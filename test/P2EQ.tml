@@ -12,7 +12,7 @@
 +STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP

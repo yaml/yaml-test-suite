@@ -20,7 +20,7 @@
 +STR
 +DOC
 +MAP
-+MAP
++MAP {}
 =VAL :first
 =VAL :Sammy
 =VAL :last

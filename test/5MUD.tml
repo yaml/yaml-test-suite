@@ -19,7 +19,7 @@
 --- test-event
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL "foo
 =VAL :bar
 -MAP

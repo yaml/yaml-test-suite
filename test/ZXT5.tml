@@ -11,5 +11,5 @@
 --- test-event
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL "key

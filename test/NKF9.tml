@@ -40,7 +40,7 @@
 -MAP
 -DOC
 +DOC ---
-+MAP
++MAP {}
 =VAL :key
 =VAL :value
 =VAL :
@@ -54,7 +54,7 @@
 -MAP
 -DOC
 +DOC ---
-+MAP
++MAP {}
 =VAL :
 =VAL :
 -MAP
