@@ -1,52 +1,48 @@
 SHELL := bash
 
-ROOT := $(shell pwd)
+export ROOT := $(shell pwd)
 
 export PATH := $(ROOT)/bin:$(PATH)
 
+BPAN := .bpan
+COMMON := ../yaml-common
+
 default:
 
-convert: node_modules
-	tml-to-yaml test/*.tml
+new-test:
+	$(error TODO)
 
-update:
-	yaml-to-data src/*.yaml
-
-clean:
-	rm -fr data
-	rm -fr node_modules
-	rm -f package*
-	git worktree prune
-
-#------------------------------------------------------------------------------
 data:
 	git branch --track $@ origin/$@ 2>/dev/null || true
 	git worktree add -f $@ $@
 
-# data-update: data node_modules
-# 	rm -fr data/*
-# 	bin/generate-data test/*.tml
+data-update: data
+	rm -fr $</*
+	yaml-to-data src/*.yaml
 
-# data-status:
-# 	@(cd data; git add -Af .; git status --short)
+data-status: data
+	@(cd $<; git add -Af .; git status --short)
 
-# data-diff:
-# 	@(cd data; git add -Af .; git diff --cached)
+data-diff: data
+	@(cd $<; git add -Af .; git diff --cached)
 
-# data-push:
-# 	@[ -z "$$(cd data; git status --short)" ] || { \
-# 	    cd data; \
-# 	    git add -Af .; \
-# 	    COMMIT=`cd ..; git rev-parse --short HEAD` ; \
-# 	    git commit -m "Regenerated data from master $$COMMIT"; \
-# 	    git push origin data; \
-# 	}
+data-push: data-update
+	[[ $$(git -C data status --short) ]] && ( \
+	    git -C data add -Af . && \
+	    COMMIT=$$(git rev-parse --short HEAD) && \
+	    git commit -m "Regenerated data from master $$COMMIT" && \
+	    git -C data push origin data \
+	)
 
-node_modules:
-	mkdir $@
-	npm install coffeescript js-yaml jyj lodash testml-compiler
-	rm -f package*
+bpan:
+	cp $(COMMON)/bpan/run-or-docker.sh $(BPAN)/
 
-.PHONY: test
-test:
-	@echo "We don't run tests here."
+clean:
+	rm -fr data
+	git worktree prune
+
+clean-docker:
+	-docker images | \
+	    grep -E '(yaml-to-data)' | \
+	    awk '{print $3}' | \
+	    xargs docker rmi
