@@ -33,6 +33,8 @@ for my $file (@ARGV) {
     warn "Error '$id':\n$@";
   }
 
+  next if $data->[0]{skip};
+
   for my $k (keys %map) {
     if (defined (my $v = $data->[0]{$k})) {
       if ($k eq 'name') {
