@@ -1,0 +1,14 @@
+---
+- name: Spec Example 6.10. Comment Lines
+  from: http://www.yaml.org/spec/1.2/spec.html#id2780544
+  tags: spec comment empty scalar whitespace
+  yaml: |2+
+      # Comment
+    <SPC><SPC><SPC>
+
+
+  tree: |
+    +STR
+    -STR
+  json: ''
+  norm: ''

@@ -1,0 +1,27 @@
+---
+- name: Multiline plain value with tabs on empty lines
+  from: '@perlpunk'
+  tags: scalar whitespace
+  yaml: |
+    key:
+      value
+      with
+      <TAB>
+      tabs
+  tree: |
+    +STR
+     +DOC
+      +MAP
+       =VAL :key
+       =VAL :value with\ntabs
+      -MAP
+     -DOC
+    -STR
+  json: |
+    {
+      "key": "value with\ntabs"
+    }
+  norm: |
+    key: 'value with
+
+      tabs'
