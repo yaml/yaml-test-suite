@@ -3,21 +3,34 @@
 # shellcheck disable=2030,2031
 
 set -e -u -o pipefail
-# shopt -s inherit_errexit
 
 declare -a docker_run_options
 
-run() {
+run() (
   bin=$(dirname "${BASH_SOURCE[1]}")
   self=$(basename "${BASH_SOURCE[1]}")
   root=${ROOT:-$PWD}
   prog=$(cd "$bin" && echo "$self".*)
 
-  case $prog in
-    *.sh) lang=bash ;;
-    *.pl) lang=perl ;;
-    *) die "Don't recognize language of '$prog'" ;;
-  esac
+  if [[ $prog == *'.*' ]]; then
+    prog=$self
+    lang=bash
+  else
+    case $prog in
+      *.sh) lang=bash ;;
+      *.pl) lang=perl ;;
+      *) die "Don't recognize language of '$prog'" ;;
+    esac
+  fi
+
+  if [[ -e /.dockerenv ]]; then
+    if [[ $self == $prog ]]; then
+      main "$@"
+    else
+      run-local "$@"
+    fi
+    return
+  fi
 
   if [[ ${YAML_USE_DOCKER-} ]]; then
     run-docker "$@"
@@ -35,7 +48,7 @@ run() {
     echo "Running with docker..."
     run-docker "$@"
   fi
-}
+)
 
 run-local() (
   "$lang" "$bin/$prog" "$@"
@@ -138,61 +151,60 @@ build-docker-image() (
 
   fail() ( die "docker-build failed: $*" )
 
+  add() (
+    args=${1//\ \+\ /\ &&\ }
+    echo "$args"
+    echo
+  )
+
+  run() (
+    add "RUN $*"
+  )
+
   from() {
-    from=$1
-    case $from in
+    _from=$1
+    case $_from in
       alpine)
-        echo "FROM alpine"
-        echo
-        echo "WORKDIR /home"
-        echo
-        echo "RUN apk update && apk add bash build-base coreutils"
+        add 'FROM alpine'
+        add 'WORKDIR /home'
+        add 'RUN apk update && apk add bash build-base coreutils'
         ;;
       *) fail "from $*"
     esac
-    echo
   }
 
   apk() (
-    echo "RUN apk add $*"
-    echo
+    add "RUN apk add $*"
   )
 
   cpanm() (
-    case $from in
+    case $_from in
       alpine)
-        echo "RUN apk add perl perl-dev perl-app-cpanminus wget"
-        echo
+        add 'RUN apk add perl perl-dev perl-app-cpanminus wget'
         ;;
-      *) fail "cpanm from $*"
+      *) fail "cpanm $*"
     esac
 
-    echo "RUN cpanm -n $*"
-    echo
+    add "RUN cpanm -n $*"
   )
 
   npm() (
-    case $from in
+    case $_from in
       alpine)
-        echo "RUN apk add nodejs npm"
-        echo
+        add 'RUN apk add nodejs npm'
         ;;
       *) fail "npm from $*"
     esac
 
-    echo "RUN mkdir node_modules && npm install $*"
-    echo
+    add "RUN mkdir node_modules && npm install $*"
   )
 
-  copy-bin() (
-    cp "$bin/$prog" "$build/$self"
-    chmod +x "$build/$self"
+  (
+    dockerfile
 
-    echo "COPY $self /usr/local/bin/$self"
-    echo
-  )
+    add 'ENV PATH=/home/host/bin:$PATH'
+  ) > "$build/Dockerfile"
 
-  dockerfile > "$build/Dockerfile"
 
   (
     set -x

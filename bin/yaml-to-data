@@ -2,9 +2,10 @@
 
 version=0.0.1
 
-source "$(dirname "$0")/.bpan/run-or-docker.sh"
+source "${ROOT:-$PWD}/.bpan/run-or-docker.sh"
 
 check() (
+shopt -s inherit_errexit
   need bash 4.4
   need perl 5.28
   need perl YAML::PP::LibYAML
@@ -14,7 +15,6 @@ dockerfile() (
   from  alpine
   apk   yaml
   cpanm YAML::PP::LibYAML
-  copy-bin
 )
 
 run "$@"
