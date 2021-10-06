@@ -57,7 +57,7 @@ pushed from time to time.
 When test files change you need to update various artifacts.
 To do this, run the following commands:
 
-    make update         # Updates data, tags and name artifacts
+    make data         # Update data branch worktree
 
 You will need Bash, NodeJS and Perl for these things.
 
