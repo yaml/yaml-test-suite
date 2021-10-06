@@ -19,19 +19,23 @@ data:
 data-update: data
 	rm -fr $</*
 	yaml-to-data src/*.yaml
+	data-symlinks $<
 
 data-status: data
-	@(cd $<; git add -Af .; git status --short)
+	@git -C $< add -Af . && \
+	 git -C $< status --short
 
 data-diff: data
-	@(cd $<; git add -Af .; git diff --cached)
+	@git -C $< add -Af . && \
+	 git -C $< diff --cached
 
-data-push: data-update
-	[[ $$(git -C data status --short) ]] && ( \
-	    git -C data add -Af . && \
+data-push: data
+	[[ $$(git -C $< status --short) ]] && \
+	( \
+	    git -C $< add -Af . && \
 	    COMMIT=$$(git rev-parse --short HEAD) && \
-	    git commit -m "Regenerated data from master $$COMMIT" && \
-	    git -C data push origin data \
+	    git -C $< commit -m "Regenerated data from master $$COMMIT" && \
+	    git -C $< push origin data \
 	)
 
 bpan:

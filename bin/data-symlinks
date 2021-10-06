@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -e -u -o pipefail
+
+data=$1
+
+for dir in meta name tags; do
+  rm -fr "$data/$dir"
+  mkdir -p "$data/$dir"
+done
+
+for file in "$data"/*/===; do
+  id=${file#$data/}
+  id=${id%/===}
+  label=$(< "$file")
+  slug=$(
+    echo "$label" |
+    perl -pe '$_=lc; s/[^\w]+/-/g; s/^-//; s/-$//'
+  )
+
+  ln -s "$label" "$data/meta/$id.label"
+  ln -s "../$id" "$data/name/$slug"
+  IFS=' ' read -r -a tags <<< "$(
+    cat "src/$id.yaml" |
+    grep '^  tags:' |
+    cut -d: -f2
+  )"
+  for tag in "${tags[@]}"; do
+    mkdir -p "$data/tags/$tag"
+    ln -s "../../$id" "$data/tags/$tag/$id"
+  done
+done
+
+echo "Regenerated symlinks in $data/meta, $data/name and $data/tag"
+echo
