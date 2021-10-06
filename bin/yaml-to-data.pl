@@ -2,6 +2,7 @@
 
 use v5.18;
 use autodie qw(open close);
+use Encode;
 use YAML::PP::LibYAML;
 $| = 1;
 
@@ -48,7 +49,7 @@ for my $file (@ARGV) {
       $v =~ s/<SPC>/ /g;
       $v =~ s/<TAB>/\t/g;
       open my $out, '>', "$d/$map{$k}";
-      print $out $v;
+      print $out encode_utf8 $v;
       close $out;
     }
   }
