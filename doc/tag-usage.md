@@ -1,21 +1,23 @@
 Test Suite Tags
 ===============
 
-The .tml files under the `test/` directory have a tags line that looks like this:
+The .tml files under the `test/` directory have a tags line that looks like
+this:
+
 ```
-tags: block sequence mapping spec
+  tags: block sequence mapping spec
 ```
 
-THe table below defines the tags that must be used. This table is used by tools
-to validate the tags.
+The table below defines the tags that must be used.
+This table is used by tools to validate the tags.
 
-----
 ```
-# These tags can have 1 of the following for *
-# ok          YAML is valid
-# err         YAML is invalid
-# want        YAML is invalid but should be valid
-# dont        YAML is valid but shouldn't be
+These tags can have one of the following for '*':
+
+  ok          YAML is valid
+  err         YAML is invalid
+  want        YAML is invalid but should be valid
+  dont        YAML is valid but shouldn't be
 
 libyaml-*     libyaml differs from normal
 1-1-*         YAML 1.1 differs from normal
@@ -27,7 +29,8 @@ alias         The test uses anchors *and* aliases
 anchor        The test uses anchors (but *not* aliases)
 binary        The test encodes binary data
 comment       The test uses YAML comments
-complex-key   The test includes a mapping key which is not a scalar, but a sequence or mapping
+complex-key   The test includes a mapping key which is not a scalar, but a
+              sequence or mapping
 directive     The test has directives
 double        The test involves double quoted scalars
 duplicate-key The test includes a duplicate mapping key
@@ -52,5 +55,7 @@ simple        The test uses simple YAML
 single        The test involves single quoted scalars
 spec          The test is a YAML 1.2 Spec example
 tag           The test has tags
-unknown-tag   The test uses an unknown tag from the standard YAML schema `!!foo`
+unknown-tag   The test uses an unknown tag from the standard YAML schema
+              `!!foo`
 whitespace    The test is concerned with whitespace issues
+```
