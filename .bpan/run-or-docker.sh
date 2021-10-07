@@ -23,7 +23,7 @@ run() (
     esac
   fi
 
-  if [[ -e /.dockerenv ]]; then
+  if [[ -e /.dockerenv || ${RUN_OR_DOCKER-} == local ]]; then
     if [[ $self == $prog ]]; then
       main "$@"
     else
@@ -51,6 +51,7 @@ run() (
 )
 
 run-local() (
+  export RUN_OR_DOCKER=local
   "$lang" "$bin/$prog" "$@"
 )
 

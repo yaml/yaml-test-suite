@@ -10,7 +10,7 @@ COMMON := ../yaml-common
 default:
 
 new-test:
-	$(error TODO)
+	new-test-file
 
 data:
 	git branch --track $@ origin/$@ 2>/dev/null || true
@@ -47,6 +47,6 @@ clean:
 
 clean-docker:
 	-docker images | \
-	    grep -E '(yaml-to-data)' | \
+	    grep -E '(yaml-to-data|new-test-file)' | \
 	    awk '{print $3}' | \
-	    xargs docker rmi
+	    xargs docker rmi 2>/dev/null
