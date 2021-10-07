@@ -1,16 +1,20 @@
 #!/bash
 
-# shellcheck disable=2030,2031
+# shellcheck disable=2030,2031,2154
 
 set -e -u -o pipefail
 
-declare -a docker_run_options
+# shellcheck disable=2206
+declare -a docker_run_options=(${RUN_OR_DOCKER_OPTIONS-})
+RUN_OR_DOCKER_PULL=${RUN_OR_DOCKER_PULL:-false}
+RUN_OR_DOCKER_PUSH=${RUN_OR_DOCKER_PUSH:-false}
 
 run() (
   bin=$(dirname "${BASH_SOURCE[1]}")
   self=$(basename "${BASH_SOURCE[1]}")
   root=${ROOT:-$PWD}
   prog=$(cd "$bin" && echo "$self".*)
+  image=yamlio/$self:$version
 
   if [[ $prog == *'.*' ]]; then
     prog=$self
@@ -18,13 +22,20 @@ run() (
   else
     case $prog in
       *.sh) lang=bash ;;
+      *.bash) lang=bash ;;
       *.pl) lang=perl ;;
+      *.py) lang=python3 ;;
       *) die "Don't recognize language of '$prog'" ;;
     esac
   fi
 
+  if $RUN_OR_DOCKER_PUSH; then
+    build-docker-image
+    exit
+  fi
+
   if [[ -e /.dockerenv || ${RUN_OR_DOCKER-} == local ]]; then
-    if [[ $self == $prog ]]; then
+    if [[ $self == "$prog" ]]; then
       main "$@"
     else
       run-local "$@"
@@ -32,7 +43,7 @@ run() (
     return
   fi
 
-  if [[ ${YAML_USE_DOCKER-} ]]; then
+  if [[ ${RUN_OR_DOCKER-} == force* ]]; then
     run-docker "$@"
     return
   fi
@@ -56,13 +67,22 @@ run-local() (
 )
 
 run-docker() (
-  image=$self:$version
-
-  uid=$(id -u)
-  gid=$(id -g)
-
-  docker inspect --type=image "$image" &>/dev/null ||
+  if [[ ${RUN_OR_DOCKER-} == force-build ]]; then
     build-docker-image
+  else
+    docker inspect --type=image "$image" &>/dev/null &&
+      ok=true || ok=false
+    if ! $ok; then
+      if $RUN_OR_DOCKER_PULL; then
+        (
+          set -x
+          docker pull "$image"
+        )
+      else
+        build-docker-image
+      fi
+    fi
+  fi
 
   args=()
   docker_run_options+=(
@@ -77,18 +97,30 @@ run-docker() (
 
   [[ -t 0 ]] && flags=('-it') || flags=()
 
+  workdir=/home/host
+  [[ ${RUN_OR_DOCKER_WORKDIR-} ]] &&
+    workdir=$workdir/$RUN_OR_DOCKER_WORKDIR
+
+  uid=$(id -u)
+  gid=$(id -g)
+
   set -x
   docker run "${flags[@]}" --rm \
     --volume "$root":/home/host \
-    --workdir "/home/host" \
+    --workdir "$workdir" \
     --user "$uid:$gid" \
+    --entrypoint '' \
     "${docker_run_options[@]}" \
     "$image" \
     "$self" "${args[@]}"
 )
 
+force() {
+  die 'CHECK: docker is forced here'
+}
+
 need() {
-  [[ $(command -v $1) ]] || return 1
+  [[ $(command -v "$1") ]] || return 1
 
   [[ ${2-} ]] || return 0
 
@@ -105,7 +137,7 @@ need-version() {
   cmd=$1 ver=$2
 
   if [[ $("$cmd" --version) =~ ([0-9]+)\.([0-9]+)(\.[0-9]+)? ]]; then
-    set -- ${BASH_REMATCH[1]} ${BASH_REMATCH[2]} ${BASH_REMATCH[3]#.}
+    set -- "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]#.}"
   else
     die "Could not get version from '$cmd --version'"
   fi
@@ -152,58 +184,74 @@ build-docker-image() (
 
   fail() ( die "docker-build failed: $*" )
 
-  add() (
-    args=${1//\ \+\ /\ &&\ }
-    echo "$args"
+  cmd() (
+    _args=${1//\ \+\ /\ &&\ }
+    echo "$_args"
     echo
   )
 
   run() (
-    add "RUN $*"
+    cmd "RUN $*"
   )
 
   from() {
     _from=$1
     case $_from in
       alpine)
-        add 'FROM alpine'
-        add 'WORKDIR /home'
-        add 'RUN apk update && apk add bash build-base coreutils'
+        cmd 'FROM alpine'
+        cmd 'WORKDIR /home'
+        cmd 'RUN apk update && apk add bash build-base coreutils'
+        ;;
+      ubuntu)
+        cmd 'FROM ubuntu:20.04'
+        cmd 'WORKDIR /home'
+        cmd 'RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential'
         ;;
       *) fail "from $*"
     esac
   }
 
-  apk() (
-    add "RUN apk add $*"
-  )
-
-  cpanm() (
+  pkg() (
     case $_from in
       alpine)
-        add 'RUN apk add perl perl-dev perl-app-cpanminus wget'
+        cmd "RUN apk add $*"
         ;;
-      *) fail "cpanm $*"
+      ubuntu)
+        cmd "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y $*"
+        ;;
+      *) fail "pkg $*"
+    esac
+  )
+
+  cpan() (
+    case $_from in
+      alpine)
+        pkg perl perl-dev perl-app-cpanminus wget
+        ;;
+      ubuntu)
+        pkg cpanminus
+        ;;
+      *) fail "cpan $*"
     esac
 
-    add "RUN cpanm -n $*"
+    cmd "RUN cpanm -n $*"
   )
 
   npm() (
     case $_from in
       alpine)
-        add 'RUN apk add nodejs npm'
+        pkg nodejs npm
         ;;
-      *) fail "npm from $*"
+      *) fail "npm $*"
     esac
 
-    add "RUN mkdir node_modules && npm install $*"
+    cmd "RUN mkdir node_modules && npm install $*"
   )
 
   (
     dockerfile
 
-    add 'ENV PATH=/home/host/bin:$PATH'
+    cmd "ENV PATH=/home/host/bin:\$PATH"
   ) > "$build/Dockerfile"
 
 
@@ -214,6 +262,13 @@ build-docker-image() (
   )
 
   rm -fr "$build"
+
+  if $RUN_OR_DOCKER_PUSH; then
+    (
+      set -x
+      docker push "$image"
+    )
+  fi
 )
 
 die() { echo "$*" >&2; exit 1; }

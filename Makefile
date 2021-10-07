@@ -8,6 +8,10 @@ BPAN := .bpan
 COMMON := ../yaml-common
 MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
 
+ifneq (,$(DOCKER))
+  export RUN_OR_DOCKER := $(DOCKER)
+endif
+
 default:
 
 new-test:
@@ -39,8 +43,8 @@ data-push: data
 	    git -C $< push origin data \
 	)
 
-bpan:
-	cp $(COMMON)/bpan/run-or-docker.sh $(BPAN)/
+common:
+	cp $(COMMON)/bpan/run-or-docker.bash $(BPAN)/
 
 clean:
 	rm -fr data matrix gh-pages

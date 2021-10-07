@@ -2,7 +2,7 @@
 
 version=0.0.1
 
-source "${ROOT:-$PWD}/.bpan/run-or-docker.sh"
+source "${ROOT:-$PWD}/.bpan/run-or-docker.bash"
 
 check() (
   need bash 4.4
@@ -10,7 +10,7 @@ check() (
 
 dockerfile() (
   from alpine
-  apk vim
+  pkg vim
 )
 
 main() (
