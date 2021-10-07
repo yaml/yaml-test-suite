@@ -6,6 +6,7 @@ export PATH := $(ROOT)/bin:$(PATH)
 
 BPAN := .bpan
 COMMON := ../yaml-common
+MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
 
 default:
 
@@ -42,7 +43,7 @@ bpan:
 	cp $(COMMON)/bpan/run-or-docker.sh $(BPAN)/
 
 clean:
-	rm -fr data
+	rm -fr data matrix gh-pages
 	git worktree prune
 
 clean-docker:
@@ -50,3 +51,38 @@ clean-docker:
 	    grep -E '(yaml-to-data|new-test-file)' | \
 	    awk '{print $3}' | \
 	    xargs docker rmi 2>/dev/null
+
+#------------------------------------------------------------------------------
+matrix:
+	git clone $(MATRIX_REPO) $@
+
+matrix-build: matrix data
+	make -C $< build
+
+matrix-push: matrix-copy
+	( \
+	    cd gh-pages && \
+	    git add -A . && \
+	    git commit -m 'Regenerated matrix files' && \
+	    git push \
+	)
+
+matrix-status: gh-pages
+	git -C $< status
+
+matrix-copy: gh-pages
+	rm -fr $</css \
+	       $</js \
+	       $</*.html \
+	       $</details \
+	       $</sheet
+	cp -r matrix/matrix/html/css \
+	      matrix/matrix/html/js \
+	      matrix/matrix/html/details \
+	      matrix/matrix/html/sheet/ \
+	      matrix/matrix/html/*.html \
+	      $<
+
+gh-pages:
+	git branch --track $@ origin/$@ 2>/dev/null || true
+	git worktree add $@ $@
