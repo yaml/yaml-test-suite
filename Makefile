@@ -14,6 +14,18 @@ endif
 
 default:
 
+test:
+	! $$(git rev-parse --is-shallow-repository) || \
+	    git fetch --unshallow
+	make data
+	make clean
+	make data-update
+	make data-diff
+	make data-status
+	make clean
+	make gh-pages
+	make clean
+
 new-test:
 	new-test-file
 
@@ -49,6 +61,9 @@ common:
 clean:
 	rm -fr data matrix gh-pages
 	git worktree prune
+
+docker-push-y2d:
+	RUN_OR_DOCKER_PUSH=true yaml-to-data
 
 clean-docker:
 	-docker images | \

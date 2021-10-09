@@ -2,6 +2,8 @@
 
 version=0.0.1
 
+RUN_OR_DOCKER_PULL=true
+
 source "${ROOT:-$PWD}/.bpan/run-or-docker.bash"
 
 check() (
