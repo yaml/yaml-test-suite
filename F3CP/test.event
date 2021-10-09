@@ -1,13 +1,13 @@
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :a
-+SEQ
++SEQ []
 =VAL :b
 =VAL :c
-+MAP
++MAP {}
 =VAL :d
-+SEQ
++SEQ []
 =VAL :e
 =VAL :f
 -SEQ

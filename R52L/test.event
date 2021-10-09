@@ -1,10 +1,10 @@
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :top1
-+SEQ
++SEQ []
 =VAL :item1
-+MAP
++MAP {}
 =VAL :key2
 =VAL :value2
 -MAP

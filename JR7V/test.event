@@ -7,21 +7,21 @@
 =VAL :key
 =VAL :value?
 -MAP
-+SEQ
++SEQ []
 =VAL :a?string
 -SEQ
-+SEQ
++SEQ []
 =VAL :another ? string
 -SEQ
-+MAP
++MAP {}
 =VAL :key
 =VAL :value?
 -MAP
-+MAP
++MAP {}
 =VAL :key
 =VAL :value?
 -MAP
-+MAP
++MAP {}
 =VAL :key?
 =VAL :value
 -MAP

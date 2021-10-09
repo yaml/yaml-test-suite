@@ -2,5 +2,5 @@
 +DOC ---
 +MAP
 =VAL :flow
-+SEQ
++SEQ []
 =VAL :a

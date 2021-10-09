@@ -5,22 +5,22 @@
 +SEQ
 +SEQ
 +SEQ
-+SEQ
++SEQ []
 -SEQ
 -SEQ
 -SEQ
 +SEQ
 +SEQ
-+MAP
++MAP {}
 -MAP
 -SEQ
 -SEQ
 -SEQ
 =VAL :key1
-+SEQ
++SEQ []
 -SEQ
 =VAL :key2
-+MAP
++MAP {}
 -MAP
 -MAP
 -DOC

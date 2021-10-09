@@ -1,11 +1,11 @@
 +STR
 +DOC
 +SEQ
-+SEQ
++SEQ []
 =VAL :a
 =VAL :b
 -SEQ
-+MAP
++MAP {}
 =VAL :a
 =VAL :b
 -MAP

@@ -1,21 +1,21 @@
 +STR
 +DOC
 +SEQ
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :YAML
 =VAL :separate
 -MAP
 -SEQ
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL "JSON like
 =VAL :adjacent
 -MAP
 -SEQ
-+SEQ
-+MAP
-+MAP
++SEQ []
++MAP {}
++MAP {}
 =VAL :JSON
 =VAL :like
 -MAP

@@ -2,8 +2,8 @@
 +DOC
 +MAP
 =VAL :implicit block key
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :implicit flow key
 =VAL :value
 -MAP

@@ -3,7 +3,7 @@
 +SEQ <tag:clarkevans.com,2002:shape>
 +MAP <tag:clarkevans.com,2002:circle>
 =VAL :center
-+MAP &ORIGIN
++MAP {} &ORIGIN
 =VAL :x
 =VAL :73
 =VAL :y
@@ -16,7 +16,7 @@
 =VAL :start
 =ALI *ORIGIN
 =VAL :finish
-+MAP
++MAP {}
 =VAL :x
 =VAL :89
 =VAL :y

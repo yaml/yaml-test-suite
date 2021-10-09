@@ -1,6 +1,6 @@
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL "adjacent
 =VAL :value
 =VAL "readable

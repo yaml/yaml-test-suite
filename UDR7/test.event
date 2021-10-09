@@ -2,12 +2,12 @@
 +DOC
 +MAP
 =VAL :sequence
-+SEQ
++SEQ []
 =VAL :one
 =VAL :two
 -SEQ
 =VAL :mapping
-+MAP
++MAP {}
 =VAL :sky
 =VAL :blue
 =VAL :sea

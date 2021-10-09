@@ -1,6 +1,6 @@
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :matches %
 =VAL :20
 -MAP

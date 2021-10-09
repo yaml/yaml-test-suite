@@ -1,7 +1,7 @@
 +STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL :url
 =VAL :http://example.org
 -MAP

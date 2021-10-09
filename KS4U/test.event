@@ -1,5 +1,5 @@
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :sequence item
 -SEQ

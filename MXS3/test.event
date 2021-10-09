@@ -1,7 +1,7 @@
 +STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL :a
 =VAL :b
 -MAP

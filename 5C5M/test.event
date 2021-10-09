@@ -1,13 +1,13 @@
 +STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL :one
 =VAL :two
 =VAL :three
 =VAL :four
 -MAP
-+MAP
++MAP {}
 =VAL :five
 =VAL :six
 =VAL :seven

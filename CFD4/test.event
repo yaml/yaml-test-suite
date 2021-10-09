@@ -1,14 +1,14 @@
 +STR
 +DOC
 +SEQ
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :
 =VAL :empty key
 -MAP
 -SEQ
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :
 =VAL :another empty key
 -MAP

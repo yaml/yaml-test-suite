@@ -2,7 +2,7 @@
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP

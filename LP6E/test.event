@@ -1,12 +1,12 @@
 +STR
 +DOC
 +SEQ
-+SEQ
++SEQ []
 =VAL :a
 =VAL :b
 =VAL :c
 -SEQ
-+MAP
++MAP {}
 =VAL "a
 =VAL :b
 =VAL :c
@@ -14,7 +14,7 @@
 =VAL :e
 =VAL "f
 -MAP
-+SEQ
++SEQ []
 -SEQ
 -SEQ
 -DOC

@@ -1,11 +1,11 @@
 +STR
 +DOC
 +SEQ
-+SEQ
++SEQ []
 =VAL :one
 =VAL :two
 -SEQ
-+SEQ
++SEQ []
 =VAL :three
 =VAL :four
 -SEQ

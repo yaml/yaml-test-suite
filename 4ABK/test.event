@@ -1,6 +1,6 @@
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL :unquoted
 =VAL "separate
 =VAL :http://foo.com

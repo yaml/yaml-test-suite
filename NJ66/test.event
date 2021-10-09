@@ -1,11 +1,11 @@
 +STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL :single line
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL :multi line
 =VAL :value
 -MAP

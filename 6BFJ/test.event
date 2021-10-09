@@ -1,7 +1,7 @@
 +STR
 +DOC ---
 +MAP &mapping
-+SEQ &key
++SEQ [] &key
 =VAL &item :a
 =VAL :b
 =VAL :c
