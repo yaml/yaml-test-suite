@@ -14,6 +14,9 @@ endif
 
 default:
 
+force force-build:
+	$(eval override export RUN_OR_DOCKER := $@)
+
 test:
 	! $$(git rev-parse --is-shallow-repository) || \
 	    git fetch --unshallow
@@ -43,7 +46,7 @@ data-status: data
 	 git -C $< status --short
 
 data-diff: data
-	@git -C $< add -Af . && \
+	git -C $< add -Af . && \
 	 git -C $< diff --cached
 
 data-push: data
@@ -62,7 +65,7 @@ clean:
 	rm -fr data matrix gh-pages
 	git worktree prune
 
-docker-push-y2d:
+docker-push: force-build
 	RUN_OR_DOCKER_PUSH=true yaml-to-data
 
 clean-docker:

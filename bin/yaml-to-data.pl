@@ -3,7 +3,7 @@
 use v5.18;
 use autodie qw(open close);
 use Encode;
-use YAML::PP::LibYAML;
+use YAML::PP;
 $| = 1;
 
 my %map = (
@@ -19,7 +19,7 @@ my %map = (
 
 mkdir my $o = 'data';
 
-my $ypp = YAML::PP::LibYAML->new;
+my $ypp = YAML::PP->new;
 my $i = 0;
 for my $file (@ARGV) {
   (my $id = $file) =~ s{^.*/(.*)\.yaml$}{$1};
