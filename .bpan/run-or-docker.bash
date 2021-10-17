@@ -10,6 +10,7 @@ RUN_OR_DOCKER_PULL=${RUN_OR_DOCKER_PULL:-false}
 RUN_OR_DOCKER_PUSH=${RUN_OR_DOCKER_PUSH:-false}
 
 run() (
+  verbose=${RUN_OR_DOCKER_VERBOSE:-false}
   bin=$(dirname "${BASH_SOURCE[1]}")
   self=$(basename "${BASH_SOURCE[1]}")
   root=${ROOT:-$PWD}
@@ -43,20 +44,23 @@ run() (
     return
   fi
 
-  if [[ ${RUN_OR_DOCKER-} == force* ]]; then
+  if [[ ${RUN_OR_DOCKER-} == force* || ${GITHUB_ACTIONS-} ]]; then
     run-docker "$@"
     return
   fi
 
-  out=$(check 2>&1) && rc=0 || rc=$?
+  out=$(check 2>/tmp/out) && rc=0 || rc=$?
 
-  [[ $rc == 0 || $out == CHECK:* ]] || die "Error: $out"
+  err=$(< /tmp/out)
+
+  [[ $rc == 0 || $err == FAIL:* ]] || die "Error: $err"
 
   if [[ $rc -eq 0 ]]; then
     run-local "$@"
   else
-    echo "Can't run '$self' locally: ${out#CHECK:\ }"
-    echo "Running with docker..."
+    $verbose &&
+      echo "Can't run '$self' locally: ${err#FAIL:\ }" >&2
+    echo "Running '$self' with docker..." >&2
     run-docker "$@"
   fi
 )
@@ -75,7 +79,7 @@ run-docker() (
     if ! $ok; then
       if $RUN_OR_DOCKER_PULL; then
         (
-          set -x
+          $verbose && set -x
           docker pull "$image"
         )
       else
@@ -95,7 +99,8 @@ run-docker() (
     args+=("$arg")
   done
 
-  [[ -t 0 ]] && flags=('-it') || flags=()
+  flags=()
+  [[ -t 0 ]] && flags+=('--tty')
 
   workdir=/home/host
   [[ ${RUN_OR_DOCKER_WORKDIR-} ]] &&
@@ -104,8 +109,8 @@ run-docker() (
   uid=$(id -u)
   gid=$(id -g)
 
-  set -x
-  docker run "${flags[@]}" --rm \
+  $verbose && set -x
+  docker run "${flags[@]}" --interactive --rm \
     --volume "$root":/home/host \
     --workdir "$workdir" \
     --user "$uid:$gid" \
@@ -116,11 +121,14 @@ run-docker() (
 )
 
 force() {
-  die 'CHECK: docker is forced here'
+  fail 'docker is forced here'
 }
 
 need() {
-  [[ $(command -v "$1") ]] || return 1
+  cmd=$1
+
+  [[ $(command -v "$cmd") ]] ||
+    fail "requires command '$cmd'"
 
   [[ ${2-} ]] || return 0
 
@@ -142,15 +150,13 @@ need-version() {
     die "Could not get version from '$cmd --version'"
   fi
 
-  fail() { die "CHECK: requires '$cmd' version '$ver' or higher"; }
-
   vers=$ver
   while [[ $vers && $* ]]; do
     v=${vers%%.*}
     if [[ $1 -gt $v ]]; then
       return
     elif [[ $1 -lt $v ]]; then
-      fail
+      fail "requires '$cmd' version '$ver' or higher"
     fi
     if [[ $vers != *.* ]]; then
       return
@@ -158,31 +164,52 @@ need-version() {
     vers=${vers#*.}
     shift
   done
-  fail
+  fail "requires '$cmd' version '$ver' or higher"
 }
 
 need-modules() {
   cmd=$1; shift
 
-  fail() { die "CHECK: '$cmd' requires module '$module'"; }
-
   for module; do
     case $cmd in
       perl)
-        perl -M"$module" -e1 \
-          &>/dev/null || fail ;;
+        if [[ $module == *=* ]]; then
+          want=$module
+          version=${module#*=}
+          module=${module%=*}
+          perl -M"$module"\ "$version" -e1 &>/dev/null ||
+            fail "'$cmd' requires Perl module '$want'"
+        else
+          want=$module
+          perl -M"$module" -e1 &>/dev/null ||
+            fail "'$cmd' requires Perl module '$module'"
+        fi
+        ;;
       node)
-        node -e "require('$module');" \
-          &>/dev/null || fail ;;
+        node -e "require('$module');" &>/dev/null ||
+          fail "'$cmd' requires NodeJS module '$module'"
+        ;;
+      ruby)
+        list=$(gem list)
+        if [[ $module == *=* ]]; then
+          want="${module//./\\.}"
+          want="${want/=/ (.*})"
+        else
+          want="$module.*"
+        fi
+        want="^$want$"
+        grep "$want" <<<"$list" ||
+          fail "'$cmd' requires Ruby module '$module'"
+        ;;
       *) die "Can't check module '$module' for '$cmd'" ;;
     esac
   done
 }
 
 build-docker-image() (
-  build=$(mktemp -d --tmpdir run-or-docker-XXXXXX)
+  build=$(mktemp -d)
 
-  fail() ( die "docker-build failed: $*" )
+  build-fail() { fail "docker-build failed: $*"; }
 
   cmd() (
     _args=${1//\ \+\ /\ &&\ }
@@ -207,7 +234,7 @@ build-docker-image() (
         cmd 'WORKDIR /home'
         cmd 'RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential'
         ;;
-      *) fail "from $*"
+      *) build-fail "from $*"
     esac
   }
 
@@ -219,7 +246,7 @@ build-docker-image() (
       ubuntu)
         cmd "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y $*"
         ;;
-      *) fail "pkg $*"
+      *) build-fail "pkg $*"
     esac
   )
 
@@ -231,7 +258,7 @@ build-docker-image() (
       ubuntu)
         pkg cpanminus
         ;;
-      *) fail "cpan $*"
+      *) build-fail "cpan $*"
     esac
 
     cmd "RUN cpanm -n $*"
@@ -242,10 +269,38 @@ build-docker-image() (
       alpine)
         pkg nodejs npm
         ;;
-      *) fail "npm $*"
+      *) build-fail "npm $*"
     esac
 
     cmd "RUN mkdir node_modules && npm install $*"
+  )
+
+  gem() (
+    case $_from in
+      alpine)
+        pkg ruby
+        ;;
+      *) build-fail "npm $*"
+    esac
+
+    for module; do
+      if [[ $module == *=* ]]; then
+        module="${module%=*} -v ${module#*=}"
+      fi
+
+      cmd "RUN gem install $module"
+    done
+  )
+
+  pip() (
+    case $_from in
+      alpine)
+        pkg python3 py3-pip
+        ;;
+      *) build-fail "npm $*"
+    esac
+
+    cmd "RUN pip3 install $*"
   )
 
   (
@@ -271,4 +326,5 @@ build-docker-image() (
   fi
 )
 
+fail() { echo "FAIL: $*" >&2; exit 1; }
 die() { echo "$*" >&2; exit 1; }

@@ -15,7 +15,10 @@ endif
 default:
 
 force force-build:
-	$(eval override export RUN_OR_DOCKER := $@)
+	@$(eval override export RUN_OR_DOCKER := $@)
+
+verbose:
+	@$(eval override export RUN_OR_DOCKER_VERBOSE := true)
 
 test:
 	! $$(git rev-parse --is-shallow-repository) || \
@@ -31,6 +34,9 @@ test:
 
 new-test:
 	new-test-file
+
+convert-special:
+	convert-special-characters
 
 data:
 	git branch --track $@ origin/$@ 2>/dev/null || true
@@ -67,6 +73,7 @@ clean:
 
 docker-push: force-build
 	RUN_OR_DOCKER_PUSH=true yaml-to-data
+	RUN_OR_DOCKER_PUSH=true convert-special-characters
 
 clean-docker:
 	-docker images | \

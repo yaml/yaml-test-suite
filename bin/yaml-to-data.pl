@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use v5.18;
+use utf8;
 use autodie qw(open close);
 use Encode;
 use YAML::PP;
@@ -46,8 +47,12 @@ for my $file (@ARGV) {
         $v =~ s/^\ +//mg;
         $v =~ s/\n*\z/\n/;
       }
-      $v =~ s/<SPC>/ /g;
-      $v =~ s/<TAB>/\t/g;
+
+      $v =~ s/·/ /g;
+      $v =~ s/—*»/\t/g;
+      $v =~ s/↓/\r/g unless $file =~ /P2AD/;
+      $v =~ s/⇔/x{FEFF}/g;
+
       open my $out, '>', "$d/$map{$k}";
       print $out encode_utf8 $v;
       close $out;
@@ -57,4 +62,4 @@ for my $file (@ARGV) {
   $i++;
 }
 
-printf "\nProcessed %d tests…\n\n", $i;
+printf "\nProcessed %d tests.\n\n", $i;
