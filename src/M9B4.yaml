@@ -5,7 +5,7 @@
   yaml: |+
     |
      literal
-     <TAB>text
+     ——»text
 
 
   tree: |
@@ -19,4 +19,4 @@
   norm: |
     |
       literal
-      <TAB>text
+      —»text

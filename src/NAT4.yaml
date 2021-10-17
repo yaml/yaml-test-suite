@@ -6,11 +6,11 @@
     ---
     a: '
       '
-    b: '<SPC><SPC>
+    b: '··
       '
     c: "
       "
-    d: "<SPC><SPC>
+    d: "··
       "
     e: '
 
@@ -31,13 +31,13 @@
      +DOC ---
       +MAP
        =VAL :a
-       =VAL '<SPC>
+       =VAL '·
        =VAL :b
-       =VAL '<SPC>
+       =VAL '·
        =VAL :c
-       =VAL "<SPC>
+       =VAL "·
        =VAL :d
-       =VAL "<SPC>
+       =VAL "·
        =VAL :e
        =VAL '\n
        =VAL :f

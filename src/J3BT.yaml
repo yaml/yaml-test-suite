@@ -4,10 +4,10 @@
   tags: spec whitespace upto-1.2
   yaml: |
     # Tabs and spaces
-    quoted: "Quoted <TAB>"
-    block:<TAB>|
+    quoted: "Quoted ———»"
+    block:—»|
       void main() {
-      <TAB>printf("Hello, world!\n");
+      —»printf("Hello, world!\n");
       }
   tree: |
     +STR
@@ -29,5 +29,5 @@
     quoted: "Quoted \t"
     block: |
       void main() {
-      <TAB>printf("Hello, world!\n");
+      —»printf("Hello, world!\n");
       }

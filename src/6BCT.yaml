@@ -3,9 +3,9 @@
   from: http://www.yaml.org/spec/1.2/spec.html#id2778394
   tags: spec libyaml-err sequence whitespace upto-1.2
   yaml: |
-    - foo:<TAB> bar
+    - foo:—» bar
     - - baz
-      -<TAB>baz
+      -»baz
   tree: |
     +STR
      +DOC

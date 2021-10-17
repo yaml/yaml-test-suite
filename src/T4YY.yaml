@@ -6,12 +6,12 @@
     ---
     ' 1st non-empty
 
-     2nd non-empty<SPC>
+     2nd non-empty·
      3rd non-empty '
   tree: |
     +STR
      +DOC ---
-      =VAL ' 1st non-empty\n2nd non-empty 3rd non-empty<SPC>
+      =VAL ' 1st non-empty\n2nd non-empty 3rd non-empty·
      -DOC
     -STR
   json: |

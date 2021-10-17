@@ -6,13 +6,13 @@
     - |
      detected
     - >
-    <SPC>
-    <SPC><SPC>
+    ·
+    ··
       # detected
     - |1
       explicit
     - >
-     <TAB>
+     ——»
      detected
   tree: |
     +STR

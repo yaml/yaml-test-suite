@@ -4,8 +4,8 @@
   tags: explicit-key spec libyaml-err indent whitespace sequence upto-1.2
   yaml: |
     ? a
-    : -<TAB>b
-      -  -<TAB>c
+    : -»b
+      -  -—»c
          - d
   tree: |
     +STR

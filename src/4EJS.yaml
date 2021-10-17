@@ -6,8 +6,8 @@
   yaml: |
     ---
     a:
-    <TAB>b:
-    <TAB><TAB>c: value
+    ———»b:
+    ———»———»c: value
   tree: |
     +STR
      +DOC ---

@@ -3,7 +3,7 @@
   from: '@perlpunk'
   tags: header whitespace
   yaml: |
-    ---<TAB>scalar
+    ---»scalar
   tree: |
     +STR
      +DOC ---

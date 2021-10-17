@@ -4,16 +4,16 @@
   tags: double spec whitespace scalar upto-1.2
   yaml: |
     "
-      foo<SPC>
-    <SPC>
-      <TAB> bar
+      foo·
+    ·
+      —» bar
 
       baz
     "
   tree: |
     +STR
      +DOC
-      =VAL " foo\nbar\nbaz<SPC>
+      =VAL " foo\nbar\nbaz·
      -DOC
     -STR
   json: |

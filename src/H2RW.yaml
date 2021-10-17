@@ -6,14 +6,14 @@
     foo: 1
 
     bar: 2
-    <SPC><SPC><SPC><SPC>
+    ····
     text: |
       a
-    <SPC><SPC><SPC><SPC>
+    ····
       b
 
       c
-    <SPC>
+    ·
       d
   tree: |
     +STR
@@ -43,7 +43,7 @@
     bar: 2
     text: |
       a
-    <SPC><SPC><SPC><SPC>
+    ····
       b
 
       c

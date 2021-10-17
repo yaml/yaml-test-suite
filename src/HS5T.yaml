@@ -5,8 +5,8 @@
   yaml: |
     1st non-empty
 
-     2nd non-empty<SPC>
-    <TAB>3rd non-empty
+     2nd non-empty·
+    ———»3rd non-empty
   tree: |
     +STR
      +DOC

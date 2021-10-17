@@ -6,10 +6,10 @@
     plain: text
       lines
     quoted: "text
-      <TAB>lines"
+      —»lines"
     block: |
       text
-       <TAB>lines
+       »lines
   tree: |
     +STR
      +DOC
@@ -38,4 +38,4 @@
     quoted: "text lines"
     block: |
       text
-       <TAB>lines
+       »lines

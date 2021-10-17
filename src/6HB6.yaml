@@ -5,7 +5,7 @@
   yaml: |2
       # Leading comment line spaces are
        # neither content nor indentation.
-    <SPC><SPC><SPC><SPC>
+    ····
     Not indented:
      By one space: |
         By four
@@ -13,7 +13,7 @@
      Flow style: [    # Leading spaces
        By two,        # in flow style
       Also by two,    # are neither
-      <TAB>Still by two   # content nor
+      —»Still by two   # content nor
         ]             # indentation.
   tree: |
     +STR

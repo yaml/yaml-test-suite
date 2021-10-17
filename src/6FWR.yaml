@@ -5,8 +5,8 @@
   yaml: |
     --- |+
      ab
-    <SPC>
-    <SPC><SPC>
+    ·
+    ··
     ...
   tree: |
     +STR
@@ -23,5 +23,5 @@
     --- |
       ab
 
-    <SPC><SPC><SPC>
+    ···
     ...

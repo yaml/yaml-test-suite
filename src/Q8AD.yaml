@@ -4,11 +4,11 @@
   tags: double spec scalar whitespace 1.3-mod
   yaml: |
     ---
-    "folded<SPC>
+    "folded·
     to a space,
-    <SPC>
-    to a line feed, or <TAB>\
-     \ <TAB>non-content"
+    ·
+    to a line feed, or »\
+     \ »non-content"
   tree: |
     +STR
      +DOC ---

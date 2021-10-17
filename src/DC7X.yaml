@@ -3,10 +3,10 @@
   from: '@perlpunk'
   tags: comment whitespace
   yaml: |
-    a: b<TAB>
-    seq:<TAB>
-     - a<TAB>
-    c: d<TAB>#X
+    a: b———»
+    seq:———»
+     - a———»
+    c: d———»#X
   tree: |
     +STR
      +DOC

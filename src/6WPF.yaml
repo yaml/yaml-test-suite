@@ -5,8 +5,8 @@
   yaml: |
     ---
     "
-      foo<SPC>
-    <SPC>
+      foo·
+    ·
         bar
 
       baz
@@ -14,7 +14,7 @@
   tree: |
     +STR
      +DOC ---
-      =VAL " foo\nbar\nbaz<SPC>
+      =VAL " foo\nbar\nbaz·
      -DOC
     -STR
   json: |

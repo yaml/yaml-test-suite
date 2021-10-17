@@ -3,7 +3,7 @@
   from: IRC
   tags: flow whitespace
   yaml: |
-    <TAB>{}
+    ———»{}
   tree: |
     +STR
      +DOC
