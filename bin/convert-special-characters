@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version=0.0.1
+version=0.0.2
 
 RUN_OR_DOCKER_PULL=true
 
@@ -20,7 +20,7 @@ dockerfile() (
   cpan \
     boolean \
     IO::All \
-    TINITA/YAML-PP-0.027_001.tar.gz
+    YAML::PP@0.027_001
 )
 
 run "$@"
