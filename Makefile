@@ -14,11 +14,17 @@ endif
 
 default:
 
-force force-build:
-	@$(eval override export RUN_OR_DOCKER := $@)
+docker:
+	$(eval override export RUN_OR_DOCKER := force)
+	@true
+
+docker-build:
+	$(eval override export RUN_OR_DOCKER := force-build)
+	@true
 
 verbose:
-	@$(eval override export RUN_OR_DOCKER_VERBOSE := true)
+	$(eval override export RUN_OR_DOCKER_VERBOSE := true)
+	@true
 
 test:
 	! $$(git rev-parse --is-shallow-repository) || \
