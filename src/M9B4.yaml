@@ -6,8 +6,8 @@
     |
      literal
      ——»text
-    ␤
-    ␤
+    ↵
+    ↵
   tree: |
     +STR
      +DOC

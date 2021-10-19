@@ -36,8 +36,8 @@ for my $file (io('src')->all_files) {
 
     s/<B(?:OM)?>/⇔/g;
     s/<C(?:R)?>/↓/g;
-    $_ .= "⑊\n" unless /\n\z/;
-    s/\n(\n+)\z/"\n" . ("␤\n" x length($1))/e;
+    $_ .= "∎\n" unless /\n\z/;
+    s/\n(\n+)\z/"\n" . ("↵\n" x length($1))/e;
 
     $data->[0]{yaml} = $_;
   }

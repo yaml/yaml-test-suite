@@ -6,8 +6,8 @@
     key:    # Comment
             # lines
       value
-    ␤
-    ␤
+    ↵
+    ↵
   tree: |
     +STR
      +DOC

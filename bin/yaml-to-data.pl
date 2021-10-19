@@ -52,8 +52,8 @@ for my $file (@ARGV) {
       $v =~ s/—*»/\t/g;
       $v =~ s/↓/\r/g unless $file =~ /P2AD/;
       $v =~ s/⇔/x{FEFF}/g;
-      $v =~ s/␤//g;
-      $v =~ s/⑊\n\z//;
+      $v =~ s/↵//g;
+      $v =~ s/∎\n\z//;
 
       open my $out, '>', "$d/$map{$k}";
       print $out encode_utf8 $v;

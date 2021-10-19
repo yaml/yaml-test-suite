@@ -10,7 +10,7 @@
     Chomping: |
       Clipped empty lines
     ␣
-    ␤
+    ↵
   tree: |
     +STR
      +DOC

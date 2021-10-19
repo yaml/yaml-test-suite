@@ -4,8 +4,8 @@
   tags: empty-key whitespace
   yaml: |
     :
-    ␤
-    ␤
+    ↵
+    ↵
   tree: |
     +STR
      +DOC
