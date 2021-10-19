@@ -5,9 +5,9 @@
   fail: true
   yaml: |
     block scalar: >
-    ·
-    ··
-    ···
+    ␣
+    ␣␣
+    ␣␣␣
      invalid
   tree: |
     +STR

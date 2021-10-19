@@ -5,8 +5,8 @@
   yaml: |
     --- >-
       trimmed
-    ··
-    ·
+    ␣␣
+    ␣
 
       as
       space

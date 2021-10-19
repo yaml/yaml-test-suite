@@ -3,9 +3,9 @@
   from: http://www.yaml.org/spec/1.2/spec.html#id2787745
   tags: double spec scalar whitespace upto-1.2
   yaml: |
-    "folded·
+    "folded␣
     to a space,»
-    ·
+    ␣
     to a line feed, or »\
      \ »non-content"
   tree: |

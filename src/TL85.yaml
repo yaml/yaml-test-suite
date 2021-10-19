@@ -4,8 +4,8 @@
   tags: double spec whitespace scalar upto-1.2
   yaml: |
     "
-      foo·
-    ·
+      foo␣
+    ␣
       —» bar
 
       baz
@@ -13,7 +13,7 @@
   tree: |
     +STR
      +DOC
-      =VAL " foo\nbar\nbaz·
+      =VAL " foo\nbar\nbaz␣
      -DOC
     -STR
   json: |

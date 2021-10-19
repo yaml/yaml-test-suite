@@ -4,11 +4,11 @@
   tags: spec literal scalar comment whitespace 1.3-mod
   yaml: |
     --- |
-    ·
-    ··
+    ␣
+    ␣␣
       literal
-    ···
-    ··
+    ␣␣␣
+    ␣␣
       text
 
      # Comment
@@ -27,6 +27,6 @@
 
 
       literal
-    ···
+    ␣␣␣
 
       text

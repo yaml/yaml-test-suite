@@ -4,9 +4,9 @@
   tags: double spec scalar whitespace 1.3-mod
   yaml: |
     ---
-    "folded·
+    "folded␣
     to a space,
-    ·
+    ␣
     to a line feed, or »\
      \ »non-content"
   tree: |

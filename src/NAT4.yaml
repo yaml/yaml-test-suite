@@ -6,11 +6,11 @@
     ---
     a: '
       '
-    b: '··
+    b: '␣␣
       '
     c: "
       "
-    d: "··
+    d: "␣␣
       "
     e: '
 
@@ -31,13 +31,13 @@
      +DOC ---
       +MAP
        =VAL :a
-       =VAL '·
+       =VAL '␣
        =VAL :b
-       =VAL '·
+       =VAL '␣
        =VAL :c
-       =VAL "·
+       =VAL "␣
        =VAL :d
-       =VAL "·
+       =VAL "␣
        =VAL :e
        =VAL '\n
        =VAL :f

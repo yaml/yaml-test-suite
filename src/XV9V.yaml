@@ -2,15 +2,15 @@
 - name: Spec Example 6.5. Empty Lines [1.3]
   from: 5GBF, modified for YAML 1.3
   tags: literal spec scalar 1.3-mod
-  yaml: |+
+  yaml: |
     Folding:
       "Empty line
 
       as a line feed"
     Chomping: |
       Clipped empty lines
-    ·
-
+    ␣
+    ␤
   tree: |
     +STR
      +DOC

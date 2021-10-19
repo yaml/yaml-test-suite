@@ -5,10 +5,10 @@
   yaml: |
     a: |
      ab
-    ·
+    ␣
      cd
      ef
-    ·
+    ␣
 
     ...
   tree: |
