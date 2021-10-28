@@ -1,0 +1,37 @@
+#!/usr/bin/env perl
+
+use v5.12;
+use YAML::PP;
+use Encode;
+
+my $ypp = YAML::PP->new;
+system("rm -fr testml");
+mkdir 'testml';
+
+for my $file (glob("src/*.yaml")) {
+  $file =~ m{^src/(.{4})\.yaml$} or die $file;
+  my $id = $1;
+  my $data = $ypp->load_file($file);
+  $data = $data->[0];
+  my ($name, $yaml, $tree, $fail) =
+    @$data{qw<name yaml tree fail>};
+
+  $yaml =~ s/^(.)/    $1/gm;
+  $tree =~ s/^\ +//gm;
+
+  my $tml = <<"...";
+=== $name
+--- in-yaml(<)
+$yaml
+...
+
+  if ($fail) {
+    $tml .= "--- error\n";
+  }
+  else {
+    $tml .= "--- test-event\n$tree";
+  }
+
+  open my $out, '>', "testml/$id.tml" or die;
+  print $out encode_utf8 $tml;
+}

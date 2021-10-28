@@ -43,6 +43,9 @@ new-test:
 convert-special:
 	convert-special-characters
 
+testml:
+	suite-to-testml
+
 data:
 	git branch --track $@ origin/$@ 2>/dev/null || true
 	git worktree add -f $@ $@
@@ -73,7 +76,7 @@ common:
 	cp $(COMMON)/bpan/run-or-docker.bash $(BPAN)/
 
 clean:
-	rm -fr data gh-pages
+	rm -fr data gh-pages new testml
 	git worktree prune
 
 docker-push: force-build
