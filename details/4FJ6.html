@@ -22,14 +22,14 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/4FJ6.tml">&test-4
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC ---
-+SEQ
-+MAP
-+SEQ
++SEQ []
++MAP {}
++SEQ []
 =VAL :a
-+SEQ
-+MAP
-+SEQ
-+SEQ
++SEQ []
++MAP {}
++SEQ []
++SEQ []
 =VAL :b
 =VAL :c
 -SEQ
@@ -113,12 +113,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/4FJ6.tml">&test-4
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
-+SEQ
-+SEQ
++SEQ []
++SEQ []
 =VAL :a
-+SEQ
-+SEQ
-+SEQ
++SEQ []
++SEQ []
++SEQ []
 =VAL :b
 =VAL :c
 -SEQ
@@ -127,7 +127,7 @@ Line      : 3
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: d, e]]: 23\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 </pre>
@@ -326,7 +326,7 @@ YAMLException: nested arrays are not supported inside keys (3:20)
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55850c38cf97
+	[C]: at 0x56501aa86f97
 </pre>
 
  </div>
@@ -338,7 +338,7 @@ stack traceback:
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: d, e]]: 23\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -374,7 +374,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x56050fcafa98)&quot; : 23
+      &quot;ARRAY(0x55ee150cea98)&quot; : 23
    }
 ]
 </pre>
@@ -386,7 +386,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x563b3c97a1c8)&#39; =&gt; 23
+    &#39;ARRAY(0x55b3f85520d8)&#39; =&gt; 23
   }
 ]
 </pre>
@@ -406,7 +406,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
    {
-      &quot;ARRAY(0x55c38bcde210)&quot; : 23
+      &quot;ARRAY(0x558fed48f1b0)&quot; : 23
    }
 ]
 </pre>
@@ -418,7 +418,7 @@ YAML      : &quot;: d, e]]: 23\n&quot;
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {
-    &#39;ARRAY(0x565500da1b58)&#39; =&gt; 23
+    &#39;ARRAY(0x55c919551b58)&#39; =&gt; 23
   }
 ]
 </pre>

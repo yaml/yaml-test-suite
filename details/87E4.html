@@ -23,8 +23,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/87E4.tml">&test-8
 +DOC
 +MAP
 =VAL &#39;implicit block key
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL &#39;implicit flow key
 =VAL :value
 -MAP
@@ -74,6 +74,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/87E4.tml">&test-8
 
   <div class="framework framework_box_ok" id="nim-nimyaml-event">
 <h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
+<span class="status_box color_ok">&nbsp;</span>ok   </div>
+
+
+  <div class="framework framework_box_ok" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_ok">&nbsp;</span>ok   </div>
 
 
@@ -132,6 +137,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/87E4.tml">&test-8
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
+  <div class="framework framework_box_json_ok" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
+
+
   <div class="framework framework_box_json_ok" id="perl-pplibyaml-json">
 <h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
@@ -157,39 +167,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/87E4.tml">&test-8
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-pp-event">
-<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>+STR
-+DOC
-+MAP
-=VAL &#39;implicit block key
-+SEQ
-=VAL &#39;implicit flow key
-Line      : 2
-Column    : 23
-Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
-Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
-YAML      : &quot;: value,\n&quot;
-  at /yaml/bin/perl-pp-event line 25.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
-Column    : 23
-Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
-Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
-YAML      : &quot;: value,\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-pp-perl">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
 Column    : 23

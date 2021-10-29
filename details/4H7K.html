@@ -62,7 +62,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/4H7K.tml">&test-4
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &lt;document start&gt;
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :a
 =VAL :b
 =VAL :c
@@ -254,7 +254,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:496: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x563743002f97
+	[C]: at 0x55fb8d80cf97
 </pre>
  </div>
 
@@ -281,12 +281,12 @@ Error: unhandled exception: Unexpected token (expected document end): ltBracketC
 Column    : 12
 Expected  : DOC_END DOC_START EOL
 Got       : WS
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot; ]&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :a
 =VAL :b
 =VAL :c
@@ -301,7 +301,7 @@ YAML      : &quot; ]&quot;
 Column    : 12
 Expected  : DOC_END DOC_START EOL
 Got       : WS
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot; ]&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -450,7 +450,7 @@ yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#
                 ^
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :a
 =VAL :b
 =VAL :c
@@ -532,7 +532,7 @@ expected the node content, but found &#39;]&#39;
                 ^ (line: 2)
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :a
 =VAL :b
 =VAL :c

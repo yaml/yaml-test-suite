@@ -23,7 +23,7 @@ implicit: entry,
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
-+MAP
++MAP {}
 =VAL :explicit
 =VAL :entry
 =VAL :implicit
@@ -102,13 +102,39 @@ implicit: entry,
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_diff">&nbsp;</span>diff <br>
 
-  Got Events:
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :explicit
+=VAL :entry
+=VAL :implicit
+=VAL :entry
+=VAL :
+=VAL :
+-MAP
+-DOC
+-STR</pre>
+  Transformed Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :explicit
+=VAL :entry
+=VAL :implicit
+=VAL :entry
+-MAP
+-DOC
+-STR</pre>
+ Got Events:
 <pre><span
 class="">+STR</span>
 <span
 class="">+DOC</span>
 <span
-class="">+MAP</span>
+class="">+MAP {}</span>
 <span
 class="">=VAL :explicit</span>
 <span
@@ -224,7 +250,7 @@ Aborted (core dumped)
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x55a243d2af97
+	[C]: at 0x555c3afb1f97
 </pre>
 
  </div>

@@ -21,11 +21,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">&test-5
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;key
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;key
 =VAL ::value
 -MAP
@@ -101,6 +101,22 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/5T43.tml">&test-5
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
 <span class="status_box color_diff">&nbsp;</span>diff <br>
 
+ Minimal Events:
+<pre>
++STR
++DOC
++SEQ
++MAP
+=VAL &quot;key
+=VAL :value
+-MAP
++MAP
+=VAL &quot;key
+=VAL ::value
+-MAP
+-SEQ
+-DOC
+-STR</pre>
   Got Events:
 <pre><span
 class="">+STR</span>
@@ -176,11 +192,11 @@ class="">]</span>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;key
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;key
 Parse error: did not find expected node content
 </pre>
@@ -312,7 +328,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55936235cf97
+	[C]: at 0x559cf43e0f97
 </pre>
  </div>
 
@@ -418,11 +434,11 @@ while parsing a flow node at line: 2, column: 11
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;key
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;key
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;

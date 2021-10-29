@@ -23,7 +23,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CML9.tml">&test-C
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
@@ -77,7 +77,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CML9.tml">&test-C
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre>
  </div>
@@ -91,7 +91,7 @@ yaml-cpp: error at line 3, column 3: end of sequence flow not found
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre>
  </div>
@@ -152,7 +152,7 @@ Aborted (core dumped)
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 -SEQ
 </pre>
@@ -302,7 +302,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:378: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5580775ddf97
+	[C]: at 0x55ea134cff97
 </pre>
  </div>
 
@@ -313,14 +313,14 @@ stack traceback:
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;word2 ]&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre>
  </div>
@@ -332,7 +332,7 @@ YAML      : &quot;word2 ]&quot;
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;word2 ]&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -492,7 +492,7 @@ expected &#39;,&#39; or &#39;]&#39;, but got &#39;&lt;scalar&gt;&#39;
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre>
  </div>
@@ -595,7 +595,7 @@ expected &#39;,&#39; or &#39;]&#39;, but got &#39;&lt;scalar&gt;&#39;
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre>
  </div>

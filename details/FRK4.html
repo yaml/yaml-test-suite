@@ -22,7 +22,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/FRK4.tml">&test-F
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
-+MAP
++MAP {}
 =VAL :foo
 =VAL :
 =VAL :
@@ -85,7 +85,7 @@ class="">+STR</span>
 <span
 class="">+DOC</span>
 <span
-class="">+MAP</span>
+class="">+MAP {}</span>
 <span
 class="diff_line">=VAL :foo :</span>
 <span
@@ -229,7 +229,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:340: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55cb1e546f97
+	[C]: at 0x559da1e1bf97
 </pre>
 
  </div>
@@ -389,7 +389,7 @@ TypeError: &#39;&lt;&#39; not supported between instances of &#39;NoneType&#39; 
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
 +DOC
-+MAP
++MAP {}
 Parse error: found unexpected &#39;:&#39;
 </pre>
  </div>
@@ -465,7 +465,7 @@ while scanning a plain scalar at line: 2, column: 5
 <h3><a href="#py-pyyaml-event">py-pyyaml-event</a></h3>
 <span class="status_box color_ni">&nbsp;</span>ni <pre>+STR
 +DOC
-+MAP
++MAP {}
 =VAL :foo
 =VAL :
 Traceback (most recent call last):

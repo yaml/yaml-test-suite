@@ -22,7 +22,7 @@ x: { y: z }in: valid
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -37,7 +37,7 @@ x: { y: z }in: valid
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -107,7 +107,7 @@ x: { y: z }in: valid
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -123,7 +123,7 @@ yaml-cpp: error at line 2, column 12: end of map not found
 +DOC
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -183,7 +183,7 @@ Aborted (core dumped)
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -329,7 +329,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:340: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55962cde4f97
+	[C]: at 0x5632e05e0f97
 </pre>
  </div>
 
@@ -492,7 +492,7 @@ expected &lt;block end&gt;, but found &#39;&lt;scalar&gt;&#39;
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -589,7 +589,7 @@ expected &lt;block end&gt;, but found &#39;&lt;scalar&gt;&#39;
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP

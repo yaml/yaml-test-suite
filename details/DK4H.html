@@ -81,7 +81,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/DK4H.tml">&test-D
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &#39;,&#39; or &#39;]&#39;
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :key
 </pre>
  </div>
@@ -93,7 +93,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/DK4H.tml">&test-D
 yaml-cpp: error at line 3, column 3: end of sequence flow not found
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :key
 </pre>
  </div>
@@ -282,7 +282,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5625e8312f97
+	[C]: at 0x5568ef4c9f97
 </pre>
  </div>
 
@@ -306,12 +306,12 @@ Error: unhandled exception: Unexpected token (expected &#39;,&#39;) [YamlStreamE
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: value ]\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :key
 </pre>
  </div>
@@ -323,7 +323,7 @@ YAML      : &quot;: value ]\n&quot;
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: value ]\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -467,7 +467,7 @@ expected &#39;,&#39; or &#39;]&#39;, but got &#39;:&#39;
       ^
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :key
 </pre>
  </div>
@@ -560,7 +560,7 @@ expected &#39;,&#39; or &#39;]&#39;, but got &#39;:&#39;
       ^ (line: 3)
 +STR
 +DOC ---
-+SEQ
++SEQ []
 =VAL :key
 </pre>
  </div>

@@ -36,7 +36,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/DBG4.tml">&test-D
 =VAL :Up, up, and away!
 =VAL :-123
 =VAL :http://example.com/foo#bar
-+SEQ
++SEQ []
 =VAL :::vector
 =VAL &quot;: - ()
 =VAL &quot;Up, up and away!
@@ -175,7 +175,7 @@ class="">]</span>
 =VAL :Up, up, and away!
 =VAL :-123
 =VAL :http://example.com/foo#bar
-+SEQ
++SEQ []
 Parse error: did not find expected node content
 </pre>
  </div>
@@ -248,7 +248,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55e313d6ef97
+	[C]: at 0x56112926ff97
 </pre>
  </div>
 
@@ -345,7 +345,7 @@ while parsing a flow node at line: 8, column: 5
 =VAL :Up, up, and away!
 =VAL :-123
 =VAL :http://example.com/foo#bar
-+SEQ
++SEQ []
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;
     for event in yaml.parse(sys.stdin.read()):

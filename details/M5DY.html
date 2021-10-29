@@ -35,11 +35,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/M5DY.tml">&test-M
 +SEQ
 =VAL :2001-07-23
 -SEQ
-+SEQ
++SEQ []
 =VAL :New York Yankees
 =VAL :Atlanta Braves
 -SEQ
-+SEQ
++SEQ []
 =VAL :2001-07-02
 =VAL :2001-08-12
 =VAL :2001-08-14
@@ -235,7 +235,7 @@ stdin:1:3: error: Non scalar keys are not allowed in JSON emit mode
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x5567053f7f97
+	[C]: at 0x55b1b0246f97
 </pre>
 
  </div>
@@ -312,10 +312,10 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x563d283f8090)&quot; : [
+   &quot;ARRAY(0x5580de28d090)&quot; : [
       &quot;2001-07-23&quot;
    ],
-   &quot;ARRAY(0x563d284049f0)&quot; : [
+   &quot;ARRAY(0x5580de2999f0)&quot; : [
       &quot;2001-07-02&quot;,
       &quot;2001-08-12&quot;,
       &quot;2001-08-14&quot;
@@ -329,10 +329,10 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x563b3899b248)&#39; =&gt; [
+  &#39;ARRAY(0x5575324b1228)&#39; =&gt; [
                                &#39;2001-07-23&#39;
                              ],
-  &#39;ARRAY(0x563b389ae030)&#39; =&gt; [
+  &#39;ARRAY(0x5575324c4030)&#39; =&gt; [
                                &#39;2001-07-02&#39;,
                                &#39;2001-08-12&#39;,
                                &#39;2001-08-14&#39;
@@ -354,12 +354,12 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x56098f8fa178)&quot; : [
+   &quot;ARRAY(0x55a76a942178)&quot; : [
       &quot;2001-07-02&quot;,
       &quot;2001-08-12&quot;,
       &quot;2001-08-14&quot;
    ],
-   &quot;ARRAY(0x56098f906968)&quot; : [
+   &quot;ARRAY(0x55a76a94e968)&quot; : [
       &quot;2001-07-23&quot;
    ]
 }
@@ -371,10 +371,10 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x561dcfc1ead0)&#39; =&gt; [
+  &#39;ARRAY(0x5633cc9acb90)&#39; =&gt; [
                                &#39;2001-07-23&#39;
                              ],
-  &#39;ARRAY(0x561dcfe2a188)&#39; =&gt; [
+  &#39;ARRAY(0x5633ccbb81c8)&#39; =&gt; [
                                &#39;2001-07-02&#39;,
                                &#39;2001-08-12&#39;,
                                &#39;2001-08-14&#39;

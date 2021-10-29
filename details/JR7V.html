@@ -33,21 +33,21 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/JR7V.tml">&test-J
 =VAL :key
 =VAL :value?
 -MAP
-+SEQ
++SEQ []
 =VAL :a?string
 -SEQ
-+SEQ
++SEQ []
 =VAL :another ? string
 -SEQ
-+MAP
++MAP {}
 =VAL :key
 =VAL :value?
 -MAP
-+MAP
++MAP {}
 =VAL :key
 =VAL :value?
 -MAP
-+MAP
++MAP {}
 =VAL :key?
 =VAL :value
 -MAP
@@ -325,7 +325,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55a64d11ff97
+	[C]: at 0x559f19ee0f97
 </pre>
  </div>
 
@@ -365,7 +365,7 @@ while parsing a flow sequence at line: 4, column: 3
 =VAL :key
 =VAL :value?
 -MAP
-+SEQ
++SEQ []
 =VAL :a
 Traceback (most recent call last):
   File &quot;/yaml/bin/py-pyyaml-event&quot;, line 7, in &lt;module&gt;

@@ -20,7 +20,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/LX3P.tml">&test-L
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
 +MAP
-+SEQ
++SEQ []
 =VAL :flow
 -SEQ
 =VAL :block
@@ -96,14 +96,14 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/LX3P.tml">&test-L
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
-+SEQ
++SEQ []
 =VAL :flow
 -SEQ
 Line      : 1
 Column    : 7
 Expected  : DOC_END DOC_START EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: block\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 </pre>
@@ -218,7 +218,7 @@ stdin:1:1: error: Non scalar keys are not allowed in JSON emit mode
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x558ad9a07f97
+	[C]: at 0x561f9685bf97
 </pre>
 
  </div>
@@ -230,7 +230,7 @@ stack traceback:
 Column    : 7
 Expected  : DOC_END DOC_START EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: block\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -289,7 +289,7 @@ YAML      : &quot;: block\n&quot;
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x55df32a31968)&quot; : &quot;block&quot;
+   &quot;ARRAY(0x55da29a38968)&quot; : &quot;block&quot;
 }
 </pre>
 
@@ -299,7 +299,7 @@ YAML      : &quot;: block\n&quot;
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x5569d1ad0ad0)&#39; =&gt; &#39;block&#39;
+  &#39;ARRAY(0x55c36e30ab30)&#39; =&gt; &#39;block&#39;
 }
 </pre>
 
@@ -309,7 +309,7 @@ YAML      : &quot;: block\n&quot;
   <div class="framework framework_box_na" id="perl-yaml-json">
 <h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x563099664a28)&quot; : &quot;block&quot;
+   &quot;ARRAY(0x55cfbc42f8c8)&quot; : &quot;block&quot;
 }
 </pre>
 
@@ -319,7 +319,7 @@ YAML      : &quot;: block\n&quot;
   <div class="framework framework_box_na" id="perl-yaml-perl">
 <h3><a href="#perl-yaml-perl">perl-yaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x563990314dd0)&#39; =&gt; &#39;block&#39;
+  &#39;ARRAY(0x55a3268f5c10)&#39; =&gt; &#39;block&#39;
 }
 </pre>
 

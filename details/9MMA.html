@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>#SF5V - Duplicate YAML directive - YAML Test Matrix</title>
+<title>#9MMA - Directive by itself with no document - YAML Test Matrix</title>
 <meta charset='utf-8'>
 <link rel="stylesheet" type="text/css" href="../css/yaml.css">
 <link rel="stylesheet" type="text/css" href="../css/matrix.css">
@@ -11,13 +11,11 @@
 
 <h1><a href="../index.html"><tt># YAML Test Matrix</tt></a></h1>
 <h2><tt>--- <a
-href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-SF5V</a><br>
-&nbsp;&nbsp;Title: Duplicate YAML directive</br>
+href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MMA.tml">&test-9MMA</a><br>
+&nbsp;&nbsp;Title: Directive by itself with no document</br>
 &nbsp;&nbsp;Tags: [ directive, error ]</tt></h2>
 
 <div class="framework" id="yaml"><h3><a href="#yaml">YAML</a></h3><pre>%YAML 1.2
-%YAML 1.2
----
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 </pre></div>
@@ -25,12 +23,45 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 <pre></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_invalid_incorrect" id="js-yaml-event">
+   <div class="framework framework_box_invalid_incorrect" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="cpp-yamlcpp-event">
+<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-event">
+<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="java-snakeyaml-json">
+<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="js-yaml-event">
 <h3><a href="#js-yaml-event">js-yaml-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC ---
-=VAL :
--DOC
 -STR
 </pre>
  </div>
@@ -38,69 +69,67 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/SF5V.tml">&test-S
 
   <div class="framework framework_box_invalid_incorrect" id="js-yaml-json">
 <h3><a href="#js-yaml-json">js-yaml-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>null
-</pre>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
  </div>
 
 
   <div class="framework framework_box_invalid_incorrect" id="nim-nimyaml-event">
 <h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC ---
-=VAL :
--DOC
 -STR
 </pre>
  </div>
 
 
+  <div class="framework framework_box_invalid_incorrect" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
+-STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_incorrect" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
+ </div>
+
+
   <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;%YAML 1.2 %YAML 1.2 ---&quot;
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;%YAML 1.2&quot;
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_incorrect" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&#39;%YAML 1.2 %YAML 1.2 ---&#39;
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&#39;%YAML 1.2&#39;
 </pre>
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
-<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:7: error: duplicate version directive
-%YAML 1.2
-      ^~~
-[NOT]: failed to fy_parse_version_directive()
-+STR
-</pre>
+  <div class="framework framework_box_invalid_incorrect" id="perl-tiny-json">
+<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
  </div>
 
 
-  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:7: error: duplicate version directive
-%YAML 1.2
-      ^~~
-[NOT]: failed to fy_parse_version_directive()
-</pre>
+  <div class="framework framework_box_invalid_incorrect" id="perl-tiny-perl">
+<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
+<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
  </div>
 
 
-  <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: found duplicate %YAML directive
-+STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="cpp-yamlcpp-event">
-<h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception:
-yaml-cpp: error at line 2, column 1: repeated YAML directive
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &lt;document start&gt;
 +STR
 </pre>
  </div>
@@ -108,14 +137,7 @@ yaml-cpp: error at line 2, column 1: repeated YAML directive
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-event">
 <h3><a href="#dotnet-yamldotnet-event">dotnet-yamldotnet-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 6, Idx: 15): While scanning a version directive, did not find preceding &lt;document end&gt;.
-   at YamlDotNet.Core.Scanner.ScanDirective()
-   at YamlDotNet.Core.Scanner.FetchDirective()
-   at YamlDotNet.Core.Scanner.FetchNextToken()
-   at YamlDotNet.Core.Scanner.FetchMoreTokens()
-   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
-   at YamlDotNet.Core.Parser.GetCurrentToken()
-   at YamlDotNet.Core.Parser.ProcessDirectives(TagDirectiveCollection tags)
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 1, Idx: 10): Did not find expected &lt;document start&gt;.
    at YamlDotNet.Core.Parser.ParseDocumentStart(Boolean isImplicit)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
@@ -129,14 +151,7 @@ Aborted (core dumped)
 
   <div class="framework framework_box_invalid_correct" id="dotnet-yamldotnet-json">
 <h3><a href="#dotnet-yamldotnet-json">dotnet-yamldotnet-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 6, Idx: 15): While scanning a version directive, did not find preceding &lt;document end&gt;.
-   at YamlDotNet.Core.Scanner.ScanDirective()
-   at YamlDotNet.Core.Scanner.FetchDirective()
-   at YamlDotNet.Core.Scanner.FetchNextToken()
-   at YamlDotNet.Core.Scanner.FetchMoreTokens()
-   at YamlDotNet.Core.Scanner.MoveNextWithoutConsuming()
-   at YamlDotNet.Core.Parser.GetCurrentToken()
-   at YamlDotNet.Core.Parser.ProcessDirectives(TagDirectiveCollection tags)
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Unhandled exception. YamlDotNet.Core.SemanticErrorException: (Line: 2, Col: 1, Idx: 10) - (Line: 2, Col: 1, Idx: 10): Did not find expected &lt;document start&gt;.
    at YamlDotNet.Core.Parser.ParseDocumentStart(Boolean isImplicit)
    at YamlDotNet.Core.Parser.StateMachine()
    at YamlDotNet.Core.Parser.MoveNext()
@@ -152,56 +167,16 @@ Aborted (core dumped)
 
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-event">
 <h3><a href="#hs-hsyaml-event">hs-hsyaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 10, posCharOffset = 10, posLine = 2, posColumn = 0} (Multiple %YAML directives)
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 10, posCharOffset = 10, posLine = 2, posColumn = 0} (Unexpected end of input)
 +STR
++DOC
 </pre>
  </div>
 
 
   <div class="framework framework_box_invalid_correct" id="hs-hsyaml-json">
 <h3><a href="#hs-hsyaml-json">hs-hsyaml-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (Multiple %YAML directives)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-event">
-<h3><a href="#java-snakeyaml-event">java-snakeyaml-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; found duplicate YAML directive
- in &#39;reader&#39;, line 2, column 1:
-    %YAML 1.2
-    ^
-
-	at org.yaml.snakeyaml.parser.ParserImpl.processDirectives(ParserImpl.java:329)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$1000(ParserImpl.java:120)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:249)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
-	at org.yaml.snakeyaml.Yaml$3.hasNext(Yaml.java:677)
-	at org.yaml.editor.Snake2Events.yamlToEvents(Snake2Events.java:111)
-	at org.yaml.editor.Snake2Events.main(Snake2Events.java:119)
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="java-snakeyaml-json">
-<h3><a href="#java-snakeyaml-json">java-snakeyaml-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Exception in thread &quot;main&quot; found duplicate YAML directive
- in &#39;reader&#39;, line 2, column 1:
-    %YAML 1.2
-    ^
-
-	at org.yaml.snakeyaml.parser.ParserImpl.processDirectives(ParserImpl.java:329)
-	at org.yaml.snakeyaml.parser.ParserImpl.access$1000(ParserImpl.java:120)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:249)
-	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:227)
-	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
-	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:155)
-	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:93)
-	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:124)
-	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:509)
-	at org.yaml.editor.Snake2Json.yamlToJson(Snake2Json.java:18)
-	at org.yaml.editor.Snake2Json.main(Snake2Json.java:25)
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>hsyaml-parser: user error (Unexpected end of input)
 </pre>
  </div>
 
@@ -212,22 +187,21 @@ Aborted (core dumped)
 /node/node_modules/js-yaml/lib/loader.js:187
   throw generateError(state, message);
   ^
-YAMLException: duplication of %YAML directive (3:1)
+YAMLException: directives end mark is expected (2:1)
 
  1 | %YAML 1.2
- 2 | %YAML 1.2
- 3 | ---
+ 2 | 
 -----^
     at generateError (/node/node_modules/js-yaml/lib/loader.js:183:10)
     at throwError (/node/node_modules/js-yaml/lib/loader.js:187:9)
-    at Object.handleYamlDirective [as YAML] (/node/node_modules/js-yaml/lib/loader.js:204:7)
-    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1606:39)
+    at readDocument (/node/node_modules/js-yaml/lib/loader.js:1622:5)
     at loadDocuments (/node/node_modules/js-yaml/lib/loader.js:1688:5)
     at Object.loadAll (/node/node_modules/js-yaml/lib/loader.js:1701:19)
     at Object.&lt;anonymous&gt; (/yaml/bin/js-jsyaml-json:7:13)
     at Module._compile (internal/modules/cjs/loader.js:778:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
 </pre>
  </div>
 
@@ -241,32 +215,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:496: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x560d08fbff97
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
-<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /yaml/bin/perl-pp-event line 25.
- at /yaml/bin/perl-pp-event line 25.
-+STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
- at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Found duplicate YAML directive at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
- at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+	[C]: at 0x55857b6cbf97
 </pre>
  </div>
 
@@ -275,7 +224,7 @@ stack traceback:
 <h3><a href="#perl-pplibyaml-event">perl-pplibyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
 
-    found duplicate %YAML directive
+    did not find expected &lt;document start&gt;
 
 was found at , line: 2, column: 1
 </pre>
@@ -286,7 +235,7 @@ was found at , line: 2, column: 1
 <h3><a href="#perl-pplibyaml-json">perl-pplibyaml-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
 
-    found duplicate %YAML directive
+    did not find expected &lt;document start&gt;
 
 was found at , line: 2, column: 1
 </pre>
@@ -297,7 +246,7 @@ was found at , line: 2, column: 1
 <h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::PP::LibYAML Error: The problem:
 
-    found duplicate %YAML directive
+    did not find expected &lt;document start&gt;
 
 was found at , line: 2, column: 1
 </pre>
@@ -306,21 +255,7 @@ was found at , line: 2, column: 1
 
   <div class="framework framework_box_invalid_correct" id="perl-refparser-event">
 <h3><a href="#perl-refparser-event">perl-refparser-event</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Multiple %YAML directives not allowed at /perl5/lib/perl5/YAML/Parser.pm line 4848, &lt;&gt; line 1.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="perl-tiny-json">
-<h3><a href="#perl-tiny-json">perl-tiny-json</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to classify line &#39;%YAML 1.2&#39; at /yaml/bin/perl-tiny-json line 12.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_correct" id="perl-tiny-perl">
-<h3><a href="#perl-tiny-perl">perl-tiny-perl</a></h3>
-<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::Tiny failed to classify line &#39;%YAML 1.2&#39; at /yaml/bin/perl-tiny-perl line 15.
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parser finished before end of input at /perl5/lib/perl5/YAML/Parser.pm line 4047, &lt;&gt; line 1.
 </pre>
  </div>
 
@@ -329,7 +264,7 @@ was found at , line: 2, column: 1
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
 
-    found duplicate %YAML directive
+    did not find expected &lt;document start&gt;
 
 was found at document: 1, line: 2, column: 1
 </pre>
@@ -340,7 +275,7 @@ was found at document: 1, line: 2, column: 1
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>YAML::XS::Load Error: The problem:
 
-    found duplicate %YAML directive
+    did not find expected &lt;document start&gt;
 
 was found at document: 1, line: 2, column: 1
 </pre>
@@ -380,13 +315,11 @@ was found at document: 1, line: 2, column: 1
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 157, in parse_implicit_document_start
     return self.parse_document_start()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 169, in parse_document_start
-    version, tags = self.process_directives()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 225, in process_directives
-    &quot;found duplicate YAML directive&quot;, token.start_mark)
-yaml.parser.ParserError: found duplicate YAML directive
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 174, in parse_document_start
+    self.peek_token().start_mark)
+yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;stream end&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    %YAML 1.2
+    
     ^
 +STR
 </pre>
@@ -408,13 +341,11 @@ yaml.parser.ParserError: found duplicate YAML directive
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 157, in parse_implicit_document_start
     return self.parse_document_start()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 169, in parse_document_start
-    version, tags = self.process_directives()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 225, in process_directives
-    &quot;found duplicate YAML directive&quot;, token.start_mark)
-yaml.parser.ParserError: found duplicate YAML directive
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 174, in parse_document_start
+    self.peek_token().start_mark)
+yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;stream end&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    %YAML 1.2
+    
     ^
 </pre>
  </div>
@@ -435,13 +366,11 @@ yaml.parser.ParserError: found duplicate YAML directive
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 157, in parse_implicit_document_start
     return self.parse_document_start()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 169, in parse_document_start
-    version, tags = self.process_directives()
-  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 225, in process_directives
-    &quot;found duplicate YAML directive&quot;, token.start_mark)
-yaml.parser.ParserError: found duplicate YAML directive
+  File &quot;/python/lib/python3.7/site-packages/yaml/parser.py&quot;, line 174, in parse_document_start
+    self.peek_token().start_mark)
+yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;stream end&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    %YAML 1.2
+    
     ^
 </pre>
  </div>
@@ -458,13 +387,11 @@ yaml.parser.ParserError: found duplicate YAML directive
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 200, in parse_implicit_document_start
     return self.parse_document_start()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 211, in parse_document_start
-    version, tags = self.process_directives()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 278, in process_directives
-    None, None, &#39;found duplicate YAML directive&#39;, token.start_mark
-ruamel.yaml.parser.ParserError: found duplicate YAML directive
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 217, in parse_document_start
+    self.scanner.peek_token().start_mark,
+ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;stream end&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    %YAML 1.2
+    
     ^ (line: 2)
 +STR
 </pre>
@@ -486,13 +413,11 @@ ruamel.yaml.parser.ParserError: found duplicate YAML directive
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 200, in parse_implicit_document_start
     return self.parse_document_start()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 211, in parse_document_start
-    version, tags = self.process_directives()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 278, in process_directives
-    None, None, &#39;found duplicate YAML directive&#39;, token.start_mark
-ruamel.yaml.parser.ParserError: found duplicate YAML directive
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 217, in parse_document_start
+    self.scanner.peek_token().start_mark,
+ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;stream end&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    %YAML 1.2
+    
     ^ (line: 2)
 </pre>
  </div>
@@ -513,13 +438,11 @@ ruamel.yaml.parser.ParserError: found duplicate YAML directive
     self.current_event = self.state()
   File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 200, in parse_implicit_document_start
     return self.parse_document_start()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 211, in parse_document_start
-    version, tags = self.process_directives()
-  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 278, in process_directives
-    None, None, &#39;found duplicate YAML directive&#39;, token.start_mark
-ruamel.yaml.parser.ParserError: found duplicate YAML directive
+  File &quot;/python/lib/python3.7/site-packages/ruamel/yaml/parser.py&quot;, line 217, in parse_document_start
+    self.scanner.peek_token().start_mark,
+ruamel.yaml.parser.ParserError: expected &#39;&lt;document start&gt;&#39;, but found &#39;&lt;stream end&gt;&#39;
   in &quot;&lt;unicode string&gt;&quot;, line 2, column 1:
-    %YAML 1.2
+    
     ^ (line: 2)
 </pre>
  </div>

@@ -22,8 +22,8 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CT4Q.tml">&test-C
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
-+SEQ
-+MAP
++SEQ []
++MAP {}
 =VAL :foo bar
 =VAL :baz
 -MAP
@@ -159,12 +159,12 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CT4Q.tml">&test-C
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
-+SEQ
++SEQ []
 Line      : 2
 Column    : 1
-Expected  : ALIAS FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
+Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : QUESTION
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;? foo\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 </pre>
@@ -175,9 +175,9 @@ YAML      : &quot;? foo\n&quot;
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
 Column    : 1
-Expected  : ALIAS FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
+Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : QUESTION
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;? foo\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>

@@ -171,6 +171,24 @@ this is#not: a comment
 <h3><a href="#nim-nimyaml-event">nim-nimyaml-event</a></h3>
 <span class="status_box color_diff">&nbsp;</span>diff <br>
 
+ Minimal Events:
+<pre>
++STR
++DOC
++MAP
+=VAL :a!&quot;#$%&amp;&#39;()*+,-./09:;&lt;=&gt;?@AZ[\\]^_`az{|}~
+=VAL :safe
+=VAL :?foo
+=VAL :safe question mark
+=VAL ::foo
+=VAL :safe colon
+=VAL :-foo
+=VAL :safe dash
+=VAL :this is#not
+=VAL :a comment
+-MAP
+-DOC
+-STR</pre>
   Got Events:
 <pre><span
 class="">+STR</span>

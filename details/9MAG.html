@@ -30,7 +30,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MAG.tml">&test-9
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
 +DOC
-+SEQ
++SEQ []
 =VAL :
 =VAL :a
 =VAL :b
@@ -86,7 +86,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MAG.tml">&test-9
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected node content
 +STR
 +DOC ---
-+SEQ
++SEQ []
 </pre>
  </div>
 
@@ -272,7 +272,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5626de26df97
+	[C]: at 0x55a057bfdf97
 </pre>
  </div>
 
@@ -281,14 +281,14 @@ stack traceback:
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
 Column    : 3
-Expected  : ALIAS FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
+Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : FLOW_COMMA
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;, a, b, c ]\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
 +DOC ---
-+SEQ
++SEQ []
 </pre>
  </div>
 
@@ -297,9 +297,9 @@ YAML      : &quot;, a, b, c ]\n&quot;
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
 Column    : 3
-Expected  : ALIAS FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
+Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : FLOW_COMMA
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;, a, b, c ]\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -460,7 +460,7 @@ expected the node content, but found &#39;,&#39;
       ^
 +STR
 +DOC ---
-+SEQ
++SEQ []
 </pre>
  </div>
 
@@ -561,7 +561,7 @@ expected the node content, but found &#39;,&#39;
       ^ (line: 2)
 +STR
 +DOC ---
-+SEQ
++SEQ []
 </pre>
  </div>
 

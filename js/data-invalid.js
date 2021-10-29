@@ -241,6 +241,14 @@ var data = {
             "sequence"
          ]
       },
+      "9MMA" : {
+         "id" : "9MMA",
+         "in_yaml" : "%YAML 1.2\n",
+         "tags" : [
+            "directive",
+            "error"
+         ]
+      },
       "B63P" : {
          "id" : "B63P",
          "in_yaml" : "%YAML 1.2\n...\n",

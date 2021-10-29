@@ -225,7 +225,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :unquoted\n=VAL \"separate\n=VAL :http://foo.com\n=VAL :\n=VAL :omitted value\n=VAL :\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :unquoted\n=VAL \"separate\n=VAL :http://foo.com\n=VAL :\n=VAL :omitted value\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
       "4CQQ" : {
          "id" : "4CQQ",
@@ -247,7 +247,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n+SEQ\n=VAL :a\n+SEQ\n+MAP\n+SEQ\n+SEQ\n=VAL :b\n=VAL :c\n-SEQ\n-SEQ\n=VAL :d\n-MAP\n=VAL :e\n-SEQ\n-SEQ\n=VAL :23\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ []\n+MAP {}\n+SEQ []\n=VAL :a\n+SEQ []\n+MAP {}\n+SEQ []\n+SEQ []\n=VAL :b\n=VAL :c\n-SEQ\n-SEQ\n=VAL :d\n-MAP\n=VAL :e\n-SEQ\n-SEQ\n=VAL :23\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "4GC6" : {
          "id" : "4GC6",
@@ -268,7 +268,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL \"foo\n=VAL \"bar\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL \"foo\n=VAL \"bar\n-MAP\n-DOC\n-STR\n"
       },
       "4Q9F" : {
          "id" : "4Q9F",
@@ -349,7 +349,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n=VAL :you\n=VAL :bar\n=VAL :far\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :foo\n=VAL :you\n=VAL :bar\n=VAL :far\n-MAP\n-DOC\n-STR\n"
       },
       "565N" : {
          "id" : "565N",
@@ -394,7 +394,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL :one\n=VAL :two\n=VAL :three\n=VAL :four\n-MAP\n+MAP\n=VAL :five\n=VAL :six\n=VAL :seven\n=VAL :eight\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP {}\n=VAL :one\n=VAL :two\n=VAL :three\n=VAL :four\n-MAP\n+MAP {}\n=VAL :five\n=VAL :six\n=VAL :seven\n=VAL :eight\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "5GBF" : {
          "id" : "5GBF",
@@ -419,7 +419,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n=VAL :one\n=VAL :two\n-SEQ\n+SEQ\n=VAL :three\n=VAL :four\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ []\n=VAL :one\n=VAL :two\n-SEQ\n+SEQ []\n=VAL :three\n=VAL :four\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "5MUD" : {
          "id" : "5MUD",
@@ -430,7 +430,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP {}\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
       "5NYZ" : {
          "id" : "5NYZ",
@@ -452,7 +452,7 @@ var data = {
             "mapping",
             "scalar"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL \"key\n=VAL :value\n-MAP\n+MAP\n=VAL \"key\n=VAL ::value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP {}\n=VAL \"key\n=VAL :value\n-MAP\n+MAP {}\n=VAL \"key\n=VAL ::value\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "5TYM" : {
          "id" : "5TYM",
@@ -513,7 +513,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP &mapping\n+SEQ &key\n=VAL &item :a\n=VAL :b\n=VAL :c\n-SEQ\n=VAL :value\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP &mapping\n+SEQ [] &key\n=VAL &item :a\n=VAL :b\n=VAL :c\n-SEQ\n=VAL :value\n-MAP\n-DOC\n-STR\n"
       },
       "6CK3" : {
          "id" : "6CK3",
@@ -559,7 +559,7 @@ var data = {
             "upto-1.2",
             "whitespace"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :Not indented\n+MAP\n=VAL :By one space\n=VAL |By four\\n  spaces\\n\n=VAL :Flow style\n+SEQ\n=VAL :By two\n=VAL :Also by two\n=VAL :Still by two\n-SEQ\n-MAP\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :Not indented\n+MAP\n=VAL :By one space\n=VAL |By four\\n  spaces\\n\n=VAL :Flow style\n+SEQ []\n=VAL :By two\n=VAL :Also by two\n=VAL :Still by two\n-SEQ\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
       "6JQW" : {
          "id" : "6JQW",
@@ -803,7 +803,7 @@ var data = {
             "flow",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n=VAL :word1\n=VAL :word2\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ []\n=VAL :word1\n=VAL :word2\n-SEQ\n-DOC\n-STR\n"
       },
       "7W2P" : {
          "id" : "7W2P",
@@ -833,7 +833,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :nested sequences\n+SEQ\n+SEQ\n+SEQ\n+SEQ\n-SEQ\n-SEQ\n-SEQ\n+SEQ\n+SEQ\n+MAP\n-MAP\n-SEQ\n-SEQ\n-SEQ\n=VAL :key1\n+SEQ\n-SEQ\n=VAL :key2\n+MAP\n-MAP\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :nested sequences\n+SEQ\n+SEQ\n+SEQ\n+SEQ []\n-SEQ\n-SEQ\n-SEQ\n+SEQ\n+SEQ\n+MAP {}\n-MAP\n-SEQ\n-SEQ\n-SEQ\n=VAL :key1\n+SEQ []\n-SEQ\n=VAL :key2\n+MAP {}\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
       "82AN" : {
          "id" : "82AN",
@@ -855,7 +855,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL 'implicit block key\n+SEQ\n+MAP\n=VAL 'implicit flow key\n=VAL :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL 'implicit block key\n+SEQ []\n+MAP {}\n=VAL 'implicit flow key\n=VAL :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "8CWC" : {
          "id" : "8CWC",
@@ -888,7 +888,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL :single line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL :multi line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP {}\n=VAL :single line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n+MAP {}\n=VAL :multi line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "8MK2" : {
          "id" : "8MK2",
@@ -919,7 +919,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL \"double quoted\n=VAL 'single quoted\n=VAL :plain text\n+SEQ\n=VAL :nested\n-SEQ\n+MAP\n=VAL :single\n=VAL :pair\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ []\n=VAL \"double quoted\n=VAL 'single quoted\n=VAL :plain text\n+SEQ []\n=VAL :nested\n-SEQ\n+MAP {}\n=VAL :single\n=VAL :pair\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "8XYN" : {
          "id" : "8XYN",
@@ -984,7 +984,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL \"single line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL \"multi line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP {}\n=VAL \"single line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n+MAP {}\n=VAL \"multi line\n=VAL :\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "9DXL" : {
          "id" : "9DXL",
@@ -1039,7 +1039,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL \"JSON like\n=VAL :adjacent\n-MAP\n-SEQ\n+SEQ\n+MAP\n+MAP\n=VAL :JSON\n=VAL :like\n-MAP\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ []\n+MAP {}\n=VAL :YAML\n=VAL :separate\n-MAP\n-SEQ\n+SEQ []\n+MAP {}\n=VAL \"JSON like\n=VAL :adjacent\n-MAP\n-SEQ\n+SEQ []\n+MAP {}\n+MAP {}\n=VAL :JSON\n=VAL :like\n-MAP\n=VAL :adjacent\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "9SA2" : {
          "id" : "9SA2",
@@ -1050,7 +1050,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL \"single line\n=VAL :value\n-MAP\n+MAP\n=VAL \"multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP {}\n=VAL \"single line\n=VAL :value\n-MAP\n+MAP {}\n=VAL \"multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "9SHH" : {
          "id" : "9SHH",
@@ -1229,7 +1229,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL \"adjacent\n=VAL :value\n=VAL \"readable\n=VAL :value\n=VAL \"empty\n=VAL :\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL \"adjacent\n=VAL :value\n=VAL \"readable\n=VAL :value\n=VAL \"empty\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
       "C4HZ" : {
          "id" : "C4HZ",
@@ -1242,7 +1242,7 @@ var data = {
             "spec",
             "tag"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ <tag:clarkevans.com,2002:shape>\n+MAP <tag:clarkevans.com,2002:circle>\n=VAL :center\n+MAP &ORIGIN\n=VAL :x\n=VAL :73\n=VAL :y\n=VAL :129\n-MAP\n=VAL :radius\n=VAL :7\n-MAP\n+MAP <tag:clarkevans.com,2002:line>\n=VAL :start\n=ALI *ORIGIN\n=VAL :finish\n+MAP\n=VAL :x\n=VAL :89\n=VAL :y\n=VAL :102\n-MAP\n-MAP\n+MAP <tag:clarkevans.com,2002:label>\n=VAL :start\n=ALI *ORIGIN\n=VAL :color\n=VAL :0xFFEEBB\n=VAL :text\n=VAL :Pretty vector drawing.\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ <tag:clarkevans.com,2002:shape>\n+MAP <tag:clarkevans.com,2002:circle>\n=VAL :center\n+MAP {} &ORIGIN\n=VAL :x\n=VAL :73\n=VAL :y\n=VAL :129\n-MAP\n=VAL :radius\n=VAL :7\n-MAP\n+MAP <tag:clarkevans.com,2002:line>\n=VAL :start\n=ALI *ORIGIN\n=VAL :finish\n+MAP {}\n=VAL :x\n=VAL :89\n=VAL :y\n=VAL :102\n-MAP\n-MAP\n+MAP <tag:clarkevans.com,2002:label>\n=VAL :start\n=ALI *ORIGIN\n=VAL :color\n=VAL :0xFFEEBB\n=VAL :text\n=VAL :Pretty vector drawing.\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "CC74" : {
          "id" : "CC74",
@@ -1265,7 +1265,7 @@ var data = {
             "flow",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :empty key\n-MAP\n-SEQ\n+SEQ\n+MAP\n=VAL :\n=VAL :another empty key\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ []\n+MAP {}\n=VAL :\n=VAL :empty key\n-MAP\n-SEQ\n+SEQ []\n+MAP {}\n=VAL :\n=VAL :another empty key\n-MAP\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "CN3R" : {
          "id" : "CN3R",
@@ -1277,7 +1277,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ &flowseq\n+MAP\n=VAL :a\n=VAL :b\n-MAP\n+MAP\n=VAL &c :c\n=VAL :d\n-MAP\n+MAP\n=VAL &e :e\n=VAL :f\n-MAP\n+MAP &g\n=VAL :g\n=VAL :h\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ [] &flowseq\n+MAP {}\n=VAL :a\n=VAL :b\n-MAP\n+MAP {}\n=VAL &c :c\n=VAL :d\n-MAP\n+MAP {}\n=VAL &e :e\n=VAL :f\n-MAP\n+MAP {} &g\n=VAL :g\n=VAL :h\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "CPZ3" : {
          "id" : "CPZ3",
@@ -1299,7 +1299,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL :foo bar\n=VAL :baz\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ []\n+MAP {}\n=VAL :foo bar\n=VAL :baz\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "CUP7" : {
          "id" : "CUP7",
@@ -1332,7 +1332,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n+SEQ\n=VAL :b\n=VAL :c\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n+SEQ []\n=VAL :b\n=VAL :c\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "D9TU" : {
          "id" : "D9TU",
@@ -1354,7 +1354,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :::vector\n=VAL \": - ()\n=VAL :Up, up, and away!\n=VAL :-123\n=VAL :http://example.com/foo#bar\n+SEQ\n=VAL :::vector\n=VAL \": - ()\n=VAL \"Up, up and away!\n=VAL :-123\n=VAL :http://example.com/foo#bar\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :::vector\n=VAL \": - ()\n=VAL :Up, up, and away!\n=VAL :-123\n=VAL :http://example.com/foo#bar\n+SEQ []\n=VAL :::vector\n=VAL \": - ()\n=VAL \"Up, up and away!\n=VAL :-123\n=VAL :http://example.com/foo#bar\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "DC7X" : {
          "id" : "DC7X",
@@ -1376,7 +1376,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :explicit\n=VAL :entry\n=VAL :implicit\n=VAL :entry\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :explicit\n=VAL :entry\n=VAL :implicit\n=VAL :entry\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
       "DHP8" : {
          "id" : "DHP8",
@@ -1386,7 +1386,7 @@ var data = {
             "flow",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :foo\n=VAL :bar\n=VAL :42\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ []\n=VAL :foo\n=VAL :bar\n=VAL :42\n-SEQ\n-DOC\n-STR\n"
       },
       "DK3J" : {
          "id" : "DK3J",
@@ -1433,7 +1433,7 @@ var data = {
             "sequence",
             "tag"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP <tag:yaml.org,2002:map>\n=VAL :k\n+SEQ <tag:yaml.org,2002:seq>\n=VAL :a\n=VAL <tag:yaml.org,2002:str> :b\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {} <tag:yaml.org,2002:map>\n=VAL :k\n+SEQ [] <tag:yaml.org,2002:seq>\n=VAL :a\n=VAL <tag:yaml.org,2002:str> :b\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "EX5H" : {
          "id" : "EX5H",
@@ -1475,7 +1475,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :a\n+SEQ\n=VAL :b\n=VAL :c\n+MAP\n=VAL :d\n+SEQ\n=VAL :e\n=VAL :f\n-SEQ\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP {}\n=VAL :a\n+SEQ []\n=VAL :b\n=VAL :c\n+MAP {}\n=VAL :d\n+SEQ []\n=VAL :e\n=VAL :f\n-SEQ\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "F6MC" : {
          "id" : "F6MC",
@@ -1550,7 +1550,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n=VAL :\n=VAL :\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :foo\n=VAL :\n=VAL :\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
       "FTA2" : {
          "id" : "FTA2",
@@ -1571,7 +1571,7 @@ var data = {
             "flow",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :a\n+SEQ\n=VAL :b\n=VAL :c\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ []\n=VAL :a\n+SEQ []\n=VAL :b\n=VAL :c\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "G4RS" : {
          "id" : "G4RS",
@@ -1582,16 +1582,6 @@ var data = {
             "spec"
          ],
          "test_event" : "+STR\n+DOC\n+MAP\n=VAL :unicode\n=VAL \"Sosa did fine.\u263a\n=VAL :control\n=VAL \"\\b1998\\t1999\\t2000\\n\n=VAL :hex esc\n=VAL \"\\r\\n is \\r\\n\n=VAL :single\n=VAL '\"Howdy!\" he cried.\n=VAL :quoted\n=VAL ' # Not a 'comment'.\n=VAL :tie-fighter\n=VAL '|\\\\-*-/|\n-MAP\n-DOC\n-STR\n"
-      },
-      "G5U8" : {
-         "id" : "G5U8",
-         "in_json" : "[\n  [\n    \"-\",\n    \"-\"\n  ]\n]\n",
-         "in_yaml" : "---\n- [-, -]\n",
-         "tags" : [
-            "flow",
-            "sequence"
-         ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n+SEQ\n=VAL :-\n=VAL :-\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "G992" : {
          "id" : "G992",
@@ -1762,7 +1752,7 @@ var data = {
             "flow",
             "scalar"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :a?string\n=VAL :another ? string\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+SEQ\n=VAL :a?string\n-SEQ\n+SEQ\n=VAL :another ? string\n-SEQ\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+MAP\n=VAL :key?\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n=VAL :a?string\n=VAL :another ? string\n+MAP\n=VAL :key\n=VAL :value?\n-MAP\n+SEQ []\n=VAL :a?string\n-SEQ\n+SEQ []\n=VAL :another ? string\n-SEQ\n+MAP {}\n=VAL :key\n=VAL :value?\n-MAP\n+MAP {}\n=VAL :key\n=VAL :value?\n-MAP\n+MAP {}\n=VAL :key?\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "JS2J" : {
          "id" : "JS2J",
@@ -1794,7 +1784,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP {}\n=VAL \"foo\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
       "K4SU" : {
          "id" : "K4SU",
@@ -1892,7 +1882,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :implicit block key\n+SEQ\n+MAP\n=VAL :implicit flow key\n=VAL :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :implicit block key\n+SEQ []\n+MAP {}\n=VAL :implicit flow key\n=VAL :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "LE5A" : {
          "id" : "LE5A",
@@ -1914,7 +1904,7 @@ var data = {
             "scalar",
             "whitespace"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n=VAL :a\n=VAL :b\n=VAL :c\n-SEQ\n+MAP\n=VAL \"a\n=VAL :b\n=VAL :c\n=VAL 'd\n=VAL :e\n=VAL \"f\n-MAP\n+SEQ\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ []\n=VAL :a\n=VAL :b\n=VAL :c\n-SEQ\n+MAP {}\n=VAL \"a\n=VAL :b\n=VAL :c\n=VAL 'd\n=VAL :e\n=VAL \"f\n-MAP\n+SEQ []\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "LQZ7" : {
          "id" : "LQZ7",
@@ -1925,7 +1915,7 @@ var data = {
             "scalar",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL \"implicit block key\n+SEQ\n+MAP\n=VAL \"implicit flow key\n=VAL :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL \"implicit block key\n+SEQ []\n+MAP {}\n=VAL \"implicit flow key\n=VAL :value\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "LX3P" : {
          "id" : "LX3P",
@@ -1938,7 +1928,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n+SEQ\n=VAL :flow\n-SEQ\n=VAL :block\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n+SEQ []\n=VAL :flow\n-SEQ\n=VAL :block\n-MAP\n-DOC\n-STR\n"
       },
       "M29M" : {
          "id" : "M29M",
@@ -1977,7 +1967,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n+SEQ\n=VAL :Detroit Tigers\n=VAL :Chicago cubs\n-SEQ\n+SEQ\n=VAL :2001-07-23\n-SEQ\n+SEQ\n=VAL :New York Yankees\n=VAL :Atlanta Braves\n-SEQ\n+SEQ\n=VAL :2001-07-02\n=VAL :2001-08-12\n=VAL :2001-08-14\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n+SEQ\n=VAL :Detroit Tigers\n=VAL :Chicago cubs\n-SEQ\n+SEQ\n=VAL :2001-07-23\n-SEQ\n+SEQ []\n=VAL :New York Yankees\n=VAL :Atlanta Braves\n-SEQ\n+SEQ []\n=VAL :2001-07-02\n=VAL :2001-08-12\n=VAL :2001-08-14\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "M7A3" : {
          "id" : "M7A3",
@@ -1999,7 +1989,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :a\n+SEQ\n=VAL :b\n=VAL :c\n+MAP\n=VAL :d\n+SEQ\n=VAL :e\n=VAL :f\n-SEQ\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP {}\n=VAL :a\n+SEQ []\n=VAL :b\n=VAL :c\n+MAP {}\n=VAL :d\n+SEQ []\n=VAL :e\n=VAL :f\n-SEQ\n-MAP\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "M9B4" : {
          "id" : "M9B4",
@@ -2036,7 +2026,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP {}\n=VAL :a\n=VAL :b\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "MYW6" : {
          "id" : "MYW6",
@@ -2100,7 +2090,7 @@ var data = {
             "flow",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP\n=VAL :single line\n=VAL :value\n-MAP\n+MAP\n=VAL :multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+SEQ\n+MAP {}\n=VAL :single line\n=VAL :value\n-MAP\n+MAP {}\n=VAL :multi line\n=VAL :value\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "NKF9" : {
          "id" : "NKF9",
@@ -2110,7 +2100,7 @@ var data = {
             "empty-key",
             "mapping"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n=VAL :\n=VAL :empty key\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n=VAL :\n=VAL :empty key\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :key\n=VAL :value\n=VAL :\n=VAL :empty key\n-MAP\n-DOC\n+DOC ---\n+MAP {}\n=VAL :key\n=VAL :value\n=VAL :\n=VAL :empty key\n-MAP\n-DOC\n+DOC ---\n+MAP\n=VAL :\n=VAL :\n-MAP\n-DOC\n+DOC ---\n+MAP {}\n=VAL :\n=VAL :\n-MAP\n-DOC\n-STR\n"
       },
       "NP9H" : {
          "id" : "NP9H",
@@ -2211,7 +2201,7 @@ var data = {
             "flow",
             "whitespace"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n-MAP\n-DOC\n-STR\n"
       },
       "Q88A" : {
          "id" : "Q88A",
@@ -2223,7 +2213,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n=VAL :a\n=VAL :b\n-SEQ\n+MAP\n=VAL :a\n=VAL :b\n-MAP\n=VAL \"a\n=VAL 'b\n=VAL :c\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ []\n=VAL :a\n=VAL :b\n-SEQ\n+MAP {}\n=VAL :a\n=VAL :b\n-MAP\n=VAL \"a\n=VAL 'b\n=VAL :c\n-SEQ\n-DOC\n-STR\n"
       },
       "Q8AD" : {
          "id" : "Q8AD",
@@ -2250,7 +2240,7 @@ var data = {
             "spec",
             "whitespace"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n+MAP\n=VAL :first\n=VAL :Sammy\n=VAL :last\n=VAL :Sosa\n-MAP\n+MAP\n=VAL :hr\n=VAL :65\n=VAL :avg\n=VAL :0.278\n-MAP\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n+MAP {}\n=VAL :first\n=VAL :Sammy\n=VAL :last\n=VAL :Sosa\n-MAP\n+MAP\n=VAL :hr\n=VAL :65\n=VAL :avg\n=VAL :0.278\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
       "QF4Y" : {
          "id" : "QF4Y",
@@ -2261,7 +2251,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL :foo\n=VAL :bar\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ []\n+MAP {}\n=VAL :foo\n=VAL :bar\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "QT73" : {
          "id" : "QT73",
@@ -2297,7 +2287,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :top1\n+SEQ\n=VAL :item1\n+MAP\n=VAL :key2\n=VAL :value2\n-MAP\n=VAL :item3\n-SEQ\n=VAL :top2\n=VAL :value2\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP {}\n=VAL :top1\n+SEQ []\n=VAL :item1\n+MAP {}\n=VAL :key2\n=VAL :value2\n-MAP\n=VAL :item3\n-SEQ\n=VAL :top2\n=VAL :value2\n-MAP\n-DOC\n-STR\n"
       },
       "RLU9" : {
          "id" : "RLU9",
@@ -2418,7 +2408,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :a\n+SEQ\n=VAL :b\n=VAL :c\n-SEQ\n+SEQ\n=VAL :d\n=VAL :e\n-SEQ\n=VAL :f\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :a\n+SEQ []\n=VAL :b\n=VAL :c\n-SEQ\n+SEQ []\n=VAL :d\n=VAL :e\n-SEQ\n=VAL :f\n-MAP\n-DOC\n-STR\n"
       },
       "SKE5" : {
          "id" : "SKE5",
@@ -2568,7 +2558,7 @@ var data = {
             "flow",
             "scalar"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP\n=VAL :url\n=VAL :http://example.org\n-MAP\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+MAP {}\n=VAL :url\n=VAL :http://example.org\n-MAP\n-SEQ\n-DOC\n-STR\n"
       },
       "UDR7" : {
          "id" : "UDR7",
@@ -2580,7 +2570,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :sequence\n+SEQ\n=VAL :one\n=VAL :two\n-SEQ\n=VAL :mapping\n+MAP\n=VAL :sky\n=VAL :blue\n=VAL :sea\n=VAL :green\n-MAP\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :sequence\n+SEQ []\n=VAL :one\n=VAL :two\n-SEQ\n=VAL :mapping\n+MAP {}\n=VAL :sky\n=VAL :blue\n=VAL :sea\n=VAL :green\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
       "UGM3" : {
          "id" : "UGM3",
@@ -2608,7 +2598,7 @@ var data = {
             "header",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC ---\n+MAP\n=VAL :matches %\n=VAL :20\n-MAP\n-DOC ...\n+DOC ---\n=VAL :\n-DOC ...\n-STR\n"
+         "test_event" : "+STR\n+DOC ---\n+MAP {}\n=VAL :matches %\n=VAL :20\n-MAP\n-DOC ...\n+DOC ---\n=VAL :\n-DOC ...\n-STR\n"
       },
       "V55R" : {
          "id" : "V55R",
@@ -2676,7 +2666,7 @@ var data = {
             "spec",
             "tag"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :foo\n=VAL <tag:yaml.org,2002:str> :\n=VAL <tag:yaml.org,2002:str> :\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :foo\n=VAL <tag:yaml.org,2002:str> :\n=VAL <tag:yaml.org,2002:str> :\n=VAL :bar\n-MAP\n-DOC\n-STR\n"
       },
       "X38W" : {
          "id" : "X38W",
@@ -2687,7 +2677,7 @@ var data = {
             "complex-key",
             "flow"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n+SEQ &a\n=VAL :a\n=VAL &b :b\n-SEQ\n=ALI *b\n=ALI *a\n+SEQ\n=VAL :c\n=ALI *b\n=VAL :d\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n+SEQ [] &a\n=VAL :a\n=VAL &b :b\n-SEQ\n=ALI *b\n=ALI *a\n+SEQ []\n=VAL :c\n=ALI *b\n=VAL :d\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "X8DW" : {
          "id" : "X8DW",
@@ -2751,7 +2741,7 @@ var data = {
             "sequence",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ\n=VAL :name\n=VAL :hr\n=VAL :avg\n-SEQ\n+SEQ\n=VAL :Mark McGwire\n=VAL :65\n=VAL :0.278\n-SEQ\n+SEQ\n=VAL :Sammy Sosa\n=VAL :63\n=VAL :0.288\n-SEQ\n-SEQ\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+SEQ\n+SEQ []\n=VAL :name\n=VAL :hr\n=VAL :avg\n-SEQ\n+SEQ []\n=VAL :Mark McGwire\n=VAL :65\n=VAL :0.278\n-SEQ\n+SEQ []\n=VAL :Sammy Sosa\n=VAL :63\n=VAL :0.288\n-SEQ\n-SEQ\n-DOC\n-STR\n"
       },
       "Z67P" : {
          "id" : "Z67P",
@@ -2789,7 +2779,7 @@ var data = {
             "mapping",
             "spec"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :Mark McGwire\n+MAP\n=VAL :hr\n=VAL :65\n=VAL :avg\n=VAL :0.278\n-MAP\n=VAL :Sammy Sosa\n+MAP\n=VAL :hr\n=VAL :63\n=VAL :avg\n=VAL :0.288\n-MAP\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :Mark McGwire\n+MAP {}\n=VAL :hr\n=VAL :65\n=VAL :avg\n=VAL :0.278\n-MAP\n=VAL :Sammy Sosa\n+MAP {}\n=VAL :hr\n=VAL :63\n=VAL :avg\n=VAL :0.288\n-MAP\n-MAP\n-DOC\n-STR\n"
       },
       "ZH7C" : {
          "id" : "ZH7C",
@@ -2812,7 +2802,7 @@ var data = {
             "mapping",
             "sequence"
          ],
-         "test_event" : "+STR\n+DOC\n+MAP\n=VAL :key\n+SEQ\n+SEQ\n+SEQ\n=VAL :value\n-SEQ\n-SEQ\n-SEQ\n-MAP\n-DOC\n-STR\n"
+         "test_event" : "+STR\n+DOC\n+MAP {}\n=VAL :key\n+SEQ []\n+SEQ []\n+SEQ []\n=VAL :value\n-SEQ\n-SEQ\n-SEQ\n-MAP\n-DOC\n-STR\n"
       },
       "ZWK4" : {
          "id" : "ZWK4",

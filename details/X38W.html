@@ -19,14 +19,14 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/X38W.tml">&test-X
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
-+MAP
-+SEQ &amp;a
++MAP {}
++SEQ [] &amp;a
 =VAL :a
 =VAL &amp;b :b
 -SEQ
 =ALI *b
 =ALI *a
-+SEQ
++SEQ []
 =VAL :c
 =ALI *b
 =VAL :d
@@ -283,7 +283,7 @@ YAMLException: duplicated mapping key (1:21)
 stack traceback:
 	[C]: in function &#39;encode&#39;
 	/yaml/bin/lua-lyaml-json:8: in main chunk
-	[C]: at 0x5650184b7f97
+	[C]: at 0x55d089c9cf97
 </pre>
 
  </div>
@@ -309,7 +309,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x5596cb532228)&quot; : [
+   &quot;ARRAY(0x5647b898f0f0)&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
@@ -323,7 +323,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x55a142827158)&#39; =&gt; [
+  &#39;ARRAY(0x56098fe4a118)&#39; =&gt; [
                                &#39;c&#39;,
                                &#39;b&#39;,
                                &#39;d&#39;
@@ -345,7 +345,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-json">
 <h3><a href="#perl-xs-json">perl-xs-json</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-   &quot;ARRAY(0x5622b0e52968)&quot; : [
+   &quot;ARRAY(0x55a2df083968)&quot; : [
       &quot;c&quot;,
       &quot;b&quot;,
       &quot;d&quot;
@@ -359,7 +359,7 @@ stack traceback:
   <div class="framework framework_box_na" id="perl-xs-perl">
 <h3><a href="#perl-xs-perl">perl-xs-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>{
-  &#39;ARRAY(0x55c3ccfc6b90)&#39; =&gt; [
+  &#39;ARRAY(0x555f4c889b30)&#39; =&gt; [
                                &#39;c&#39;,
                                &#39;b&#39;,
                                &#39;d&#39;

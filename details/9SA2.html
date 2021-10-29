@@ -23,11 +23,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9SA2.tml">&test-9
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;single line
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;multi line
 =VAL :value
 -MAP
@@ -109,11 +109,11 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9SA2.tml">&test-9
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;single line
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;multi line
 =VAL :
 Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
@@ -126,11 +126,11 @@ Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC
 +SEQ
-+MAP
++MAP {}
 =VAL :single line
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL :
 =VAL :
 Exception:
@@ -232,7 +232,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55fcc759bf97
+	[C]: at 0x55d3a0744f97
 </pre>
  </div>
 
@@ -324,11 +324,11 @@ while parsing a flow mapping at line: 3, column: 3
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;single line
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;multi line
 =VAL :
 Traceback (most recent call last):
@@ -431,11 +431,11 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;:&#39;
 <span class="status_box color_error">&nbsp;</span>error <pre>+STR
 +DOC ---
 +SEQ
-+MAP
++MAP {}
 =VAL &quot;single line
 =VAL :value
 -MAP
-+MAP
++MAP {}
 =VAL &quot;multi line
 =VAL :
 Traceback (most recent call last):

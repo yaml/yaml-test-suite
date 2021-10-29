@@ -33,7 +33,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/T833.tml">&test-T
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :foo
 =VAL :1 bar
 =VAL :
@@ -93,7 +93,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/T833.tml">&test-T
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &#39;,&#39; or &#39;}&#39;
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :foo
 =VAL :1 bar
 </pre>
@@ -106,7 +106,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/T833.tml">&test-T
 yaml-cpp: error at line 4, column 5: end of map flow not found
 +STR
 +DOC
-+MAP
++MAP {}
 =VAL :foo
 =VAL :1 bar
 </pre>
@@ -302,7 +302,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:340: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x560ead036f97
+	[C]: at 0x5566deec6f97
 </pre>
  </div>
 
@@ -459,7 +459,7 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;:&#39;
         ^
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :foo
 =VAL :1 bar
 </pre>
@@ -553,7 +553,7 @@ expected &#39;,&#39; or &#39;}&#39;, but got &#39;:&#39;
         ^ (line: 4)
 +STR
 +DOC ---
-+MAP
++MAP {}
 =VAL :foo
 =VAL :1 bar
 </pre>

@@ -20,7 +20,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZXT5.tml">&test-Z
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
-+SEQ
++SEQ []
 =VAL &quot;key
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
@@ -57,7 +57,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZXT5.tml">&test-Z
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &#39;,&#39; or &#39;]&#39;
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL &quot;key
 </pre>
  </div>
@@ -69,7 +69,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/ZXT5.tml">&test-Z
 yaml-cpp: error at line 2, column 3: end of sequence flow not found
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :key
 </pre>
  </div>
@@ -121,7 +121,7 @@ Aborted (core dumped)
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 10, posCharOffset = 10, posLine = 2, posColumn = 2} (Unexpected &#39;:&#39;)
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL &quot;key
 -SEQ
 </pre>
@@ -259,7 +259,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:393: in function &#39;load_node&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:497: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x5594479c4f97
+	[C]: at 0x55e100d54f97
 </pre>
  </div>
 
@@ -283,12 +283,12 @@ Error: unhandled exception: Unexpected token (expected &#39;,&#39;) [YamlStreamE
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;:value ]\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL &quot;key
 </pre>
  </div>
@@ -300,7 +300,7 @@ YAML      : &quot;:value ]\n&quot;
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;:value ]\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -458,7 +458,7 @@ expected &#39;,&#39; or &#39;]&#39;, but got &#39;:&#39;
       ^
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL &quot;key
 </pre>
  </div>
@@ -551,7 +551,7 @@ expected &#39;,&#39; or &#39;]&#39;, but got &#39;&lt;scalar&gt;&#39;
       ^ (line: 2)
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL &quot;key
 </pre>
  </div>

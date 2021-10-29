@@ -20,7 +20,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/C2SP.tml">&test-C
 </pre></div>
 <div class="framework" id="events"><h3><a href="#events">Expected Events</a></h3><pre>+STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 </pre></div>
 <div class="framework" id="json"><h3><a href="#json">Expected JSON</a></h3>
@@ -59,7 +59,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/C2SP.tml">&test-C
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: mapping values are not allowed in this context
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 -SEQ
 </pre>
@@ -121,7 +121,7 @@ Aborted (core dumped)
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parsing error near byte offset Pos {posByteOffset = 5, posCharOffset = 5, posLine = 2, posColumn = 1} (Expected start of line)
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 -SEQ
 </pre>
@@ -254,7 +254,7 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:325: in function &#39;parse&#39;
 	/usr/local/share/lua/5.1/lyaml/init.lua:502: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
-	[C]: at 0x55f6aa015f97
+	[C]: at 0x5617fde41f97
 </pre>
  </div>
 
@@ -279,12 +279,12 @@ Error: unhandled exception: Unexpected token (expected document end): ltMapValIn
 Column    : 2
 Expected  : DOC_END DOC_START EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: 42\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 -SEQ
 </pre>
@@ -297,7 +297,7 @@ YAML      : &quot;: 42\n&quot;
 Column    : 2
 Expected  : DOC_END DOC_START EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
 YAML      : &quot;: 42\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -452,7 +452,7 @@ yaml.scanner.ScannerError: mapping values are not allowed here
      ^
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 -SEQ
 </pre>
@@ -544,7 +544,7 @@ ruamel.yaml.scanner.ScannerError: mapping values are not allowed here
      ^ (line: 2)
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 -SEQ
 </pre>
