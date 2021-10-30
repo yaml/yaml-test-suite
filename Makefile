@@ -83,7 +83,7 @@ clean:
 	rm -fr data gh-pages new testml
 	git worktree prune
 
-docker-push: force-build
+docker-push: docker-build
 	RUN_OR_DOCKER_PUSH=true suite-to-data
 
 clean-docker:
