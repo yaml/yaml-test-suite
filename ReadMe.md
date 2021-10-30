@@ -48,7 +48,7 @@ presence of certain characters that would be otherwise hard to read.
   * `»`
 * `↵` us used to show trailing newline characters
 * `∎` is used at the end when there is no final newline character
-* `↓` indicates a carriage return character
+* `←` indicates a carriage return character
 * `⇔` indicates a byte order mark (BOM) character
 
 Also these are used in test event output:

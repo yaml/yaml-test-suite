@@ -50,7 +50,7 @@ for my $file (@ARGV) {
 
       $v =~ s/␣/ /g;
       $v =~ s/—*»/\t/g;
-      $v =~ s/↓/\r/g unless $file =~ /P2AD/;
+      $v =~ s/←/\r/g;
       $v =~ s/⇔/x{FEFF}/g;
       $v =~ s/↵//g;
       $v =~ s/∎\n\z//;
