@@ -37,10 +37,9 @@ test:
 	make gh-pages
 	make clean
 
-data.json: data.tsv
-	bin/tsv-to-json < $< | \
-	    jq -c '.[]|[(.[1,2,3]),(select(.[0] != "")|true)]' \
-	    > $@
+.PHONY: new
+new: data.tsv
+	./bin/tsv-to-new $<
 
 new-test:
 	new-test-file

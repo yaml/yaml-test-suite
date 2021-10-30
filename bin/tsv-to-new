@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -e -u -o pipefail
+
+root=$(cd "$(dirname "$0")/.." && pwd)
+bin=$root/bin
+
+tsv=$1
+dir=$root/new
+
+rm -fr "$dir"
+mkdir "$dir"
+
+from='@ingydotnet'
+# from=$(
+#   perl -e 'print $1 if $ARGV[0] =~ /.*\nHi (\w+)!.*/s' \
+#     "$(ssh git@github.com 2>&1 || true)"
+# )
+
+each=()
+while read -r line; do
+  each+=("$line")
+done < <(
+  tsv-to-json < "$tsv" |
+    jq -c '.[]|[(.[1,2,3]),(select(.[0] != "")|true)]'
+)
+
+i=0
+_group=''
+for line in "${each[@]}"; do
+  group=$(jq -r '.[0]' <<<"$line")
+  yaml=$(jq -r '.[1]' <<<"$line")
+  tree=$(jq -r '.[2]' <<<"$line")
+  skip=$(jq -r '.[3] // ""' <<<"$line")
+
+  if [[ $group && $group == $_group ]]; then
+    more=1
+  else
+    more=''
+    id=$("$bin/new-test-id")
+    while [[ -f $dir/$id*.yaml ]]; do
+      id=$("$bin/new-test-id")
+    done
+    : $((i++))
+    _group=$group
+  fi
+
+  name=$(printf "%03d-%s" "$i" "$id")
+  file=$dir/$name.yaml
+
+  "$bin/yaml-to-test" "$tree" "$from" "$skip" "$more" \
+    <<<"$yaml" >> "$file"
+
+  if [[ $more ]]; then
+    action='  Added to'
+  else
+    action=Created
+  fi
+  echo "$action '$file'"
+done

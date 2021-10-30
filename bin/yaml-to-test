@@ -1,0 +1,115 @@
+#!/usr/bin/env perl
+
+use v5.18;
+use utf8;
+use autodie qw(open close);
+use Encode;
+use YAML::PP;
+use YAML::PP::Common qw/ PRESERVE_ORDER /;
+use JSON::PP;
+use Capture::Tiny ':all';
+use FindBin;
+use boolean;
+use XXX;
+
+main(@ARGV);
+
+sub main {
+  my $yaml = decode_utf8 do {local $/; <STDIN>};
+  my ($tree, $from, $skip, $more) = @_;
+  $from ||= undef;
+  my $fail = 0;
+  if ($tree eq 'ERROR') {
+    $fail = 1;
+    $tree = '';
+  }
+  else {
+    # $tree = decode_utf8 $tree;
+    # $tree .= "\n";
+    $tree = refparser_events($yaml);
+  }
+
+  my $ypp = YAML::PP->new(
+    boolean => 'boolean',
+    preserve => PRESERVE_ORDER,
+  );
+
+  my $events = yamlpp_events($yaml);
+
+  my $test = $ypp->preserved_mapping({});
+  %$test = (
+    $skip ? (skip => true) : (),
+    name => undef,
+    from => $from,
+    tags => undef,
+    $fail ? (
+      fail => true,
+      yaml => $yaml,
+      tree => $events,
+    ) : (
+      yaml => $yaml,
+      tree => $tree,
+    )
+  );
+
+  if ($events eq $tree) {
+    my ($data, $json, $norm);
+    eval {
+      $data = $ypp->load_string($yaml);
+      $json = JSON::PP->new->pretty->encode($data);
+    };
+    if (defined $json) {
+      $test->{json} = $json;
+    }
+    if (defined $data) {
+      eval {
+        $norm = $ypp->dump($data);
+      };
+      if (defined $norm) {
+        $test->{norm} = $norm;
+      }
+    }
+  }
+
+  if ($more) {
+    delete $test->{name};
+    delete $test->{from};
+    delete $test->{tags};
+    $ypp->dumper->{header} = 0;
+  }
+
+  print encode_utf8 $ypp->dump([$test]);
+}
+
+sub yamlpp_events {
+  my ($yaml) = @_;
+  my $events = '';
+  my $parser = YAML::PP::Parser->new(
+    receiver => sub {
+      my ($self, undef, $event) = @_;
+      $events .= YAML::PP::Common::event_to_test_suite(
+        $event, { flow => 1 }
+      ) . "\n";
+    },
+  );
+  eval {
+    $parser->parse_string($yaml);
+  };
+  return $events;
+}
+
+sub refparser_events {
+  my ($yaml) = @_;
+
+  my $parser = $ENV{YAML_REFERENCE_PARSER} ||
+      "$FindBin::Bin/../../yaml-reference-parser/perl/bin/yaml-parser";
+  -x $parser or die "'$parser' is not executable";
+
+  my ($out, $err) = capture {
+    open my $pipe, '|-', "$parser --events";
+    print $pipe $yaml;
+    close $pipe;
+  };
+
+  return decode_utf8($out);
+}
