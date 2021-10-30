@@ -56,7 +56,7 @@ data:
 
 data-update: data
 	rm -fr $</*
-	yaml-to-data src/*.yaml
+	suite-to-data src/*.yaml
 	data-symlinks $<
 
 data-status: data
@@ -87,12 +87,12 @@ clean:
 	git worktree prune
 
 docker-push: force-build
-	RUN_OR_DOCKER_PUSH=true yaml-to-data
+	RUN_OR_DOCKER_PUSH=true suite-to-data
 	RUN_OR_DOCKER_PUSH=true convert-special-characters
 
 clean-docker:
 	-docker images | \
-	    grep -E '(yaml-to-data|new-test-file)' | \
+	    grep -E '(suite-to-data|new-test-file)' | \
 	    awk '{print $3}' | \
 	    xargs docker rmi 2>/dev/null
 
