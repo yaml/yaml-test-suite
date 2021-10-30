@@ -44,9 +44,6 @@ new: data.tsv
 new-test:
 	new-test-file
 
-convert-special:
-	convert-special-characters
-
 testml:
 	suite-to-testml
 
@@ -88,7 +85,6 @@ clean:
 
 docker-push: force-build
 	RUN_OR_DOCKER_PUSH=true suite-to-data
-	RUN_OR_DOCKER_PUSH=true convert-special-characters
 
 clean-docker:
 	-docker images | \
