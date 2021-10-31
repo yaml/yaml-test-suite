@@ -13,55 +13,87 @@ my %map = (
   'yaml' => 'in.yaml',
   'tree' => 'test.event',
   'json' => 'in.json',
-  'norm' => 'out.yaml',
+  'dump' => 'out.yaml',
   'emit' => 'emit.yaml',
   'toke' => 'lex.token',
 );
 
-mkdir my $o = 'data';
+main(@ARGV);
 
-my $ypp = YAML::PP->new;
-my $i = 0;
-for my $file (@ARGV) {
-  (my $id = $file) =~ s{^.*/(.*)\.yaml$}{$1};
+sub main {
+  mkdir 'data';
 
-  mkdir my $d = "$o/$id";
+  my $ypp = YAML::PP->new;
 
-  my $data;
-  eval {
-    $data = $ypp->load_file($file);
-  };
-  if ($@) {
-    warn "Error '$id':\n$@";
-  }
+  my ($files, $skipped, $created) = (0, 0, 0);
 
-  next if $data->[0]{skip};
+  for my $file (@_) {
+    $files++;
+    my $data = $ypp->load_file($file);
+    (my $id = $file) =~ s{^.*/(.*)\.yaml$}{$1};
+    my $dir = "data/$id";
+    my $cache = {};
+    my $first = shift @$data or die;
+    if ($first->{skip}) {
+      print "Skipping '$id'...";
+      $skipped++;
+      next;
+    }
 
-  for my $k (keys %map) {
-    if (defined (my $v = $data->[0]{$k})) {
-      if ($k eq 'name') {
-        $v .= "\n";
-      } elsif ($k eq 'fail') {
-        $v = '';
-      } elsif ($k eq 'tree') {
-        $v =~ s/^\ +//mg;
-        $v =~ s/\n*\z/\n/;
-      }
+    create($dir, $first, $cache);
+    $created++;
 
-      $v =~ s/␣/ /g;
-      $v =~ s/—*»/\t/g;
-      $v =~ s/←/\r/g;
-      $v =~ s/⇔/x{FEFF}/g;
-      $v =~ s/↵//g;
-      $v =~ s/∎\n\z//;
+    @$data or next;
 
-      open my $out, '>', "$d/$map{$k}";
-      print $out encode_utf8 $v;
-      close $out;
+    my $l = int(log(@$data) / log(10));
+    my $i = 1;
+    for my $next (@$data) {
+      my $num = sprintf "%0$l", $i++;
+      create("$dir/$num", $next, $cache);
+      $created++;
     }
   }
 
-  $i++;
+  print "\n";
+  printf "Processed %d files.\n", $files;
+  printf "Skipped %d files.\n", $skipped;
+  printf "Created %d test data directories.\n", $created;
+  print "\n";
 }
 
-printf "\nProcessed %d tests.\n\n", $i;
+sub create {
+  my ($dir, $data, $cache) = @_;
+  mkdir $dir or die;
+
+  for my $k (sort keys %map) {
+    if (exists $data->{$k} and not defined $data->{$k}) {
+      delete $cache->{$k};
+      next;
+    }
+    $_ = $data->{$k} || $cache->{$k};
+    if (defined $_) {
+      $cache->{$k} = $_;
+      if ($k eq 'name') {
+        $_ .= "\n";
+      }
+      elsif ($k eq 'fail') {
+        $_ = '';
+      }
+      elsif ($k eq 'tree') {
+        s/^\s+//mg;
+        s/\n*\z/\n/;
+      }
+
+      s/␣/ /g;
+      s/—*»/\t/g;
+      s/←/\r/g;
+      s/⇔/x{FEFF}/g;
+      s/↵//g;
+      s/∎\n\z//;
+
+      open my $out, '>', "$dir/$map{$k}" or die;
+      print $out encode_utf8 $_;
+      close $out;
+    }
+  }
+}
