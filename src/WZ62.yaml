@@ -23,6 +23,6 @@
       "foo": "",
       "": "bar"
     }
-  norm: |
+  dump: |
     foo: !!str
     !!str : bar

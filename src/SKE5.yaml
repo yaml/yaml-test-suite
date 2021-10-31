@@ -27,7 +27,7 @@
         "b"
       ]
     }
-  norm: |
+  dump: |
     ---
     seq: &anchor
     - a

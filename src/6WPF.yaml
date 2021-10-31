@@ -19,7 +19,7 @@
     -STR
   json: |
     " foo\nbar\nbaz "
-  norm: |
+  dump: |
     " foo\nbar\nbaz "
   emit: |
     --- " foo\nbar\nbaz "

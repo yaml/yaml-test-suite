@@ -34,7 +34,7 @@
       -SEQ
      -DOC
     -STR
-  norm: |
+  dump: |
     - - YAML: separate
     - - "JSON like": adjacent
     - - ? JSON: like

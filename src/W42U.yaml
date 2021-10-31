@@ -38,7 +38,7 @@
         "one": "two"
       }
     ]
-  norm: |
+  dump: |
     -
     - |
       block node

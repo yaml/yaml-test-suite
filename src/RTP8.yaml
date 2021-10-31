@@ -15,6 +15,6 @@
     -STR
   json: |
     "Document"
-  norm: |
+  dump: |
     --- Document
     ...

@@ -30,7 +30,7 @@
       ],
       "c": "d"
     }
-  norm: |
+  dump: |
     a: b
     seq:
     - a

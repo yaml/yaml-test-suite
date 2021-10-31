@@ -68,7 +68,7 @@
         "key6": "scalar6"
       }
     }
-  norm: |
+  dump: |
     "top1":
       "key1": &alias1 scalar1
     'top2':

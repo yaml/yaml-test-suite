@@ -25,7 +25,7 @@
       "avg": 0.278,
       "rbi": 147
     }
-  norm: |
+  dump: |
     hr: 65
     avg: 0.278
     rbi: 147

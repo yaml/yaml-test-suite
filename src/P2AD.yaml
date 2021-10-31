@@ -30,7 +30,7 @@
       "keep\n\n",
       " strip"
     ]
-  norm: |
+  dump: |
     - |
       literal
     - >2

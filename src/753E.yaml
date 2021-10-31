@@ -16,7 +16,7 @@
     -STR
   json: |
     "ab"
-  norm: |
+  dump: |
     --- |-
       ab
     ...

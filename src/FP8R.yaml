@@ -15,6 +15,6 @@
     -STR
   json: |
     "line1 line2 line3\n"
-  norm: |
+  dump: |
     --- >
       line1 line2 line3

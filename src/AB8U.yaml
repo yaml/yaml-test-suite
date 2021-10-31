@@ -17,5 +17,5 @@
     [
       "single multiline - sequence entry"
     ]
-  norm: |
+  dump: |
     - single multiline - sequence entry

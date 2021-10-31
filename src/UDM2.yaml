@@ -21,5 +21,5 @@
         "url": "http://example.org"
       }
     ]
-  norm: |
+  dump: |
     - url: http://example.org

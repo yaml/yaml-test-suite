@@ -41,7 +41,7 @@
       "clip": "# text\n",
       "keep": "# text\n\n"
     }
-  norm: |
+  dump: |
     strip: |-
       # text
     clip: |

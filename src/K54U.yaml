@@ -12,6 +12,6 @@
     -STR
   json: |
     "scalar"
-  norm: |
+  dump: |
     --- scalar
     ...

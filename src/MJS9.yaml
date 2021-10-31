@@ -17,5 +17,5 @@
     -STR
   json: |
     "foo \n\n\t bar\n\nbaz\n"
-  norm: |
+  dump: |
     "foo \n\n\t bar\n\nbaz\n"

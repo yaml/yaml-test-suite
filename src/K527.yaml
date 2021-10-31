@@ -18,7 +18,7 @@
     -STR
   json: |
     "trimmed\n\n\nas space"
-  norm: |
+  dump: |
     >-
       trimmed
 

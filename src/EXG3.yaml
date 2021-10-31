@@ -14,7 +14,7 @@
     -STR
   json: |
     "---word1 word2"
-  norm: |
+  dump: |
     '---word1 word2'
   emit: |
     --- '---word1 word2'

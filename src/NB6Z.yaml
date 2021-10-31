@@ -21,7 +21,7 @@
     {
       "key": "value with\ntabs"
     }
-  norm: |
+  dump: |
     key: 'value with
 
       tabs'

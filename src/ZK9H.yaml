@@ -32,6 +32,6 @@
         ]
       ]
     }
-  norm: |
+  dump: |
     key:
     - - - value

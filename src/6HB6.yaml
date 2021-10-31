@@ -44,7 +44,7 @@
         ]
       }
     }
-  norm: |
+  dump: |
     Not indented:
       By one space: |
         By four

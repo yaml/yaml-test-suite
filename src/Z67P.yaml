@@ -23,7 +23,7 @@
       "literal": "value\n",
       "folded": "value\n"
     }
-  norm: |
+  dump: |
     literal: |
       value
     folded: !foo >

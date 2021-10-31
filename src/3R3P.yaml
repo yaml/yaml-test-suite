@@ -17,6 +17,6 @@
     [
       "a"
     ]
-  norm: |
+  dump: |
     &sequence
     - a

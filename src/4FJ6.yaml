@@ -32,7 +32,7 @@
       -SEQ
      -DOC
     -STR
-  norm: |
+  dump: |
     ---
     - ? - a
         - - ? - - b

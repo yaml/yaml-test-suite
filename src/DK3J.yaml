@@ -15,6 +15,6 @@
     -STR
   json: |
     "line1 # no comment line3\n"
-  norm: |
+  dump: |
     --- >
       line1 # no comment line3

@@ -25,7 +25,7 @@
       "literal": "some\ntext\n",
       "folded": "some text\n"
     }
-  norm: |
+  dump: |
     literal: |
       some
       text

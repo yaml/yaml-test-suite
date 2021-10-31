@@ -29,7 +29,7 @@
         "key": ":value"
       }
     ]
-  norm: |
+  dump: |
     - key: value
     - key: :value
   emit: |

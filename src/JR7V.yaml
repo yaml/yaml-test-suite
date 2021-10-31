@@ -65,7 +65,7 @@
         "key?": "value"
       }
     ]
-  norm: |
+  dump: |
     - a?string
     - another ? string
     - key: value?

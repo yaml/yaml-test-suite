@@ -25,7 +25,7 @@
       42,
       "d"
     ]
-  norm: |
+  dump: |
     - !!str a
     - b
     - !!int 42

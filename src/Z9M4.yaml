@@ -18,6 +18,6 @@
     [
       "bar"
     ]
-  norm: |
+  dump: |
     ---
     - !<tag:example.com,2000:app/foo> "bar"

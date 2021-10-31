@@ -43,7 +43,7 @@
         "Atlanta Braves"
       ]
     }
-  norm: |
+  dump: |
     american:
     - Boston Red Sox
     - Detroit Tigers

@@ -23,5 +23,5 @@
         "foo": "bar"
       }
     ]
-  norm: |
+  dump: |
     - foo: bar

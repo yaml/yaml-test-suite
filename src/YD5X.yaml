@@ -46,7 +46,7 @@
         0.288
       ]
     ]
-  norm: |
+  dump: |
     - - name
       - hr
       - avg

@@ -39,7 +39,7 @@
         "Ken Griffey"
       ]
     }
-  norm: |
+  dump: |
     ---
     hr:
     - Mark McGwire

@@ -61,7 +61,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     complex1:
       ? - a
       :

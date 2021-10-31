@@ -21,7 +21,7 @@
     {
       "plain": "a b\nc"
     }
-  norm: |
+  dump: |
     ---
     plain: 'a b
 

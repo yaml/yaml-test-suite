@@ -30,7 +30,7 @@
         }
       ]
     }
-  norm: |
+  dump: |
     block sequence:
     - one
     - two: three

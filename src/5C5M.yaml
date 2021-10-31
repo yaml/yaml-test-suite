@@ -35,7 +35,7 @@
         "seven": "eight"
       }
     ]
-  norm: |
+  dump: |
     - one: two
       three: four
     - five: six

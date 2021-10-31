@@ -23,6 +23,6 @@
       "one": 2,
       "three": 4
     }
-  norm: |
+  dump: |
     one: 2
     three: 4

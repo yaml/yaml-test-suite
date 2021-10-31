@@ -28,7 +28,7 @@
       "clip": "",
       "keep": "\n"
     }
-  norm: |
+  dump: |
     strip: ""
     clip: ""
     keep: |2+

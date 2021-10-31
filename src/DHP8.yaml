@@ -20,7 +20,7 @@
       "bar",
       42
     ]
-  norm: |
+  dump: |
     - foo
     - bar
     - 42

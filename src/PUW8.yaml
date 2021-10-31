@@ -23,7 +23,7 @@
       "a": "b"
     }
     null
-  norm: |
+  dump: |
     ---
     a: b
     ---

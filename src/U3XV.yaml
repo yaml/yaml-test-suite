@@ -76,7 +76,7 @@
       "top6": "six",
       "top7": "seven"
     }
-  norm: |
+  dump: |
     ---
     top1: &node1
       &k1 key1: one

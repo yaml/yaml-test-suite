@@ -31,7 +31,7 @@
         44
       ]
     }
-  norm: |
+  dump: |
     foo:
     - 42
     bar:

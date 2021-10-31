@@ -34,7 +34,7 @@
         "key3": "value3"
       }
     ]
-  norm: |
+  dump: |
     - key: value
       key2: value2
     - key3: value3

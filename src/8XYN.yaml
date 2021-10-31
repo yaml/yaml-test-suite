@@ -17,6 +17,6 @@
     [
       "unicode anchor"
     ]
-  norm: |
+  dump: |
     ---
     - &😁 unicode anchor

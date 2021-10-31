@@ -88,7 +88,7 @@
       "key10": "value9"
     }
     "value11"
-  norm: |
+  dump: |
     --- &a1 !!str scalar1
     --- &a2 !!str scalar2
     --- &a3 !!str scalar3

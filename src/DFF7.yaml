@@ -21,7 +21,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     explicit: entry
     implicit: entry
     :

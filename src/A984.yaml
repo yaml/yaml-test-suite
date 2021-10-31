@@ -24,6 +24,6 @@
       "a": "b c",
       "d": "e f"
     }
-  norm: |
+  dump: |
     a: b c
     d: e f

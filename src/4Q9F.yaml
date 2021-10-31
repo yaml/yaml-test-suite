@@ -19,7 +19,7 @@
     -STR
   json: |
     "ab cd\nef\n\ngh\n"
-  norm: |
+  dump: |
     --- >
       ab cd
 

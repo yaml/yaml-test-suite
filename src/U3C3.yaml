@@ -14,5 +14,5 @@
     -STR
   json: |
     "foo"
-  norm: |
+  dump: |
     --- !!str "foo"

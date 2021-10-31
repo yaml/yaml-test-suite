@@ -16,6 +16,6 @@
     -STR
   json: |
     "folded text\n"
-  norm: |
+  dump: |
     >
       folded text

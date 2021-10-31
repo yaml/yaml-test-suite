@@ -45,7 +45,7 @@
         "Ken Griffy": 58
       }
     ]
-  norm: |
+  dump: |
     --- !!omap
     - Mark McGwire: 65
     - Sammy Sosa: 63

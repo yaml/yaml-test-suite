@@ -17,5 +17,5 @@
     {
       "foo: bar\\": "baz'"
     }
-  norm: |
+  dump: |
     'foo: bar\': baz'

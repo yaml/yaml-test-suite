@@ -29,7 +29,7 @@
       "Sammy Sosa": null,
       "Ken Griff": null
     }
-  norm: |
+  dump: |
     --- !!set
     Mark McGwire:
     Sammy Sosa:

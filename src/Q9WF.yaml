@@ -28,7 +28,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     ? first: Sammy
       last: Sosa
     : hr: 65

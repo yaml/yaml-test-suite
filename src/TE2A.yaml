@@ -23,6 +23,6 @@
         "key": "value"
       }
     }
-  norm: |
+  dump: |
     block mapping:
       key: value

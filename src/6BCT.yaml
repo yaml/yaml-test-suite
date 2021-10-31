@@ -31,7 +31,7 @@
         "baz"
       ]
     ]
-  norm: |
+  dump: |
     - foo: bar
     - - baz
       - baz

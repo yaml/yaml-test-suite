@@ -16,7 +16,7 @@
     -STR
   json: |
     "literal\n\ttext\n"
-  norm: |
+  dump: |
     |
       literal
       —»text

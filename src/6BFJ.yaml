@@ -19,7 +19,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     --- &mapping
     ? &key
     - &item a

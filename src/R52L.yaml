@@ -34,7 +34,7 @@
       ],
       "top2": "value2"
     }
-  norm: |
+  dump: |
     ---
     top1:
     - item1

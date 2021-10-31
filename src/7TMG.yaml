@@ -21,7 +21,7 @@
       "word1",
       "word2"
     ]
-  norm: |
+  dump: |
     ---
     - word1
     - word2

@@ -24,6 +24,6 @@
         "a": "b"
       }
     }
-  norm: |
+  dump: |
     key: &anchor !!map
       a: b

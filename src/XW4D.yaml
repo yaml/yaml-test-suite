@@ -47,7 +47,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     a: "double quotes"
     b: plain value
     c: d

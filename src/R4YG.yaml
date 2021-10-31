@@ -32,7 +32,7 @@
       " explicit\n",
       "\t\ndetected\n"
     ]
-  norm: |
+  dump: |
     - |
       detected
     - >2

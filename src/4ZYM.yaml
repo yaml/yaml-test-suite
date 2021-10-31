@@ -29,7 +29,7 @@
       "quoted": "text lines",
       "block": "text\n \tlines\n"
     }
-  norm: |
+  dump: |
     plain: text lines
     quoted: "text lines"
     block: "text\n \tlines\n"

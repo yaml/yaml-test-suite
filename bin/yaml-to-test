@@ -53,7 +53,7 @@ sub main {
   );
 
   if ($events eq $tree) {
-    my ($data, $json, $norm);
+    my ($data, $json, $dump);
     eval {
       $data = $ypp->load_string($yaml);
       $json = JSON::PP->new->pretty->encode($data);
@@ -63,10 +63,10 @@ sub main {
     }
     if (defined $data) {
       eval {
-        $norm = $ypp->dump($data);
+        $dump = $ypp->dump($data);
       };
-      if (defined $norm) {
-        $test->{norm} = $norm;
+      if (defined $dump) {
+        $test->{dump} = $dump;
       }
     }
   }

@@ -20,6 +20,6 @@
       "foo": "you",
       "bar": "far"
     }
-  norm: |
+  dump: |
     foo: you
     bar: far

@@ -13,5 +13,5 @@
     -STR
   json: |
     {}
-  norm: |
+  dump: |
     {}

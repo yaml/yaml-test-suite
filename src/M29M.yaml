@@ -24,7 +24,7 @@
     {
       "a": "ab\n\ncd\nef\n"
     }
-  norm: |
+  dump: |
     a: |
       ab
 

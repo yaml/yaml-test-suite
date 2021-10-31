@@ -23,6 +23,6 @@
       "a": 47,
       "c": "d"
     }
-  norm: |
+  dump: |
     !!str a: !!int 47
     c: !!str d

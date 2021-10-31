@@ -13,5 +13,5 @@
     -STR
   json: |
     "here's to \"quotes\""
-  norm: |
+  dump: |
     --- 'here''s to "quotes"'

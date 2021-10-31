@@ -51,7 +51,7 @@
         "quantity": 1
       }
     ]
-  norm: |
+  dump: |
     ---
     - item: Super Hoop
       quantity: 1

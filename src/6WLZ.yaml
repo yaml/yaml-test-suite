@@ -23,7 +23,7 @@
   json: |
     "bar"
     "bar"
-  norm: |
+  dump: |
     ---
     !foo "bar"
     ...

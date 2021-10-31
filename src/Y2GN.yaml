@@ -18,6 +18,6 @@
     {
       "key": "value"
     }
-  norm: |
+  dump: |
     ---
     key: &an:chor value

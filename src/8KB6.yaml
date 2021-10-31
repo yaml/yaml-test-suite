@@ -37,7 +37,7 @@
         "a": "b"
       }
     ]
-  norm: |
+  dump: |
     ---
     - single line:
       a: b

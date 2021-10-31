@@ -16,7 +16,7 @@
     -STR
   json: |
     "ab\n\n \n"
-  norm: |
+  dump: |
     "ab\n\n \n"
     ...
   emit: |

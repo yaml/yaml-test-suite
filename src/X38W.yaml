@@ -22,7 +22,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     ? &a
     - a
     - &b b

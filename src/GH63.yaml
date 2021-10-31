@@ -22,6 +22,6 @@
       "a": 1.3,
       "fifteen": "d"
     }
-  norm: |
+  dump: |
     a: 1.3
     fifteen: d

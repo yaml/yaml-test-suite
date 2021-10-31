@@ -13,5 +13,5 @@
     -STR
   json: |
     "plain\\value\\with\\backslashes"
-  norm: |
+  dump: |
     --- plain\value\with\backslashes

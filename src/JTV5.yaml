@@ -25,6 +25,6 @@
       "a true": "null d",
       "e 42": null
     }
-  norm: |
+  dump: |
     a true: null d
     e 42:

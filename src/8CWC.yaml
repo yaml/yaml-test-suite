@@ -18,6 +18,6 @@
     {
       "key ends with two colons::": "value"
     }
-  norm: |
+  dump: |
     ---
     'key ends with two colons::': value

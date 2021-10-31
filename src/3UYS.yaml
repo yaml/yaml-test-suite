@@ -17,5 +17,5 @@
     {
       "escaped slash": "a/b"
     }
-  norm: |
+  dump: |
     escaped slash: "a/b"

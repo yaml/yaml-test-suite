@@ -17,7 +17,7 @@
     -STR
   json: |
     "a b c d\ne"
-  norm: |
+  dump: |
     'a b c d
 
       e'

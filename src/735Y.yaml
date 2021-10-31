@@ -30,7 +30,7 @@
         "foo": "bar"
       }
     ]
-  norm: |
+  dump: |
     - "flow in block"
     - >
       Block scalar

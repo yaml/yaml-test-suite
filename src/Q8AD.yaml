@@ -17,7 +17,7 @@
     -STR
   json: |
     "folded to a space,\nto a line feed, or \t \tnon-content"
-  norm: |
+  dump: |
     "folded to a space,\nto a line feed, or \t \tnon-content"
   emit: |
     --- "folded to a space,\nto a line feed, or \t \tnon-content"

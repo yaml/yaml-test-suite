@@ -35,7 +35,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     ? - Detroit Tigers
       - Chicago cubs
     : - 2001-07-23

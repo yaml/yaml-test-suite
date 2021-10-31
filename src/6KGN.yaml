@@ -22,7 +22,7 @@
       "a": null,
       "b": null
     }
-  norm: |
+  dump: |
     ---
     a: &anchor
     b: *anchor

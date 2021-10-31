@@ -27,7 +27,7 @@
       "readable": "value",
       "empty": null
     }
-  norm: |
+  dump: |
     "adjacent": value
     "readable": value
     "empty":

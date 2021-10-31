@@ -23,7 +23,7 @@
   json: |
     "%!PS-Adobe-2.0\n"
     null
-  norm: |
+  dump: |
     --- |
       %!PS-Adobe-2.0
     ...

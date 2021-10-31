@@ -40,7 +40,7 @@
         "foo": "bar"
       }
     }
-  norm: |
+  dump: |
     sequence: !!seq
     - entry
     - !!seq

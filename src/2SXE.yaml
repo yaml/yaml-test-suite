@@ -22,6 +22,6 @@
       "key": "value",
       "foo": "key"
     }
-  norm: |
+  dump: |
     &a: key: &a value
     foo: *a:

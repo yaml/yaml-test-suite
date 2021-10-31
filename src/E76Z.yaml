@@ -21,6 +21,6 @@
       "a": "b",
       "b": "a"
     }
-  norm: |
+  dump: |
     &a a: &b b
     *b : *a

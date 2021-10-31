@@ -54,7 +54,7 @@
       "key1": [],
       "key2": {}
     }
-  norm: |
+  dump: |
     ---
     nested sequences:
     - - - []

@@ -24,6 +24,6 @@
       -SEQ
      -DOC
     -STR
-  norm: |
+  dump: |
     - - : empty key
     - - : another empty key

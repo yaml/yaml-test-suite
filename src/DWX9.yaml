@@ -20,7 +20,7 @@
     -STR
   json: |
     "\n\nliteral\n \n\ntext\n"
-  norm: |
+  dump: |
     "\n\nliteral\n \n\ntext\n"
   emit: |
     |

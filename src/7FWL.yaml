@@ -18,5 +18,5 @@
     {
       "foo": "baz"
     }
-  norm: |
+  dump: |
     !!str foo: !bar baz

@@ -47,7 +47,7 @@
         "g": "h"
       }
     ]
-  norm: |
+  dump: |
     &flowseq
     - a: b
     - &c c: d

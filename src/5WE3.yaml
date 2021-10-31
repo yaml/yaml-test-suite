@@ -30,7 +30,7 @@
         "two"
       ]
     }
-  norm: |
+  dump: |
     explicit key:
     ? |
       block key

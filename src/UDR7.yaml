@@ -35,7 +35,7 @@
         "sea": "green"
       }
     }
-  norm: |
+  dump: |
     sequence:
     - one
     - two

@@ -15,6 +15,6 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     ? - flow
     : block

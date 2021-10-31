@@ -20,6 +20,6 @@
     {
       "key": "value"
     }
-  norm: |
+  dump: |
     ---
     key: value

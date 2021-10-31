@@ -33,7 +33,7 @@
       "g": "h",
       "23": false
     }
-  norm: |
+  dump: |
     !!str a: b
     c: !!int 42
     e: !!str f

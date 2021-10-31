@@ -21,7 +21,7 @@
       "foo\nbar:baz\tx \\$%^&*()x": 23,
       "x\\ny:z\\tx $%^&*()x": 24
     }
-  norm: |
+  dump: |
     ? "foo\nbar:baz\tx \\$%^&*()x"
     : 23
     'x\ny:z\tx $%^&*()x': 24

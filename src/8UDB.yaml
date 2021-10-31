@@ -40,7 +40,7 @@
         "single": "pair"
       }
     ]
-  norm: |
+  dump: |
     - "double quoted"
     - 'single quoted'
     - plain text

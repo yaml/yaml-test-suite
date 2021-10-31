@@ -49,7 +49,7 @@
         "http://example.com/foo#bar"
       ]
     ]
-  norm: |
+  dump: |
     - ::vector
     - ": - ()"
     - Up, up, and away!

@@ -21,7 +21,7 @@
       "explicit indent and chomp",
       "chomp and explicit indent"
     ]
-  norm: |
+  dump: |
     - |-
       explicit indent and chomp
     - |-

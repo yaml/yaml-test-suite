@@ -42,7 +42,7 @@
       -SEQ
      -DOC
     -STR
-  norm: |
+  dump: |
     - &a
     - a
     - &a : a

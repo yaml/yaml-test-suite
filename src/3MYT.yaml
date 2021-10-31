@@ -14,5 +14,5 @@
     -STR
   json: |
     "k:#foo &a !t s"
-  norm: |
+  dump: |
     --- k:#foo &a !t s

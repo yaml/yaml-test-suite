@@ -15,5 +15,5 @@
     -STR
   json: |
     " 1st non-empty\n2nd non-empty 3rd non-empty "
-  norm: |
+  dump: |
     " 1st non-empty\n2nd non-empty 3rd non-empty "

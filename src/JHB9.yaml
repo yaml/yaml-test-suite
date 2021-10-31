@@ -39,7 +39,7 @@
       "Chicago Cubs",
       "St Louis Cardinals"
     ]
-  norm: |
+  dump: |
     ---
     - Mark McGwire
     - Sammy Sosa

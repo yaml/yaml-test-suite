@@ -39,7 +39,7 @@
       "b",
       "c"
     ]
-  norm: |
+  dump: |
     - - a
       - b
     - a: b

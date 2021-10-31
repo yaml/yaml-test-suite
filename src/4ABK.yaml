@@ -21,7 +21,7 @@
       -MAP
      -DOC
     -STR
-  norm: |
+  dump: |
     unquoted: "separate"
     http://foo.com: null
     omitted value: null

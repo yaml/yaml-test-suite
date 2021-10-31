@@ -27,7 +27,7 @@
       "matches %": 20
     }
     null
-  norm: |
+  dump: |
     ---
     matches %: 20
     ...

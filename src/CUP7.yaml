@@ -21,6 +21,6 @@
       "anchored": "value",
       "alias": "value"
     }
-  norm: |
+  dump: |
     anchored: &anchor !local value
     alias: *anchor
