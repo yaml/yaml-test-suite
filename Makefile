@@ -7,6 +7,8 @@ export PATH := $(ROOT)/bin:$(PATH)
 BPAN := .bpan
 COMMON := ../yaml-common
 
+SRC ?= src/*.yaml
+
 ifneq (,$(DOCKER))
   export RUN_OR_DOCKER := $(DOCKER)
 endif
@@ -37,9 +39,13 @@ test:
 	make gh-pages
 	make clean
 
-.PHONY: new
-new: data.tsv
+import: import.tsv
 	./bin/tsv-to-new $<
+
+export: export.tsv
+
+export.tsv:
+	./bin/suite-to-tsv $(SRC) > $@
 
 new-test:
 	new-test-file
@@ -77,9 +83,7 @@ common:
 	cp $(COMMON)/bpan/run-or-docker.bash $(BPAN)/
 
 clean:
-<<<<<<< HEAD
-	rm -fr data gh-pages new testml
-	rm -f data.json
+	rm -f export.tsv
 	rm -fr data gh-pages new testml
 	git worktree prune
 

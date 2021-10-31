@@ -1,133 +1,57 @@
-#!/usr/bin/env bash
+#!/usr/bin/env perl
 
-set -e -u -o pipefail
+use v5.18;
+use utf8;
+use autodie qw(open close);
+use Encode;
+use MIME::Base64;
+use YAML::PP;
 
-main() (
-  i=0 m=3 out=out.tsv
+main(@ARGV);
 
-  rm -f "$out"
-  for test in $*; do
-    : $(( i++ ))
-    id=${test#test/}
-    id=${id%.tml}
-    lingy=$(compile < "$test")
+sub main {
+  my $ypp = YAML::PP->new;
+  my $i = 0;
 
-    # [[ $id == 4EJS ]] || continue
+  print "SKIP\tID\tYAML Input\t1.2 Events\tPlay\tNRP\tORP\tliby\tlibf\tYPP\tNPM\tPYY\tNIM\tHSY\tJSY\tRUA\tDNY\n";
 
-    printf "\r%s" "$id" >&2
+  for my $file (@ARGV) {
+    (my $id = $file) =~ s{^.*/(.*)\.yaml$}{$1};
 
-    error=$(jq '.data[0].point.error' <<<"$lingy")
-    [[ $error == null ]] && error=false || error=true
+    my $data = $ypp->load_file($file);
 
-    in_yaml=$(
-      jq '.data[0].point."in-yaml"' <<<"$lingy" |
-      perl -p0e '
-        s/\\n"/"/;
-      '
-    )
+    my $test = shift(@$data);
 
-    if $error; then
-      test_event='"ERROR"'
-    else
-      test_event=$(
-        jq '.data[0].point."test-event"' <<<"$lingy" |
-        perl -p0e '
-          s/^"\+STR\\n(.+)-STR\\n"$/"$1"/;
-          s/^"\+DOC\\n(.+)-DOC\\n"$/"$1"/;
-          s/(?:-(?:DOC|MAP|SEQ)\\n)+"$/"/;
-          s/\\n"/"/;
-        '
-      )
-    fi
+    my $skip = $test->{skip} // '';
+    $skip &&= 'X';
 
-    input=$(jq -r '.data[0].point."in-yaml"' <<<"$lingy")
-    input=${input//<SPC>/ }
-    input=${input//<TAB>/$'\t'}
-    want=$(jq -r '.data[0].point."test-event"' <<<"$lingy")
+    my $yaml = $test->{yaml};
+    $yaml =~ s/"/""/g;
+    my $tree = $test->{tree};
+    $tree =~ s/"/""/g;
 
-    json="[ \"$id\", $in_yaml, $test_event"
+    my $play = play_url($test->{yaml});
 
-    add-test-result perl-refparser-event
-    add-test-result hs-reference-yeast
-    add-test-result js-yaml-event
-    add-test-result perl-pp-event
-    add-test-result py-pyyaml-event
-    add-test-result c-libyaml-event
-    add-test-result c-libfyaml-event
-    add-test-result hs-hsyaml-event
-    add-test-result java-snakeyaml-event
-    add-test-result dotnet-yamldotnet-event
-    add-test-result nim-nimyaml-event
-    add-test-result py-ruamel-event
+    my $tsv = encode_utf8 qq{$skip\t$id\t"$yaml"\t"$tree"\t$play\n};
 
-    base64=$(base64 -w0 <<<"$input")
-    base64=${base64//+/-}
-    base64=${base64//\//_}
-    playground_url="https://spec.yaml.io/main/playground/parser?id=$id&input=$base64"
-    github_url=https://github.com/yaml/yaml-test-suite/blob/master/test/$id.tml
-
-    json+=", \"$playground_url\", \"$github_url\" ]"
-
-    jq -r '.|@tsv' <<<"$json" >> "$out" || true
-
-    # (( i >= m )) && break
-    # [[ $id == 2EBW ]] && break
-  done
-
-  printf "\r" >&2
-)
-
-add-test-result() {
-  parser=$1
-  rc=0
-  got=$(
-    echo "$input" | "$parser" 2>/dev/null |
-      perl -p \
-        -e 's{(\ +)$}{"<SPC>" x length($1)}e;' \
-        -e 's{^\+MAP\ \{\}}{+MAP};' \
-        -e 's{^\+SEQ\ \[\]}{+SEQ};' \
-        -e '$_ = "" if /^=COMMENT\ /;' \
-        -e ''
-  ) || rc=$?
-
-  if [[ $parser == hs-reference-yeast ]]; then
-    if $error; then
-      [[ $got == *=ERR* || $got == *=REST* ]] && ok='""' || ok='"X"'
-    else
-      [[ $got == *=ERR* || $got == *=REST* ]] && ok='"X"' || ok='""'
-    fi
-  else
-    if $error; then
-      [[ $rc -eq 0 ]] && ok='"X"' || ok='""'
-    else
-      diff=$(diff -u <(echo "$want") <(echo "$got") || true)
-      [[ $diff ]] && ok='"X"' || ok='""'
-#       if [[ $parser == hs-hsyaml-event ]]; then
-#         if [[ $diff ]]; then
-#           echo "$diff"
-#           # exit 123
-#         fi
-#       fi
-    fi
-  fi
-  json+=", $ok"
+    print $tsv;
+  }
 }
 
-compile() (
-  compiler=$(mktemp)
-  cat <<'...' > "$compiler"
-require('ingy-prelude');
-compiler = require('testml-compiler/lib/testml-compiler/compiler');
-input = file_read('-');
-lingy = (new TestMLCompiler.Compiler).compile(input);
-say(lingy);
-...
+sub play_url {
+  $_ = encode_utf8 shift;
 
-  node "$compiler"
+  s/␣/ /g;
+  s/—*»/\t/g;
+  s/←/\r/g;
+  s/⇔/x{FEFF}/g;
+  s/↵//g;
+  s/∎\n\z//;
 
-  rm -f "$compiler"
-)
+  my $base64 = encode_base64($_);
+  $base64 =~ s{\n}{}g;
+  $base64 =~ s{\+}{-}g;
+  $base64 =~ s{/}{_}g;
 
-die() ( echo "$*"; exit 1 )
-
-main "$@"
+  return "https://play.yaml.io/main/parser?input=$base64";
+}
