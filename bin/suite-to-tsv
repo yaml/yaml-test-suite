@@ -1,57 +1,48 @@
 #!/usr/bin/env perl
 
 use v5.18;
-use utf8;
-use autodie qw(open close);
+use FindBin;
+use lib $FindBin::Bin;
+use base 'YAMLTestSuite';
 use Encode;
-use MIME::Base64;
-use YAML::PP;
 
-main(@ARGV);
+main->new->run([@ARGV]);
 
-sub main {
-  my $ypp = YAML::PP->new;
-  my $i = 0;
+sub make {
+  my ($self) = @_;
 
-  print "SKIP\tID\tYAML Input\t1.2 Events\tPlay\tNRP\tORP\tliby\tlibf\tYPP\tNPM\tPYY\tNIM\tHSY\tJSY\tRUA\tDNY\n";
+  my $id = $self->{ID};
+  my $data = $self->{data};
 
-  for my $file (@ARGV) {
-    (my $id = $file) =~ s{^.*/(.*)\.yaml$}{$1};
+  my $name = $data->{name};
 
-    my $data = $ypp->load_file($file);
+  my $skip = $data->{skip} ? 'X' : '';
 
-    my $test = shift(@$data);
+  my $yaml = $data->{yaml};
+  $yaml =~ s/"/""/g;
+  $yaml = qq{"$yaml"};
 
-    my $skip = $test->{skip} // '';
-    $skip &&= 'X';
+  my $tree = $data->{tree};
+  $tree =~ s/"/""/g;
+  chomp $tree;
+  $tree = qq{"$tree"};
 
-    my $yaml = $test->{yaml};
-    $yaml =~ s/"/""/g;
-    my $tree = $test->{tree};
-    $tree =~ s/"/""/g;
+  my $play = $self->play_url($data->{yaml});
 
-    my $play = play_url($test->{yaml});
+  my $tsv = encode_utf8 join("\t",
+    (
+      $play,
+      $id,
+      $name,
+      $yaml,
+      $tree,
+    )
+  ) . "\n";
 
-    my $tsv = encode_utf8 qq{$skip\t$id\t"$yaml"\t"$tree"\t$play\n};
-
-    print $tsv;
-  }
+  print $tsv;
 }
 
-sub play_url {
-  $_ = encode_utf8 shift;
-
-  s/␣/ /g;
-  s/—*»/\t/g;
-  s/←/\r/g;
-  s/⇔/x{FEFF}/g;
-  s/↵//g;
-  s/∎\n\z//;
-
-  my $base64 = encode_base64($_);
-  $base64 =~ s{\n}{}g;
-  $base64 =~ s{\+}{-}g;
-  $base64 =~ s{/}{_}g;
-
-  return "https://play.yaml.io/main/parser?input=$base64";
+sub final {
+  my ($self) = @_;
+  warn "Wrote $self->{make} rows.\n";
 }

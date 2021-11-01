@@ -1,11 +1,10 @@
 #!/usr/bin/env perl
 
 use v5.18;
-use utf8;
-use autodie qw(open close);
+use FindBin;
+use lib $FindBin::Bin;
+use base 'YAMLTestSuite';
 use Encode;
-use YAML::PP;
-$| = 1;
 
 my %map = (
   'name' => '===',
@@ -18,59 +17,28 @@ my %map = (
   'toke' => 'lex.token',
 );
 
-main(@ARGV);
+main->new->run([@ARGV]);
 
-sub main {
-  mkdir 'data';
+sub make {
+  my ($self) = @_;
 
-  my $ypp = YAML::PP->new;
+  my ($id, $ID, $num, $data, $cache) =
+    @$self{qw<id ID num data cache>};
 
-  my ($files, $skipped, $created) = (0, 0, 0);
+  my $dir = "data/$id";
+  mkdir $dir unless -d $dir;
 
-  for my $file (@_) {
-    $files++;
-    my $data = $ypp->load_file($file);
-    (my $id = $file) =~ s{^.*/(.*)\.yaml$}{$1};
-    my $dir = "data/$id";
-    my $cache = {};
-    my $first = shift @$data or die;
-    if ($first->{skip}) {
-      print "Skipping '$id'...";
-      $skipped++;
-      next;
-    }
-
-    create($dir, $first, $cache);
-    $created++;
-
-    @$data or next;
-
-    my $l = int(log(@$data) / log(10));
-    my $i = 1;
-    for my $next (@$data) {
-      my $num = sprintf "%0$l", $i++;
-      create("$dir/$num", $next, $cache);
-      $created++;
-    }
+  if ($num) {
+    $dir .= "/$num";
+    mkdir $dir or die $dir;
   }
-
-  print "\n";
-  printf "Processed %d files.\n", $files;
-  printf "Skipped %d files.\n", $skipped;
-  printf "Created %d test data directories.\n", $created;
-  print "\n";
-}
-
-sub create {
-  my ($dir, $data, $cache) = @_;
-  mkdir $dir or die;
 
   for my $k (sort keys %map) {
     if (exists $data->{$k} and not defined $data->{$k}) {
       delete $cache->{$k};
       next;
     }
-    $_ = $data->{$k} || $cache->{$k};
+    $_ = $data->{$k} // $cache->{$k};
     if (defined $_) {
       $cache->{$k} = $_;
       if ($k eq 'name') {
@@ -84,16 +52,16 @@ sub create {
         s/\n*\z/\n/;
       }
 
-      s/␣/ /g;
-      s/—*»/\t/g;
-      s/←/\r/g;
-      s/⇔/x{FEFF}/g;
-      s/↵//g;
-      s/∎\n\z//;
+      $_ = $self->unescape($_);
 
       open my $out, '>', "$dir/$map{$k}" or die;
-      print $out encode_utf8 $_;
+      print $out encode_utf8($_);
       close $out;
     }
   }
+}
+
+sub final {
+  my ($self) = @_;
+  warn "Wrote $self->{make} data tests.\n";
 }
