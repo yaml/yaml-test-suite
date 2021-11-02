@@ -44,7 +44,6 @@ folded        The test uses '>' folded scalars
 footer        The test has '...' footer tokens
 header        The test has '---' header tokens
 indent        The test is concerned with indentation issues
-jayt          Just Another YAML Test. Tests of dubious value.
 literal       The test uses '|' literal scalars
 local-tag     The test uses a local tag `!foo`
 mapping       The test is concerned with mapping issues

@@ -43,7 +43,7 @@ template() (
 
   from: '@your-github-id'
 
-  tags: alias anchor comment complex-key directive document double duplicate-key edge empty-key empty error explicit-key flow folded footer header indent jayt literal local-tag mapping scalar sequence simple single spec tag whitespace
+  tags: alias anchor comment complex-key directive document double duplicate-key edge empty-key empty error explicit-key flow folded footer header indent literal local-tag mapping scalar sequence simple single spec tag whitespace
 
   # error: true
   # skip: true
