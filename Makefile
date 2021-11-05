@@ -42,6 +42,9 @@ test:
 import: import.tsv
 	./bin/tsv-to-new $<
 
+import.tsv:
+	$(error 'make import' requires a '$@' file)
+
 export: export.tsv
 
 export.tsv:

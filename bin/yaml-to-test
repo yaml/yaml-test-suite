@@ -15,17 +15,18 @@ use XXX;
 main(@ARGV);
 
 sub main {
-  my $yaml = decode_utf8 do {local $/; <STDIN>};
-  my ($tree, $from, $skip, $more) = @_;
-  $from ||= undef;
+  my $yaml = decode_utf8 $ENV{YAML};
+  $yaml .= "\n" if length($yaml);
+
+  my ($more, $skip, $name, $from, $tags, $tree) =
+    @ENV{qw<MORE SKIP NAME FROM TAGS TREE>};
+
   my $fail = 0;
   if ($tree eq 'ERROR') {
     $fail = 1;
     $tree = '';
   }
   else {
-    # $tree = decode_utf8 $tree;
-    # $tree .= "\n";
     $tree = refparser_events($yaml);
   }
 
@@ -39,16 +40,16 @@ sub main {
   my $test = $ypp->preserved_mapping({});
   %$test = (
     $skip ? (skip => true) : (),
-    name => undef,
+    name => $name,
     from => $from,
-    tags => undef,
+    $tags ? ( tags => $tags ) : (),
     $fail ? (
       fail => true,
       yaml => $yaml,
-      tree => $events,
+      tree => indent($events),
     ) : (
       yaml => $yaml,
-      tree => $tree,
+      tree => indent($tree),
     )
   );
 
@@ -56,7 +57,7 @@ sub main {
     my ($data, $json, $dump);
     eval {
       $data = $ypp->load_string($yaml);
-      $json = JSON::PP->new->pretty->encode($data);
+      $json = JSON::PP->new->pretty->indent_length(2)->encode($data);
     };
     if (defined $json) {
       $test->{json} = $json;
@@ -75,10 +76,35 @@ sub main {
     delete $test->{name};
     delete $test->{from};
     delete $test->{tags};
+    delete $test->{skip};
     $ypp->dumper->{header} = 0;
   }
 
-  print encode_utf8 $ypp->dump([$test]);
+  my $out = encode_utf8 $ypp->dump([$test]);
+
+  if ($more) {
+    $out = "\n$out";
+  }
+#   else {
+#     $out =~ s/^(\ \ yaml:)/\n$1/m;
+#   }
+
+  print $out;
+}
+
+sub indent {
+  my ($text) = @_;
+  my $i = 0;
+  $text =~ s<^(.)><
+    if ($1 eq '+') {
+      (' ' x $i++) . $1;
+    } elsif ($1 eq '-') {
+      (' ' x --$i) . $1;
+    } else {
+      (' ' x $i) . $1;
+    }
+  >megx;
+  return $text;
 }
 
 sub yamlpp_events {
