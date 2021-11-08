@@ -56,16 +56,43 @@ Also these are used in test event output:
 * `<SPC>` for a space character
 * `<TAB>` for a tab character
 
-## Updating Things
+## Makefile Targets
 
-When test files change you need to update various artifacts.
-To do this, run the following commands:
+The Makefile has a number of targets for automating the process of adding new
+tests and also preprocessing them into the `data` branch.
 
-```
-make data-update    # Update data branch worktree
-```
+* `make data`
 
-You will need Bash, NodeJS and Perl for these things.
+  Create a `data` worktree subdirectory with all the tests as data files.
+
+* `make data-update`
+
+  Update the `data` brnach directory with the latest info in the `src`
+  directory.
+
+* `make export`
+
+  Creates an `export.tsv` file with all the data from the `src` test files.
+  This tsv data can be copied into a google spreadsheet.
+  The [YAML parser playground](https://play.yaml.io/main/parser) has a button
+  to copy a test to the same tsv form.
+
+* `make import`
+
+  Make a directory called `new` from a file named `import.tsv`.
+  The `import.tsv` file should have data copied from a google spreadsheet.
+
+* `make add-new`
+
+  Copy the new tests under `new/` into `src/` to make a PR for new tests.
+
+* `make testml`
+
+  Generate `.tml` files under a `testml/` directory for all the suite tests.
+
+* `make clean`
+
+  Remove generated files and directories.
 
 ## Libaries using this test suite
 
