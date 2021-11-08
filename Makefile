@@ -39,6 +39,9 @@ test:
 	make gh-pages
 	make clean
 
+add-new:
+	for f in new/*; do cp "$$f" "src/$${f#*-}"; done
+
 import: import.tsv
 	./bin/tsv-to-new $<
 
