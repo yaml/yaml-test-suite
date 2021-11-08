@@ -1,0 +1,25 @@
+---
+- name: Single character streams
+  from: '@ingydotnet'
+  yaml: |
+    -∎
+  tree: |
+    +STR
+     +DOC
+      +SEQ
+       =VAL :
+      -SEQ
+     -DOC
+    -STR
+
+- yaml: |
+    :∎
+  tree: |
+    +STR
+     +DOC
+      +MAP
+       =VAL :
+       =VAL :
+      -MAP
+     -DOC
+    -STR
