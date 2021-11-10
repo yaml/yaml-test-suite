@@ -50,8 +50,11 @@ import.tsv:
 
 export: export.tsv
 
+run-tests:
+	$(eval override export YTS_TEST_RUNNER := true)
+
 export.tsv:
-	./bin/suite-to-tsv $(SRC) > $@
+	time ./bin/suite-to-tsv $(SRC) > $@
 
 new-test:
 	new-test-file

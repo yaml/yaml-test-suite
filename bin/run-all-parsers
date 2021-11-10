@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+set -e -u -o pipefail
+
+die() ( echo "$*" >&2; exit 1 )
+
+[[ -f /.dockerenv ]] || die "Not in docker"
+
+rm -fr /tmp/*
+
+cat > /tmp/input.yaml
+
+for parser; do
+  ("$parser" < /tmp/input.yaml > "/tmp/$parser" 2> "/tmp/$parser.err" || true) &
+done
+wait
+
+refparser=$1
+shift
+
+if [[ -s /tmp/$refparser.err ]]; then
+  want=''
+else
+  want=$(< "/tmp/$refparser")
+fi
+
+#   (
+#     echo "$refparser"
+#     echo "${#want}"
+#     echo "${want//\ /_}"
+#   ) >&2
+
+
+out=''
+for parser; do
+  got=$(< "/tmp/$parser")
+
+#   [[ $parser == c-libfyaml-event ]] && (
+#     echo "$parser"
+#     echo "${#got}"
+#     echo "${got//\ /_}"
+#   ) >&2
+
+  if [[ $parser == hs-reference-yeast ]]; then
+    [[ $got =~ (=ERR|=REST) ]] && got=''
+    if [[ $got && $want ]]; then
+      out+=$'\t'
+    elif [[ ! $got && ! $want ]]; then
+      out+=$'\t'
+    else
+      out+=$'\tx'
+    fi
+  else
+    [[ $got =~ $'\n'-STR$ ]] || got=''
+    if [[ $got == "$want" ]]; then
+      out+=$'\t'
+    else
+      want2=${want//\ \{\}/}
+      want2=${want2//\ \[\]/}
+      if [[ $got == "$want2" ]]; then
+        out+=$'\t'
+      else
+        out+=$'\tx'
+      fi
+    fi
+  fi
+done
+
+printf "$out"

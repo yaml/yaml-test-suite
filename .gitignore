@@ -1,6 +1,6 @@
 /data/
-/data.*
 /gh-pages/
+/export.tsv
 /import.tsv
 /matrix/
 /new/
