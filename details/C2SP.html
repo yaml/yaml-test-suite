@@ -34,7 +34,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/C2SP.tml">&test-C
  ^
 +STR
 +DOC
-+SEQ
++SEQ []
 =VAL :23
 -SEQ
 -DOC
@@ -277,9 +277,9 @@ Error: unhandled exception: Unexpected token (expected document end): ltMapValIn
 <h3><a href="#perl-pp-event">perl-pp-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
 Column    : 2
-Expected  : DOC_END DOC_START EOL
+Expected  : EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;: 42\n&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
@@ -295,9 +295,9 @@ YAML      : &quot;: 42\n&quot;
 <h3><a href="#perl-pp-json">perl-pp-json</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
 Column    : 2
-Expected  : DOC_END DOC_START EOL
+Expected  : EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;: 42\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -308,9 +308,9 @@ YAML      : &quot;: 42\n&quot;
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
 Column    : 2
-Expected  : DOC_END DOC_START EOL
+Expected  : EOL
 Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;: 42\n&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>

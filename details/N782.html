@@ -70,7 +70,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/N782.tml">&test-N
 [NOT]: fy_parse_node() failed
 +STR
 +DOC
-+SEQ
++SEQ []
 </pre>
  </div>
 
@@ -302,7 +302,7 @@ stack traceback:
 Column    : 1
 Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : DOC_START
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;--- ,&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
@@ -318,7 +318,7 @@ YAML      : &quot;--- ,&quot;
 Column    : 1
 Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : DOC_START
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;--- ,&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -329,9 +329,9 @@ YAML      : &quot;--- ,&quot;
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
 Column    : 1
-Expected  : ALIAS FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
+Expected  : ALIAS COLON FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
 Got       : DOC_START
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;--- ,&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>

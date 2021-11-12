@@ -169,20 +169,7 @@ foo: bar
 <span class="status_box color_json_ok">&nbsp;</span>json_ok   </div>
 
 
- <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 2
-Column    : 4
-Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
-Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
-YAML      : &quot;: bar\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-yaml-json">
+ <hr style="clear: both;">          <div class="framework framework_box_error" id="perl-yaml-json">
 <h3><a href="#perl-yaml-json">perl-yaml-json</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>YAML Error: Expected separator &#39;---&#39;
    Code: YAML_PARSE_ERR_NO_SEPARATOR
@@ -204,7 +191,19 @@ YAML      : &quot;: bar\n&quot;
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pplibyaml-perl">
+ <hr style="clear: both;">    <div class="framework framework_box_na" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  {
+    &#39;foo&#39; =&gt; &#39;bar&#39;
+  }
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-pplibyaml-perl">
 <h3><a href="#perl-pplibyaml-perl">perl-pplibyaml-perl</a></h3>
 <span class="status_box color_na">&nbsp;</span>na  <pre>[
   {

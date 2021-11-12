@@ -112,13 +112,13 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MMW.tml">&test-9
 +DOC
 +SEQ
 +SEQ []
-+MAP
++MAP {}
 =VAL :YAML
 =VAL :separate
 -MAP
 -SEQ
 +SEQ []
-+MAP
++MAP {}
 =VAL &quot;JSON like
 =VAL :adjacent
 -MAP
@@ -132,7 +132,7 @@ Line      : 3
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;:adjacent ]&quot;
   at /yaml/bin/perl-pp-event line 25.
 </pre>
@@ -141,12 +141,12 @@ YAML      : &quot;:adjacent ]&quot;
 
   <div class="framework framework_box_error" id="perl-pp-perl">
 <h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
-Column    : 10
+<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 3
+Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
-Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
-YAML      : &quot;: separate ]\n&quot;
+Got       : PLAIN
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
+YAML      : &quot;:adjacent ]&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
@@ -383,7 +383,7 @@ stack traceback:
 Column    : 17
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;:adjacent ]&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>

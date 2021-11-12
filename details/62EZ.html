@@ -31,50 +31,7 @@ x: { y: z }in: valid
 <pre></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_invalid_incorrect" id="perl-pp-event">
-<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
-+DOC ---
-+MAP
-=VAL :x
-+MAP {}
-=VAL :y
-=VAL :z
--MAP
-=VAL :in
-=VAL :valid
--MAP
--DOC
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
-   &quot;in&quot; : &quot;valid&quot;,
-   &quot;x&quot; : {
-      &quot;y&quot; : &quot;z&quot;
-   }
-}
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>{
-  &#39;in&#39; =&gt; &#39;valid&#39;,
-  &#39;x&#39; =&gt; {
-           &#39;y&#39; =&gt; &#39;z&#39;
-         }
-}
-</pre>
- </div>
-
-
- <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+      <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
 <h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:12: error: invalid block mapping key on same line as previous key
 x: { y: z }in: valid
@@ -83,7 +40,7 @@ x: { y: z }in: valid
 +DOC ---
 +MAP
 =VAL :x
-+MAP
++MAP {}
 =VAL :y
 =VAL :z
 -MAP
@@ -348,6 +305,53 @@ Error: unhandled exception: Illegal token (expected &#39;:&#39;, comment or line
 =VAL :y
 =VAL :z
 -MAP
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 12
+Expected  : EOL
+Got       : PLAIN
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
+YAML      : &quot;in: valid\n&quot;
+  at /yaml/bin/perl-pp-event line 25.
++STR
++DOC ---
++MAP
+=VAL :x
++MAP {}
+=VAL :y
+=VAL :z
+-MAP
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 12
+Expected  : EOL
+Got       : PLAIN
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
+YAML      : &quot;in: valid\n&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 2
+Column    : 12
+Expected  : EOL
+Got       : PLAIN
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
+YAML      : &quot;in: valid\n&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 

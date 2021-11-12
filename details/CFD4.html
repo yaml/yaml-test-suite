@@ -162,20 +162,7 @@ class="">-STR</span>
  </div>
 
 
- <hr style="clear: both;">       <div class="framework framework_box_error" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_error">&nbsp;</span>error <pre>Line      : 1
-Column    : 5
-Expected  : ALIAS FLOWMAP_START FLOWSEQ_START PLAIN PLAIN_MULTI QUOTED QUOTED_MULTILINE
-Got       : COLON
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
-YAML      : &quot;: empty key ]\n&quot;
-  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
-</pre>
- </div>
-
-
-  <div class="framework framework_box_error" id="perl-syck-perl">
+ <hr style="clear: both;">       <div class="framework framework_box_error" id="perl-syck-perl">
 <h3><a href="#perl-syck-perl">perl-syck-perl</a></h3>
 <span class="status_box color_error">&nbsp;</span>error <pre>Syck parser (line 1, column 5): syntax error at /perl5/lib/perl5/x86_64-linux-thread-multi/YAML/Syck.pm line 60, &lt;&gt; line 1.
 </pre>
@@ -411,6 +398,25 @@ stack traceback:
          &quot;&quot; : &quot;another empty key&quot;
       }
    ]
+]
+</pre>
+
+ </div>
+
+
+  <div class="framework framework_box_na" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_na">&nbsp;</span>na  <pre>[
+  [
+    {
+      &#39;&#39; =&gt; &#39;empty key&#39;
+    }
+  ],
+  [
+    {
+      &#39;&#39; =&gt; &#39;another empty key&#39;
+    }
+  ]
 ]
 </pre>
 

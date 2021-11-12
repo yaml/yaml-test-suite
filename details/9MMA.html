@@ -23,21 +23,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MMA.tml">&test-9
 <pre></pre>
 </div>
 <hr style="clear: both;">
-   <div class="framework framework_box_invalid_incorrect" id="c-libfyaml-event">
-<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="c-libfyaml-json">
-<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="cpp-yamlcpp-event">
+   <div class="framework framework_box_invalid_incorrect" id="cpp-yamlcpp-event">
 <h3><a href="#cpp-yamlcpp-event">cpp-yamlcpp-event</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
 -STR
@@ -81,26 +67,6 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MMA.tml">&test-9
  </div>
 
 
-  <div class="framework framework_box_invalid_incorrect" id="perl-pp-event">
-<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>+STR
--STR
-</pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pp-json">
-<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
- </div>
-
-
-  <div class="framework framework_box_invalid_incorrect" id="perl-pp-perl">
-<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
-<span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre></pre>
- </div>
-
-
   <div class="framework framework_box_invalid_incorrect" id="perl-syck-json">
 <h3><a href="#perl-syck-json">perl-syck-json</a></h3>
 <span class="status_box color_invalid_incorrect">&nbsp;</span>invalid_incorrect <pre>&quot;%YAML 1.2&quot;
@@ -127,7 +93,26 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/9MMA.tml">&test-9
  </div>
 
 
- <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
+ <hr style="clear: both;">    <div class="framework framework_box_invalid_correct" id="c-libfyaml-event">
+<h3><a href="#c-libfyaml-event">c-libfyaml-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: stream with directives without content
+
+^
++STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libfyaml-json">
+<h3><a href="#c-libfyaml-json">c-libfyaml-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>stdin:2:1: error: stream with directives without content
+
+^
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="c-libyaml-event">
 <h3><a href="#c-libyaml-event">c-libyaml-event</a></h3>
 <span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Parse error: did not find expected &lt;document start&gt;
 +STR
@@ -216,6 +201,43 @@ stack traceback:
 	/usr/local/share/lua/5.1/lyaml/init.lua:496: in function &#39;load&#39;
 	/yaml/bin/lua-lyaml-json:6: in main chunk
 	[C]: at 0x55857b6cbf97
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-event">
+<h3><a href="#perl-pp-event">perl-pp-event</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 1
+Column    : 1
+Message   : Directive needs document start
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 424
+YAML      : &quot;&quot;
+  at /yaml/bin/perl-pp-event line 25.
++STR
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-json">
+<h3><a href="#perl-pp-json">perl-pp-json</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 1
+Column    : 1
+Message   : Directive needs document start
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 424
+YAML      : &quot;&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
+</pre>
+ </div>
+
+
+  <div class="framework framework_box_invalid_correct" id="perl-pp-perl">
+<h3><a href="#perl-pp-perl">perl-pp-perl</a></h3>
+<span class="status_box color_invalid_correct">&nbsp;</span>invalid_correct <pre>Line      : 1
+Column    : 1
+Message   : Directive needs document start
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 424
+YAML      : &quot;&quot;
+  at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
  </div>
 

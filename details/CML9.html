@@ -55,7 +55,7 @@ href="https://github.com/yaml/yaml-test-suite/blob/master/test/CML9.tml">&test-C
 +DOC
 +MAP
 =VAL :key
-+SEQ
++SEQ []
 =VAL :word1
 </pre>
  </div>
@@ -313,7 +313,7 @@ stack traceback:
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;word2 ]&quot;
   at /yaml/bin/perl-pp-event line 25.
 +STR
@@ -332,7 +332,7 @@ YAML      : &quot;word2 ]&quot;
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 391
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;word2 ]&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
@@ -345,7 +345,7 @@ YAML      : &quot;word2 ]&quot;
 Column    : 3
 Expected  : EOL FLOWSEQ_END FLOW_COMMA WS
 Got       : PLAIN
-Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 386
+Where     : /perl5/lib/perl5/YAML/PP/Parser.pm line 392
 YAML      : &quot;word2 ]&quot;
   at /perl5/lib/perl5/YAML/PP/Loader.pm line 94.
 </pre>
