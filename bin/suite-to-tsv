@@ -95,7 +95,7 @@ sub make {
   my $id = $self->{ID};
   my $data = $self->{data};
 
-  my $name = $data->{name};
+  my $name = $self->{name};
 
   my $skip = $data->{skip} ? 'X' : '';
 
@@ -107,6 +107,7 @@ sub make {
   $tree =~ s/"/""/g;
   chomp $tree;
   $tree = qq{"$tree"};
+  $tree = 'ERROR' if $data->{fail};
 
   my $play = $self->play_url($data->{yaml});
 

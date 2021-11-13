@@ -53,7 +53,9 @@ sub run {
     $self->{cache} = {};
     delete $self->{num};
     my $i = 0;
+    my $name = '';
     for my $test (@$data) {
+      $name = $self->{name} = $test->{name} || $name;
       $self->{data} = $test;
       $self->{ID} = $self->{num}
         ? "$self->{id}-$self->{num}"
