@@ -22,7 +22,7 @@ The types of data include:
 * etc
 
 To get a quick overview of the tests you can have a look at the [YAML Test
-Matrix](http://matrix.yaml.io/), made from
+Matrix](http://matrix.yaml.info/), made from
 <https://github.com/perlpunk/yaml-test-matrix>.
 
 The tests are available in 2 forms.
