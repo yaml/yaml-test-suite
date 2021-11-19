@@ -28,7 +28,7 @@ BEGIN {
   if ($ENV{YTS_TEST_RUNNER}) {
     my $cwd = getcwd;
     my ($out, $err, $rc) = capture {
-      system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.0.2 sleep 600");
+      system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.0.7 sleep 600");
     };
     die "docker run failed" unless $rc == 0;
     chomp $out;
@@ -39,19 +39,19 @@ BEGIN {
 }
 
 my @test_runners = (qw<
-  yaml-reference-parser
-  hs-reference-yeast
-  c-libyaml-event
-  c-libfyaml-event
-  perl-pp-event
-  js-yaml-event
-  py-pyyaml-event
-  go-yaml-test
-  nim-nimyaml-event
-  hs-hsyaml-event
-  java-snakeyaml-event
-  py-ruamel-event
-  dotnet-yamldotnet-event
+  yaml-test-parse-yamlref
+  yaml-test-parse-hsref
+  yaml-test-parse-libyaml
+  yaml-test-parse-libfyaml
+  yaml-test-parse-goyaml
+  yaml-test-parse-pyyaml
+  yaml-test-parse-yamlpp
+  yaml-test-parse-npmyaml
+  yaml-test-parse-nimyaml
+  yaml-test-parse-hsyaml
+  yaml-test-parse-snake
+  yaml-test-parse-dotnet
+  yaml-test-parse-ruamel
 >);
 
 my @tag_names = (qw<

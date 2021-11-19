@@ -41,7 +41,7 @@ for parser; do
 #     echo "${got//\ /_}"
 #   ) >&2
 
-  if [[ $parser == hs-reference-yeast ]]; then
+  if [[ $parser == yaml-test-parse-hsref ]]; then
     [[ $got =~ (=ERR|=REST) ]] && got=''
     if [[ $got && $want ]]; then
       out+=$'\t'
