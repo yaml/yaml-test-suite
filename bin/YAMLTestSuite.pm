@@ -1,5 +1,5 @@
 package YAMLTestSuite;
-use v5.18;
+use strict; use warnings;
 
 use utf8;
 use autodie qw(open close);
