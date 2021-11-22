@@ -22,13 +22,13 @@ main->new->run([@ARGV]);
 sub make {
     my ($self) = @_;
 
-    my ($id, $ID, $num, $data, $cache) =
-        @$self{qw<id ID num data cache>};
+    my ($id, $ID, $num, $data, $cache, $multi) =
+        @$self{qw<id ID num data cache multi>};
 
     my $dir = "data/$id";
     mkdir $dir unless -d $dir;
 
-    if ($num) {
+    if ($multi) {
         $dir .= "/$num";
         mkdir $dir or die $dir;
     }

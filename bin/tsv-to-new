@@ -44,6 +44,7 @@ for line in "${each[@]}"; do
   set -- "${cell[@]}"
   group=$1; shift
   name=$1; shift
+  [[ $name ]] || die "No 'name' field for row $((i+1)) in $tsv"
   skip=$1; shift
   tags=()
   for tag in "${tag_name[@]}"; do

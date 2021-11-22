@@ -47,7 +47,9 @@ sub run {
             }
         }
 
-        my $l = (@$data > 1)
+        my $multi = $self->{multi} = @$data > 1;
+
+        my $l = $multi
             ? int(log(@$data - 1) / log(10)) + 2
             : 2;
         $self->{cache} = {};
@@ -55,14 +57,14 @@ sub run {
         my $i = 0;
         my $name = '';
         for my $test (@$data) {
+            $self->{num} = sprintf "%0${l}d", $i++;
             $name = $self->{name} = $test->{name} || $name;
             $self->{data} = $test;
-            $self->{ID} = $self->{num}
+            $self->{ID} = $multi
                 ? "$self->{id}-$self->{num}"
                 : $self->{id};
             $self->make;
             $self->{make}++;
-            $self->{num} = sprintf "%0${l}d", ++$i;
         }
         $self->done;
     }
