@@ -15,127 +15,127 @@ use XXX;
 main(@ARGV);
 
 sub main {
-  my $yaml = decode_utf8 $ENV{YAML};
-  $yaml .= "\n" if length($yaml);
+    my $yaml = decode_utf8 $ENV{YAML};
+    $yaml .= "\n" if length($yaml);
 
-  my ($more, $skip, $name, $from, $tags, $tree) =
-    @ENV{qw<MORE SKIP NAME FROM TAGS TREE>};
+    my ($more, $skip, $name, $from, $tags, $tree) =
+        @ENV{qw<MORE SKIP NAME FROM TAGS TREE>};
 
-  my $fail = 0;
-  if ($tree eq 'ERROR') {
-    $fail = 1;
-    $tree = '';
-  }
-  else {
-    $tree = refparser_events($yaml);
-  }
-
-  my $ypp = YAML::PP->new(
-    boolean => 'boolean',
-    preserve => PRESERVE_ORDER,
-  );
-
-  my $events = yamlpp_events($yaml);
-
-  my $test = $ypp->preserved_mapping({});
-  %$test = (
-    $skip ? (skip => true) : (),
-    name => $name,
-    from => $from,
-    $tags ? ( tags => $tags ) : (),
-    $fail ? (
-      fail => true,
-      yaml => $yaml,
-      tree => indent($events),
-    ) : (
-      yaml => $yaml,
-      tree => indent($tree),
-    )
-  );
-
-  if ($events eq $tree) {
-    my ($data, $json, $dump);
-    eval {
-      $data = $ypp->load_string($yaml);
-      $json = JSON::PP->new->pretty->indent_length(2)->encode($data);
-    };
-    if (defined $json) {
-      $test->{json} = $json;
+    my $fail = 0;
+    if ($tree eq 'ERROR') {
+        $fail = 1;
+        $tree = '';
     }
-    if (defined $data) {
-      eval {
-        $dump = $ypp->dump($data);
-      };
-      if (defined $dump) {
-        $test->{dump} = $dump;
-      }
+    else {
+        $tree = refparser_events($yaml);
     }
-  }
 
-  if ($more) {
-    delete $test->{name};
-    delete $test->{from};
-    delete $test->{tags};
-    delete $test->{skip};
-    $ypp->dumper->{header} = 0;
-  }
+    my $ypp = YAML::PP->new(
+        boolean => 'boolean',
+        preserve => PRESERVE_ORDER,
+    );
 
-  my $out = encode_utf8 $ypp->dump([$test]);
+    my $events = yamlpp_events($yaml);
 
-  if ($more) {
-    $out = "\n$out";
-  }
-#   else {
-#     $out =~ s/^(\ \ yaml:)/\n$1/m;
-#   }
+    my $test = $ypp->preserved_mapping({});
+    %$test = (
+        $skip ? (skip => true) : (),
+        name => $name,
+        from => $from,
+        $tags ? ( tags => $tags ) : (),
+        $fail ? (
+            fail => true,
+            yaml => $yaml,
+            tree => indent($events),
+        ) : (
+            yaml => $yaml,
+            tree => indent($tree),
+        )
+    );
 
-  print $out;
+    if ($events eq $tree) {
+        my ($data, $json, $dump);
+        eval {
+            $data = $ypp->load_string($yaml);
+            $json = JSON::PP->new->pretty->indent_length(2)->encode($data);
+        };
+        if (defined $json) {
+            $test->{json} = $json;
+        }
+        if (defined $data) {
+            eval {
+                $dump = $ypp->dump($data);
+            };
+            if (defined $dump) {
+                $test->{dump} = $dump;
+            }
+        }
+    }
+
+    if ($more) {
+        delete $test->{name};
+        delete $test->{from};
+        delete $test->{tags};
+        delete $test->{skip};
+        $ypp->dumper->{header} = 0;
+    }
+
+    my $out = encode_utf8 $ypp->dump([$test]);
+
+    if ($more) {
+        $out = "\n$out";
+    }
+#     else {
+#         $out =~ s/^(\ \ yaml:)/\n$1/m;
+#     }
+
+    print $out;
 }
 
 sub indent {
-  my ($text) = @_;
-  my $i = 0;
-  $text =~ s<^(.)><
-    if ($1 eq '+') {
-      (' ' x $i++) . $1;
-    } elsif ($1 eq '-') {
-      (' ' x --$i) . $1;
-    } else {
-      (' ' x $i) . $1;
-    }
-  >megx;
-  return $text;
+    my ($text) = @_;
+    my $i = 0;
+    $text =~ s<^(.)><
+        if ($1 eq '+') {
+            (' ' x $i++) . $1;
+        } elsif ($1 eq '-') {
+            (' ' x --$i) . $1;
+        } else {
+            (' ' x $i) . $1;
+        }
+    >megx;
+    return $text;
 }
 
 sub yamlpp_events {
-  my ($yaml) = @_;
-  my $events = '';
-  my $parser = YAML::PP::Parser->new(
-    receiver => sub {
-      my ($self, undef, $event) = @_;
-      $events .= YAML::PP::Common::event_to_test_suite(
-        $event, { flow => 1 }
-      ) . "\n";
-    },
-  );
-  eval {
-    $parser->parse_string($yaml);
-  };
-  return $events;
+    my ($yaml) = @_;
+    my $events = '';
+    my $parser = YAML::PP::Parser->new(
+        receiver => sub {
+            my ($self, undef, $event) = @_;
+            $events .= YAML::PP::Common::event_to_test_suite(
+                $event, { flow => 1 }
+            ) . "\n";
+        },
+    );
+    eval {
+        $parser->parse_string($yaml);
+    };
+    return $events;
 }
 
 sub refparser_events {
-  my ($yaml) = @_;
+    my ($yaml) = @_;
 
-  my $parser = $ENV{YAML_REFERENCE_PARSER} ||
-      "$FindBin::Bin/../../yaml-reference-parser/perl/bin/yaml-parser";
-  -x $parser or die "'$parser' is not executable";
+    my $parser = $ENV{YAML_REFERENCE_PARSER} ||
+            "$FindBin::Bin/../../yaml-reference-parser/perl/bin/yaml-parser";
+    -x $parser or die "'$parser' is not executable";
 
-  my ($out, $err) = capture {
-    open my $pipe, '|-', "$parser --events";
-    print $pipe $yaml;
-    close $pipe;
-  };
+    my ($out, $err) = capture {
+        open my $pipe, '|-', "$parser --events";
+        print $pipe $yaml;
+        close $pipe;
+    };
 
-  return decode_utf8($out);
+    return decode_utf8($out);
 }

@@ -11,165 +11,165 @@ use Encode;
 my $container_id;
 
 sub kill_docker_container {
-  delete $SIG{INT};
-  if ($container_id) {
-    my ($out, $err, $rc) = capture {
-      system("docker kill $container_id");
-    };
-    die "docker kill failed" unless $rc == 0;
-  }
+    delete $SIG{INT};
+    if ($container_id) {
+        my ($out, $err, $rc) = capture {
+            system("docker kill $container_id");
+        };
+        die "docker kill failed" unless $rc == 0;
+    }
 }
 
 END {
-  kill_docker_container();
+    kill_docker_container();
 }
 
 BEGIN {
-  if ($ENV{YTS_TEST_RUNNER}) {
-    my $cwd = getcwd;
-    my ($out, $err, $rc) = capture {
-      system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.0.7 sleep 600");
-    };
-    die "docker run failed" unless $rc == 0;
-    chomp $out;
-    $container_id = $out;
-  }
+    if ($ENV{YTS_TEST_RUNNER}) {
+        my $cwd = getcwd;
+        my ($out, $err, $rc) = capture {
+            system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.0.7 sleep 600");
+        };
+        die "docker run failed" unless $rc == 0;
+        chomp $out;
+        $container_id = $out;
+    }
 
-  $SIG{INT} = \&kill_docker_container;
+    $SIG{INT} = \&kill_docker_container;
 }
 
 my @test_runners = (qw<
-  yaml-test-parse-yamlref
-  yaml-test-parse-hsref
-  yaml-test-parse-libyaml
-  yaml-test-parse-libfyaml
-  yaml-test-parse-goyaml
-  yaml-test-parse-pyyaml
-  yaml-test-parse-yamlpp
-  yaml-test-parse-npmyaml
-  yaml-test-parse-nimyaml
-  yaml-test-parse-hsyaml
-  yaml-test-parse-snake
-  yaml-test-parse-dotnet
-  yaml-test-parse-ruamel
+    yaml-test-parse-yamlref
+    yaml-test-parse-hsref
+    yaml-test-parse-libyaml
+    yaml-test-parse-libfyaml
+    yaml-test-parse-goyaml
+    yaml-test-parse-pyyaml
+    yaml-test-parse-yamlpp
+    yaml-test-parse-npmyaml
+    yaml-test-parse-nimyaml
+    yaml-test-parse-hsyaml
+    yaml-test-parse-snake
+    yaml-test-parse-dotnet
+    yaml-test-parse-ruamel
 >);
 
 my @tag_names = (qw<
-  alias
-  anchor
-  binary
-  comment
-  complex-key
-  directive
-  double
-  duplicate-key
-  edge
-  empty
-  empty-key
-  error
-  explicit-key
-  flow
-  folded
-  footer
-  header
-  indent
-  literal
-  local-tag
-  mapping
-  missing
-  scalar
-  sequence
-  simple
-  single
-  spec
-  tag
-  unknown-tag
-  whitespace
+    alias
+    anchor
+    binary
+    comment
+    complex-key
+    directive
+    double
+    duplicate-key
+    edge
+    empty
+    empty-key
+    error
+    explicit-key
+    flow
+    folded
+    footer
+    header
+    indent
+    literal
+    local-tag
+    mapping
+    missing
+    scalar
+    sequence
+    simple
+    single
+    spec
+    tag
+    unknown-tag
+    whitespace
 >);
 
 main->new->run([@ARGV]);
 
 sub make {
-  my ($self) = @_;
+    my ($self) = @_;
 
-  my $id = $self->{ID};
-  my $data = $self->{data};
+    my $id = $self->{ID};
+    my $data = $self->{data};
 
-  my $name = $self->{name};
+    my $name = $self->{name};
 
-  my $skip = $data->{skip} ? 'X' : '';
+    my $skip = $data->{skip} ? 'X' : '';
 
-  my $yaml = $data->{yaml};
-  $yaml =~ s/"/""/g;
-  $yaml = qq{"$yaml"};
+    my $yaml = $data->{yaml};
+    $yaml =~ s/"/""/g;
+    $yaml = qq{"$yaml"};
 
-  my $tree = $data->{tree};
-  $tree =~ s/"/""/g;
-  chomp $tree;
-  $tree = qq{"$tree"};
-  $tree = 'ERROR' if $data->{fail};
+    my $tree = $data->{tree};
+    $tree =~ s/"/""/g;
+    chomp $tree;
+    $tree = qq{"$tree"};
+    $tree = 'ERROR' if $data->{fail};
 
-  my $play = $self->play_url($data->{yaml});
+    my $play = $self->play_url($data->{yaml});
 
-  print STDERR "\r\e[K$id";
-  my @test = $self->run_tests($data->{yaml});
-  my @tags = $self->get_tags($data->{tags});
+    print STDERR "\r\e[K$id";
+    my @test = $self->run_tests($data->{yaml});
+    my @tags = $self->get_tags($data->{tags});
 
-  my $tsv = encode_utf8 join("\t",
-    (
-      $play,
-      $id,
-      $name,
-      $yaml,
-      $tree,
-      @test,
-      @tags,
-    )
-  ) . "\n";
+    my $tsv = encode_utf8 join("\t",
+        (
+            $play,
+            $id,
+            $name,
+            $yaml,
+            $tree,
+            @test,
+            @tags,
+        )
+    ) . "\n";
 
-  print $tsv;
+    print $tsv;
 }
 
 sub run_tests {
-  my ($self, $yaml) = @_;
-  $yaml = $self->unescape($yaml);
+    my ($self, $yaml) = @_;
+    $yaml = $self->unescape($yaml);
 
-  if (not $ENV{YTS_TEST_RUNNER}) {
-    return ('') x scalar(@test_runners);
-  }
-  my ($out, $err, $rc) = capture {
-    open my $pipe, '|-',
-      "docker exec -i $container_id /host/bin/run-all-parsers @test_runners"
-        or die;
-    print $pipe encode_utf8($yaml);
-    close $pipe;
-    return 0;
-  };
-  die "docker run failed:\nrc: $rc\nstdout:\n$out\nstderr:\n$err\n"
-    unless $rc == 0;
+    if (not $ENV{YTS_TEST_RUNNER}) {
+        return ('') x scalar(@test_runners);
+    }
+    my ($out, $err, $rc) = capture {
+        open my $pipe, '|-',
+            "docker exec -i $container_id /host/bin/run-all-parsers @test_runners"
+                or die;
+        print $pipe encode_utf8($yaml);
+        close $pipe;
+        return 0;
+    };
+    die "docker run failed:\nrc: $rc\nstdout:\n$out\nstderr:\n$err\n"
+        unless $rc == 0;
 
-  my @tests = split /\t/, "$out\tEND";
-  pop @tests;
-  return @tests;
+    my @tests = split /\t/, "$out\tEND";
+    pop @tests;
+    return @tests;
 }
 
 sub get_tags {
-  my ($self, $tags) = @_;
-  $tags ||= '';
-  my @tags = split /\s+/, $tags;
-  my @list;
-  for my $tag (@tag_names) {
-    if (grep {$_ eq $tag} @tags) {
-      push @list, 'x';
+    my ($self, $tags) = @_;
+    $tags ||= '';
+    my @tags = split /\s+/, $tags;
+    my @list;
+    for my $tag (@tag_names) {
+        if (grep {$_ eq $tag} @tags) {
+            push @list, 'x';
+        }
+        else {
+            push @list, '';
+        }
     }
-    else {
-      push @list, '';
-    }
-  }
-  return @list;
+    return @list;
 }
 
 sub final {
-  my ($self) = @_;
-  print STDERR "\r\e[K\n\nWrote $self->{make} rows.\n";
+    my ($self) = @_;
+    print STDERR "\r\e[K\n\nWrote $self->{make} rows.\n";
 }
