@@ -56,6 +56,30 @@ Also these are used in test event output:
 * `<SPC>` for a space character
 * `<TAB>` for a tab character
 
+## The `data` branch files
+
+The YAML test files in the `src/` dir are turned into data files in the `data`
+branch.
+The `make data-update` command generates the `data` branch files under the
+`./data/` directory.
+For instance, a file `src/AB3D.yaml` will generate a `data/AB3D/` directory.
+
+A YAML test file can have 1 or more tests.
+Originally each file had one test, and all the data files were under
+`data/AB3D/`.
+If a YAML test file has more than one test, subdirectories are created:
+`data/AB3D/00/`, `data/AB3D/01/`, `data/AB3D/02/`, etc.
+
+The test files are:
+
+* `===` -- The name/label of the test
+* `in.yaml` -- The YAML input to be parsed or loaded
+* `test.event` -- The event DSL produced by the parser test program
+* `in.json` -- The JSON value that shoiuld load the same as `in.yaml`
+* `out.yaml` -- The most normal output a dumper would produce
+* `error` -- This file indicates the YAML should fail to parse
+* `emit.yaml` -- Output an emitter would produce
+
 ## Makefile Targets
 
 The Makefile has a number of targets for automating the process of adding new
