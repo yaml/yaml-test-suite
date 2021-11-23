@@ -2,77 +2,91 @@
 
 set -e -u -o pipefail
 
-die() ( echo "$*" >&2; exit 1 )
-warn() ( echo "$*" >&2 )
+main() (
+  id=$ID
+  tmp=/tmp/test/$id
 
-[[ -f /.dockerenv ]] || die "Not in docker"
+  set -- $RUNNERS
 
-rm -fr /tmp/*
+  run-all-parsers "$@"
 
-cat > /tmp/input.yaml
+  write-tsv-line "$@"
+)
 
-for parser; do
-  (
-    "$parser" \
-      < /tmp/input.yaml \
-      > "/tmp/$parser.stdout" \
-      2> "/tmp/$parser.stderr" ||
-      touch "/tmp/$parser.err"
-  ) &
-done
+run-all-parsers() (
 
-wait
+  cat > "$tmp-input.yaml"
 
-# sleep 9999
-# grep -q invalid /tmp/input.yaml && sleep 9999
+  for parser; do
+    (
+      "$parser" \
+        < "$tmp-input.yaml" \
+        > "$tmp-$parser.stdout" \
+        2> "$tmp-$parser.stderr" ||
+        touch "$tmp-$parser.err"
+    ) &
+  done
 
-refparser=$1
-shift
+  wait
+)
 
-if [[ -e /tmp/$refparser.err ]]; then
-  want=''
-else
-  want=$(< "/tmp/$refparser.stdout")
-fi
+write-tsv-line() (
+  refparser=$1
+  shift
 
-out=''
-for parser; do
-  if [[ -e /tmp/$parser.err ]]; then
-    got=''
-  elif [[
-    -s /tmp/$parser.stderr &&
-    $(< "/tmp/$parser.stdout") != *-STR
-  ]]; then
-    got=''
+  if [[ -e $tmp-$refparser.err ]]; then
+    want=''
   else
-    got=$(grep -v '=COMMENT' < "/tmp/$parser.stdout" || true)
+    want=$(< "$tmp-$refparser.stdout")
   fi
 
-  if [[ $parser == yaml-test-parse-hsref ]]; then
-    [[ $got =~ (=ERR|=REST) ]] && got=''
-    if [[ $got && $want ]]; then
-      out+=$'\t'
-    elif [[ ! $got && ! $want ]]; then
-      out+=$'\t'
+  out=''
+  for parser; do
+    if [[ -e $tmp-$parser.err ]]; then
+      got=''
+    elif [[
+      -s $tmp-$parser.stderr &&
+      $(< "$tmp-$parser.stdout") != *-STR
+    ]]; then
+      got=''
     else
-      out+=$'\tx'
+      got=$(grep -v '=COMMENT' < "$tmp-$parser.stdout" || true)
     fi
-  else
-    [[ $got =~ $'\n'-STR$ ]] || got=''
-    if [[ $got == "$want" ]]; then
-      out+=$'\t'
-    else
-      got=${got//+MAP\ \{\}/+MAP}
-      got=${got//+SEQ\ \[\]/+SEQ}
-      want2=${want//+MAP\ \{\}/+MAP}
-      want2=${want2//+SEQ\ \[\]/+SEQ}
-      if [[ $got == "$want2" ]]; then
+
+    if [[ $parser == yaml-test-parse-refhs ]]; then
+      [[ $got =~ (=ERR|=REST) ]] && got=''
+      if [[ $got && $want ]]; then
+        out+=$'\t'
+      elif [[ ! $got && ! $want ]]; then
         out+=$'\t'
       else
         out+=$'\tx'
       fi
+    else
+      [[ $got =~ $'\n'-STR$ ]] || got=''
+      if [[ $got == "$want" ]]; then
+        out+=$'\t'
+      else
+        got=${got//+MAP\ \{\}/+MAP}
+        got=${got//+SEQ\ \[\]/+SEQ}
+        want2=${want//+MAP\ \{\}/+MAP}
+        want2=${want2//+SEQ\ \[\]/+SEQ}
+        if [[ $got == "$want2" ]]; then
+          out+=$'\t'
+        else
+          out+=$'\tx'
+        fi
+      fi
     fi
-  fi
-done
+  done
 
-printf '%s' "$out"
+  printf '%s' "$out"
+)
+
+warn() ( echo "$*" >&2 )
+
+die() ( echo "$*" >&2; exit 1 )
+
+[[ -f /.dockerenv ]] || die "Not in docker"
+
+main "$@"

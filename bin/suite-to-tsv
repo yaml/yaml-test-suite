@@ -7,17 +7,17 @@ use base 'YAMLTestSuite';
 use Capture::Tiny ':all';
 use Cwd;
 use Encode;
+use XXX;
 
 my $container_id;
 
 sub kill_docker_container {
-    delete $SIG{INT};
     if ($container_id) {
         my ($out, $err, $rc) = capture {
             system("docker kill $container_id");
         };
-        die "docker kill failed" unless $rc == 0;
     }
+    exit;
 }
 
 END {
@@ -25,10 +25,18 @@ END {
 }
 
 BEGIN {
+    `rm -fr /tmp/test`;
+    mkdir "/tmp/test" or die;
+
     if ($ENV{YTS_TEST_RUNNER}) {
         my $cwd = getcwd;
         my ($out, $err, $rc) = capture {
-            system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.1.0 sleep 600");
+            system(
+                "docker run -d " .
+                "-v $cwd:/host " .
+                "-v /tmp/test:/tmp/test " .
+                "yamlio/yaml-test-runtimes:0.1.1 " .
+                "sleep 600");
         };
         die "docker run failed" unless $rc == 0;
         chomp $out;
@@ -39,19 +47,20 @@ BEGIN {
 }
 
 my @test_runners = (qw<
-    yaml-test-parse-yamlref
-    yaml-test-parse-hsref
-    yaml-test-parse-libyaml
-    yaml-test-parse-libfyaml
-    yaml-test-parse-goyaml
-    yaml-test-parse-pyyaml
-    yaml-test-parse-yamlpp
-    yaml-test-parse-npmyaml
-    yaml-test-parse-nimyaml
-    yaml-test-parse-hsyaml
-    yaml-test-parse-snake
+    yaml-test-parse-refparse
+    yaml-test-parse-refhs
     yaml-test-parse-dotnet
+    yaml-test-parse-goyaml
+    yaml-test-parse-hsyaml
+    yaml-test-parse-libfyaml
+    yaml-test-parse-libyaml
+    yaml-test-parse-luayaml
+    yaml-test-parse-nimyaml
+    yaml-test-parse-npmyaml
+    yaml-test-parse-ppyaml
+    yaml-test-parse-pyyaml
     yaml-test-parse-ruamel
+    yaml-test-parse-snake
 >);
 
 my @tag_names = (qw<
@@ -112,9 +121,9 @@ sub make {
     my $play = $self->play_url($data->{yaml});
 
     print STDERR "\r\e[K$id";
-    my @test = $self->run_tests($data->{yaml});
-    # use XXX; XXX @test;
+    my @test = $self->run_tests($id, $data->{yaml});
     my @tags = $self->get_tags($data->{tags});
+    # XXX @test if $id eq '26DV';
 
     my $tsv = encode_utf8 join("\t",
         (
@@ -132,7 +141,7 @@ sub make {
 }
 
 sub run_tests {
-    my ($self, $yaml) = @_;
+    my ($self, $id, $yaml) = @_;
     $yaml = $self->unescape($yaml);
 
     if (not $ENV{YTS_TEST_RUNNER}) {
@@ -140,13 +149,18 @@ sub run_tests {
     }
     my ($out, $err, $rc) = capture {
         open my $pipe, '|-',
-            "docker exec -i $container_id /host/bin/run-all-parsers @test_runners"
+            "docker exec -i " .
+            "--env ID=$id " .
+            "--env RUNNERS='@test_runners' " .
+            "$container_id " .
+            "/host/bin/run-all-parsers"
                 or die;
         print $pipe encode_utf8($yaml);
         close $pipe;
         return 0;
     };
-    # warn $err;
+
+    # warn $err; # XXX
 
     die "docker run failed:\nrc: $rc\nstdout:\n$out\nstderr:\n$err\n"
         unless $rc == 0;
