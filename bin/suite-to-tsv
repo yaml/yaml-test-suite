@@ -28,14 +28,14 @@ BEGIN {
     if ($ENV{YTS_TEST_RUNNER}) {
         my $cwd = getcwd;
         my ($out, $err, $rc) = capture {
-            system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.0.7 sleep 600");
+            system("docker run -d -v $cwd:/host yamlio/yaml-test-runtimes:0.1.0 sleep 600");
         };
         die "docker run failed" unless $rc == 0;
         chomp $out;
         $container_id = $out;
+        $SIG{INT} = \&kill_docker_container;
+        system("docker exec $container_id apk add bash 2>&1 >/dev/null") == 0 or die;
     }
-
-    $SIG{INT} = \&kill_docker_container;
 }
 
 my @test_runners = (qw<
@@ -113,6 +113,7 @@ sub make {
 
     print STDERR "\r\e[K$id";
     my @test = $self->run_tests($data->{yaml});
+    # use XXX; XXX @test;
     my @tags = $self->get_tags($data->{tags});
 
     my $tsv = encode_utf8 join("\t",
@@ -145,6 +146,8 @@ sub run_tests {
         close $pipe;
         return 0;
     };
+    # warn $err;
+
     die "docker run failed:\nrc: $rc\nstdout:\n$out\nstderr:\n$err\n"
         unless $rc == 0;
 

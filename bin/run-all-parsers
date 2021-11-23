@@ -3,6 +3,7 @@
 set -e -u -o pipefail
 
 die() ( echo "$*" >&2; exit 1 )
+warn() ( echo "$*" >&2 )
 
 [[ -f /.dockerenv ]] || die "Not in docker"
 
@@ -11,35 +12,41 @@ rm -fr /tmp/*
 cat > /tmp/input.yaml
 
 for parser; do
-  ("$parser" < /tmp/input.yaml > "/tmp/$parser" 2> "/tmp/$parser.err" || true) &
+  (
+    "$parser" \
+      < /tmp/input.yaml \
+      > "/tmp/$parser.stdout" \
+      2> "/tmp/$parser.stderr" ||
+      touch "/tmp/$parser.err"
+  ) &
 done
+
 wait
+
+# sleep 9999
+# grep -q invalid /tmp/input.yaml && sleep 9999
 
 refparser=$1
 shift
 
-if [[ -s /tmp/$refparser.err ]]; then
+if [[ -e /tmp/$refparser.err ]]; then
   want=''
 else
-  want=$(< "/tmp/$refparser")
+  want=$(< "/tmp/$refparser.stdout")
 fi
-
-#   (
-#     echo "$refparser"
-#     echo "${#want}"
-#     echo "${want//\ /_}"
-#   ) >&2
-
 
 out=''
 for parser; do
-  got=$(< "/tmp/$parser")
-
-#   [[ $parser == c-libfyaml-event ]] && (
-#     echo "$parser"
-#     echo "${#got}"
-#     echo "${got//\ /_}"
-#   ) >&2
+  if [[ -e /tmp/$parser.err ]]; then
+    got=''
+  elif [[
+    -s /tmp/$parser.stderr &&
+    $(< "/tmp/$parser.stdout") != *-STR
+  ]]; then
+    got=''
+  else
+    got=$(grep -v '=COMMENT' < "/tmp/$parser.stdout" || true)
+  fi
 
   if [[ $parser == yaml-test-parse-hsref ]]; then
     [[ $got =~ (=ERR|=REST) ]] && got=''
@@ -55,8 +62,10 @@ for parser; do
     if [[ $got == "$want" ]]; then
       out+=$'\t'
     else
-      want2=${want//\ \{\}/}
-      want2=${want2//\ \[\]/}
+      got=${got//+MAP\ \{\}/+MAP}
+      got=${got//+SEQ\ \[\]/+SEQ}
+      want2=${want//+MAP\ \{\}/+MAP}
+      want2=${want2//+SEQ\ \[\]/+SEQ}
       if [[ $got == "$want2" ]]; then
         out+=$'\t'
       else
@@ -66,4 +75,4 @@ for parser; do
   fi
 done
 
-printf "$out"
+printf '%s' "$out"
