@@ -1,5 +1,13 @@
 #!/usr/bin/env perl
 
+#------------------------------------------------------------------------------
+#
+# This program turns all the tests in the src/ directory into TestML tests
+# under a testml/ directory.
+# It is run by the `make testml` command.
+#
+#------------------------------------------------------------------------------
+
 use strict; use warnings;
 use FindBin;
 use lib $FindBin::Bin;

@@ -1,5 +1,16 @@
 #!/usr/bin/env perl
 
+#------------------------------------------------------------------------------
+#
+# This program turns the all tests under src/ into a TSV format that can be
+# copy/pasted into a Google sheet.
+#
+# It is called by `make export` which writes the TSV into `export.tsv`.
+# If you use `make run-tests export` it will run each test against each
+# supported parser and add any failure indicators to the TSV data.
+#
+#------------------------------------------------------------------------------
+
 use strict; use warnings;
 use FindBin;
 use lib $FindBin::Bin;

@@ -1,5 +1,12 @@
 #!/usr/bin/env perl
 
+#------------------------------------------------------------------------------
+#
+# This program turn all the tests under the src/ directory into test data files
+# under the `data` directory.
+#
+#------------------------------------------------------------------------------
+
 use strict; use warnings;
 use FindBin;
 use lib $FindBin::Bin;

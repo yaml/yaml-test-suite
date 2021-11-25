@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+#------------------------------------------------------------------------------
+#
+# This program runs inside a Docker container that contains every known YAML
+# parser that supports the parse event DSL output.
+#
+# It is used to run every test in the suite against each YAML parser.
+#
+#------------------------------------------------------------------------------
+
 set -e -u -o pipefail
 
 main() (
