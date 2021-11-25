@@ -7,7 +7,6 @@ use base 'YAMLTestSuite';
 use Capture::Tiny ':all';
 use Cwd;
 use Encode;
-use XXX;
 
 my $container_id;
 
@@ -123,7 +122,6 @@ sub make {
     print STDERR "\r\e[K$id";
     my @test = $self->run_tests($id, $data->{yaml});
     my @tags = $self->get_tags($data->{tags});
-    # XXX @test if $id eq '26DV';
 
     my $tsv = encode_utf8 join("\t",
         (
@@ -160,13 +158,11 @@ sub run_tests {
         return 0;
     };
 
-    # warn $err; # XXX
-
     die "docker run failed:\nrc: $rc\nstdout:\n$out\nstderr:\n$err\n"
         unless $rc == 0;
 
-    my @tests = split /\t/, "$out\tEND";
-    pop @tests;
+    my @tests = split /\t/, $out, -1;
+
     return @tests;
 }
 
