@@ -1,8 +1,8 @@
 ---
 - name: Plain dashes in flow sequence
-  skip: true
   from: '@ingydotnet'
   tags: flow sequence
+  fail: true
   yaml: |
     ---
     - [-, -]
@@ -10,21 +10,4 @@
     +STR
      +DOC ---
       +SEQ
-       +SEQ
-        =VAL :-
-        =VAL :-
-       -SEQ
-      -SEQ
-     -DOC
-    -STR
-  json: |
-    [
-      [
-        "-",
-        "-"
-      ]
-    ]
-  dump: |
-    ---
-    - - '-'
-      - '-'
+       +SEQ []
