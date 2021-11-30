@@ -23,11 +23,11 @@ main() (
 )
 
 run-all-parsers() (
-
   cat > "$tmp-input.yaml"
 
   for parser; do
     (
+      timeout 2 \
       "$parser" \
         < "$tmp-input.yaml" \
         > "$tmp-$parser.stdout" \
