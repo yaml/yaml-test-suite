@@ -93,7 +93,7 @@ data-diff: data
 	git -C $< add -Af . && \
 	 git -C $< diff --cached
 
-data-push: data
+data-push: data data-update
 	[[ $$(git -C $< status --short) ]] && \
 	( \
 	    git -C $< add -Af . && \
