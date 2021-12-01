@@ -26,7 +26,8 @@ sub main {
         $tree = '';
     }
     else {
-        $tree = refparser_events($yaml);
+        $tree =~ s/\A=//;
+        $tree =~ s/^\ +//gm;
     }
 
     my $ypp = YAML::PP->new(
@@ -121,20 +122,4 @@ sub yamlpp_events {
         $parser->parse_string($yaml);
     };
     return $events;
-}
-
-sub refparser_events {
-    my ($yaml) = @_;
-
-    my $parser = $ENV{YAML_REFERENCE_PARSER} ||
-            "$FindBin::Bin/../../yaml-reference-parser/perl/bin/yaml-parser";
-    -x $parser or die "'$parser' is not executable";
-
-    my ($out, $err) = capture {
-        open my $pipe, '|-', "$parser --events";
-        print $pipe $yaml;
-        close $pipe;
-    };
-
-    return decode_utf8($out);
 }
