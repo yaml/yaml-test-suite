@@ -1,0 +1,63 @@
+---
+- name: Leading tabs in double quoted
+  from: '@ingydotnet'
+  tags: double
+  yaml: |
+    "1 leading
+        \ttab"
+  tree: |-
+    +STR
+     +DOC
+      =VAL "1 leading \ttab
+     -DOC
+    -STR
+
+- yaml: |
+    "2 leading
+        \———»tab"
+  tree: |-
+    +STR
+     +DOC
+      =VAL "2 leading \ttab
+     -DOC
+    -STR
+
+- yaml: |
+    "3 leading
+        ————»tab"
+  tree: |-
+    +STR
+     +DOC
+      =VAL "3 leading tab
+     -DOC
+    -STR
+
+- yaml: |
+    "4 leading
+        \t  tab"
+  tree: |-
+    +STR
+     +DOC
+      =VAL "4 leading \t  tab
+     -DOC
+    -STR
+
+- yaml: |
+    "5 leading
+        \———»  tab"
+  tree: |-
+    +STR
+     +DOC
+      =VAL "5 leading \t  tab
+     -DOC
+    -STR
+
+- yaml: |
+    "6 leading
+        ————»  tab"
+  tree: |-
+    +STR
+     +DOC
+      =VAL "6 leading tab
+     -DOC
+    -STR
