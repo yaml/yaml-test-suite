@@ -80,6 +80,11 @@ write-tsv-line() (
         got=${got//+SEQ\ \[\]/+SEQ}
         want2=${want//+MAP\ \{\}/+MAP}
         want2=${want2//+SEQ\ \[\]/+SEQ}
+
+        # Ignore Go parser bug:
+        got=${got//+DOC\ ---/+DOC}
+        want2=${want2//+DOC\ ---/+DOC}
+
         if [[ $got == "$want2" ]]; then
           out+=$'\t'
         else
