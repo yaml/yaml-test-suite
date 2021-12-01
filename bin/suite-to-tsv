@@ -45,7 +45,7 @@ BEGIN {
                 "docker run -d " .
                 "-v $cwd:/host " .
                 "-v /tmp/test:/tmp/test " .
-                "yamlio/yaml-test-runtimes:0.1.1 " .
+                "yamlio/yaml-test-runtimes:$ENV{YAML_TEST_RUNTIMES_VERSION} " .
                 "sleep 600");
         };
         die "docker run failed" unless $rc == 0;

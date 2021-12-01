@@ -4,6 +4,17 @@ export ROOT := $(shell pwd)
 
 export PATH := $(ROOT)/bin:$(PATH)
 
+CONFIG_MK := $(ROOT)/../yaml-test-runtimes/Config.mk
+
+ifneq (,$(wildcard $(CONFIG_MK)))
+    include $(CONFIG_MK)
+    YAML_TEST_RUNTIMES_VERSION ?= $(TAG_MAIN)
+    export YAML_TEST_RUNTIMES_VERSION
+endif
+ifndef YAML_TEST_RUNTIMES_VERSION
+    $(error Set YAML_TEST_RUNTIMES_VERSION)
+endif
+
 BPAN := .bpan
 COMMON := ../yaml-common
 
