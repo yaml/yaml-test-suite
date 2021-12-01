@@ -8,11 +8,10 @@ CONFIG_MK := $(ROOT)/../yaml-test-runtimes/Config.mk
 
 ifneq (,$(wildcard $(CONFIG_MK)))
     include $(CONFIG_MK)
-    YAML_TEST_RUNTIMES_VERSION ?= $(TAG_MAIN)
-    export YAML_TEST_RUNTIMES_VERSION
+    YAML_TEST_RUNTIMES_VERSION := $(TAG_MAIN)
 endif
-ifndef YAML_TEST_RUNTIMES_VERSION
-    $(error Set YAML_TEST_RUNTIMES_VERSION)
+ifneq (,$(YAML_TEST_RUNTIMES_VERSION))
+    export YAML_TEST_RUNTIMES_VERSION
 endif
 
 BPAN := .bpan
@@ -62,7 +61,11 @@ import.tsv:
 export: export.tsv
 
 run-tests:
+ifndef YAML_TEST_RUNTIMES_VERSION
+	$(error Set YAML_TEST_RUNTIMES_VERSION)
+endif
 	$(eval override export YTS_TEST_RUNNER := true)
+	@true
 
 export.tsv:
 	time ./bin/suite-to-tsv $(SRC) > $@
