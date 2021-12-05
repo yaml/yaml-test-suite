@@ -54,7 +54,7 @@ for line in "${each[@]}"; do
     shift
   done
 
-  if [[ $group && $group == $_group ]]; then
+  if [[ $group && $group == "$_group" ]]; then
     more=1
   else
     more=''

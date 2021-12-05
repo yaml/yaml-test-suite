@@ -37,6 +37,7 @@ main() (
 )
 
 template() (
+  # shellcheck disable=SC1039
   cat <<...
 ---
 - name: <test title>
