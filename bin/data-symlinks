@@ -6,7 +6,7 @@ shopt -s globstar
 data=${1:-data}
 
 for dir in meta name tags; do
-  rm -fr "$data/$dir"
+  rm -fr "${data:?}/$dir"
   mkdir -p "$data/$dir"
 done
 
@@ -29,8 +29,7 @@ for file in "$data"/**/===; do
   [[ -e $data/name/$slug ]] ||
     ln -s "../$baseid" "$data/name/$slug"
   IFS=' ' read -r -a tags <<< "$(
-    cat "src/$baseid.yaml" |
-    grep '^  tags:' |
+    grep '^  tags:' < "src/$baseid.yaml" |
     cut -d: -f2
   )"
   for tag in "${tags[@]}"; do
