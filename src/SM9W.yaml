@@ -1,6 +1,7 @@
 ---
 - name: Single character streams
   from: '@ingydotnet'
+  tags: sequence
   yaml: |
     -∎
   tree: |
@@ -12,7 +13,8 @@
      -DOC
     -STR
 
-- yaml: |
+- tags: mapping
+  yaml: |
     :∎
   tree: |
     +STR

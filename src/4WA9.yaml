@@ -1,7 +1,7 @@
 ---
 - name: Literal scalars
   from: '@ingydotnet'
-  tags: literal
+  tags: indent literal
   yaml: |
     - aaa: |2
         xxx

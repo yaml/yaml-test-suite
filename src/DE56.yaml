@@ -1,6 +1,7 @@
 ---
 - name: Trailing tabs in double quoted
   from: '@ingydotnet'
+  tags: double whitespace
   yaml: |
     "1 trailing\t
         tab"

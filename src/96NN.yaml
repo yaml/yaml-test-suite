@@ -1,7 +1,7 @@
 ---
 - name: Leading tab content in literals
   from: '@ingydotnet'
-  tags: indent literal
+  tags: indent literal whitespace
   yaml: |
     foo: |-
      ——»bar

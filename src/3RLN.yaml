@@ -1,7 +1,7 @@
 ---
 - name: Leading tabs in double quoted
   from: '@ingydotnet'
-  tags: double
+  tags: double whitespace
   yaml: |
     "1 leading
         \ttab"
