@@ -2,7 +2,7 @@
 
 set -e -u -o pipefail
 
-data=$1
+data=${1:-data}
 
 for dir in meta name tags; do
   rm -fr "$data/$dir"
