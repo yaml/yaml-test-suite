@@ -7,10 +7,12 @@
 #
 #------------------------------------------------------------------------------
 
+# shellcheck disable=2034
 version=0.0.8
 
 RUN_OR_DOCKER_PULL=true
 
+# shellcheck disable=1090
 source "${ROOT:-$PWD}/.bpan/run-or-docker.bash"
 
 check() (

@@ -1,4 +1,5 @@
 SHELL := bash
+SHELL_FILES := $(shell file --mime-type bin/* | grep text/x-shellscript | cut -d: -f1)
 
 export ROOT := $(shell pwd)
 
@@ -49,7 +50,7 @@ test:
 	make clean
 
 style-check:
-	file --mime-type bin/* | grep text/x-shellscript | cut -d: -f1 | xargs shellcheck
+	shellcheck $(SHELL_FILES)
 
 add-new:
 	for f in new/*; do cp "$$f" "src/$${f#*-}"; done

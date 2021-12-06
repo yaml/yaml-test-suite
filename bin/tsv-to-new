@@ -59,6 +59,7 @@ for line in "${each[@]}"; do
   else
     more=''
     id=$("$bin/new-test-id")
+    # TODO
     while [[ -f $dir/$id*.yaml ]]; do
       id=$("$bin/new-test-id")
     done
