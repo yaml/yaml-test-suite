@@ -8,8 +8,8 @@
 # It is used to run every test in the suite against each YAML parser.
 #
 #------------------------------------------------------------------------------
-# shellcheck disable=SC2030
-# shellcheck disable=SC2031
+# shellcheck disable=2030
+# shellcheck disable=2031
 
 set -e -u -o pipefail
 
@@ -17,7 +17,8 @@ main() (
   id=$ID
   tmp=/tmp/test/$id
 
-  set -- "$RUNNERS"
+  # shellcheck disable=2086
+  set -- $RUNNERS
 
   run-all-parsers "$@"
 
