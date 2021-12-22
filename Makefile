@@ -43,7 +43,7 @@ test:
 	make data
 	make clean
 	make data-update
-	make data-diff
+	GIT_PAGER=cat make data-diff
 	make data-status
 	make clean
 	make gh-pages
