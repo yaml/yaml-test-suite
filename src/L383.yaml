@@ -16,5 +16,7 @@
     -STR
   json: |
     "foo"
+    "foo"
   dump: |
+    --- foo
     --- foo

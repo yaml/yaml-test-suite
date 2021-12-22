@@ -10,6 +10,8 @@
       =VAL "1 inline\ttab
      -DOC
     -STR
+  json: |
+    "1 inline\ttab"
 
 - yaml: |
     "2 inline\——»tab"
@@ -19,6 +21,8 @@
       =VAL "2 inline\ttab
      -DOC
     -STR
+  json: |
+    "2 inline\ttab"
 
 - yaml: |
     "3 inline———»tab"
@@ -28,3 +32,5 @@
       =VAL "3 inline\ttab
      -DOC
     -STR
+  json: |
+    "3 inline\ttab"

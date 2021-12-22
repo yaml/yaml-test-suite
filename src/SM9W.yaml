@@ -12,6 +12,8 @@
       -SEQ
      -DOC
     -STR
+  json: |
+    [null]
 
 - tags: mapping
   yaml: |
@@ -25,3 +27,4 @@
       -MAP
      -DOC
     -STR
+  json: null

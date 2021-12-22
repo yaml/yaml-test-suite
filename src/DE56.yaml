@@ -11,6 +11,8 @@
       =VAL "1 trailing\t tab
      -DOC
     -STR
+  json: |
+    "1 trailing\t tab"
 
 - yaml: |
     "2 trailing\t␣␣
@@ -21,6 +23,8 @@
       =VAL "2 trailing\t tab
      -DOC
     -STR
+  json: |
+    "2 trailing\t tab"
 
 - yaml: |
     "3 trailing\————»
@@ -31,6 +35,8 @@
       =VAL "3 trailing\t tab
      -DOC
     -STR
+  json: |
+    "3 trailing\t tab"
 
 - yaml: |
     "4 trailing\————»␣␣
@@ -41,6 +47,8 @@
       =VAL "4 trailing\t tab
      -DOC
     -STR
+  json: |
+    "4 trailing\t tab"
 
 - yaml: |
     "5 trailing—»
@@ -51,6 +59,8 @@
       =VAL "5 trailing tab
      -DOC
     -STR
+  json: |
+    "5 trailing tab"
 
 - yaml: |
     "6 trailing—»␣␣
@@ -61,3 +71,5 @@
       =VAL "6 trailing tab
      -DOC
     -STR
+  json: |
+    "6 trailing tab"

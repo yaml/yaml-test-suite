@@ -14,6 +14,8 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {"foo":"\tbar"}
 
 - yaml: |
     foo: |-
