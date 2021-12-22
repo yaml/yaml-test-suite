@@ -30,8 +30,7 @@ docker:
 	@true
 
 docker-build:
-	$(eval override export RUN_OR_DOCKER := force-build)
-	@true
+	RUN_OR_DOCKER=force-build suite-to-data
 
 verbose:
 	$(eval override export RUN_OR_DOCKER_VERBOSE := true)
