@@ -29,8 +29,8 @@ main->new->run([@ARGV]);
 sub make {
     my ($self) = @_;
 
-    my ($id, $ID, $num, $data, $cache, $multi) =
-        @$self{qw<id ID num data cache multi>};
+    my ($id, $ID, $num, $data, $multi) =
+        @$self{qw<id ID num data multi>};
 
     my $dir = "data/$id";
     mkdir $dir unless -d $dir;
@@ -41,17 +41,13 @@ sub make {
     }
 
     for my $k (sort keys %map) {
-        if (exists $data->{$k} and not defined $data->{$k}) {
-            delete $cache->{$k};
-            next;
-        }
-        $_ = $data->{$k} // $cache->{$k};
+        $_ = $data->{$k};
         if (defined $_) {
-            $cache->{$k} = $_;
             if ($k eq 'name') {
                 $_ .= "\n";
             }
             elsif ($k eq 'fail') {
+                next unless $_;
                 $_ = '';
             }
             elsif ($k eq 'tree') {

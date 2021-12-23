@@ -37,12 +37,8 @@ sub make {
     my ($id, $ID, $num, $data) =
         @$self{qw<id ID num data>};
 
-    $name = '' if $num eq '00';
-    $name = $data->{name} if $data->{name};
-    die "No name for $ID" unless $name;
-
-    my ($yaml, $tree, $fail) =
-        @$data{qw<yaml tree fail>};
+    my ($name, $yaml, $tree, $fail) =
+        @$data{qw<name yaml tree fail>};
 
     $yaml =~ s/^(.)/    $1/gm;
     $tree =~ s/^\ +//gm;

@@ -114,7 +114,7 @@ sub make {
     my $id = $self->{ID};
     my $data = $self->{data};
 
-    my $name = $self->{name};
+    my $name = $data->{name};
 
     my $skip = $data->{skip} ? 'X' : '';
 

@@ -40,36 +40,49 @@ sub run {
     for my $file (@$files) {
         $self->{file}++;
 
-        ($self->{id} = $file) =~ s{^.*/(.*)\.yaml$}{$1};
+        $file =~ m{^.*/(.*)\.yaml$} or die;
+        $self->{id} = $1;
 
         my $data = $ypp->load_file($file);
 
-        if ($data->[0]{skip}) {
-            if ($self->skip) {
-                $self->{skip}++;
-                next;
-            }
+        if ($data->[0]{skip} and $self->skip) {
+            $self->{skip}++;
+            next;
         }
 
-        my $multi = $self->{multi} = @$data > 1;
-
+        my $multi = $self->{multi} = (@$data > 1) || 0;
         my $l = $multi
             ? int(log(@$data - 1) / log(10)) + 2
             : 2;
-        $self->{cache} = {};
-        delete $self->{num};
+        my $cache = {};
         my $i = 0;
-        my $name = '';
+
         for my $test (@$data) {
-            $self->{num} = sprintf "%0${l}d", $i++;
-            $name = $self->{name} = $test->{name} || $name;
+            $self->{make}++;
             $self->{data} = $test;
+            $self->{num} = sprintf "%0${l}d", $i++;
             $self->{ID} = $multi
                 ? "$self->{id}-$self->{num}"
                 : $self->{id};
+
+            $test->{name} ||= $cache->{name} or die;
+            $test->{yaml} ||= $cache->{yaml} or die;
+            $test->{fail} = exists $test->{fail} ? 1 : 0;
+
+            for my $key (qw< tree json dump emit toke >) {
+                if (
+                    not exists $test->{$key} and
+                    defined $cache->{$key}
+                ) {
+                    $test->{$key} = $cache->{$key};
+                }
+            }
+
+            $cache = { %$test };
+
             $self->make;
-            $self->{make}++;
         }
+
         $self->done;
     }
 
