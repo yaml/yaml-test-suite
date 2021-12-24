@@ -1,0 +1,28 @@
+---
+- name: Flow mapping edge cases
+  from: '@ingydotnet'
+  tags: edge flow mapping
+  yaml: |
+    {"x"
+    : y}
+  tree: |-
+    +STR
+     +DOC
+      +MAP {}
+       =VAL "x
+       =VAL :y
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    {x: :x}
+  tree: |-
+    +STR
+     +DOC
+      +MAP {}
+       =VAL :x
+       =VAL ::x
+      -MAP
+     -DOC
+    -STR

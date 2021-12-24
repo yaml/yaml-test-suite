@@ -1,0 +1,52 @@
+---
+- name: Directive variants
+  from: '@ingydotnet'
+  tags: directive
+  yaml: |
+    %YAML  1.1
+    ---
+  tree: |-
+    +STR
+     +DOC ---
+      =VAL :
+     -DOC
+    -STR
+
+- yaml: |
+    %YAML 1.1 #...
+    ---
+
+- yaml: |
+    %YAM 1.1
+    ---
+
+- yaml: |
+    %YAMLL 1.1
+    ---
+
+- yaml: |
+    %YAML———»1.1
+    ---
+
+- yaml: |
+    %YAML1.1
+    ---
+
+- yaml: |
+    %***
+    ---
+
+- yaml: |
+    %YAML 1.1 1.2
+    ---
+
+- yaml: |
+    %YAML 1.12345
+    ---
+
+- fail: true
+  yaml: |
+    %YAML 1.1#...
+    ---
+  tree: |
+    +STR

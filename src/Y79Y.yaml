@@ -1,0 +1,92 @@
+---
+- name: Tabs in various contexts
+  from: '@ingydotnet'
+  tags: whitespace
+  fail: true
+  yaml: |
+    foo: |
+    ————»
+    bar: 1
+  tree: |
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL |
+
+- yaml: |
+    foo: |
+     ———»
+    bar: 1
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL |\t\n
+       =VAL :bar
+       =VAL :1
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    - [
+    ————»
+     foo
+     ]
+  tree: |-
+    +STR
+     +DOC
+      +SEQ
+       +SEQ []
+        =VAL :foo
+       -SEQ
+      -SEQ
+     -DOC
+    -STR
+
+- fail: true
+  yaml: |
+    - [
+    ————»foo,
+     foo
+     ]
+  tree: |
+    +STR
+     +DOC
+      +SEQ
+       +SEQ []
+
+- fail: true
+  yaml: |
+    -———»-
+  tree: |
+    +STR
+     +DOC
+      =VAL :-———»-
+     -DOC
+    -STR
+
+- fail: true
+  yaml: |
+    - ——»-
+  tree: |
+    +STR
+     +DOC
+      +SEQ
+       =VAL :——»-
+      -SEQ
+     -DOC
+    -STR
+
+- yaml: |
+    -———»-1
+  tree: |-
+    +STR
+     +DOC
+      +SEQ
+       =VAL :-1
+      -SEQ
+     -DOC
+    -STR

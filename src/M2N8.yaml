@@ -1,0 +1,36 @@
+---
+- name: Question mark edge cases
+  from: '@ingydotnet'
+  tags: edge
+  yaml: |
+    - ? : x
+  tree: |-
+    +STR
+     +DOC
+      +SEQ
+       +MAP
+        +MAP
+         =VAL :
+         =VAL :x
+        -MAP
+        =VAL :
+       -MAP
+      -SEQ
+     -DOC
+    -STR
+
+- yaml: |
+    ? []: x
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       +MAP
+        +SEQ []
+        -SEQ
+        =VAL :x
+       -MAP
+       =VAL :
+      -MAP
+     -DOC
+    -STR
