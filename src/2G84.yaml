@@ -27,6 +27,8 @@
       =VAL |
      -DOC
     -STR
+  json: |
+    ""
 
 - yaml: |
     --- |1+∎

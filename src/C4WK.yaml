@@ -14,3 +14,7 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "x": "y"
+    }

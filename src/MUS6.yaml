@@ -11,6 +11,8 @@
       =VAL :
      -DOC
     -STR
+  json: |
+    null
 
 - yaml: |
     %YAML 1.1 #...

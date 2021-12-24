@@ -29,6 +29,11 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo": "\t\n",
+      "bar": 1
+    }
 
 - yaml: |
     - [
@@ -45,6 +50,12 @@
       -SEQ
      -DOC
     -STR
+  json: |
+    [
+      [
+        "foo"
+      ]
+    ]
 
 - fail: true
   yaml: |
@@ -90,3 +101,7 @@
       -SEQ
      -DOC
     -STR
+  json: |
+    [
+      -1
+    ]

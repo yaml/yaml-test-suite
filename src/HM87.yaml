@@ -12,6 +12,10 @@
       -SEQ
      -DOC
     -STR
+  json: |
+    [
+      ":x"
+    ]
 
 - yaml: |
     [?x]
@@ -23,3 +27,7 @@
       -SEQ
      -DOC
     -STR
+  json: |
+    [
+      "?x"
+    ]

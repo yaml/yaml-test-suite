@@ -17,3 +17,9 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "x": [
+        "x x"
+      ]
+    }

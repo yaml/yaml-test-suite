@@ -27,6 +27,10 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      ":": null
+    }
 
 - yaml: |
     !
@@ -36,3 +40,4 @@
       =VAL <!> :
      -DOC
     -STR
+  json: null
