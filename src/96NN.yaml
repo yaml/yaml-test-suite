@@ -20,12 +20,3 @@
 - yaml: |
     foo: |-
      ——»bar∎
-  tree: |
-    +STR
-     +DOC
-      +MAP
-       =VAL :foo
-       =VAL |\tbar
-      -MAP
-     -DOC
-    -STR

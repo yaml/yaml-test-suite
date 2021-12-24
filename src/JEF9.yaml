@@ -19,23 +19,7 @@
 - yaml: |
     - |+
     ␣␣␣
-  tree: |
-    +STR
-     +DOC
-      +SEQ
-       =VAL |
-      -SEQ
-     -DOC
-    -STR
 
 - yaml: |
     - |+
     ␣␣␣∎
-  tree: |
-    +STR
-     +DOC
-      +SEQ
-       =VAL |
-      -SEQ
-     -DOC
-    -STR
