@@ -54,12 +54,13 @@ for line in "${each[@]}"; do
     shift
   done
 
-  if [[ $group && $group == $_group ]]; then
+  if [[ $group && $group == "$_group" ]]; then
     more=1
   else
     more=''
     id=$("$bin/new-test-id")
-    while [[ -f $dir/$id*.yaml ]]; do
+    # TODO
+    while [[ -f $dir/$id.yaml ]]; do
       id=$("$bin/new-test-id")
     done
     : $((i++))

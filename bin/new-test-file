@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=2034
 version=0.0.1
 
+# shellcheck disable=1090
 source "${ROOT:-$PWD}/.bpan/run-or-docker.bash"
 
 check() (
@@ -37,6 +39,7 @@ main() (
 )
 
 template() (
+  # shellcheck disable=1039
   cat <<...
 ---
 - name: <test title>
