@@ -97,7 +97,7 @@ data-push: data data-update
 	( \
 	    git -C $< add -Af . && \
 	    COMMIT=$$(git rev-parse --short HEAD) && \
-	    git -C $< commit -m "Regenerated data from master $$COMMIT" && \
+	    git -C $< commit -m "Regenerated data from main $$COMMIT" && \
 	    git -C $< push origin data \
 	)
 
