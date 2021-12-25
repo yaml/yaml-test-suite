@@ -9,4 +9,4 @@
   tree: |
     +STR
      +DOC ---
-      +SEQ
+      +SEQ []

@@ -9,7 +9,7 @@
   tree: |
     +STR
      +DOC ---
-      +SEQ
+      +SEQ []
        =VAL :a
        =VAL :b
        =VAL :c
