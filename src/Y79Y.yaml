@@ -12,7 +12,6 @@
      +DOC
       +MAP
        =VAL :foo
-       =VAL |
 
 - yaml: |
     foo: |
@@ -75,7 +74,7 @@
   tree: |
     +STR
      +DOC
-      =VAL :-———»-
+      =VAL :-\t-
      -DOC
     -STR
 
@@ -86,7 +85,7 @@
     +STR
      +DOC
       +SEQ
-       =VAL :——»-
+       =VAL :-
       -SEQ
      -DOC
     -STR
