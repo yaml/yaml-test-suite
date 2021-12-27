@@ -8,7 +8,7 @@
   from: '@ingydotnet'
   tags: directive
   yaml: |
-    %YAM 1.1
+    %YAML1.1
     ---
   tree: |-
     +STR
@@ -18,14 +18,6 @@
     -STR
   json: |
     null
-
-- yaml: |
-    %YAMLL 1.1
-    ---
-
-- yaml: |
-    %YAML1.1
-    ---
 
 - yaml: |
     %***
