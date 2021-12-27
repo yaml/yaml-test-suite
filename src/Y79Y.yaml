@@ -67,6 +67,7 @@
      +DOC
       +SEQ
        +SEQ []
+  json: null
 
 - fail: true
   yaml: |
