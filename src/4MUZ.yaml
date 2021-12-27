@@ -20,3 +20,16 @@
     }
   emit: |
     "foo": "bar"
+
+- yaml: |
+    {"foo"
+    : bar}
+  tree: |-
+    +STR
+     +DOC
+      +MAP {}
+       =VAL "foo
+       =VAL :bar
+      -MAP
+     -DOC
+    -STR
