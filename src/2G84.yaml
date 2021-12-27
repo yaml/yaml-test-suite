@@ -12,12 +12,6 @@
 - fail: true
   yaml: |
     --- |10
-  tree: |
-    +STR
-     +DOC ---
-      =VAL |
-     -DOC
-    -STR
 
 - yaml: |
     --- |1-∎
