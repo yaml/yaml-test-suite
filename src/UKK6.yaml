@@ -1,7 +1,7 @@
 ---
 - name: Syntax character edge cases
   from: '@ingydotnet'
-  tags: edge
+  tags: edge empty-key
   yaml: |
     - :
   tree: |-
