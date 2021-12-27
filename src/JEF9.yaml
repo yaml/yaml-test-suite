@@ -1,6 +1,5 @@
 ---
-- skip: true
-  name: Trailing whitespace in streams
+- name: Trailing whitespace in streams
   from: '@ingydotnet'
   tags: literal
   yaml: |
@@ -11,14 +10,30 @@
     +STR
      +DOC
       +SEQ
-       =VAL |
+       =VAL |\n\n
       -SEQ
      -DOC
     -STR
+  json: |
+    [
+      "\n\n"
+    ]
 
 - yaml: |
     - |+
     ␣␣␣
+  tree: |
+    +STR
+     +DOC
+      +SEQ
+       =VAL |\n
+      -SEQ
+     -DOC
+    -STR
+  json: |
+    [
+      "\n"
+    ]
 
 - yaml: |
     - |+

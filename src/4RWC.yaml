@@ -1,6 +1,5 @@
 ---
-- skip: true
-  name: Trailing spaces after flow collection
+- name: Trailing spaces after flow collection
   tags: flow whitespace
   from: '@ingydotnet'
   yaml: |2
