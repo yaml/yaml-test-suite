@@ -14,6 +14,8 @@
     -STR
   json: |
     [null]
+  dump: |
+    -
 
 - tags: mapping
   yaml: |
@@ -28,3 +30,5 @@
      -DOC
     -STR
   json: null
+  dump: |
+    :

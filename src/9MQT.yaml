@@ -16,6 +16,8 @@
     "a ...x b"
   dump: |
     --- a ...x b
+  emit: |
+    --- "a ...x b"
 
 - fail: true
   yaml: |
@@ -25,3 +27,5 @@
   tree: |
     +STR
      +DOC ---
+  dump: null
+  emit: null

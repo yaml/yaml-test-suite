@@ -13,6 +13,8 @@
     -STR
   json: |
     "1 leading \ttab"
+  emit: |
+    "1 leading \ttab"
 
 - yaml: |
     "2 leading
@@ -24,6 +26,8 @@
      -DOC
     -STR
   json: |
+    "2 leading \ttab"
+  emit: |
     "2 leading \ttab"
 
 - yaml: |
@@ -37,6 +41,8 @@
     -STR
   json: |
     "3 leading tab"
+  emit: |
+    "3 leading tab"
 
 - yaml: |
     "4 leading
@@ -48,6 +54,8 @@
      -DOC
     -STR
   json: |
+    "4 leading \t  tab"
+  emit: |
     "4 leading \t  tab"
 
 - yaml: |
@@ -61,6 +69,8 @@
     -STR
   json: |
     "5 leading \t  tab"
+  emit: |
+    "5 leading \t  tab"
 
 - yaml: |
     "6 leading
@@ -72,4 +82,6 @@
      -DOC
     -STR
   json: |
+    "6 leading tab"
+  emit: |
     "6 leading tab"

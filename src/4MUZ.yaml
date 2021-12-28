@@ -33,3 +33,5 @@
       -MAP
      -DOC
     -STR
+  emit: |
+    "foo": bar

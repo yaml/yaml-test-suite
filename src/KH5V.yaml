@@ -23,6 +23,8 @@
     -STR
   json: |
     "2 inline\ttab"
+  dump: |
+    "2 inline\ttab"
 
 - yaml: |
     "3 inline———»tab"
@@ -33,4 +35,6 @@
      -DOC
     -STR
   json: |
+    "3 inline\ttab"
+  dump: |
     "3 inline\ttab"

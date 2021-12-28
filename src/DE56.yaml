@@ -13,6 +13,8 @@
     -STR
   json: |
     "1 trailing\t tab"
+  dump: |
+    "1 trailing\t tab"
 
 - yaml: |
     "2 trailing\t␣␣
@@ -24,6 +26,8 @@
      -DOC
     -STR
   json: |
+    "2 trailing\t tab"
+  dump: |
     "2 trailing\t tab"
 
 - yaml: |
@@ -37,6 +41,8 @@
     -STR
   json: |
     "3 trailing\t tab"
+  dump: |
+    "3 trailing\t tab"
 
 - yaml: |
     "4 trailing\————»␣␣
@@ -48,6 +54,8 @@
      -DOC
     -STR
   json: |
+    "4 trailing\t tab"
+  dump: |
     "4 trailing\t tab"
 
 - yaml: |
@@ -61,6 +69,8 @@
     -STR
   json: |
     "5 trailing tab"
+  dump: |
+    "5 trailing tab"
 
 - yaml: |
     "6 trailing—»␣␣
@@ -72,4 +82,6 @@
      -DOC
     -STR
   json: |
+    "6 trailing tab"
+  dump: |
     "6 trailing tab"

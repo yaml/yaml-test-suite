@@ -18,6 +18,9 @@
       -SEQ
      -DOC
     -STR
+  dump: |
+    - ? : x
+      :
 
 - yaml: |
     ? []: x
@@ -34,3 +37,6 @@
       -MAP
      -DOC
     -STR
+  dump: |
+    ? []: x
+    :

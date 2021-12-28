@@ -16,6 +16,9 @@
     -STR
   json: |
     {"foo":"\tbar"}
+  dump: |
+    foo: |-
+      ——»bar
 
 - yaml: |
     foo: |-

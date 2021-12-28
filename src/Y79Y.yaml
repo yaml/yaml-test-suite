@@ -33,6 +33,10 @@
       "foo": "\t\n",
       "bar": 1
     }
+  dump: |
+    foo: |
+      ———»
+    bar: 1
 
 - yaml: |
     - [
@@ -55,6 +59,8 @@
         "foo"
       ]
     ]
+  dump: |
+    - - foo
 
 - fail: true
   yaml: |
@@ -105,3 +111,5 @@
     [
       -1
     ]
+  dump: |
+    - -1
