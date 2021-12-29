@@ -25,15 +25,37 @@ To get a quick overview of the tests you can have a look at the [YAML Test
 Matrix](http://matrix.yaml.info/), made from
 <https://github.com/perlpunk/yaml-test-matrix>.
 
+## Usage
+
 The tests are available in 2 forms.
 Files in the `src` directory encode all the data for YAML using YAML.
-The data from these tests are also available in the `data` branch of the
-repository as plain text files.
+The data from these tests is also available in a form where each test
+has its own directory.
+
+For that, use the latest data release under
+[https://github.com/yaml/yaml-test-suite/releases](
+https://github.com/yaml/yaml-test-suite/releases):
+
+    git clone https://github.com/yaml/yaml-test-suite -b data-YYYY-MM-DD
+
+There are tests which have multiple similar subtests. Those subtests are
+in their own numeric directories under the parent id, e.g.:
+
+    VJP3/
+    VJP3/00
+    VJP3/00/===
+    VJP3/00/error
+    VJP3/00/in.yaml
+    VJP3/00/test.event
+    VJP3/01
+    ...
+
 
 The releases are made from the `data` branch, which is made from the data in
-the TestML in the `main` branch.
-You shouldn't use the data branch directly as the branch is squashed and force
-pushed from time to time.
+the YAML in the `main` branch.
+You shouldn't use the data branch directly as the branch contains unreleased
+commits which might be wrong, and it is squashed and force pushed from time to
+time.
 
 ### Special Characters
 
@@ -91,7 +113,7 @@ tests and also preprocessing them into the `data` branch.
 
 * `make data-update`
 
-  Update the `data` brnach directory with the latest info in the `src`
+  Update the `data` branch directory with the latest info in the `src`
   directory.
 
 * `make export`
