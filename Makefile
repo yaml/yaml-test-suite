@@ -101,12 +101,20 @@ data-push: data data-update
 	    git -C $< push origin data \
 	)
 
+data-flat: data
+	mkdir $@
+	find $< -name === | \
+	    sed 's/===//; s/$<\///' | \
+	    while read d; do \
+		cp -r $</$$d $@/$${d/\/0/-0}; \
+	    done
+
 common:
 	cp $(COMMON)/bpan/run-or-docker.bash $(BPAN)/
 
 clean:
 	rm -f export.tsv
-	rm -fr data gh-pages new testml
+	rm -fr data* gh-pages new testml
 	git worktree prune
 
 docker-push: docker-build
