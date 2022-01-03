@@ -1,0 +1,30 @@
+---
+- name: Trailing line of spaces
+  from: '@ingydotnet'
+  yaml: |
+    foo: |
+      x
+    ␣␣␣
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL |x\n \n
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    foo: |
+      x
+    ␣␣␣∎
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL |x\n \n
+      -MAP
+     -DOC
+    -STR

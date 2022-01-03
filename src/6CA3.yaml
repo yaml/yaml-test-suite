@@ -1,0 +1,13 @@
+---
+- name: Tab indented top flow
+  from: '@ingydotnet'
+  yaml: |
+    ————»[
+    ————»]
+  tree: |-
+    +STR
+     +DOC
+      +SEQ []
+      -SEQ
+     -DOC
+    -STR

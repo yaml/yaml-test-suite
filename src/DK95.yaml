@@ -1,0 +1,108 @@
+---
+- name: Tabs that look like indentation
+  from: '@ingydotnet'
+  yaml: |
+    foo:
+     ———»bar
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL :bar
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    foo: "bar
+    ————»baz"
+  fail: true
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+
+- yaml: |
+    foo: "bar
+      ——»baz"
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL "bar baz
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |2
+     ———»
+    foo: 1
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL :1
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    foo: 1
+    ————»
+    bar: 2
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL :1
+       =VAL :bar
+       =VAL :2
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    foo: 1
+     ———»
+    bar: 2
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL :1
+       =VAL :bar
+       =VAL :2
+      -MAP
+     -DOC
+    -STR
+
+- yaml: |
+    foo:
+      a: 1
+      ——»b: 2
+  fail: true
+  tree: |-
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       +MAP
+        =VAL :a
+        =VAL :1
+
+- yaml: |
+    %YAML 1.2
+    ————»
+    ---
+  tree: |-
+    +STR
+     +DOC ---
+      =VAL :
+     -DOC
+    -STR
