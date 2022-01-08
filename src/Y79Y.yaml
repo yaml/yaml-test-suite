@@ -78,24 +78,28 @@
 - fail: true
   yaml: |
     -———»-
-  tree: |
-    +STR
-     +DOC
-      =VAL :-\t-
-     -DOC
-    -STR
 
 - fail: true
   yaml: |
     - ——»-
-  tree: |
-    +STR
-     +DOC
-      +SEQ
-       =VAL :-
-      -SEQ
-     -DOC
-    -STR
+
+- fail: true
+  yaml: |
+    ?———»-
+
+- fail: true
+  yaml: |
+    ? -
+    :———»-
+
+- fail: true
+  yaml: |
+    ?———»key:
+
+- fail: true
+  yaml: |
+    ? key:
+    :———»key:
 
 - yaml: |
     -———»-1

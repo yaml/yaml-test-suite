@@ -24,7 +24,7 @@
 - yaml: |
     {"foo"
     : bar}
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP {}
@@ -35,3 +35,22 @@
     -STR
   emit: |
     "foo": bar
+
+- yaml: |
+    {foo
+    : bar}
+  tree: |
+    +STR
+     +DOC
+      +MAP {}
+       =VAL :foo
+       =VAL :bar
+      -MAP
+     -DOC
+    -STR
+  json: |
+    {
+      "foo": "bar"
+    }
+  emit: |
+    foo: bar
