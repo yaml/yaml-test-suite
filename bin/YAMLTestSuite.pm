@@ -69,7 +69,7 @@ sub run {
             $test->{yaml} ||= $cache->{yaml} or die;
             $test->{fail} = exists $test->{fail} ? 1 : 0;
 
-            for my $key (qw< tree json dump emit toke >) {
+            for my $key (qw< tags tree json dump emit toke >) {
                 if (
                     not exists $test->{$key} and
                     defined $cache->{$key}
