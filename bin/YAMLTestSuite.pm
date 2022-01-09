@@ -43,6 +43,8 @@ sub run {
         $file =~ m{^.*/(.*)\.yaml$} or die;
         $self->{id} = $1;
 
+        # next unless $1 eq '6BFJ';
+
         my $data = $ypp->load_file($file);
 
         if ($data->[0]{skip} and $self->skip) {

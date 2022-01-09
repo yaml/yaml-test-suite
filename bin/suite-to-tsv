@@ -171,6 +171,9 @@ sub run_tests {
         return 0;
     };
 
+    # warn "out>>$out<<";
+    # warn "err>>$err<<";
+
     die "docker run failed:\nrc: $rc\nstdout:\n$out\nstderr:\n$err\n"
         unless $rc == 0;
 
