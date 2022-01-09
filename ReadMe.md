@@ -25,6 +25,9 @@ To get a quick overview of the tests you can have a look at the [YAML Test
 Matrix](http://matrix.yaml.info/), made from
 <https://github.com/perlpunk/yaml-test-matrix>.
 
+You can also view the latest test results from 15 different parsers in
+[this Google sheet](https://tinyurl.com/2p97ah8a).
+
 ## Usage
 
 The tests are available in 2 forms.
