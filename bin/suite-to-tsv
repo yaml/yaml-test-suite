@@ -70,6 +70,7 @@ my @test_runners = (qw<
     yaml-test-parse-ppyaml
     yaml-test-parse-pyyaml
     yaml-test-parse-ruamel
+    yaml-test-parse-rustyaml
     yaml-test-parse-snake
     yaml-test-parse-snakeeng
 >);
