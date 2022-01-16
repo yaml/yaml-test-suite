@@ -1,8 +1,8 @@
 +STR
 +DOC
 +MAP {}
-=VAL :k
-=VAL :v
+=VAL :foo
+=VAL :bar
 -MAP
 -DOC
 -STR
