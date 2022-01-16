@@ -82,7 +82,6 @@ data:
 data-update: data
 	rm -fr $</*
 	suite-to-data src/*.yaml
-	data-symlinks $<
 
 data-status: data
 	@git -C $< add -Af . && \

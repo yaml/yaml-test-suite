@@ -12,6 +12,7 @@ use FindBin;
 use lib $FindBin::Bin;
 use base 'YAMLTestSuite';
 use Encode;
+use File::Path qw(make_path);
 
 my %map = (
     'name' => '===',
@@ -24,20 +25,25 @@ my %map = (
     'toke' => 'lex.token',
 );
 
+die "'data' directory not empty" if glob('data/*');
+mkdir my $meta_dir = "data/meta";
+mkdir my $name_dir = "data/name";
+mkdir my $tags_dir = "data/tags";
+
 main->new->run([@ARGV]);
 
 sub make {
     my ($self) = @_;
 
-    my ($id, $ID, $num, $data, $multi) =
-        @$self{qw<id ID num data multi>};
+    my ($id, $ID, $num, $data, $multi, $slug) =
+        @$self{qw<id ID num data multi slug>};
 
-    my $dir = "data/$id";
-    mkdir $dir unless -d $dir;
+    my $test_dir = "data/$id";
+    mkdir $test_dir unless -d $test_dir;
 
     if ($multi) {
-        $dir .= "/$num";
-        mkdir $dir or die $dir;
+        $test_dir .= "/$num";
+        mkdir $test_dir or die $test_dir;
     }
 
     for my $k (sort keys %map) {
@@ -57,9 +63,24 @@ sub make {
 
             $_ = $self->unescape($_);
 
-            open my $out, '>', "$dir/$map{$k}" or die;
+            open my $out, '>', "$test_dir/$map{$k}" or die;
             print $out encode_utf8($_);
             close $out;
+        }
+    }
+
+    if ($num == 0) {
+        symlink $data->{name}, "$meta_dir/$id.label";
+        symlink "../$id", "$name_dir/$slug";
+    }
+
+    for my $tag (split /\s+/, $data->{tags}) {
+        mkdir "$tags_dir/$tag";
+        if ($multi) {
+            symlink "../../$id/$num", "$tags_dir/$tag/$id-$num";
+        }
+        else {
+            symlink "../../$id", "$tags_dir/$tag/$id";
         }
     }
 }
