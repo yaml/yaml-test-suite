@@ -92,13 +92,13 @@ sub tree_json_dump_emit {
             push @data, json => escape($json);
         }
 
-        my $dump = run_cmd(
-            "yamlpp-load-dump -M YAML::PP::Ref -D YAML::PP",
-            $yaml,
-        );
-        if ($dump) {
-            push @data, dump => escape($dump);
-        }
+        # my $dump = run_cmd(
+        #     "yamlpp-load-dump -M YAML::PP::Ref -D YAML::PP",
+        #     $yaml,
+        # );
+        # if ($dump) {
+        #     push @data, dump => escape($dump);
+        # }
 
         my $emit = run_cmd(
             "yamlpp-load-dump -M YAML::PP::Ref -D YAML::PP::LibYAML",

@@ -18,9 +18,6 @@
     {
       "foo" : "bar"
     }
-  dump: |
-    ---
-    foo: bar
   emit: |
     ---
     foo: bar
@@ -51,9 +48,6 @@
     {
       "foo" : "bar baz"
     }
-  dump: |
-    ---
-    foo: "bar baz"
   emit: |
     ---
     foo: "bar baz"
@@ -74,9 +68,6 @@
     {
       "foo" : 1
     }
-  dump: |
-    ---
-    foo: 1
   emit: |
     ---
     foo: 1
@@ -101,10 +92,6 @@
       "foo" : 1,
       "bar" : 2
     }
-  dump: |
-    ---
-    foo: 1
-    bar: 2
   emit: |
     ---
     foo: 1
@@ -130,10 +117,6 @@
       "foo" : 1,
       "bar" : 2
     }
-  dump: |
-    ---
-    foo: 1
-    bar: 2
   emit: |
     ---
     foo: 1
@@ -165,8 +148,6 @@
     -STR
   json: |
     null
-  dump: |
-    --- null
   emit: |
     --- null
 
@@ -186,9 +167,6 @@
     {
       "foo" : "bar baz \t \t "
     }
-  dump: |
-    ---
-    foo: "bar baz \t \t "
   emit: |
     ---
     foo: "bar baz \t \t "

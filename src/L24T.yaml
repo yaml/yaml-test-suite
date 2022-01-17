@@ -19,11 +19,6 @@
     {
       "foo" : "x\n \n"
     }
-  dump: |
-    ---
-    foo: |
-      x
-    ␣␣␣
   emit: |
     ---
     foo: "x\n \n"
@@ -45,11 +40,6 @@
     {
       "foo" : "x\n \n"
     }
-  dump: |
-    ---
-    foo: |
-      x
-    ␣␣␣
   emit: |
     ---
     foo: "x\n \n"
