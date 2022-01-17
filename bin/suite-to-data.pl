@@ -26,7 +26,7 @@ my %map = (
 );
 
 die "'data' directory not empty" if glob('data/*');
-mkdir my $meta_dir = "data/meta";
+# mkdir my $meta_dir = "data/meta";
 mkdir my $name_dir = "data/name";
 mkdir my $tags_dir = "data/tags";
 
@@ -70,14 +70,15 @@ sub make {
     }
 
     if ($num == 0) {
-        symlink $data->{name}, "$meta_dir/$id.label";
+        # symlink $data->{name}, "$meta_dir/$id.label";
         symlink "../$id", "$name_dir/$slug";
     }
 
     for my $tag (split /\s+/, $data->{tags}) {
         mkdir "$tags_dir/$tag";
         if ($multi) {
-            symlink "../../$id/$num", "$tags_dir/$tag/$id-$num";
+            mkdir "$tags_dir/$tag/$id";
+            symlink "../../../$id/$num", "$tags_dir/$tag/$id/$num";
         }
         else {
             symlink "../../$id", "$tags_dir/$tag/$id";
