@@ -4,7 +4,7 @@
   tags: edge empty-key
   yaml: |
     - :
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ
@@ -18,7 +18,7 @@
 
 - yaml: |
     ::
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -34,7 +34,7 @@
 
 - yaml: |
     !
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL <!> :

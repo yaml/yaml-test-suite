@@ -20,7 +20,7 @@
 - yaml: |
     %YAML  1.1
     ---
-  tree: |-
+  tree: |
     +STR
      +DOC ---
       =VAL :

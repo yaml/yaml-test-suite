@@ -4,7 +4,7 @@
   tags: double whitespace
   yaml: |
     "1 inline\ttab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "1 inline\ttab
@@ -15,7 +15,7 @@
 
 - yaml: |
     "2 inline\——»tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "2 inline\ttab
@@ -28,7 +28,7 @@
 
 - yaml: |
     "3 inline———»tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "3 inline\ttab

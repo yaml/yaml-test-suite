@@ -1,10 +1,11 @@
 ---
 - name: Tabs that look like indentation
   from: '@ingydotnet'
+  tags: indent whitespace
   yaml: |
     foo:
      ———»bar
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -13,12 +14,22 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : "bar"
+    }
+  dump: |
+    ---
+    foo: bar
+  emit: |
+    ---
+    foo: bar
 
-- yaml: |
+- fail: true
+  yaml: |
     foo: "bar
     ————»baz"
-  fail: true
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -27,7 +38,7 @@
 - yaml: |
     foo: "bar
       ——»baz"
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -36,11 +47,21 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : "bar baz"
+    }
+  dump: |
+    ---
+    foo: "bar baz"
+  emit: |
+    ---
+    foo: "bar baz"
 
 - yaml: |2
      ———»
     foo: 1
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -49,12 +70,22 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : 1
+    }
+  dump: |
+    ---
+    foo: 1
+  emit: |
+    ---
+    foo: 1
 
 - yaml: |
     foo: 1
     ————»
     bar: 2
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -65,12 +96,25 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : 1,
+      "bar" : 2
+    }
+  dump: |
+    ---
+    foo: 1
+    bar: 2
+  emit: |
+    ---
+    foo: 1
+    bar: 2
 
 - yaml: |
     foo: 1
      ———»
     bar: 2
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -81,13 +125,26 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : 1,
+      "bar" : 2
+    }
+  dump: |
+    ---
+    foo: 1
+    bar: 2
+  emit: |
+    ---
+    foo: 1
+    bar: 2
 
-- yaml: |
+- fail: true
+  yaml: |
     foo:
       a: 1
       ——»b: 2
-  fail: true
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -100,9 +157,38 @@
     %YAML 1.2
     ————»
     ---
-  tree: |-
+  tree: |
     +STR
      +DOC ---
       =VAL :
      -DOC
     -STR
+  json: |
+    null
+  dump: |
+    --- null
+  emit: |
+    --- null
+
+- yaml: |
+    foo: "bar
+     ———» ——» baz ——» ——» "
+  tree: |
+    +STR
+     +DOC
+      +MAP
+       =VAL :foo
+       =VAL "bar baz \t \t␣
+      -MAP
+     -DOC
+    -STR
+  json: |
+    {
+      "foo" : "bar baz \t \t "
+    }
+  dump: |
+    ---
+    foo: "bar baz \t \t "
+  emit: |
+    ---
+    foo: "bar baz \t \t "

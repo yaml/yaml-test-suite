@@ -5,7 +5,7 @@
   yaml: |
     "1 leading
         \ttab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "1 leading \ttab
@@ -19,7 +19,7 @@
 - yaml: |
     "2 leading
         \———»tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "2 leading \ttab
@@ -33,7 +33,7 @@
 - yaml: |
     "3 leading
         ————»tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "3 leading tab
@@ -47,7 +47,7 @@
 - yaml: |
     "4 leading
         \t  tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "4 leading \t  tab
@@ -61,7 +61,7 @@
 - yaml: |
     "5 leading
         \———»  tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "5 leading \t  tab
@@ -75,7 +75,7 @@
 - yaml: |
     "6 leading
         ————»  tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "6 leading tab

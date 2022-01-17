@@ -1,13 +1,20 @@
 ---
 - name: Tab indented top flow
   from: '@ingydotnet'
+  tags: indent whitespace
   yaml: |
     ————»[
     ————»]
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ []
       -SEQ
      -DOC
     -STR
+  json: |
+    []
+  dump: |
+    --- []
+  emit: |
+    --- []

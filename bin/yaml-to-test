@@ -2,7 +2,10 @@
 
 use strict; use warnings;
 use utf8;
+use FindBin;
+use lib $FindBin::Bin;
 use autodie qw(open close);
+use YAMLTestSuite;
 use Encode;
 use YAML::PP;
 use YAML::PP::Common qw/ PRESERVE_ORDER /;
@@ -22,8 +25,8 @@ sub main {
 
     my $fail = 0;
     if ($tree eq 'ERROR') {
-        $fail = 1;
         $tree = '';
+        $fail = 1;
     }
     else {
         $tree =~ s/\A=//;
@@ -35,47 +38,20 @@ sub main {
         preserve => PRESERVE_ORDER,
     );
 
-    my $events = yamlpp_events($yaml);
-
     my $test = $ypp->preserved_mapping({});
     %$test = (
         $skip ? (skip => true) : (),
         name => $name,
         from => $from,
         $tags ? ( tags => $tags ) : (),
-        $fail ? (
-            fail => true,
-            yaml => $yaml,
-            tree => indent($events),
-        ) : (
-            yaml => $yaml,
-            tree => indent($tree),
-        )
+        $fail ? ( fail => true ) : (),
+        yaml => $yaml,
+        tree_json_dump_emit($yaml, $tree, $fail),
     );
-
-    if ($events eq $tree) {
-        my ($data, $json, $dump);
-        eval {
-            $data = $ypp->load_string($yaml);
-            $json = JSON::PP->new->pretty->indent_length(2)->encode($data);
-        };
-        if (defined $json) {
-            $test->{json} = $json;
-        }
-        if (defined $data) {
-            eval {
-                $dump = $ypp->dump($data);
-            };
-            if (defined $dump) {
-                $test->{dump} = $dump;
-            }
-        }
-    }
 
     if ($more) {
         delete $test->{name};
         delete $test->{from};
-        delete $test->{tags};
         delete $test->{skip};
         $ypp->dumper->{header} = 0;
     }
@@ -85,11 +61,74 @@ sub main {
     if ($more) {
         $out = "\n$out";
     }
-#     else {
-#         $out =~ s/^(\ \ yaml:)/\n$1/m;
-#     }
 
     print $out;
+}
+
+sub tree_json_dump_emit {
+    my ($yaml, $tree, $fail) = @_;
+
+    $yaml = YAMLTestSuite->unescape($yaml);
+
+    my @data;
+
+    if ($fail) {
+        $tree = run_cmd(
+            "yamlpp-events",
+            $yaml,
+        );
+        if ($tree) {
+            push @data, tree => escape(indent($tree));
+        }
+    }
+    else {
+        push @data, tree => escape(indent($tree));
+
+        my $json = run_cmd(
+            "yamlpp-load-dump -M YAML::PP::Ref -D JSON::PP",
+            $yaml,
+        );
+        if ($json) {
+            push @data, json => escape($json);
+        }
+
+        my $dump = run_cmd(
+            "yamlpp-load-dump -M YAML::PP::Ref -D YAML::PP",
+            $yaml,
+        );
+        if ($dump) {
+            push @data, dump => escape($dump);
+        }
+
+        my $emit = run_cmd(
+            "yamlpp-load-dump -M YAML::PP::Ref -D YAML::PP::LibYAML",
+            $yaml,
+        );
+        if ($emit and $emit ne $yaml) {
+            push @data, emit => escape($emit);
+        }
+    }
+
+    return @data;
+}
+
+sub run_cmd {
+    my ($cmd, $yaml) = @_;
+
+    my ($out, $err, $rc) = capture {
+        open my $pipe, '|-', $cmd
+            or die;
+        print $pipe encode_utf8($yaml);
+        return 0;
+    };
+
+    return $out || '';
+}
+
+sub escape {
+    my ($text) = @_;
+    $text =~ s/(\ +)$/"␣" x length($1)/gem;
+    return $text;
 }
 
 sub indent {
@@ -104,22 +143,6 @@ sub indent {
             (' ' x $i) . $1;
         }
     >megx;
+    $text =~ s/\n?\z/\n/;
     return $text;
-}
-
-sub yamlpp_events {
-    my ($yaml) = @_;
-    my $events = '';
-    my $parser = YAML::PP::Parser->new(
-        receiver => sub {
-            my ($self, undef, $event) = @_;
-            $events .= YAML::PP::Common::event_to_test_suite(
-                $event, { flow => 1 }
-            ) . "\n";
-        },
-    );
-    eval {
-        $parser->parse_string($yaml);
-    };
-    return $events;
 }

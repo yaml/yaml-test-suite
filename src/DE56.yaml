@@ -5,7 +5,7 @@
   yaml: |
     "1 trailing\t
         tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "1 trailing\t tab
@@ -19,7 +19,7 @@
 - yaml: |
     "2 trailing\t␣␣
         tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "2 trailing\t tab
@@ -33,7 +33,7 @@
 - yaml: |
     "3 trailing\————»
         tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "3 trailing\t tab
@@ -47,7 +47,7 @@
 - yaml: |
     "4 trailing\————»␣␣
         tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "4 trailing\t tab
@@ -61,7 +61,7 @@
 - yaml: |
     "5 trailing—»
         tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "5 trailing tab
@@ -75,7 +75,7 @@
 - yaml: |
     "6 trailing—»␣␣
         tab"
-  tree: |-
+  tree: |
     +STR
      +DOC
       =VAL "6 trailing tab

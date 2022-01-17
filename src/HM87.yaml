@@ -4,7 +4,7 @@
   tags: flow scalar
   yaml: |
     [:x]
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ []
@@ -21,7 +21,7 @@
 
 - yaml: |
     [?x]
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ []

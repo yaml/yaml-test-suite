@@ -5,7 +5,7 @@
   yaml: |2
       [1, 2, 3]␣␣
     ␣␣∎
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ []

@@ -4,7 +4,7 @@
   tags: edge flow mapping
   yaml: |
     {x: :x}
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP {}

@@ -17,7 +17,7 @@
     foo: |
      ———»
     bar: 1
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -43,7 +43,7 @@
     ————»
      foo
      ]
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ
@@ -103,7 +103,7 @@
 
 - yaml: |
     -———»-1
-  tree: |-
+  tree: |
     +STR
      +DOC
       +SEQ

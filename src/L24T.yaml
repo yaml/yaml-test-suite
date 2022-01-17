@@ -1,11 +1,12 @@
 ---
 - name: Trailing line of spaces
   from: '@ingydotnet'
+  tags: whitespace
   yaml: |
     foo: |
       x
     ␣␣␣
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -14,12 +15,24 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : "x\n \n"
+    }
+  dump: |
+    ---
+    foo: |
+      x
+    ␣␣␣
+  emit: |
+    ---
+    foo: "x\n \n"
 
 - yaml: |
     foo: |
       x
     ␣␣␣∎
-  tree: |-
+  tree: |
     +STR
      +DOC
       +MAP
@@ -28,3 +41,15 @@
       -MAP
      -DOC
     -STR
+  json: |
+    {
+      "foo" : "x\n \n"
+    }
+  dump: |
+    ---
+    foo: |
+      x
+    ␣␣␣
+  emit: |
+    ---
+    foo: "x\n \n"

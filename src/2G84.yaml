@@ -15,7 +15,7 @@
 
 - yaml: |
     --- |1-∎
-  tree: |-
+  tree: |
     +STR
      +DOC ---
       =VAL |
@@ -28,7 +28,7 @@
 
 - yaml: |
     --- |1+∎
-  tree: |-
+  tree: |
     +STR
      +DOC ---
       =VAL |

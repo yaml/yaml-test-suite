@@ -20,8 +20,7 @@ else
     ssh git@github.com |&
       perl -ne '/Hi (\w+)! You/ and print $1'
   ) || true
-  [[ $from ]] || die "Can't determine github id"
-  from=@$from
+  from=@${from:-${USER:?}}
   echo -n "$from" > .git/githubid
 fi
 
@@ -30,13 +29,16 @@ mapfile -t head < <(jq -r '.[]' <<<"${each[0]}")
 each=("${each[@]:1}")
 
 # Get all tags. (First tag is 'alias')
+found=false
 for (( tag_idx = 0; tag_idx < ${#head[*]}; tag_idx++ )); do
-  [[ ${head[tag_idx]} == alias ]] && break
+  [[ ${head[tag_idx]} == alias ]] && found=true && break
 done
+$found || die "No 'alias' cell. Did you forget the header line?"
 tag_name=("${head[@]:$tag_idx}")
 
 i=0
 _group=''
+_tags=''
 for line in "${each[@]}"; do
   yaml=$(jq -r '.[3]' <<<"$line")
   tree=$(jq -r '.[4]' <<<"$line")
@@ -56,9 +58,19 @@ for line in "${each[@]}"; do
 
   if [[ $group && $group == $_group ]]; then
     more=1
+    if [[ ${tags[*]} == $_tags ]]; then
+      tags=()
+    else
+      _tags=${tags[*]}
+    fi
   else
     more=''
-    id=$("$bin/new-test-id")
+    _tags=${tags[*]}
+    if [[ ${#group} -eq 4 ]]; then
+      id=$group
+    else
+      id=$("$bin/new-test-id")
+    fi
     while [[ -f $dir/$id*.yaml ]]; do
       id=$("$bin/new-test-id")
     done
