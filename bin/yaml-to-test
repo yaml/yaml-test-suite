@@ -101,7 +101,7 @@ sub tree_json_dump_emit {
         # }
 
         my $emit = run_cmd(
-            "yamlpp-load-dump -M YAML::PP::Ref -D YAML::PP::LibYAML",
+            "yamlpp-parse-emit -M YAML::PP::Ref -D YAML::PP::LibYAML",
             $yaml,
         );
         if ($emit and $emit ne $yaml) {
