@@ -69,6 +69,11 @@ write-tsv-line() (
       want=$(adjust-want-for-rust <<<"$want")
     fi
 
+    if [[ $parser == *-rapid ]]; then
+      # got=$(adjust-got-for-rapid <<<"$got")
+      want=$(adjust-want-for-rapid <<<"$want")
+    fi
+
     if [[ $parser == *-refhs ]]; then
       [[ $got =~ (=ERR|=REST) ]] && got=''
       if [[ $got && $want ]]; then
@@ -125,6 +130,12 @@ adjust-want-for-rust() {
     my ($c, %a) = (1);
     s{^(\+MAP|\+SEQ|=VAL|=ALI) (&|\*)(\S+)(.*)}
      {"$1 $2".($2 eq "&" ? ($a{$3} = $c++) : $a{$3}).$4}gem;
+  '
+}
+
+adjust-want-for-rapid() {
+  perl -p0e '
+    s/^=VAL :[">|]/=VAL :'"'"'/gm;
   '
 }
 
