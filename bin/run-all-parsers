@@ -27,12 +27,13 @@ run-all-parsers() (
 
   for parser; do
     (
-      timeout 2 \
+      timeout 5 \
       "$parser" \
         < "$tmp-input.yaml" \
         > "$tmp-$parser.stdout" \
-        2> "$tmp-$parser.stderr" ||
-        touch "$tmp-$parser.err"
+        2> "$tmp-$parser.stderr" || (
+          echo $? > "$tmp-$parser.err"
+        )
     ) &
   done
 
@@ -70,7 +71,7 @@ write-tsv-line() (
     fi
 
     if [[ $parser == *-rapid ]]; then
-      # got=$(adjust-got-for-rapid <<<"$got")
+      got=$(adjust-got-for-rapid <<<"$got")
       want=$(adjust-want-for-rapid <<<"$want")
     fi
 
@@ -133,9 +134,17 @@ adjust-want-for-rust() {
   '
 }
 
+adjust-got-for-rapid() {
+  perl -p0e '
+    s/^\+DOC ---/+DOC/gm;
+  '
+}
+
 adjust-want-for-rapid() {
   perl -p0e '
-    s/^=VAL :[">|]/=VAL :'"'"'/gm;
+    s/^=VAL ((?:&\S+ |<\S*> )*)[">|]/=VAL $1'"'"'/gm;
+    s/^\+DOC ---/+DOC/gm;
+    s/^-DOC \.\.\./-DOC/gm;
   '
 }
 

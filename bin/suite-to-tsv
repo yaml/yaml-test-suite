@@ -52,7 +52,6 @@ BEGIN {
         chomp $out;
         $container_id = $out;
         $SIG{INT} = \&kill_docker_container;
-        system("docker exec $container_id apk add bash 2>&1 >/dev/null") == 0 or die;
     }
 }
 
