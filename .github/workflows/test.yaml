@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+
 name: yaml-test-suite Repository Testing
 
 on:
