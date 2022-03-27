@@ -148,6 +148,8 @@ tests and also preprocessing them into the `data` branch.
 * C
   * [libyaml](https://github.com/yaml/libyaml)
   * [libfyaml](https://github.com/pantoniou/libfyaml)
+* C++
+  * [rapidyaml](https://github.com/biojppm/rapidyaml)
 * C#
   * [YamlDotNet](https://github.com/aaubry/YamlDotNet)
 * D
