@@ -166,6 +166,8 @@ tests and also preprocessing them into the `data` branch.
   * [NimYAML](https://github.com/flyx/NimYAML)
 * Perl 5
   * [YAML::PP](https://github.com/perlpunk/YAML-PP-p5)
+* Scala
+  * [Scala-Yaml](https://github.com/VirtusLab/scala-yaml)
 
 If your library is using the test suite, drop us a line and we can add it here.
 It would also be nice if you could add a link back to this test suite.
