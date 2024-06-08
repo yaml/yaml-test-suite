@@ -29,13 +29,9 @@
      -DOC
     -STR
   json: |
-    {
-      "Mapping": "Document"
-    }
+    { "Mapping": "Document" }
     null
-    {
-      "matches %": 20
-    }
+    { "matches %": 20 }
   emit: |
     Mapping: Document
     ---

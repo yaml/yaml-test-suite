@@ -19,9 +19,7 @@
      -DOC
     -STR
   json: |
-    {
-      "a": "b"
-    }
+    { "a": "b" }
     null
   dump: |
     ---

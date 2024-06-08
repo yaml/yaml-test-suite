@@ -21,9 +21,7 @@
     -STR
   json: |
     "scalar1"
-    {
-      "key": "value"
-    }
+    { "key": "value" }
   dump: |
     --- scalar1
     ...
