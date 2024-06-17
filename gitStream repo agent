@@ -1,0 +1,22 @@
+  [![ - name: gitStream repo agent
+  # You may pin to the exact commit or the version.
+  # uses: linear-b/gitstream-github-action@515b784fdea61b77e1df3a1d6d15c8926f0fb48b
+  uses: linear-b/gitstream-github-action@v2
+  with:
+    # Path of full Repository
+    full_repository: 
+    # Head Branch Ref to checkout to
+    head_ref: 
+    # Base Branch Ref to checkout to
+    base_ref: 
+    # The client payload
+    client_payload: 
+    # The github app installation id
+    installation_id: # optional
+    # Resolver url to send results to
+    resolver_url: 
+    # Optional token for resolver
+    resolver_token: # optional
+    # Run parser in debug mode
+    debug_mode: # optional, default is false
+          
