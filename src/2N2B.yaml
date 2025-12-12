@@ -1,0 +1,11 @@
+---
+- name: Single hard tab
+  from: github:ingydotnet
+  tags: whitespace
+  yaml: |
+    	
+  tree: |
+    +STR
+    -STR
+  dump: |
+    	
