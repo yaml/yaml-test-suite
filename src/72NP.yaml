@@ -1,0 +1,76 @@
+---
+- name: Comments in mapping with sequence values
+  from: github:ingydotnet
+  tags: comment mapping sequence scalar
+  yaml: |
+    # Edit this YAML and see how
+    # different parsers handle it.
+    
+    # Green = matches reference parser
+    # Red = differs or errored
+    
+    name: YAML Parser Playground
+    
+    url: https://play.yaml.com/
+    repo:
+      https://github.com/yaml/yaml-play
+    
+    current parsers: 17
+    actively maintained: true
+    
+    features:
+    - Compare outputs from multiple
+      YAML parsers
+    - Search and load tests from the
+      YAML Test Suite
+    - Select and drag output panes
+    - Click Help for shortcut keys
+    
+  tree: |
+    +STR
+    +DOC
+    +MAP
+    =VAL :name
+    =VAL :YAML Parser Playground
+    =VAL :url
+    =VAL :https://play.yaml.com/
+    =VAL :repo
+    =VAL :https://github.com/yaml/yaml-play
+    =VAL :current parsers
+    =VAL :17
+    =VAL :actively maintained
+    =VAL :true
+    =VAL :features
+    +SEQ
+    =VAL :Compare outputs from multiple YAML parsers
+    =VAL :Search and load tests from the YAML Test Suite
+    =VAL :Select and drag output panes
+    =VAL :Click Help for shortcut keys
+    -SEQ
+    -MAP
+    -DOC
+    -STR
+  dump: |
+    # Edit this YAML and see how
+    # different parsers handle it.
+    
+    # Green = matches reference parser
+    # Red = differs or errored
+    
+    name: YAML Parser Playground
+    
+    url: https://play.yaml.com/
+    repo:
+      https://github.com/yaml/yaml-play
+    
+    current parsers: 17
+    actively maintained: true
+    
+    features:
+    - Compare outputs from multiple
+      YAML parsers
+    - Search and load tests from the
+      YAML Test Suite
+    - Select and drag output panes
+    - Click Help for shortcut keys
+    
