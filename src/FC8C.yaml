@@ -1,0 +1,11 @@
+---
+- name: Stream is a single hard tab
+  from: @ingydotnet
+  tags: whitespace
+  yaml: |
+    	
+  tree: |
+    +STR
+    -STR
+  dump: |
+    	
