@@ -1,0 +1,9 @@
+---
+- name: Comma in a tag should be an error
+  from: @ingydotnet
+  tags: tag error
+  fail: true
+  yaml: |
+    !a,b
+  tree: |
+    Parser finished before end of input
