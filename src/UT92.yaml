@@ -23,9 +23,7 @@
      -DOC ...
     -STR
   json: |
-    {
-      "matches %": 20
-    }
+    { "matches %": 20 }
     null
   dump: |
     ---

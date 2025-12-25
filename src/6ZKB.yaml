@@ -28,9 +28,7 @@
   json: |
     "Document"
     null
-    {
-      "matches %": 20
-    }
+    { "matches %": 20 }
   emit: |
     Document
     ---
