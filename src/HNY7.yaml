@@ -1,0 +1,16 @@
+---
+- name: Closing flow sequence directly after tag
+  from: @perlpunk
+  tags: sequence tag flow
+  yaml: |
+    [!!null]
+  tree: |
+    +STR
+    +DOC
+    +SEQ []
+    =VAL <tag:yaml.org,2002:null> :
+    -SEQ
+    -DOC
+    -STR
+  dump: |
+    [!!null]
