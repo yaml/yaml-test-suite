@@ -1,0 +1,14 @@
+---
+- name: Simple document with scalar value
+  from: github:ingydotnet
+  tags: document scalar header
+  yaml: |
+    foo
+  tree: |
+    +STR
+    +DOC
+    =VAL :foo
+    -DOC
+    -STR
+  dump: |
+    foo
