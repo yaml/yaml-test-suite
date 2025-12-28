@@ -1,0 +1,20 @@
+---
+- name: Empty block sequence
+  from: github:ingydotnet
+  tags: sequence document
+  yaml: |
+    [foo]
+  tree: |
+    +STR
+     +DOC
+      +SEQ []
+       =VAL :foo
+      -SEQ
+     -DOC
+    -STR
+  json: |
+    [
+      "foo"
+    ]
+  dump: |
+    [foo]
