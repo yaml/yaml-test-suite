@@ -1,0 +1,113 @@
+---
+- name: Nested implicit mappings
+  from: '@ethiraric'
+  tags: mapping sequence mapping flow
+  yaml: |
+    [a: [b: c]]
+  tree: |
+    +STR
+     +DOC
+      +SEQ []
+       +MAP {}
+        =VAL :a
+        +SEQ []
+         +MAP {}
+          =VAL :b
+          =VAL :c
+         -MAP
+        -SEQ
+       -MAP
+      -SEQ
+     -DOC
+    -STR
+  json: |
+    [
+      {
+        "a": [
+          {
+            "b": "c"
+          }
+        ]
+      }
+    ]
+
+- name: Nested implicit mappings with implicit null-keys
+  from: '@ethiraric'
+  tags: mapping sequence mapping flow
+  yaml: |
+    [: [:]]
+  tree: |
+    +STR
+     +DOC
+      +SEQ []
+       +MAP {}
+        =VAL :
+        +SEQ []
+         +MAP {}
+          =VAL :
+          =VAL :
+         -MAP
+        -SEQ
+       -MAP
+      -SEQ
+     -DOC
+    -STR
+  json: |
+    [
+      {
+        null: [
+          {
+            null: null
+          }
+        ]
+      }
+    ]
+
+- name: Interleaved implicit and non-implicit mappings
+  from: '@ethiraric'
+  tags: mapping sequence mapping flow
+  yaml: |
+    [a: [[b:]]]
+  tree: |
+    +STR
+     +DOC
+      +SEQ []
+       +MAP {}
+        =VAL :a
+        +SEQ []
+         +SEQ []
+          +MAP {}
+           =VAL :b
+           =VAL :
+          -MAP
+         -SEQ
+        -SEQ
+       -MAP
+      -SEQ
+     -DOC
+    -STR
+  json: |
+    [
+      {
+        a: [
+          [
+            {
+              b: null
+            }
+          ]
+        ]
+      }
+    ]
+
+- name: Implicit mapping sequence missing its preceding space
+  from: '@ethiraric'
+  tags: mapping sequence mapping flow edge error
+  fail: true
+  yaml: |
+    [:[]]
+  tree: |
+    +STR
+     +DOC
+      +SEQ []
+       +MAP {}
+        =VAL :
