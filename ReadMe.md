@@ -152,6 +152,7 @@ tests and also preprocessing them into the `data` branch.
   * [rapidyaml](https://github.com/biojppm/rapidyaml)
 * C#
   * [YamlDotNet](https://github.com/aaubry/YamlDotNet)
+  * [Yamlify](https://github.com/SwissLife-OSS/Yamlify)
 * D
   * [dyaml](https://github.com/dlang-community/D-YAML)
 * Delphi
