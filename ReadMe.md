@@ -156,6 +156,8 @@ tests and also preprocessing them into the `data` branch.
   * [dyaml](https://github.com/dlang-community/D-YAML)
 * Delphi
   * [Neslib.Yaml](https://github.com/neslib/Neslib.Yaml)
+* Go
+  * [go-yaml](https://github.com/yaml/go-yaml)
 * Haskell
   * [HsYAML](https://github.com/haskell-hvr/HsYAML)
 * Java
