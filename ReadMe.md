@@ -162,6 +162,8 @@ tests and also preprocessing them into the `data` branch.
   * [SnakeYAML Engine](https://bitbucket.org/asomov/snakeyaml-engine)
 * Javascript
   * [yaml](https://github.com/eemeli/yaml)
+* Kotlin
+  * [SnakeYAML Engine KMP](https://github.com/krzema12/snakeyaml-engine-kmp)
 * Nim
   * [NimYAML](https://github.com/flyx/NimYAML)
 * Perl 5
