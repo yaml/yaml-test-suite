@@ -100,7 +100,7 @@ The test files are:
 * `===` -- The name/label of the test
 * `in.yaml` -- The YAML input to be parsed or loaded
 * `test.event` -- The event DSL produced by the parser test program
-* `in.json` -- The JSON value that shoiuld load the same as `in.yaml`
+* `in.json` -- The JSON value that should load the same as `in.yaml`
 * `out.yaml` -- The most normal output a dumper would produce
 * `error` -- This file indicates the YAML should fail to parse
 * `emit.yaml` -- Output an emitter would produce
