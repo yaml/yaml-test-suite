@@ -1,7 +1,7 @@
 ---
 - name: Zero-indented sequences in explicit mapping keys
   from: '@perlpunk'
-  tags: explicit-key mapping sequence
+  tags: explicit-key mapping sequence complex-key
   yaml: |
     ---
     ?

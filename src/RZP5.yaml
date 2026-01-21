@@ -1,7 +1,7 @@
 ---
 - name: Various Trailing Comments [1.3]
   from: XW4D, modified for YAML 1.3
-  tags: anchor comment folded mapping 1.3-mod
+  tags: anchor comment folded mapping 1.3-mod complex-key explicit-key
   yaml: |
     a: "double
       quotes" # lala

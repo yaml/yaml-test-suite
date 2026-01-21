@@ -1,7 +1,7 @@
 ---
 - name: Various combinations of explicit block mappings
   from: '@perlpunk'
-  tags: explicit-key mapping sequence
+  tags: explicit-key mapping sequence complex-key
   yaml: |
     complex1:
       ? - a

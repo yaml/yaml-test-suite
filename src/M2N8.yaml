@@ -1,7 +1,7 @@
 ---
 - name: Question mark edge cases
   from: '@ingydotnet'
-  tags: edge empty-key
+  tags: edge empty-key complex-key explicit-key
   yaml: |
     - ? : x
   tree: |

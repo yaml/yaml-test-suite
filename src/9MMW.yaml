@@ -1,7 +1,7 @@
 ---
 - name: Single Pair Implicit Entries
   from: '@perlpunk, Spec Example 7.21'
-  tags: flow mapping sequence
+  tags: flow mapping sequence complex-key
   yaml: |
     - [ YAML : separate ]
     - [ "JSON like":adjacent ]

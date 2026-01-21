@@ -1,7 +1,7 @@
 ---
 - name: Various Trailing Comments
   from: '@perlpunk'
-  tags: comment explicit-key folded 1.3-err
+  tags: comment explicit-key folded 1.3-err complex-key explicit-key
   yaml: |
     a: "double
       quotes" # lala

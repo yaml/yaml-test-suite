@@ -1,7 +1,7 @@
 ---
 - name: Flow Mapping Key on two lines
   from: '@perlpunk'
-  tags: error flow mapping
+  tags: error flow mapping complex-key
   fail: true
   yaml: |
     [23
