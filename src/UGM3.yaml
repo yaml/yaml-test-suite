@@ -21,11 +21,11 @@
         - sku         : BL394D
           quantity    : 4
           description : Basketball
-          price       : 450.00
+          price       : 450.12
         - sku         : BL4438H
           quantity    : 1
           description : Super Hoop
-          price       : 2392.00
+          price       : 2392.34
     tax  : 251.42
     total: 4443.52
     comments:
@@ -70,7 +70,7 @@
          =VAL :description
          =VAL :Basketball
          =VAL :price
-         =VAL :450.00
+         =VAL :450.12
         -MAP
         +MAP
          =VAL :sku
@@ -80,7 +80,7 @@
          =VAL :description
          =VAL :Super Hoop
          =VAL :price
-         =VAL :2392.00
+         =VAL :2392.34
         -MAP
        -SEQ
        =VAL :tax
@@ -121,13 +121,13 @@
           "sku": "BL394D",
           "quantity": 4,
           "description": "Basketball",
-          "price": 450
+          "price": 450.12
         },
         {
           "sku": "BL4438H",
           "quantity": 1,
           "description": "Super Hoop",
-          "price": 2392
+          "price": 2392.34
         }
       ],
       "tax": 251.42,
@@ -153,11 +153,11 @@
     - sku: BL394D
       quantity: 4
       description: Basketball
-      price: 450.00
+      price: 450.12
     - sku: BL4438H
       quantity: 1
       description: Super Hoop
-      price: 2392.00
+      price: 2392.34
     tax: 251.42
     total: 4443.52
     comments: Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
