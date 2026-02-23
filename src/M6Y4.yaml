@@ -1,0 +1,33 @@
+---
+- name: Simple mapping with scalar values
+  from: github:Jwolf13
+  tags: mapping scalar document
+  yaml: |
+    invoice number: 314159
+    name: Santa Claus
+    address: North Pole
+    
+  tree: |
+    +STR
+     +DOC
+      +MAP
+       =VAL :invoice number
+       =VAL :314159
+       =VAL :name
+       =VAL :Santa Claus
+       =VAL :address
+       =VAL :North Pole
+      -MAP
+     -DOC
+    -STR
+  json: |
+    {
+      "invoice number": 314159,
+      "name": "Santa Claus",
+      "address": "North Pole"
+    }
+  dump: |
+    invoice number: 314159
+    name: Santa Claus
+    address: North Pole
+    
