@@ -1,0 +1,26 @@
+---
+- name: Simple mapping with scalars
+  from: github:Jwolf13
+  tags: mapping scalar document
+  yaml: |
+    name: Jon
+    age: 35
+  tree: |
+    +STR
+     +DOC
+      +MAP
+       =VAL :name
+       =VAL :Jon
+       =VAL :age
+       =VAL :35
+      -MAP
+     -DOC
+    -STR
+  json: |
+    {
+      "name": "Jon",
+      "age": 35
+    }
+  dump: |
+    name: Jon
+    age: 35
