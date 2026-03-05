@@ -170,6 +170,8 @@ tests and also preprocessing them into the `data` branch.
   * [php-yaml-parser](https://github.com/maxbeckers/php-yaml-parser)
 * Scala
   * [Scala-Yaml](https://github.com/VirtusLab/scala-yaml)
+* Zig
+  * [comb](https://github.com/QuiteClose/comb)
 
 If your library is using the test suite, drop us a line and we can add it here.
 It would also be nice if you could add a link back to this test suite.
